@@ -94,8 +94,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml" />
 
@@ -109,16 +107,16 @@
 
 
 
-<meta name="description" content="Stay Hungry, Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法：  卸载w3af要求的pyOpenSSL版本 1$ pip uninstall pyOpenSSL  安装最新版pyOpenSSL 1$ pip install pyOpenSSL  编辑w3af安装目录中的/w3af/core/controllers/depende">
+<meta property="og:type" content="article">
+<meta property="og:title" content="w3af安装出错解决">
+<meta property="og:url" content="http://yoursite.com/2017/11/08/w3af安装出错解决/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
-<meta property="og:updated_time" content="2017-06-21T14:44:29.770Z">
+<meta property="og:description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法：  卸载w3af要求的pyOpenSSL版本 1$ pip uninstall pyOpenSSL  安装最新版pyOpenSSL 1$ pip install pyOpenSSL  编辑w3af安装目录中的/w3af/core/controllers/depende">
+<meta property="og:updated_time" content="2017-11-08T04:12:14.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:title" content="w3af安装出错解决">
+<meta name="twitter:description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法：  卸载w3af要求的pyOpenSSL版本 1$ pip uninstall pyOpenSSL  安装最新版pyOpenSSL 1$ pip install pyOpenSSL  编辑w3af安装目录中的/w3af/core/controllers/depende">
 
 
 
@@ -146,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/08/w3af安装出错解决/"/>
 
 
 
 
 
-  <title>tags | Howie's Notes</title>
+  <title>w3af安装出错解决 | Howie's Notes</title>
   
 
 
@@ -282,25 +280,176 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/w3af安装出错解决/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
 
     
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            1 tag in total
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">w3af安装出错解决</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T11:57:43+08:00">
+                2017-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Tips/" style="font-size: 12px; color: #ccc">Tips</a>
-        </div>
-      </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p>解决方法：</p>
+<ol>
+<li><p>卸载w3af要求的pyOpenSSL版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pyOpenSSL</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装最新版pyOpenSSL</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pyOpenSSL</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>赠人玫瑰，手有余香！ :)</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Howie Zhao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Howie Zhao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/20/Hexo初体验/" rel="next" title="Hexo初体验">
+                <i class="fa fa-chevron-left"></i> Hexo初体验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -309,6 +458,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4My81NzUw"></div>
+    
+  </div>
+
 
         </div>
         
@@ -328,8 +483,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -583,6 +747,22 @@ for (var L = 0; L < C.length; L++) {
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><span class="nav-number">1.</span> <span class="nav-text">Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -727,10 +907,10 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -765,6 +945,17 @@ for (var L = 0; L < C.length; L++) {
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

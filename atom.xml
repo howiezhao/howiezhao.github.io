@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-21T08:14:28.383Z</updated>
+  <updated>2017-11-08T04:12:14.414Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>w3af安装出错解决</title>
+    <link href="http://yoursite.com/2017/11/08/w3af%E5%AE%89%E8%A3%85%E5%87%BA%E9%94%99%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2017/11/08/w3af安装出错解决/</id>
+    <published>2017-11-08T03:57:43.000Z</published>
+    <updated>2017-11-08T04:12:14.414Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p>解决方法：</p>
+<ol>
+<li><p>卸载w3af要求的pyOpenSSL版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pyOpenSSL</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装最新版pyOpenSSL</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pyOpenSSL</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”&quot;&gt;&lt;a href=&quot;#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo初体验</title>
