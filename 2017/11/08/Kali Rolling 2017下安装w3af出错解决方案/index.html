@@ -94,8 +94,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml" />
 
@@ -109,16 +107,16 @@
 
 
 
-<meta name="description" content="Stay Hungry, Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#SSL_ST_BEFORE = _lib.SSL_ST_BEF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kali Rolling 2017下安装w3af出错解决方案">
+<meta property="og:url" content="http://yoursite.com/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
-<meta property="og:updated_time" content="2017-06-21T14:44:29.770Z">
+<meta property="og:description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#SSL_ST_BEFORE = _lib.SSL_ST_BEF">
+<meta property="og:updated_time" content="2017-11-08T06:03:17.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:title" content="Kali Rolling 2017下安装w3af出错解决方案">
+<meta name="twitter:description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#SSL_ST_BEFORE = _lib.SSL_ST_BEF">
 
 
 
@@ -146,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/"/>
 
 
 
 
 
-  <title>tags | Howie's Notes</title>
+  <title>Kali Rolling 2017下安装w3af出错解决方案 | Howie's Notes</title>
   
 
 
@@ -282,25 +280,183 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
 
     
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            1 tag in total
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Kali Rolling 2017下安装w3af出错解决方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T11:57:43+08:00">
+                2017-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Tips/" style="font-size: 12px; color: #ccc">Tips</a>
-        </div>
-      </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></div><div class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></div><div class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></div><div class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></div></pre></td></tr></table></figure></p>
+<p><strong>解决方法2：</strong></p>
+<ol>
+<li><p>卸载w3af要求的pyOpenSSL版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pyOpenSSL</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装最新版pyOpenSSL</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pyOpenSSL</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get build-dep python-lxml</div><div class="line">$ apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
+<h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-webkit python-webkit-dev</div></pre></td></tr></table></figure></p>
+<p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</div><div class="line">$ dpkg -i python-support_1.0.15_all.deb</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ apt install python-gtk2-dev</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</div><div class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</div></pre></td></tr></table></figure></p>
+<p>安装过程中可能需要安装相关依赖，可执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt --fix-broken install</div></pre></td></tr></table></figure></p>
+<h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-gtksourceview2</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>赠人玫瑰，手有余香！ :)</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Howie Zhao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Howie Zhao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/20/Hexo初体验/" rel="next" title="Hexo初体验">
+                <i class="fa fa-chevron-left"></i> Hexo初体验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -309,6 +465,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4My81NzUw"></div>
+    
+  </div>
+
 
         </div>
         
@@ -328,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -583,6 +754,22 @@ for (var L = 0; L < C.length; L++) {
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><span class="nav-number">1.</span> <span class="nav-text">Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><span class="nav-number">2.</span> <span class="nav-text">error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ImportError-No-module-named-webkit"><span class="nav-number">3.</span> <span class="nav-text">ImportError: No module named webkit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ImportError-No-module-named-gtksourceview2"><span class="nav-number">4.</span> <span class="nav-text">ImportError: No module named gtksourceview2</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -727,10 +914,10 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -765,6 +952,17 @@ for (var L = 0; L < C.length; L++) {
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

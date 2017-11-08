@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-08T04:42:56.974Z</updated>
+  <updated>2017-11-08T06:03:17.635Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>w3af安装出错解决</title>
-    <link href="http://yoursite.com/2017/11/08/w3af%E5%AE%89%E8%A3%85%E5%87%BA%E9%94%99%E8%A7%A3%E5%86%B3/"/>
-    <id>http://yoursite.com/2017/11/08/w3af安装出错解决/</id>
+    <title>Kali Rolling 2017下安装w3af出错解决方案</title>
+    <link href="http://yoursite.com/2017/11/08/Kali%20Rolling%202017%E4%B8%8B%E5%AE%89%E8%A3%85w3af%E5%87%BA%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://yoursite.com/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/</id>
     <published>2017-11-08T03:57:43.000Z</published>
-    <updated>2017-11-08T04:42:56.974Z</updated>
+    <updated>2017-11-08T06:03:17.635Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法：</strong></p>
+    <content type="html"><![CDATA[<h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></div><div class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></div><div class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></div><div class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></div></pre></td></tr></table></figure></p>
+<p><strong>解决方法2：</strong></p>
 <ol>
 <li><p>卸载w3af要求的pyOpenSSL版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pyOpenSSL</div></pre></td></tr></table></figure>
@@ -34,7 +35,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get build-dep python-lxml</div><div class="line">apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
+<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get build-dep python-lxml</div><div class="line">$ apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
+<h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-webkit python-webkit-dev</div></pre></td></tr></table></figure></p>
+<p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</div><div class="line">$ dpkg -i python-support_1.0.15_all.deb</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ apt install python-gtk2-dev</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</div><div class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</div></pre></td></tr></table></figure></p>
+<p>安装过程中可能需要安装相关依赖，可执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt --fix-broken install</div></pre></td></tr></table></figure></p>
+<h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-gtksourceview2</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
