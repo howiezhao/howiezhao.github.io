@@ -358,7 +358,7 @@
       
         
           
-            <h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p>解决方法：</p>
+            <h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法：</strong></p>
 <ol>
 <li><p>卸载w3af要求的pyOpenSSL版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pyOpenSSL</div></pre></td></tr></table></figure>
@@ -367,8 +367,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pyOpenSSL</div></pre></td></tr></table></figure>
 </li>
 <li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
+</li>
 </ol>
+<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get build-dep python-lxml libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
 
           
         
