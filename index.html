@@ -370,7 +370,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get build-dep python-lxml libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
+<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get build-dep python-lxml</div><div class="line">apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
 
           
         

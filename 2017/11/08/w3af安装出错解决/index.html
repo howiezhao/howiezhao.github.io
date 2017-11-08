@@ -113,7 +113,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/08/w3af安装出错解决/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法：  卸载w3af要求的pyOpenSSL版本 1$ pip uninstall pyOpenSSL  安装最新版pyOpenSSL 1$ pip install pyOpenSSL  编辑w3af安装目录中的/w3af/core/controllers/depende">
-<meta property="og:updated_time" content="2017-11-08T04:40:53.957Z">
+<meta property="og:updated_time" content="2017-11-08T04:42:56.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="w3af安装出错解决">
 <meta name="twitter:description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法：  卸载w3af要求的pyOpenSSL版本 1$ pip uninstall pyOpenSSL  安装最新版pyOpenSSL 1$ pip install pyOpenSSL  编辑w3af安装目录中的/w3af/core/controllers/depende">
@@ -370,7 +370,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get build-dep python-lxml libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
+<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get build-dep python-lxml</div><div class="line">apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
 
       
     </div>
