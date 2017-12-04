@@ -94,8 +94,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml" />
 
@@ -109,16 +107,16 @@
 
 
 
-<meta name="description" content="Stay Hungry, Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。解决方法：  在shell窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Metasploit中shell中文乱码解决方案">
+<meta property="og:url" content="http://yoursite.com/2017/12/04/Metasploit中shell中文乱码解决方案/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
-<meta property="og:updated_time" content="2017-06-21T14:43:52.074Z">
+<meta property="og:description" content="有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。解决方法：  在shell窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾">
+<meta property="og:updated_time" content="2017-12-04T16:11:46.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:title" content="Metasploit中shell中文乱码解决方案">
+<meta name="twitter:description" content="有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。解决方法：  在shell窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾">
 
 
 
@@ -146,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/04/Metasploit中shell中文乱码解决方案/"/>
 
 
 
 
 
-  <title>categories | Howie's Notes</title>
+  <title>Metasploit中shell中文乱码解决方案 | Howie's Notes</title>
   
 
 
@@ -282,25 +280,177 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/04/Metasploit中shell中文乱码解决方案/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
 
     
-    
-      <div class="category-all-page">
-        <div class="category-all-title">
-            No categories
-        </div>
-        <div class="category-all">
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Metasploit中shell中文乱码解决方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-04T23:46:32+08:00">
+                2017-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
         </div>
-      </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。<br><strong>解决方法：</strong></p>
+<ol>
+<li>在shell窗口的工具栏选择“编辑”——&gt;“首选项”——&gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾并退出</li>
+<li>接着在“终端”——&gt;“设定字符编码”中选择添加的三个简体中文编码之一即可<br><strong>注意：</strong></li>
+<li>这个设置会随着操作系统的重启而失效</li>
+<li>设定简体中文编码之后，Linux中的中文字符就会乱码，因为Linux使用UTF-8编码</li>
+<li>建议只在需要的时候设定简体中文编码</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>赠人玫瑰，手有余香！ :)</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Howie Zhao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Howie Zhao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/25/Kali-Rolling-2017更新后无法启动解决方案/" rel="next" title="Kali Rolling 2017更新后无法启动解决方案">
+                <i class="fa fa-chevron-left"></i> Kali Rolling 2017更新后无法启动解决方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/04/Kali持久加密USB安装所遇问题总结/" rel="prev" title="Kali持久加密USB安装所遇问题总结">
+                Kali持久加密USB安装所遇问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -309,6 +459,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4My81NzUw"></div>
+    
+  </div>
+
 
         </div>
         
@@ -727,10 +883,10 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -765,6 +921,17 @@ for (var L = 0; L < C.length; L++) {
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

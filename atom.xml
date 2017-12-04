@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-25T11:34:44.949Z</updated>
+  <updated>2017-12-04T16:25:09.629Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Kali持久加密USB安装所遇问题总结</title>
+    <link href="http://yoursite.com/2017/12/04/Kali%E6%8C%81%E4%B9%85%E5%8A%A0%E5%AF%86USB%E5%AE%89%E8%A3%85%E6%89%80%E9%81%87%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/12/04/Kali持久加密USB安装所遇问题总结/</id>
+    <published>2017-12-04T15:54:56.000Z</published>
+    <updated>2017-12-04T16:25:09.629Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用mkfs.ext4格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">device descriptor <span class="built_in">read</span>/8, error -110</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以讲U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Writing-superblocks-and-filesystem-accounting-information&quot;&gt;&lt;a href=&quot;#Writing-superblocks-and-filesystem-accounting-information&quot; clas
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Metasploit中shell中文乱码解决方案</title>
+    <link href="http://yoursite.com/2017/12/04/Metasploit%E4%B8%ADshell%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://yoursite.com/2017/12/04/Metasploit中shell中文乱码解决方案/</id>
+    <published>2017-12-04T15:46:32.000Z</published>
+    <updated>2017-12-04T16:11:46.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。<br><strong>解决方法：</strong></p>
+<ol>
+<li>在shell窗口的工具栏选择“编辑”——&gt;“首选项”——&gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾并退出</li>
+<li>接着在“终端”——&gt;“设定字符编码”中选择添加的三个简体中文编码之一即可<br><strong>注意：</strong></li>
+<li>这个设置会随着操作系统的重启而失效</li>
+<li>设定简体中文编码之后，Linux中的中文字符就会乱码，因为Linux使用UTF-8编码</li>
+<li>建议只在需要的时候设定简体中文编码</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。&lt;br&gt;&lt;strong&gt;解决方法：
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Kali Rolling 2017更新后无法启动解决方案</title>
