@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-10T15:53:37.211Z</updated>
+  <updated>2017-12-11T04:31:57.468Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://yoursite.com/2017/12/10/%E4%B8%80%E4%B8%AARed-Team%E6%88%90%E5%91%98%E7%9A%84%E8%B7%B3%E6%9D%BF-pivoting-%E6%8C%87%E5%8D%97/"/>
     <id>http://yoursite.com/2017/12/10/一个Red-Team成员的跳板-pivoting-指南/</id>
     <published>2017-12-10T14:51:35.000Z</published>
-    <updated>2017-12-10T15:53:37.211Z</updated>
+    <updated>2017-12-11T04:31:57.468Z</updated>
     
     <content type="html"><![CDATA[<p>本文翻译自<a href="https://artkond.com/2017/03/23/pivoting-guide/，正文如下：" target="_blank" rel="external">https://artkond.com/2017/03/23/pivoting-guide/，正文如下：</a></p>
-<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
+<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。<br><a id="more"></a></p>
 <h1 id="以公有IP为目标"><a href="#以公有IP为目标" class="headerlink" title="以公有IP为目标"></a>以公有IP为目标</h1><p>一个普遍的情况。比方说，你可以从互联网上找到一个网络应用程序中的RCE漏洞。你上传了一个shell，并想把你的攻击发展到内部网络。请注意，在这种特定情况下，你应该能够绑定受感染主机上的端口，并且应该可以从外部网络访问这些端口。</p>
 <h2 id="SSH端口转发"><a href="#SSH端口转发" class="headerlink" title="SSH端口转发"></a>SSH端口转发</h2><p>设法找到在主机上运行的SSH服务的凭据？很好！连接到主机，如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@host -D 1080</div></pre></td></tr></table></figure></p>
 <p>这将在攻击者一侧产生一个socks服务器（ssh客户端）。欢迎来到内部网络;）也可以将一个特定的端口转发给特定的主机。假设你需要访问主机192.168.1.1的内部网络中的SMB共享。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@host -L 445:192.168.1.1:445</div></pre></td></tr></table></figure></p>
@@ -96,7 +96,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;本文翻译自&lt;a href=&quot;https://artkond.com/2017/03/23/pivoting-guide/，正文如下：&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://artkond.com/2017/03/23/pivotin
+      &lt;p&gt;本文翻译自&lt;a href=&quot;https://artkond.com/2017/03/23/pivoting-guide/，正文如下：&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://artkond.com/2017/03/23/pivoting-guide/，正文如下：&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。&lt;br&gt;
     
     </summary>
     
@@ -207,7 +208,7 @@
     <link href="http://yoursite.com/2017/11/08/Kali%20Rolling%202017%E4%B8%8B%E5%AE%89%E8%A3%85w3af%E5%87%BA%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>http://yoursite.com/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/</id>
     <published>2017-11-08T03:57:43.000Z</published>
-    <updated>2017-11-08T06:03:17.635Z</updated>
+    <updated>2017-12-11T04:33:47.770Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></div><div class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></div><div class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></div><div class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></div></pre></td></tr></table></figure></p>
 <p><strong>解决方法2：</strong></p>
@@ -222,6 +223,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<a id="more"></a>
 <h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get build-dep python-lxml</div><div class="line">$ apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
 <h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-webkit python-webkit-dev</div></pre></td></tr></table></figure></p>
 <p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</div><div class="line">$ dpkg -i python-support_1.0.15_all.deb</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ apt install python-gtk2-dev</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</div><div class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</div></pre></td></tr></table></figure></p>
@@ -231,7 +233,19 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”&quot;&gt;&lt;a href=&quot;#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”
+      &lt;h2 id=&quot;Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”&quot;&gt;&lt;a href=&quot;#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”&quot; class=&quot;headerlink&quot; title=&quot;Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”&quot;&gt;&lt;/a&gt;Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;解决方法1：&lt;/strong&gt;&lt;br&gt;修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_INIT = _lib.SSL_ST_INIT&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_OK = _lib.SSL_ST_OK&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方法2：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;卸载w3af要求的pyOpenSSL版本&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ pip uninstall pyOpenSSL&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装最新版pyOpenSSL&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ pip install pyOpenSSL&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;PIPDependency(&lt;span class=&quot;string&quot;&gt;&#39;OpenSSL&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;pyOpenSSL&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Version of pyOpenSSL you are using&#39;&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -243,7 +257,7 @@
     <link href="http://yoursite.com/2017/06/20/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
     <id>http://yoursite.com/2017/06/20/Hexo初体验/</id>
     <published>2017-06-20T09:38:54.317Z</published>
-    <updated>2017-06-21T08:14:28.383Z</updated>
+    <updated>2017-12-11T04:33:14.752Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
 <p>来测试Node.js是否成功安装，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure></p>
@@ -261,6 +275,7 @@
 <li>将安装包放在 /usr/local下</li>
 <li>可以直接在命令行里使用</li>
 </ul>
+<a id="more"></a>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init [folder]</div></pre></td></tr></table></figure>
 <p>如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。</p>
 <h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo n [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
@@ -273,7 +288,22 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;安装Hexo前，需要安装&lt;a href=&quot;https://nodejs.org/en/download/&quot; target=&quot;_blank&quot; 
+      &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;安装Hexo前，需要安装&lt;a href=&quot;https://nodejs.org/en/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt;和&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git&lt;/a&gt;，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ node -v&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;来测试Node.js是否成功安装，输入&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm -v&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;来测试npm是否成功安装。&lt;/p&gt;
+&lt;p&gt;npm成功安装后，可使用&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;来快速安装Hexo&lt;/p&gt;
+&lt;p&gt;参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本地安装&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将安装包放在 ./node_modules 下（运行npm时所在的目录）&lt;/li&gt;
+&lt;li&gt;可以通过 require() 来引入本地安装的包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;全局安装&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将安装包放在 /usr/local下&lt;/li&gt;
+&lt;li&gt;可以直接在命令行里使用&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

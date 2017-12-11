@@ -113,7 +113,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/12/10/一个Red-Team成员的跳板-pivoting-指南/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="本文翻译自https://artkond.com/2017/03/23/pivoting-guide/，正文如下： 渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在">
-<meta property="og:updated_time" content="2017-12-10T15:53:37.211Z">
+<meta property="og:updated_time" content="2017-12-11T04:31:57.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个Red Team成员的跳板(pivoting)指南">
 <meta name="twitter:description" content="本文翻译自https://artkond.com/2017/03/23/pivoting-guide/，正文如下： 渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在">
@@ -359,7 +359,7 @@
 
       
         <p>本文翻译自<a href="https://artkond.com/2017/03/23/pivoting-guide/，正文如下：" target="_blank" rel="external">https://artkond.com/2017/03/23/pivoting-guide/，正文如下：</a></p>
-<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
+<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。<br><a id="more"></a></p>
 <h1 id="以公有IP为目标"><a href="#以公有IP为目标" class="headerlink" title="以公有IP为目标"></a>以公有IP为目标</h1><p>一个普遍的情况。比方说，你可以从互联网上找到一个网络应用程序中的RCE漏洞。你上传了一个shell，并想把你的攻击发展到内部网络。请注意，在这种特定情况下，你应该能够绑定受感染主机上的端口，并且应该可以从外部网络访问这些端口。</p>
 <h2 id="SSH端口转发"><a href="#SSH端口转发" class="headerlink" title="SSH端口转发"></a>SSH端口转发</h2><p>设法找到在主机上运行的SSH服务的凭据？很好！连接到主机，如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@host -D 1080</div></pre></td></tr></table></figure></p>
 <p>这将在攻击者一侧产生一个socks服务器（ssh客户端）。欢迎来到内部网络;）也可以将一个特定的端口转发给特定的主机。假设你需要访问主机192.168.1.1的内部网络中的SMB共享。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@host -L 445:192.168.1.1:445</div></pre></td></tr></table></figure></p>
