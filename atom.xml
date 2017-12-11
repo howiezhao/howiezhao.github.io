@@ -165,7 +165,7 @@
     <link href="http://yoursite.com/2017/12/04/Metasploit%E4%B8%ADshell%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>http://yoursite.com/2017/12/04/Metasploit中shell中文乱码解决方案/</id>
     <published>2017-12-04T15:46:32.000Z</published>
-    <updated>2017-12-11T08:38:28.098Z</updated>
+    <updated>2017-12-11T08:42:07.702Z</updated>
     
     <content type="html"><![CDATA[<p>有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。<br><strong>解决方法：</strong></p>
 <ol>
@@ -186,7 +186,7 @@
       <category term="Bug" scheme="http://yoursite.com/categories/Bug/"/>
     
     
-      <category term="-Kali" scheme="http://yoursite.com/tags/Kali/"/>
+      <category term="Kali" scheme="http://yoursite.com/tags/Kali/"/>
     
   </entry>
   
