@@ -4,9 +4,9 @@
   <subtitle>Machine Learning and Data Science</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://howiezhao.github.io/"/>
   <updated>2017-12-13T16:20:08.149Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://howiezhao.github.io/</id>
   
   <author>
     <name>Howie Zhao</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Udacity CS373:无人驾驶汽车编程学习笔记一</title>
-    <link href="http://yoursite.com/2017/12/14/Udacity-CS373-%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E6%B1%BD%E8%BD%A6%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
-    <id>http://yoursite.com/2017/12/14/Udacity-CS373-无人驾驶汽车编程学习笔记一/</id>
+    <link href="https://howiezhao.github.io/2017/12/14/Udacity-CS373-%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E6%B1%BD%E8%BD%A6%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
+    <id>https://howiezhao.github.io/2017/12/14/Udacity-CS373-无人驾驶汽车编程学习笔记一/</id>
     <published>2017-12-13T16:04:03.000Z</published>
     <updated>2017-12-13T16:20:08.149Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="Notes" scheme="http://yoursite.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
     
     
-      <category term="CS373" scheme="http://yoursite.com/tags/CS373/"/>
+      <category term="CS373" scheme="https://howiezhao.github.io/tags/CS373/"/>
     
-      <category term="无人驾驶" scheme="http://yoursite.com/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
+      <category term="无人驾驶" scheme="https://howiezhao.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
     
   </entry>
   
   <entry>
     <title>一个Red Team成员的跳板(pivoting)指南</title>
-    <link href="http://yoursite.com/2017/12/10/%E4%B8%80%E4%B8%AARed-Team%E6%88%90%E5%91%98%E7%9A%84%E8%B7%B3%E6%9D%BF-pivoting-%E6%8C%87%E5%8D%97/"/>
-    <id>http://yoursite.com/2017/12/10/一个Red-Team成员的跳板-pivoting-指南/</id>
+    <link href="https://howiezhao.github.io/2017/12/10/pivoting-guide/"/>
+    <id>https://howiezhao.github.io/2017/12/10/pivoting-guide/</id>
     <published>2017-12-10T14:51:35.000Z</published>
     <updated>2017-12-11T08:35:36.649Z</updated>
     
@@ -126,15 +126,15 @@
     
     </summary>
     
-      <category term="Translation" scheme="http://yoursite.com/categories/Translation/"/>
+      <category term="Translation" scheme="https://howiezhao.github.io/categories/Translation/"/>
     
     
   </entry>
   
   <entry>
     <title>《欺骗的艺术》读书笔记</title>
-    <link href="http://yoursite.com/2017/12/05/%E3%80%8A%E6%AC%BA%E9%AA%97%E7%9A%84%E8%89%BA%E6%9C%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/12/05/《欺骗的艺术》读书笔记/</id>
+    <link href="https://howiezhao.github.io/2017/12/05/the-art-of-deception/"/>
+    <id>https://howiezhao.github.io/2017/12/05/the-art-of-deception/</id>
     <published>2017-12-04T16:31:08.000Z</published>
     <updated>2017-12-11T08:37:03.951Z</updated>
     
@@ -156,17 +156,17 @@
     
     </summary>
     
-      <category term="Notes" scheme="http://yoursite.com/categories/Notes/"/>
+      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
     
     
   </entry>
   
   <entry>
     <title>Kali持久加密USB安装所遇问题总结</title>
-    <link href="http://yoursite.com/2017/12/04/Kali%E6%8C%81%E4%B9%85%E5%8A%A0%E5%AF%86USB%E5%AE%89%E8%A3%85%E6%89%80%E9%81%87%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2017/12/04/Kali持久加密USB安装所遇问题总结/</id>
+    <link href="https://howiezhao.github.io/2017/12/04/Kali%E6%8C%81%E4%B9%85%E5%8A%A0%E5%AF%86USB%E5%AE%89%E8%A3%85%E6%89%80%E9%81%87%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>https://howiezhao.github.io/2017/12/04/Kali持久加密USB安装所遇问题总结/</id>
     <published>2017-12-04T15:54:56.000Z</published>
-    <updated>2017-12-11T08:38:15.641Z</updated>
+    <updated>2017-12-11T08:38:15.642Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">device descriptor <span class="built_in">read</span>/8, error -110</div><div class="line">...</div></pre></td></tr></table></figure></p>
 <p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以讲U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
@@ -178,17 +178,17 @@
     
     </summary>
     
-      <category term="Bug" scheme="http://yoursite.com/categories/Bug/"/>
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
     
     
-      <category term="Kali" scheme="http://yoursite.com/tags/Kali/"/>
+      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
     
   </entry>
   
   <entry>
     <title>Metasploit中shell中文乱码解决方案</title>
-    <link href="http://yoursite.com/2017/12/04/Metasploit%E4%B8%ADshell%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://yoursite.com/2017/12/04/Metasploit中shell中文乱码解决方案/</id>
+    <link href="https://howiezhao.github.io/2017/12/04/Metasploit%E4%B8%ADshell%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://howiezhao.github.io/2017/12/04/Metasploit中shell中文乱码解决方案/</id>
     <published>2017-12-04T15:46:32.000Z</published>
     <updated>2017-12-11T08:42:07.702Z</updated>
     
@@ -208,19 +208,19 @@
     
     </summary>
     
-      <category term="Bug" scheme="http://yoursite.com/categories/Bug/"/>
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
     
     
-      <category term="Kali" scheme="http://yoursite.com/tags/Kali/"/>
+      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
     
   </entry>
   
   <entry>
     <title>Kali Rolling 2017更新后无法启动解决方案</title>
-    <link href="http://yoursite.com/2017/11/25/Kali-Rolling-2017%E6%9B%B4%E6%96%B0%E5%90%8E%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://yoursite.com/2017/11/25/Kali-Rolling-2017更新后无法启动解决方案/</id>
+    <link href="https://howiezhao.github.io/2017/11/25/Kali-Rolling-2017%E6%9B%B4%E6%96%B0%E5%90%8E%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://howiezhao.github.io/2017/11/25/Kali-Rolling-2017更新后无法启动解决方案/</id>
     <published>2017-11-25T11:04:29.000Z</published>
-    <updated>2017-12-11T08:37:59.381Z</updated>
+    <updated>2017-12-11T08:37:59.382Z</updated>
     
     <content type="html"><![CDATA[<h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新Kali后重新启动会出现如下显示，并无法进入系统界面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</div><div class="line">Enter <span class="string">'help'</span> <span class="keyword">for</span> a list of built-in commands.</div><div class="line"></div><div class="line">(initramfs)</div></pre></td></tr></table></figure></p>
 <p><strong>解决方法：</strong></p>
@@ -237,19 +237,19 @@
     
     </summary>
     
-      <category term="Bug" scheme="http://yoursite.com/categories/Bug/"/>
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
     
     
-      <category term="Kali" scheme="http://yoursite.com/tags/Kali/"/>
+      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
     
   </entry>
   
   <entry>
     <title>Kali Rolling 2017下安装w3af出错解决方案</title>
-    <link href="http://yoursite.com/2017/11/08/Kali%20Rolling%202017%E4%B8%8B%E5%AE%89%E8%A3%85w3af%E5%87%BA%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://yoursite.com/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/</id>
+    <link href="https://howiezhao.github.io/2017/11/08/Kali%20Rolling%202017%E4%B8%8B%E5%AE%89%E8%A3%85w3af%E5%87%BA%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>https://howiezhao.github.io/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/</id>
     <published>2017-11-08T03:57:43.000Z</published>
-    <updated>2017-12-11T08:37:43.032Z</updated>
+    <updated>2017-12-11T08:37:43.033Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></div><div class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></div><div class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></div><div class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></div></pre></td></tr></table></figure></p>
 <p><strong>解决方法2：</strong></p>
@@ -290,18 +290,18 @@
     
     </summary>
     
-      <category term="Bug" scheme="http://yoursite.com/categories/Bug/"/>
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
     
     
-      <category term="Kali" scheme="http://yoursite.com/tags/Kali/"/>
+      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
     
   </entry>
   
   <entry>
     <title>Hexo初体验</title>
-    <link href="http://yoursite.com/2017/06/20/Hexo%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>http://yoursite.com/2017/06/20/Hexo初体验/</id>
-    <published>2017-06-20T09:38:54.317Z</published>
+    <link href="https://howiezhao.github.io/2017/06/20/hexo-experience/"/>
+    <id>https://howiezhao.github.io/2017/06/20/hexo-experience/</id>
+    <published>2017-06-20T09:38:54.318Z</published>
     <updated>2017-12-11T08:32:36.687Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
@@ -352,10 +352,10 @@
     
     </summary>
     
-      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+      <category term="Tips" scheme="https://howiezhao.github.io/categories/Tips/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://howiezhao.github.io/tags/Hexo/"/>
     
   </entry>
   
