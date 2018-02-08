@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2017-12-13T16:20:08.149Z</updated>
+  <updated>2018-02-08T11:41:07.846Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -16,9 +16,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Kali Rolling 2017中无法登录BeEF的解决方案</title>
+    <link href="https://howiezhao.github.io/2018/02/08/kali-beef-bug/"/>
+    <id>https://howiezhao.github.io/2018/02/08/kali-beef-bug/</id>
+    <published>2018-02-08T11:18:51.000Z</published>
+    <updated>2018-02-08T11:41:07.846Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：<br>将/usr/share/beef-xss/extensions/admin_ui/api/handler.rb文件中第22行的<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">minified = Uglifier.compile(evaluated)</div></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">minified = evaluated</div></pre></td></tr></table></figure></p>
+<p>保存并重启BeEF即可。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：&lt;br&gt;将/usr/share/beef-xss/extensions/admin_ui
+    
+    </summary>
+    
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
+    
+    
+      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Udacity CS373:无人驾驶汽车编程学习笔记一</title>
-    <link href="https://howiezhao.github.io/2017/12/14/Udacity-CS373-%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E6%B1%BD%E8%BD%A6%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
-    <id>https://howiezhao.github.io/2017/12/14/Udacity-CS373-无人驾驶汽车编程学习笔记一/</id>
+    <link href="https://howiezhao.github.io/2017/12/14/cs373-1/"/>
+    <id>https://howiezhao.github.io/2017/12/14/cs373-1/</id>
     <published>2017-12-13T16:04:03.000Z</published>
     <updated>2017-12-13T16:20:08.149Z</updated>
     
@@ -163,8 +188,8 @@
   
   <entry>
     <title>Kali持久加密USB安装所遇问题总结</title>
-    <link href="https://howiezhao.github.io/2017/12/04/Kali%E6%8C%81%E4%B9%85%E5%8A%A0%E5%AF%86USB%E5%AE%89%E8%A3%85%E6%89%80%E9%81%87%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>https://howiezhao.github.io/2017/12/04/Kali持久加密USB安装所遇问题总结/</id>
+    <link href="https://howiezhao.github.io/2017/12/04/kali-live-usb-bug/"/>
+    <id>https://howiezhao.github.io/2017/12/04/kali-live-usb-bug/</id>
     <published>2017-12-04T15:54:56.000Z</published>
     <updated>2017-12-11T08:38:15.642Z</updated>
     
@@ -187,8 +212,8 @@
   
   <entry>
     <title>Metasploit中shell中文乱码解决方案</title>
-    <link href="https://howiezhao.github.io/2017/12/04/Metasploit%E4%B8%ADshell%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://howiezhao.github.io/2017/12/04/Metasploit中shell中文乱码解决方案/</id>
+    <link href="https://howiezhao.github.io/2017/12/04/metasploit-luanma/"/>
+    <id>https://howiezhao.github.io/2017/12/04/metasploit-luanma/</id>
     <published>2017-12-04T15:46:32.000Z</published>
     <updated>2017-12-11T08:42:07.702Z</updated>
     
@@ -217,8 +242,8 @@
   
   <entry>
     <title>Kali Rolling 2017更新后无法启动解决方案</title>
-    <link href="https://howiezhao.github.io/2017/11/25/Kali-Rolling-2017%E6%9B%B4%E6%96%B0%E5%90%8E%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://howiezhao.github.io/2017/11/25/Kali-Rolling-2017更新后无法启动解决方案/</id>
+    <link href="https://howiezhao.github.io/2017/11/25/kali-update-bug/"/>
+    <id>https://howiezhao.github.io/2017/11/25/kali-update-bug/</id>
     <published>2017-11-25T11:04:29.000Z</published>
     <updated>2017-12-11T08:37:59.382Z</updated>
     
@@ -246,8 +271,8 @@
   
   <entry>
     <title>Kali Rolling 2017下安装w3af出错解决方案</title>
-    <link href="https://howiezhao.github.io/2017/11/08/Kali%20Rolling%202017%E4%B8%8B%E5%AE%89%E8%A3%85w3af%E5%87%BA%E9%94%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://howiezhao.github.io/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/</id>
+    <link href="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/"/>
+    <id>https://howiezhao.github.io/2017/11/08/kali-w3af-bug/</id>
     <published>2017-11-08T03:57:43.000Z</published>
     <updated>2017-12-11T08:37:43.033Z</updated>
     

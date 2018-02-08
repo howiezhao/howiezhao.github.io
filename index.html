@@ -290,7 +290,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/14/Udacity-CS373-无人驾驶汽车编程学习笔记一/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/02/08/kali-beef-bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -309,7 +309,143 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/14/Udacity-CS373-无人驾驶汽车编程学习笔记一/" itemprop="url">Udacity CS373:无人驾驶汽车编程学习笔记一</a></h1>
+                <a class="post-title-link" href="/2018/02/08/kali-beef-bug/" itemprop="url">Kali Rolling 2017中无法登录BeEF的解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T19:18:51+08:00">
+                2018-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bug/" itemprop="url" rel="index">
+                    <span itemprop="name">Bug</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：<br>将/usr/share/beef-xss/extensions/admin_ui/api/handler.rb文件中第22行的<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">minified = Uglifier.compile(evaluated)</div></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">minified = evaluated</div></pre></td></tr></table></figure></p>
+<p>保存并重启BeEF即可。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/14/cs373-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/cs373-1/" itemprop="url">Udacity CS373:无人驾驶汽车编程学习笔记一</a></h1>
         
 
         <div class="post-meta">
@@ -702,7 +838,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/04/Kali持久加密USB安装所遇问题总结/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/04/kali-live-usb-bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -721,7 +857,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/04/Kali持久加密USB安装所遇问题总结/" itemprop="url">Kali持久加密USB安装所遇问题总结</a></h1>
+                <a class="post-title-link" href="/2017/12/04/kali-live-usb-bug/" itemprop="url">Kali持久加密USB安装所遇问题总结</a></h1>
         
 
         <div class="post-meta">
@@ -837,7 +973,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/04/Metasploit中shell中文乱码解决方案/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/04/metasploit-luanma/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -856,7 +992,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/04/Metasploit中shell中文乱码解决方案/" itemprop="url">Metasploit中shell中文乱码解决方案</a></h1>
+                <a class="post-title-link" href="/2017/12/04/metasploit-luanma/" itemprop="url">Metasploit中shell中文乱码解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -978,7 +1114,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/25/Kali-Rolling-2017更新后无法启动解决方案/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/25/kali-update-bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -997,7 +1133,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/25/Kali-Rolling-2017更新后无法启动解决方案/" itemprop="url">Kali Rolling 2017更新后无法启动解决方案</a></h1>
+                <a class="post-title-link" href="/2017/11/25/kali-update-bug/" itemprop="url">Kali Rolling 2017更新后无法启动解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -1118,7 +1254,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -1137,7 +1273,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/" itemprop="url">Kali Rolling 2017下安装w3af出错解决方案</a></h1>
+                <a class="post-title-link" href="/2017/11/08/kali-w3af-bug/" itemprop="url">Kali Rolling 2017下安装w3af出错解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -1222,7 +1358,7 @@
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/08/Kali Rolling 2017下安装w3af出错解决方案/#more" rel="contents">
+            <a class="btn" href="/2017/11/08/kali-w3af-bug/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1457,7 +1593,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
