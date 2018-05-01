@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-02-08T11:41:07.846Z</updated>
+  <updated>2018-05-01T16:03:46.619Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -14,6 +14,282 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>反取证之Linux</title>
+    <link href="https://howiezhao.github.io/2018/05/02/anti-forensics-linux/"/>
+    <id>https://howiezhao.github.io/2018/05/02/anti-forensics-linux/</id>
+    <published>2018-05-01T16:02:31.000Z</published>
+    <updated>2018-05-01T16:03:46.619Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="计算机取证" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>形而上与形而下</title>
+    <link href="https://howiezhao.github.io/2018/05/01/metaphysics-physics/"/>
+    <id>https://howiezhao.github.io/2018/05/01/metaphysics-physics/</id>
+    <published>2018-05-01T15:30:51.000Z</published>
+    <updated>2018-05-01T16:00:05.782Z</updated>
+    
+    <content type="html"><![CDATA[<p>形而上者谓之道，形而下者谓之器。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;形而上者谓之道，形而下者谓之器。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sniper、Battering ram、Pitchfork、Cluster bomb的区别</title>
+    <link href="https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/"/>
+    <id>https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/</id>
+    <published>2018-05-01T14:45:55.000Z</published>
+    <updated>2018-05-01T15:58:14.824Z</updated>
+    
+    <content type="html"><![CDATA[<p>Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]：</p>
+<h2 id="Sniper"><a href="#Sniper" class="headerlink" title="Sniper"></a>Sniper</h2><p>Sniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1(default:x)</th>
+<th>Position2(default:y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td>1</td>
+<td>y</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>y</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>x</td>
+<td>1</td>
+</tr>
+<tr>
+<td>#4</td>
+<td>x</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Battering-ram"><a href="#Battering-ram" class="headerlink" title="Battering ram"></a>Battering ram</h2><p>Battering ram，中文“攻城槌”，每次针对多个Payload Position，使用1个Payload set，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Pitchfork"><a href="#Pitchfork" class="headerlink" title="Pitchfork"></a>Pitchfork</h2><p>Pitchfork，中文“杈子”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用平行模式，请求次数以最小列表项为准，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>b</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Cluster-bomb"><a href="#Cluster-bomb" class="headerlink" title="Cluster bomb"></a>Cluster bomb</h2><p>Cluster bomb，中文“集束炸弹”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用交叉模式，请求次数为各列表项之积，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#1</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>1</td>
+<td>b</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>1</td>
+<td>c</td>
+</tr>
+<tr>
+<td>#4</td>
+<td>1</td>
+<td>d</td>
+</tr>
+<tr>
+<td>#5</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#6</td>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr>
+<td>#7</td>
+<td>2</td>
+<td>c</td>
+</tr>
+<tr>
+<td>#8</td>
+<td>2</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]：&lt;/p&gt;
+&lt;h2
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>URI与URL的区别</title>
+    <link href="https://howiezhao.github.io/2018/04/29/url-uri/"/>
+    <id>https://howiezhao.github.io/2018/04/29/url-uri/</id>
+    <published>2018-04-29T08:40:08.000Z</published>
+    <updated>2018-04-29T10:43:45.751Z</updated>
+    
+    <content type="html"><![CDATA[<p>URI，全称”Uniform Resource Identifier”，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。</p>
+<p>URL，全称”Uniform Resource Locator”，中文“统一资源定位符”，URL是URI的子集。示例如下：<br><code>https://howiezhao.github.io/2018/04/29/url-uri/</code><br>上面这个URL唯一标识了互联网中一台服务器上的一篇文章。</p>
+<p>URN，全称”Uniform Resource Name”，中文“统一资源名称”，是另一种形式的URI，它通过特定命名空间中的唯一名称来标识资源。示例如下：<br><code>urn:isbn:9780141036144</code><br>上面这个URN唯一标识了乔治·奥威尔所著的《1984》。</p>
+<p>简单说，URL代表一个人的位置，URN代表一个人的身份证号，通过URL和URN都可以唯一的找到这个人，所以它们都属于URI。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;URI，全称”Uniform Resource Identifier”，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>渗透中PoC、Exp、Payload与Shellcode的区别</title>
+    <link href="https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/"/>
+    <id>https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/</id>
+    <published>2018-04-29T08:33:17.000Z</published>
+    <updated>2018-04-29T10:10:13.742Z</updated>
+    
+    <content type="html"><![CDATA[<p>PoC，全称”Proof of Concept”，中文“概念验证”，常指一段漏洞证明的代码。<br>Exp，全称”Exploit”，中文“利用”，指利用系统漏洞进行攻击的动作。<br>Payload，中文“有效载荷”，指成功exploit之后，真正在目标系统执行的代码或指令。<br>Shellcode，简单翻译“shell代码”，是Payload的一种，由于其建立正向/反向shell而得名。</p>
+<p>几点注意：<br>PoC是用来证明漏洞存在的，Exp是用来利用漏洞的，两者通常不是一类，或者说，PoC通常是无害的，Exp通常是有害的，有了PoC，才有Exp。<br>Payload有很多种，它可以是Shellcode，也可以直接是一段系统命令。同一个Payload可以用于多个漏洞，但每个漏洞都有其自己的Exp，也就是说不存在通用的Exp。<br>Shellcode也有很多种，包括正向的，反向的，甚至meterpreter。<br>Shellcode与Shellshcok不是一个，Shellshock特指14年发现的Shellshock漏洞。</p>
+<a id="more"></a>
+<p>另外：<br>在Metasploit Framework 6大模块中有一个Payload模块，在该模块下有Single、Stager、Stages这三种类型，Single是一个all-in-one的Payload，不依赖其他的文件，所以它的体积会比较大，Stager主要用于当目标计算机的内存有限时，可以先传输一个较小的Stager用于建立连接，Stages指利用Stager建立的连接下载后续的Payload。Stager和Stages都有多种类型，适用于不同场景。</p>
+<p>尾巴：<br>想象自己是一个特工，你的目标是监控一个重要的人，有一天你怀疑目标家里的窗子可能没有关，于是你上前推了推，结果推开了，这是一个PoC，于是你回去了，开始准备第二天的渗透计划，第二天你通过同样的漏洞渗透进了它家，仔细查看了所有的重要文件，离开时还安装了一个隐蔽的窃听器，这一天你所做的就是一个Exp，你在他家所做的就是不同的Payload，就把窃听器当作Shellcode吧！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;PoC，全称”Proof of Concept”，中文“概念验证”，常指一段漏洞证明的代码。&lt;br&gt;Exp，全称”Exploit”，中文“利用”，指利用系统漏洞进行攻击的动作。&lt;br&gt;Payload，中文“有效载荷”，指成功exploit之后，真正在目标系统执行的代码或指令。&lt;br&gt;Shellcode，简单翻译“shell代码”，是Payload的一种，由于其建立正向/反向shell而得名。&lt;/p&gt;
+&lt;p&gt;几点注意：&lt;br&gt;PoC是用来证明漏洞存在的，Exp是用来利用漏洞的，两者通常不是一类，或者说，PoC通常是无害的，Exp通常是有害的，有了PoC，才有Exp。&lt;br&gt;Payload有很多种，它可以是Shellcode，也可以直接是一段系统命令。同一个Payload可以用于多个漏洞，但每个漏洞都有其自己的Exp，也就是说不存在通用的Exp。&lt;br&gt;Shellcode也有很多种，包括正向的，反向的，甚至meterpreter。&lt;br&gt;Shellcode与Shellshcok不是一个，Shellshock特指14年发现的Shellshock漏洞。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux中/etc/passwd与/etc/shadow的区别</title>
+    <link href="https://howiezhao.github.io/2018/04/29/passwd-and-shadow/"/>
+    <id>https://howiezhao.github.io/2018/04/29/passwd-and-shadow/</id>
+    <published>2018-04-29T07:32:14.000Z</published>
+    <updated>2018-04-29T08:29:31.463Z</updated>
+    
+    <content type="html"><![CDATA[<p>简单来说，<code>/etc/passwd</code>存储一般的用户信息，任何人都可以访问；<code>/etc/shadow</code>存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍：</p>
+<h2 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h2><p>早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将用户密码存储到了<code>/etc/shadow</code>文件中，并将其权限设为仅 root 用户。在渗透过程中，这两个文件最好都检查。<br><code>/etc/passwd</code>的文件格式为：<strong>用户名:密码:用户ID:用户组ID:注释:用户目录:登录shell</strong>，如果密码被存储在了<code>/etc/shadow</code>文件中，则此文件中密码项为x，常见形式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root:x:0:0:root:/root:/bin/bash</div></pre></td></tr></table></figure></p>
+<h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h2><p><code>/etc/shadow</code>的文件格式为：<strong>用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，如果密码项为 ! 或 * ，则代表此账号不能用于登录，密码项中更为详细的格式为：<strong>\$加密方法ID\$Salt\$加密值</strong>，常见形式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root:<span class="variable">$6</span><span class="variable">$Fsf6Q6SH</span><span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单来说，&lt;code&gt;/etc/passwd&lt;/code&gt;存储一般的用户信息，任何人都可以访问；&lt;code&gt;/etc/shadow&lt;/code&gt;存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍：&lt;/p&gt;
+&lt;h2 id=&quot;etc-passwd&quot;&gt;&lt;a href
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Kali Rolling 2017中无法登录BeEF的解决方案</title>
@@ -161,28 +437,38 @@
     <link href="https://howiezhao.github.io/2017/12/05/the-art-of-deception/"/>
     <id>https://howiezhao.github.io/2017/12/05/the-art-of-deception/</id>
     <published>2017-12-04T16:31:08.000Z</published>
-    <updated>2017-12-11T08:37:03.951Z</updated>
+    <updated>2018-04-30T12:32:34.951Z</updated>
     
     <content type="html"><![CDATA[<ol>
-<li>人的因素是安全过程中最薄弱的环节</li>
-<li>你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯</li>
+<li>人的因素是安全过程中最薄弱的环节。</li>
+<li>你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。</li>
 <li>把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。</li>
 <li>不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。</li>
+<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。<a id="more"></a></li>
+<li>安全培训需要强调一点：当你有疑虑时，必须确认，确认，再确认。</li>
+<li>执法部门的人跟军队里的人一样，从接受训练的第一天起就形成了一个根深蒂固的等级观念。只要社交工程师扮作警官或中尉 —— 级别比跟他谈话的人高 —— 受害者就会拘于一条长时间得来的教训，即“不要质问比你职别高的人”。级别，换个说法，就是特权，尤其是不被级别低的人质问的特权。</li>
+<li>每个人都应该明白社交工程师的伎俩：获得尽可能多的与目标有关的信息，再利用这些信息使人相信自己是内部人员。然后一剑封喉。</li>
+<li>逆向社交工程学：一种社交工程攻击方式。攻击者建立起这样一个场景：让受害者遇到问题，并向攻击者寻求帮助。逆向社交工程学的另一种表现形式是以其人之道还治其人之身。攻击目标识别出自己受到了攻击，从而利用心理学原理来牵制攻击者，并且从他那里引诱出尽可能多的信息，进而有效的保护目标资产。</li>
+<li>新员工最容易成为攻击者的目标。他们认识的人还不多，也不太清楚公司的办事程序，以及什么该做什么不该做。而且，为给人留下良好的第一印象，他们急于表现自己是多么乐于合作与反应迅捷。</li>
+<li>第一条原则：除非万不得已，否则不要造访他们的办公室。仅凭着电话中的声音，他们是很难认出你来的，而如果他们不能人称认出你，那就不能逮捕你。</li>
 </ol>
 ]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;人的因素是安全过程中最薄弱的环节&lt;/li&gt;
-&lt;li&gt;你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯&lt;/li&gt;
+&lt;li&gt;人的因素是安全过程中最薄弱的环节。&lt;/li&gt;
+&lt;li&gt;你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。&lt;/li&gt;
 &lt;li&gt;把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。&lt;/li&gt;
-&lt;li&gt;不要在得到关键信息后马上结束谈话。再
+&lt;li&gt;不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。&lt;/li&gt;
+&lt;li&gt;两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。
     
     </summary>
     
       <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
     
+    
+      <category term="社会工程学" scheme="https://howiezhao.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
     
   </entry>
   
@@ -327,7 +613,7 @@
     <link href="https://howiezhao.github.io/2017/06/20/hexo-experience/"/>
     <id>https://howiezhao.github.io/2017/06/20/hexo-experience/</id>
     <published>2017-06-20T09:38:54.318Z</published>
-    <updated>2018-03-29T12:24:59.533Z</updated>
+    <updated>2018-04-26T09:25:47.630Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
 <p>来测试Node.js是否成功安装，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure></p>
@@ -351,6 +637,7 @@
 <h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo n [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
 <p>如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
 <h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
+<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
 <h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
 <h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div></pre></td></tr></table></figure>
 <p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
