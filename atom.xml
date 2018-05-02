@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-05-01T16:03:46.619Z</updated>
+  <updated>2018-05-02T01:14:05.041Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -20,9 +20,18 @@
     <link href="https://howiezhao.github.io/2018/05/02/anti-forensics-linux/"/>
     <id>https://howiezhao.github.io/2018/05/02/anti-forensics-linux/</id>
     <published>2018-05-01T16:02:31.000Z</published>
-    <updated>2018-05-01T16:03:46.619Z</updated>
+    <updated>2018-05-02T01:14:05.041Z</updated>
+    
+    <content type="html"><![CDATA[<p>后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是meterpreter的先天优势，它完全基于内存，Linux中的反取证主要涉及MAC时间、日志文件、history：</p>
+<h2 id="MAC时间"><a href="#MAC时间" class="headerlink" title="MAC时间"></a>MAC时间</h2><p>MAC即Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间(例如通过cat查看时)，更改时间指对文件属性、权限更改时的时间。使用<code>ls -l</code>默认查看的是修改时间，要查看其余2个时间，可以加参数<code>ls -l --time=atime/ctime</code>，另一个查看MAC时间的命令是<code>stat</code>。使用<code>touch -d &quot;5 days ago&quot;</code>或<code>touch -t 1501010101</code>可以修改MAC中的MA时间。meterpreter中的timestomp可以方便的修改MAC时间。<br><a id="more"></a></p>
+<h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>Linux中的日志文件主要有/var/log/auth.log、/var/log/secure、/var/log/btmp、/var/log/wtmp、/var/log/lastlog、/var/log/faillog</p>
+<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>Linux中，每次输入的命令都会记录在用户文件夹中的.bash_history文件中，默认记录1000条命令，使用<code>history</code>命令即可查看，清除记录的方法是使用<code>history -c</code>命令。</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是meterpreter的先天优势，它完全基于内存，Linux中的反取证主要涉及MAC时间、日志文件、history：&lt;/p&gt;
+&lt;h2 id=&quot;MAC时间&quot;&gt;&lt;a href=&quot;#MAC时间&quot; class=&quot;headerlink&quot; title=&quot;MAC时间&quot;&gt;&lt;/a&gt;MAC时间&lt;/h2&gt;&lt;p&gt;MAC即Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间(例如通过cat查看时)，更改时间指对文件属性、权限更改时的时间。使用&lt;code&gt;ls -l&lt;/code&gt;默认查看的是修改时间，要查看其余2个时间，可以加参数&lt;code&gt;ls -l --time=atime/ctime&lt;/code&gt;，另一个查看MAC时间的命令是&lt;code&gt;stat&lt;/code&gt;。使用&lt;code&gt;touch -d &amp;quot;5 days ago&amp;quot;&lt;/code&gt;或&lt;code&gt;touch -t 1501010101&lt;/code&gt;可以修改MAC中的MA时间。meterpreter中的timestomp可以方便的修改MAC时间。&lt;br&gt;
     
     </summary>
     
