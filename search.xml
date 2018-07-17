@@ -1,22 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[反取证之Windows]]></title>
-    <url>%2F2018%2F05%2F02%2Fanti-forensics-windows%2F</url>
-    <content type="text"><![CDATA[MACE时间和反取证之Linux中的一样，Windows也有MAC时间，不过在Windows中，C指的是Created，即创建时间，Windows中默认显示的是修改时间，另外，在Windows的NTFS文件系统中还有E时间，即MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除E时间，同样，meterpreter中的timestomp命令可以方便的修改MACE时间。 隐藏新建账号当在目标系统上新建了用户账号后，通常会在登录界面上显示出来，要实现隐藏，可以修改注册表项，采用如下命令：1REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v uname /t REG_DWORD /d 0 注意：这种隐藏只是在登录界面的隐藏，用户使用net user或“本地用户和组”仍然可以查到新建的账户。 日志文件Windows系统日志文件一般存放在Windows文件夹下，可以使用如下命令删除之：1del %windir%\*.log /a/s/q/f 另外，meterpreter中的clearev命令可以删除事件查看器中的日志信息。 最后，请不要忘记HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。]]></content>
+    <title><![CDATA[关于PowerShell]]></title>
+    <url>%2F2018%2F07%2F16%2Fabout-powershell%2F</url>
+    <content type="text"><![CDATA[PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下： Windows Server 2003：PowerShell 1.0 Windows 7：PowerShell 2.0 Windows 8：PowerShell 3.0 Windows 10：PowerShell 4.0 优势及劣势PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。 Cmdlets与pipelineCmdlets与pipeline是PowerShell中的两个核心概念， 常用命令PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。1234Get-Host #查看PowerShell版本信息help #查看帮助信息Install-Module #从powershellgallery.com下载安装第三方模块Import-Module #导入模块，安装的模块需要先导入才能使用 常用模块 posh-git：PowerShell中的Git增强模块 oh-my-posh：类似于oh-my-zsh PSReadline：一个增强的命令行编辑模块 windows-screenfetch：Windows下的screenfetch模块]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows10的传递优化]]></title>
+    <url>%2F2018%2F07%2F16%2Fdelivery-optimization%2F</url>
+    <content type="text"><![CDATA[为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即传递优化(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[useradd与adduser]]></title>
+    <url>%2F2018%2F07%2F16%2Fuseradd-adduser%2F</url>
+    <content type="text"><![CDATA[在Linux中创建用户可以用useradd或者adduser，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。 adduser当使用adduser howie命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。 useradd当使用useradd howie命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用passwd howie命令。其次，useradd有众多参数，我们可以通过使用这些参数来达到和adduser一样的效果，如useradd -d /home/howie -m -s /bin/bash howie，不过注意之后还得使用passwd命令创建密码，当然也可以使用-p参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。 userdel当使用userdel howie命令时，系统只会删除howie用户，并不会删除用户主目录，因此可以使用-r参数。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[云服务的三种模式]]></title>
+    <url>%2F2018%2F07%2F15%2Fxaas%2F</url>
+    <content type="text"><![CDATA[云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。 IaaSIaaS，Infrastructure as a Service(基础设施即服务)，云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是VPS，即Virtual Private Server(虚拟专用服务器)，这类服务一般提供必要的Shell接口，可使用户连接到操作系统进行相关配置，常见的VPS厂商有Amazon EC2、阿里云 ECS等。 PaaSPaaS，Platform as a Service(平台即服务)，云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是虚拟空间，这类服务一般会提供必要的Web服务器、数据库等，用户可以直接在其上部署Web应用，我用过的虚拟空间有老薛主机，常见的PaaS厂商有Google App Engine。 SaaSSaaS，Software as a Service(软件即服务)，云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的Hexo、WordPress等。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[编译与构建]]></title>
+    <url>%2F2018%2F07%2F15%2Fcompile-build%2F</url>
+    <content type="text"><![CDATA[编译编译(compile)，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为编译器(compiler)。但要注意，编译器在同一时刻只能转换一个编译单元，所谓编译单元是指单个的源文件。目前在Linux中使用最广的编译器是GCC，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：1$ gcc test.c -o test 若不指定生成文件，则默认生成a.out。 构建程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是构建系统(build system)，构建系统所作的就是构建(build)，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。在Linux中使用最广的构建系统是GNU make，它会读取makefile文件中的配置信息来完成构建，makefile的简要格式如下：12345678editor : main.o text.o gcc -o editor main.o text.omain.o : main.c def.h gcc -c main.c #-c参数指定生成.o文件text.o : text.c com.h gcc -c text.cinstall : editor mv editor /usr/local 冒号前面为target，即要生成的文件；冒号后面为dependencies，即被依赖的文件；每一个target:dependencies对的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做伪target，如第7行所示。dependencies可以为空，如常用的target为clean时，就没有依赖，只有命令。当输入make或make editor，即可开始构建。若editor这个target文件不存在，或者main.o、text.o这两个依赖文件被修改，都会导致make调用其下的命令gcc -o editor main.o text.o；接下来，由于引用到main.o和text.o，make会检查main.o的依赖main.c、def.h有无更新，如果有，则执行其下的命令gcc -c main.c；同理，也适用于text.o。当输入make install，make会检查install的依赖editor是否是最新，如果是，则执行其下的命令mv editor /usr/local。makefile中也可以包含宏，上面的文件使用宏后如下所示：12345678910OBJECTS = main.o text.oINSTALL_PATH = /usr/localeditor : $(OBJECTS) gcc -o editor $(OBJECTS)main.o : main.c gcc -c main.ctext.o : text.c gcc -c text.cinstall : editor mv editor $(INSTALL_PATH) 另外的为了在Windows中使用GCC，诞生了MinGW 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的MinGW-w64项目，是从原MinGW项目产生的分支。Java世界中使用最广的构建系统是Maven，而在Android Studio中则使用到了后起之秀Gradle。C语言从源代码到可执行文件的过程依次经过了预处理、编译、链接这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux系统加固]]></title>
+    <url>%2F2018%2F05%2F19%2Flinux-reinforcement%2F</url>
+    <content type="text"><![CDATA[账户与口令服务安全文件系统安全]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows系统加固]]></title>
+    <url>%2F2018%2F05%2F19%2Fwindows-reinforcement%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[802.11协议分析]]></title>
+    <url>%2F2018%2F05%2F11%2F80211%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IPSec运行机制]]></title>
+    <url>%2F2018%2F05%2F11%2Fipsec%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IP协议分析]]></title>
+    <url>%2F2018%2F05%2F11%2Fip%2F</url>
+    <content type="text"><![CDATA[IP(Internet Protocol，网际协议) 数据报格式]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[TCP协议分析]]></title>
+    <url>%2F2018%2F05%2F11%2Ftcp%2F</url>
+    <content type="text"><![CDATA[TCP(Transmission Control Protocol，传输控制协议) 报文段结构]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTTPS运行机制]]></title>
+    <url>%2F2018%2F05%2F11%2Fhttps%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTTP协议分析]]></title>
+    <url>%2F2018%2F05%2F11%2FHTTP%2F</url>
+    <content type="text"><![CDATA[HTTP(Hypertext Transfer Protocol，超文本传输协议) 报文格式HTTP请求报文方法字段可以取几种不同的值，包括GET、POST、HEAD、PUT和DELETE。绝大部分的HTTP请求报文使用GET方法。Host首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；Connection首部行指明采用非持续连接还是持续连接；User-Agent首部行指明用户代理；Accept-Language首部行指明用户想得到的语言版本。使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。 HTTP响应报文Date首部行指示服务器产生并发送该响应报文的日期和时间；Last-Modified首部行指示了对象创建或者最后修改的日期和时间；Server首部行指示服务器类型，类似于User-Agent首部行；Content-Length首部行指示了被发送对象中的字节数；Content-Type首部行指示了实体体中的对象的MIME类型。常见的状态码和其对应的短语：200 OK：请求成功，信息在返回的响应报文中。301 Moved Permanently：请求的对象已经被永久转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。404 Not Found：被请求的文档不在服务器上。505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。 Web缓存条件GET(conditional GET)方法：请求报文使用GET方法，并且请求报文中包含一个If-Modified-Since首部行。Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。 注意 HTTP是一个无状态协议(stateless protocol)。 HTTP可以采用非持续连接或持续连接，默认采用持续连接。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[set、env与export]]></title>
+    <url>%2F2018%2F05%2F09%2Fset-env-export%2F</url>
+    <content type="text"><![CDATA[环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。在Shell中可以使用declare命令直接定义Shell环境变量，如：1declare A=hello #定义Shell环境变量a，值为hello，注意等号两边不能有空格 使用echo命令即可打印环境变量的值，如：1echo $A #打印HOME的值 值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。 常见的用户环境变量有： PATH：用以指定命令的搜索目录 HOME：用以指定用户的家目录 SHELL：用以指定用户的登录Shell setset命令用来显示或设置Shell环境变量，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：12 值得注意的是，当declare命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比set显示的结果要更加清晰。关于set命令更多的参数使用说明可参考Bash脚本set命令教程 envenv命令用来显示或设置用户环境变量，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：12 exportexport命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：1export a=hello 这一步操作实际上完成了两步操作，即：12declare a=hello #定义一个Shell环境变量$aexport $a #导出至用户环境变量]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[source、sh与 ./]]></title>
+    <url>%2F2018%2F05%2F09%2Fsource-sh%2F</url>
+    <content type="text"><![CDATA[sourcesource a.sh在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为.，比如. a.sh。 shsh a.sh打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，bash与sh同理。 ././a.sh打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里./与a.sh之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加./，我猜想是为了预防与环境变量中相同的名称引起冲突。前面采用了相对路径的方法，当然也可以采用绝对路径，比如/root/a.sh这样，同样可以执行。另外，./运行的文件里通常有Shebang一行，也就是以#!开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以./a.sh运行脚本时，会自动使用环境变量中的$SHELL变量所指定的解释器来运行。最后，在以sh a.sh或bash a.sh这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux的包管理机制]]></title>
+    <url>%2F2018%2F05%2F09%2Flinux-package%2F</url>
+    <content type="text"><![CDATA[Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其本地包管理工具，常用命令有：12rpm -i a.rpm #安装arpm -e a #卸载a yum全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：1234yum update #更新包列表yum upgrade #更新包yum install a #安装ayum remove a #卸载a dpkg与apt-getdpkg全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其本地包管理工具，常用命令有：12dpkg -i a.dpkg #安装adpkg -r a #卸载a apt-get是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：1234apt-get update #更新包列表apt-get upgrade #更新包apt-get install a #安装aapt-get remove a #卸载a 值得注意的是，随着新版系统的到来，出现了更为强大的apt命令，可以简单认为apt集合了apt-get、apt-cache、apt-config中的最常用命令选项。例如，apt install相比apt-get install增加了色彩显示以及进度条显示等功能。因此，更建议使用apt命令，常用命令有：1234apt update #更新包列表apt upgrade #更新包apt install a #安装aapt remove a #卸载a]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[手机号与身份证号的秘密]]></title>
+    <url>%2F2018%2F05%2F09%2Fphone-number-and-id-card%2F</url>
+    <content type="text"><![CDATA[手机号码国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，由HLR归属位置寄存器确定；第8-11位是用户号码，此段随机分配。 身份证号码国内居民身份证号码为18位数，按照各部分编码的含义可以分为4段：前6位是地址码，即编码对象常住户口所在县的行政区划代码，其中第1-2位表示省，第3-4位表示市，第5-6位表示县；第7-14位是出生日期码；第15-17位是顺序码，即在地址码所标识的区域范围内，对同年、月、日出生的人员编定的顺序号，其中第17位奇数分给男性，偶数分给女性；第18位是校验码，根据前面17位数字码，按照如下算法计算出来的：]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>社会工程学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MIME Type]]></title>
+    <url>%2F2018%2F05%2F09%2FMIME-Type%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[后渗透测试阶段的信息收集]]></title>
+    <url>%2F2018%2F05%2F09%2Finformation-gathering-of-post-exploitation%2F</url>
+    <content type="text"><![CDATA[浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。 Windows登录密码Windows的登录密码保存在%windir%\System32\config\SAM中， Linux]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
       <tags>
         <tag>渗透</tag>
-        <tag>计算机取证</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[针对哈希算法的攻击]]></title>
+    <url>%2F2018%2F05%2F09%2Fhash-attack%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[编码与加密]]></title>
+    <url>%2F2018%2F05%2F08%2Fencode-encrypt%2F</url>
+    <content type="text"><![CDATA[编码编码(encode)是信息从一种形式或格式转换为另一种形式的过程。相应的，解码(decode)是编码的逆过程。常见的编码算法有ASCII编码、URL编码、HTML编码、Base64编码等。 加密加密(encryption)是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密(decryption)过程，才能将密文还原为正常可读的内容。加密算法可以分为两类：对称加密(Symmetric encryption)和非对称加密(Asymmetric encryption)。对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作数字签名(Digital Signature)。常见的对称加密算法有DES、3DES、AES、RC5等。常见的非对称加密算法有RSA、Elgamal等。非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。加密算法实质上是密码算法中的一种，另一种则是哈希(hash)算法。 哈希哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文(即哈希值)反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为冲突。一个优秀的哈希算法会尽量的减少这种冲突性。常见的哈希算法有MD5、SHA-1、SHA-256、CRC-32、CRC-64等。注意： 密码学建议，不要使用任何自己创造的私有加密算法，应该使用广泛使用的公开加密算法，这些都是已被证明安全的。 编码与加密主要的区别在于，所用的Key是否是公共所知的，或者说，编码根本就没有Key。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[反取证之Windows]]></title>
+    <url>%2F2018%2F05%2F02%2Fanti-forensics-windows%2F</url>
+    <content type="text"><![CDATA[MACE时间和反取证之Linux中的一样，Windows也有MAC时间，不过在Windows中，C指的是Created，即创建时间，Windows中默认显示的是修改时间，另外，在Windows的NTFS文件系统中还有E时间，即MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除E时间，同样，meterpreter中的timestomp命令可以方便的修改MACE时间。 隐藏新建账号当在目标系统上新建了用户账号后，通常会在登录界面上显示出来，要实现隐藏，可以修改注册表项，采用如下命令：1REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v uname /t REG_DWORD /d 0 注意：这种隐藏只是在登录界面的隐藏，用户使用net user或“本地用户和组”仍然可以查到新建的账户。 日志文件清除相关日志文件 系统日志Windows系统日志文件一般存放在Windows文件夹下，可以使用如下命令删除之：1del %windir%\*.log /a/s/q/f 另外，meterpreter中的clearev命令可以删除事件查看器中的日志信息。 Web日志IIS的日志文件位于%windir%\System32\LogFiles目录下。 最后，请不要忘记HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
         <tag>Windows</tag>
+        <tag>渗透</tag>
+        <tag>计算机取证</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[反取证之Linux]]></title>
     <url>%2F2018%2F05%2F02%2Fanti-forensics-linux%2F</url>
-    <content type="text"><![CDATA[后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是meterpreter的先天优势，它完全基于内存，Linux中的反取证主要涉及MAC时间、日志文件、history： MAC时间MAC即Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间(例如通过cat查看时)，更改时间指对文件属性、权限更改时的时间。使用ls -l默认查看的是修改时间，要查看其余2个时间，可以加参数ls -l --time=atime/ctime，另一个查看MAC时间的命令是stat。使用touch -d &quot;5 days ago&quot;或touch -t 1805021030可以修改MAC中的MA时间。meterpreter中的timestomp命令可以方便的修改MAC时间。 日志文件Linux中的日志文件主要有/var/log/auth.log、/var/log/secure、/var/log/wtmp、/var/log/btmp、/var/log/lastlog、/var/log/faillog。Debian系的auth.log文件与RedHat系的secure文件都记录了系统的登录日志，last命令用于查看登录日志以及重启日志，文件位于/var/log/wtmp；lastb命令用于查看登录失败日志，文件位于/var/log/btmp；lastlog命令用于查看所有用户最近一次登录日志，文件位于/var/log/lastlog；faillog命令与lastlog命令一样，用于查看用户登录失败日志，文件位于/var/log/faillog，此命令仅限于Debian系。 historyLinux中，每次输入的命令都会记录在用户文件夹中的.bash_history文件中，默认记录1000条命令，使用history命令即可查看，清除记录的方法是使用history -c命令。另一种清除记录的方法是更改.bash_history文件的属性，使用命令：chattr +i .bash_history使其不可被更改，从而无法向其写入任何数据。 最后，请不要忘记HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。]]></content>
+    <content type="text"><![CDATA[后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是meterpreter的先天优势，它完全基于内存，Linux中的反取证主要涉及MAC时间、日志文件、history： MAC时间MAC即Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间(例如通过cat查看时)，更改时间指对文件属性、权限更改时的时间。使用ls -l默认查看的是修改时间，要查看其余2个时间，可以加参数ls -l --time=atime/ctime，另一个查看MAC时间的命令是stat。使用touch -d &quot;5 days ago&quot;或touch -t 1805021030可以修改MAC中的MA时间。meterpreter中的timestomp命令可以方便的修改MAC时间。 日志文件清除相关日志文件 系统日志Linux中的日志文件主要有/var/log/auth.log、/var/log/secure、/var/log/wtmp、/var/log/btmp、/var/log/lastlog、/var/log/faillog。Debian系的auth.log文件与RedHat系的secure文件都记录了系统的登录日志，last命令用于查看登录日志以及重启日志，文件位于/var/log/wtmp；lastb命令用于查看登录失败日志，文件位于/var/log/btmp；lastlog命令用于查看所有用户最近一次登录日志，文件位于/var/log/lastlog；faillog命令与lastlog命令一样，用于查看用户登录失败日志，文件位于/var/log/faillog，此命令仅限于Debian系。 Web日志Apache的日志文件位于/var/log/apache2；Nginx的日志文件位于/var/log/nginx。 historyLinux中，每次输入的命令都会记录在用户文件夹中的.bash_history文件中，默认记录1000条命令，使用history命令即可查看，清除记录的方法是使用history -c命令。另一种清除记录的方法是更改.bash_history文件的属性，使用命令：chattr +i .bash_history使其不可被更改，从而无法向其写入任何数据。 最后，请不要忘记HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>

