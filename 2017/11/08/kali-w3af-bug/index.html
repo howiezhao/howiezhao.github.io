@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -10,8 +10,16 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -36,48 +44,11 @@
 
 
 
+
   
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -86,7 +57,22 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Kali," />
@@ -100,11 +86,6 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
 
 
 <meta name="description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#SSL_ST_BEFORE = _lib.SSL_ST_BEF">
@@ -114,6 +95,7 @@
 <meta property="og:url" content="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#SSL_ST_BEFORE = _lib.SSL_ST_BEF">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-12-11T08:37:43.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kali Rolling 2017下安装w3af出错解决方案">
@@ -126,9 +108,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: 'Author'
@@ -161,12 +145,6 @@
 
 
 
-
-
-
-
-
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -176,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,16 +200,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
@@ -242,22 +210,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
           </a>
         </li>
       
@@ -323,7 +301,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -409,76 +391,46 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></div><div class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></div><div class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></div><div class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></div></pre></td></tr></table></figure></p>
+        <h2 id="Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”"><a href="#Run-error-“‘module’-object-has-no-attribute-‘SSL-ST-INIT’”-”" class="headerlink" title="Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”"></a>Run error: “‘module’ object has no attribute ‘SSL_ST_INIT’”.”</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>解决方法2：</strong></p>
 <ol>
 <li><p>卸载w3af要求的pyOpenSSL版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip uninstall pyOpenSSL</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装最新版pyOpenSSL</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install pyOpenSSL</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pyOpenSSL</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <a id="more"></a>
-<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get build-dep python-lxml</div><div class="line">$ apt-get install libxslt-dev libssl-dev</div></pre></td></tr></table></figure></p>
-<h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-webkit python-webkit-dev</div></pre></td></tr></table></figure></p>
-<p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</div><div class="line">$ dpkg -i python-support_1.0.15_all.deb</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</div><div class="line">$ apt install python-gtk2-dev</div><div class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</div><div class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</div></pre></td></tr></table></figure></p>
-<p>安装过程中可能需要安装相关依赖，可执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt --fix-broken install</div></pre></td></tr></table></figure></p>
-<h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt-get install python-gtksourceview2</div></pre></td></tr></table></figure></p>
+<h2 id="error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1"><a href="#error-command-‘x86-64-linux-gnu-g-’-failed-with-exit-status-1" class="headerlink" title="error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1"></a>error: command ‘x86_64-linux-gnu-g++’ failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get build-dep python-lxml</span><br><span class="line">$ apt-get install libxslt-dev libssl-dev</span><br></pre></td></tr></table></figure></p>
+<h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-webkit python-webkit-dev</span><br></pre></td></tr></table></figure></p>
+<p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</span><br><span class="line">$ dpkg -i python-support_1.0.15_all.deb</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ apt install python-gtk2-dev</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</span><br><span class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</span><br></pre></td></tr></table></figure></p>
+<p>安装过程中可能需要安装相关依赖，可执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt --fix-broken install</span><br></pre></td></tr></table></figure></p>
+<h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-gtksourceview2</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>赠人玫瑰，手有余香！ :)</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Howie Zhao WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.jpg" alt="Howie Zhao Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -518,6 +470,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -533,11 +489,14 @@
 
 
           
-  <div class="comments" id="comments">
-    
+
+  
+    <div class="comments" id="comments">
       <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4My81NzUw"></div>
-    
-  </div>
+    </div>
+
+  
+
 
 
         </div>
@@ -553,280 +512,129 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Howie Zhao" />
-          <p class="site-author-name" itemprop="name">Howie Zhao</p>
-           
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Howie Zhao" />
+            
+              <p class="site-author-name" itemprop="name">Howie Zhao</p>
               <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">37</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">categories</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-			﻿<a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
-function c() {
-	var e = document.createElement("link");
-	e.setAttribute("type", "text/css");
-	e.setAttribute("rel", "stylesheet");
-	e.setAttribute("href", f);
-	e.setAttribute("class", l);
-	document.body.appendChild(e)
-}
-
-function h() {
-	var e = document.getElementsByClassName(l);
-	for (var t = 0; t < e.length; t++) {
-		document.body.removeChild(e[t])
-	}
-}
-
-function p() {
-	var e = document.createElement("div");
-	e.setAttribute("class", a);
-	document.body.appendChild(e);
-	setTimeout(function() {
-		document.body.removeChild(e)
-	}, 100)
-}
-
-function d(e) {
-	return {
-		height : e.offsetHeight,
-		width : e.offsetWidth
-	}
-}
-
-function v(i) {
-	var s = d(i);
-	return s.height > e && s.height < n && s.width > t && s.width < r
-}
-
-function m(e) {
-	var t = e;
-	var n = 0;
-	while (!!t) {
-		n += t.offsetTop;
-		t = t.offsetParent
-	}
-	return n
-}
-
-function g() {
-	var e = document.documentElement;
-	if (!!window.innerWidth) {
-		return window.innerHeight
-	} else if (e && !isNaN(e.clientHeight)) {
-		return e.clientHeight
-	}
-	return 0
-}
-
-function y() {
-	if (window.pageYOffset) {
-		return window.pageYOffset
-	}
-	return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-}
-
-function E(e) {
-	var t = m(e);
-	return t >= w && t <= b + w
-}
-
-function S() {
-	var e = document.createElement("audio");
-	e.setAttribute("class", l);
-	e.src = i;
-	e.loop = false;
-	e.addEventListener("canplay", function() {
-		setTimeout(function() {
-			x(k)
-		}, 500);
-		setTimeout(function() {
-			N();
-			p();
-			for (var e = 0; e < O.length; e++) {
-				T(O[e])
-			}
-		}, 15500)
-	}, true);
-	e.addEventListener("ended", function() {
-		N();
-		h()
-	}, true);
-	e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-	document.body.appendChild(e);
-	e.play()
-}
-
-function x(e) {
-	e.className += " " + s + " " + o
-}
-
-function T(e) {
-	e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-}
-
-function N() {
-	var e = document.getElementsByClassName(s);
-	var t = new RegExp("\\b" + s + "\\b");
-	for (var n = 0; n < e.length; ) {
-		e[n].className = e[n].className.replace(t, "")
-	}
-}
-
-var e = 30;
-var t = 30;
-var n = 350;
-var r = 350;
-var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-var s = "mw-harlem_shake_me";
-var o = "im_first";
-var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-var a = "mw-strobe_light";
-var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-var l = "mw_added_css";
-var b = g();
-var w = y();
-var C = document.getElementsByTagName("*");
-var k = null;
-for (var L = 0; L < C.length; L++) {
-	var A = C[L];
-	if (v(A)) {
-		if (E(A)) {
-			k = A;
-			break
-		}
-	}
-}
-if (A === null) {
-	console.warn("Could not find a node of the right size. Please try a different page.");
-	return
-}
-c();
-S();
-var O = [];
-for (var L = 0; L < C.length; L++) {
-	var A = C[L];
-	if (v(A)) {
-		O.push(A)
-	}
-}
-})()'><i class="fa fa-music"></i> High</a>
           </div>
-        
 
-        <div class="links-of-author motion-element">
-          
+          <nav class="site-state motion-element">
+
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Zhihu
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
-              </span>
+              </div>
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/howiezhao" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
             </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://howiezhao.com" title="Howie's Blog" target="_blank">Howie's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
-                </li>
-              
-            </ul>
-          </div>
-        
+          
 
-        
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/howiezhao" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
 
+          
+          
 
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://howiezhao.com/" title="Howie's Blog" target="_blank">Howie's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
       </section>
 
       
@@ -859,27 +667,36 @@ for (var L = 0; L < C.length; L++) {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
+  <span class="author" itemprop="copyrightHolder">Howie</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">15.5k</span>
+  
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
 
 
         
@@ -904,6 +721,12 @@ for (var L = 0; L < C.length; L++) {
 </div>
 
 
+
+
+
+
+
+
         
       </div>
     </footer>
@@ -913,6 +736,8 @@ for (var L = 0; L < C.length; L++) {
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -949,56 +774,70 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -1023,12 +862,6 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-
-
-
-
-
-  
     <script type="text/javascript">
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
@@ -1040,6 +873,12 @@ for (var L = 0; L < C.length; L++) {
       })(document, 'script');
     </script>
   
+
+
+
+
+
+
 
 
 
@@ -1373,6 +1212,9 @@ for (var L = 0; L < C.length; L++) {
 
   
 
+  
+
+  
   
 
   

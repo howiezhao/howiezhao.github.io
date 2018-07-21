@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Howie&#39;s Notes</title>
+  
   <subtitle>Machine Learning and Data Science</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-07-16T09:43:40.495Z</updated>
+  <updated>2018-07-21T11:51:41.865Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -16,31 +17,85 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>xml、json与yaml</title>
+    <link href="https://howiezhao.github.io/2018/07/21/xml-json-yaml/"/>
+    <id>https://howiezhao.github.io/2018/07/21/xml-json-yaml/</id>
+    <published>2018-07-21T11:50:23.000Z</published>
+    <updated>2018-07-21T11:51:41.865Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown小记</title>
+    <link href="https://howiezhao.github.io/2018/07/21/markdown-cheatsheet/"/>
+    <id>https://howiezhao.github.io/2018/07/21/markdown-cheatsheet/</id>
+    <published>2018-07-21T00:50:42.000Z</published>
+    <updated>2018-07-21T13:05:55.882Z</updated>
+    
+    <content type="html"><![CDATA[<p>Markdown是一种轻量标记语言，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。</p><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p># 一级标题<br>#### 四级标题<br>对应HTML，最高6级标题。</p><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>- 无序列表项<br>- 无序列表项<br>- 无序列表项</p><p>1. 有序列表项<br>2. 有序列表项<br>3. 有序列表项<br><a id="more"></a></p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>[Howie’s Blog](<a href="http://howiezhao.com" target="_blank" rel="noopener">http://howiezhao.com</a>)<br>超文本链接必须带http。</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>![一张图片](/images/abc.jpg)<br>当图片无法显示时，则显示中括号中的语句。图片的路径为相对路径，即当前markdown文件所在路径下的images中的abc.jpg。</p><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>*斜体*<br>**粗体**</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p><p>`这里是单行代码`</p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>表头1 | 表头2<br>-– | -–<br>单元格1 | 单元格2<br>单元格3 | 单元格4</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>> 这是引用</p><h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><p>-–，这是一条水平区分线，用3个或以上的短横线表示</p><h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，markdown使用 \ 转义以上特殊字符。</p><h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol><li>在特殊字符与要书写的文字之间加上空格</li><li>不同段之间加一空行</li></ol><h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为GFM，即GitHub风格的Markdown语法，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p><ol><li>链接自动识别：GFM会自动为标准的URL加上链接</li><li>语法着色：在```后输入语言，即可着色</li><li>删除线：使用~~表示删除线</li><li>任务列表：使用- []或- [1]表示未勾选或已勾选的列表</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Markdown是一种轻量标记语言，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。&lt;/p&gt;
+&lt;h2 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h2&gt;&lt;h3 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h3&gt;&lt;p&gt;# 一级标题&lt;br&gt;#### 四级标题&lt;br&gt;对应HTML，最高6级标题。&lt;/p&gt;
+&lt;h3 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h3&gt;&lt;p&gt;- 无序列表项&lt;br&gt;- 无序列表项&lt;br&gt;- 无序列表项&lt;/p&gt;
+&lt;p&gt;1. 有序列表项&lt;br&gt;2. 有序列表项&lt;br&gt;3. 有序列表项&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Udacity：Apollo起步学习笔记</title>
+    <link href="https://howiezhao.github.io/2018/07/21/udacity-apollo/"/>
+    <id>https://howiezhao.github.io/2018/07/21/udacity-apollo/</id>
+    <published>2018-07-21T00:36:36.000Z</published>
+    <updated>2018-07-21T13:35:04.933Z</updated>
+    
+    <content type="html"><![CDATA[<p>本笔记记录自<a href="https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419" target="_blank" rel="noopener">ud0419-无人驾驶第一课：从Apollo起步</a>。</p><h2 id="一、无人驾驶概览"><a href="#一、无人驾驶概览" class="headerlink" title="一、无人驾驶概览"></a>一、无人驾驶概览</h2><p>无人驾驶车的6个等级：</p><ul><li>0级——基本等级：驾驶员是系统的唯一决策者。</li><li>1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。</li><li>2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。</li><li>3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。</li><li>4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。</li><li>5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。</li></ul><a id="more"></a><p>无人驾驶车的5个核心部件：</p><ul><li>计算机视觉(Computer Vision)：通过摄像头图像弄清楚我们周围的世界是怎样的。</li><li>传感器融合(Sensor Fusion)：合并来自其他传感器的数据，如激光和雷达，从而更加深入的了解我们周围的环境。</li><li>定位(Localization)：精确的确定我们在那个世界所处的位置。</li><li>路径规划(Path Planning)：绘制这个世界的路线，帮助我们到达我们想去的地方。</li><li>控制(Control)：为了让汽车沿着我们在路径规划期间建立的轨道。</li></ul><p>Apollo技术框架包含的4个层面：</p><ul><li>参考车辆平台</li><li>参考硬件平台</li><li>开源软件平台</li><li>云服务平台</li></ul><h2 id="二、高精度地图"><a href="#二、高精度地图" class="headerlink" title="二、高精度地图"></a>二、高精度地图</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本笔记记录自&lt;a href=&quot;https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ud0419-无人驾驶第一课：从Apollo起步&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;一、无人驾驶概览&quot;&gt;&lt;a href=&quot;#一、无人驾驶概览&quot; class=&quot;headerlink&quot; title=&quot;一、无人驾驶概览&quot;&gt;&lt;/a&gt;一、无人驾驶概览&lt;/h2&gt;&lt;p&gt;无人驾驶车的6个等级：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0级——基本等级：驾驶员是系统的唯一决策者。&lt;/li&gt;
+&lt;li&gt;1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。&lt;/li&gt;
+&lt;li&gt;2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。&lt;/li&gt;
+&lt;li&gt;3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。&lt;/li&gt;
+&lt;li&gt;4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。&lt;/li&gt;
+&lt;li&gt;5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
+    
+    
+      <category term="无人驾驶" scheme="https://howiezhao.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
+    
+      <category term="Apollo" scheme="https://howiezhao.github.io/tags/Apollo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于PowerShell</title>
     <link href="https://howiezhao.github.io/2018/07/16/about-powershell/"/>
     <id>https://howiezhao.github.io/2018/07/16/about-powershell/</id>
     <published>2018-07-16T06:56:07.000Z</published>
     <updated>2018-07-16T09:43:40.495Z</updated>
     
-    <content type="html"><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p>
-<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：</p>
-<ul>
-<li>Windows Server 2003：PowerShell 1.0</li>
-<li>Windows 7：PowerShell 2.0</li>
-<li>Windows 8：PowerShell 3.0</li>
-<li>Windows 10：PowerShell 4.0</li>
-</ul>
-<a id="more"></a>
-<h2 id="优势及劣势"><a href="#优势及劣势" class="headerlink" title="优势及劣势"></a>优势及劣势</h2><p>PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。<br>劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。</p>
-<h2 id="Cmdlets与pipeline"><a href="#Cmdlets与pipeline" class="headerlink" title="Cmdlets与pipeline"></a>Cmdlets与pipeline</h2><p>Cmdlets与pipeline是PowerShell中的两个核心概念，</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Get-Host <span class="comment">#查看PowerShell版本信息</span></div><div class="line"><span class="built_in">help</span> <span class="comment">#查看帮助信息</span></div><div class="line">Install-Module <span class="comment">#从powershellgallery.com下载安装第三方模块</span></div><div class="line">Import-Module <span class="comment">#导入模块，安装的模块需要先导入才能使用</span></div></pre></td></tr></table></figure></p>
-<h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><ul>
-<li><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="external">posh-git</a>：PowerShell中的Git增强模块</li>
-<li><a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="external">oh-my-posh</a>：类似于oh-my-zsh</li>
-<li><a href="https://github.com/lzybkr/PSReadLine" target="_blank" rel="external">PSReadline</a>：一个增强的命令行编辑模块</li>
-<li><a href="https://github.com/JulianChow94/Windows-screenFetch" target="_blank" rel="external">windows-screenfetch</a>：Windows下的screenfetch模块</li>
-</ul>
-]]></content>
+    <content type="html"><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：</p><ul><li>Windows Server 2003：PowerShell 1.0</li><li>Windows 7：PowerShell 2.0</li><li>Windows 8：PowerShell 3.0</li><li>Windows 10：PowerShell 4.0</li></ul><a id="more"></a><h2 id="优势及劣势"><a href="#优势及劣势" class="headerlink" title="优势及劣势"></a>优势及劣势</h2><p>PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。<br>劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。</p><h2 id="Cmdlets与pipeline"><a href="#Cmdlets与pipeline" class="headerlink" title="Cmdlets与pipeline"></a>Cmdlets与pipeline</h2><p>Cmdlets与pipeline是PowerShell中的两个核心概念，</p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Get-Host <span class="comment">#查看PowerShell版本信息</span></span><br><span class="line"><span class="built_in">help</span> <span class="comment">#查看帮助信息</span></span><br><span class="line">Install-Module <span class="comment">#从powershellgallery.com下载安装第三方模块</span></span><br><span class="line">Import-Module <span class="comment">#导入模块，安装的模块需要先导入才能使用</span></span><br></pre></td></tr></table></figure></p><h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><ul><li><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="noopener">posh-git</a>：PowerShell中的Git增强模块</li><li><a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener">oh-my-posh</a>：类似于oh-my-zsh</li><li><a href="https://github.com/lzybkr/PSReadLine" target="_blank" rel="noopener">PSReadline</a>：一个增强的命令行编辑模块</li><li><a href="https://github.com/JulianChow94/Windows-screenFetch" target="_blank" rel="noopener">windows-screenfetch</a>：Windows下的screenfetch模块</li></ul>]]></content>
     
     <summary type="html">
     
@@ -69,12 +124,14 @@
     <published>2018-07-16T03:27:28.000Z</published>
     <updated>2018-07-16T03:56:55.923Z</updated>
     
-    <content type="html"><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization" target="_blank" rel="external"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization" target="_blank" rel="noopener"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即&lt;a href=&quot;https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization
+      
+      
+        &lt;p&gt;为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即&lt;a href=&quot;https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization
+      
     
     </summary>
     
@@ -92,16 +149,15 @@
     <published>2018-07-16T02:44:41.000Z</published>
     <updated>2018-07-16T03:14:08.227Z</updated>
     
-    <content type="html"><![CDATA[<p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p>
-<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
-<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
-<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录，因此可以使用<code>-r</code>参数。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p><h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p><h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p><h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录，因此可以使用<code>-r</code>参数。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在Linux中创建用户可以用&lt;code&gt;useradd&lt;/code&gt;或者&lt;code&gt;adduser&lt;/code&gt;，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。&lt;/p&gt;
+      
+      
+        &lt;p&gt;在Linux中创建用户可以用&lt;code&gt;useradd&lt;/code&gt;或者&lt;code&gt;adduser&lt;/code&gt;，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。&lt;/p&gt;
 &lt;h2 id=&quot;a
+      
     
     </summary>
     
@@ -119,16 +175,15 @@
     <published>2018-07-15T08:58:01.000Z</published>
     <updated>2018-07-16T09:39:36.674Z</updated>
     
-    <content type="html"><![CDATA[<p>云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。</p>
-<h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service(基础设施即服务)，云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是<strong>VPS</strong>，即Virtual Private Server(虚拟专用服务器)，这类服务一般提供必要的Shell接口，可使用户连接到操作系统进行相关配置，常见的VPS厂商有<a href="https://aws.amazon.com/cn/ec2/" target="_blank" rel="external">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs" target="_blank" rel="external">阿里云 ECS</a>等。</p>
-<h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service(平台即服务)，云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的Web服务器、数据库等，用户可以直接在其上部署Web应用，我用过的虚拟空间有<a href="http://www.laoxuehost.com/" target="_blank" rel="external">老薛主机</a>，常见的PaaS厂商有<a href="https://cloud.google.com/appengine/" target="_blank" rel="external">Google App Engine</a>。</p>
-<h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p><strong>SaaS</strong>，Software as a Service(软件即服务)，云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的Hexo、WordPress等。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。</p><h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service(基础设施即服务)，云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是<strong>VPS</strong>，即Virtual Private Server(虚拟专用服务器)，这类服务一般提供必要的Shell接口，可使用户连接到操作系统进行相关配置，常见的VPS厂商有<a href="https://aws.amazon.com/cn/ec2/" target="_blank" rel="noopener">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs" target="_blank" rel="noopener">阿里云 ECS</a>等。</p><h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service(平台即服务)，云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的Web服务器、数据库等，用户可以直接在其上部署Web应用，我用过的虚拟空间有<a href="http://www.laoxuehost.com/" target="_blank" rel="noopener">老薛主机</a>，常见的PaaS厂商有<a href="https://cloud.google.com/appengine/" target="_blank" rel="noopener">Google App Engine</a>。</p><h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p><strong>SaaS</strong>，Software as a Service(软件即服务)，云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的Hexo、WordPress等。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。&lt;/p&gt;
+      
+      
+        &lt;p&gt;云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。&lt;/p&gt;
 &lt;h2 id=&quot;IaaS&quot;&gt;&lt;a href=&quot;#IaaS&quot; class=&quot;headerlink&quot; title=&quot;IaaS&quot;&gt;&lt;/a&gt;Iaa
+      
     
     </summary>
     
@@ -144,16 +199,11 @@
     <published>2018-07-15T06:29:13.000Z</published>
     <updated>2018-07-15T08:50:54.648Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器(compiler)</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。目前在Linux中使用最广的编译器是<strong>GCC</strong>，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcc test.c -o <span class="built_in">test</span></div></pre></td></tr></table></figure></p>
-<p>若不指定生成文件，则默认生成a.out。<br><a id="more"></a></p>
-<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统(build system)</strong>，构建系统所作的就是<strong>构建(build)</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。在Linux中使用最广的构建系统是<strong>GNU make</strong>，它会读取<strong>makefile</strong>文件中的配置信息来完成构建，makefile的简要格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">editor : main.o text.o</div><div class="line">    gcc -o editor main.o text.o</div><div class="line">main.o : main.c def.h</div><div class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></div><div class="line">text.o : text.c com.h</div><div class="line">    gcc -c text.c</div><div class="line">install : editor</div><div class="line">    mv editor /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<p>冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个target:dependencies对的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies可以为空，如常用的target为clean时，就没有依赖，只有命令。<br>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若editor这个target文件不存在，或者main.o、text.o这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到main.o和text.o，make会检查main.o的依赖main.c、def.h有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于text.o。当输入<code>make install</code>，make会检查install的依赖editor是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。<br>makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">OBJECTS = main.o text.o</div><div class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></div><div class="line">editor : $(OBJECTS)</div><div class="line">    gcc -o editor $(OBJECTS)</div><div class="line">main.o : main.c</div><div class="line">    gcc -c main.c</div><div class="line">text.o : text.c</div><div class="line">    gcc -c text.c</div><div class="line">install : editor</div><div class="line">    mv editor $(INSTALL_PATH)</div></pre></td></tr></table></figure></p>
-<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>为了在Windows中使用GCC，诞生了<a href="http://www.mingw.org/" target="_blank" rel="external"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a href="https://mingw-w64.org/doku.php/start" target="_blank" rel="external"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。<br>Java世界中使用最广的构建系统是<strong>Maven</strong>，而在Android Studio中则使用到了后起之秀<strong>Gradle</strong>。<br>C语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器(compiler)</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。目前在Linux中使用最广的编译器是<strong>GCC</strong>，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure></p><p>若不指定生成文件，则默认生成a.out。<br><a id="more"></a></p><h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统(build system)</strong>，构建系统所作的就是<strong>构建(build)</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。在Linux中使用最广的构建系统是<strong>GNU make</strong>，它会读取<strong>makefile</strong>文件中的配置信息来完成构建，makefile的简要格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure></p><p>冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个target:dependencies对的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies可以为空，如常用的target为clean时，就没有依赖，只有命令。<br>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若editor这个target文件不存在，或者main.o、text.o这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到main.o和text.o，make会检查main.o的依赖main.c、def.h有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于text.o。当输入<code>make install</code>，make会检查install的依赖editor是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。<br>makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">OBJECTS = main.o text.o</span><br><span class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></span><br><span class="line">editor : $(OBJECTS)</span><br><span class="line">    gcc -o editor $(OBJECTS)</span><br><span class="line">main.o : main.c</span><br><span class="line">    gcc -c main.c</span><br><span class="line">text.o : text.c</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor $(INSTALL_PATH)</span><br></pre></td></tr></table></figure></p><h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>为了在Windows中使用GCC，诞生了<a href="http://www.mingw.org/" target="_blank" rel="noopener"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a href="https://mingw-w64.org/doku.php/start" target="_blank" rel="noopener"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。<br>Java世界中使用最广的构建系统是<strong>Maven</strong>，而在Android Studio中则使用到了后起之秀<strong>Gradle</strong>。<br>C语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot; title=&quot;编译&quot;&gt;&lt;/a&gt;编译&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;编译(compile)&lt;/strong&gt;，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为&lt;strong&gt;编译器(compiler)&lt;/strong&gt;。但要注意，编译器在同一时刻只能转换一个编译单元，所谓&lt;strong&gt;编译单元&lt;/strong&gt;是指单个的源文件。目前在Linux中使用最广的编译器是&lt;strong&gt;GCC&lt;/strong&gt;，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ gcc test.c -o &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot; title=&quot;编译&quot;&gt;&lt;/a&gt;编译&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;编译(compile)&lt;/strong&gt;，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为&lt;strong&gt;编译器(compiler)&lt;/strong&gt;。但要注意，编译器在同一时刻只能转换一个编译单元，所谓&lt;strong&gt;编译单元&lt;/strong&gt;是指单个的源文件。目前在Linux中使用最广的编译器是&lt;strong&gt;GCC&lt;/strong&gt;，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ gcc test.c -o &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;若不指定生成文件，则默认生成a.out。&lt;br&gt;
     
     </summary>
@@ -174,7 +224,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;账户与口令&quot;&gt;&lt;a href=&quot;#账户与口令&quot; class=&quot;headerlink&quot; title=&quot;账户与口令&quot;&gt;&lt;/a&gt;账户与口令&lt;/h2&gt;&lt;h2 id=&quot;服务安全&quot;&gt;&lt;a href=&quot;#服务安全&quot; class=&quot;headerlink&quot; title=&quot;服务安全&quot;
+      
+      
+        &lt;h2 id=&quot;账户与口令&quot;&gt;&lt;a href=&quot;#账户与口令&quot; class=&quot;headerlink&quot; title=&quot;账户与口令&quot;&gt;&lt;/a&gt;账户与口令&lt;/h2&gt;&lt;h2 id=&quot;服务安全&quot;&gt;&lt;a href=&quot;#服务安全&quot; class=&quot;headerlink&quot; title=&quot;服务安全&quot;
+      
     
     </summary>
     
@@ -246,9 +299,7 @@
     <published>2018-05-11T10:48:39.000Z</published>
     <updated>2018-05-12T15:21:22.048Z</updated>
     
-    <content type="html"><![CDATA[<p>IP(Internet Protocol，网际协议)</p>
-<h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt=""><br><a id="more"></a></p>
-]]></content>
+    <content type="html"><![CDATA[<p>IP(Internet Protocol，网际协议)</p><h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt=""><br><a id="more"></a></p>]]></content>
     
     <summary type="html">
     
@@ -271,9 +322,7 @@
     <published>2018-05-11T10:48:30.000Z</published>
     <updated>2018-05-12T15:18:47.029Z</updated>
     
-    <content type="html"><![CDATA[<p>TCP(Transmission Control Protocol，传输控制协议)</p>
-<h2 id="报文段结构"><a href="#报文段结构" class="headerlink" title="报文段结构"></a>报文段结构</h2><p><img src="/images/tcp.PNG" alt=""><br><a id="more"></a></p>
-]]></content>
+    <content type="html"><![CDATA[<p>TCP(Transmission Control Protocol，传输控制协议)</p><h2 id="报文段结构"><a href="#报文段结构" class="headerlink" title="报文段结构"></a>报文段结构</h2><p><img src="/images/tcp.PNG" alt=""><br><a id="more"></a></p>]]></content>
     
     <summary type="html">
     
@@ -314,15 +363,7 @@
     <published>2018-05-11T08:39:06.000Z</published>
     <updated>2018-05-12T15:09:04.213Z</updated>
     
-    <content type="html"><![CDATA[<p>HTTP(Hypertext Transfer Protocol，超文本传输协议)</p>
-<h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p><img src="/images/http-request.PNG" alt=""><br><a id="more"></a><br>方法字段可以取几种不同的值，包括<strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong>和<strong>DELETE</strong>。绝大部分的HTTP请求报文使用GET方法。<br><strong>Host</strong>首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；<strong>Connection</strong>首部行指明采用非持续连接还是持续连接；<strong>User-Agent</strong>首部行指明用户代理；<strong>Accept-Language</strong>首部行指明用户想得到的语言版本。<br>使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。<br>HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。</p>
-<h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p><img src="/images/http-response.PNG" alt=""><br><strong>Date</strong>首部行指示服务器产生并发送该响应报文的日期和时间；<strong>Last-Modified</strong>首部行指示了对象创建或者最后修改的日期和时间；<strong>Server</strong>首部行指示服务器类型，类似于User-Agent首部行；<strong>Content-Length</strong>首部行指示了被发送对象中的字节数；<strong>Content-Type</strong>首部行指示了实体体中的对象的MIME类型。<br>常见的状态码和其对应的短语：<br>200 OK：请求成功，信息在返回的响应报文中。<br>301 Moved Permanently：请求的对象已经被永久转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。<br>400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。<br>404 Not Found：被请求的文档不在服务器上。<br>505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。</p>
-<h2 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h2><p><strong>条件GET(conditional GET)方法</strong>：请求报文使用GET方法，并且请求报文中包含一个<strong>If-Modified-Since</strong>首部行。<br>Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>HTTP是一个无状态协议(stateless protocol)。</li>
-<li>HTTP可以采用非持续连接或持续连接，默认采用持续连接。</li>
-</ol>
-]]></content>
+    <content type="html"><![CDATA[<p>HTTP(Hypertext Transfer Protocol，超文本传输协议)</p><h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p><img src="/images/http-request.PNG" alt=""><br><a id="more"></a><br>方法字段可以取几种不同的值，包括<strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong>和<strong>DELETE</strong>。绝大部分的HTTP请求报文使用GET方法。<br><strong>Host</strong>首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；<strong>Connection</strong>首部行指明采用非持续连接还是持续连接；<strong>User-Agent</strong>首部行指明用户代理；<strong>Accept-Language</strong>首部行指明用户想得到的语言版本。<br>使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。<br>HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。</p><h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p><img src="/images/http-response.PNG" alt=""><br><strong>Date</strong>首部行指示服务器产生并发送该响应报文的日期和时间；<strong>Last-Modified</strong>首部行指示了对象创建或者最后修改的日期和时间；<strong>Server</strong>首部行指示服务器类型，类似于User-Agent首部行；<strong>Content-Length</strong>首部行指示了被发送对象中的字节数；<strong>Content-Type</strong>首部行指示了实体体中的对象的MIME类型。<br>常见的状态码和其对应的短语：<br>200 OK：请求成功，信息在返回的响应报文中。<br>301 Moved Permanently：请求的对象已经被永久转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。<br>400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。<br>404 Not Found：被请求的文档不在服务器上。<br>505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。</p><h2 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h2><p><strong>条件GET(conditional GET)方法</strong>：请求报文使用GET方法，并且请求报文中包含一个<strong>If-Modified-Since</strong>首部行。<br>Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。</p><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol><li>HTTP是一个无状态协议(stateless protocol)。</li><li>HTTP可以采用非持续连接或持续连接，默认采用持续连接。</li></ol>]]></content>
     
     <summary type="html">
     
@@ -345,27 +386,12 @@
     <published>2018-05-09T11:20:18.000Z</published>
     <updated>2018-07-17T07:34:31.249Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。<br>环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。<br>在Shell中可以使用<code>declare</code>命令直接定义Shell环境变量，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">declare</span> A=hello  <span class="comment">#定义Shell环境变量a，值为hello，注意等号两边不能有空格</span></div></pre></td></tr></table></figure></p>
-<p>使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$A</span>  <span class="comment">#打印HOME的值</span></div></pre></td></tr></table></figure></p>
-<p>值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。</p>
-<p>常见的用户环境变量有：</p>
-<ul>
-<li>PATH：用以指定命令的搜索目录</li>
-<li>HOME：用以指定用户的家目录</li>
-<li>SHELL：用以指定用户的登录Shell</li>
-</ul>
-<a id="more"></a>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code>命令用来显示或设置Shell环境变量，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>值得注意的是，当<code>declare</code>命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比<code>set</code>显示的结果要更加清晰。<br>关于set命令更多的参数使用说明可参考<a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html" target="_blank" rel="external">Bash脚本set命令教程</a></p>
-<h2 id="env"><a href="#env" class="headerlink" title="env"></a>env</h2><p><code>env</code>命令用来显示或设置用户环境变量，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p><code>export</code>命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> a=hello</div></pre></td></tr></table></figure></p>
-<p>这一步操作实际上完成了两步操作，即：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">declare</span> a=hello  <span class="comment">#定义一个Shell环境变量$a</span></div><div class="line"><span class="built_in">export</span> <span class="variable">$a</span>  <span class="comment">#导出至用户环境变量</span></div></pre></td></tr></table></figure></p>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。<br>环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。<br>在Shell中可以使用<code>declare</code>命令直接定义Shell环境变量，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> A=hello  <span class="comment">#定义Shell环境变量a，值为hello，注意等号两边不能有空格</span></span><br></pre></td></tr></table></figure></p><p>使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span>  <span class="comment">#打印HOME的值</span></span><br></pre></td></tr></table></figure></p><p>值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。</p><p>常见的用户环境变量有：</p><ul><li>PATH：用以指定命令的搜索目录</li><li>HOME：用以指定用户的家目录</li><li>SHELL：用以指定用户的登录Shell</li></ul><a id="more"></a><h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code>命令用来显示或设置Shell环境变量，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p><p>值得注意的是，当<code>declare</code>命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比<code>set</code>显示的结果要更加清晰。<br>关于set命令更多的参数使用说明可参考<a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html" target="_blank" rel="noopener">Bash脚本set命令教程</a></p><h2 id="env"><a href="#env" class="headerlink" title="env"></a>env</h2><p><code>env</code>命令用来显示或设置用户环境变量，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p><h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p><code>export</code>命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> a=hello</span><br></pre></td></tr></table></figure></p><p>这一步操作实际上完成了两步操作，即：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> a=hello  <span class="comment">#定义一个Shell环境变量$a</span></span><br><span class="line"><span class="built_in">export</span> <span class="variable">$a</span>  <span class="comment">#导出至用户环境变量</span></span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;环境变量&quot;&gt;&lt;a href=&quot;#环境变量&quot; class=&quot;headerlink&quot; title=&quot;环境变量&quot;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;环境变量&lt;/strong&gt;，顾名思义由&lt;strong&gt;环境&lt;/strong&gt;和&lt;strong&gt;变量&lt;/strong&gt;两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。&lt;br&gt;环境变量可以大致分为&lt;strong&gt;Shell环境变量&lt;/strong&gt;和&lt;strong&gt;用户环境变量&lt;/strong&gt;两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。&lt;br&gt;在Shell中可以使用&lt;code&gt;declare&lt;/code&gt;命令直接定义Shell环境变量，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;declare&lt;/span&gt; A=hello  &lt;span class=&quot;comment&quot;&gt;#定义Shell环境变量a，值为hello，注意等号两边不能有空格&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;使用&lt;code&gt;echo&lt;/code&gt;命令即可打印环境变量的值，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$A&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;#打印HOME的值&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;环境变量&quot;&gt;&lt;a href=&quot;#环境变量&quot; class=&quot;headerlink&quot; title=&quot;环境变量&quot;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;环境变量&lt;/strong&gt;，顾名思义由&lt;strong&gt;环境&lt;/strong&gt;和&lt;strong&gt;变量&lt;/strong&gt;两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。&lt;br&gt;环境变量可以大致分为&lt;strong&gt;Shell环境变量&lt;/strong&gt;和&lt;strong&gt;用户环境变量&lt;/strong&gt;两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。&lt;br&gt;在Shell中可以使用&lt;code&gt;declare&lt;/code&gt;命令直接定义Shell环境变量，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;declare&lt;/span&gt; A=hello  &lt;span class=&quot;comment&quot;&gt;#定义Shell环境变量a，值为hello，注意等号两边不能有空格&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;echo&lt;/code&gt;命令即可打印环境变量的值，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$A&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;#打印HOME的值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。&lt;/p&gt;
 &lt;p&gt;常见的用户环境变量有：&lt;/p&gt;
 &lt;ul&gt;
@@ -390,14 +416,14 @@
     <published>2018-05-09T08:37:48.000Z</published>
     <updated>2018-05-09T10:12:35.166Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code>在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为<code>.</code>，比如<code>. a.sh</code>。</p>
-<h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code>打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，<code>bash</code>与<code>sh</code>同理。</p>
-<h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code>打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里<code>./</code>与<code>a.sh</code>之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加<code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。<br>前面采用了相对路径的方法，当然也可以采用绝对路径，比如<code>/root/a.sh</code>这样，同样可以执行。<br>另外，<code>./</code>运行的文件里通常有<strong>Shebang</strong>一行，也就是以<code>#!</code>开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以<code>./a.sh</code>运行脚本时，会自动使用环境变量中的<code>$SHELL</code>变量所指定的解释器来运行。<br>最后，在以<code>sh a.sh</code>或<code>bash a.sh</code>这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code>在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为<code>.</code>，比如<code>. a.sh</code>。</p><h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code>打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，<code>bash</code>与<code>sh</code>同理。</p><h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code>打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里<code>./</code>与<code>a.sh</code>之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加<code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。<br>前面采用了相对路径的方法，当然也可以采用绝对路径，比如<code>/root/a.sh</code>这样，同样可以执行。<br>另外，<code>./</code>运行的文件里通常有<strong>Shebang</strong>一行，也就是以<code>#!</code>开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以<code>./a.sh</code>运行脚本时，会自动使用环境变量中的<code>$SHELL</code>变量所指定的解释器来运行。<br>最后，在以<code>sh a.sh</code>或<code>bash a.sh</code>这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;source&quot;&gt;&lt;a href=&quot;#source&quot; class=&quot;headerlink&quot; title=&quot;source&quot;&gt;&lt;/a&gt;source&lt;/h2&gt;&lt;p&gt;&lt;code&gt;source a.sh&lt;/code&gt;在当前Shell中执行a.sh，a.sh不需要有执行权限。s
+      
+      
+        &lt;h2 id=&quot;source&quot;&gt;&lt;a href=&quot;#source&quot; class=&quot;headerlink&quot; title=&quot;source&quot;&gt;&lt;/a&gt;source&lt;/h2&gt;&lt;p&gt;&lt;code&gt;source a.sh&lt;/code&gt;在当前Shell中执行a.sh，a.sh不需要有执行权限。s
+      
     
     </summary>
     
@@ -415,20 +441,13 @@
     <published>2018-05-09T05:43:55.000Z</published>
     <updated>2018-07-02T14:53:20.674Z</updated>
     
-    <content type="html"><![CDATA[<p>Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p>
-<h2 id="rpm与yum"><a href="#rpm与yum" class="headerlink" title="rpm与yum"></a>rpm与yum</h2><p><code>rpm</code>全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rpm -i a.rpm  <span class="comment">#安装a</span></div><div class="line">rpm -e a      <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
-<p><code>yum</code>全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">yum update     <span class="comment">#更新包列表</span></div><div class="line">yum upgrade    <span class="comment">#更新包</span></div><div class="line">yum install a  <span class="comment">#安装a</span></div><div class="line">yum remove a   <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></div><div class="line">dpkg -r a       <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
-<p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt-get update     <span class="comment">#更新包列表</span></div><div class="line">apt-get upgrade    <span class="comment">#更新包</span></div><div class="line">apt-get install a  <span class="comment">#安装a</span></div><div class="line">apt-get remove a   <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
-<p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt update     <span class="comment">#更新包列表</span></div><div class="line">apt upgrade    <span class="comment">#更新包</span></div><div class="line">apt install a  <span class="comment">#安装a</span></div><div class="line">apt remove a   <span class="comment">#卸载a</span></div></pre></td></tr></table></figure></p>
-]]></content>
+    <content type="html"><![CDATA[<p>Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p><h2 id="rpm与yum"><a href="#rpm与yum" class="headerlink" title="rpm与yum"></a>rpm与yum</h2><p><code>rpm</code>全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -i a.rpm  <span class="comment">#安装a</span></span><br><span class="line">rpm -e a      <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><p><code>yum</code>全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum update     <span class="comment">#更新包列表</span></span><br><span class="line">yum upgrade    <span class="comment">#更新包</span></span><br><span class="line">yum install a  <span class="comment">#安装a</span></span><br><span class="line">yum remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><a id="more"></a><h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></span><br><span class="line">dpkg -r a       <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get update     <span class="comment">#更新包列表</span></span><br><span class="line">apt-get upgrade    <span class="comment">#更新包</span></span><br><span class="line">apt-get install a  <span class="comment">#安装a</span></span><br><span class="line">apt-get remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt update     <span class="comment">#更新包列表</span></span><br><span class="line">apt upgrade    <span class="comment">#更新包</span></span><br><span class="line">apt install a  <span class="comment">#安装a</span></span><br><span class="line">apt remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用&lt;code&gt;rpm&lt;/code&gt;为其包格式，&lt;code&gt;yum&lt;/code&gt;为其包管理工具；Debian系采用&lt;code&gt;dpkg&lt;/code&gt;为其包格式，&lt;code&gt;apt-get&lt;/code&gt;为其包管理工具。&lt;/p&gt;
-&lt;h2 id=&quot;rpm与yum&quot;&gt;&lt;a href=&quot;#rpm与yum&quot; class=&quot;headerlink&quot; title=&quot;rpm与yum&quot;&gt;&lt;/a&gt;rpm与yum&lt;/h2&gt;&lt;p&gt;&lt;code&gt;rpm&lt;/code&gt;全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其&lt;strong&gt;本地&lt;/strong&gt;包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;rpm -i a.rpm  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rpm -e a      &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;yum&lt;/code&gt;全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yum update     &lt;span class=&quot;comment&quot;&gt;#更新包列表&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yum upgrade    &lt;span class=&quot;comment&quot;&gt;#更新包&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yum install a  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;yum remove a   &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;rpm与yum&quot;&gt;&lt;a href=&quot;#rpm与yum&quot; class=&quot;headerlink&quot; title=&quot;rpm与yum&quot;&gt;&lt;/a&gt;rpm与yum&lt;/h2&gt;&lt;p&gt;&lt;code&gt;rpm&lt;/code&gt;全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其&lt;strong&gt;本地&lt;/strong&gt;包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rpm -i a.rpm  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rpm -e a      &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;yum&lt;/code&gt;全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum update     &lt;span class=&quot;comment&quot;&gt;#更新包列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum upgrade    &lt;span class=&quot;comment&quot;&gt;#更新包&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum install a  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum remove a   &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -446,13 +465,14 @@
     <published>2018-05-09T05:39:46.000Z</published>
     <updated>2018-06-02T14:43:39.815Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码"></a>手机号码</h2><p>国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，由HLR归属位置寄存器确定；第8-11位是用户号码，此段随机分配。</p>
-<h2 id="身份证号码"><a href="#身份证号码" class="headerlink" title="身份证号码"></a>身份证号码</h2><p>国内居民身份证号码为18位数，按照各部分编码的含义可以分为4段：前6位是地址码，即编码对象常住户口所在县的行政区划代码，其中第1-2位表示省，第3-4位表示市，第5-6位表示县；第7-14位是出生日期码；第15-17位是顺序码，即在地址码所标识的区域范围内，对同年、月、日出生的人员编定的顺序号，其中第17位奇数分给男性，偶数分给女性；第18位是校验码，根据前面17位数字码，按照如下算法计算出来的：</p>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码"></a>手机号码</h2><p>国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，由HLR归属位置寄存器确定；第8-11位是用户号码，此段随机分配。</p><h2 id="身份证号码"><a href="#身份证号码" class="headerlink" title="身份证号码"></a>身份证号码</h2><p>国内居民身份证号码为18位数，按照各部分编码的含义可以分为4段：前6位是地址码，即编码对象常住户口所在县的行政区划代码，其中第1-2位表示省，第3-4位表示市，第5-6位表示县；第7-14位是出生日期码；第15-17位是顺序码，即在地址码所标识的区域范围内，对同年、月、日出生的人员编定的顺序号，其中第17位奇数分给男性，偶数分给女性；第18位是校验码，根据前面17位数字码，按照如下算法计算出来的：</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;手机号码&quot;&gt;&lt;a href=&quot;#手机号码&quot; class=&quot;headerlink&quot; title=&quot;手机号码&quot;&gt;&lt;/a&gt;手机号码&lt;/h2&gt;&lt;p&gt;国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，
+      
+      
+        &lt;h2 id=&quot;手机号码&quot;&gt;&lt;a href=&quot;#手机号码&quot; class=&quot;headerlink&quot; title=&quot;手机号码&quot;&gt;&lt;/a&gt;手机号码&lt;/h2&gt;&lt;p&gt;国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，
+      
     
     </summary>
     
@@ -460,67 +480,6 @@
     
     
       <category term="社会工程学" scheme="https://howiezhao.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MIME Type</title>
-    <link href="https://howiezhao.github.io/2018/05/09/MIME-Type/"/>
-    <id>https://howiezhao.github.io/2018/05/09/MIME-Type/</id>
-    <published>2018-05-09T05:36:09.000Z</published>
-    <updated>2018-05-09T05:37:19.584Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>后渗透测试阶段的信息收集</title>
-    <link href="https://howiezhao.github.io/2018/05/09/information-gathering-of-post-exploitation/"/>
-    <id>https://howiezhao.github.io/2018/05/09/information-gathering-of-post-exploitation/</id>
-    <published>2018-05-09T05:32:55.000Z</published>
-    <updated>2018-05-12T13:11:15.511Z</updated>
-    
-    <content type="html"><![CDATA[<p>浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门<br>我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。</p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="登录密码"><a href="#登录密码" class="headerlink" title="登录密码"></a>登录密码</h3><p>Windows的登录密码保存在<code>%windir%\System32\config\SAM</code>中，</p>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门&lt;br&gt;我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。&lt;/p&gt;
-&lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>针对哈希算法的攻击</title>
-    <link href="https://howiezhao.github.io/2018/05/09/hash-attack/"/>
-    <id>https://howiezhao.github.io/2018/05/09/hash-attack/</id>
-    <published>2018-05-09T05:27:54.000Z</published>
-    <updated>2018-05-09T05:29:02.911Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   

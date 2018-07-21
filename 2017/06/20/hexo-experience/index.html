@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -10,8 +10,16 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -36,48 +44,11 @@
 
 
 
+
   
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -86,7 +57,22 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Hexo," />
@@ -100,11 +86,6 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
 
 
 <meta name="description" content="安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安">
@@ -114,7 +95,8 @@
 <meta property="og:url" content="https://howiezhao.github.io/2017/06/20/hexo-experience/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安">
-<meta property="og:updated_time" content="2018-04-26T09:25:47.630Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-07-21T04:38:19.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo初体验">
 <meta name="twitter:description" content="安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安">
@@ -126,9 +108,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: 'Author'
@@ -161,12 +145,6 @@
 
 
 
-
-
-
-
-
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -176,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,16 +200,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
@@ -242,22 +210,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
           </a>
         </li>
       
@@ -323,7 +301,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/06/20/hexo-experience/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -409,16 +391,19 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
-<p>来测试Node.js是否成功安装，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure></p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure></p>
+<p>来测试Node.js是否成功安装，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure></p>
 <p>来测试npm是否成功安装。</p>
-<p>npm成功安装后，可使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>npm成功安装后，可使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
 <p>来快速安装Hexo</p>
 <p>参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
 <p><strong>本地安装</strong></p>
@@ -432,60 +417,29 @@
 <li>可以直接在命令行里使用</li>
 </ul>
 <a id="more"></a>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init [folder]</div></pre></td></tr></table></figure>
+<p>关于npm更多的内容请参考<a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="noopener">npm模块安装机制简介</a>。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
 <p>如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。</p>
-<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo n [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
+<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
 <p>如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
-<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
-<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div></pre></td></tr></table></figure>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。<br>关于如何利用Hexo搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>赠人玫瑰，手有余香！ :)</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Howie Zhao WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.jpg" alt="Howie Zhao Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -521,6 +475,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -536,11 +494,14 @@
 
 
           
-  <div class="comments" id="comments">
-    
+
+  
+    <div class="comments" id="comments">
       <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4My81NzUw"></div>
-    
-  </div>
+    </div>
+
+  
+
 
 
         </div>
@@ -556,280 +517,129 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Howie Zhao" />
-          <p class="site-author-name" itemprop="name">Howie Zhao</p>
-           
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Howie Zhao" />
+            
+              <p class="site-author-name" itemprop="name">Howie Zhao</p>
               <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">37</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">categories</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-			﻿<a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
-function c() {
-	var e = document.createElement("link");
-	e.setAttribute("type", "text/css");
-	e.setAttribute("rel", "stylesheet");
-	e.setAttribute("href", f);
-	e.setAttribute("class", l);
-	document.body.appendChild(e)
-}
-
-function h() {
-	var e = document.getElementsByClassName(l);
-	for (var t = 0; t < e.length; t++) {
-		document.body.removeChild(e[t])
-	}
-}
-
-function p() {
-	var e = document.createElement("div");
-	e.setAttribute("class", a);
-	document.body.appendChild(e);
-	setTimeout(function() {
-		document.body.removeChild(e)
-	}, 100)
-}
-
-function d(e) {
-	return {
-		height : e.offsetHeight,
-		width : e.offsetWidth
-	}
-}
-
-function v(i) {
-	var s = d(i);
-	return s.height > e && s.height < n && s.width > t && s.width < r
-}
-
-function m(e) {
-	var t = e;
-	var n = 0;
-	while (!!t) {
-		n += t.offsetTop;
-		t = t.offsetParent
-	}
-	return n
-}
-
-function g() {
-	var e = document.documentElement;
-	if (!!window.innerWidth) {
-		return window.innerHeight
-	} else if (e && !isNaN(e.clientHeight)) {
-		return e.clientHeight
-	}
-	return 0
-}
-
-function y() {
-	if (window.pageYOffset) {
-		return window.pageYOffset
-	}
-	return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-}
-
-function E(e) {
-	var t = m(e);
-	return t >= w && t <= b + w
-}
-
-function S() {
-	var e = document.createElement("audio");
-	e.setAttribute("class", l);
-	e.src = i;
-	e.loop = false;
-	e.addEventListener("canplay", function() {
-		setTimeout(function() {
-			x(k)
-		}, 500);
-		setTimeout(function() {
-			N();
-			p();
-			for (var e = 0; e < O.length; e++) {
-				T(O[e])
-			}
-		}, 15500)
-	}, true);
-	e.addEventListener("ended", function() {
-		N();
-		h()
-	}, true);
-	e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-	document.body.appendChild(e);
-	e.play()
-}
-
-function x(e) {
-	e.className += " " + s + " " + o
-}
-
-function T(e) {
-	e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-}
-
-function N() {
-	var e = document.getElementsByClassName(s);
-	var t = new RegExp("\\b" + s + "\\b");
-	for (var n = 0; n < e.length; ) {
-		e[n].className = e[n].className.replace(t, "")
-	}
-}
-
-var e = 30;
-var t = 30;
-var n = 350;
-var r = 350;
-var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-var s = "mw-harlem_shake_me";
-var o = "im_first";
-var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-var a = "mw-strobe_light";
-var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-var l = "mw_added_css";
-var b = g();
-var w = y();
-var C = document.getElementsByTagName("*");
-var k = null;
-for (var L = 0; L < C.length; L++) {
-	var A = C[L];
-	if (v(A)) {
-		if (E(A)) {
-			k = A;
-			break
-		}
-	}
-}
-if (A === null) {
-	console.warn("Could not find a node of the right size. Please try a different page.");
-	return
-}
-c();
-S();
-var O = [];
-for (var L = 0; L < C.length; L++) {
-	var A = C[L];
-	if (v(A)) {
-		O.push(A)
-	}
-}
-})()'><i class="fa fa-music"></i> High</a>
           </div>
-        
 
-        <div class="links-of-author motion-element">
-          
+          <nav class="site-state motion-element">
+
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Zhihu
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
-              </span>
+              </div>
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/howiezhao" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
             </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://howiezhao.com" title="Howie's Blog" target="_blank">Howie's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
-                </li>
-              
-            </ul>
-          </div>
-        
+          
 
-        
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/howiezhao" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
 
+          
+          
 
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://howiezhao.com/" title="Howie's Blog" target="_blank">Howie's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
       </section>
 
       
@@ -842,7 +652,7 @@ for (var L = 0; L < C.length; L++) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个网站"><span class="nav-number">2.1.</span> <span class="nav-text">新建一个网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一篇文章"><span class="nav-number">2.2.</span> <span class="nav-text">新建一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态文件"><span class="nav-number">2.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务预览"><span class="nav-number">2.4.</span> <span class="nav-text">启动服务预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署网站"><span class="nav-number">2.5.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除缓存文件-db-json-和已生成的静态文件-public-。"><span class="nav-number">2.6.</span> <span class="nav-text">清除缓存文件(db.json)和已生成的静态文件(public)。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">2.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">3.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个网站"><span class="nav-number">3.1.</span> <span class="nav-text">新建一个网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一篇文章"><span class="nav-number">3.2.</span> <span class="nav-text">新建一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态文件"><span class="nav-number">3.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务预览"><span class="nav-number">3.4.</span> <span class="nav-text">启动服务预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署网站"><span class="nav-number">3.5.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除缓存文件-db-json-和已生成的静态文件-public-。"><span class="nav-number">3.6.</span> <span class="nav-text">清除缓存文件(db.json)和已生成的静态文件(public)。</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -862,27 +672,36 @@ for (var L = 0; L < C.length; L++) {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
+  <span class="author" itemprop="copyrightHolder">Howie</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">15.5k</span>
+  
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
 
 
         
@@ -907,6 +726,12 @@ for (var L = 0; L < C.length; L++) {
 </div>
 
 
+
+
+
+
+
+
         
       </div>
     </footer>
@@ -916,6 +741,8 @@ for (var L = 0; L < C.length; L++) {
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -952,56 +779,70 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -1026,12 +867,6 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-
-
-
-
-
-  
     <script type="text/javascript">
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
@@ -1043,6 +878,12 @@ for (var L = 0; L < C.length; L++) {
       })(document, 'script');
     </script>
   
+
+
+
+
+
+
 
 
 
@@ -1376,6 +1217,9 @@ for (var L = 0; L < C.length; L++) {
 
   
 
+  
+
+  
   
 
   

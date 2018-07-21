@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -10,8 +10,16 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -36,48 +44,11 @@
 
 
 
+
   
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -86,7 +57,22 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -100,11 +86,6 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
 
 
 <meta name="description" content="Stay Hungry, Stay Foolish">
@@ -113,6 +94,7 @@
 <meta property="og:url" content="https://howiezhao.github.io/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Stay Hungry, Stay Foolish">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Howie&#39;s Notes">
 <meta name="twitter:description" content="Stay Hungry, Stay Foolish">
@@ -124,9 +106,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: 'Author'
@@ -159,12 +143,6 @@
 
 
 
-
-
-
-
-
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -175,8 +153,7 @@
   
 
   <div class="container sidebar-position-left 
-   page-home 
- ">
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,16 +199,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
@@ -242,22 +209,32 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
           </a>
         </li>
       
@@ -323,7 +300,456 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/21/xml-json-yaml/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/21/xml-json-yaml/" itemprop="url">xml、json与yaml</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-21T19:50:23+08:00">
+                2018-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/21/markdown-cheatsheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/21/markdown-cheatsheet/" itemprop="url">Markdown小记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-21T08:50:42+08:00">
+                2018-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Markdown是一种轻量标记语言，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p># 一级标题<br>#### 四级标题<br>对应HTML，最高6级标题。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>- 无序列表项<br>- 无序列表项<br>- 无序列表项</p>
+<p>1. 有序列表项<br>2. 有序列表项<br>3. 有序列表项<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/21/markdown-cheatsheet/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/21/udacity-apollo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/21/udacity-apollo/" itemprop="url">Udacity：Apollo起步学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-21T08:36:36+08:00">
+                2018-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本笔记记录自<a href="https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419" target="_blank" rel="noopener">ud0419-无人驾驶第一课：从Apollo起步</a>。</p>
+<h2 id="一、无人驾驶概览"><a href="#一、无人驾驶概览" class="headerlink" title="一、无人驾驶概览"></a>一、无人驾驶概览</h2><p>无人驾驶车的6个等级：</p>
+<ul>
+<li>0级——基本等级：驾驶员是系统的唯一决策者。</li>
+<li>1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。</li>
+<li>2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。</li>
+<li>3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。</li>
+<li>4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。</li>
+<li>5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/21/udacity-apollo/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/16/about-powershell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -406,6 +832,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -431,18 +860,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -456,6 +882,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -468,7 +898,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/16/delivery-optimization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -551,6 +985,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -559,24 +996,21 @@
       
         
           
-            <p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization" target="_blank" rel="external"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
+            <p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization" target="_blank" rel="noopener"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
 
           
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -590,6 +1024,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -602,7 +1040,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/16/useradd-adduser/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -685,6 +1127,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -702,18 +1147,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -727,6 +1169,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -739,7 +1185,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/15/xaas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -822,6 +1272,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -831,26 +1284,23 @@
         
           
             <p>云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。</p>
-<h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service(基础设施即服务)，云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是<strong>VPS</strong>，即Virtual Private Server(虚拟专用服务器)，这类服务一般提供必要的Shell接口，可使用户连接到操作系统进行相关配置，常见的VPS厂商有<a href="https://aws.amazon.com/cn/ec2/" target="_blank" rel="external">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs" target="_blank" rel="external">阿里云 ECS</a>等。</p>
-<h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service(平台即服务)，云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的Web服务器、数据库等，用户可以直接在其上部署Web应用，我用过的虚拟空间有<a href="http://www.laoxuehost.com/" target="_blank" rel="external">老薛主机</a>，常见的PaaS厂商有<a href="https://cloud.google.com/appengine/" target="_blank" rel="external">Google App Engine</a>。</p>
+<h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service(基础设施即服务)，云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是<strong>VPS</strong>，即Virtual Private Server(虚拟专用服务器)，这类服务一般提供必要的Shell接口，可使用户连接到操作系统进行相关配置，常见的VPS厂商有<a href="https://aws.amazon.com/cn/ec2/" target="_blank" rel="noopener">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs" target="_blank" rel="noopener">阿里云 ECS</a>等。</p>
+<h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service(平台即服务)，云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的Web服务器、数据库等，用户可以直接在其上部署Web应用，我用过的虚拟空间有<a href="http://www.laoxuehost.com/" target="_blank" rel="noopener">老薛主机</a>，常见的PaaS厂商有<a href="https://cloud.google.com/appengine/" target="_blank" rel="noopener">Google App Engine</a>。</p>
 <h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p><strong>SaaS</strong>，Software as a Service(软件即服务)，云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的Hexo、WordPress等。</p>
 
           
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -864,6 +1314,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -876,7 +1330,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/15/compile-build/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -959,6 +1417,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -966,7 +1427,7 @@
 
       
         
-          <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器(compiler)</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。目前在Linux中使用最广的编译器是<strong>GCC</strong>，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcc test.c -o <span class="built_in">test</span></div></pre></td></tr></table></figure></p>
+          <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器(compiler)</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。目前在Linux中使用最广的编译器是<strong>GCC</strong>，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure></p>
 <p>若不指定生成文件，则默认生成a.out。<br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -978,18 +1439,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -1003,6 +1461,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1015,7 +1477,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/19/linux-reinforcement/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1098,6 +1564,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1111,18 +1580,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -1136,6 +1602,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1148,7 +1618,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/19/windows-reinforcement/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1231,6 +1705,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1244,18 +1721,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -1269,411 +1743,10 @@
         <div class="post-eof"></div>
       
     </footer>
-  </article>
-
-
-    
-      
-
-  
-
+  </div>
   
   
   
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/11/80211/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/11/80211/" itemprop="url">802.11协议分析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T18:53:11+08:00">
-                2018-05-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/11/ipsec/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/11/ipsec/" itemprop="url">IPSec运行机制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T18:48:46+08:00">
-                2018-05-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/11/ip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/11/ip/" itemprop="url">IP协议分析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T18:48:39+08:00">
-                2018-05-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>IP(Internet Protocol，网际协议)</p>
-<h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt=""><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/11/ip/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </article>
 
 
@@ -1706,271 +1779,120 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Howie Zhao" />
-          <p class="site-author-name" itemprop="name">Howie Zhao</p>
-           
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Howie Zhao" />
+            
+              <p class="site-author-name" itemprop="name">Howie Zhao</p>
               <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">37</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">categories</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-			﻿<a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
-function c() {
-	var e = document.createElement("link");
-	e.setAttribute("type", "text/css");
-	e.setAttribute("rel", "stylesheet");
-	e.setAttribute("href", f);
-	e.setAttribute("class", l);
-	document.body.appendChild(e)
-}
-
-function h() {
-	var e = document.getElementsByClassName(l);
-	for (var t = 0; t < e.length; t++) {
-		document.body.removeChild(e[t])
-	}
-}
-
-function p() {
-	var e = document.createElement("div");
-	e.setAttribute("class", a);
-	document.body.appendChild(e);
-	setTimeout(function() {
-		document.body.removeChild(e)
-	}, 100)
-}
-
-function d(e) {
-	return {
-		height : e.offsetHeight,
-		width : e.offsetWidth
-	}
-}
-
-function v(i) {
-	var s = d(i);
-	return s.height > e && s.height < n && s.width > t && s.width < r
-}
-
-function m(e) {
-	var t = e;
-	var n = 0;
-	while (!!t) {
-		n += t.offsetTop;
-		t = t.offsetParent
-	}
-	return n
-}
-
-function g() {
-	var e = document.documentElement;
-	if (!!window.innerWidth) {
-		return window.innerHeight
-	} else if (e && !isNaN(e.clientHeight)) {
-		return e.clientHeight
-	}
-	return 0
-}
-
-function y() {
-	if (window.pageYOffset) {
-		return window.pageYOffset
-	}
-	return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-}
-
-function E(e) {
-	var t = m(e);
-	return t >= w && t <= b + w
-}
-
-function S() {
-	var e = document.createElement("audio");
-	e.setAttribute("class", l);
-	e.src = i;
-	e.loop = false;
-	e.addEventListener("canplay", function() {
-		setTimeout(function() {
-			x(k)
-		}, 500);
-		setTimeout(function() {
-			N();
-			p();
-			for (var e = 0; e < O.length; e++) {
-				T(O[e])
-			}
-		}, 15500)
-	}, true);
-	e.addEventListener("ended", function() {
-		N();
-		h()
-	}, true);
-	e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
-	document.body.appendChild(e);
-	e.play()
-}
-
-function x(e) {
-	e.className += " " + s + " " + o
-}
-
-function T(e) {
-	e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
-}
-
-function N() {
-	var e = document.getElementsByClassName(s);
-	var t = new RegExp("\\b" + s + "\\b");
-	for (var n = 0; n < e.length; ) {
-		e[n].className = e[n].className.replace(t, "")
-	}
-}
-
-var e = 30;
-var t = 30;
-var n = 350;
-var r = 350;
-var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
-var s = "mw-harlem_shake_me";
-var o = "im_first";
-var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
-var a = "mw-strobe_light";
-var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
-var l = "mw_added_css";
-var b = g();
-var w = y();
-var C = document.getElementsByTagName("*");
-var k = null;
-for (var L = 0; L < C.length; L++) {
-	var A = C[L];
-	if (v(A)) {
-		if (E(A)) {
-			k = A;
-			break
-		}
-	}
-}
-if (A === null) {
-	console.warn("Could not find a node of the right size. Please try a different page.");
-	return
-}
-c();
-S();
-var O = [];
-for (var L = 0; L < C.length; L++) {
-	var A = C[L];
-	if (v(A)) {
-		O.push(A)
-	}
-}
-})()'><i class="fa fa-music"></i> High</a>
           </div>
-        
 
-        <div class="links-of-author motion-element">
-          
+          <nav class="site-state motion-element">
+
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  Zhihu
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
-              </span>
+              </div>
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/howiezhao" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
             </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://howiezhao.com" title="Howie's Blog" target="_blank">Howie's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
-                </li>
-              
-            </ul>
-          </div>
-        
+          
 
-        
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/howiezhao" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
 
+          
+          
 
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://howiezhao.com/" title="Howie's Blog" target="_blank">Howie's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
       </section>
 
       
@@ -1987,27 +1909,36 @@ for (var L = 0; L < C.length; L++) {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
+  <span class="author" itemprop="copyrightHolder">Howie</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">15.5k</span>
+  
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
 
 
         
@@ -2032,6 +1963,12 @@ for (var L = 0; L < C.length; L++) {
 </div>
 
 
+
+
+
+
+
+
         
       </div>
     </footer>
@@ -2041,6 +1978,8 @@ for (var L = 0; L < C.length; L++) {
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -2077,56 +2016,66 @@ for (var L = 0; L < C.length; L++) {
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
   
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -2156,7 +2105,7 @@ for (var L = 0; L < C.length; L++) {
 
 
 
-  
+
 
 
 
@@ -2490,6 +2439,9 @@ for (var L = 0; L < C.length; L++) {
 
   
 
+  
+
+  
   
 
   

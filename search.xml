@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[xml、json与yaml]]></title>
+    <url>%2F2018%2F07%2F21%2Fxml-json-yaml%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown小记]]></title>
+    <url>%2F2018%2F07%2F21%2Fmarkdown-cheatsheet%2F</url>
+    <content type="text"><![CDATA[Markdown是一种轻量标记语言，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。 基本语法标题# 一级标题#### 四级标题对应HTML，最高6级标题。 列表- 无序列表项- 无序列表项- 无序列表项 1. 有序列表项2. 有序列表项3. 有序列表项 链接[Howie’s Blog](http://howiezhao.com)超文本链接必须带http。 图片![一张图片](/images/abc.jpg)当图片无法显示时，则显示中括号中的语句。图片的路径为相对路径，即当前markdown文件所在路径下的images中的abc.jpg。 字体*斜体***粗体** 代码```这里是多行代码``` `这里是单行代码` 表格表头1 | 表头2-– | -–单元格1 | 单元格2单元格3 | 单元格4 引用> 这是引用 横线-–，这是一条水平区分线，用3个或以上的短横线表示 转义和传统编程语言一样，markdown使用 \ 转义以上特殊字符。 最佳实践 在特殊字符与要书写的文字之间加上空格 不同段之间加一空行 GitHub Flavored MarkdownGitHub Flavored Markdown，简记为GFM，即GitHub风格的Markdown语法，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下： 链接自动识别：GFM会自动为标准的URL加上链接 语法着色：在```后输入语言，即可着色 删除线：使用~~表示删除线 任务列表：使用- []或- [1]表示未勾选或已勾选的列表]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Udacity：Apollo起步学习笔记]]></title>
+    <url>%2F2018%2F07%2F21%2Fudacity-apollo%2F</url>
+    <content type="text"><![CDATA[本笔记记录自ud0419-无人驾驶第一课：从Apollo起步。 一、无人驾驶概览无人驾驶车的6个等级： 0级——基本等级：驾驶员是系统的唯一决策者。 1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。 2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。 3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。 4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。 5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。 无人驾驶车的5个核心部件： 计算机视觉(Computer Vision)：通过摄像头图像弄清楚我们周围的世界是怎样的。 传感器融合(Sensor Fusion)：合并来自其他传感器的数据，如激光和雷达，从而更加深入的了解我们周围的环境。 定位(Localization)：精确的确定我们在那个世界所处的位置。 路径规划(Path Planning)：绘制这个世界的路线，帮助我们到达我们想去的地方。 控制(Control)：为了让汽车沿着我们在路径规划期间建立的轨道。 Apollo技术框架包含的4个层面： 参考车辆平台 参考硬件平台 开源软件平台 云服务平台 二、高精度地图]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>无人驾驶</tag>
+        <tag>Apollo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于PowerShell]]></title>
     <url>%2F2018%2F07%2F16%2Fabout-powershell%2F</url>
     <content type="text"><![CDATA[PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下： Windows Server 2003：PowerShell 1.0 Windows 7：PowerShell 2.0 Windows 8：PowerShell 3.0 Windows 10：PowerShell 4.0 优势及劣势PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。 Cmdlets与pipelineCmdlets与pipeline是PowerShell中的两个核心概念， 常用命令PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。1234Get-Host #查看PowerShell版本信息help #查看帮助信息Install-Module #从powershellgallery.com下载安装第三方模块Import-Module #导入模块，安装的模块需要先导入才能使用 常用模块 posh-git：PowerShell中的Git增强模块 oh-my-posh：类似于oh-my-zsh PSReadline：一个增强的命令行编辑模块 windows-screenfetch：Windows下的screenfetch模块]]></content>
@@ -393,7 +421,7 @@
   <entry>
     <title><![CDATA[Hexo初体验]]></title>
     <url>%2F2017%2F06%2F20%2Fhexo-experience%2F</url>
-    <content type="text"><![CDATA[安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安装Hexo 参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于： 本地安装 将安装包放在 ./node_modules 下（运行npm时所在的目录） 可以通过 require() 来引入本地安装的包 全局安装 将安装包放在 /usr/local下 可以直接在命令行里使用 常用命令新建一个网站1$ hexo init [folder] 如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。 新建一篇文章1$ hexo n [layout] &lt;title&gt; 如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 生成静态文件1$ hexo g 启动服务预览1$ hexo s 部署网站1$ hexo d 清除缓存文件(db.json)和已生成的静态文件(public)。1$ hexo clean 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。]]></content>
+    <content type="text"><![CDATA[安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安装Hexo 参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于： 本地安装 将安装包放在 ./node_modules 下（运行npm时所在的目录） 可以通过 require() 来引入本地安装的包 全局安装 将安装包放在 /usr/local下 可以直接在命令行里使用 关于npm更多的内容请参考npm模块安装机制简介。 更新在博客所在目录执行npm update -g即可更新Hexo。 常用命令新建一个网站1$ hexo init [folder] 如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。 新建一篇文章1$ hexo n [layout] &lt;title&gt; 如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 生成静态文件1$ hexo g 启动服务预览1$ hexo s 部署网站1$ hexo d 清除缓存文件(db.json)和已生成的静态文件(public)。1$ hexo clean 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。关于如何利用Hexo搭建个人博客的更详细内容，请参考GitHub + Hexo 搭建个人网站详细教程。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
