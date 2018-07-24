@@ -845,10 +845,11 @@
           <p>PowerShell是微软用来取代CMD的一个强大的Shell。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：</p>
 <ul>
-<li>Windows Server 2003：PowerShell 1.0</li>
-<li>Windows 7：PowerShell 2.0</li>
-<li>Windows 8：PowerShell 3.0</li>
-<li>Windows 10：PowerShell 4.0</li>
+<li>Windows XP SP2 / Server 2003 SP1：PowerShell 1.0</li>
+<li>Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated Scripting Environment(集成的脚本环境)，用来方便的编写PowerShell脚本。</li>
+<li>Windows 8 / Server 2012：PowerShell 3.0，从此版本开始，PowerShell被集成进了WMF中，即Windows Management Framework(Windows管理框架)。</li>
+<li>Windows 8.1 / Server 2012 R2：PowerShell 4.0</li>
+<li>Windows 10：PowerShell 5.0，此版本的WMF包含了PowerShellGet，可用于在线下载、安装模块。</li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1141,7 +1142,7 @@
             <p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p>
 <h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
 <h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
-<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录，因此可以使用<code>-r</code>参数。</p>
+<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用<code>-r</code>参数。</p>
 
           
         
@@ -1574,9 +1575,17 @@
 
       
         
-          
-            <h2 id="账户与口令"><a href="#账户与口令" class="headerlink" title="账户与口令"></a>账户与口令</h2><h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2>
-          
+          <h2 id="帐户与口令"><a href="#帐户与口令" class="headerlink" title="帐户与口令"></a>帐户与口令</h2><p>此方面的加固主要为了防止针对帐户的暴力破解。</p>
+<p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p>
+<p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p>
+<p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/19/linux-reinforcement/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1715,9 +1724,19 @@
 
       
         
-          
-            
-          
+          <h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>下面这几项应为每一个使用Windows的用户的最最基本安全配置：</p>
+<ol>
+<li>开启Windows防火墙</li>
+<li>设置用户帐户控制(UAC)为合适级别</li>
+<li>保持Windows更新</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/19/windows-reinforcement/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1923,7 +1942,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.5k</span>
+    <span title="Site words total count">16.8k</span>
   
 </div>
 

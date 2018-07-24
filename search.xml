@@ -31,7 +31,7 @@
   <entry>
     <title><![CDATA[关于PowerShell]]></title>
     <url>%2F2018%2F07%2F16%2Fabout-powershell%2F</url>
-    <content type="text"><![CDATA[PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下： Windows Server 2003：PowerShell 1.0 Windows 7：PowerShell 2.0 Windows 8：PowerShell 3.0 Windows 10：PowerShell 4.0 优势及劣势PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。 Cmdlets与pipelineCmdlets与pipeline是PowerShell中的两个核心概念， 常用命令PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。1234Get-Host #查看PowerShell版本信息help #查看帮助信息Install-Module #从powershellgallery.com下载安装第三方模块Import-Module #导入模块，安装的模块需要先导入才能使用 常用模块 posh-git：PowerShell中的Git增强模块 oh-my-posh：类似于oh-my-zsh PSReadline：一个增强的命令行编辑模块 windows-screenfetch：Windows下的screenfetch模块]]></content>
+    <content type="text"><![CDATA[PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下： Windows XP SP2 / Server 2003 SP1：PowerShell 1.0 Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated Scripting Environment(集成的脚本环境)，用来方便的编写PowerShell脚本。 Windows 8 / Server 2012：PowerShell 3.0，从此版本开始，PowerShell被集成进了WMF中，即Windows Management Framework(Windows管理框架)。 Windows 8.1 / Server 2012 R2：PowerShell 4.0 Windows 10：PowerShell 5.0，此版本的WMF包含了PowerShellGet，可用于在线下载、安装模块。 优势及劣势PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。 Cmdlets与pipelineCmdlets与pipeline是PowerShell中的两个核心概念， 常用命令PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。1234Get-Host #查看PowerShell版本信息help #查看帮助信息Install-Module #从powershellgallery.com下载安装第三方模块Import-Module #导入模块，安装的模块需要先导入才能使用 常用模块 posh-git：PowerShell中的Git增强模块 oh-my-posh：类似于oh-my-zsh PSReadline：一个增强的命令行编辑模块 windows-screenfetch：Windows下的screenfetch模块]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -53,7 +53,7 @@
   <entry>
     <title><![CDATA[useradd与adduser]]></title>
     <url>%2F2018%2F07%2F16%2Fuseradd-adduser%2F</url>
-    <content type="text"><![CDATA[在Linux中创建用户可以用useradd或者adduser，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。 adduser当使用adduser howie命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。 useradd当使用useradd howie命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用passwd howie命令。其次，useradd有众多参数，我们可以通过使用这些参数来达到和adduser一样的效果，如useradd -d /home/howie -m -s /bin/bash howie，不过注意之后还得使用passwd命令创建密码，当然也可以使用-p参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。 userdel当使用userdel howie命令时，系统只会删除howie用户，并不会删除用户主目录，因此可以使用-r参数。]]></content>
+    <content type="text"><![CDATA[在Linux中创建用户可以用useradd或者adduser，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。 adduser当使用adduser howie命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。 useradd当使用useradd howie命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用passwd howie命令。其次，useradd有众多参数，我们可以通过使用这些参数来达到和adduser一样的效果，如useradd -d /home/howie -m -s /bin/bash howie，不过注意之后还得使用passwd命令创建密码，当然也可以使用-p参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。 userdel当使用userdel howie命令时，系统只会删除howie用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用-r参数。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -80,7 +80,7 @@
   <entry>
     <title><![CDATA[Linux系统加固]]></title>
     <url>%2F2018%2F05%2F19%2Flinux-reinforcement%2F</url>
-    <content type="text"><![CDATA[账户与口令服务安全文件系统安全]]></content>
+    <content type="text"><![CDATA[帐户与口令此方面的加固主要为了防止针对帐户的暴力破解。 禁用或删除无用帐户：使用命令userdel &lt;用户名&gt;删除不必要的帐户，使用参数-r即可删除相应用户的家目录和邮箱目录。使用命令passwd -l &lt;用户名&gt;锁定不必要的帐户，解锁可使用passwd -u &lt;用户名&gt;。 检查特殊帐户：使用命令awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow查看空口令帐户，若存在，则使用命令passwd &lt;用户名&gt;为空口令帐户设定密码。使用命令awk -F: &#39;($3==0)&#39; /etc/passwd查看uid为0的帐户，确认uid为0的帐户只有root帐户。 添加口令策略：使用命令change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;修改帐户口令策略，-m表示密码最小使用天数，-M表示密码最大使用天数，-E表示密码到期时间，-W表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。 设置用户锁定：在CentOS7中，编辑/etc/pam.d/system-auth文件，添加auth required pam_tally2.so onerr=fail deny=6 unlock_time=300此行，表示当密码连续输错6次后锁定，锁定时间300秒。限制能su到root的用户：编辑/etc/pam.d/su文件，添加auth required pam_wheel.so group=test此行，表示只允许test组用户su到root。 服务安全服务越少，系统越安全。 关闭不必要的服务：在CentOS中，使用命令chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset设置服务在指定init级别下开机是否启动。 SSH服务安全：编辑/etc/ssh/sshd_config文件，修改默认端口，即Port项；禁止root用户远程登录，即PermitRootLogin项；禁止空密码登录，即PermitEmptyPasswords项；限制登录密码输错次数。 文件系统安全权限越小，系统越安全 设置umask值：编辑/etc/profile文件，修改umask值为027。 设置登录超时：编辑/etc/profile文件，添加TIMEOUT=180，即登录后无操作3分钟将超时断开连接。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -91,7 +91,7 @@
   <entry>
     <title><![CDATA[Windows系统加固]]></title>
     <url>%2F2018%2F05%2F19%2Fwindows-reinforcement%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[基本配置下面这几项应为每一个使用Windows的用户的最最基本安全配置： 开启Windows防火墙 设置用户帐户控制(UAC)为合适级别 保持Windows更新 帐户安全此方面的加固主要是为了防止针对帐户的暴力破解，帐户是黑客入侵系统的突破口，帐户越多，危险系数越高。 停用Guest帐户：在计算机管理的本地用户和组中禁用Guest帐户，并为Guest帐户设置复杂密码，并拒绝远程访问。 重命名或禁用Administrator帐户：在计算机管理的本地用户和组中为Administrator帐户重命名，或直接禁用。 创建陷阱帐户：在计算机管理的本地用户和组中创建一个名为Administrator的本地帐户，并将它的权限设置成最低，加上一个超过10位的强密码。可通过将其隶属于Guest组已达到权限最低。 限制用户数量：在计算机管理的本地用户和组中删除所有的测试帐户、共享帐户和普通部门帐户，一般情况下，如果系统用户超过10个，一般总会存在一两个弱口令帐户。 开启帐户锁定策略：在本地安全策略的帐户锁定策略中设置帐户锁定阈值为3次，帐户锁定时间为30分钟，重置帐户锁定计数器为30分钟之后。 系统安全开启密码策略：在本地安全策略的密码策略中启用密码复杂性要求，设置密码长度最小值为7，密码最短使用期限为1，密码最长使用期限为42，强制密码历史为24，禁用以可还原的加密储存密码。 设置双重加密帐户保护：在运行对话框中输入syskey，启用SAM数据库加密工具，为Windows登录设置双重加密，注意此功能在Windows10中已被剔除。 取消默认共享：编辑注册表键HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters，新建项AutoShareServer，值为0，即可关闭盘符默认共享，新建项AutoShareWks，值为0，即可关闭ADMIN默认共享。 开启审核策略：在本地安全策略的审核策略中审核所有的成功失败操作，记录的信息可以在事件查看器的Windows日志中查看。 修改TTL值：编辑注册表键HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters，新建项defaultTTL，随便赋值，以防黑客通过ping获取TTL以鉴别操作系统类型。 关闭不必要的服务：Windows默认会启动多个服务，可以在计算机管理的服务中禁用相关服务，下面列出了一些可以禁用的服务： COM+ Event System Computer Browser Distributed Link Tracking Client Routing and Remote Access]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -323,7 +323,7 @@
   <entry>
     <title><![CDATA[Linux中/etc/passwd与/etc/shadow的区别]]></title>
     <url>%2F2018%2F04%2F29%2Fpasswd-and-shadow%2F</url>
-    <content type="text"><![CDATA[简单来说，/etc/passwd存储一般的用户信息，任何人都可以访问；/etc/shadow存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍： /etc/passwd早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将用户密码存储到了/etc/shadow文件中，并将其权限设为仅 root 用户。在渗透过程中，这两个文件最好都检查。/etc/passwd的文件格式为：用户名:密码:用户ID:用户组ID:注释:用户目录:登录shell，如果密码被存储在了/etc/shadow文件中，则此文件中密码项为x，常见形式如下：1root:x:0:0:root:/root:/bin/bash /etc/shadow/etc/shadow的文件格式为：用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段，如果密码项为 ! 或 * ，则代表此账号不能用于登录，密码项中更为详细的格式为：\$加密方法ID\$Salt\$加密值，常见形式如下：1root:$6$Fsf6Q6SH$MlagWih0lcGFxtAo7/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::]]></content>
+    <content type="text"><![CDATA[简单来说，/etc/passwd存储一般的用户信息，任何人都可以访问；/etc/shadow存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍： /etc/passwd早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将用户密码存储到了/etc/shadow文件中，并将其权限设为仅 root 用户。在渗透过程中，这两个文件最好都检查。/etc/passwd的文件格式为：用户名:密码:用户ID:用户组ID:注释:用户目录:登录shell，共7项，默认情况下，root的用户ID为0，新建的其他用户ID从1000起，如果密码被存储在了/etc/shadow文件中，则此文件中密码项为x，常见形式如下：1root:x:0:0:root:/root:/bin/bash /etc/shadow/etc/shadow的文件格式为：用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段，共9项，如果密码项以 ! 或 * 起始，则代表此账号被锁定，不能用于登录，密码项中更为详细的格式为：\$加密方法ID\$Salt\$加密值，常见形式如下：1root:$6$Fsf6Q6SH$MlagWih0lcGFxtAo7/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>

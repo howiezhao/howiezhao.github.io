@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Stay Hungry, Stay Foolish">
+<meta name="description" content="基本配置下面这几项应为每一个使用Windows的用户的最最基本安全配置：  开启Windows防火墙 设置用户帐户控制(UAC)为合适级别 保持Windows更新">
 <meta name="keywords" content="Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows系统加固">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/19/windows-reinforcement/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
+<meta property="og:description" content="基本配置下面这几项应为每一个使用Windows的用户的最最基本安全配置：  开启Windows防火墙 设置用户帐户控制(UAC)为合适级别 保持Windows更新">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-19T06:00:56.852Z">
+<meta property="og:updated_time" content="2018-07-24T13:23:57.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows系统加固">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:description" content="基本配置下面这几项应为每一个使用Windows的用户的最最基本安全配置：  开启Windows防火墙 设置用户帐户控制(UAC)为合适级别 保持Windows更新">
 
 
 
@@ -400,7 +400,32 @@
       
 
       
-        
+        <h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>下面这几项应为每一个使用Windows的用户的最最基本安全配置：</p>
+<ol>
+<li>开启Windows防火墙</li>
+<li>设置用户帐户控制(UAC)为合适级别</li>
+<li>保持Windows更新</li>
+</ol>
+<a id="more"></a>
+<h2 id="帐户安全"><a href="#帐户安全" class="headerlink" title="帐户安全"></a>帐户安全</h2><p>此方面的加固主要是为了防止针对帐户的暴力破解，帐户是黑客入侵系统的突破口，帐户越多，危险系数越高。</p>
+<p>停用Guest帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中禁用Guest帐户，并为Guest帐户设置复杂密码，并拒绝远程访问。</p>
+<p>重命名或禁用Administrator帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中为Administrator帐户重命名，或直接禁用。</p>
+<p>创建陷阱帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中创建一个名为Administrator的本地帐户，并将它的权限设置成最低，加上一个超过10位的强密码。可通过将其隶属于Guest组已达到权限最低。</p>
+<p>限制用户数量：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中删除所有的测试帐户、共享帐户和普通部门帐户，一般情况下，如果系统用户超过10个，一般总会存在一两个弱口令帐户。</p>
+<p>开启帐户锁定策略：<br>在<strong>本地安全策略</strong>的<strong>帐户锁定策略</strong>中设置帐户锁定阈值为3次，帐户锁定时间为30分钟，重置帐户锁定计数器为30分钟之后。</p>
+<h2 id="系统安全"><a href="#系统安全" class="headerlink" title="系统安全"></a>系统安全</h2><p>开启密码策略：<br>在<strong>本地安全策略</strong>的<strong>密码策略</strong>中启用密码复杂性要求，设置密码长度最小值为7，密码最短使用期限为1，密码最长使用期限为42，强制密码历史为24，禁用以可还原的加密储存密码。</p>
+<p>设置双重加密帐户保护：<br>在运行对话框中输入syskey，启用SAM数据库加密工具，为Windows登录设置双重加密，注意此功能在Windows10中已被剔除。</p>
+<p>取消默认共享：<br>编辑注册表键HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters，新建项AutoShareServer，值为0，即可关闭盘符默认共享，新建项AutoShareWks，值为0，即可关闭ADMIN默认共享。</p>
+<p>开启审核策略：<br>在<strong>本地安全策略</strong>的<strong>审核策略</strong>中审核所有的成功失败操作，记录的信息可以在<strong>事件查看器</strong>的<strong>Windows日志</strong>中查看。</p>
+<p>修改TTL值：<br>编辑注册表键HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters，新建项defaultTTL，随便赋值，以防黑客通过ping获取TTL以鉴别操作系统类型。</p>
+<p>关闭不必要的服务：<br>Windows默认会启动多个服务，可以在<strong>计算机管理</strong>的<strong>服务</strong>中禁用相关服务，下面列出了一些可以禁用的服务：</p>
+<ul>
+<li>COM+ Event System</li>
+<li>Computer Browser</li>
+<li>Distributed Link Tracking Client</li>
+<li>Routing and Remote Access</li>
+</ul>
+
       
     </div>
     
@@ -499,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,6 +644,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本配置"><span class="nav-number">1.</span> <span class="nav-text">基本配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帐户安全"><span class="nav-number">2.</span> <span class="nav-text">帐户安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统安全"><span class="nav-number">3.</span> <span class="nav-text">系统安全</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -637,7 +687,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.5k</span>
+    <span title="Site words total count">16.8k</span>
   
 </div>
 

@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="账户与口令服务安全文件系统安全">
+<meta name="description" content="帐户与口令此方面的加固主要为了防止针对帐户的暴力破解。 禁用或删除无用帐户：使用命令userdel &amp;lt;用户名&amp;gt;删除不必要的帐户，使用参数-r即可删除相应用户的家目录和邮箱目录。使用命令passwd -l &amp;lt;用户名&amp;gt;锁定不必要的帐户，解锁可使用passwd -u &amp;lt;用户名&amp;gt;。 检查特殊帐户：使用命令awk -F: &amp;#39;($2==&amp;quot;&amp;quot;)&amp;#">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统加固">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/19/linux-reinforcement/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="账户与口令服务安全文件系统安全">
+<meta property="og:description" content="帐户与口令此方面的加固主要为了防止针对帐户的暴力破解。 禁用或删除无用帐户：使用命令userdel &amp;lt;用户名&amp;gt;删除不必要的帐户，使用参数-r即可删除相应用户的家目录和邮箱目录。使用命令passwd -l &amp;lt;用户名&amp;gt;锁定不必要的帐户，解锁可使用passwd -u &amp;lt;用户名&amp;gt;。 检查特殊帐户：使用命令awk -F: &amp;#39;($2==&amp;quot;&amp;quot;)&amp;#">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-20T14:30:33.684Z">
+<meta property="og:updated_time" content="2018-07-24T11:51:19.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统加固">
-<meta name="twitter:description" content="账户与口令服务安全文件系统安全">
+<meta name="twitter:description" content="帐户与口令此方面的加固主要为了防止针对帐户的暴力破解。 禁用或删除无用帐户：使用命令userdel &amp;lt;用户名&amp;gt;删除不必要的帐户，使用参数-r即可删除相应用户的家目录和邮箱目录。使用命令passwd -l &amp;lt;用户名&amp;gt;锁定不必要的帐户，解锁可使用passwd -u &amp;lt;用户名&amp;gt;。 检查特殊帐户：使用命令awk -F: &amp;#39;($2==&amp;quot;&amp;quot;)&amp;#">
 
 
 
@@ -400,7 +400,18 @@
       
 
       
-        <h2 id="账户与口令"><a href="#账户与口令" class="headerlink" title="账户与口令"></a>账户与口令</h2><h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2>
+        <h2 id="帐户与口令"><a href="#帐户与口令" class="headerlink" title="帐户与口令"></a>帐户与口令</h2><p>此方面的加固主要为了防止针对帐户的暴力破解。</p>
+<p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p>
+<p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p>
+<p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。<a id="more"></a></p>
+<p>设置用户锁定：<br>在CentOS7中，编辑/etc/pam.d/system-auth文件，添加<code>auth required pam_tally2.so onerr=fail deny=6 unlock_time=300</code>此行，表示当密码连续输错6次后锁定，锁定时间300秒。<br>限制能su到root的用户：<br>编辑/etc/pam.d/su文件，添加<code>auth required pam_wheel.so group=test</code>此行，表示只允许test组用户su到root。</p>
+<h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><p>服务越少，系统越安全。</p>
+<p>关闭不必要的服务：<br>在CentOS中，使用命令<code>chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset</code>设置服务在指定init级别下开机是否启动。</p>
+<p>SSH服务安全：<br>编辑/etc/ssh/sshd_config文件，修改默认端口，即<code>Port</code>项；禁止root用户远程登录，即<code>PermitRootLogin</code>项；禁止空密码登录，即<code>PermitEmptyPasswords</code>项；限制登录密码输错次数。</p>
+<h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2><p>权限越小，系统越安全</p>
+<p>设置umask值：<br>编辑/etc/profile文件，修改umask值为027。</p>
+<p>设置登录超时：<br>编辑/etc/profile文件，添加<code>TIMEOUT=180</code>，即登录后无操作3分钟将超时断开连接。</p>
+
       
     </div>
     
@@ -628,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#账户与口令"><span class="nav-number">1.</span> <span class="nav-text">账户与口令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务安全"><span class="nav-number">2.</span> <span class="nav-text">服务安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统安全"><span class="nav-number">3.</span> <span class="nav-text">文件系统安全</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#帐户与口令"><span class="nav-number">1.</span> <span class="nav-text">帐户与口令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务安全"><span class="nav-number">2.</span> <span class="nav-text">服务安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统安全"><span class="nav-number">3.</span> <span class="nav-text">文件系统安全</span></a></li></ol></div>
             
 
           </div>
@@ -662,7 +673,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.5k</span>
+    <span title="Site words total count">16.8k</span>
   
 </div>
 
