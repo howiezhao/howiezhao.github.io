@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[xml、json与yaml]]></title>
+    <title><![CDATA[Base编码家族]]></title>
+    <url>%2F2018%2F08%2F10%2Fbase%2F</url>
+    <content type="text"><![CDATA[Base64Base32Base16]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[古典密码学]]></title>
+    <url>%2F2018%2F08%2F10%2Fclassical-crypto%2F</url>
+    <content type="text"><![CDATA[古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。明文Hello World的加密过程如下： 取偏移量为3 计算H的后3位为K 以此类推 密文为：Khoor Zruog 类似的，解密过程如下： 计算K的前3位为H 以此类推 明文为：Hello World 注意：当偏移量为13时，这种凯撒密码的特例又被称为ROT13(回转13位)加密。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。 培根密码培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表： 明文 密文 明文 密文 明文 密文 明文 密文 a AAAAA g AABBA n ABBAA t BAABA b AAAAB h AABBB o ABBAB u-v BAABB c AAABA i-j ABAAA p ABBBA w BABAA d AAABB k ABAAB q ABBBB x BABAB e AABAA l ABABA r BAAAA y BABBA f AABAB m ABABB s BAAAB z BABBB 按照上表，明文hello的密文为AABBBAABAAABABBABABBABBBA，显然，密文的长度是明文长度的5倍。除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下： 明文 密文 明文 密文 明文 密文 明文 密文 明文 密文 A aaaaa G aabba M abbaa S baaba Y bbaaa B aaaab H aabbb N abbab T baabb Z bbaab C aaaba I abaaa O abbba U babaa D aaabb J abaab P abbbb V babab E aabaa K ababa Q baaaa W babba F aabab L ababb R baaab X babbb 同理，明文HELLO的密文为aabbbaabaaababbababbabbba。注意：虽然表中出现了A B两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密hello为GOod gOOd STUdY, dAY dAy UP, haHa，其中大写代表A，小写代表B；类似的，也可以用粗体代表A，正常代表B，以字体的样式加密hello。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。 置换置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，典型的有栅栏密码等。 栅栏密码栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。明文Hello World的加密过程如下： 去掉空格：HelloWorld 5个一组：Hello，World 取出每组第1个字母：HW 取出每组第2个字母：eo 以此类推 连在一起：HWeolrllod 加上适当空格：HWeol rllod 类似的，解密过程如下： 去掉空格：HWeolrllod 分成5栏：HW、eo、lr、ll、od 取出每栏第1个字母：Hello 依次类推 连在一起：HelloWorld 加上适当空格：Hello World 注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。 其他当铺密码准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如王夫 井工 夫口 由中人即为67 84 70 123。 猪圈密码猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：明文X MARKS THE SPOT的加密结果如下：]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JSFuck]]></title>
+    <url>%2F2018%2F08%2F10%2Fjsfuck%2F</url>
+    <content type="text"><![CDATA[JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。JSFuck种共使用[、]、(、)、!、+这6种字符。alert(1)这段JavaScript代码用JSFuck风格表示如下所示：1[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])() 要将任意的JavaScript代码编码为JSFuck风格，可前往JSFuck。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Brainfuck]]></title>
+    <url>%2F2018%2F08%2F09%2FBrainfuck%2F</url>
+    <content type="text"><![CDATA[Brainfuck是在1993年创建的一种极小化的计算机语言，由于fuck在英语中是脏话，这种语言有时也被称为Brainf*ck或Brainf***，或被简称为BF。Brainfuck中共有8种字符，它们及其含义如下所示： &gt;：指针加一 &lt;：指针减一 +：指针指向的字节的值加一 -：指针指向的字节的值减一 .：输出指针指向的单元内容(ASCII码) ,：输入内容到指针指向的单元(ASCII码) [：如果指针指向的单元值为零，向后跳转到对应的]指令的次一指令处 ]：如果指针指向的单元值不为零，向前跳转到对应的[指令的次一指令处 下面是一个用Brainfuck在屏幕上打印Hello World的程序例子：123++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;. 程序的运行结果如Brainfuck Visualizer所示。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[《TAOUP》读书笔记]]></title>
+    <url>%2F2018%2F08%2F02%2Ftaoup%2F</url>
+    <content type="text"><![CDATA[我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的TAOUP，即The Art of UNIX Programming(UNIX编程艺术)。 哲学Unix的设计哲学总体上可以概括为以下几点： 模块原则：使用简洁的接口拼合简单的部件 清晰原则：清晰胜于机巧 组合原则：设计时考虑拼接组合 分离原则：策略同机制分离，接口同引擎分离 简洁原则：设计要简洁，复杂度能低则低 吝啬原则：除非却无它法，不要编写庞大的程序 透明性原则：设计要可见，以便审查和调试 健壮原则：健壮源于透明与简洁 表示原则：把知识叠入数据以求逻辑质朴而健壮 通俗原则：接口设计避免标新立异 缄默原则：如果一个程序没什么好说的，就沉默 补救原则：出现异常时，马上退出并给出足够错误信息 经济原则：宁花机器一分，不花程序员一秒 生成原则：避免手工hack，尽量编写程序去生成程序 优化原则：雕琢前先要有原型，跑之前先学会走 多样原则：决不相信所谓“不二法门”的断言 扩展原则：设计着眼未来，未来总比预想来得快 所有的Unix哲学浓缩为一条铁律就是KISS原则，即Keep It Simple, Stupid！]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于代理那些事]]></title>
+    <url>%2F2018%2F07%2F26%2Fabout-proxy%2F</url>
+    <content type="text"><![CDATA[正向连接与反向连接正向连接即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；反向连接即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。 正向代理与反向代理在英语中，Proxy表示服务器代理这种动作，而Agent表示代理服务器这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。正向代理(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。反向代理(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。 端口转发与端口映射传统意义上，我们认为端口转发(Port Forwarding)与端口映射(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[XML、JSON与YAML]]></title>
     <url>%2F2018%2F07%2F21%2Fxml-json-yaml%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。 XMLXML，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：12345678910&lt;person&gt; &lt;firstName&gt;Tian&lt;/firstName&gt; &lt;lastName&gt;Song&lt;/lastName&gt; &lt;address&gt; &lt;streetAddr&gt;中关村南大街5号&lt;/streetAddr&gt; &lt;city&gt;北京市&lt;/city&gt; &lt;zipcode&gt;100081&lt;/zipcode&gt; &lt;/address&gt; &lt;prof&gt;Computer System&lt;/prof&gt;&lt;prof&gt;Security&lt;/prof&gt;&lt;/person&gt; JSONJSON，JavaScript Object Notation(JavaScript对象表示法)，倘若我要表示某个人的简要信息，用JSON可写为：12345678910&#123; &quot;firstName&quot; : &quot;Tian&quot;, &quot;lastName&quot; : &quot;Song&quot;, &quot;address&quot; : &#123; &quot;streetAddr&quot; : &quot;中关村南大街5号&quot;, &quot;city&quot; : &quot;北京市&quot;, &quot;zipcode&quot; : &quot;100081&quot; &#125;, &quot;prof&quot; : [&quot;Computer System&quot;, &quot;Security&quot;]&#125; YAMLYAML，在开发这种语言之初，其意为Yet Another Markup Language(仍是一种标记语言)，之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为YAML Ain’t a Markup Language(YAML不是一种标记语言)，倘若我要表示某个人的简要信息，用YAML可写为：123456789firstName : TianlastName : Songaddress : streetAddr : 中关村南大街5号 city : 北京市 zipcode : 100081prof : -Computer System-Security 比较XML是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于Internet上的信息交互与传递，以及用户界面的编写，比如Android；JSON中的信息有类型，适合程序处理(js)，较XML简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -245,7 +305,7 @@
   <entry>
     <title><![CDATA[编码与加密]]></title>
     <url>%2F2018%2F05%2F08%2Fencode-encrypt%2F</url>
-    <content type="text"><![CDATA[编码编码(encode)是信息从一种形式或格式转换为另一种形式的过程。相应的，解码(decode)是编码的逆过程。常见的编码算法有ASCII编码、URL编码、HTML编码、Base64编码等。 加密加密(encryption)是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密(decryption)过程，才能将密文还原为正常可读的内容。加密算法可以分为两类：对称加密(Symmetric encryption)和非对称加密(Asymmetric encryption)。对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作数字签名(Digital Signature)。常见的对称加密算法有DES、3DES、AES、RC5等。常见的非对称加密算法有RSA、Elgamal等。非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。加密算法实质上是密码算法中的一种，另一种则是哈希(hash)算法。 哈希哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文(即哈希值)反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为冲突。一个优秀的哈希算法会尽量的减少这种冲突性。常见的哈希算法有MD5、SHA-1、SHA-256、CRC-32、CRC-64等。注意： 密码学建议，不要使用任何自己创造的私有加密算法，应该使用广泛使用的公开加密算法，这些都是已被证明安全的。 编码与加密主要的区别在于，所用的Key是否是公共所知的，或者说，编码根本就没有Key。]]></content>
+    <content type="text"><![CDATA[编码编码(encode)是信息从一种形式或格式转换为另一种形式的过程。相应的，解码(decode)是编码的逆过程。常见的编码算法有ASCII编码、URL编码、HTML编码、Base64编码等。 加密加密(encryption)是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密(decryption)过程，才能将密文还原为正常可读的内容。现代密码学中的加密算法可以分为两类：对称加密(Symmetric encryption)和非对称加密(Asymmetric encryption)。对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作数字签名(Digital Signature)。常见的对称加密算法有DES、3DES、AES、RC5等。常见的非对称加密算法有RSA、Elgamal等。非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。加密算法实质上是密码算法中的一种，另一种则是哈希(hash)算法。 哈希哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文(即哈希值)反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为冲突。一个优秀的哈希算法会尽量的减少这种冲突性。常见的哈希算法有MD5、SHA-1、SHA-256、CRC-32、CRC-64等。注意： 密码学建议，不要使用任何自己创造的私有加密算法，应该使用广泛使用的公开加密算法，这些都是已被证明安全的。 编码与加密主要的区别在于，所用的Key是否是公共所知的，或者说，编码根本就没有Key。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -421,7 +481,7 @@
   <entry>
     <title><![CDATA[Hexo初体验]]></title>
     <url>%2F2017%2F06%2F20%2Fhexo-experience%2F</url>
-    <content type="text"><![CDATA[安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安装Hexo 参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于： 本地安装 将安装包放在 ./node_modules 下（运行npm时所在的目录） 可以通过 require() 来引入本地安装的包 全局安装 将安装包放在 /usr/local下 可以直接在命令行里使用 关于npm更多的内容请参考npm模块安装机制简介。 更新在博客所在目录执行npm update -g即可更新Hexo。 常用命令新建一个网站1$ hexo init [folder] 如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。 新建一篇文章1$ hexo n [layout] &lt;title&gt; 如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 生成静态文件1$ hexo g 启动服务预览1$ hexo s 部署网站1$ hexo d 清除缓存文件(db.json)和已生成的静态文件(public)。1$ hexo clean 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。关于如何利用Hexo搭建个人博客的更详细内容，请参考GitHub + Hexo 搭建个人网站详细教程。]]></content>
+    <content type="text"><![CDATA[Hexo是一个基于Node.js的开源静态博客框架，类似于Jekyll，不同的是，Jekyll采用Ruby语言开发。 安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入1$ node -v 来测试Node.js是否成功安装，输入1$ npm -v 来测试npm是否成功安装。 npm成功安装后，可使用1$ npm install -g hexo-cli 来快速安装Hexo 参数-g表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于： 本地安装 将安装包放在 ./node_modules 下（运行npm时所在的目录） 可以通过 require() 来引入本地安装的包 全局安装 将安装包放在 /usr/local下 可以直接在命令行里使用 关于npm更多的内容请参考npm模块安装机制简介。 更新在博客所在目录执行npm update -g即可更新Hexo。 常用命令新建一个网站1$ hexo init [folder] 如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。 新建一篇文章1$ hexo n [layout] &lt;title&gt; 如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 生成静态文件1$ hexo g 启动服务预览1$ hexo s 部署网站1$ hexo d 清除缓存文件(db.json)和已生成的静态文件(public)。1$ hexo clean 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。 更多目录结构在Hexo生成的网站目录中，public目录保存着已经生成的静态文件，source目录保存着markdown格式的源文件，themes目录保存着主题文件，_config.yml文件为站点配置文件。 关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考GitHub + Hexo 搭建个人网站详细教程。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>

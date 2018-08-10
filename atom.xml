@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Howie&#39;s Notes</title>
   
-  <subtitle>Machine Learning and Data Science</subtitle>
+  <subtitle>Machine Learning and Cyber Security</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-07-21T11:51:41.865Z</updated>
+  <updated>2018-08-10T13:31:12.145Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -17,13 +17,195 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>xml、json与yaml</title>
+    <title>Base编码家族</title>
+    <link href="https://howiezhao.github.io/2018/08/10/base/"/>
+    <id>https://howiezhao.github.io/2018/08/10/base/</id>
+    <published>2018-08-10T09:07:56.000Z</published>
+    <updated>2018-08-10T13:31:12.145Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><h2 id="Base16"><a href="#Base16" class="headerlink" title="Base16"></a>Base16</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Base64&quot;&gt;&lt;a href=&quot;#Base64&quot; class=&quot;headerlink&quot; title=&quot;Base64&quot;&gt;&lt;/a&gt;Base64&lt;/h2&gt;&lt;h2 id=&quot;Base32&quot;&gt;&lt;a href=&quot;#Base32&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>古典密码学</title>
+    <link href="https://howiezhao.github.io/2018/08/10/classical-crypto/"/>
+    <id>https://howiezhao.github.io/2018/08/10/classical-crypto/</id>
+    <published>2018-08-10T03:17:41.000Z</published>
+    <updated>2018-08-10T13:31:05.977Z</updated>
+    
+    <content type="html"><![CDATA[<p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p><h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。</p><h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>取偏移量为3</li><li>计算<code>H</code>的后3位为<code>K</code></li><li>以此类推</li><li>密文为：<code>Khoor Zruog</code></li></ol><p>类似的，解密过程如下：</p><ol><li>计算<code>K</code>的前3位为<code>H</code></li><li>以此类推</li><li>明文为：<code>Hello World</code></li></ol><p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p><h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>a</td><td>AAAAA</td><td>g</td><td>AABBA</td><td>n</td><td>ABBAA</td><td>t</td><td>BAABA</td></tr><tr><td>b</td><td>AAAAB</td><td>h</td><td>AABBB</td><td>o</td><td>ABBAB</td><td>u-v</td><td>BAABB</td></tr><tr><td>c</td><td>AAABA</td><td>i-j</td><td>ABAAA</td><td>p</td><td>ABBBA</td><td>w</td><td>BABAA</td></tr><tr><td>d</td><td>AAABB</td><td>k</td><td>ABAAB</td><td>q</td><td>ABBBB</td><td>x</td><td>BABAB</td></tr><tr><td>e</td><td>AABAA</td><td>l</td><td>ABABA</td><td>r</td><td>BAAAA</td><td>y</td><td>BABBA</td></tr><tr><td>f</td><td>AABAB</td><td>m</td><td>ABABB</td><td>s</td><td>BAAAB</td><td>z</td><td>BABBB</td></tr></tbody></table><p>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。<br>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>A</td><td>aaaaa</td><td>G</td><td>aabba</td><td>M</td><td>abbaa</td><td>S</td><td>baaba</td><td>Y</td><td>bbaaa</td></tr><tr><td>B</td><td>aaaab</td><td>H</td><td>aabbb</td><td>N</td><td>abbab</td><td>T</td><td>baabb</td><td>Z</td><td>bbaab</td></tr><tr><td>C</td><td>aaaba</td><td>I</td><td>abaaa</td><td>O</td><td>abbba</td><td>U</td><td>babaa</td></tr><tr><td>D</td><td>aaabb</td><td>J</td><td>abaab</td><td>P</td><td>abbbb</td><td>V</td><td>babab</td></tr><tr><td>E</td><td>aabaa</td><td>K</td><td>ababa</td><td>Q</td><td>baaaa</td><td>W</td><td>babba</td></tr><tr><td>F</td><td>aabab</td><td>L</td><td>ababb</td><td>R</td><td>baaab</td><td>X</td><td>babbb</td></tr></tbody></table><p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p><h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，典型的有栅栏密码等。</p><h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>去掉空格：<code>HelloWorld</code></li><li>5个一组：<code>Hello</code>，<code>World</code></li><li>取出每组第1个字母：<code>HW</code></li><li>取出每组第2个字母：<code>eo</code></li><li>以此类推</li><li>连在一起：<code>HWeolrllod</code></li><li>加上适当空格：<code>HWeol rllod</code></li></ol><p>类似的，解密过程如下：</p><ol><li>去掉空格：<code>HWeolrllod</code></li><li>分成5栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li><li>取出每栏第1个字母：<code>Hello</code></li><li>依次类推</li><li>连在一起：<code>HelloWorld</code></li><li>加上适当空格：<code>Hello World</code></li></ol><p>注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如<code>王夫 井工 夫口 由中人</code>即为<code>67 84 70 123</code>。</p><h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：<br><img src="/images/pigpen.png" alt="猪圈密码"><br>明文<code>X MARKS THE SPOT</code>的加密结果如下：<br><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;古典密码学主要包括两类，即&lt;strong&gt;代换&lt;/strong&gt;和&lt;strong&gt;置换&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;代换&quot;&gt;&lt;a href=&quot;#代换&quot; class=&quot;headerlink&quot; title=&quot;代换&quot;&gt;&lt;/a&gt;代换&lt;/h2&gt;&lt;p&gt;代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。&lt;/p&gt;
+&lt;h3 id=&quot;凯撒密码&quot;&gt;&lt;a href=&quot;#凯撒密码&quot; class=&quot;headerlink&quot; title=&quot;凯撒密码&quot;&gt;&lt;/a&gt;凯撒密码&lt;/h3&gt;&lt;p&gt;凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。&lt;br&gt;明文&lt;code&gt;Hello World&lt;/code&gt;的加密过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;取偏移量为3&lt;/li&gt;
+&lt;li&gt;计算&lt;code&gt;H&lt;/code&gt;的后3位为&lt;code&gt;K&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;以此类推&lt;/li&gt;
+&lt;li&gt;密文为：&lt;code&gt;Khoor Zruog&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;类似的，解密过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;计算&lt;code&gt;K&lt;/code&gt;的前3位为&lt;code&gt;H&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;以此类推&lt;/li&gt;
+&lt;li&gt;明文为：&lt;code&gt;Hello World&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：当偏移量为13时，这种凯撒密码的特例又被称为&lt;strong&gt;ROT13&lt;/strong&gt;(回转13位)加密。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSFuck</title>
+    <link href="https://howiezhao.github.io/2018/08/10/jsfuck/"/>
+    <id>https://howiezhao.github.io/2018/08/10/jsfuck/</id>
+    <published>2018-08-10T00:59:58.000Z</published>
+    <updated>2018-08-10T02:21:18.152Z</updated>
+    
+    <content type="html"><![CDATA[<p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure></p><p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a href="http://www.jsfuck.com/" target="_blank" rel="noopener">JSFuck</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。&lt;br&gt;JSFuck种共使用&lt;code&gt;
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Brainfuck</title>
+    <link href="https://howiezhao.github.io/2018/08/09/Brainfuck/"/>
+    <id>https://howiezhao.github.io/2018/08/09/Brainfuck/</id>
+    <published>2018-08-09T09:15:44.000Z</published>
+    <updated>2018-08-10T00:58:53.514Z</updated>
+    
+    <content type="html"><![CDATA[<p>Brainfuck是在1993年创建的一种极小化的计算机语言，由于fuck在英语中是脏话，这种语言有时也被称为Brainf*ck或Brainf***，或被简称为BF。<br>Brainfuck中共有8种字符，它们及其含义如下所示：</p><ul><li><code>&gt;</code>：指针加一</li><li><code>&lt;</code>：指针减一</li><li><code>+</code>：指针指向的字节的值加一</li><li><code>-</code>：指针指向的字节的值减一</li><li><code>.</code>：输出指针指向的单元内容(ASCII码)</li><li><code>,</code>：输入内容到指针指向的单元(ASCII码)</li><li><code>[</code>：如果指针指向的单元值为零，向后跳转到对应的<code>]</code>指令的次一指令处</li><li><code>]</code>：如果指针指向的单元值不为零，向前跳转到对应的<code>[</code>指令的次一指令处</li></ul><p>下面是一个用Brainfuck在屏幕上打印<code>Hello World</code>的程序例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]</span><br><span class="line">&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.</span><br><span class="line">&gt;.+++.------.--------.&gt;+.&gt;.</span><br></pre></td></tr></table></figure></p><p>程序的运行结果如<a href="https://fatiherikli.github.io/brainfuck-visualizer/" target="_blank" rel="noopener">Brainfuck Visualizer</a>所示。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Brainfuck是在1993年创建的一种极小化的计算机语言，由于fuck在英语中是脏话，这种语言有时也被称为Brainf*ck或Brainf***，或被简称为BF。&lt;br&gt;Brainfuck中共有8种字符，它们及其含义如下所示：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;g
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《TAOUP》读书笔记</title>
+    <link href="https://howiezhao.github.io/2018/08/02/taoup/"/>
+    <id>https://howiezhao.github.io/2018/08/02/taoup/</id>
+    <published>2018-08-02T14:31:46.000Z</published>
+    <updated>2018-08-10T00:59:19.408Z</updated>
+    
+    <content type="html"><![CDATA[<p>我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的<strong>TAOUP</strong>，即The Art of UNIX Programming(UNIX编程艺术)。</p><h2 id="哲学"><a href="#哲学" class="headerlink" title="哲学"></a>哲学</h2><p>Unix的设计哲学总体上可以概括为以下几点：</p><ol><li>模块原则：使用简洁的接口拼合简单的部件</li><li>清晰原则：清晰胜于机巧</li><li>组合原则：设计时考虑拼接组合</li><li>分离原则：策略同机制分离，接口同引擎分离</li><li>简洁原则：设计要简洁，复杂度能低则低</li><li>吝啬原则：除非却无它法，不要编写庞大的程序</li><li>透明性原则：设计要可见，以便审查和调试</li><li>健壮原则：健壮源于透明与简洁</li><li>表示原则：把知识叠入数据以求逻辑质朴而健壮</li><li>通俗原则：接口设计避免标新立异</li><li>缄默原则：如果一个程序没什么好说的，就沉默</li><li>补救原则：出现异常时，马上退出并给出足够错误信息</li><li>经济原则：宁花机器一分，不花程序员一秒</li><li>生成原则：避免手工hack，尽量编写程序去生成程序</li><li>优化原则：雕琢前先要有原型，跑之前先学会走</li><li>多样原则：决不相信所谓“不二法门”的断言</li><li>扩展原则：设计着眼未来，未来总比预想来得快<a id="more"></a>所有的Unix哲学浓缩为一条铁律就是<strong>KISS</strong>原则，即Keep It Simple, Stupid！</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的&lt;strong&gt;TAOUP&lt;/strong&gt;，即The Art of UNIX Programming(UNIX编程艺术)。&lt;/p&gt;
+&lt;h2 id=&quot;哲学&quot;&gt;&lt;a href=&quot;#哲学&quot; class=&quot;headerlink&quot; title=&quot;哲学&quot;&gt;&lt;/a&gt;哲学&lt;/h2&gt;&lt;p&gt;Unix的设计哲学总体上可以概括为以下几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;模块原则：使用简洁的接口拼合简单的部件&lt;/li&gt;
+&lt;li&gt;清晰原则：清晰胜于机巧&lt;/li&gt;
+&lt;li&gt;组合原则：设计时考虑拼接组合&lt;/li&gt;
+&lt;li&gt;分离原则：策略同机制分离，接口同引擎分离&lt;/li&gt;
+&lt;li&gt;简洁原则：设计要简洁，复杂度能低则低&lt;/li&gt;
+&lt;li&gt;吝啬原则：除非却无它法，不要编写庞大的程序&lt;/li&gt;
+&lt;li&gt;透明性原则：设计要可见，以便审查和调试&lt;/li&gt;
+&lt;li&gt;健壮原则：健壮源于透明与简洁&lt;/li&gt;
+&lt;li&gt;表示原则：把知识叠入数据以求逻辑质朴而健壮&lt;/li&gt;
+&lt;li&gt;通俗原则：接口设计避免标新立异&lt;/li&gt;
+&lt;li&gt;缄默原则：如果一个程序没什么好说的，就沉默&lt;/li&gt;
+&lt;li&gt;补救原则：出现异常时，马上退出并给出足够错误信息&lt;/li&gt;
+&lt;li&gt;经济原则：宁花机器一分，不花程序员一秒&lt;/li&gt;
+&lt;li&gt;生成原则：避免手工hack，尽量编写程序去生成程序&lt;/li&gt;
+&lt;li&gt;优化原则：雕琢前先要有原型，跑之前先学会走&lt;/li&gt;
+&lt;li&gt;多样原则：决不相信所谓“不二法门”的断言&lt;/li&gt;
+&lt;li&gt;扩展原则：设计着眼未来，未来总比预想来得快
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于代理那些事</title>
+    <link href="https://howiezhao.github.io/2018/07/26/about-proxy/"/>
+    <id>https://howiezhao.github.io/2018/07/26/about-proxy/</id>
+    <published>2018-07-26T04:08:41.000Z</published>
+    <updated>2018-07-27T13:44:49.246Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p><h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。<br><a id="more"></a></p><h2 id="端口转发与端口映射"><a href="#端口转发与端口映射" class="headerlink" title="端口转发与端口映射"></a>端口转发与端口映射</h2><p>传统意义上，我们认为<strong>端口转发</strong>(Port Forwarding)与<strong>端口映射</strong>(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;正向连接与反向连接&quot;&gt;&lt;a href=&quot;#正向连接与反向连接&quot; class=&quot;headerlink&quot; title=&quot;正向连接与反向连接&quot;&gt;&lt;/a&gt;正向连接与反向连接&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;正向连接&lt;/strong&gt;即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；&lt;strong&gt;反向连接&lt;/strong&gt;即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。&lt;/p&gt;
+&lt;h2 id=&quot;正向代理与反向代理&quot;&gt;&lt;a href=&quot;#正向代理与反向代理&quot; class=&quot;headerlink&quot; title=&quot;正向代理与反向代理&quot;&gt;&lt;/a&gt;正向代理与反向代理&lt;/h2&gt;&lt;p&gt;在英语中，&lt;strong&gt;Proxy&lt;/strong&gt;表示&lt;strong&gt;服务器代理&lt;/strong&gt;这种动作，而&lt;strong&gt;Agent&lt;/strong&gt;表示&lt;strong&gt;代理服务器&lt;/strong&gt;这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。&lt;br&gt;不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。&lt;br&gt;&lt;strong&gt;正向代理&lt;/strong&gt;(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。&lt;br&gt;&lt;strong&gt;反向代理&lt;/strong&gt;(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XML、JSON与YAML</title>
     <link href="https://howiezhao.github.io/2018/07/21/xml-json-yaml/"/>
     <id>https://howiezhao.github.io/2018/07/21/xml-json-yaml/</id>
     <published>2018-07-21T11:50:23.000Z</published>
-    <updated>2018-07-21T11:51:41.865Z</updated>
+    <updated>2018-08-02T15:01:23.824Z</updated>
+    
+    <content type="html"><![CDATA[<p>XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;person&gt;</span><br><span class="line">    &lt;firstName&gt;Tian&lt;/firstName&gt;</span><br><span class="line">    &lt;lastName&gt;Song&lt;/lastName&gt;</span><br><span class="line">    &lt;address&gt;</span><br><span class="line">        &lt;streetAddr&gt;中关村南大街5号&lt;/streetAddr&gt;</span><br><span class="line">        &lt;city&gt;北京市&lt;/city&gt;</span><br><span class="line">        &lt;zipcode&gt;100081&lt;/zipcode&gt;</span><br><span class="line">    &lt;/address&gt;</span><br><span class="line">    &lt;prof&gt;Computer System&lt;/prof&gt;&lt;prof&gt;Security&lt;/prof&gt;</span><br><span class="line">&lt;/person&gt;</span><br></pre></td></tr></table></figure></p><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation(JavaScript对象表示法)，倘若我要表示某个人的简要信息，用JSON可写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;firstName&quot; : &quot;Tian&quot;,</span><br><span class="line">    &quot;lastName&quot; : &quot;Song&quot;,</span><br><span class="line">    &quot;address&quot; : &#123;</span><br><span class="line">                    &quot;streetAddr&quot; : &quot;中关村南大街5号&quot;,</span><br><span class="line">                    &quot;city&quot; : &quot;北京市&quot;,</span><br><span class="line">                    &quot;zipcode&quot; : &quot;100081&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">    &quot;prof&quot; : [&quot;Computer System&quot;, &quot;Security&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为Yet Another Markup Language(仍是一种标记语言)，之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为YAML Ain’t a Markup Language(YAML不是一种标记语言)，倘若我要表示某个人的简要信息，用YAML可写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">firstName : Tian</span><br><span class="line">lastName : Song</span><br><span class="line">address : </span><br><span class="line">    streetAddr : 中关村南大街5号</span><br><span class="line">    city : 北京市</span><br><span class="line">    zipcode : 100081</span><br><span class="line">prof : </span><br><span class="line">-Computer System</span><br><span class="line">-Security</span><br></pre></td></tr></table></figure></p><h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于Internet上的信息交互与传递，以及用户界面的编写，比如Android；JSON中的信息有类型，适合程序处理(js)，较XML简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。&lt;/p&gt;
+&lt;h2 id=&quot;XML&quot;&gt;&lt;a href=&quot;#XML&quot; class=&quot;headerlink&quot; title=&quot;XML&quot;&gt;&lt;/a&gt;XML&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;X
+      
     
     </summary>
     
@@ -345,151 +527,6 @@
     
     
       <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTTPS运行机制</title>
-    <link href="https://howiezhao.github.io/2018/05/11/https/"/>
-    <id>https://howiezhao.github.io/2018/05/11/https/</id>
-    <published>2018-05-11T10:45:45.000Z</published>
-    <updated>2018-05-11T10:47:26.837Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP协议分析</title>
-    <link href="https://howiezhao.github.io/2018/05/11/HTTP/"/>
-    <id>https://howiezhao.github.io/2018/05/11/HTTP/</id>
-    <published>2018-05-11T08:39:06.000Z</published>
-    <updated>2018-05-12T15:09:04.213Z</updated>
-    
-    <content type="html"><![CDATA[<p>HTTP(Hypertext Transfer Protocol，超文本传输协议)</p><h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p><img src="/images/http-request.PNG" alt=""><br><a id="more"></a><br>方法字段可以取几种不同的值，包括<strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong>和<strong>DELETE</strong>。绝大部分的HTTP请求报文使用GET方法。<br><strong>Host</strong>首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；<strong>Connection</strong>首部行指明采用非持续连接还是持续连接；<strong>User-Agent</strong>首部行指明用户代理；<strong>Accept-Language</strong>首部行指明用户想得到的语言版本。<br>使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。<br>HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。</p><h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p><img src="/images/http-response.PNG" alt=""><br><strong>Date</strong>首部行指示服务器产生并发送该响应报文的日期和时间；<strong>Last-Modified</strong>首部行指示了对象创建或者最后修改的日期和时间；<strong>Server</strong>首部行指示服务器类型，类似于User-Agent首部行；<strong>Content-Length</strong>首部行指示了被发送对象中的字节数；<strong>Content-Type</strong>首部行指示了实体体中的对象的MIME类型。<br>常见的状态码和其对应的短语：<br>200 OK：请求成功，信息在返回的响应报文中。<br>301 Moved Permanently：请求的对象已经被永久转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。<br>400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。<br>404 Not Found：被请求的文档不在服务器上。<br>505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。</p><h2 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h2><p><strong>条件GET(conditional GET)方法</strong>：请求报文使用GET方法，并且请求报文中包含一个<strong>If-Modified-Since</strong>首部行。<br>Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。</p><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol><li>HTTP是一个无状态协议(stateless protocol)。</li><li>HTTP可以采用非持续连接或持续连接，默认采用持续连接。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HTTP(Hypertext Transfer Protocol，超文本传输协议)&lt;/p&gt;
-&lt;h2 id=&quot;报文格式&quot;&gt;&lt;a href=&quot;#报文格式&quot; class=&quot;headerlink&quot; title=&quot;报文格式&quot;&gt;&lt;/a&gt;报文格式&lt;/h2&gt;&lt;h3 id=&quot;HTTP请求报文&quot;&gt;&lt;a href=&quot;#HTTP请求报文&quot; class=&quot;headerlink&quot; title=&quot;HTTP请求报文&quot;&gt;&lt;/a&gt;HTTP请求报文&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/http-request.PNG&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>set、env与export</title>
-    <link href="https://howiezhao.github.io/2018/05/09/set-env-export/"/>
-    <id>https://howiezhao.github.io/2018/05/09/set-env-export/</id>
-    <published>2018-05-09T11:20:18.000Z</published>
-    <updated>2018-07-17T07:34:31.249Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。<br>环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。<br>在Shell中可以使用<code>declare</code>命令直接定义Shell环境变量，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> A=hello  <span class="comment">#定义Shell环境变量a，值为hello，注意等号两边不能有空格</span></span><br></pre></td></tr></table></figure></p><p>使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span>  <span class="comment">#打印HOME的值</span></span><br></pre></td></tr></table></figure></p><p>值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。</p><p>常见的用户环境变量有：</p><ul><li>PATH：用以指定命令的搜索目录</li><li>HOME：用以指定用户的家目录</li><li>SHELL：用以指定用户的登录Shell</li></ul><a id="more"></a><h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code>命令用来显示或设置Shell环境变量，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p><p>值得注意的是，当<code>declare</code>命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比<code>set</code>显示的结果要更加清晰。<br>关于set命令更多的参数使用说明可参考<a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html" target="_blank" rel="noopener">Bash脚本set命令教程</a></p><h2 id="env"><a href="#env" class="headerlink" title="env"></a>env</h2><p><code>env</code>命令用来显示或设置用户环境变量，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p><h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p><code>export</code>命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> a=hello</span><br></pre></td></tr></table></figure></p><p>这一步操作实际上完成了两步操作，即：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> a=hello  <span class="comment">#定义一个Shell环境变量$a</span></span><br><span class="line"><span class="built_in">export</span> <span class="variable">$a</span>  <span class="comment">#导出至用户环境变量</span></span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;环境变量&quot;&gt;&lt;a href=&quot;#环境变量&quot; class=&quot;headerlink&quot; title=&quot;环境变量&quot;&gt;&lt;/a&gt;环境变量&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;环境变量&lt;/strong&gt;，顾名思义由&lt;strong&gt;环境&lt;/strong&gt;和&lt;strong&gt;变量&lt;/strong&gt;两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。&lt;br&gt;环境变量可以大致分为&lt;strong&gt;Shell环境变量&lt;/strong&gt;和&lt;strong&gt;用户环境变量&lt;/strong&gt;两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。&lt;br&gt;在Shell中可以使用&lt;code&gt;declare&lt;/code&gt;命令直接定义Shell环境变量，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;declare&lt;/span&gt; A=hello  &lt;span class=&quot;comment&quot;&gt;#定义Shell环境变量a，值为hello，注意等号两边不能有空格&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;使用&lt;code&gt;echo&lt;/code&gt;命令即可打印环境变量的值，如：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$A&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;#打印HOME的值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。&lt;/p&gt;
-&lt;p&gt;常见的用户环境变量有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PATH：用以指定命令的搜索目录&lt;/li&gt;
-&lt;li&gt;HOME：用以指定用户的家目录&lt;/li&gt;
-&lt;li&gt;SHELL：用以指定用户的登录Shell&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>source、sh与 ./</title>
-    <link href="https://howiezhao.github.io/2018/05/09/source-sh/"/>
-    <id>https://howiezhao.github.io/2018/05/09/source-sh/</id>
-    <published>2018-05-09T08:37:48.000Z</published>
-    <updated>2018-05-09T10:12:35.166Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code>在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为<code>.</code>，比如<code>. a.sh</code>。</p><h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code>打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，<code>bash</code>与<code>sh</code>同理。</p><h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code>打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里<code>./</code>与<code>a.sh</code>之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加<code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。<br>前面采用了相对路径的方法，当然也可以采用绝对路径，比如<code>/root/a.sh</code>这样，同样可以执行。<br>另外，<code>./</code>运行的文件里通常有<strong>Shebang</strong>一行，也就是以<code>#!</code>开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以<code>./a.sh</code>运行脚本时，会自动使用环境变量中的<code>$SHELL</code>变量所指定的解释器来运行。<br>最后，在以<code>sh a.sh</code>或<code>bash a.sh</code>这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;source&quot;&gt;&lt;a href=&quot;#source&quot; class=&quot;headerlink&quot; title=&quot;source&quot;&gt;&lt;/a&gt;source&lt;/h2&gt;&lt;p&gt;&lt;code&gt;source a.sh&lt;/code&gt;在当前Shell中执行a.sh，a.sh不需要有执行权限。s
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux的包管理机制</title>
-    <link href="https://howiezhao.github.io/2018/05/09/linux-package/"/>
-    <id>https://howiezhao.github.io/2018/05/09/linux-package/</id>
-    <published>2018-05-09T05:43:55.000Z</published>
-    <updated>2018-07-02T14:53:20.674Z</updated>
-    
-    <content type="html"><![CDATA[<p>Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p><h2 id="rpm与yum"><a href="#rpm与yum" class="headerlink" title="rpm与yum"></a>rpm与yum</h2><p><code>rpm</code>全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -i a.rpm  <span class="comment">#安装a</span></span><br><span class="line">rpm -e a      <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><p><code>yum</code>全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum update     <span class="comment">#更新包列表</span></span><br><span class="line">yum upgrade    <span class="comment">#更新包</span></span><br><span class="line">yum install a  <span class="comment">#安装a</span></span><br><span class="line">yum remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><a id="more"></a><h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></span><br><span class="line">dpkg -r a       <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get update     <span class="comment">#更新包列表</span></span><br><span class="line">apt-get upgrade    <span class="comment">#更新包</span></span><br><span class="line">apt-get install a  <span class="comment">#安装a</span></span><br><span class="line">apt-get remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p><p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt update     <span class="comment">#更新包列表</span></span><br><span class="line">apt upgrade    <span class="comment">#更新包</span></span><br><span class="line">apt install a  <span class="comment">#安装a</span></span><br><span class="line">apt remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用&lt;code&gt;rpm&lt;/code&gt;为其包格式，&lt;code&gt;yum&lt;/code&gt;为其包管理工具；Debian系采用&lt;code&gt;dpkg&lt;/code&gt;为其包格式，&lt;code&gt;apt-get&lt;/code&gt;为其包管理工具。&lt;/p&gt;
-&lt;h2 id=&quot;rpm与yum&quot;&gt;&lt;a href=&quot;#rpm与yum&quot; class=&quot;headerlink&quot; title=&quot;rpm与yum&quot;&gt;&lt;/a&gt;rpm与yum&lt;/h2&gt;&lt;p&gt;&lt;code&gt;rpm&lt;/code&gt;全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其&lt;strong&gt;本地&lt;/strong&gt;包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rpm -i a.rpm  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rpm -e a      &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;yum&lt;/code&gt;全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum update     &lt;span class=&quot;comment&quot;&gt;#更新包列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum upgrade    &lt;span class=&quot;comment&quot;&gt;#更新包&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum install a  &lt;span class=&quot;comment&quot;&gt;#安装a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum remove a   &lt;span class=&quot;comment&quot;&gt;#卸载a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>手机号与身份证号的秘密</title>
-    <link href="https://howiezhao.github.io/2018/05/09/phone-number-and-id-card/"/>
-    <id>https://howiezhao.github.io/2018/05/09/phone-number-and-id-card/</id>
-    <published>2018-05-09T05:39:46.000Z</published>
-    <updated>2018-06-02T14:43:39.815Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="手机号码"><a href="#手机号码" class="headerlink" title="手机号码"></a>手机号码</h2><p>国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，由HLR归属位置寄存器确定；第8-11位是用户号码，此段随机分配。</p><h2 id="身份证号码"><a href="#身份证号码" class="headerlink" title="身份证号码"></a>身份证号码</h2><p>国内居民身份证号码为18位数，按照各部分编码的含义可以分为4段：前6位是地址码，即编码对象常住户口所在县的行政区划代码，其中第1-2位表示省，第3-4位表示市，第5-6位表示县；第7-14位是出生日期码；第15-17位是顺序码，即在地址码所标识的区域范围内，对同年、月、日出生的人员编定的顺序号，其中第17位奇数分给男性，偶数分给女性；第18位是校验码，根据前面17位数字码，按照如下算法计算出来的：</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;手机号码&quot;&gt;&lt;a href=&quot;#手机号码&quot; class=&quot;headerlink&quot; title=&quot;手机号码&quot;&gt;&lt;/a&gt;手机号码&lt;/h2&gt;&lt;p&gt;国内手机号码为11位数，按照各部分编码的含义可以分为3段：前3位是网络识别号，用以标识一个通信运营商；第4-7位是地区编码，
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="社会工程学" scheme="https://howiezhao.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
     
   </entry>
   
