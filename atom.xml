@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-08-10T13:31:12.145Z</updated>
+  <updated>2018-08-11T15:11:25.367Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -21,16 +21,189 @@
     <link href="https://howiezhao.github.io/2018/08/10/base/"/>
     <id>https://howiezhao.github.io/2018/08/10/base/</id>
     <published>2018-08-10T09:07:56.000Z</published>
-    <updated>2018-08-10T13:31:12.145Z</updated>
+    <updated>2018-08-11T15:11:25.367Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><h2 id="Base16"><a href="#Base16" class="headerlink" title="Base16"></a>Base16</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于<strong>64</strong>个可打印字符来表示二进制数据的表示方法，这64个字符分别为<code>A-Z</code>、<code>a-z</code>、<code>0-9</code>以及<code>+</code>与<code>/</code>。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：</p><table><thead><tr><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th></tr></thead><tbody><tr><td>0</td><td>A</td><td>16</td><td>Q</td><td>32</td><td>g</td><td>48</td><td>w</td></tr><tr><td>1</td><td>B</td><td>17</td><td>R</td><td>33</td><td>h</td><td>49</td><td>x</td></tr><tr><td>2</td><td>C</td><td>18</td><td>S</td><td>34</td><td>i</td><td>50</td><td>y</td></tr><tr><td>3</td><td>D</td><td>19</td><td>T</td><td>35</td><td>j</td><td>51</td><td>z</td></tr><tr><td>4</td><td>E</td><td>20</td><td>U</td><td>36</td><td>k</td><td>52</td><td>0</td></tr><tr><td>5</td><td>F</td><td>21</td><td>V</td><td>37</td><td>l</td><td>53</td><td>1</td></tr><tr><td>6</td><td>G</td><td>22</td><td>W</td><td>38</td><td>m</td><td>54</td><td>2</td></tr><tr><td>7</td><td>H</td><td>23</td><td>X</td><td>39</td><td>n</td><td>55</td><td>3</td></tr><tr><td>8</td><td>I</td><td>24</td><td>Y</td><td>40</td><td>o</td><td>56</td><td>4</td></tr><tr><td>9</td><td>J</td><td>25</td><td>Z</td><td>41</td><td>p</td><td>57</td><td>5</td></tr><tr><td>10</td><td>K</td><td>26</td><td>a</td><td>42</td><td>q</td><td>58</td><td>6</td></tr><tr><td>11</td><td>L</td><td>27</td><td>b</td><td>43</td><td>r</td><td>59</td><td>7</td></tr><tr><td>12</td><td>M</td><td>28</td><td>c</td><td>44</td><td>s</td><td>60</td><td>8</td></tr><tr><td>13</td><td>N</td><td>29</td><td>d</td><td>45</td><td>t</td><td>61</td><td>9</td></tr><tr><td>14</td><td>O</td><td>30</td><td>e</td><td>46</td><td>u</td><td>62</td><td>+</td></tr><tr><td>15</td><td>P</td><td>31</td><td>f</td><td>47</td><td>v</td><td>63</td><td>/</td></tr></tbody></table><a id="more"></a><p>编码<code>Hello</code>的过程如下：</p><table><thead><tr><th>文本</th><th>H</th><th>e</th><th>l</th><th>l</th><th>o</th><th></th></tr></thead><tbody><tr><td>ASCII编码</td><td>72</td><td>101</td><td>108</td><td>108</td><td>111</td><td></td></tr><tr><td>二进制位</td><td>‭01001000‬</td><td>‭01100101‬</td><td>‭01101100‬</td><td>‭01101100‬</td><td>‭01101111‬</td><td>00000000</td></tr></tbody></table><p>以6个二进制位进行编码：</p><table><thead><tr><th>二进制位</th><th>010010</th><th>000110</th><th>010101</th><th>101100</th><th>011011</th><th>000110</th><th>111100</th><th>000000</th></tr></thead><tbody><tr><td>索引</td><td>18</td><td>6</td><td>21</td><td>44</td><td>27</td><td>6</td><td>60</td><td></td></tr><tr><td>Base64编码</td><td>S</td><td>G</td><td>V</td><td>s</td><td>b</td><td>G</td><td>8</td><td>=</td></tr></tbody></table><p>若原数据不是3的倍数，且多出1个字节，则在编码末尾加2个<code>=</code>，多出2个字节，则在编码末尾加1个<code>=</code>。换言之，若多出1个字节，则最后一个6位的Base64字节块有4位是0值，若多出2个字节，则最后一个6位的Base64字节块有2位是0值。</p><h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32基于32个可打印字符，分别为<code>A-Z</code>以及<code>2-7</code>。32个字符可用5个比特位表示，5个字节有40个比特位，对应于8个Base32单元，编码后的数据比原始数据略长8/5。若原数据不是5的倍数，且多出1个字节，则在编码末尾加4个<code>=</code>，多出2个字节，则在编码末尾加3个<code>=</code>，多出3个字节，则在编码末尾加2个<code>=</code>，多出4个字节，则在编码末尾加1个<code>=</code>。Base32索引表如下所示：</p><table><thead><tr><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th></tr></thead><tbody><tr><td>0</td><td>A</td><td>8</td><td>I</td><td>16</td><td>Q</td><td>24</td><td>Y</td></tr><tr><td>1</td><td>B</td><td>9</td><td>J</td><td>17</td><td>R</td><td>25</td><td>Z</td></tr><tr><td>2</td><td>C</td><td>10</td><td>K</td><td>18</td><td>S</td><td>26</td><td>2</td></tr><tr><td>3</td><td>D</td><td>11</td><td>L</td><td>19</td><td>T</td><td>27</td><td>3</td></tr><tr><td>4</td><td>E</td><td>12</td><td>M</td><td>20</td><td>U</td><td>28</td><td>4</td></tr><tr><td>5</td><td>F</td><td>13</td><td>N</td><td>21</td><td>V</td><td>29</td><td>5</td></tr><tr><td>6</td><td>G</td><td>14</td><td>O</td><td>22</td><td>W</td><td>30</td><td>6</td></tr><tr><td>7</td><td>H</td><td>15</td><td>P</td><td>23</td><td>X</td><td>31</td><td>7</td></tr></tbody></table><h2 id="Base16"><a href="#Base16" class="headerlink" title="Base16"></a>Base16</h2><p>与上类似，Base16基于16个可打印字符，分别为<code>0-9</code>以及<code>A-F</code>。16个字符可用4个比特位表示，1个字节有8个比特位，对应于2个Base16单元，编码后的数据比原始数据略长2。显然，在Base16中不需要在末尾填充<code>=</code>。Base16索引表如下所示：</p><table><thead><tr><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>4</td><td>4</td><td>8</td><td>8</td><td>12</td><td>C</td></tr><tr><td>1</td><td>1</td><td>5</td><td>5</td><td>9</td><td>9</td><td>13</td><td>D</td></tr><tr><td>2</td><td>2</td><td>6</td><td>6</td><td>10</td><td>A</td><td>14</td><td>E</td></tr><tr><td>3</td><td>3</td><td>7</td><td>7</td><td>11</td><td>B</td><td>15</td><td>F</td></tr></tbody></table><h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>XXencode不属于Base编码家族，但与Base64编码极为类似，区别仅在于64个可打印字符及其顺序，XXencode使用的为<code>+</code>、<code>-</code>、<code>0-9</code>、<code>A-Z</code>、<code>a-z</code>。</p><h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode也与Base64极为类似，它使用的字符及其顺序为<code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、`。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;Base64&quot;&gt;&lt;a href=&quot;#Base64&quot; class=&quot;headerlink&quot; title=&quot;Base64&quot;&gt;&lt;/a&gt;Base64&lt;/h2&gt;&lt;h2 id=&quot;Base32&quot;&gt;&lt;a href=&quot;#Base32&quot; class=&quot;headerlink&quot; titl
-      
+      &lt;h2 id=&quot;Base64&quot;&gt;&lt;a href=&quot;#Base64&quot; class=&quot;headerlink&quot; title=&quot;Base64&quot;&gt;&lt;/a&gt;Base64&lt;/h2&gt;&lt;p&gt;Base64，顾名思义是一种基于&lt;strong&gt;64&lt;/strong&gt;个可打印字符来表示二进制数据的表示方法，这64个字符分别为&lt;code&gt;A-Z&lt;/code&gt;、&lt;code&gt;a-z&lt;/code&gt;、&lt;code&gt;0-9&lt;/code&gt;以及&lt;code&gt;+&lt;/code&gt;与&lt;code&gt;/&lt;/code&gt;。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;数值&lt;/th&gt;
+&lt;th&gt;字符&lt;/th&gt;
+&lt;th&gt;数值&lt;/th&gt;
+&lt;th&gt;字符&lt;/th&gt;
+&lt;th&gt;数值&lt;/th&gt;
+&lt;th&gt;字符&lt;/th&gt;
+&lt;th&gt;数值&lt;/th&gt;
+&lt;th&gt;字符&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;Q&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;g&lt;/td&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;td&gt;w&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;17&lt;/td&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;h&lt;/td&gt;
+&lt;td&gt;49&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;i&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;y&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;T&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;j&lt;/td&gt;
+&lt;td&gt;51&lt;/td&gt;
+&lt;td&gt;z&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;U&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;td&gt;k&lt;/td&gt;
+&lt;td&gt;52&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;V&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;td&gt;l&lt;/td&gt;
+&lt;td&gt;53&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;td&gt;W&lt;/td&gt;
+&lt;td&gt;38&lt;/td&gt;
+&lt;td&gt;m&lt;/td&gt;
+&lt;td&gt;54&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;n&lt;/td&gt;
+&lt;td&gt;55&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;24&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;o&lt;/td&gt;
+&lt;td&gt;56&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;J&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;Z&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;td&gt;p&lt;/td&gt;
+&lt;td&gt;57&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;K&lt;/td&gt;
+&lt;td&gt;26&lt;/td&gt;
+&lt;td&gt;a&lt;/td&gt;
+&lt;td&gt;42&lt;/td&gt;
+&lt;td&gt;q&lt;/td&gt;
+&lt;td&gt;58&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;43&lt;/td&gt;
+&lt;td&gt;r&lt;/td&gt;
+&lt;td&gt;59&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td&gt;28&lt;/td&gt;
+&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;44&lt;/td&gt;
+&lt;td&gt;s&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;45&lt;/td&gt;
+&lt;td&gt;t&lt;/td&gt;
+&lt;td&gt;61&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;e&lt;/td&gt;
+&lt;td&gt;46&lt;/td&gt;
+&lt;td&gt;u&lt;/td&gt;
+&lt;td&gt;62&lt;/td&gt;
+&lt;td&gt;+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;P&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;47&lt;/td&gt;
+&lt;td&gt;v&lt;/td&gt;
+&lt;td&gt;63&lt;/td&gt;
+&lt;td&gt;/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
     
@@ -46,14 +219,14 @@
     <link href="https://howiezhao.github.io/2018/08/10/classical-crypto/"/>
     <id>https://howiezhao.github.io/2018/08/10/classical-crypto/</id>
     <published>2018-08-10T03:17:41.000Z</published>
-    <updated>2018-08-10T13:31:05.977Z</updated>
+    <updated>2018-08-11T10:39:13.560Z</updated>
     
-    <content type="html"><![CDATA[<p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p><h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。</p><h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>取偏移量为3</li><li>计算<code>H</code>的后3位为<code>K</code></li><li>以此类推</li><li>密文为：<code>Khoor Zruog</code></li></ol><p>类似的，解密过程如下：</p><ol><li>计算<code>K</code>的前3位为<code>H</code></li><li>以此类推</li><li>明文为：<code>Hello World</code></li></ol><p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p><h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>a</td><td>AAAAA</td><td>g</td><td>AABBA</td><td>n</td><td>ABBAA</td><td>t</td><td>BAABA</td></tr><tr><td>b</td><td>AAAAB</td><td>h</td><td>AABBB</td><td>o</td><td>ABBAB</td><td>u-v</td><td>BAABB</td></tr><tr><td>c</td><td>AAABA</td><td>i-j</td><td>ABAAA</td><td>p</td><td>ABBBA</td><td>w</td><td>BABAA</td></tr><tr><td>d</td><td>AAABB</td><td>k</td><td>ABAAB</td><td>q</td><td>ABBBB</td><td>x</td><td>BABAB</td></tr><tr><td>e</td><td>AABAA</td><td>l</td><td>ABABA</td><td>r</td><td>BAAAA</td><td>y</td><td>BABBA</td></tr><tr><td>f</td><td>AABAB</td><td>m</td><td>ABABB</td><td>s</td><td>BAAAB</td><td>z</td><td>BABBB</td></tr></tbody></table><p>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。<br>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>A</td><td>aaaaa</td><td>G</td><td>aabba</td><td>M</td><td>abbaa</td><td>S</td><td>baaba</td><td>Y</td><td>bbaaa</td></tr><tr><td>B</td><td>aaaab</td><td>H</td><td>aabbb</td><td>N</td><td>abbab</td><td>T</td><td>baabb</td><td>Z</td><td>bbaab</td></tr><tr><td>C</td><td>aaaba</td><td>I</td><td>abaaa</td><td>O</td><td>abbba</td><td>U</td><td>babaa</td></tr><tr><td>D</td><td>aaabb</td><td>J</td><td>abaab</td><td>P</td><td>abbbb</td><td>V</td><td>babab</td></tr><tr><td>E</td><td>aabaa</td><td>K</td><td>ababa</td><td>Q</td><td>baaaa</td><td>W</td><td>babba</td></tr><tr><td>F</td><td>aabab</td><td>L</td><td>ababb</td><td>R</td><td>baaab</td><td>X</td><td>babbb</td></tr></tbody></table><p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p><h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，典型的有栅栏密码等。</p><h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>去掉空格：<code>HelloWorld</code></li><li>5个一组：<code>Hello</code>，<code>World</code></li><li>取出每组第1个字母：<code>HW</code></li><li>取出每组第2个字母：<code>eo</code></li><li>以此类推</li><li>连在一起：<code>HWeolrllod</code></li><li>加上适当空格：<code>HWeol rllod</code></li></ol><p>类似的，解密过程如下：</p><ol><li>去掉空格：<code>HWeolrllod</code></li><li>分成5栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li><li>取出每栏第1个字母：<code>Hello</code></li><li>依次类推</li><li>连在一起：<code>HelloWorld</code></li><li>加上适当空格：<code>Hello World</code></li></ol><p>注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如<code>王夫 井工 夫口 由中人</code>即为<code>67 84 70 123</code>。</p><h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：<br><img src="/images/pigpen.png" alt="猪圈密码"><br>明文<code>X MARKS THE SPOT</code>的加密结果如下：<br><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p>]]></content>
+    <content type="html"><![CDATA[<p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p><h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p><h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>取偏移量为3</li><li>计算<code>H</code>的后3位为<code>K</code></li><li>以此类推</li><li>密文为：<code>Khoor Zruog</code></li></ol><p>类似的，解密过程如下：</p><ol><li>计算<code>K</code>的前3位为<code>H</code></li><li>以此类推</li><li>明文为：<code>Hello World</code></li></ol><p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p><h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>a</td><td>AAAAA</td><td>g</td><td>AABBA</td><td>n</td><td>ABBAA</td><td>t</td><td>BAABA</td></tr><tr><td>b</td><td>AAAAB</td><td>h</td><td>AABBB</td><td>o</td><td>ABBAB</td><td>u-v</td><td>BAABB</td></tr><tr><td>c</td><td>AAABA</td><td>i-j</td><td>ABAAA</td><td>p</td><td>ABBBA</td><td>w</td><td>BABAA</td></tr><tr><td>d</td><td>AAABB</td><td>k</td><td>ABAAB</td><td>q</td><td>ABBBB</td><td>x</td><td>BABAB</td></tr><tr><td>e</td><td>AABAA</td><td>l</td><td>ABABA</td><td>r</td><td>BAAAA</td><td>y</td><td>BABBA</td></tr><tr><td>f</td><td>AABAB</td><td>m</td><td>ABABB</td><td>s</td><td>BAAAB</td><td>z</td><td>BABBB</td></tr></tbody></table><p>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。<br>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>A</td><td>aaaaa</td><td>G</td><td>aabba</td><td>M</td><td>abbaa</td><td>S</td><td>baaba</td><td>Y</td><td>bbaaa</td></tr><tr><td>B</td><td>aaaab</td><td>H</td><td>aabbb</td><td>N</td><td>abbab</td><td>T</td><td>baabb</td><td>Z</td><td>bbaab</td></tr><tr><td>C</td><td>aaaba</td><td>I</td><td>abaaa</td><td>O</td><td>abbba</td><td>U</td><td>babaa</td></tr><tr><td>D</td><td>aaabb</td><td>J</td><td>abaab</td><td>P</td><td>abbbb</td><td>V</td><td>babab</td></tr><tr><td>E</td><td>aabaa</td><td>K</td><td>ababa</td><td>Q</td><td>baaaa</td><td>W</td><td>babba</td></tr><tr><td>F</td><td>aabab</td><td>L</td><td>ababb</td><td>R</td><td>baaab</td><td>X</td><td>babbb</td></tr></tbody></table><p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p><h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：<br><img src="/images/vigenere.png" alt="维吉尼亚表格"><br>这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong><br>明文<code>HELLOWORLD</code>的加密结果如下：</p><ol><li>选择某一关键词作为密钥，如<code>SECRET</code></li><li>对于明文第1个字母<code>H</code>，对应密钥的第1个字母<code>S</code>，于是使用表格中<code>S</code>行字母表进行加密，得到密文第一个字母<code>Z</code></li><li>以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文<code>ZINCSPGVNU</code></li></ol><p>类似的，解密过程如下：</p><ol><li>根据密钥第1个字母<code>S</code>所对应的<code>S</code>行字母表，发现密文第1个字母<code>Z</code>位于<code>H</code>列，因而明文第1个字母为<code>H</code></li><li>依次类推</li></ol><p>显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。</p><h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即<strong>位置转换</strong>，典型的有栅栏密码等。</p><h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>去掉空格：<code>HelloWorld</code></li><li>5个一组：<code>Hello</code>，<code>World</code></li><li>取出每组第1个字母：<code>HW</code></li><li>取出每组第2个字母：<code>eo</code></li><li>以此类推</li><li>连在一起：<code>HWeolrllod</code></li><li>加上适当空格：<code>HWeol rllod</code></li></ol><p>类似的，解密过程如下：</p><ol><li>去掉空格：<code>HWeolrllod</code></li><li>分成5栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li><li>取出每栏第1个字母：<code>Hello</code></li><li>依次类推</li><li>连在一起：<code>HelloWorld</code></li><li>加上适当空格：<code>Hello World</code></li></ol><p>注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如<code>王夫 井工 夫口 由中人</code>即为<code>67 84 70 123</code>。</p><h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：<br><img src="/images/pigpen.png" alt="猪圈密码"><br>明文<code>X MARKS THE SPOT</code>的加密结果如下：<br><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;古典密码学主要包括两类，即&lt;strong&gt;代换&lt;/strong&gt;和&lt;strong&gt;置换&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;代换&quot;&gt;&lt;a href=&quot;#代换&quot; class=&quot;headerlink&quot; title=&quot;代换&quot;&gt;&lt;/a&gt;代换&lt;/h2&gt;&lt;p&gt;代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。&lt;/p&gt;
+&lt;h2 id=&quot;代换&quot;&gt;&lt;a href=&quot;#代换&quot; class=&quot;headerlink&quot; title=&quot;代换&quot;&gt;&lt;/a&gt;代换&lt;/h2&gt;&lt;p&gt;代换密码是将明文中的字符替代成其他字符，即&lt;strong&gt;替代转换&lt;/strong&gt;，若整个加密过程中每个字符采用同一张表替代，则为&lt;strong&gt;单表代换密码&lt;/strong&gt;，类似的，若整个加密过程中每个字符采用不同的表替代，则为&lt;strong&gt;多表代换密码&lt;/strong&gt;，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。&lt;/p&gt;
 &lt;h3 id=&quot;凯撒密码&quot;&gt;&lt;a href=&quot;#凯撒密码&quot; class=&quot;headerlink&quot; title=&quot;凯撒密码&quot;&gt;&lt;/a&gt;凯撒密码&lt;/h3&gt;&lt;p&gt;凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。&lt;br&gt;明文&lt;code&gt;Hello World&lt;/code&gt;的加密过程如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;取偏移量为3&lt;/li&gt;
@@ -67,7 +240,7 @@
 &lt;li&gt;以此类推&lt;/li&gt;
 &lt;li&gt;明文为：&lt;code&gt;Hello World&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;注意：当偏移量为13时，这种凯撒密码的特例又被称为&lt;strong&gt;ROT13&lt;/strong&gt;(回转13位)加密。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。&lt;br&gt;
+&lt;p&gt;注意：当偏移量为13时，这种凯撒密码的特例又被称为&lt;strong&gt;ROT13&lt;/strong&gt;(回转13位)加密，ROT13加密是一种&lt;strong&gt;对等加密&lt;/strong&gt;(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。&lt;br&gt;
     
     </summary>
     

@@ -397,9 +397,190 @@
 
       
         
-          
-            <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><h2 id="Base16"><a href="#Base16" class="headerlink" title="Base16"></a>Base16</h2>
-          
+          <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于<strong>64</strong>个可打印字符来表示二进制数据的表示方法，这64个字符分别为<code>A-Z</code>、<code>a-z</code>、<code>0-9</code>以及<code>+</code>与<code>/</code>。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+<th>数值</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>16</td>
+<td>Q</td>
+<td>32</td>
+<td>g</td>
+<td>48</td>
+<td>w</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>17</td>
+<td>R</td>
+<td>33</td>
+<td>h</td>
+<td>49</td>
+<td>x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>18</td>
+<td>S</td>
+<td>34</td>
+<td>i</td>
+<td>50</td>
+<td>y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>19</td>
+<td>T</td>
+<td>35</td>
+<td>j</td>
+<td>51</td>
+<td>z</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>20</td>
+<td>U</td>
+<td>36</td>
+<td>k</td>
+<td>52</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>21</td>
+<td>V</td>
+<td>37</td>
+<td>l</td>
+<td>53</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>22</td>
+<td>W</td>
+<td>38</td>
+<td>m</td>
+<td>54</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>23</td>
+<td>X</td>
+<td>39</td>
+<td>n</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>24</td>
+<td>Y</td>
+<td>40</td>
+<td>o</td>
+<td>56</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>25</td>
+<td>Z</td>
+<td>41</td>
+<td>p</td>
+<td>57</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>26</td>
+<td>a</td>
+<td>42</td>
+<td>q</td>
+<td>58</td>
+<td>6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>27</td>
+<td>b</td>
+<td>43</td>
+<td>r</td>
+<td>59</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>28</td>
+<td>c</td>
+<td>44</td>
+<td>s</td>
+<td>60</td>
+<td>8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>29</td>
+<td>d</td>
+<td>45</td>
+<td>t</td>
+<td>61</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>30</td>
+<td>e</td>
+<td>46</td>
+<td>u</td>
+<td>62</td>
+<td>+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>31</td>
+<td>f</td>
+<td>47</td>
+<td>v</td>
+<td>63</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/10/base/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -539,7 +720,7 @@
       
         
           <p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
-<h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。</p>
+<h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p>
 <h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p>
 <ol>
 <li>取偏移量为3</li>
@@ -553,7 +734,7 @@
 <li>以此类推</li>
 <li>明文为：<code>Hello World</code></li>
 </ol>
-<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br>
+<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/10/classical-crypto/#more" rel="contents">
@@ -1983,7 +2164,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.5k</span>
+    <span title="Site words total count">20.5k</span>
   
 </div>
 

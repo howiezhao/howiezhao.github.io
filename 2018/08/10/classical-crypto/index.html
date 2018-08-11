@@ -88,21 +88,22 @@
 
 
 
-<meta name="description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。明文Hello World的加密过程如下：  取偏移量为3 计算H的">
+<meta name="description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个">
 <meta name="keywords" content="密码学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="古典密码学">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/10/classical-crypto/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。明文Hello World的加密过程如下：  取偏移量为3 计算H的">
+<meta property="og:description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://howiezhao.github.io/images/vigenere.png">
 <meta property="og:image" content="https://howiezhao.github.io/images/pigpen.png">
 <meta property="og:image" content="https://howiezhao.github.io/images/pigpen-eg.png">
-<meta property="og:updated_time" content="2018-08-10T13:31:05.977Z">
+<meta property="og:updated_time" content="2018-08-11T10:39:13.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="古典密码学">
-<meta name="twitter:description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。明文Hello World的加密过程如下：  取偏移量为3 计算H的">
-<meta name="twitter:image" content="https://howiezhao.github.io/images/pigpen.png">
+<meta name="twitter:description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个">
+<meta name="twitter:image" content="https://howiezhao.github.io/images/vigenere.png">
 
 
 
@@ -404,7 +405,7 @@
 
       
         <p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
-<h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，典型的有凯撒密码、维吉尼亚密码、培根密码等。</p>
+<h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p>
 <h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p>
 <ol>
 <li>取偏移量为3</li>
@@ -418,7 +419,7 @@
 <li>以此类推</li>
 <li>明文为：<code>Hello World</code></li>
 </ol>
-<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p>
+<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p>
 <h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p>
 <table>
 <thead>
@@ -580,7 +581,19 @@
 </tbody>
 </table>
 <p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p>
-<h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，典型的有栅栏密码等。</p>
+<h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：<br><img src="/images/vigenere.png" alt="维吉尼亚表格"><br>这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong><br>明文<code>HELLOWORLD</code>的加密结果如下：</p>
+<ol>
+<li>选择某一关键词作为密钥，如<code>SECRET</code></li>
+<li>对于明文第1个字母<code>H</code>，对应密钥的第1个字母<code>S</code>，于是使用表格中<code>S</code>行字母表进行加密，得到密文第一个字母<code>Z</code></li>
+<li>以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文<code>ZINCSPGVNU</code></li>
+</ol>
+<p>类似的，解密过程如下：</p>
+<ol>
+<li>根据密钥第1个字母<code>S</code>所对应的<code>S</code>行字母表，发现密文第1个字母<code>Z</code>位于<code>H</code>列，因而明文第1个字母为<code>H</code></li>
+<li>依次类推</li>
+</ol>
+<p>显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。</p>
+<h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即<strong>位置转换</strong>，典型的有栅栏密码等。</p>
 <h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p>
 <ol>
 <li>去掉空格：<code>HelloWorld</code></li>
@@ -835,7 +848,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代换"><span class="nav-number">1.</span> <span class="nav-text">代换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凯撒密码"><span class="nav-number">1.1.</span> <span class="nav-text">凯撒密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#培根密码"><span class="nav-number">1.2.</span> <span class="nav-text">培根密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置换"><span class="nav-number">2.</span> <span class="nav-text">置换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栅栏密码"><span class="nav-number">2.1.</span> <span class="nav-text">栅栏密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当铺密码"><span class="nav-number">3.1.</span> <span class="nav-text">当铺密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#猪圈密码"><span class="nav-number">3.2.</span> <span class="nav-text">猪圈密码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代换"><span class="nav-number">1.</span> <span class="nav-text">代换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凯撒密码"><span class="nav-number">1.1.</span> <span class="nav-text">凯撒密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#培根密码"><span class="nav-number">1.2.</span> <span class="nav-text">培根密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#维吉尼亚密码"><span class="nav-number">1.3.</span> <span class="nav-text">维吉尼亚密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置换"><span class="nav-number">2.</span> <span class="nav-text">置换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栅栏密码"><span class="nav-number">2.1.</span> <span class="nav-text">栅栏密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当铺密码"><span class="nav-number">3.1.</span> <span class="nav-text">当铺密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#猪圈密码"><span class="nav-number">3.2.</span> <span class="nav-text">猪圈密码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -869,7 +882,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.5k</span>
+    <span title="Site words total count">20.5k</span>
   
 </div>
 
