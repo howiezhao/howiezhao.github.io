@@ -250,7 +250,7 @@
   <entry>
     <title><![CDATA[Linux的包管理机制]]></title>
     <url>%2F2018%2F05%2F09%2Flinux-package%2F</url>
-    <content type="text"><![CDATA[Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其本地包管理工具，常用命令有：12rpm -i a.rpm #安装arpm -e a #卸载a yum全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：1234yum update #更新包列表yum upgrade #更新包yum install a #安装ayum remove a #卸载a dpkg与apt-getdpkg全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其本地包管理工具，常用命令有：12dpkg -i a.dpkg #安装adpkg -r a #卸载a apt-get是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：1234apt-get update #更新包列表apt-get upgrade #更新包apt-get install a #安装aapt-get remove a #卸载a 值得注意的是，随着新版系统的到来，出现了更为强大的apt命令，可以简单认为apt集合了apt-get、apt-cache、apt-config中的最常用命令选项。例如，apt install相比apt-get install增加了色彩显示以及进度条显示等功能。因此，更建议使用apt命令，常用命令有：1234apt update #更新包列表apt upgrade #更新包apt install a #安装aapt remove a #卸载a]]></content>
+    <content type="text"><![CDATA[Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其本地包管理工具，常用命令有：12rpm -i a.rpm #安装arpm -e a #卸载a yum全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：1234yum update #更新包列表yum upgrade #更新包yum install a #安装ayum remove a #卸载a dpkg与apt-getdpkg全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其本地包管理工具，常用命令有：12dpkg -i a.dpkg #安装adpkg -r a #卸载a apt-get是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：1234apt-get update #更新包列表apt-get upgrade #更新包apt-get install a #安装aapt-get remove a #卸载a 同样的，apt-cache也是apt中的一个子程序，它的常用命令有：1apt-cache depends a #查看包a的依赖包 值得注意的是，随着新版系统的到来，出现了更为强大的apt命令，可以简单认为apt集合了apt-get、apt-cache、apt-config中的最常用命令选项。例如，apt install相比apt-get install增加了色彩显示以及进度条显示等功能。因此，更建议使用apt命令，常用命令有：1234apt update #更新包列表apt upgrade #更新包apt install a #安装aapt remove a #卸载a]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -321,9 +321,9 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
+        <tag>Windows</tag>
         <tag>渗透</tag>
         <tag>计算机取证</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>

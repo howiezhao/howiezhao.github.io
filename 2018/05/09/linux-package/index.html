@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat Package Manager(RPM软件包管理器)，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-02T14:53:20.674Z">
+<meta property="og:updated_time" content="2018-08-13T01:35:26.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux的包管理机制">
 <meta name="twitter:description" content="Linux大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat Package Manager(RPM软件包管理器)，">
@@ -140,6 +140,15 @@
 
 
 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-104250838-2', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 
@@ -406,6 +415,7 @@
 <a id="more"></a>
 <h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></span><br><span class="line">dpkg -r a       <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>
 <p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get update     <span class="comment">#更新包列表</span></span><br><span class="line">apt-get upgrade    <span class="comment">#更新包</span></span><br><span class="line">apt-get install a  <span class="comment">#安装a</span></span><br><span class="line">apt-get remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>
+<p>同样的，<code>apt-cache</code>也是apt中的一个子程序，它的常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache depends a  <span class="comment">#查看包a的依赖包</span></span><br></pre></td></tr></table></figure></p>
 <p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt update     <span class="comment">#更新包列表</span></span><br><span class="line">apt upgrade    <span class="comment">#更新包</span></span><br><span class="line">apt install a  <span class="comment">#安装a</span></span><br><span class="line">apt remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>
 
       
@@ -673,7 +683,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.5k</span>
+    <span title="Site words total count">20.6k</span>
   
 </div>
 
