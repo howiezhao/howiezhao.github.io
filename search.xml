@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[基于人的信息收集]]></title>
+    <url>%2F2018%2F09%2F09%2Fhuman-based-information-gathering%2F</url>
+    <content type="text"><![CDATA[照片根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。 WiFi根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker入坑指南]]></title>
+    <url>%2F2018%2F08%2F31%2Fdocker%2F</url>
+    <content type="text"><![CDATA[Docker是一种基于Linux的容器化技术，类似于轻量的虚拟机。它采用C/S架构，使用Go语言开发。 版本Docker分为2个版本：社区版(Community Edition, CE)和企业版(Enterprise Edition, EE)，顾名思义，企业版是收费的。针对macOS10.10.3和Windows 10，Docker还推出了Docker Desktop，Docker Desktop又分为2个渠道(channel)，稳定渠道(Stable)和抢先渠道(Edge)，需要注意的是，Docker Desktop对系统是有要求的，例如，针对Win10的Docker for Windows因为要用到Hyper-V虚拟机，所以要求系统是64位专业版或企业版并开启Hyper-V功能。针对老版本的Windows或macOS，可以使用Docker Toolbox，它会附带安装一个VirtualBox虚拟机。使用docker version可以查看docker版本，直接输入docker可以查看docker相关命令。 镜像镜像(image)文件可以用来生成容器实例，其类似于在虚拟机中安装操作系统时所使用的ISO镜像。image文件可以包含一个tag(标签)，即版本号。你可以使用远程仓库中别人制作好的image文件，也可以自己制作image文件。要制作image文件就要编写Dockerfile文件，其类似于Makefile文件image的常用命令如下：12345678910111213141516# 列出本机的所有image文件docker image lsdocker images# 删除指定的image文件docker image rm [image-name]docker rmi [image-name]# 将指定的image文件从远程仓库拉取到本地docker image pull [image-name]docker pull [image-name]# 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件# 若不指定tag，则默认的标签为latestdocker image build -t demo:0.0.1 .docker build -t demo:0.0.1 . 容器image文件生成的容器(container)实例，本身也是一个文件，称为容器文件。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。类似于在虚拟机中安装的操作系统，其本身会在硬盘中创建一系列文件，当关闭操作系统时，相应的文件并不会删除。container的常用命令如下：123456789101112131415# 从指定的image文件生成一个正在运行的容器实例，# 若本地没有指定的image文件，会从远程仓库中自动抓取下来docker container run [image-name]docker run [image-name]# 列出本机正在运行的容器，使用参数`-all`列出所有容器文件docker container ls# 删除指定的容器文件docker container rm [container-id]docker rm [container-id]# 关闭指定的容器实例docker container kill [container-id]docker kill [container-id] 仓库仓库(repository)是不同标签的image的集合，注册处(registry)又是不同仓库的集合，Docker的官方Registry是Docker Hub，类似于GitHub。使用docker login可以登录到自己在Docker Hub上注册的帐号。值得注意的是，国内访问Docker Hub速度较慢，建议设置代理或使用国内镜像站。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从Docker Hub中拉取。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Git小记]]></title>
+    <url>%2F2018%2F08%2F31%2Fgit%2F</url>
+    <content type="text"><![CDATA[Git是目前最流行的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是： /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令进行配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git config --global命令进行配置 当前Git仓库的.git/config仅针对当前项目，直接使用git config命令进行配置 一般来说，针对新安装的Git环境，要配置如下信息：123git config --global user.name "Howie Zhao"git config --global user.email howiezhaohr@hotmail.comgit config --global color.ui true 最后，你可以使用git config --list来查看所有配置信息。 结构要开始对某个文件进行版本控制，需要先在其所在路径下执行git init进行初始化，此命令会在当前路径下创建一个.git的隐藏文件。Git分为3个区：本地仓库、缓存区、远程仓库，使用git add test.txt可以将需要被追踪的文件(test.txt)添加到缓存区，使用git commit -m &#39;first commit&#39;可以将缓存区的内容提交到本地仓库，参数-m指定提交时的附带信息，使用git push可以将本地仓库推送到远程仓库，使用git clone可以将远程仓库克隆到本地，使用git pull可以将远程仓库的更新拉取到本地仓库。使用git status可以查看Git仓库状态，使用git log可以查看commit记录。 分支更多要了解更多关于Git的内容，可以参考《Pro Git》一书。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[telnet]]></title>
+    <url>%2F2018%2F08%2F24%2Ftelnet%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[SSH协议分析]]></title>
+    <url>%2F2018%2F08%2F24%2Fssh%2F</url>
+    <content type="text"><![CDATA[SSH(Secure Shell)即安全外壳协议，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。 OpenSSH的运行机制SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用ssh user@host命令进行登录时，所完成的整个过程如下： 远程主机收到用户的登录请求，把自己的公钥发给用户 用户使用这个公钥，将登录密码加密后，发送给远程主机 远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录 后续过程中，用户发送的信息都采用此方式进行加密发送 因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：123The authenticity of host 'host (12.18.429.21)' can't be established.RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.Are you sure you want to continue connecting (yes/no)? 即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在$HOME/.ssh/known_hosts文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。除了采用口令登录外，还可使用公钥登录，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。OpenSSH提供了一个工具 —— ssh-keygen，使用它可以方便的生成一对公私钥，生成的公钥为id_rsa.pub，私钥为id_rsa，保存在$HOME/.ssh目录下，当然你可以使用-t参数指定密钥的类型，使用-f参数指定生成的目录，更多的参数可以使用--help参数查看。有了密钥对后，可以使用ssh-copy-id user@host命令将自己的公钥上传至远程主机，远程主机会将用户的公钥，保存在登录后的用户主目录的$HOME/.ssh/authorized_keys文件中。实际上，ssh-copy-id命令的整个过程就如下命令一样：1ssh user@host 'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys' &lt; ~/.ssh/id_rsa.pub 最后还要对远程主机的SSH服务端配置文件，即/etc/ssh/sshd_config文件进行相关配置，并重启SSH服务即可生效。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[WSL相关问题解决]]></title>
+    <url>%2F2018%2F08%2F21%2Fwsl-problem%2F</url>
+    <content type="text"><![CDATA[名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 SSH问题要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：12345Port 2222 #将22改为2222，因Win10中自带的SSH服务也在监听22端口ListenAddress 0.0.0.0 #取消注释，监听所有端口UsePrivilegeSeparation no #将yes修改为noPermitRootLogin yes #将prohibit-password修改为yes，允许root用户登录，视个人情况而定PasswordAuthentication yes #将no修改为yes，允许密码登录 修改完成后用sudo service ssh start启动SSH服务，可能会报如下错误：1234Could not load host key: /etc/ssh/ssh_host_rsa_keyCould not load host key: /etc/ssh/ssh_host_dsa_keyCould not load host key: /etc/ssh/ssh_host_ecdsa_keyCould not load host key: /etc/ssh/ssh_host_ed25519_key 并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：1Connection closed by 127.0.0.1 port 2222 造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：1234ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_keyssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_keyssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_keyssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key 其中-t参数表示加密类型，-f参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。 图形界面问题EXE程序问题netstat和ps]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android Studio模拟器相关问题解决]]></title>
+    <url>%2F2018%2F08%2F21%2Fandroid-emulator-problem%2F</url>
+    <content type="text"><![CDATA[网络问题 命令行启动Android SDK工具包中包含着一个模拟器的命令行程序 —— emulator，它可以在不启动Android Studio的情况下开启Android模拟器，在Windows系统中，emulator位于%LOCALAPPDATA%\Android\Sdk\tools文件夹下，emulator -list-avds命令可以列出所有已创建的AVD，emulator -avd &lt;avd-name&gt;命令即可启动相应的AVD，要查看emulator更多的参数，可以使用emulator -help。 最佳实践建议创建的AVD为Pixel，版本为Android 7.1.1。]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hyper-V相关问题解决]]></title>
+    <url>%2F2018%2F08%2F20%2Fhyper-v-problem%2F</url>
+    <content type="text"><![CDATA[全屏问题由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用远程桌面连接，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改/etc/default/grub文件，更改其中GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;，接着update-grub并重启即可。 显卡问题开启Hyper-V功能后，原主机的显卡可能会出现问题，对于我的1803版Win10来说，电脑中原来的Intel(R) HD Graphics 4600核芯显卡不能正常工作，具体表现在工具栏中英特尔核芯显卡控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。究其原因是系统中原本的4624版驱动程序与Hyper-V不兼容，解决办法是去官网下载最新版驱动程序并升级即可。 兼容性问题由于Hyper-V采用的是硬件虚拟化技术，所以开启Hyper-V功能后相当于原本的物理机也运行在虚拟化上了，因此不能再使用VMware或者VirtualBox，它们不允许在虚拟机上运行虚拟机，而此时原主机在它们眼中就是一个虚拟机。早期的Android Studio中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4版之后自带模拟器(v27.3.9)已经可以支持Hyper-V，在开启Hyper-V的系统中，它使用Windows虚拟机监控程序平台替代了Intel的HAXM，使用前需要在Windows功能中启用Windows虚拟机监控程序平台功能。 网卡问题要想使Hyper-V中的虚拟机上网，可以通过创建虚拟交换机实现，虚拟交换机有3种类型，外部相当于VMware的桥接模式，内部相当于VMware的NAT模式，专用相当于VMware的仅主机模式，所有虚拟机会默认使用内部类型的默认交换机，这是虚拟交换机管理器自动创建的。如果我们选择创建外部类型的虚拟交换机，则会把Hyper-V的网络桥接在物理网卡上，那物理网卡将变成一个虚拟交换机。因此我们会发现原来使用的网卡变成了vEthernet，这是正常现象，不用担心。Hyper-V会自动创建一个虚拟网卡来继承原物理网卡的配置，物理计算机可以正常使用网络。 代数问题在创建虚拟机时可以选择虚拟机代数，简单来说，第一代虚拟机支持创建32位与64位操作系统，创建的虚拟硬盘为.vhd格式，第二代虚拟机只能创建64位操作系统，创建的虚拟硬盘为.vhdx格式，并且必须是Windows 8或者Windows Server 2012以上版本，对于Linux，微软官方有一份详细的清单表明哪些版本可以创建第二代虚拟机。为方便起见，可以在首次创建时选择第二代虚拟机，若不能成功启动，且屏幕显示No operating system was loaded. Press a key to retry the boot sequence...信息，则可以在设置中关闭安全启动并重启虚拟机，或者删掉虚拟机并重新创建第一代虚拟机。]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Base编码家族]]></title>
     <url>%2F2018%2F08%2F10%2Fbase%2F</url>
     <content type="text"><![CDATA[Base64Base64，顾名思义是一种基于64个可打印字符来表示二进制数据的表示方法，这64个字符分别为A-Z、a-z、0-9以及+与/。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示： 数值 字符 数值 字符 数值 字符 数值 字符 0 A 16 Q 32 g 48 w 1 B 17 R 33 h 49 x 2 C 18 S 34 i 50 y 3 D 19 T 35 j 51 z 4 E 20 U 36 k 52 0 5 F 21 V 37 l 53 1 6 G 22 W 38 m 54 2 7 H 23 X 39 n 55 3 8 I 24 Y 40 o 56 4 9 J 25 Z 41 p 57 5 10 K 26 a 42 q 58 6 11 L 27 b 43 r 59 7 12 M 28 c 44 s 60 8 13 N 29 d 45 t 61 9 14 O 30 e 46 u 62 + 15 P 31 f 47 v 63 / 编码Hello的过程如下： 文本 H e l l o ASCII编码 72 101 108 108 111 二进制位 ‭01001000‬ ‭01100101‬ ‭01101100‬ ‭01101100‬ ‭01101111‬ 00000000 以6个二进制位进行编码： 二进制位 010010 000110 010101 101100 011011 000110 111100 000000 索引 18 6 21 44 27 6 60 Base64编码 S G V s b G 8 = 若原数据不是3的倍数，且多出1个字节，则在编码末尾加2个=，多出2个字节，则在编码末尾加1个=。换言之，若多出1个字节，则最后一个6位的Base64字节块有4位是0值，若多出2个字节，则最后一个6位的Base64字节块有2位是0值。 Base32与上类似，Base32基于32个可打印字符，分别为A-Z以及2-7。32个字符可用5个比特位表示，5个字节有40个比特位，对应于8个Base32单元，编码后的数据比原始数据略长8/5。若原数据不是5的倍数，且多出1个字节，则在编码末尾加4个=，多出2个字节，则在编码末尾加3个=，多出3个字节，则在编码末尾加2个=，多出4个字节，则在编码末尾加1个=。Base32索引表如下所示： 数值 字符 数值 字符 数值 字符 数值 字符 0 A 8 I 16 Q 24 Y 1 B 9 J 17 R 25 Z 2 C 10 K 18 S 26 2 3 D 11 L 19 T 27 3 4 E 12 M 20 U 28 4 5 F 13 N 21 V 29 5 6 G 14 O 22 W 30 6 7 H 15 P 23 X 31 7 Base16与上类似，Base16基于16个可打印字符，分别为0-9以及A-F。16个字符可用4个比特位表示，1个字节有8个比特位，对应于2个Base16单元，编码后的数据比原始数据略长2。显然，在Base16中不需要在末尾填充=。Base16索引表如下所示： 数值 字符 数值 字符 数值 字符 数值 字符 0 0 4 4 8 8 12 C 1 1 5 5 9 9 13 D 2 2 6 6 10 A 14 E 3 3 7 7 11 B 15 F XXencodeXXencode不属于Base编码家族，但与Base64编码极为类似，区别仅在于64个可打印字符及其顺序，XXencode使用的为+、-、0-9、A-Z、a-z。 UUencodeUUencode也与Base64极为类似，它使用的字符及其顺序为(space)、!、&quot;、#、$、%、&amp;、&#39;、(、)、*、+、,、-、.、/、0-9、:、;、&lt;、=、&gt;、?、@、A-Z、[、\、]、^、_、`。]]></content>
@@ -14,7 +88,7 @@
   <entry>
     <title><![CDATA[古典密码学]]></title>
     <url>%2F2018%2F08%2F10%2Fclassical-crypto%2F</url>
-    <content type="text"><![CDATA[古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。明文Hello World的加密过程如下： 取偏移量为3 计算H的后3位为K 以此类推 密文为：Khoor Zruog 类似的，解密过程如下： 计算K的前3位为H 以此类推 明文为：Hello World 注意：当偏移量为13时，这种凯撒密码的特例又被称为ROT13(回转13位)加密，ROT13加密是一种对等加密(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。 培根密码培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表： 明文 密文 明文 密文 明文 密文 明文 密文 a AAAAA g AABBA n ABBAA t BAABA b AAAAB h AABBB o ABBAB u-v BAABB c AAABA i-j ABAAA p ABBBA w BABAA d AAABB k ABAAB q ABBBB x BABAB e AABAA l ABABA r BAAAA y BABBA f AABAB m ABABB s BAAAB z BABBB 按照上表，明文hello的密文为AABBBAABAAABABBABABBABBBA，显然，密文的长度是明文长度的5倍。除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下： 明文 密文 明文 密文 明文 密文 明文 密文 明文 密文 A aaaaa G aabba M abbaa S baaba Y bbaaa B aaaab H aabbb N abbab T baabb Z bbaab C aaaba I abaaa O abbba U babaa D aaabb J abaab P abbbb V babab E aabaa K ababa Q baaaa W babba F aabab L ababb R baaab X babbb 同理，明文HELLO的密文为aabbbaabaaababbababbabbba。注意：虽然表中出现了A B两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密hello为GOod gOOd STUdY, dAY dAy UP, haHa，其中大写代表A，小写代表B；类似的，也可以用粗体代表A，正常代表B，以字体的样式加密hello。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。 维吉尼亚密码维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。行为明文行，列为密钥列，密文位于表格内。明文HELLOWORLD的加密结果如下： 选择某一关键词作为密钥，如SECRET 对于明文第1个字母H，对应密钥的第1个字母S，于是使用表格中S行字母表进行加密，得到密文第一个字母Z 以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文ZINCSPGVNU 类似的，解密过程如下： 根据密钥第1个字母S所对应的S行字母表，发现密文第1个字母Z位于H列，因而明文第1个字母为H 依次类推 显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。 置换置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即位置转换，典型的有栅栏密码等。 栅栏密码栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。明文Hello World的加密过程如下： 去掉空格：HelloWorld 5个一组：Hello，World 取出每组第1个字母：HW 取出每组第2个字母：eo 以此类推 连在一起：HWeolrllod 加上适当空格：HWeol rllod 类似的，解密过程如下： 去掉空格：HWeolrllod 分成5栏：HW、eo、lr、ll、od 取出每栏第1个字母：Hello 依次类推 连在一起：HelloWorld 加上适当空格：Hello World 注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。 其他当铺密码准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如王夫 井工 夫口 由中人即为67 84 70 123。 猪圈密码猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：明文X MARKS THE SPOT的加密结果如下：]]></content>
+    <content type="text"><![CDATA[古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。明文Hello World的加密过程如下： 取偏移量为3 计算H的后3位为K 以此类推 密文为：Khoor Zruog 类似的，解密过程如下： 计算K的前3位为H 以此类推 明文为：Hello World 注意：当偏移量为13时，这种凯撒密码的特例又被称为ROT13(回转13位)加密，ROT13加密是一种对等加密(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。 培根密码培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表： 明文 密文 明文 密文 明文 密文 明文 密文 a AAAAA g AABBA n ABBAA t BAABA b AAAAB h AABBB o ABBAB u-v BAABB c AAABA i-j ABAAA p ABBBA w BABAA d AAABB k ABAAB q ABBBB x BABAB e AABAA l ABABA r BAAAA y BABBA f AABAB m ABABB s BAAAB z BABBB 按照上表，明文hello的密文为AABBBAABAAABABBABABBABBBA，显然，密文的长度是明文长度的5倍。除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下： 明文 密文 明文 密文 明文 密文 明文 密文 明文 密文 A aaaaa G aabba M abbaa S baaba Y bbaaa B aaaab H aabbb N abbab T baabb Z bbaab C aaaba I abaaa O abbba U babaa D aaabb J abaab P abbbb V babab E aabaa K ababa Q baaaa W babba F aabab L ababb R baaab X babbb 同理，明文HELLO的密文为aabbbaabaaababbababbabbba。注意：虽然表中出现了A B两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密hello为GOod gOOd STUdY, dAY dAy UP, haHa，其中大写代表A，小写代表B；类似的，也可以用粗体代表A，正常代表B，以字体的样式加密hello。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。 维吉尼亚密码维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。行为明文行，列为密钥列，密文位于表格内。明文HELLOWORLD的加密结果如下： 选择某一关键词作为密钥，如SECRET 对于明文第1个字母H，对应密钥的第1个字母S，于是使用表格中S行字母表进行加密，得到密文第一个字母Z 以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文ZINCSPGVNU 类似的，解密过程如下： 根据密钥第1个字母S所对应的S行字母表，发现密文第1个字母Z位于H列，因而明文第1个字母为H 依次类推 显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。 置换置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即位置转换，典型的有栅栏密码等。 栅栏密码栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。明文Hello World的加密过程如下： 去掉空格：HelloWorld 5个一组：Hello，World 取出每组第1个字母：HW 取出每组第2个字母：eo 以此类推 连在一起：HWeolrllod 加上适当空格：HWeol rllod 类似的，解密过程如下： 去掉空格：HWeolrllod 分成5栏：HW、eo、lr、ll、od 取出每栏第1个字母：Hello 依次类推 连在一起：HelloWorld 加上适当空格：Hello World 注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。 其他当铺密码准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如王夫 井工 夫口 由中人即为67 84 70 123。 猪圈密码猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：明文X MARKS THE SPOT的加密结果如下： 变形猪圈密码还有一种变形，即采用图片中字符位置一一对应的形式加解密，如FLAG可加密为OCJP。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -321,8 +395,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>渗透</tag>
+        <tag>Windows</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>

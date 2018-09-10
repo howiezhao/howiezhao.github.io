@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-08-11T15:11:25.367Z</updated>
+  <updated>2018-09-09T06:32:55.540Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,187 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于人的信息收集</title>
+    <link href="https://howiezhao.github.io/2018/09/09/human-based-information-gathering/"/>
+    <id>https://howiezhao.github.io/2018/09/09/human-based-information-gathering/</id>
+    <published>2018-09-09T05:43:26.000Z</published>
+    <updated>2018-09-09T06:32:55.540Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p><h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;照片&quot;&gt;&lt;a href=&quot;#照片&quot; class=&quot;headerlink&quot; title=&quot;照片&quot;&gt;&lt;/a&gt;照片&lt;/h2&gt;&lt;p&gt;根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。&lt;/p&gt;
+&lt;h2 id=&quot;WiFi&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker入坑指南</title>
+    <link href="https://howiezhao.github.io/2018/08/31/docker/"/>
+    <id>https://howiezhao.github.io/2018/08/31/docker/</id>
+    <published>2018-08-31T08:59:28.000Z</published>
+    <updated>2018-09-10T14:14:39.932Z</updated>
+    
+    <content type="html"><![CDATA[<p>Docker是一种基于Linux的容器化技术，类似于轻量的虚拟机。它采用C/S架构，使用Go语言开发。</p><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker分为2个版本：<strong>社区版</strong>(Community Edition, CE)和<strong>企业版</strong>(Enterprise Edition, EE)，顾名思义，企业版是收费的。针对macOS10.10.3和Windows 10，Docker还推出了<a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop又分为2个渠道(channel)，<strong>稳定渠道</strong>(Stable)和<strong>抢先渠道</strong>(Edge)，需要注意的是，Docker Desktop对系统是有要求的，例如，针对Win10的<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a>因为要用到Hyper-V虚拟机，所以要求系统是64位专业版或企业版并开启Hyper-V功能。针对老版本的Windows或macOS，可以使用<a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个VirtualBox虚拟机。<br>使用<code>docker version</code>可以查看docker版本，直接输入<code>docker</code>可以查看docker相关命令。<br><a id="more"></a></p><h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><strong>镜像</strong>(image)文件可以用来生成容器实例，其类似于在虚拟机中安装操作系统时所使用的ISO镜像。<br>image文件可以包含一个tag(标签)，即版本号。<br>你可以使用远程仓库中别人制作好的image文件，也可以自己制作image文件。要制作image文件就要编写<strong>Dockerfile</strong>文件，其类似于Makefile文件<br>image的常用命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image ls</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image rm [image-name]</span><br><span class="line">docker rmi [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull [image-name]</span><br><span class="line">docker pull [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure></p><h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>image文件生成的容器(container)实例，本身也是一个文件，称为<strong>容器文件</strong>。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。<br>类似于在虚拟机中安装的操作系统，其本身会在硬盘中创建一系列文件，当关闭操作系统时，相应的文件并不会删除。<br>container的常用命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动抓取下来</span></span><br><span class="line">docker container run [image-name]</span><br><span class="line">docker run [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container rm [container-id]</span><br><span class="line">docker rm [container-id]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> [container-id]</span><br><span class="line">docker <span class="built_in">kill</span> [container-id]</span><br></pre></td></tr></table></figure></p><h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>(repository)是不同标签的image的集合，注册处(registry)又是不同仓库的集合，Docker的官方Registry是<a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，类似于GitHub。使用<code>docker login</code>可以登录到自己在Docker Hub上注册的帐号。值得注意的是，国内访问Docker Hub速度较慢，建议设置代理或使用<a href="https://www.docker-cn.com/registry-mirror" target="_blank" rel="noopener">国内镜像站</a>。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从Docker Hub中拉取。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Docker是一种基于Linux的容器化技术，类似于轻量的虚拟机。它采用C/S架构，使用Go语言开发。&lt;/p&gt;
+&lt;h2 id=&quot;版本&quot;&gt;&lt;a href=&quot;#版本&quot; class=&quot;headerlink&quot; title=&quot;版本&quot;&gt;&lt;/a&gt;版本&lt;/h2&gt;&lt;p&gt;Docker分为2个版本：&lt;strong&gt;社区版&lt;/strong&gt;(Community Edition, CE)和&lt;strong&gt;企业版&lt;/strong&gt;(Enterprise Edition, EE)，顾名思义，企业版是收费的。针对macOS10.10.3和Windows 10，Docker还推出了&lt;a href=&quot;https://www.docker.com/products/docker-desktop&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker Desktop&lt;/a&gt;，Docker Desktop又分为2个渠道(channel)，&lt;strong&gt;稳定渠道&lt;/strong&gt;(Stable)和&lt;strong&gt;抢先渠道&lt;/strong&gt;(Edge)，需要注意的是，Docker Desktop对系统是有要求的，例如，针对Win10的&lt;a href=&quot;https://store.docker.com/editions/community/docker-ce-desktop-windows&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker for Windows&lt;/a&gt;因为要用到Hyper-V虚拟机，所以要求系统是64位专业版或企业版并开启Hyper-V功能。针对老版本的Windows或macOS，可以使用&lt;a href=&quot;https://docs.docker.com/toolbox/overview/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker Toolbox&lt;/a&gt;，它会附带安装一个VirtualBox虚拟机。&lt;br&gt;使用&lt;code&gt;docker version&lt;/code&gt;可以查看docker版本，直接输入&lt;code&gt;docker&lt;/code&gt;可以查看docker相关命令。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git小记</title>
+    <link href="https://howiezhao.github.io/2018/08/31/git/"/>
+    <id>https://howiezhao.github.io/2018/08/31/git/</id>
+    <published>2018-08-31T08:59:18.000Z</published>
+    <updated>2018-09-10T15:14:42.907Z</updated>
+    
+    <content type="html"><![CDATA[<p>Git是目前最流行的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p><ul><li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令进行配置</li><li>某个用户主目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令进行配置</li><li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li></ul><p>一般来说，针对新安装的Git环境，要配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Howie Zhao"</span></span><br><span class="line">git config --global user.email howiezhaohr@hotmail.com</span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><p>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br><a id="more"></a></p><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>要开始对某个文件进行版本控制，需要先在其所在路径下执行<code>git init</code>进行初始化，此命令会在当前路径下创建一个<code>.git</code>的隐藏文件。<br>Git分为3个区：本地仓库、缓存区、远程仓库，使用<code>git add test.txt</code>可以将需要被追踪的文件(test.txt)添加到缓存区，使用<code>git commit -m &#39;first commit&#39;</code>可以将缓存区的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息，使用<code>git push</code>可以将本地仓库推送到远程仓库，使用<code>git clone</code>可以将远程仓库克隆到本地，使用<code>git pull</code>可以将远程仓库的更新拉取到本地仓库。<br>使用<code>git status</code>可以查看Git仓库状态，使用<code>git log</code>可以查看commit记录。</p><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《Pro Git》</a>一书。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Git是目前最流行的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。&lt;/p&gt;
+&lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;p&gt;Git共有3个配置文件，分别是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/etc/gitconfig&lt;/code&gt;文件用于配置所有用户的配置信息，使用&lt;code&gt;git config --system&lt;/code&gt;命令进行配置&lt;/li&gt;
+&lt;li&gt;某个用户主目录下的&lt;code&gt;.gitconfig&lt;/code&gt;文件只适用于该用户，使用&lt;code&gt;git config --global&lt;/code&gt;命令进行配置&lt;/li&gt;
+&lt;li&gt;当前Git仓库的&lt;code&gt;.git/config&lt;/code&gt;仅针对当前项目，直接使用&lt;code&gt;git config&lt;/code&gt;命令进行配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一般来说，针对新安装的Git环境，要配置如下信息：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;Howie Zhao&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email howiezhaohr@hotmail.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global color.ui &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;最后，你可以使用&lt;code&gt;git config --list&lt;/code&gt;来查看所有配置信息。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>telnet</title>
+    <link href="https://howiezhao.github.io/2018/08/24/telnet/"/>
+    <id>https://howiezhao.github.io/2018/08/24/telnet/</id>
+    <published>2018-08-24T11:44:44.000Z</published>
+    <updated>2018-08-24T11:44:44.836Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SSH协议分析</title>
+    <link href="https://howiezhao.github.io/2018/08/24/ssh/"/>
+    <id>https://howiezhao.github.io/2018/08/24/ssh/</id>
+    <published>2018-08-24T11:44:35.000Z</published>
+    <updated>2018-08-24T14:44:03.332Z</updated>
+    
+    <content type="html"><![CDATA[<p>SSH(Secure Shell)即<strong>安全外壳协议</strong>，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。</p><h2 id="OpenSSH的运行机制"><a href="#OpenSSH的运行机制" class="headerlink" title="OpenSSH的运行机制"></a>OpenSSH的运行机制</h2><p>SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用<code>ssh user@host</code>命令进行登录时，所完成的整个过程如下：</p><ol><li>远程主机收到用户的登录请求，把自己的公钥发给用户</li><li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li><li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li><li>后续过程中，用户发送的信息都采用此方式进行加密发送</li></ol><p>因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'host (12.18.429.21)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure></p><p>即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。<br>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在<code>$HOME/.ssh/known_hosts</code>文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。<br>除了采用口令登录外，还可使用公钥登录，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。<br>OpenSSH提供了一个工具 —— <code>ssh-keygen</code>，使用它可以方便的生成一对公私钥，生成的公钥为id_rsa.pub，私钥为id_rsa，保存在<code>$HOME/.ssh</code>目录下，当然你可以使用<code>-t</code>参数指定密钥的类型，使用<code>-f</code>参数指定生成的目录，更多的参数可以使用<code>--help</code>参数查看。<br>有了密钥对后，可以使用<code>ssh-copy-id user@host</code>命令将自己的公钥上传至远程主机，远程主机会将用户的公钥，保存在登录后的用户主目录的<code>$HOME/.ssh/authorized_keys</code>文件中。实际上，<code>ssh-copy-id</code>命令的整个过程就如下命令一样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host <span class="string">'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p><p>最后还要对远程主机的SSH服务端配置文件，即<code>/etc/ssh/sshd_config</code>文件进行相关配置，并重启SSH服务即可生效。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;SSH(Secure Shell)即&lt;strong&gt;安全外壳协议&lt;/strong&gt;，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。&lt;/p&gt;
+&lt;h2 id=&quot;Open
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WSL相关问题解决</title>
+    <link href="https://howiezhao.github.io/2018/08/21/wsl-problem/"/>
+    <id>https://howiezhao.github.io/2018/08/21/wsl-problem/</id>
+    <published>2018-08-21T11:23:05.000Z</published>
+    <updated>2018-08-22T05:35:38.617Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。<br><a id="more"></a></p><h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure></p><p>修改完成后用<code>sudo service ssh start</code>启动SSH服务，可能会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p><p>并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure></p><p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p><p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p><h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;名称问题&quot;&gt;&lt;a href=&quot;#名称问题&quot; class=&quot;headerlink&quot; title=&quot;名称问题&quot;&gt;&lt;/a&gt;名称问题&lt;/h2&gt;&lt;p&gt;最早这个项目命名为&lt;strong&gt;Bash on Ubuntu on Windows&lt;/strong&gt;，随后改名为&lt;strong&gt;Windows Subsystem for Linux&lt;/strong&gt;，即&lt;strong&gt;WSL&lt;/strong&gt;，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
+    
+    
+      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android Studio模拟器相关问题解决</title>
+    <link href="https://howiezhao.github.io/2018/08/21/android-emulator-problem/"/>
+    <id>https://howiezhao.github.io/2018/08/21/android-emulator-problem/</id>
+    <published>2018-08-21T11:22:50.000Z</published>
+    <updated>2018-08-24T05:49:57.245Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2><a id="more"></a><h2 id="命令行启动"><a href="#命令行启动" class="headerlink" title="命令行启动"></a>命令行启动</h2><p>Android SDK工具包中包含着一个模拟器的命令行程序 —— <code>emulator</code>，它可以在不启动Android Studio的情况下开启Android模拟器，在Windows系统中，<code>emulator</code>位于<code>%LOCALAPPDATA%\Android\Sdk\tools</code>文件夹下，<code>emulator -list-avds</code>命令可以列出所有已创建的AVD，<code>emulator -avd &lt;avd-name&gt;</code>命令即可启动相应的AVD，要查看<code>emulator</code>更多的参数，可以使用<code>emulator -help</code>。</p><h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>建议创建的AVD为Pixel，版本为Android 7.1.1。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;网络问题&quot;&gt;&lt;a href=&quot;#网络问题&quot; class=&quot;headerlink&quot; title=&quot;网络问题&quot;&gt;&lt;/a&gt;网络问题&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hyper-V相关问题解决</title>
+    <link href="https://howiezhao.github.io/2018/08/20/hyper-v-problem/"/>
+    <id>https://howiezhao.github.io/2018/08/20/hyper-v-problem/</id>
+    <published>2018-08-20T12:12:02.000Z</published>
+    <updated>2018-08-24T05:33:15.550Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改<code>/etc/default/grub</code>文件，更改其中<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>，接着<code>update-grub</code>并重启即可。<br><a id="more"></a></p><h2 id="显卡问题"><a href="#显卡问题" class="headerlink" title="显卡问题"></a>显卡问题</h2><p>开启Hyper-V功能后，原主机的显卡可能会出现问题，对于我的1803版Win10来说，电脑中原来的Intel(R) HD Graphics 4600核芯显卡不能正常工作，具体表现在工具栏中英特尔核芯显卡控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。究其原因是系统中原本的4624版驱动程序与Hyper-V不兼容，解决办法是去官网下载最新版驱动程序并升级即可。</p><h2 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h2><p>由于Hyper-V采用的是硬件虚拟化技术，所以开启Hyper-V功能后相当于原本的物理机也运行在虚拟化上了，因此不能再使用VMware或者VirtualBox，它们不允许在虚拟机上运行虚拟机，而此时原主机在它们眼中就是一个虚拟机。早期的Android Studio中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4版之后自带模拟器(v27.3.9)已经可以支持Hyper-V，在开启Hyper-V的系统中，它使用<strong>Windows虚拟机监控程序平台</strong>替代了Intel的<strong>HAXM</strong>，使用前需要在Windows功能中启用<strong>Windows虚拟机监控程序平台</strong>功能。</p><h2 id="网卡问题"><a href="#网卡问题" class="headerlink" title="网卡问题"></a>网卡问题</h2><p>要想使Hyper-V中的虚拟机上网，可以通过创建<strong>虚拟交换机</strong>实现，虚拟交换机有3种类型，<strong>外部</strong>相当于VMware的<strong>桥接模式</strong>，<strong>内部</strong>相当于VMware的<strong>NAT模式</strong>，<strong>专用</strong>相当于VMware的<strong>仅主机模式</strong>，所有虚拟机会默认使用<strong>内部</strong>类型的<strong>默认交换机</strong>，这是<strong>虚拟交换机管理器</strong>自动创建的。如果我们选择创建<strong>外部</strong>类型的虚拟交换机，则会把Hyper-V的网络桥接在物理网卡上，那物理网卡将变成一个虚拟交换机。因此我们会发现原来使用的网卡变成了<strong>vEthernet</strong>，这是正常现象，不用担心。Hyper-V会自动创建一个虚拟网卡来继承原物理网卡的配置，物理计算机可以正常使用网络。</p><h2 id="代数问题"><a href="#代数问题" class="headerlink" title="代数问题"></a>代数问题</h2><p>在创建虚拟机时可以选择虚拟机代数，简单来说，第一代虚拟机支持创建32位与64位操作系统，创建的虚拟硬盘为<code>.vhd</code>格式，第二代虚拟机只能创建64位操作系统，创建的虚拟硬盘为<code>.vhdx</code>格式，并且必须是Windows 8或者Windows Server 2012以上版本，对于Linux，微软官方有一份详细的清单表明哪些版本可以创建第二代虚拟机。为方便起见，可以在首次创建时选择第二代虚拟机，若不能成功启动，且屏幕显示<code>No operating system was loaded. Press a key to retry the boot sequence...</code>信息，则可以在设置中关闭<strong>安全启动</strong>并重启虚拟机，或者删掉虚拟机并重新创建第一代虚拟机。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;全屏问题&quot;&gt;&lt;a href=&quot;#全屏问题&quot; class=&quot;headerlink&quot; title=&quot;全屏问题&quot;&gt;&lt;/a&gt;全屏问题&lt;/h2&gt;&lt;p&gt;由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用&lt;strong&gt;远程桌面连接&lt;/strong&gt;，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改&lt;code&gt;/etc/default/grub&lt;/code&gt;文件，更改其中&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet splash video=hyperv_fb:1920x1080&amp;quot;&lt;/code&gt;，接着&lt;code&gt;update-grub&lt;/code&gt;并重启即可。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
+    
+    
+      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Base编码家族</title>
@@ -219,9 +400,9 @@
     <link href="https://howiezhao.github.io/2018/08/10/classical-crypto/"/>
     <id>https://howiezhao.github.io/2018/08/10/classical-crypto/</id>
     <published>2018-08-10T03:17:41.000Z</published>
-    <updated>2018-08-11T10:39:13.560Z</updated>
+    <updated>2018-09-09T05:38:55.730Z</updated>
     
-    <content type="html"><![CDATA[<p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p><h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p><h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>取偏移量为3</li><li>计算<code>H</code>的后3位为<code>K</code></li><li>以此类推</li><li>密文为：<code>Khoor Zruog</code></li></ol><p>类似的，解密过程如下：</p><ol><li>计算<code>K</code>的前3位为<code>H</code></li><li>以此类推</li><li>明文为：<code>Hello World</code></li></ol><p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p><h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>a</td><td>AAAAA</td><td>g</td><td>AABBA</td><td>n</td><td>ABBAA</td><td>t</td><td>BAABA</td></tr><tr><td>b</td><td>AAAAB</td><td>h</td><td>AABBB</td><td>o</td><td>ABBAB</td><td>u-v</td><td>BAABB</td></tr><tr><td>c</td><td>AAABA</td><td>i-j</td><td>ABAAA</td><td>p</td><td>ABBBA</td><td>w</td><td>BABAA</td></tr><tr><td>d</td><td>AAABB</td><td>k</td><td>ABAAB</td><td>q</td><td>ABBBB</td><td>x</td><td>BABAB</td></tr><tr><td>e</td><td>AABAA</td><td>l</td><td>ABABA</td><td>r</td><td>BAAAA</td><td>y</td><td>BABBA</td></tr><tr><td>f</td><td>AABAB</td><td>m</td><td>ABABB</td><td>s</td><td>BAAAB</td><td>z</td><td>BABBB</td></tr></tbody></table><p>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。<br>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>A</td><td>aaaaa</td><td>G</td><td>aabba</td><td>M</td><td>abbaa</td><td>S</td><td>baaba</td><td>Y</td><td>bbaaa</td></tr><tr><td>B</td><td>aaaab</td><td>H</td><td>aabbb</td><td>N</td><td>abbab</td><td>T</td><td>baabb</td><td>Z</td><td>bbaab</td></tr><tr><td>C</td><td>aaaba</td><td>I</td><td>abaaa</td><td>O</td><td>abbba</td><td>U</td><td>babaa</td></tr><tr><td>D</td><td>aaabb</td><td>J</td><td>abaab</td><td>P</td><td>abbbb</td><td>V</td><td>babab</td></tr><tr><td>E</td><td>aabaa</td><td>K</td><td>ababa</td><td>Q</td><td>baaaa</td><td>W</td><td>babba</td></tr><tr><td>F</td><td>aabab</td><td>L</td><td>ababb</td><td>R</td><td>baaab</td><td>X</td><td>babbb</td></tr></tbody></table><p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p><h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：<br><img src="/images/vigenere.png" alt="维吉尼亚表格"><br>这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong><br>明文<code>HELLOWORLD</code>的加密结果如下：</p><ol><li>选择某一关键词作为密钥，如<code>SECRET</code></li><li>对于明文第1个字母<code>H</code>，对应密钥的第1个字母<code>S</code>，于是使用表格中<code>S</code>行字母表进行加密，得到密文第一个字母<code>Z</code></li><li>以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文<code>ZINCSPGVNU</code></li></ol><p>类似的，解密过程如下：</p><ol><li>根据密钥第1个字母<code>S</code>所对应的<code>S</code>行字母表，发现密文第1个字母<code>Z</code>位于<code>H</code>列，因而明文第1个字母为<code>H</code></li><li>依次类推</li></ol><p>显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。</p><h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即<strong>位置转换</strong>，典型的有栅栏密码等。</p><h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>去掉空格：<code>HelloWorld</code></li><li>5个一组：<code>Hello</code>，<code>World</code></li><li>取出每组第1个字母：<code>HW</code></li><li>取出每组第2个字母：<code>eo</code></li><li>以此类推</li><li>连在一起：<code>HWeolrllod</code></li><li>加上适当空格：<code>HWeol rllod</code></li></ol><p>类似的，解密过程如下：</p><ol><li>去掉空格：<code>HWeolrllod</code></li><li>分成5栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li><li>取出每栏第1个字母：<code>Hello</code></li><li>依次类推</li><li>连在一起：<code>HelloWorld</code></li><li>加上适当空格：<code>Hello World</code></li></ol><p>注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如<code>王夫 井工 夫口 由中人</code>即为<code>67 84 70 123</code>。</p><h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：<br><img src="/images/pigpen.png" alt="猪圈密码"><br>明文<code>X MARKS THE SPOT</code>的加密结果如下：<br><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p>]]></content>
+    <content type="html"><![CDATA[<p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p><h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p><h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>取偏移量为3</li><li>计算<code>H</code>的后3位为<code>K</code></li><li>以此类推</li><li>密文为：<code>Khoor Zruog</code></li></ol><p>类似的，解密过程如下：</p><ol><li>计算<code>K</code>的前3位为<code>H</code></li><li>以此类推</li><li>明文为：<code>Hello World</code></li></ol><p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p><h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>a</td><td>AAAAA</td><td>g</td><td>AABBA</td><td>n</td><td>ABBAA</td><td>t</td><td>BAABA</td></tr><tr><td>b</td><td>AAAAB</td><td>h</td><td>AABBB</td><td>o</td><td>ABBAB</td><td>u-v</td><td>BAABB</td></tr><tr><td>c</td><td>AAABA</td><td>i-j</td><td>ABAAA</td><td>p</td><td>ABBBA</td><td>w</td><td>BABAA</td></tr><tr><td>d</td><td>AAABB</td><td>k</td><td>ABAAB</td><td>q</td><td>ABBBB</td><td>x</td><td>BABAB</td></tr><tr><td>e</td><td>AABAA</td><td>l</td><td>ABABA</td><td>r</td><td>BAAAA</td><td>y</td><td>BABBA</td></tr><tr><td>f</td><td>AABAB</td><td>m</td><td>ABABB</td><td>s</td><td>BAAAB</td><td>z</td><td>BABBB</td></tr></tbody></table><p>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。<br>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>A</td><td>aaaaa</td><td>G</td><td>aabba</td><td>M</td><td>abbaa</td><td>S</td><td>baaba</td><td>Y</td><td>bbaaa</td></tr><tr><td>B</td><td>aaaab</td><td>H</td><td>aabbb</td><td>N</td><td>abbab</td><td>T</td><td>baabb</td><td>Z</td><td>bbaab</td></tr><tr><td>C</td><td>aaaba</td><td>I</td><td>abaaa</td><td>O</td><td>abbba</td><td>U</td><td>babaa</td></tr><tr><td>D</td><td>aaabb</td><td>J</td><td>abaab</td><td>P</td><td>abbbb</td><td>V</td><td>babab</td></tr><tr><td>E</td><td>aabaa</td><td>K</td><td>ababa</td><td>Q</td><td>baaaa</td><td>W</td><td>babba</td></tr><tr><td>F</td><td>aabab</td><td>L</td><td>ababb</td><td>R</td><td>baaab</td><td>X</td><td>babbb</td></tr></tbody></table><p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p><h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：<br><img src="/images/vigenere.png" alt="维吉尼亚表格"><br>这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong><br>明文<code>HELLOWORLD</code>的加密结果如下：</p><ol><li>选择某一关键词作为密钥，如<code>SECRET</code></li><li>对于明文第1个字母<code>H</code>，对应密钥的第1个字母<code>S</code>，于是使用表格中<code>S</code>行字母表进行加密，得到密文第一个字母<code>Z</code></li><li>以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文<code>ZINCSPGVNU</code></li></ol><p>类似的，解密过程如下：</p><ol><li>根据密钥第1个字母<code>S</code>所对应的<code>S</code>行字母表，发现密文第1个字母<code>Z</code>位于<code>H</code>列，因而明文第1个字母为<code>H</code></li><li>依次类推</li></ol><p>显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。</p><h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即<strong>位置转换</strong>，典型的有栅栏密码等。</p><h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>去掉空格：<code>HelloWorld</code></li><li>5个一组：<code>Hello</code>，<code>World</code></li><li>取出每组第1个字母：<code>HW</code></li><li>取出每组第2个字母：<code>eo</code></li><li>以此类推</li><li>连在一起：<code>HWeolrllod</code></li><li>加上适当空格：<code>HWeol rllod</code></li></ol><p>类似的，解密过程如下：</p><ol><li>去掉空格：<code>HWeolrllod</code></li><li>分成5栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li><li>取出每栏第1个字母：<code>Hello</code></li><li>依次类推</li><li>连在一起：<code>HelloWorld</code></li><li>加上适当空格：<code>Hello World</code></li></ol><p>注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如<code>王夫 井工 夫口 由中人</code>即为<code>67 84 70 123</code>。</p><h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：<br><img src="/images/pigpen.png" alt="猪圈密码"><br>明文<code>X MARKS THE SPOT</code>的加密结果如下：<br><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p><h4 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h4><p>猪圈密码还有一种变形，即采用图片中字符位置一一对应的形式加解密，如<code>FLAG</code>可加密为<code>OCJP</code>。</p>]]></content>
     
     <summary type="html">
     
@@ -521,185 +702,6 @@
     
     
       <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>云服务的三种模式</title>
-    <link href="https://howiezhao.github.io/2018/07/15/xaas/"/>
-    <id>https://howiezhao.github.io/2018/07/15/xaas/</id>
-    <published>2018-07-15T08:58:01.000Z</published>
-    <updated>2018-07-16T09:39:36.674Z</updated>
-    
-    <content type="html"><![CDATA[<p>云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。</p><h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service(基础设施即服务)，云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是<strong>VPS</strong>，即Virtual Private Server(虚拟专用服务器)，这类服务一般提供必要的Shell接口，可使用户连接到操作系统进行相关配置，常见的VPS厂商有<a href="https://aws.amazon.com/cn/ec2/" target="_blank" rel="noopener">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs" target="_blank" rel="noopener">阿里云 ECS</a>等。</p><h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service(平台即服务)，云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的Web服务器、数据库等，用户可以直接在其上部署Web应用，我用过的虚拟空间有<a href="http://www.laoxuehost.com/" target="_blank" rel="noopener">老薛主机</a>，常见的PaaS厂商有<a href="https://cloud.google.com/appengine/" target="_blank" rel="noopener">Google App Engine</a>。</p><h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p><strong>SaaS</strong>，Software as a Service(软件即服务)，云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的Hexo、WordPress等。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;云服务的模式一般有IaaS、PaaS、SaaS三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。&lt;/p&gt;
-&lt;h2 id=&quot;IaaS&quot;&gt;&lt;a href=&quot;#IaaS&quot; class=&quot;headerlink&quot; title=&quot;IaaS&quot;&gt;&lt;/a&gt;Iaa
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>编译与构建</title>
-    <link href="https://howiezhao.github.io/2018/07/15/compile-build/"/>
-    <id>https://howiezhao.github.io/2018/07/15/compile-build/</id>
-    <published>2018-07-15T06:29:13.000Z</published>
-    <updated>2018-07-15T08:50:54.648Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器(compiler)</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。目前在Linux中使用最广的编译器是<strong>GCC</strong>，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure></p><p>若不指定生成文件，则默认生成a.out。<br><a id="more"></a></p><h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统(build system)</strong>，构建系统所作的就是<strong>构建(build)</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。在Linux中使用最广的构建系统是<strong>GNU make</strong>，它会读取<strong>makefile</strong>文件中的配置信息来完成构建，makefile的简要格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure></p><p>冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个target:dependencies对的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies可以为空，如常用的target为clean时，就没有依赖，只有命令。<br>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若editor这个target文件不存在，或者main.o、text.o这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到main.o和text.o，make会检查main.o的依赖main.c、def.h有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于text.o。当输入<code>make install</code>，make会检查install的依赖editor是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。<br>makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">OBJECTS = main.o text.o</span><br><span class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></span><br><span class="line">editor : $(OBJECTS)</span><br><span class="line">    gcc -o editor $(OBJECTS)</span><br><span class="line">main.o : main.c</span><br><span class="line">    gcc -c main.c</span><br><span class="line">text.o : text.c</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor $(INSTALL_PATH)</span><br></pre></td></tr></table></figure></p><h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>为了在Windows中使用GCC，诞生了<a href="http://www.mingw.org/" target="_blank" rel="noopener"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a href="https://mingw-w64.org/doku.php/start" target="_blank" rel="noopener"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。<br>Java世界中使用最广的构建系统是<strong>Maven</strong>，而在Android Studio中则使用到了后起之秀<strong>Gradle</strong>。<br>C语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot; title=&quot;编译&quot;&gt;&lt;/a&gt;编译&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;编译(compile)&lt;/strong&gt;，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为&lt;strong&gt;编译器(compiler)&lt;/strong&gt;。但要注意，编译器在同一时刻只能转换一个编译单元，所谓&lt;strong&gt;编译单元&lt;/strong&gt;是指单个的源文件。目前在Linux中使用最广的编译器是&lt;strong&gt;GCC&lt;/strong&gt;，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ gcc test.c -o &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;若不指定生成文件，则默认生成a.out。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Linux系统加固</title>
-    <link href="https://howiezhao.github.io/2018/05/19/linux-reinforcement/"/>
-    <id>https://howiezhao.github.io/2018/05/19/linux-reinforcement/</id>
-    <published>2018-05-19T05:59:05.000Z</published>
-    <updated>2018-07-24T11:51:19.208Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="帐户与口令"><a href="#帐户与口令" class="headerlink" title="帐户与口令"></a>帐户与口令</h2><p>此方面的加固主要为了防止针对帐户的暴力破解。</p><p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p><p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p><p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。<a id="more"></a></p><p>设置用户锁定：<br>在CentOS7中，编辑/etc/pam.d/system-auth文件，添加<code>auth required pam_tally2.so onerr=fail deny=6 unlock_time=300</code>此行，表示当密码连续输错6次后锁定，锁定时间300秒。<br>限制能su到root的用户：<br>编辑/etc/pam.d/su文件，添加<code>auth required pam_wheel.so group=test</code>此行，表示只允许test组用户su到root。</p><h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><p>服务越少，系统越安全。</p><p>关闭不必要的服务：<br>在CentOS中，使用命令<code>chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset</code>设置服务在指定init级别下开机是否启动。</p><p>SSH服务安全：<br>编辑/etc/ssh/sshd_config文件，修改默认端口，即<code>Port</code>项；禁止root用户远程登录，即<code>PermitRootLogin</code>项；禁止空密码登录，即<code>PermitEmptyPasswords</code>项；限制登录密码输错次数。</p><h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2><p>权限越小，系统越安全</p><p>设置umask值：<br>编辑/etc/profile文件，修改umask值为027。</p><p>设置登录超时：<br>编辑/etc/profile文件，添加<code>TIMEOUT=180</code>，即登录后无操作3分钟将超时断开连接。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;帐户与口令&quot;&gt;&lt;a href=&quot;#帐户与口令&quot; class=&quot;headerlink&quot; title=&quot;帐户与口令&quot;&gt;&lt;/a&gt;帐户与口令&lt;/h2&gt;&lt;p&gt;此方面的加固主要为了防止针对帐户的暴力破解。&lt;/p&gt;
-&lt;p&gt;禁用或删除无用帐户：&lt;br&gt;使用命令&lt;code&gt;userdel &amp;lt;用户名&amp;gt;&lt;/code&gt;删除不必要的帐户，使用参数&lt;code&gt;-r&lt;/code&gt;即可删除相应用户的家目录和邮箱目录。&lt;br&gt;使用命令&lt;code&gt;passwd -l &amp;lt;用户名&amp;gt;&lt;/code&gt;锁定不必要的帐户，解锁可使用&lt;code&gt;passwd -u &amp;lt;用户名&amp;gt;&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;检查特殊帐户：&lt;br&gt;使用命令&lt;code&gt;awk -F: &amp;#39;($2==&amp;quot;&amp;quot;)&amp;#39; /etc/shadow&lt;/code&gt;查看空口令帐户，若存在，则使用命令&lt;code&gt;passwd &amp;lt;用户名&amp;gt;&lt;/code&gt;为空口令帐户设定密码。&lt;br&gt;使用命令&lt;code&gt;awk -F: &amp;#39;($3==0)&amp;#39; /etc/passwd&lt;/code&gt;查看uid为0的帐户，确认uid为0的帐户只有root帐户。&lt;/p&gt;
-&lt;p&gt;添加口令策略：&lt;br&gt;使用命令&lt;code&gt;change -m 0 -M 30 -E 2020-01-01 -W 7 &amp;lt;用户名&amp;gt;&lt;/code&gt;修改帐户口令策略，&lt;code&gt;-m&lt;/code&gt;表示密码最小使用天数，&lt;code&gt;-M&lt;/code&gt;表示密码最大使用天数，&lt;code&gt;-E&lt;/code&gt;表示密码到期时间，&lt;code&gt;-W&lt;/code&gt;表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows系统加固</title>
-    <link href="https://howiezhao.github.io/2018/05/19/windows-reinforcement/"/>
-    <id>https://howiezhao.github.io/2018/05/19/windows-reinforcement/</id>
-    <published>2018-05-19T05:58:51.000Z</published>
-    <updated>2018-07-24T13:29:23.057Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>下面这几项应为每一个使用Windows的用户的最最基本安全配置：</p><ol><li>开启Windows防火墙</li><li>设置用户帐户控制(UAC)为合适级别</li><li>保持Windows更新</li></ol><a id="more"></a><h2 id="帐户安全"><a href="#帐户安全" class="headerlink" title="帐户安全"></a>帐户安全</h2><p>此方面的加固主要是为了防止针对帐户的暴力破解，帐户是黑客入侵系统的突破口，帐户越多，危险系数越高。</p><p>停用Guest帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中禁用Guest帐户，并为Guest帐户设置复杂密码，并拒绝远程访问。</p><p>重命名或禁用Administrator帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中为Administrator帐户重命名，或直接禁用。</p><p>创建陷阱帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中创建一个名为Administrator的本地帐户，并将它的权限设置成最低，加上一个超过10位的强密码。可通过将其隶属于Guest组已达到权限最低。</p><p>限制用户数量：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中删除所有的测试帐户、共享帐户和普通部门帐户，一般情况下，如果系统用户超过10个，一般总会存在一两个弱口令帐户。</p><p>开启帐户锁定策略：<br>在<strong>本地安全策略</strong>的<strong>帐户锁定策略</strong>中设置帐户锁定阈值为3次，帐户锁定时间为30分钟，重置帐户锁定计数器为30分钟之后。</p><h2 id="系统安全"><a href="#系统安全" class="headerlink" title="系统安全"></a>系统安全</h2><p>一个安全操作系统的基本原则是：最小的权限+最少的服务=最大的安全。</p><p>开启密码策略：<br>在<strong>本地安全策略</strong>的<strong>密码策略</strong>中启用密码复杂性要求，设置密码长度最小值为7，密码最短使用期限为1，密码最长使用期限为42，强制密码历史为24，禁用以可还原的加密储存密码。</p><p>设置双重加密帐户保护：<br>在运行对话框中输入syskey，启用SAM数据库加密工具，为Windows登录设置双重加密，注意此功能在Windows10中已被剔除。</p><p>取消默认共享：<br>编辑注册表键HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters，新建项AutoShareServer，值为0，即可关闭盘符默认共享，新建项AutoShareWks，值为0，即可关闭ADMIN默认共享。</p><p>开启审核策略：<br>在<strong>本地安全策略</strong>的<strong>审核策略</strong>中审核所有的成功失败操作，记录的信息可以在<strong>事件查看器</strong>的<strong>Windows日志</strong>中查看。</p><p>修改TTL值：<br>编辑注册表键HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters，新建项defaultTTL，随便赋值，以防黑客通过ping获取TTL以鉴别操作系统类型。</p><p>关闭不必要的服务：<br>Windows默认会启动多个服务，可以在<strong>计算机管理</strong>的<strong>服务</strong>中禁用相关服务，下面列出了一些可以禁用的服务：</p><ul><li>COM+ Event System</li><li>Computer Browser</li><li>Distributed Link Tracking Client</li><li>Routing and Remote Access</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;基本配置&quot;&gt;&lt;a href=&quot;#基本配置&quot; class=&quot;headerlink&quot; title=&quot;基本配置&quot;&gt;&lt;/a&gt;基本配置&lt;/h2&gt;&lt;p&gt;下面这几项应为每一个使用Windows的用户的最最基本安全配置：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;开启Windows防火墙&lt;/li&gt;
-&lt;li&gt;设置用户帐户控制(UAC)为合适级别&lt;/li&gt;
-&lt;li&gt;保持Windows更新&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>802.11协议分析</title>
-    <link href="https://howiezhao.github.io/2018/05/11/80211/"/>
-    <id>https://howiezhao.github.io/2018/05/11/80211/</id>
-    <published>2018-05-11T10:53:11.000Z</published>
-    <updated>2018-05-11T10:53:45.387Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IPSec运行机制</title>
-    <link href="https://howiezhao.github.io/2018/05/11/ipsec/"/>
-    <id>https://howiezhao.github.io/2018/05/11/ipsec/</id>
-    <published>2018-05-11T10:48:46.000Z</published>
-    <updated>2018-05-11T10:51:42.647Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IP协议分析</title>
-    <link href="https://howiezhao.github.io/2018/05/11/ip/"/>
-    <id>https://howiezhao.github.io/2018/05/11/ip/</id>
-    <published>2018-05-11T10:48:39.000Z</published>
-    <updated>2018-05-12T15:21:22.048Z</updated>
-    
-    <content type="html"><![CDATA[<p>IP(Internet Protocol，网际协议)</p><h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt=""><br><a id="more"></a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;IP(Internet Protocol，网际协议)&lt;/p&gt;
-&lt;h2 id=&quot;数据报格式&quot;&gt;&lt;a href=&quot;#数据报格式&quot; class=&quot;headerlink&quot; title=&quot;数据报格式&quot;&gt;&lt;/a&gt;数据报格式&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/ip.PNG&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TCP协议分析</title>
-    <link href="https://howiezhao.github.io/2018/05/11/tcp/"/>
-    <id>https://howiezhao.github.io/2018/05/11/tcp/</id>
-    <published>2018-05-11T10:48:30.000Z</published>
-    <updated>2018-05-12T15:18:47.029Z</updated>
-    
-    <content type="html"><![CDATA[<p>TCP(Transmission Control Protocol，传输控制协议)</p><h2 id="报文段结构"><a href="#报文段结构" class="headerlink" title="报文段结构"></a>报文段结构</h2><p><img src="/images/tcp.PNG" alt=""><br><a id="more"></a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;TCP(Transmission Control Protocol，传输控制协议)&lt;/p&gt;
-&lt;h2 id=&quot;报文段结构&quot;&gt;&lt;a href=&quot;#报文段结构&quot; class=&quot;headerlink&quot; title=&quot;报文段结构&quot;&gt;&lt;/a&gt;报文段结构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/tcp.PNG&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
