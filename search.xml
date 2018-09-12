@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[网站的WWW问题]]></title>
+    <url>%2F2018%2F09%2F12%2Fweb-www%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LaTeX小记]]></title>
+    <url>%2F2018%2F09%2F12%2Flatex%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[辗转相除法]]></title>
+    <url>%2F2018%2F09%2F12%2Feuclidean%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[IRC是什么]]></title>
+    <url>%2F2018%2F09%2F12%2Fwhat-is-irc%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ifconfig与ip]]></title>
+    <url>%2F2018%2F09%2F12%2Fifconfig-ip%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[巴科斯范式]]></title>
+    <url>%2F2018%2F09%2F12%2Fbnf%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[基于人的信息收集]]></title>
     <url>%2F2018%2F09%2F09%2Fhuman-based-information-gathering%2F</url>
     <content type="text"><![CDATA[照片根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。 WiFi根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。]]></content>
@@ -8,7 +65,7 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
+        <tag>社会工程学</tag>
       </tags>
   </entry>
   <entry>
@@ -22,15 +79,21 @@
   <entry>
     <title><![CDATA[Git小记]]></title>
     <url>%2F2018%2F08%2F31%2Fgit%2F</url>
-    <content type="text"><![CDATA[Git是目前最流行的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是： /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令进行配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git config --global命令进行配置 当前Git仓库的.git/config仅针对当前项目，直接使用git config命令进行配置 一般来说，针对新安装的Git环境，要配置如下信息：123git config --global user.name "Howie Zhao"git config --global user.email howiezhaohr@hotmail.comgit config --global color.ui true 最后，你可以使用git config --list来查看所有配置信息。 结构要开始对某个文件进行版本控制，需要先在其所在路径下执行git init进行初始化，此命令会在当前路径下创建一个.git的隐藏文件。Git分为3个区：本地仓库、缓存区、远程仓库，使用git add test.txt可以将需要被追踪的文件(test.txt)添加到缓存区，使用git commit -m &#39;first commit&#39;可以将缓存区的内容提交到本地仓库，参数-m指定提交时的附带信息，使用git push可以将本地仓库推送到远程仓库，使用git clone可以将远程仓库克隆到本地，使用git pull可以将远程仓库的更新拉取到本地仓库。使用git status可以查看Git仓库状态，使用git log可以查看commit记录。 分支更多要了解更多关于Git的内容，可以参考《Pro Git》一书。]]></content>
+    <content type="text"><![CDATA[Git是目前最流行的分布式版本控制系统(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是： /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git config --global命令配置 当前Git仓库的.git/config仅针对当前项目，直接使用git config命令进行配置 注意：每一个级别会覆盖上一级别的配置，所以.git/config的配置变量会覆盖/etc/gitconfig中的配置变量。一般来说，针对新安装的Git环境，要配置如下信息：123456# 配置提交时使用的用户名和邮箱，必须配置git config --global user.name "Howie Zhao"git config --global user.email howiezhaohr@hotmail.com# 开启颜色显示git config --global color.ui true 另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：git config --global core.editor emacs。最后，你可以使用git config --list来查看所有配置信息。 结构要开始对某个项目进行版本控制，需要先在其所在路径下执行git init进行初始化，此命令会在当前路径下创建一个.git的隐藏文件夹，这就是Git仓库目录。Git分为3个区域，Git仓库、工作目录、暂存区域： Git仓库目录是Git用来保存项目的元数据和对象数据库的地方。这是Git中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。 工作目录是对项目的某个版本独立提取出来的内容。这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。 暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”，不过一般说法还是叫暂存区域。 基本的 Git 工作流程如下： 在工作目录中修改文件。 暂存文件，将文件的快照放入暂存区域。 提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。 如果Git目录中保存着的特定版本文件，就属于已提交状态(committed)。如果作了修改并已放入暂存区域，就属于已暂存状态(staged)。如果自上次取出后，作了修改但还没有放到暂存区域，就是已修改状态(modified)。 命令使用git add test.txt可以将需要被追踪的文件(test.txt)添加到缓存区，使用git commit -m &#39;first commit&#39;可以将缓存区的内容提交到本地仓库，参数-m指定提交时的附带信息，使用git push可以将本地仓库推送到远程仓库，使用git clone可以将远程仓库克隆到本地，使用git pull可以将远程仓库的更新拉取到本地仓库。使用git status可以查看Git仓库状态，使用git log可以查看commit记录。 分支思想直接记录快照，而非差异比较：Git与其他版本控制系统的主要区别在于对待数据的方法，其他的VCS主要记录不同版本之间的差异，而Git则相当于直接记录不同版本的快照。近乎所有操作都是本地执行：在Git中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。Git保证完整性：Git中所有数据在存储前都计算校验和(SHA-1)，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。若你在传送过程中丢失信息或损坏文件，Git就能发现。Git一般只添加数据：你执行的Git操作，几乎只往Git数据库中增加数据。很难让Git执行任何不可逆操作，或者让它以任何方式清除数据。 原理GitHub应明确一点，Git是由Linux创始人Linus Torvalds开发的分布式版本控制系统，而GitHub是使用Git实现的代码托管网站，两者并非一类。 更多在命令行中直接输入git，可查看相关命令，要了解更多关于Git的内容，可以参考《Pro Git》一书。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[telnet]]></title>
+    <title><![CDATA[telnet协议分析]]></title>
     <url>%2F2018%2F08%2F24%2Ftelnet%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[SSH协议分析]]></title>
@@ -395,8 +458,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>Windows</tag>
+        <tag>渗透</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>

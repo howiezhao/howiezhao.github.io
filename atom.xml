@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-09-09T06:32:55.540Z</updated>
+  <updated>2018-09-12T14:09:12.586Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -17,11 +17,113 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>网站的WWW问题</title>
+    <link href="https://howiezhao.github.io/2018/09/12/web-www/"/>
+    <id>https://howiezhao.github.io/2018/09/12/web-www/</id>
+    <published>2018-09-12T14:07:51.000Z</published>
+    <updated>2018-09-12T14:09:12.586Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX小记</title>
+    <link href="https://howiezhao.github.io/2018/09/12/latex/"/>
+    <id>https://howiezhao.github.io/2018/09/12/latex/</id>
+    <published>2018-09-12T14:05:52.000Z</published>
+    <updated>2018-09-12T14:06:35.727Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>辗转相除法</title>
+    <link href="https://howiezhao.github.io/2018/09/12/euclidean/"/>
+    <id>https://howiezhao.github.io/2018/09/12/euclidean/</id>
+    <published>2018-09-12T14:00:58.000Z</published>
+    <updated>2018-09-12T14:01:32.369Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IRC是什么</title>
+    <link href="https://howiezhao.github.io/2018/09/12/what-is-irc/"/>
+    <id>https://howiezhao.github.io/2018/09/12/what-is-irc/</id>
+    <published>2018-09-12T13:59:18.000Z</published>
+    <updated>2018-09-12T14:00:01.455Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ifconfig与ip</title>
+    <link href="https://howiezhao.github.io/2018/09/12/ifconfig-ip/"/>
+    <id>https://howiezhao.github.io/2018/09/12/ifconfig-ip/</id>
+    <published>2018-09-12T13:53:46.000Z</published>
+    <updated>2018-09-12T13:54:21.943Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>巴科斯范式</title>
+    <link href="https://howiezhao.github.io/2018/09/12/bnf/"/>
+    <id>https://howiezhao.github.io/2018/09/12/bnf/</id>
+    <published>2018-09-12T13:51:01.000Z</published>
+    <updated>2018-09-12T13:52:03.353Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>基于人的信息收集</title>
     <link href="https://howiezhao.github.io/2018/09/09/human-based-information-gathering/"/>
     <id>https://howiezhao.github.io/2018/09/09/human-based-information-gathering/</id>
     <published>2018-09-09T05:43:26.000Z</published>
-    <updated>2018-09-09T06:32:55.540Z</updated>
+    <updated>2018-09-11T04:30:06.784Z</updated>
     
     <content type="html"><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p><h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>]]></content>
     
@@ -38,7 +140,7 @@
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
     
-      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+      <category term="社会工程学" scheme="https://howiezhao.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
     
   </entry>
   
@@ -68,21 +170,21 @@
     <link href="https://howiezhao.github.io/2018/08/31/git/"/>
     <id>https://howiezhao.github.io/2018/08/31/git/</id>
     <published>2018-08-31T08:59:18.000Z</published>
-    <updated>2018-09-10T15:14:42.907Z</updated>
+    <updated>2018-09-11T05:03:36.197Z</updated>
     
-    <content type="html"><![CDATA[<p>Git是目前最流行的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p><ul><li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令进行配置</li><li>某个用户主目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令进行配置</li><li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li></ul><p>一般来说，针对新安装的Git环境，要配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Howie Zhao"</span></span><br><span class="line">git config --global user.email howiezhaohr@hotmail.com</span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><p>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br><a id="more"></a></p><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>要开始对某个文件进行版本控制，需要先在其所在路径下执行<code>git init</code>进行初始化，此命令会在当前路径下创建一个<code>.git</code>的隐藏文件。<br>Git分为3个区：本地仓库、缓存区、远程仓库，使用<code>git add test.txt</code>可以将需要被追踪的文件(test.txt)添加到缓存区，使用<code>git commit -m &#39;first commit&#39;</code>可以将缓存区的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息，使用<code>git push</code>可以将本地仓库推送到远程仓库，使用<code>git clone</code>可以将远程仓库克隆到本地，使用<code>git pull</code>可以将远程仓库的更新拉取到本地仓库。<br>使用<code>git status</code>可以查看Git仓库状态，使用<code>git log</code>可以查看commit记录。</p><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《Pro Git》</a>一书。</p>]]></content>
+    <content type="html"><![CDATA[<p>Git是目前最流行的<strong>分布式版本控制系统</strong>(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p><ul><li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令配置</li><li>某个用户主目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令配置</li><li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li></ul><p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>一般来说，针对新安装的Git环境，要配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.name <span class="string">"Howie Zhao"</span></span><br><span class="line">git config --global user.email howiezhaohr@hotmail.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br><a id="more"></a></p><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>要开始对某个项目进行版本控制，需要先在其所在路径下执行<code>git init</code>进行初始化，此命令会在当前路径下创建一个<code>.git</code>的隐藏文件夹，这就是Git仓库目录。<br>Git分为3个区域，Git仓库、工作目录、暂存区域：</p><ul><li><strong>Git仓库目录</strong>是Git用来保存项目的元数据和对象数据库的地方。这是Git中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</li><li><strong>工作目录</strong>是对项目的某个版本独立提取出来的内容。这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</li><li><strong>暂存区域</strong>是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”，不过一般说法还是叫暂存区域。</li></ul><p>基本的 Git 工作流程如下：</p><ol><li>在工作目录中修改文件。</li><li>暂存文件，将文件的快照放入暂存区域。</li><li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li></ol><p>如果Git目录中保存着的特定版本文件，就属于<strong>已提交状态</strong>(committed)。如果作了修改并已放入暂存区域，就属于<strong>已暂存状态</strong>(staged)。如果自上次取出后，作了修改但还没有放到暂存区域，就是<strong>已修改状态</strong>(modified)。</p><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>使用<code>git add test.txt</code>可以将需要被追踪的文件(test.txt)添加到缓存区，使用<code>git commit -m &#39;first commit&#39;</code>可以将缓存区的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息，使用<code>git push</code>可以将本地仓库推送到远程仓库，使用<code>git clone</code>可以将远程仓库克隆到本地，使用<code>git pull</code>可以将远程仓库的更新拉取到本地仓库。<br>使用<code>git status</code>可以查看Git仓库状态，使用<code>git log</code>可以查看commit记录。</p><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p><strong>直接记录快照，而非差异比较</strong>：Git与其他版本控制系统的主要区别在于对待数据的方法，其他的VCS主要记录不同版本之间的差异，而Git则相当于直接记录不同版本的快照。<br><strong>近乎所有操作都是本地执行</strong>：在Git中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。<br><strong>Git保证完整性</strong>：Git中所有数据在存储前都计算校验和(SHA-1)，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。若你在传送过程中丢失信息或损坏文件，Git就能发现。<br><strong>Git一般只添加数据</strong>：你执行的Git操作，几乎只往Git数据库中增加数据。很难让Git执行任何不可逆操作，或者让它以任何方式清除数据。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>应明确一点，Git是由Linux创始人Linus Torvalds开发的分布式版本控制系统，而GitHub是使用Git实现的代码托管网站，两者并非一类。</p><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>在命令行中直接输入<code>git</code>，可查看相关命令，要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《Pro Git》</a>一书。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Git是目前最流行的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。&lt;/p&gt;
+      &lt;p&gt;Git是目前最流行的&lt;strong&gt;分布式版本控制系统&lt;/strong&gt;(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。&lt;/p&gt;
 &lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;p&gt;Git共有3个配置文件，分别是：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/etc/gitconfig&lt;/code&gt;文件用于配置所有用户的配置信息，使用&lt;code&gt;git config --system&lt;/code&gt;命令进行配置&lt;/li&gt;
-&lt;li&gt;某个用户主目录下的&lt;code&gt;.gitconfig&lt;/code&gt;文件只适用于该用户，使用&lt;code&gt;git config --global&lt;/code&gt;命令进行配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/etc/gitconfig&lt;/code&gt;文件用于配置所有用户的配置信息，使用&lt;code&gt;git config --system&lt;/code&gt;命令配置&lt;/li&gt;
+&lt;li&gt;某个用户主目录下的&lt;code&gt;.gitconfig&lt;/code&gt;文件只适用于该用户，使用&lt;code&gt;git config --global&lt;/code&gt;命令配置&lt;/li&gt;
 &lt;li&gt;当前Git仓库的&lt;code&gt;.git/config&lt;/code&gt;仅针对当前项目，直接使用&lt;code&gt;git config&lt;/code&gt;命令进行配置&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;一般来说，针对新安装的Git环境，要配置如下信息：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;Howie Zhao&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email howiezhaohr@hotmail.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global color.ui &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;最后，你可以使用&lt;code&gt;git config --list&lt;/code&gt;来查看所有配置信息。&lt;br&gt;
+&lt;p&gt;注意：每一个级别会覆盖上一级别的配置，所以&lt;code&gt;.git/config&lt;/code&gt;的配置变量会覆盖&lt;code&gt;/etc/gitconfig&lt;/code&gt;中的配置变量。&lt;br&gt;一般来说，针对新安装的Git环境，要配置如下信息：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 配置提交时使用的用户名和邮箱，必须配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;Howie Zhao&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email howiezhaohr@hotmail.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 开启颜色显示&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global color.ui &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：&lt;code&gt;git config --global core.editor emacs&lt;/code&gt;。&lt;br&gt;最后，你可以使用&lt;code&gt;git config --list&lt;/code&gt;来查看所有配置信息。&lt;br&gt;
     
     </summary>
     
@@ -92,16 +194,20 @@
   </entry>
   
   <entry>
-    <title>telnet</title>
+    <title>telnet协议分析</title>
     <link href="https://howiezhao.github.io/2018/08/24/telnet/"/>
     <id>https://howiezhao.github.io/2018/08/24/telnet/</id>
     <published>2018-08-24T11:44:44.000Z</published>
-    <updated>2018-08-24T11:44:44.836Z</updated>
+    <updated>2018-09-12T13:56:54.920Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -541,167 +647,6 @@
     
     
       <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XML、JSON与YAML</title>
-    <link href="https://howiezhao.github.io/2018/07/21/xml-json-yaml/"/>
-    <id>https://howiezhao.github.io/2018/07/21/xml-json-yaml/</id>
-    <published>2018-07-21T11:50:23.000Z</published>
-    <updated>2018-08-02T15:01:23.824Z</updated>
-    
-    <content type="html"><![CDATA[<p>XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;person&gt;</span><br><span class="line">    &lt;firstName&gt;Tian&lt;/firstName&gt;</span><br><span class="line">    &lt;lastName&gt;Song&lt;/lastName&gt;</span><br><span class="line">    &lt;address&gt;</span><br><span class="line">        &lt;streetAddr&gt;中关村南大街5号&lt;/streetAddr&gt;</span><br><span class="line">        &lt;city&gt;北京市&lt;/city&gt;</span><br><span class="line">        &lt;zipcode&gt;100081&lt;/zipcode&gt;</span><br><span class="line">    &lt;/address&gt;</span><br><span class="line">    &lt;prof&gt;Computer System&lt;/prof&gt;&lt;prof&gt;Security&lt;/prof&gt;</span><br><span class="line">&lt;/person&gt;</span><br></pre></td></tr></table></figure></p><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation(JavaScript对象表示法)，倘若我要表示某个人的简要信息，用JSON可写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;firstName&quot; : &quot;Tian&quot;,</span><br><span class="line">    &quot;lastName&quot; : &quot;Song&quot;,</span><br><span class="line">    &quot;address&quot; : &#123;</span><br><span class="line">                    &quot;streetAddr&quot; : &quot;中关村南大街5号&quot;,</span><br><span class="line">                    &quot;city&quot; : &quot;北京市&quot;,</span><br><span class="line">                    &quot;zipcode&quot; : &quot;100081&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">    &quot;prof&quot; : [&quot;Computer System&quot;, &quot;Security&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为Yet Another Markup Language(仍是一种标记语言)，之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为YAML Ain’t a Markup Language(YAML不是一种标记语言)，倘若我要表示某个人的简要信息，用YAML可写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">firstName : Tian</span><br><span class="line">lastName : Song</span><br><span class="line">address : </span><br><span class="line">    streetAddr : 中关村南大街5号</span><br><span class="line">    city : 北京市</span><br><span class="line">    zipcode : 100081</span><br><span class="line">prof : </span><br><span class="line">-Computer System</span><br><span class="line">-Security</span><br></pre></td></tr></table></figure></p><h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于Internet上的信息交互与传递，以及用户界面的编写，比如Android；JSON中的信息有类型，适合程序处理(js)，较XML简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。&lt;/p&gt;
-&lt;h2 id=&quot;XML&quot;&gt;&lt;a href=&quot;#XML&quot; class=&quot;headerlink&quot; title=&quot;XML&quot;&gt;&lt;/a&gt;XML&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;X
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown小记</title>
-    <link href="https://howiezhao.github.io/2018/07/21/markdown-cheatsheet/"/>
-    <id>https://howiezhao.github.io/2018/07/21/markdown-cheatsheet/</id>
-    <published>2018-07-21T00:50:42.000Z</published>
-    <updated>2018-07-21T13:05:55.882Z</updated>
-    
-    <content type="html"><![CDATA[<p>Markdown是一种轻量标记语言，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。</p><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p># 一级标题<br>#### 四级标题<br>对应HTML，最高6级标题。</p><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>- 无序列表项<br>- 无序列表项<br>- 无序列表项</p><p>1. 有序列表项<br>2. 有序列表项<br>3. 有序列表项<br><a id="more"></a></p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>[Howie’s Blog](<a href="http://howiezhao.com" target="_blank" rel="noopener">http://howiezhao.com</a>)<br>超文本链接必须带http。</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>![一张图片](/images/abc.jpg)<br>当图片无法显示时，则显示中括号中的语句。图片的路径为相对路径，即当前markdown文件所在路径下的images中的abc.jpg。</p><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>*斜体*<br>**粗体**</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p><p>`这里是单行代码`</p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>表头1 | 表头2<br>-– | -–<br>单元格1 | 单元格2<br>单元格3 | 单元格4</p><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>> 这是引用</p><h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><p>-–，这是一条水平区分线，用3个或以上的短横线表示</p><h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，markdown使用 \ 转义以上特殊字符。</p><h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol><li>在特殊字符与要书写的文字之间加上空格</li><li>不同段之间加一空行</li></ol><h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为GFM，即GitHub风格的Markdown语法，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p><ol><li>链接自动识别：GFM会自动为标准的URL加上链接</li><li>语法着色：在```后输入语言，即可着色</li><li>删除线：使用~~表示删除线</li><li>任务列表：使用- []或- [1]表示未勾选或已勾选的列表</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Markdown是一种轻量标记语言，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。&lt;/p&gt;
-&lt;h2 id=&quot;基本语法&quot;&gt;&lt;a href=&quot;#基本语法&quot; class=&quot;headerlink&quot; title=&quot;基本语法&quot;&gt;&lt;/a&gt;基本语法&lt;/h2&gt;&lt;h3 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h3&gt;&lt;p&gt;# 一级标题&lt;br&gt;#### 四级标题&lt;br&gt;对应HTML，最高6级标题。&lt;/p&gt;
-&lt;h3 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h3&gt;&lt;p&gt;- 无序列表项&lt;br&gt;- 无序列表项&lt;br&gt;- 无序列表项&lt;/p&gt;
-&lt;p&gt;1. 有序列表项&lt;br&gt;2. 有序列表项&lt;br&gt;3. 有序列表项&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Udacity：Apollo起步学习笔记</title>
-    <link href="https://howiezhao.github.io/2018/07/21/udacity-apollo/"/>
-    <id>https://howiezhao.github.io/2018/07/21/udacity-apollo/</id>
-    <published>2018-07-21T00:36:36.000Z</published>
-    <updated>2018-07-21T13:35:04.933Z</updated>
-    
-    <content type="html"><![CDATA[<p>本笔记记录自<a href="https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419" target="_blank" rel="noopener">ud0419-无人驾驶第一课：从Apollo起步</a>。</p><h2 id="一、无人驾驶概览"><a href="#一、无人驾驶概览" class="headerlink" title="一、无人驾驶概览"></a>一、无人驾驶概览</h2><p>无人驾驶车的6个等级：</p><ul><li>0级——基本等级：驾驶员是系统的唯一决策者。</li><li>1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。</li><li>2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。</li><li>3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。</li><li>4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。</li><li>5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。</li></ul><a id="more"></a><p>无人驾驶车的5个核心部件：</p><ul><li>计算机视觉(Computer Vision)：通过摄像头图像弄清楚我们周围的世界是怎样的。</li><li>传感器融合(Sensor Fusion)：合并来自其他传感器的数据，如激光和雷达，从而更加深入的了解我们周围的环境。</li><li>定位(Localization)：精确的确定我们在那个世界所处的位置。</li><li>路径规划(Path Planning)：绘制这个世界的路线，帮助我们到达我们想去的地方。</li><li>控制(Control)：为了让汽车沿着我们在路径规划期间建立的轨道。</li></ul><p>Apollo技术框架包含的4个层面：</p><ul><li>参考车辆平台</li><li>参考硬件平台</li><li>开源软件平台</li><li>云服务平台</li></ul><h2 id="二、高精度地图"><a href="#二、高精度地图" class="headerlink" title="二、高精度地图"></a>二、高精度地图</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本笔记记录自&lt;a href=&quot;https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ud0419-无人驾驶第一课：从Apollo起步&lt;/a&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;一、无人驾驶概览&quot;&gt;&lt;a href=&quot;#一、无人驾驶概览&quot; class=&quot;headerlink&quot; title=&quot;一、无人驾驶概览&quot;&gt;&lt;/a&gt;一、无人驾驶概览&lt;/h2&gt;&lt;p&gt;无人驾驶车的6个等级：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;0级——基本等级：驾驶员是系统的唯一决策者。&lt;/li&gt;
-&lt;li&gt;1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。&lt;/li&gt;
-&lt;li&gt;2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。&lt;/li&gt;
-&lt;li&gt;3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。&lt;/li&gt;
-&lt;li&gt;4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。&lt;/li&gt;
-&lt;li&gt;5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
-    
-    
-      <category term="无人驾驶" scheme="https://howiezhao.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
-    
-      <category term="Apollo" scheme="https://howiezhao.github.io/tags/Apollo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于PowerShell</title>
-    <link href="https://howiezhao.github.io/2018/07/16/about-powershell/"/>
-    <id>https://howiezhao.github.io/2018/07/16/about-powershell/</id>
-    <published>2018-07-16T06:56:07.000Z</published>
-    <updated>2018-07-24T04:57:31.724Z</updated>
-    
-    <content type="html"><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：</p><ul><li>Windows XP SP2 / Server 2003 SP1：PowerShell 1.0</li><li>Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated Scripting Environment(集成的脚本环境)，用来方便的编写PowerShell脚本。</li><li>Windows 8 / Server 2012：PowerShell 3.0，从此版本开始，PowerShell被集成进了WMF中，即Windows Management Framework(Windows管理框架)。</li><li>Windows 8.1 / Server 2012 R2：PowerShell 4.0</li><li>Windows 10：PowerShell 5.0，此版本的WMF包含了PowerShellGet，可用于在线下载、安装模块。</li></ul><a id="more"></a><h2 id="优势及劣势"><a href="#优势及劣势" class="headerlink" title="优势及劣势"></a>优势及劣势</h2><p>PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。<br>劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。</p><h2 id="Cmdlets与pipeline"><a href="#Cmdlets与pipeline" class="headerlink" title="Cmdlets与pipeline"></a>Cmdlets与pipeline</h2><p>Cmdlets与pipeline是PowerShell中的两个核心概念，</p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget等，下面介绍的命令为PowerShell所不同于Linux中的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Get-Host <span class="comment">#查看PowerShell版本信息</span></span><br><span class="line"><span class="built_in">help</span> <span class="comment">#查看帮助信息</span></span><br><span class="line">Install-Module <span class="comment">#从powershellgallery.com下载安装第三方模块</span></span><br><span class="line">Import-Module <span class="comment">#导入模块，安装的模块需要先导入才能使用</span></span><br></pre></td></tr></table></figure></p><h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><ul><li><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="noopener">posh-git</a>：PowerShell中的Git增强模块</li><li><a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener">oh-my-posh</a>：类似于oh-my-zsh</li><li><a href="https://github.com/lzybkr/PSReadLine" target="_blank" rel="noopener">PSReadline</a>：一个增强的命令行编辑模块</li><li><a href="https://github.com/JulianChow94/Windows-screenFetch" target="_blank" rel="noopener">windows-screenfetch</a>：Windows下的screenfetch模块</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;PowerShell是微软用来取代CMD的一个强大的Shell。&lt;/p&gt;
-&lt;h2 id=&quot;版本&quot;&gt;&lt;a href=&quot;#版本&quot; class=&quot;headerlink&quot; title=&quot;版本&quot;&gt;&lt;/a&gt;版本&lt;/h2&gt;&lt;p&gt;在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Windows XP SP2 / Server 2003 SP1：PowerShell 1.0&lt;/li&gt;
-&lt;li&gt;Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated Scripting Environment(集成的脚本环境)，用来方便的编写PowerShell脚本。&lt;/li&gt;
-&lt;li&gt;Windows 8 / Server 2012：PowerShell 3.0，从此版本开始，PowerShell被集成进了WMF中，即Windows Management Framework(Windows管理框架)。&lt;/li&gt;
-&lt;li&gt;Windows 8.1 / Server 2012 R2：PowerShell 4.0&lt;/li&gt;
-&lt;li&gt;Windows 10：PowerShell 5.0，此版本的WMF包含了PowerShellGet，可用于在线下载、安装模块。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows10的传递优化</title>
-    <link href="https://howiezhao.github.io/2018/07/16/delivery-optimization/"/>
-    <id>https://howiezhao.github.io/2018/07/16/delivery-optimization/</id>
-    <published>2018-07-16T03:27:28.000Z</published>
-    <updated>2018-07-16T03:56:55.923Z</updated>
-    
-    <content type="html"><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization" target="_blank" rel="noopener"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即&lt;a href=&quot;https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>useradd与adduser</title>
-    <link href="https://howiezhao.github.io/2018/07/16/useradd-adduser/"/>
-    <id>https://howiezhao.github.io/2018/07/16/useradd-adduser/</id>
-    <published>2018-07-16T02:44:41.000Z</published>
-    <updated>2018-07-24T05:37:13.904Z</updated>
-    
-    <content type="html"><![CDATA[<p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p><h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p><h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p><h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用<code>-r</code>参数。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在Linux中创建用户可以用&lt;code&gt;useradd&lt;/code&gt;或者&lt;code&gt;adduser&lt;/code&gt;，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。&lt;/p&gt;
-&lt;h2 id=&quot;a
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
     
   </entry>
   
