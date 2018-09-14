@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-09-12T14:09:12.586Z</updated>
+  <updated>2018-09-14T14:05:58.087Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端相关术语</title>
+    <link href="https://howiezhao.github.io/2018/09/14/front-end-terminology/"/>
+    <id>https://howiezhao.github.io/2018/09/14/front-end-terminology/</id>
+    <published>2018-09-14T13:46:24.000Z</published>
+    <updated>2018-09-14T14:05:58.087Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><p>轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。</p><h2 id="视差滚动"><a href="#视差滚动" class="headerlink" title="视差滚动"></a>视差滚动</h2><p>视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。</p><h2 id="ToolTip"><a href="#ToolTip" class="headerlink" title="ToolTip"></a>ToolTip</h2><p>ToolTip，在Bootstrap 4 中又被称为提示冒泡</p><h2 id="手风琴效果"><a href="#手风琴效果" class="headerlink" title="手风琴效果"></a>手风琴效果</h2><p>手风琴效果，又被称为Accordion</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;轮播图&quot;&gt;&lt;a href=&quot;#轮播图&quot; class=&quot;headerlink&quot; title=&quot;轮播图&quot;&gt;&lt;/a&gt;轮播图&lt;/h2&gt;&lt;p&gt;轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。&lt;/p&gt;
+&lt;h2 id=&quot;视差滚动&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
+    
+  </entry>
   
   <entry>
     <title>网站的WWW问题</title>
@@ -624,29 +650,6 @@
     
     
       <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于代理那些事</title>
-    <link href="https://howiezhao.github.io/2018/07/26/about-proxy/"/>
-    <id>https://howiezhao.github.io/2018/07/26/about-proxy/</id>
-    <published>2018-07-26T04:08:41.000Z</published>
-    <updated>2018-07-27T13:44:49.246Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p><h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。<br><a id="more"></a></p><h2 id="端口转发与端口映射"><a href="#端口转发与端口映射" class="headerlink" title="端口转发与端口映射"></a>端口转发与端口映射</h2><p>传统意义上，我们认为<strong>端口转发</strong>(Port Forwarding)与<strong>端口映射</strong>(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;正向连接与反向连接&quot;&gt;&lt;a href=&quot;#正向连接与反向连接&quot; class=&quot;headerlink&quot; title=&quot;正向连接与反向连接&quot;&gt;&lt;/a&gt;正向连接与反向连接&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;正向连接&lt;/strong&gt;即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；&lt;strong&gt;反向连接&lt;/strong&gt;即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。&lt;/p&gt;
-&lt;h2 id=&quot;正向代理与反向代理&quot;&gt;&lt;a href=&quot;#正向代理与反向代理&quot; class=&quot;headerlink&quot; title=&quot;正向代理与反向代理&quot;&gt;&lt;/a&gt;正向代理与反向代理&lt;/h2&gt;&lt;p&gt;在英语中，&lt;strong&gt;Proxy&lt;/strong&gt;表示&lt;strong&gt;服务器代理&lt;/strong&gt;这种动作，而&lt;strong&gt;Agent&lt;/strong&gt;表示&lt;strong&gt;代理服务器&lt;/strong&gt;这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。&lt;br&gt;不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。&lt;br&gt;&lt;strong&gt;正向代理&lt;/strong&gt;(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。&lt;br&gt;&lt;strong&gt;反向代理&lt;/strong&gt;(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="渗透" scheme="https://howiezhao.github.io/tags/%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   

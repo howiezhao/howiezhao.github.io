@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[前端相关术语]]></title>
+    <url>%2F2018%2F09%2F14%2Ffront-end-terminology%2F</url>
+    <content type="text"><![CDATA[轮播图轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。 视差滚动视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。 ToolTipToolTip，在Bootstrap 4 中又被称为提示冒泡 手风琴效果手风琴效果，又被称为Accordion]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[网站的WWW问题]]></title>
     <url>%2F2018%2F09%2F12%2Fweb-www%2F</url>
     <content type="text"></content>
