@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-09-16T13:49:17.026Z</updated>
+  <updated>2018-09-16T14:11:37.477Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>库与框架</title>
+    <link href="https://howiezhao.github.io/2018/09/16/library-framework/"/>
+    <id>https://howiezhao.github.io/2018/09/16/library-framework/</id>
+    <published>2018-09-16T13:58:22.000Z</published>
+    <updated>2018-09-16T14:11:37.477Z</updated>
+    
+    <content type="html"><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：</p><h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><p><strong>库</strong>(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。</p><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p><strong>框架</strong>(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，它给你一个开始，但后面的路要靠你自己走，比如，Angular、Spring等是一个个的框架。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：&lt;/p&gt;
+&lt;h2 id=&quot;库&quot;&gt;&lt;a href=&quot;#库&quot; class=&quot;headerlink&quot; title=&quot;库&quot;&gt;&lt;/a&gt;库&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;库&lt;/strong&gt;(library)是一个工具集，它不告诉
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用IPython替代原生Python Shell</title>
@@ -599,31 +623,6 @@
       
       
         &lt;p&gt;JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。&lt;br&gt;JSFuck种共使用&lt;code&gt;
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Brainfuck</title>
-    <link href="https://howiezhao.github.io/2018/08/09/Brainfuck/"/>
-    <id>https://howiezhao.github.io/2018/08/09/Brainfuck/</id>
-    <published>2018-08-09T09:15:44.000Z</published>
-    <updated>2018-08-10T00:58:53.514Z</updated>
-    
-    <content type="html"><![CDATA[<p>Brainfuck是在1993年创建的一种极小化的计算机语言，由于fuck在英语中是脏话，这种语言有时也被称为Brainf*ck或Brainf***，或被简称为BF。<br>Brainfuck中共有8种字符，它们及其含义如下所示：</p><ul><li><code>&gt;</code>：指针加一</li><li><code>&lt;</code>：指针减一</li><li><code>+</code>：指针指向的字节的值加一</li><li><code>-</code>：指针指向的字节的值减一</li><li><code>.</code>：输出指针指向的单元内容(ASCII码)</li><li><code>,</code>：输入内容到指针指向的单元(ASCII码)</li><li><code>[</code>：如果指针指向的单元值为零，向后跳转到对应的<code>]</code>指令的次一指令处</li><li><code>]</code>：如果指针指向的单元值不为零，向前跳转到对应的<code>[</code>指令的次一指令处</li></ul><p>下面是一个用Brainfuck在屏幕上打印<code>Hello World</code>的程序例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]</span><br><span class="line">&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.</span><br><span class="line">&gt;.+++.------.--------.&gt;+.&gt;.</span><br></pre></td></tr></table></figure></p><p>程序的运行结果如<a href="https://fatiherikli.github.io/brainfuck-visualizer/" target="_blank" rel="noopener">Brainfuck Visualizer</a>所示。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Brainfuck是在1993年创建的一种极小化的计算机语言，由于fuck在英语中是脏话，这种语言有时也被称为Brainf*ck或Brainf***，或被简称为BF。&lt;br&gt;Brainfuck中共有8种字符，它们及其含义如下所示：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;g
       
     
     </summary>

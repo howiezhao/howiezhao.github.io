@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[库与框架]]></title>
+    <url>%2F2018%2F09%2F16%2Flibrary-framework%2F</url>
+    <content type="text"><![CDATA[软件开发中经常会有人混淆库与框架的含义，下面简单介绍之： 库库(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。 框架框架(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，它给你一个开始，但后面的路要靠你自己走，比如，Angular、Spring等是一个个的框架。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[使用IPython替代原生Python Shell]]></title>
     <url>%2F2018%2F09%2F16%2Fipython%2F</url>
     <content type="text"><![CDATA[我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。 名称IPython最初只是一种基于Python的交互式解释器(REPL)，慢慢的，IPython项目中集成了许多新的工具，比如IPython Notebook，这是一种基于Web的强大编辑器。从IPython 4.0开始，IPython项目中和语言无关的工具已独立出来形成一个新的项目Jupyter，从此，IPython Notebook升级为Jupyter Notebook，开始支持更多的编程语言。而IPython将只专注于提供Python交互式解释器以及为Jupyter提供Python内核。当写这篇文章时，IPython的最新版本为6.5。如今，当你去IPython官网下载时，它会跳转到Jupyter的下载页面，因为Jupyter中已经包含了IPython，同时也建议下载Jupyter，因为其包含了强大的Jupyter Notebook，使用pip install jupyter即可下载，安装完成后直接输入ipython即可进入IPython交互式环境。 优势以下仅列出IPython相比原生Python Shell的一些优势： Tab自动补全 自动缩进 语法高亮 支持命令历史记录 命令前加!可调用系统命令 命令后加1个或2个?可方便查看对象信息 有众多的魔法函数(Magic Functions) 魔法函数以下仅列出IPython中使用较多的魔法函数：12345%timeit #测试代码段执行时间%hist #查看历史记录%debug #激活交互的调试器(ipdb)%load #加载外部代码%edit #使用编辑器打开 要查看更多的魔法函数，可以访问IPython的官方文档 Jupyter Notebook要启动Jupyter Notebook直接在命令行输入jupyter notebook即可，它会监听本机的8888端口，并自动打开浏览器访问。输入jupyter notebook --help可以查看它的更多参数。Jupyter Notebook默认采用Token的方式进行登录，启动后在命令行中会显示当前的token值，若没有自动打开浏览器，则可以复制命令行中带token的链接并在浏览器中打开即可。使用命令jupyter notebook --generate-config可生成Jupyter Notebook配置文件，默认为$HOME/.jupyter/jupyter_notebook_config.py文件。常用的配置项如下：12345678910111213141516171819# 配置是否允许root用户运行，改为`True`则允许c.NotebookApp.allow_root = False# 配置监听地址，改为`*`可监听所有IPc.NotebookApp.ip = 'localhost'# 配置启动后显示的目录，默认为启动时输入命令的目录c.NotebookApp.notebook_dir = ''# 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，# 则没必要打开浏览器，改为`False`即可c.NotebookApp.open_browser = True# 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令# 可生成加密后的密码c.NotebookApp.password = ''# 配置监听端口c.NotebookApp.port = 8888 最后，在Linux下，使用nohup jupyter notebook &gt; jupyter.log &amp;可使Jupyter Notebook在后台运行并记录日志到当前目录下的jupyter.log文件中。]]></content>
