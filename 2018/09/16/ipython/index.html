@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Windows,Linux," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -88,18 +88,17 @@
 
 
 
-<meta name="description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。">
-<meta name="keywords" content="Windows,Linux">
+<meta name="description" content="我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。 名称IPython最初只是一种基于Python的交互式解释器，慢慢的，IPython项目中集成了许多新的工具，比如Ipython Notebook，这是一种基于Web的强大编辑器。从Ipython 4.0开始，IPython项目中和语言无关的工具已独立出来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSL相关问题解决">
-<meta property="og:url" content="https://howiezhao.github.io/2018/08/21/wsl-problem/index.html">
+<meta property="og:title" content="使用IPython替代原生Python Shell">
+<meta property="og:url" content="https://howiezhao.github.io/2018/09/16/ipython/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。">
+<meta property="og:description" content="我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。 名称IPython最初只是一种基于Python的交互式解释器，慢慢的，IPython项目中集成了许多新的工具，比如Ipython Notebook，这是一种基于Web的强大编辑器。从Ipython 4.0开始，IPython项目中和语言无关的工具已独立出来">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-22T05:35:38.617Z">
+<meta property="og:updated_time" content="2018-09-16T09:30:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WSL相关问题解决">
-<meta name="twitter:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。">
+<meta name="twitter:title" content="使用IPython替代原生Python Shell">
+<meta name="twitter:description" content="我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。 名称IPython最初只是一种基于Python的交互式解释器，慢慢的，IPython项目中集成了许多新的工具，比如Ipython Notebook，这是一种基于Web的强大编辑器。从Ipython 4.0开始，IPython项目中和语言无关的工具已独立出来">
 
 
 
@@ -129,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://howiezhao.github.io/2018/08/21/wsl-problem/"/>
+  <link rel="canonical" href="https://howiezhao.github.io/2018/09/16/ipython/"/>
 
 
 
 
 
-  <title>WSL相关问题解决 | Howie's Notes</title>
+  <title>使用IPython替代原生Python Shell | Howie's Notes</title>
   
 
 
@@ -315,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/21/wsl-problem/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/16/ipython/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -332,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">WSL相关问题解决</h1>
+          <h1 class="post-title" itemprop="name headline">使用IPython替代原生Python Shell</h1>
         
 
         <div class="post-meta">
@@ -344,8 +343,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-21T19:23:05+08:00">
-                2018-08-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-16T13:15:34+08:00">
+                2018-09-16
               </time>
             
 
@@ -367,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bug/" itemprop="url" rel="index">
-                    <span itemprop="name">Bug</span>
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
                   </a>
                 </span>
 
@@ -409,13 +408,23 @@
       
 
       
-        <h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。<br><a id="more"></a></p>
-<h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure></p>
-<p>修改完成后用<code>sudo service ssh start</code>启动SSH服务，可能会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p>
-<p>并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure></p>
-<p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p>
-<h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2>
+        <p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。</p>
+<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/" target="_blank" rel="noopener"><strong>IPython</strong></a>最初只是一种基于Python的交互式解释器，慢慢的，IPython项目中集成了许多新的工具，比如<strong>Ipython Notebook</strong>，这是一种基于Web的强大编辑器。从Ipython 4.0开始，IPython项目中和语言无关的工具已独立出来形成一个新的项目<a href="http://jupyter.org/" target="_blank" rel="noopener"><strong>Jupyter</strong></a>，从此，IPython Notebook升级为<strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而IPython将只专注于提供Python交互式解释器以及为Jupyter提供Python内核。当写这篇文章时，IPython的最新版本为6.5。<br>如今，当你去IPython官网下载时，它会跳转到Jupyter的下载页面，因为Jupyter中已经包含了IPython，同时也建议下载Jupyter，因为其包含了强大的Jupyter Notebook，使用<code>pip install jupyter</code>即可下载，安装完成后直接输入<code>ipython</code>即可进入IPython交互式环境。<br><a id="more"></a></p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出IPython相比原生Python Shell的一些优势：</p>
+<ul>
+<li>Tab自动补全</li>
+<li>自动缩进</li>
+<li>语法高亮</li>
+<li>支持命令历史记录</li>
+<li>命令前加<code>!</code>可调用系统命令</li>
+<li>命令后加1个或2个<code>?</code>可方便查看对象信息</li>
+<li>有众多的魔法函数(Magic Functions)</li>
+</ul>
+<h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出IPython中使用较多的魔法函数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%timeit <span class="comment">#测试代码段执行时间</span></span><br><span class="line">%hist   <span class="comment">#查看历史记录</span></span><br><span class="line">%debug  <span class="comment">#激活交互的调试器(ipdb)</span></span><br><span class="line">%load   <span class="comment">#加载外部代码</span></span><br><span class="line">%edit   <span class="comment">#使用编辑器打开</span></span><br></pre></td></tr></table></figure></p>
+<p>要查看更多的魔法函数，可以访问<a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html" target="_blank" rel="noopener">IPython的官方文档</a></p>
+<h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动Jupyter Notebook直接在命令行输入<code>jupyter notebook</code>即可，它会监听本机的8888端口，并自动打开浏览器访问。输入<code>jupyter notebook --help</code>可以查看它的更多参数。<br>Jupyter Notebook默认采用<strong>Token</strong>的方式进行登录，启动后在命令行中会显示当前的token值，若没有自动打开浏览器，则可以复制命令行中带token的链接并在浏览器中打开即可。<br>使用命令<code>jupyter notebook --generate-config</code>可生成Jupyter Notebook配置文件，默认为<code>$HOME/.jupyter/jupyter_notebook_config.py</code>文件。常用的配置项如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'localhost'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure></p>
+<p>最后，在Linux下，使用<code>nohup jupyter notebook &gt; jupyter.log &amp;</code>可使Jupyter Notebook在后台运行并记录日志到当前目录下的<code>jupyter.log</code>文件中。</p>
+
       
     </div>
     
@@ -430,14 +439,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
-          
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-        </div>
-      
 
       
       
@@ -447,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/21/android-emulator-problem/" rel="next" title="Android Studio模拟器相关问题解决">
-                <i class="fa fa-chevron-left"></i> Android Studio模拟器相关问题解决
+              <a href="/2018/09/14/front-end-terminology/" rel="next" title="前端相关术语">
+                <i class="fa fa-chevron-left"></i> 前端相关术语
               </a>
             
           </div>
@@ -456,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/24/ssh/" rel="prev" title="SSH协议分析">
-                SSH协议分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名称问题"><span class="nav-number">1.</span> <span class="nav-text">名称问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH问题"><span class="nav-number">2.</span> <span class="nav-text">SSH问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形界面问题"><span class="nav-number">3.</span> <span class="nav-text">图形界面问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EXE程序问题"><span class="nav-number">4.</span> <span class="nav-text">EXE程序问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#netstat和ps"><span class="nav-number">5.</span> <span class="nav-text">netstat和ps</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名称"><span class="nav-number">1.</span> <span class="nav-text">名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优势"><span class="nav-number">2.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#魔法函数"><span class="nav-number">3.</span> <span class="nav-text">魔法函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Notebook"><span class="nav-number">4.</span> <span class="nav-text">Jupyter Notebook</span></a></li></ol></div>
             
 
           </div>
