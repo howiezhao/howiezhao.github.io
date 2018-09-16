@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-09-16T14:11:37.477Z</updated>
+  <updated>2018-09-16T14:58:22.835Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用Let&#39;s Encrypt获取免费SSL证书</title>
+    <link href="https://howiezhao.github.io/2018/09/16/let-s-encrypt/"/>
+    <id>https://howiezhao.github.io/2018/09/16/let-s-encrypt/</id>
+    <published>2018-09-16T14:38:04.000Z</published>
+    <updated>2018-09-16T14:58:22.835Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>，可以用来获取SSL证书。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt&lt;/a&gt;是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：&lt;a href=&quot;https://certbot.
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
     <title>库与框架</title>
     <link href="https://howiezhao.github.io/2018/09/16/library-framework/"/>
     <id>https://howiezhao.github.io/2018/09/16/library-framework/</id>
     <published>2018-09-16T13:58:22.000Z</published>
-    <updated>2018-09-16T14:11:37.477Z</updated>
+    <updated>2018-09-16T14:29:50.481Z</updated>
     
-    <content type="html"><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：</p><h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><p><strong>库</strong>(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。</p><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p><strong>框架</strong>(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，它给你一个开始，但后面的路要靠你自己走，比如，Angular、Spring等是一个个的框架。</p>]]></content>
+    <content type="html"><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：</p><h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><p><strong>库</strong>(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。<br>库的优点是自由度高，可定制性强，较适用于小项目。</p><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p><strong>框架</strong>(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，Angular、Spring等是一个个的框架。<br>框架的优点是流程性高，便于开发，较适用于大项目。</p>]]></content>
     
     <summary type="html">
     
@@ -606,29 +631,6 @@
     
     
       <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSFuck</title>
-    <link href="https://howiezhao.github.io/2018/08/10/jsfuck/"/>
-    <id>https://howiezhao.github.io/2018/08/10/jsfuck/</id>
-    <published>2018-08-10T00:59:58.000Z</published>
-    <updated>2018-08-10T02:21:18.152Z</updated>
-    
-    <content type="html"><![CDATA[<p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure></p><p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a href="http://www.jsfuck.com/" target="_blank" rel="noopener">JSFuck</a>。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。&lt;br&gt;JSFuck种共使用&lt;code&gt;
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
     
   </entry>
   

@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用Let's Encrypt获取免费SSL证书]]></title>
+    <url>%2F2018%2F09%2F16%2Flet-s-encrypt%2F</url>
+    <content type="text"><![CDATA[Let’s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[库与框架]]></title>
     <url>%2F2018%2F09%2F16%2Flibrary-framework%2F</url>
-    <content type="text"><![CDATA[软件开发中经常会有人混淆库与框架的含义，下面简单介绍之： 库库(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。 框架框架(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，它给你一个开始，但后面的路要靠你自己走，比如，Angular、Spring等是一个个的框架。]]></content>
+    <content type="text"><![CDATA[软件开发中经常会有人混淆库与框架的含义，下面简单介绍之： 库库(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。库的优点是自由度高，可定制性强，较适用于小项目。 框架框架(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，Angular、Spring等是一个个的框架。框架的优点是流程性高，便于开发，较适用于大项目。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -485,8 +496,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>渗透</tag>
+        <tag>Windows</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>
