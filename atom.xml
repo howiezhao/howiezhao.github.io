@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-09-16T14:58:22.835Z</updated>
+  <updated>2018-09-18T10:00:22.151Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,151 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>那么，你想在安全行业工作吗？</title>
+    <link href="https://howiezhao.github.io/2018/09/18/so-you-want-to-work-in-security/"/>
+    <id>https://howiezhao.github.io/2018/09/18/so-you-want-to-work-in-security/</id>
+    <published>2018-09-18T05:37:05.000Z</published>
+    <updated>2018-09-18T10:00:22.151Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文翻译自<a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23" target="_blank" rel="noopener">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p><p>每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。<br><img src="https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif" alt="不像电影"><br><a id="more"></a></p><h2 id="警告：这不像电影。"><a href="#警告：这不像电影。" class="headerlink" title="警告：这不像电影。"></a>警告：这不像电影。</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p><h2 id="没有标准或完美的课程。"><a href="#没有标准或完美的课程。" class="headerlink" title="没有标准或完美的课程。"></a>没有标准或完美的课程。</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设……然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto" target="_blank" rel="noopener">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/" target="_blank" rel="noopener">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security" target="_blank" rel="noopener">我的Twitter安全列表</a>上的人。</p><h2 id="停止阅读，开始做。"><a href="#停止阅读，开始做。" class="headerlink" title="停止阅读，开始做。"></a>停止阅读，开始做。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p><h2 id="写代码。"><a href="#写代码。" class="headerlink" title="写代码。"></a>写代码。</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p><h2 id="破坏代码。"><a href="#破坏代码。" class="headerlink" title="破坏代码。"></a>破坏代码。</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用<a href="https://www.hackthissite.org" target="_blank" rel="noopener">https://www.hackthissite.org</a> ，并在<a href="https://infosec.rocks" target="_blank" rel="noopener">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist" target="_blank" rel="noopener">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/" target="_blank" rel="noopener">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/" target="_blank" rel="noopener">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/" target="_blank" rel="noopener">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty" target="_blank" rel="noopener">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/" target="_blank" rel="noopener">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/" target="_blank" rel="noopener">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/" target="_blank" rel="noopener">oss-sec</a>）。</p><h2 id="分享知识。"><a href="#分享知识。" class="headerlink" title="分享知识。"></a>分享知识。</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l" target="_blank" rel="noopener">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/" target="_blank" rel="noopener">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html" target="_blank" rel="noopener">书籍</a>或<a href="https://www.2600.com/" target="_blank" rel="noopener">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p><ol><li>分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。</li><li>我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。</li><li>我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。</li><li>把爱传出去。</li></ol><h2 id="练习你的沟通。"><a href="#练习你的沟通。" class="headerlink" title="练习你的沟通。"></a>练习你的沟通。</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD" target="_blank" rel="noopener">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p><h2 id="期望努力工作，有时会失败。"><a href="#期望努力工作，有时会失败。" class="headerlink" title="期望努力工作，有时会失败。"></a>期望努力工作，有时会失败。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p><h2 id="（尝试）保持乐观。"><a href="#（尝试）保持乐观。" class="headerlink" title="（尝试）保持乐观。"></a>（尝试）保持乐观。</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html" target="_blank" rel="noopener">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p><h2 id="请求帮忙。"><a href="#请求帮忙。" class="headerlink" title="请求帮忙。"></a>请求帮忙。</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p><h2 id="祝你好运并且快乐Hacking！"><a href="#祝你好运并且快乐Hacking！" class="headerlink" title="祝你好运并且快乐Hacking！"></a>祝你好运并且快乐Hacking！</h2><p>我偶然发现了一些其他安全职业建议的想法：</p><ul><li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法<a href="http://krebsonsecurity.com/tag/security-career-advice/" target="_blank" rel="noopener">http://krebsonsecurity.com/tag/security-career-advice/</a></li><li>我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议<a href="https://noncombatant.org/2016/06/20/get-into-security-engineering" target="_blank" rel="noopener">https://noncombatant.org/2016/06/20/get-into-security-engineering</a></li><li>Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：<a href="https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html" target="_blank" rel="noopener">https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html</a></li></ul><h2 id="译者注"><a href="#译者注" class="headerlink" title="译者注"></a>译者注</h2><p>本文作者为<a href="https://en.wikipedia.org/wiki/Parisa_Tabriz" target="_blank" rel="noopener">Parisa Tabriz</a>，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文翻译自&lt;a href=&quot;https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23&lt;/a&gt; ，正文如下：&lt;/p&gt;
+&lt;p&gt;每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。&lt;br&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif&quot; alt=&quot;不像电影&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Translation" scheme="https://howiezhao.github.io/categories/Translation/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《黑客军团》中使用的软件</title>
+    <link href="https://howiezhao.github.io/2018/09/18/software-used-in-mr-robot/"/>
+    <id>https://howiezhao.github.io/2018/09/18/software-used-in-mr-robot/</id>
+    <published>2018-09-18T04:23:55.000Z</published>
+    <updated>2018-09-18T05:35:31.679Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文翻译自<a href="https://alternativeto.net/list/66/software-used-in-mr-robot，正文如下：" target="_blank" rel="noopener">https://alternativeto.net/list/66/software-used-in-mr-robot，正文如下：</a></p><p><img src="https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg" alt="首页图片"><br>本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。<br><strong>下面的列表包含到了第二季第11集！</strong><br><a id="more"></a></p><h2 id="Kali-Linux"><a href="#Kali-Linux" class="headerlink" title="Kali Linux"></a><a href="https://www.kali.org/" target="_blank" rel="noopener">Kali Linux</a></h2><p>Kali Linux是针对安全研究人员进行渗透测试的Linux发行版，但同时也被黑客使用，因为它集成了很多黑客工具。由于它是黑客的首选操作系统，所以它在《黑客军团》中经常有过出现。</p><h2 id="Wickr"><a href="#Wickr" class="headerlink" title="Wickr"></a><a href="https://wickr.com/" target="_blank" rel="noopener">Wickr</a></h2><p>Wickr是一个端到端的加密聊天应用程序，具有诸如消息可调到期时间等功能。在第二季中，fsociety组织使用它来保密通信。</p><h2 id="Tor-Browser"><a href="#Tor-Browser" class="headerlink" title="Tor Browser"></a><a href="https://www.torproject.org/projects/torbrowser.html" target="_blank" rel="noopener">Tor Browser</a></h2><p>Tor浏览器被广泛认为是最好的匿名工具。它将使你的互联网活动难以被追踪，当第二季第8集中fsociety的成员Trenton用Tor浏览器向Vimeo上传一个泄露的关于非法群体监视的FBI电话会议时，利用到了它。</p><h2 id="Raspberry-Pi"><a href="#Raspberry-Pi" class="headerlink" title="Raspberry Pi"></a><a href="https://www.raspberrypi.org/" target="_blank" rel="noopener">Raspberry Pi</a></h2><p>树莓派是一个小型的，可编程的计算机板，旨在教孩子们学习计算机科学。由于它的低成本，多功能性和简单性，它也是业余爱好者和程序员的最爱。第一季第5集中Elliot将一个树莓派安装到铁山的气候控制系统中，以便fsociety后期可以远程升高存储E公司磁带备份的存储空间的温度，从而实现美国消费者债务的很大一部分记录的备份被销毁。</p><h2 id="FileZilla"><a href="#FileZilla" class="headerlink" title="FileZilla"></a><a href="https://filezilla-project.org/" target="_blank" rel="noopener">FileZilla</a></h2><p>FileZilla是世界上最流行的FTP客户端，并且是最强大和用户友好的客户端之一。在第一季第4集中Trenton使用FileZilla上传一个漏洞利用程序到fsociety的FTP服务器上，即Elliot将安装在铁山的气候控制系统中的树莓派，以销毁美国消费者债务中很大一部分的记录。</p><h2 id="Pwnix"><a href="#Pwnix" class="headerlink" title="Pwnix"></a><a href="https://www.pwnieexpress.com/mobile-line-shift-to-aopp" target="_blank" rel="noopener">Pwnix</a></h2><p>Pwnix是一个为渗透测试人员定制的用于网络黑客和安全的Android ROM。Elliot在第二季第9集中使用了一个Pwnie Express Pwn Phone（Pwnix预装），以至于他和Darlene渗透进黑暗军团的电话。</p><h2 id="DeepSound"><a href="#DeepSound" class="headerlink" title="DeepSound"></a><a href="http://jpinsoft.net/deepsound" target="_blank" rel="noopener">DeepSound</a></h2><p>在第一季第8集中，Elliot使用DeepSound将文件隐藏在CD的常规音乐曲目中，以便隐藏文件只能使用DeepSound软件查看。这是一种被称为隐写术的技术。</p><h2 id="ProtonMail"><a href="#ProtonMail" class="headerlink" title="ProtonMail"></a><a href="https://protonmail.com/" target="_blank" rel="noopener">ProtonMail</a></h2><p>ProtonMail是一个安全的端到端加密电子邮件服务，基于瑞士，Elliot在第一季第8集中使用过。《黑客军团》背后的团队研究安全电子邮件服务的程度很深，以至于他们实际上联系了ProtonMail开发者，询问用户是否有可能在ProtonMail中监控他们自己的电子邮件活动。ProtonMail开发者非常喜欢帐户访问日志的想法，他们最终在ProtonMail的v2.0版本中实现了这个功能。想要了解更多请访问：<a href="https://protonmail.com/blog/protonmail-mr-robot-secure-email/" target="_blank" rel="noopener">https://protonmail.com/blog/protonmail-mr-robot-secure-email/</a></p><h2 id="HDShredder"><a href="#HDShredder" class="headerlink" title="HDShredder"></a><a href="https://www.miray-software.com/products/applications/hdshredder.html#" target="_blank" rel="noopener">HDShredder</a></h2><p>HDShredder 4企业版在第一季第10集中用于在E公司被黑之后安全地擦除所有fsociety的硬盘信息，然后他们在狗狗火葬场焚烧所有的硬盘。</p><h2 id="John-the-Ripper"><a href="#John-the-Ripper" class="headerlink" title="John the Ripper"></a><a href="https://www.openwall.com/john/" target="_blank" rel="noopener">John the Ripper</a></h2><p>John the Ripper是Kali Linux中包含的一个密码破解工具，用于检测简单的Unix密码，并试图通过每秒数千次的猜测来破解它们。这被称为暴力破解，Elliot在第一季第2集中通过使用它来破解E公司的临时首席技术官Tyrell Wellick的邮箱密码。</p><h2 id="Wegt"><a href="#Wegt" class="headerlink" title="Wegt"></a><a href="https://www.gnu.org/software/wget/" target="_blank" rel="noopener">Wegt</a></h2><p>Wget是一个命令行工具，可以发出HTTP(S)请求。在《黑客军团》中它被用于与John the Ripper结合使用Shellshock漏洞来攻击E公司的邮件服务器。</p><h2 id="Social-Engineer-Toolkit"><a href="#Social-Engineer-Toolkit" class="headerlink" title="Social-Engineer Toolkit"></a><a href="https://github.com/trustedsec/social-engineer-toolkit" target="_blank" rel="noopener">Social-Engineer Toolkit</a></h2><p>SET是一个专注于诸如网络钓鱼等社会工程攻击的测试框架。社会工程学欺骗受害者给予攻击者敏感信息。在第一季第5集中，Mobley使用SET的伪造短信功能让主管离开铁山，以便Elliot可以渗透进去。</p><h2 id="OpenWrt"><a href="#OpenWrt" class="headerlink" title="OpenWrt"></a><a href="https://openwrt.org/" target="_blank" rel="noopener">OpenWrt</a></h2><p>OpenWrt是Angela在第二季第6集中黑进FBI时使用的路由器固件。</p><h2 id="mimikatz"><a href="#mimikatz" class="headerlink" title="mimikatz"></a><a href="https://github.com/gentilkiwi/mimikatz" target="_blank" rel="noopener">mimikatz</a></h2><p>mimikatz是一个后渗透工具，它将黑客可能需要执行的一些有用任务捆绑在一起。在第二季第6集中，它被装在USB橡皮鸭中并交给Angela，作为一个备份计划。</p><h2 id="btscanner"><a href="#btscanner" class="headerlink" title="btscanner"></a><a href="https://www.pentest.co.uk/downloads.html" target="_blank" rel="noopener">btscanner</a></h2><p>btscanner是一个包含在Kali Linux中的工具，它可以在无需配对的情况下提取关于蓝牙设备的尽可能多的信息。在第一季第6集中，Elliot使用btscanner与Bluesniff和Metasploit结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。</p><h2 id="Bluesniff"><a href="#Bluesniff" class="headerlink" title="Bluesniff"></a><a href="http://bluesniff.shmoo.com/" target="_blank" rel="noopener">Bluesniff</a></h2><p>Bluesniff是一款蓝牙设备发现工具。在第一季第6集中，Elliot使用Bluesniff与Metasploit和btscanner结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。</p><h2 id="KVM-Kernel-base-Virtual-Machine"><a href="#KVM-Kernel-base-Virtual-Machine" class="headerlink" title="KVM(Kernel-base Virtual Machine)"></a><a href="http://www.linux-kvm.org/page/Main_Page" target="_blank" rel="noopener">KVM(Kernel-base Virtual Machine)</a></h2><p>KVM是一个管理程序，它是一个可以通过虚拟机运行其他操作系统的软件。Elliot使用KVM在Kali Linux内虚拟化Windows 7。在第一季第8集中，它使用KVM运行DeepSound。</p><h2 id="Metasploit"><a href="#Metasploit" class="headerlink" title="Metasploit"></a><a href="https://metasploit.com/" target="_blank" rel="noopener">Metasploit</a></h2><p>Metasploit框架是Kali Linux中包含的一个软件，可以使渗透测试人员更容易发现网络中的漏洞。Meterpreter是可以在Metasploit框架中运行的数百个Payload之一，并且在第一季第6集中使用到。在第一季第6集中，Elliot使用Metasploit Framwork和Metapreter与btscanner和Bluesniff结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。</p><h2 id="Framaroot"><a href="#Framaroot" class="headerlink" title="Framaroot"></a><a href="https://forum.xda-developers.com/apps/framaroot/root-framaroot-one-click-apk-to-root-t2130276" target="_blank" rel="noopener">Framaroot</a></h2><p>在电视中称为RooterFrame的Framaroot，在第一季第3集中被Tyrell Wellick用来Root同事的Android手机，这样他就可以隐藏在手机上安装的FlexiSPY间谍软件，以便获得关于谁将成为E公司的下一任首席技术官的秘密信息。</p><h2 id="Kingo-Root"><a href="#Kingo-Root" class="headerlink" title="Kingo Root"></a><a href="https://zh.kingoapp.com/" target="_blank" rel="noopener">Kingo Root</a></h2><p>Tyrell Wellick在第一季第3集中使用Kingo Root来Root同事的Android手机，这样他就可以在手机上隐蔽地安装FlexiSPY间谍软件，以便获得有关谁将成为下一任E公司首席执行官的秘密信息。</p><h2 id="FlexiSPY"><a href="#FlexiSPY" class="headerlink" title="FlexiSPY"></a><a href="https://www.flexispy.com/zh/" target="_blank" rel="noopener">FlexiSPY</a></h2><p>FlexiSPY是针对Android，iOS和BlackBerry的间谍软件，允许用户监控受害者手机上的所有活动。在第一季第3集中，Tyrell Wellick秘密地将其安装在同事的Android手机上，以获取有关谁将成为下一任E公司首席技术官的秘密信息。</p><h2 id="SuperSU"><a href="#SuperSU" class="headerlink" title="SuperSU"></a><a href="http://www.supersu.com/" target="_blank" rel="noopener">SuperSU</a></h2><p>SuperSU是一个在已Root的Android手机上管理超级用户权限的应用程序。在第一季第3集中，Tyrell Wellick在同事的Android手机上秘密安装了FlexiSPY —— 它使用SuperSU为它自己提供超级用户访问 —— 以便获得有关谁将成为下一任E公司首席技术官的秘密信息。</p><h2 id="can-utils"><a href="#can-utils" class="headerlink" title="can-utils"></a><a href="https://packages.debian.org/sid/can-utils" target="_blank" rel="noopener">can-utils</a></h2><p>can-utils包含与汽车电脑有关的实用程序。其中一个工具被称为candump，它在《黑客军团》中被用于入侵汽车的电脑。</p><h2 id="radare"><a href="#radare" class="headerlink" title="radare"></a><a href="https://www.radare.org/r/" target="_blank" rel="noopener">radare</a></h2><p>radare2是Tyrell Wellick在第二季第12集中使用的逆向工程框架。</p><h2 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a><a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">PyCharm</a></h2><p>PyCharm是一个Python和Django的IDE（集成开发环境），它是一种代码编辑软件。Trenton在第一季第四集中使用它。</p><h2 id="Tor"><a href="#Tor" class="headerlink" title="Tor"></a><a href="https://www.torproject.org/" target="_blank" rel="noopener">Tor</a></h2><p>Tor被广泛认为是最好的匿名工具。它将使你的互联网活动难以被追踪，这个版本 —— 不像Tor浏览器 —— 可以用来托管隐藏服务，这是只能通过Tor访问的站点，并且其物理服务器位置被Tor匿名网络隐藏。Ray通过Tor隐藏服务运行着一条“丝绸之路”，他希望Elliot在第二季第5集中进行网站迁移。</p><h2 id="PuTTY"><a href="#PuTTY" class="headerlink" title="PuTTY"></a><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank" rel="noopener">PuTTY</a></h2><p>PuTTY是用于连接到Linux服务器的客户端。Elliot在第二季第4集和第5集使用PuTTY连接到运行Kali Linux的VPS（虚拟专用服务器），以便他可以在Ray的计算机上使用安装在VPS上的IRC客户端与Darlene聊天。他还在第二季第5集中使用PuTTY，完成了Ray的“丝绸之路”网站的迁移。</p><h2 id="Mozilla-Firefox"><a href="#Mozilla-Firefox" class="headerlink" title="Mozilla Firefox"></a><a href="https://www.mozilla.org/zh-CN/firefox/" target="_blank" rel="noopener">Mozilla Firefox</a></h2><p>Elliot使用Firefox作为他的默认浏览器。Trenton在第二季第8集中使用了Firefox。</p><h2 id="FFmpeg"><a href="#FFmpeg" class="headerlink" title="FFmpeg"></a><a href="https://ffmpeg.org/" target="_blank" rel="noopener">FFmpeg</a></h2><p>在第二季第8集中Trenton使用FFmpeg编码一个视频，其中包含一个泄露的关于进行非法大规模监视的FBI电话会议，并通过Tor浏览器向Vimeo上传。</p><h2 id="Slackware"><a href="#Slackware" class="headerlink" title="Slackware"></a><a href="http://www.slackware.com/" target="_blank" rel="noopener">Slackware</a></h2><p>Slackware是1993年创建的一个Linux发行版，旨在提高设计的稳定性和简单性，并成为最“类Unix”的Linux发行版。Slackware最初是基于Softlanding Linux系统的，它已经成为许多其他Linux发行版的基础，尤其是SUSE Linux发行版的第一个版本，也是最早的发行版本。在第二季第10集中，当Elliot与黑暗军队达成拯救Darlene生命的交易时，Leon给了他一台安装有Slackware的笔记本电脑，用于将黑暗军队的项目移动到刚果。</p><h2 id="VLC-Media-Player"><a href="#VLC-Media-Player" class="headerlink" title="VLC Media Player"></a><a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener">VLC Media Player</a></h2><p>VLC媒体播放器被用于第二季第4集，当时Elliot和Darlene一起观看了虚假恐怖片《Careful Massacre of the Bourgeoisie》的VHS版本。VLC也被用于第二季第8集，当fsociety预览一个他们将上传的关于非法大规模监视的泄露的FBI电话会议视频时。</p><h2 id="Wayback-Machine"><a href="#Wayback-Machine" class="headerlink" title="Wayback Machine"></a><a href="http://web.archive.org/" target="_blank" rel="noopener">Wayback Machine</a></h2><p>由Internet Archive运营的Waybach Machine是一个包含超过4,900亿个网页副本的数据库。在第二季第8集中FBI特工Dominique DiPierro向Mobley透露，联邦调查局使用了Wayback Machine，以便将他的黑客把柄与他为DJ Mobley创建的旧的粉丝页面联系起来。</p><h2 id="µTorrent"><a href="#µTorrent" class="headerlink" title="µTorrent"></a><a href="https://www.utorrent.com/intl/zh_cn/utweb-index" target="_blank" rel="noopener">µTorrent</a></h2><p>第二季第4集达琳用μTorrent下载了虚假恐怖电影《Careful Massacre of the Bourgeoisie》的VHS版本。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文翻译自&lt;a href=&quot;https://alternativeto.net/list/66/software-used-in-mr-robot，正文如下：&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://alternativeto.net/list/66/software-used-in-mr-robot，正文如下：&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg&quot; alt=&quot;首页图片&quot;&gt;&lt;br&gt;本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。&lt;br&gt;&lt;strong&gt;下面的列表包含到了第二季第11集！&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Translation" scheme="https://howiezhao.github.io/categories/Translation/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈Android的root</title>
+    <link href="https://howiezhao.github.io/2018/09/18/android-root/"/>
+    <id>https://howiezhao.github.io/2018/09/18/android-root/</id>
+    <published>2018-09-18T04:13:24.000Z</published>
+    <updated>2018-09-18T04:14:53.718Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Android" scheme="https://howiezhao.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tmux小记</title>
+    <link href="https://howiezhao.github.io/2018/09/18/tmux/"/>
+    <id>https://howiezhao.github.io/2018/09/18/tmux/</id>
+    <published>2018-09-18T04:10:07.000Z</published>
+    <updated>2018-09-18T04:11:42.544Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vim小记</title>
+    <link href="https://howiezhao.github.io/2018/09/18/vim/"/>
+    <id>https://howiezhao.github.io/2018/09/18/vim/</id>
+    <published>2018-09-18T04:09:54.000Z</published>
+    <updated>2018-09-18T04:11:00.476Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Zsh替代Bash</title>
+    <link href="https://howiezhao.github.io/2018/09/18/zsh/"/>
+    <id>https://howiezhao.github.io/2018/09/18/zsh/</id>
+    <published>2018-09-18T04:09:36.000Z</published>
+    <updated>2018-09-18T10:12:41.178Z</updated>
+    
+    <content type="html"><![CDATA[<p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。&lt;/p&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;Zsh的安装很简单，在Ubun
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>reStructuredText小记</title>
+    <link href="https://howiezhao.github.io/2018/09/17/restructuredtext/"/>
+    <id>https://howiezhao.github.io/2018/09/17/restructuredtext/</id>
+    <published>2018-09-17T12:32:11.000Z</published>
+    <updated>2018-09-18T04:11:05.842Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>reStructuredText</strong>是一种类似于Markdown的轻量标记语言，其含义为“重新构建的文本”，也被简称为<strong>reST</strong>，文件后缀名为<code>.rst</code>，是Python的Docutils项目的一部分，目前reST被广泛应用于编写Python文档。</p><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>和Markdown一样：<br>- 无序列表项<br>- 无序列表项<br>- 无序列表项</p><p>1. 有序列表项<br>2. 有序列表项<br>3. 有序列表项</p><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>和Markdown一样：<br>*斜体*<br>**粗体**</p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><h2 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;reStructuredText&lt;/strong&gt;是一种类似于Markdown的轻量标记语言，其含义为“重新构建的文本”，也被简称为&lt;strong&gt;reST&lt;/strong&gt;，文件后缀名为&lt;code&gt;.rst&lt;/code&gt;，是Python的Docutils项
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>使用Let&#39;s Encrypt获取免费SSL证书</title>
@@ -286,351 +431,6 @@
     
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>telnet协议分析</title>
-    <link href="https://howiezhao.github.io/2018/08/24/telnet/"/>
-    <id>https://howiezhao.github.io/2018/08/24/telnet/</id>
-    <published>2018-08-24T11:44:44.000Z</published>
-    <updated>2018-09-12T13:56:54.920Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SSH协议分析</title>
-    <link href="https://howiezhao.github.io/2018/08/24/ssh/"/>
-    <id>https://howiezhao.github.io/2018/08/24/ssh/</id>
-    <published>2018-08-24T11:44:35.000Z</published>
-    <updated>2018-08-24T14:44:03.332Z</updated>
-    
-    <content type="html"><![CDATA[<p>SSH(Secure Shell)即<strong>安全外壳协议</strong>，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。</p><h2 id="OpenSSH的运行机制"><a href="#OpenSSH的运行机制" class="headerlink" title="OpenSSH的运行机制"></a>OpenSSH的运行机制</h2><p>SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用<code>ssh user@host</code>命令进行登录时，所完成的整个过程如下：</p><ol><li>远程主机收到用户的登录请求，把自己的公钥发给用户</li><li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li><li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li><li>后续过程中，用户发送的信息都采用此方式进行加密发送</li></ol><p>因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'host (12.18.429.21)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure></p><p>即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。<br>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在<code>$HOME/.ssh/known_hosts</code>文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。<br>除了采用口令登录外，还可使用公钥登录，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。<br>OpenSSH提供了一个工具 —— <code>ssh-keygen</code>，使用它可以方便的生成一对公私钥，生成的公钥为id_rsa.pub，私钥为id_rsa，保存在<code>$HOME/.ssh</code>目录下，当然你可以使用<code>-t</code>参数指定密钥的类型，使用<code>-f</code>参数指定生成的目录，更多的参数可以使用<code>--help</code>参数查看。<br>有了密钥对后，可以使用<code>ssh-copy-id user@host</code>命令将自己的公钥上传至远程主机，远程主机会将用户的公钥，保存在登录后的用户主目录的<code>$HOME/.ssh/authorized_keys</code>文件中。实际上，<code>ssh-copy-id</code>命令的整个过程就如下命令一样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host <span class="string">'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p><p>最后还要对远程主机的SSH服务端配置文件，即<code>/etc/ssh/sshd_config</code>文件进行相关配置，并重启SSH服务即可生效。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;SSH(Secure Shell)即&lt;strong&gt;安全外壳协议&lt;/strong&gt;，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。&lt;/p&gt;
-&lt;h2 id=&quot;Open
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WSL相关问题解决</title>
-    <link href="https://howiezhao.github.io/2018/08/21/wsl-problem/"/>
-    <id>https://howiezhao.github.io/2018/08/21/wsl-problem/</id>
-    <published>2018-08-21T11:23:05.000Z</published>
-    <updated>2018-08-22T05:35:38.617Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。<br><a id="more"></a></p><h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure></p><p>修改完成后用<code>sudo service ssh start</code>启动SSH服务，可能会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p><p>并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure></p><p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p><p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p><h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;名称问题&quot;&gt;&lt;a href=&quot;#名称问题&quot; class=&quot;headerlink&quot; title=&quot;名称问题&quot;&gt;&lt;/a&gt;名称问题&lt;/h2&gt;&lt;p&gt;最早这个项目命名为&lt;strong&gt;Bash on Ubuntu on Windows&lt;/strong&gt;，随后改名为&lt;strong&gt;Windows Subsystem for Linux&lt;/strong&gt;，即&lt;strong&gt;WSL&lt;/strong&gt;，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android Studio模拟器相关问题解决</title>
-    <link href="https://howiezhao.github.io/2018/08/21/android-emulator-problem/"/>
-    <id>https://howiezhao.github.io/2018/08/21/android-emulator-problem/</id>
-    <published>2018-08-21T11:22:50.000Z</published>
-    <updated>2018-08-24T05:49:57.245Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2><a id="more"></a><h2 id="命令行启动"><a href="#命令行启动" class="headerlink" title="命令行启动"></a>命令行启动</h2><p>Android SDK工具包中包含着一个模拟器的命令行程序 —— <code>emulator</code>，它可以在不启动Android Studio的情况下开启Android模拟器，在Windows系统中，<code>emulator</code>位于<code>%LOCALAPPDATA%\Android\Sdk\tools</code>文件夹下，<code>emulator -list-avds</code>命令可以列出所有已创建的AVD，<code>emulator -avd &lt;avd-name&gt;</code>命令即可启动相应的AVD，要查看<code>emulator</code>更多的参数，可以使用<code>emulator -help</code>。</p><h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>建议创建的AVD为Pixel，版本为Android 7.1.1。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;网络问题&quot;&gt;&lt;a href=&quot;#网络问题&quot; class=&quot;headerlink&quot; title=&quot;网络问题&quot;&gt;&lt;/a&gt;网络问题&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hyper-V相关问题解决</title>
-    <link href="https://howiezhao.github.io/2018/08/20/hyper-v-problem/"/>
-    <id>https://howiezhao.github.io/2018/08/20/hyper-v-problem/</id>
-    <published>2018-08-20T12:12:02.000Z</published>
-    <updated>2018-08-24T05:33:15.550Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改<code>/etc/default/grub</code>文件，更改其中<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>，接着<code>update-grub</code>并重启即可。<br><a id="more"></a></p><h2 id="显卡问题"><a href="#显卡问题" class="headerlink" title="显卡问题"></a>显卡问题</h2><p>开启Hyper-V功能后，原主机的显卡可能会出现问题，对于我的1803版Win10来说，电脑中原来的Intel(R) HD Graphics 4600核芯显卡不能正常工作，具体表现在工具栏中英特尔核芯显卡控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。究其原因是系统中原本的4624版驱动程序与Hyper-V不兼容，解决办法是去官网下载最新版驱动程序并升级即可。</p><h2 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h2><p>由于Hyper-V采用的是硬件虚拟化技术，所以开启Hyper-V功能后相当于原本的物理机也运行在虚拟化上了，因此不能再使用VMware或者VirtualBox，它们不允许在虚拟机上运行虚拟机，而此时原主机在它们眼中就是一个虚拟机。早期的Android Studio中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4版之后自带模拟器(v27.3.9)已经可以支持Hyper-V，在开启Hyper-V的系统中，它使用<strong>Windows虚拟机监控程序平台</strong>替代了Intel的<strong>HAXM</strong>，使用前需要在Windows功能中启用<strong>Windows虚拟机监控程序平台</strong>功能。</p><h2 id="网卡问题"><a href="#网卡问题" class="headerlink" title="网卡问题"></a>网卡问题</h2><p>要想使Hyper-V中的虚拟机上网，可以通过创建<strong>虚拟交换机</strong>实现，虚拟交换机有3种类型，<strong>外部</strong>相当于VMware的<strong>桥接模式</strong>，<strong>内部</strong>相当于VMware的<strong>NAT模式</strong>，<strong>专用</strong>相当于VMware的<strong>仅主机模式</strong>，所有虚拟机会默认使用<strong>内部</strong>类型的<strong>默认交换机</strong>，这是<strong>虚拟交换机管理器</strong>自动创建的。如果我们选择创建<strong>外部</strong>类型的虚拟交换机，则会把Hyper-V的网络桥接在物理网卡上，那物理网卡将变成一个虚拟交换机。因此我们会发现原来使用的网卡变成了<strong>vEthernet</strong>，这是正常现象，不用担心。Hyper-V会自动创建一个虚拟网卡来继承原物理网卡的配置，物理计算机可以正常使用网络。</p><h2 id="代数问题"><a href="#代数问题" class="headerlink" title="代数问题"></a>代数问题</h2><p>在创建虚拟机时可以选择虚拟机代数，简单来说，第一代虚拟机支持创建32位与64位操作系统，创建的虚拟硬盘为<code>.vhd</code>格式，第二代虚拟机只能创建64位操作系统，创建的虚拟硬盘为<code>.vhdx</code>格式，并且必须是Windows 8或者Windows Server 2012以上版本，对于Linux，微软官方有一份详细的清单表明哪些版本可以创建第二代虚拟机。为方便起见，可以在首次创建时选择第二代虚拟机，若不能成功启动，且屏幕显示<code>No operating system was loaded. Press a key to retry the boot sequence...</code>信息，则可以在设置中关闭<strong>安全启动</strong>并重启虚拟机，或者删掉虚拟机并重新创建第一代虚拟机。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;全屏问题&quot;&gt;&lt;a href=&quot;#全屏问题&quot; class=&quot;headerlink&quot; title=&quot;全屏问题&quot;&gt;&lt;/a&gt;全屏问题&lt;/h2&gt;&lt;p&gt;由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用&lt;strong&gt;远程桌面连接&lt;/strong&gt;，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改&lt;code&gt;/etc/default/grub&lt;/code&gt;文件，更改其中&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet splash video=hyperv_fb:1920x1080&amp;quot;&lt;/code&gt;，接着&lt;code&gt;update-grub&lt;/code&gt;并重启即可。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
-    
-    
-      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Base编码家族</title>
-    <link href="https://howiezhao.github.io/2018/08/10/base/"/>
-    <id>https://howiezhao.github.io/2018/08/10/base/</id>
-    <published>2018-08-10T09:07:56.000Z</published>
-    <updated>2018-08-11T15:11:25.367Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于<strong>64</strong>个可打印字符来表示二进制数据的表示方法，这64个字符分别为<code>A-Z</code>、<code>a-z</code>、<code>0-9</code>以及<code>+</code>与<code>/</code>。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：</p><table><thead><tr><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th></tr></thead><tbody><tr><td>0</td><td>A</td><td>16</td><td>Q</td><td>32</td><td>g</td><td>48</td><td>w</td></tr><tr><td>1</td><td>B</td><td>17</td><td>R</td><td>33</td><td>h</td><td>49</td><td>x</td></tr><tr><td>2</td><td>C</td><td>18</td><td>S</td><td>34</td><td>i</td><td>50</td><td>y</td></tr><tr><td>3</td><td>D</td><td>19</td><td>T</td><td>35</td><td>j</td><td>51</td><td>z</td></tr><tr><td>4</td><td>E</td><td>20</td><td>U</td><td>36</td><td>k</td><td>52</td><td>0</td></tr><tr><td>5</td><td>F</td><td>21</td><td>V</td><td>37</td><td>l</td><td>53</td><td>1</td></tr><tr><td>6</td><td>G</td><td>22</td><td>W</td><td>38</td><td>m</td><td>54</td><td>2</td></tr><tr><td>7</td><td>H</td><td>23</td><td>X</td><td>39</td><td>n</td><td>55</td><td>3</td></tr><tr><td>8</td><td>I</td><td>24</td><td>Y</td><td>40</td><td>o</td><td>56</td><td>4</td></tr><tr><td>9</td><td>J</td><td>25</td><td>Z</td><td>41</td><td>p</td><td>57</td><td>5</td></tr><tr><td>10</td><td>K</td><td>26</td><td>a</td><td>42</td><td>q</td><td>58</td><td>6</td></tr><tr><td>11</td><td>L</td><td>27</td><td>b</td><td>43</td><td>r</td><td>59</td><td>7</td></tr><tr><td>12</td><td>M</td><td>28</td><td>c</td><td>44</td><td>s</td><td>60</td><td>8</td></tr><tr><td>13</td><td>N</td><td>29</td><td>d</td><td>45</td><td>t</td><td>61</td><td>9</td></tr><tr><td>14</td><td>O</td><td>30</td><td>e</td><td>46</td><td>u</td><td>62</td><td>+</td></tr><tr><td>15</td><td>P</td><td>31</td><td>f</td><td>47</td><td>v</td><td>63</td><td>/</td></tr></tbody></table><a id="more"></a><p>编码<code>Hello</code>的过程如下：</p><table><thead><tr><th>文本</th><th>H</th><th>e</th><th>l</th><th>l</th><th>o</th><th></th></tr></thead><tbody><tr><td>ASCII编码</td><td>72</td><td>101</td><td>108</td><td>108</td><td>111</td><td></td></tr><tr><td>二进制位</td><td>‭01001000‬</td><td>‭01100101‬</td><td>‭01101100‬</td><td>‭01101100‬</td><td>‭01101111‬</td><td>00000000</td></tr></tbody></table><p>以6个二进制位进行编码：</p><table><thead><tr><th>二进制位</th><th>010010</th><th>000110</th><th>010101</th><th>101100</th><th>011011</th><th>000110</th><th>111100</th><th>000000</th></tr></thead><tbody><tr><td>索引</td><td>18</td><td>6</td><td>21</td><td>44</td><td>27</td><td>6</td><td>60</td><td></td></tr><tr><td>Base64编码</td><td>S</td><td>G</td><td>V</td><td>s</td><td>b</td><td>G</td><td>8</td><td>=</td></tr></tbody></table><p>若原数据不是3的倍数，且多出1个字节，则在编码末尾加2个<code>=</code>，多出2个字节，则在编码末尾加1个<code>=</code>。换言之，若多出1个字节，则最后一个6位的Base64字节块有4位是0值，若多出2个字节，则最后一个6位的Base64字节块有2位是0值。</p><h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32基于32个可打印字符，分别为<code>A-Z</code>以及<code>2-7</code>。32个字符可用5个比特位表示，5个字节有40个比特位，对应于8个Base32单元，编码后的数据比原始数据略长8/5。若原数据不是5的倍数，且多出1个字节，则在编码末尾加4个<code>=</code>，多出2个字节，则在编码末尾加3个<code>=</code>，多出3个字节，则在编码末尾加2个<code>=</code>，多出4个字节，则在编码末尾加1个<code>=</code>。Base32索引表如下所示：</p><table><thead><tr><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th></tr></thead><tbody><tr><td>0</td><td>A</td><td>8</td><td>I</td><td>16</td><td>Q</td><td>24</td><td>Y</td></tr><tr><td>1</td><td>B</td><td>9</td><td>J</td><td>17</td><td>R</td><td>25</td><td>Z</td></tr><tr><td>2</td><td>C</td><td>10</td><td>K</td><td>18</td><td>S</td><td>26</td><td>2</td></tr><tr><td>3</td><td>D</td><td>11</td><td>L</td><td>19</td><td>T</td><td>27</td><td>3</td></tr><tr><td>4</td><td>E</td><td>12</td><td>M</td><td>20</td><td>U</td><td>28</td><td>4</td></tr><tr><td>5</td><td>F</td><td>13</td><td>N</td><td>21</td><td>V</td><td>29</td><td>5</td></tr><tr><td>6</td><td>G</td><td>14</td><td>O</td><td>22</td><td>W</td><td>30</td><td>6</td></tr><tr><td>7</td><td>H</td><td>15</td><td>P</td><td>23</td><td>X</td><td>31</td><td>7</td></tr></tbody></table><h2 id="Base16"><a href="#Base16" class="headerlink" title="Base16"></a>Base16</h2><p>与上类似，Base16基于16个可打印字符，分别为<code>0-9</code>以及<code>A-F</code>。16个字符可用4个比特位表示，1个字节有8个比特位，对应于2个Base16单元，编码后的数据比原始数据略长2。显然，在Base16中不需要在末尾填充<code>=</code>。Base16索引表如下所示：</p><table><thead><tr><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th><th>数值</th><th>字符</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>4</td><td>4</td><td>8</td><td>8</td><td>12</td><td>C</td></tr><tr><td>1</td><td>1</td><td>5</td><td>5</td><td>9</td><td>9</td><td>13</td><td>D</td></tr><tr><td>2</td><td>2</td><td>6</td><td>6</td><td>10</td><td>A</td><td>14</td><td>E</td></tr><tr><td>3</td><td>3</td><td>7</td><td>7</td><td>11</td><td>B</td><td>15</td><td>F</td></tr></tbody></table><h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>XXencode不属于Base编码家族，但与Base64编码极为类似，区别仅在于64个可打印字符及其顺序，XXencode使用的为<code>+</code>、<code>-</code>、<code>0-9</code>、<code>A-Z</code>、<code>a-z</code>。</p><h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode也与Base64极为类似，它使用的字符及其顺序为<code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、`。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Base64&quot;&gt;&lt;a href=&quot;#Base64&quot; class=&quot;headerlink&quot; title=&quot;Base64&quot;&gt;&lt;/a&gt;Base64&lt;/h2&gt;&lt;p&gt;Base64，顾名思义是一种基于&lt;strong&gt;64&lt;/strong&gt;个可打印字符来表示二进制数据的表示方法，这64个字符分别为&lt;code&gt;A-Z&lt;/code&gt;、&lt;code&gt;a-z&lt;/code&gt;、&lt;code&gt;0-9&lt;/code&gt;以及&lt;code&gt;+&lt;/code&gt;与&lt;code&gt;/&lt;/code&gt;。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;数值&lt;/th&gt;
-&lt;th&gt;字符&lt;/th&gt;
-&lt;th&gt;数值&lt;/th&gt;
-&lt;th&gt;字符&lt;/th&gt;
-&lt;th&gt;数值&lt;/th&gt;
-&lt;th&gt;字符&lt;/th&gt;
-&lt;th&gt;数值&lt;/th&gt;
-&lt;th&gt;字符&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;A&lt;/td&gt;
-&lt;td&gt;16&lt;/td&gt;
-&lt;td&gt;Q&lt;/td&gt;
-&lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;g&lt;/td&gt;
-&lt;td&gt;48&lt;/td&gt;
-&lt;td&gt;w&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;B&lt;/td&gt;
-&lt;td&gt;17&lt;/td&gt;
-&lt;td&gt;R&lt;/td&gt;
-&lt;td&gt;33&lt;/td&gt;
-&lt;td&gt;h&lt;/td&gt;
-&lt;td&gt;49&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;C&lt;/td&gt;
-&lt;td&gt;18&lt;/td&gt;
-&lt;td&gt;S&lt;/td&gt;
-&lt;td&gt;34&lt;/td&gt;
-&lt;td&gt;i&lt;/td&gt;
-&lt;td&gt;50&lt;/td&gt;
-&lt;td&gt;y&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;D&lt;/td&gt;
-&lt;td&gt;19&lt;/td&gt;
-&lt;td&gt;T&lt;/td&gt;
-&lt;td&gt;35&lt;/td&gt;
-&lt;td&gt;j&lt;/td&gt;
-&lt;td&gt;51&lt;/td&gt;
-&lt;td&gt;z&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;E&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
-&lt;td&gt;U&lt;/td&gt;
-&lt;td&gt;36&lt;/td&gt;
-&lt;td&gt;k&lt;/td&gt;
-&lt;td&gt;52&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;F&lt;/td&gt;
-&lt;td&gt;21&lt;/td&gt;
-&lt;td&gt;V&lt;/td&gt;
-&lt;td&gt;37&lt;/td&gt;
-&lt;td&gt;l&lt;/td&gt;
-&lt;td&gt;53&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;td&gt;G&lt;/td&gt;
-&lt;td&gt;22&lt;/td&gt;
-&lt;td&gt;W&lt;/td&gt;
-&lt;td&gt;38&lt;/td&gt;
-&lt;td&gt;m&lt;/td&gt;
-&lt;td&gt;54&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;H&lt;/td&gt;
-&lt;td&gt;23&lt;/td&gt;
-&lt;td&gt;X&lt;/td&gt;
-&lt;td&gt;39&lt;/td&gt;
-&lt;td&gt;n&lt;/td&gt;
-&lt;td&gt;55&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;I&lt;/td&gt;
-&lt;td&gt;24&lt;/td&gt;
-&lt;td&gt;Y&lt;/td&gt;
-&lt;td&gt;40&lt;/td&gt;
-&lt;td&gt;o&lt;/td&gt;
-&lt;td&gt;56&lt;/td&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;td&gt;J&lt;/td&gt;
-&lt;td&gt;25&lt;/td&gt;
-&lt;td&gt;Z&lt;/td&gt;
-&lt;td&gt;41&lt;/td&gt;
-&lt;td&gt;p&lt;/td&gt;
-&lt;td&gt;57&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;K&lt;/td&gt;
-&lt;td&gt;26&lt;/td&gt;
-&lt;td&gt;a&lt;/td&gt;
-&lt;td&gt;42&lt;/td&gt;
-&lt;td&gt;q&lt;/td&gt;
-&lt;td&gt;58&lt;/td&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;11&lt;/td&gt;
-&lt;td&gt;L&lt;/td&gt;
-&lt;td&gt;27&lt;/td&gt;
-&lt;td&gt;b&lt;/td&gt;
-&lt;td&gt;43&lt;/td&gt;
-&lt;td&gt;r&lt;/td&gt;
-&lt;td&gt;59&lt;/td&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;12&lt;/td&gt;
-&lt;td&gt;M&lt;/td&gt;
-&lt;td&gt;28&lt;/td&gt;
-&lt;td&gt;c&lt;/td&gt;
-&lt;td&gt;44&lt;/td&gt;
-&lt;td&gt;s&lt;/td&gt;
-&lt;td&gt;60&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;13&lt;/td&gt;
-&lt;td&gt;N&lt;/td&gt;
-&lt;td&gt;29&lt;/td&gt;
-&lt;td&gt;d&lt;/td&gt;
-&lt;td&gt;45&lt;/td&gt;
-&lt;td&gt;t&lt;/td&gt;
-&lt;td&gt;61&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;14&lt;/td&gt;
-&lt;td&gt;O&lt;/td&gt;
-&lt;td&gt;30&lt;/td&gt;
-&lt;td&gt;e&lt;/td&gt;
-&lt;td&gt;46&lt;/td&gt;
-&lt;td&gt;u&lt;/td&gt;
-&lt;td&gt;62&lt;/td&gt;
-&lt;td&gt;+&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;15&lt;/td&gt;
-&lt;td&gt;P&lt;/td&gt;
-&lt;td&gt;31&lt;/td&gt;
-&lt;td&gt;f&lt;/td&gt;
-&lt;td&gt;47&lt;/td&gt;
-&lt;td&gt;v&lt;/td&gt;
-&lt;td&gt;63&lt;/td&gt;
-&lt;td&gt;/&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>古典密码学</title>
-    <link href="https://howiezhao.github.io/2018/08/10/classical-crypto/"/>
-    <id>https://howiezhao.github.io/2018/08/10/classical-crypto/</id>
-    <published>2018-08-10T03:17:41.000Z</published>
-    <updated>2018-09-09T05:38:55.730Z</updated>
-    
-    <content type="html"><![CDATA[<p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p><h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p><h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>取偏移量为3</li><li>计算<code>H</code>的后3位为<code>K</code></li><li>以此类推</li><li>密文为：<code>Khoor Zruog</code></li></ol><p>类似的，解密过程如下：</p><ol><li>计算<code>K</code>的前3位为<code>H</code></li><li>以此类推</li><li>明文为：<code>Hello World</code></li></ol><p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p><h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon’s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>a</td><td>AAAAA</td><td>g</td><td>AABBA</td><td>n</td><td>ABBAA</td><td>t</td><td>BAABA</td></tr><tr><td>b</td><td>AAAAB</td><td>h</td><td>AABBB</td><td>o</td><td>ABBAB</td><td>u-v</td><td>BAABB</td></tr><tr><td>c</td><td>AAABA</td><td>i-j</td><td>ABAAA</td><td>p</td><td>ABBBA</td><td>w</td><td>BABAA</td></tr><tr><td>d</td><td>AAABB</td><td>k</td><td>ABAAB</td><td>q</td><td>ABBBB</td><td>x</td><td>BABAB</td></tr><tr><td>e</td><td>AABAA</td><td>l</td><td>ABABA</td><td>r</td><td>BAAAA</td><td>y</td><td>BABBA</td></tr><tr><td>f</td><td>AABAB</td><td>m</td><td>ABABB</td><td>s</td><td>BAAAB</td><td>z</td><td>BABBB</td></tr></tbody></table><p>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。<br>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p><table><thead><tr><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th><th>明文</th><th>密文</th></tr></thead><tbody><tr><td>A</td><td>aaaaa</td><td>G</td><td>aabba</td><td>M</td><td>abbaa</td><td>S</td><td>baaba</td><td>Y</td><td>bbaaa</td></tr><tr><td>B</td><td>aaaab</td><td>H</td><td>aabbb</td><td>N</td><td>abbab</td><td>T</td><td>baabb</td><td>Z</td><td>bbaab</td></tr><tr><td>C</td><td>aaaba</td><td>I</td><td>abaaa</td><td>O</td><td>abbba</td><td>U</td><td>babaa</td></tr><tr><td>D</td><td>aaabb</td><td>J</td><td>abaab</td><td>P</td><td>abbbb</td><td>V</td><td>babab</td></tr><tr><td>E</td><td>aabaa</td><td>K</td><td>ababa</td><td>Q</td><td>baaaa</td><td>W</td><td>babba</td></tr><tr><td>F</td><td>aabab</td><td>L</td><td>ababb</td><td>R</td><td>baaab</td><td>X</td><td>babbb</td></tr></tbody></table><p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p><h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：<br><img src="/images/vigenere.png" alt="维吉尼亚表格"><br>这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong><br>明文<code>HELLOWORLD</code>的加密结果如下：</p><ol><li>选择某一关键词作为密钥，如<code>SECRET</code></li><li>对于明文第1个字母<code>H</code>，对应密钥的第1个字母<code>S</code>，于是使用表格中<code>S</code>行字母表进行加密，得到密文第一个字母<code>Z</code></li><li>以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文<code>ZINCSPGVNU</code></li></ol><p>类似的，解密过程如下：</p><ol><li>根据密钥第1个字母<code>S</code>所对应的<code>S</code>行字母表，发现密文第1个字母<code>Z</code>位于<code>H</code>列，因而明文第1个字母为<code>H</code></li><li>依次类推</li></ol><p>显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。</p><h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即<strong>位置转换</strong>，典型的有栅栏密码等。</p><h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p><ol><li>去掉空格：<code>HelloWorld</code></li><li>5个一组：<code>Hello</code>，<code>World</code></li><li>取出每组第1个字母：<code>HW</code></li><li>取出每组第2个字母：<code>eo</code></li><li>以此类推</li><li>连在一起：<code>HWeolrllod</code></li><li>加上适当空格：<code>HWeol rllod</code></li></ol><p>类似的，解密过程如下：</p><ol><li>去掉空格：<code>HWeolrllod</code></li><li>分成5栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li><li>取出每栏第1个字母：<code>Hello</code></li><li>依次类推</li><li>连在一起：<code>HelloWorld</code></li><li>加上适当空格：<code>Hello World</code></li></ol><p>注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如<code>王夫 井工 夫口 由中人</code>即为<code>67 84 70 123</code>。</p><h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：<br><img src="/images/pigpen.png" alt="猪圈密码"><br>明文<code>X MARKS THE SPOT</code>的加密结果如下：<br><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p><h4 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h4><p>猪圈密码还有一种变形，即采用图片中字符位置一一对应的形式加解密，如<code>FLAG</code>可加密为<code>OCJP</code>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;古典密码学主要包括两类，即&lt;strong&gt;代换&lt;/strong&gt;和&lt;strong&gt;置换&lt;/strong&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;代换&quot;&gt;&lt;a href=&quot;#代换&quot; class=&quot;headerlink&quot; title=&quot;代换&quot;&gt;&lt;/a&gt;代换&lt;/h2&gt;&lt;p&gt;代换密码是将明文中的字符替代成其他字符，即&lt;strong&gt;替代转换&lt;/strong&gt;，若整个加密过程中每个字符采用同一张表替代，则为&lt;strong&gt;单表代换密码&lt;/strong&gt;，类似的，若整个加密过程中每个字符采用不同的表替代，则为&lt;strong&gt;多表代换密码&lt;/strong&gt;，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。&lt;/p&gt;
-&lt;h3 id=&quot;凯撒密码&quot;&gt;&lt;a href=&quot;#凯撒密码&quot; class=&quot;headerlink&quot; title=&quot;凯撒密码&quot;&gt;&lt;/a&gt;凯撒密码&lt;/h3&gt;&lt;p&gt;凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。&lt;br&gt;明文&lt;code&gt;Hello World&lt;/code&gt;的加密过程如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;取偏移量为3&lt;/li&gt;
-&lt;li&gt;计算&lt;code&gt;H&lt;/code&gt;的后3位为&lt;code&gt;K&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;以此类推&lt;/li&gt;
-&lt;li&gt;密文为：&lt;code&gt;Khoor Zruog&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;类似的，解密过程如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;计算&lt;code&gt;K&lt;/code&gt;的前3位为&lt;code&gt;H&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;以此类推&lt;/li&gt;
-&lt;li&gt;明文为：&lt;code&gt;Hello World&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;注意：当偏移量为13时，这种凯撒密码的特例又被称为&lt;strong&gt;ROT13&lt;/strong&gt;(回转13位)加密，ROT13加密是一种&lt;strong&gt;对等加密&lt;/strong&gt;(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   

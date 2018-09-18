@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[那么，你想在安全行业工作吗？]]></title>
+    <url>%2F2018%2F09%2F18%2Fso-you-want-to-work-in-security%2F</url>
+    <content type="text"><![CDATA[本文翻译自https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23 ，正文如下： 每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。 警告：这不像电影。在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。 没有标准或完美的课程。安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设……然后找出如何最好地修复（或利用）它们。我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！在文化方面，我建议阅读黑客宣言或如何成为一名黑客，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自我的Twitter安全列表上的人。 停止阅读，开始做。这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。 写代码。我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。 破坏代码。花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用https://www.hackthissite.org ，并在https://infosec.rocks 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点这里。或者查找并报告你使用的实际软件中的bug。有许多软件供应商为安全漏洞提供现金奖励，包括Chrome和Google，以及Internet Bug Bounty计划涵盖的一些核心开源项目。除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（bugtraq，fulldisclosure，oss-sec）。 分享知识。我开始了解安全是从大学中由同龄人组织的一个名为SigMil的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的DEFCON朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全书籍或杂志，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。分享知识很重要，原因如下： 分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。 我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。 我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。 把爱传出去。 练习你的沟通。在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对FUD(即恐惧、不确定、怀疑)，你必须让人们不受欢迎，然后专注于危机之外的行动。所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。 期望努力工作，有时会失败。也许这很明显，但值得明确表示。安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。 （尝试）保持乐观。由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者说出我们为什么都失败的完全雄辩点。现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。 请求帮忙。如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。如果您需要帮助，请尽管问。只要确保你做尽职调查，尽可能让人们帮助你。大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。 祝你好运并且快乐Hacking！我偶然发现了一些其他安全职业建议的想法： Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法http://krebsonsecurity.com/tag/security-career-advice/ 我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议https://noncombatant.org/2016/06/20/get-into-security-engineering Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html 译者注本文作者为Parisa Tabriz，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。]]></content>
+      <categories>
+        <category>Translation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[《黑客军团》中使用的软件]]></title>
+    <url>%2F2018%2F09%2F18%2Fsoftware-used-in-mr-robot%2F</url>
+    <content type="text"><![CDATA[本文翻译自https://alternativeto.net/list/66/software-used-in-mr-robot，正文如下： 本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。下面的列表包含到了第二季第11集！ Kali LinuxKali Linux是针对安全研究人员进行渗透测试的Linux发行版，但同时也被黑客使用，因为它集成了很多黑客工具。由于它是黑客的首选操作系统，所以它在《黑客军团》中经常有过出现。 WickrWickr是一个端到端的加密聊天应用程序，具有诸如消息可调到期时间等功能。在第二季中，fsociety组织使用它来保密通信。 Tor BrowserTor浏览器被广泛认为是最好的匿名工具。它将使你的互联网活动难以被追踪，当第二季第8集中fsociety的成员Trenton用Tor浏览器向Vimeo上传一个泄露的关于非法群体监视的FBI电话会议时，利用到了它。 Raspberry Pi树莓派是一个小型的，可编程的计算机板，旨在教孩子们学习计算机科学。由于它的低成本，多功能性和简单性，它也是业余爱好者和程序员的最爱。第一季第5集中Elliot将一个树莓派安装到铁山的气候控制系统中，以便fsociety后期可以远程升高存储E公司磁带备份的存储空间的温度，从而实现美国消费者债务的很大一部分记录的备份被销毁。 FileZillaFileZilla是世界上最流行的FTP客户端，并且是最强大和用户友好的客户端之一。在第一季第4集中Trenton使用FileZilla上传一个漏洞利用程序到fsociety的FTP服务器上，即Elliot将安装在铁山的气候控制系统中的树莓派，以销毁美国消费者债务中很大一部分的记录。 PwnixPwnix是一个为渗透测试人员定制的用于网络黑客和安全的Android ROM。Elliot在第二季第9集中使用了一个Pwnie Express Pwn Phone（Pwnix预装），以至于他和Darlene渗透进黑暗军团的电话。 DeepSound在第一季第8集中，Elliot使用DeepSound将文件隐藏在CD的常规音乐曲目中，以便隐藏文件只能使用DeepSound软件查看。这是一种被称为隐写术的技术。 ProtonMailProtonMail是一个安全的端到端加密电子邮件服务，基于瑞士，Elliot在第一季第8集中使用过。《黑客军团》背后的团队研究安全电子邮件服务的程度很深，以至于他们实际上联系了ProtonMail开发者，询问用户是否有可能在ProtonMail中监控他们自己的电子邮件活动。ProtonMail开发者非常喜欢帐户访问日志的想法，他们最终在ProtonMail的v2.0版本中实现了这个功能。想要了解更多请访问：https://protonmail.com/blog/protonmail-mr-robot-secure-email/ HDShredderHDShredder 4企业版在第一季第10集中用于在E公司被黑之后安全地擦除所有fsociety的硬盘信息，然后他们在狗狗火葬场焚烧所有的硬盘。 John the RipperJohn the Ripper是Kali Linux中包含的一个密码破解工具，用于检测简单的Unix密码，并试图通过每秒数千次的猜测来破解它们。这被称为暴力破解，Elliot在第一季第2集中通过使用它来破解E公司的临时首席技术官Tyrell Wellick的邮箱密码。 WegtWget是一个命令行工具，可以发出HTTP(S)请求。在《黑客军团》中它被用于与John the Ripper结合使用Shellshock漏洞来攻击E公司的邮件服务器。 Social-Engineer ToolkitSET是一个专注于诸如网络钓鱼等社会工程攻击的测试框架。社会工程学欺骗受害者给予攻击者敏感信息。在第一季第5集中，Mobley使用SET的伪造短信功能让主管离开铁山，以便Elliot可以渗透进去。 OpenWrtOpenWrt是Angela在第二季第6集中黑进FBI时使用的路由器固件。 mimikatzmimikatz是一个后渗透工具，它将黑客可能需要执行的一些有用任务捆绑在一起。在第二季第6集中，它被装在USB橡皮鸭中并交给Angela，作为一个备份计划。 btscannerbtscanner是一个包含在Kali Linux中的工具，它可以在无需配对的情况下提取关于蓝牙设备的尽可能多的信息。在第一季第6集中，Elliot使用btscanner与Bluesniff和Metasploit结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。 BluesniffBluesniff是一款蓝牙设备发现工具。在第一季第6集中，Elliot使用Bluesniff与Metasploit和btscanner结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。 KVM(Kernel-base Virtual Machine)KVM是一个管理程序，它是一个可以通过虚拟机运行其他操作系统的软件。Elliot使用KVM在Kali Linux内虚拟化Windows 7。在第一季第8集中，它使用KVM运行DeepSound。 MetasploitMetasploit框架是Kali Linux中包含的一个软件，可以使渗透测试人员更容易发现网络中的漏洞。Meterpreter是可以在Metasploit框架中运行的数百个Payload之一，并且在第一季第6集中使用到。在第一季第6集中，Elliot使用Metasploit Framwork和Metapreter与btscanner和Bluesniff结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。 Framaroot在电视中称为RooterFrame的Framaroot，在第一季第3集中被Tyrell Wellick用来Root同事的Android手机，这样他就可以隐藏在手机上安装的FlexiSPY间谍软件，以便获得关于谁将成为E公司的下一任首席技术官的秘密信息。 Kingo RootTyrell Wellick在第一季第3集中使用Kingo Root来Root同事的Android手机，这样他就可以在手机上隐蔽地安装FlexiSPY间谍软件，以便获得有关谁将成为下一任E公司首席执行官的秘密信息。 FlexiSPYFlexiSPY是针对Android，iOS和BlackBerry的间谍软件，允许用户监控受害者手机上的所有活动。在第一季第3集中，Tyrell Wellick秘密地将其安装在同事的Android手机上，以获取有关谁将成为下一任E公司首席技术官的秘密信息。 SuperSUSuperSU是一个在已Root的Android手机上管理超级用户权限的应用程序。在第一季第3集中，Tyrell Wellick在同事的Android手机上秘密安装了FlexiSPY —— 它使用SuperSU为它自己提供超级用户访问 —— 以便获得有关谁将成为下一任E公司首席技术官的秘密信息。 can-utilscan-utils包含与汽车电脑有关的实用程序。其中一个工具被称为candump，它在《黑客军团》中被用于入侵汽车的电脑。 radareradare2是Tyrell Wellick在第二季第12集中使用的逆向工程框架。 PyCharmPyCharm是一个Python和Django的IDE（集成开发环境），它是一种代码编辑软件。Trenton在第一季第四集中使用它。 TorTor被广泛认为是最好的匿名工具。它将使你的互联网活动难以被追踪，这个版本 —— 不像Tor浏览器 —— 可以用来托管隐藏服务，这是只能通过Tor访问的站点，并且其物理服务器位置被Tor匿名网络隐藏。Ray通过Tor隐藏服务运行着一条“丝绸之路”，他希望Elliot在第二季第5集中进行网站迁移。 PuTTYPuTTY是用于连接到Linux服务器的客户端。Elliot在第二季第4集和第5集使用PuTTY连接到运行Kali Linux的VPS（虚拟专用服务器），以便他可以在Ray的计算机上使用安装在VPS上的IRC客户端与Darlene聊天。他还在第二季第5集中使用PuTTY，完成了Ray的“丝绸之路”网站的迁移。 Mozilla FirefoxElliot使用Firefox作为他的默认浏览器。Trenton在第二季第8集中使用了Firefox。 FFmpeg在第二季第8集中Trenton使用FFmpeg编码一个视频，其中包含一个泄露的关于进行非法大规模监视的FBI电话会议，并通过Tor浏览器向Vimeo上传。 SlackwareSlackware是1993年创建的一个Linux发行版，旨在提高设计的稳定性和简单性，并成为最“类Unix”的Linux发行版。Slackware最初是基于Softlanding Linux系统的，它已经成为许多其他Linux发行版的基础，尤其是SUSE Linux发行版的第一个版本，也是最早的发行版本。在第二季第10集中，当Elliot与黑暗军队达成拯救Darlene生命的交易时，Leon给了他一台安装有Slackware的笔记本电脑，用于将黑暗军队的项目移动到刚果。 VLC Media PlayerVLC媒体播放器被用于第二季第4集，当时Elliot和Darlene一起观看了虚假恐怖片《Careful Massacre of the Bourgeoisie》的VHS版本。VLC也被用于第二季第8集，当fsociety预览一个他们将上传的关于非法大规模监视的泄露的FBI电话会议视频时。 Wayback Machine由Internet Archive运营的Waybach Machine是一个包含超过4,900亿个网页副本的数据库。在第二季第8集中FBI特工Dominique DiPierro向Mobley透露，联邦调查局使用了Wayback Machine，以便将他的黑客把柄与他为DJ Mobley创建的旧的粉丝页面联系起来。 µTorrent第二季第4集达琳用μTorrent下载了虚假恐怖电影《Careful Massacre of the Bourgeoisie》的VHS版本。]]></content>
+      <categories>
+        <category>Translation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[谈谈Android的root]]></title>
+    <url>%2F2018%2F09%2F18%2Fandroid-root%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[tmux小记]]></title>
+    <url>%2F2018%2F09%2F18%2Ftmux%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vim小记]]></title>
+    <url>%2F2018%2F09%2F18%2Fvim%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用Zsh替代Bash]]></title>
+    <url>%2F2018%2F09%2F18%2Fzsh%2F</url>
+    <content type="text"><![CDATA[众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详细命令，具体如下：1234# 通过curl安装sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"# 通过wget安装sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[reStructuredText小记]]></title>
+    <url>%2F2018%2F09%2F17%2Frestructuredtext%2F</url>
+    <content type="text"><![CDATA[reStructuredText是一种类似于Markdown的轻量标记语言，其含义为“重新构建的文本”，也被简称为reST，文件后缀名为.rst，是Python的Docutils项目的一部分，目前reST被广泛应用于编写Python文档。 基本语法标题列表和Markdown一样：- 无序列表项- 无序列表项- 无序列表项 1. 有序列表项2. 有序列表项3. 有序列表项 字体和Markdown一样：*斜体***粗体** 链接图片代码表格引用横线转义解析器]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[使用Let's Encrypt获取免费SSL证书]]></title>
     <url>%2F2018%2F09%2F16%2Flet-s-encrypt%2F</url>
     <content type="text"><![CDATA[Let’s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。]]></content>
@@ -246,7 +314,7 @@
   <entry>
     <title><![CDATA[Markdown小记]]></title>
     <url>%2F2018%2F07%2F21%2Fmarkdown-cheatsheet%2F</url>
-    <content type="text"><![CDATA[Markdown是一种轻量标记语言，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。 基本语法标题# 一级标题#### 四级标题对应HTML，最高6级标题。 列表- 无序列表项- 无序列表项- 无序列表项 1. 有序列表项2. 有序列表项3. 有序列表项 链接[Howie’s Blog](http://howiezhao.com)超文本链接必须带http。 图片![一张图片](/images/abc.jpg)当图片无法显示时，则显示中括号中的语句。图片的路径为相对路径，即当前markdown文件所在路径下的images中的abc.jpg。 字体*斜体***粗体** 代码```这里是多行代码``` `这里是单行代码` 表格表头1 | 表头2-– | -–单元格1 | 单元格2单元格3 | 单元格4 引用> 这是引用 横线-–，这是一条水平区分线，用3个或以上的短横线表示 转义和传统编程语言一样，markdown使用 \ 转义以上特殊字符。 最佳实践 在特殊字符与要书写的文字之间加上空格 不同段之间加一空行 GitHub Flavored MarkdownGitHub Flavored Markdown，简记为GFM，即GitHub风格的Markdown语法，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下： 链接自动识别：GFM会自动为标准的URL加上链接 语法着色：在```后输入语言，即可着色 删除线：使用~~表示删除线 任务列表：使用- []或- [1]表示未勾选或已勾选的列表]]></content>
+    <content type="text"><![CDATA[Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。 基本语法标题# 一级标题#### 四级标题对应HTML，最高6级标题。 列表- 无序列表项- 无序列表项- 无序列表项 1. 有序列表项2. 有序列表项3. 有序列表项 链接[Howie’s Blog](http://howiezhao.com)超文本链接必须带http。 图片![一张图片](/images/abc.jpg)当图片无法显示时，则显示中括号中的语句。图片的路径为相对路径，即当前markdown文件所在路径下的images中的abc.jpg。 字体*斜体***粗体** 代码```这里是多行代码``` `这里是单行代码` 表格表头1 | 表头2-– | -–单元格1 | 单元格2单元格3 | 单元格4 引用> 这是引用 横线-–，这是一条水平区分线，用3个或以上的短横线表示 转义和传统编程语言一样，markdown使用 \ 转义以上特殊字符。 最佳实践 在特殊字符与要书写的文字之间加上空格 不同段之间加一空行 链接后加一个空格 GitHub Flavored MarkdownGitHub Flavored Markdown，简记为GFM，即GitHub风格的Markdown语法，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下： 链接自动识别：GFM会自动为标准的URL加上链接 语法着色：在```后输入语言，即可着色 删除线：使用~~表示删除线 任务列表：使用- []或- [1]表示未勾选或已勾选的列表]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -315,7 +383,7 @@
   <entry>
     <title><![CDATA[Linux系统加固]]></title>
     <url>%2F2018%2F05%2F19%2Flinux-reinforcement%2F</url>
-    <content type="text"><![CDATA[帐户与口令此方面的加固主要为了防止针对帐户的暴力破解。 禁用或删除无用帐户：使用命令userdel &lt;用户名&gt;删除不必要的帐户，使用参数-r即可删除相应用户的家目录和邮箱目录。使用命令passwd -l &lt;用户名&gt;锁定不必要的帐户，解锁可使用passwd -u &lt;用户名&gt;。 检查特殊帐户：使用命令awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow查看空口令帐户，若存在，则使用命令passwd &lt;用户名&gt;为空口令帐户设定密码。使用命令awk -F: &#39;($3==0)&#39; /etc/passwd查看uid为0的帐户，确认uid为0的帐户只有root帐户。 添加口令策略：使用命令change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;修改帐户口令策略，-m表示密码最小使用天数，-M表示密码最大使用天数，-E表示密码到期时间，-W表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。 设置用户锁定：在CentOS7中，编辑/etc/pam.d/system-auth文件，添加auth required pam_tally2.so onerr=fail deny=6 unlock_time=300此行，表示当密码连续输错6次后锁定，锁定时间300秒。限制能su到root的用户：编辑/etc/pam.d/su文件，添加auth required pam_wheel.so group=test此行，表示只允许test组用户su到root。 服务安全服务越少，系统越安全。 关闭不必要的服务：在CentOS中，使用命令chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset设置服务在指定init级别下开机是否启动。 SSH服务安全：编辑/etc/ssh/sshd_config文件，修改默认端口，即Port项；禁止root用户远程登录，即PermitRootLogin项；禁止空密码登录，即PermitEmptyPasswords项；限制登录密码输错次数。 文件系统安全权限越小，系统越安全 设置umask值：编辑/etc/profile文件，修改umask值为027。 设置登录超时：编辑/etc/profile文件，添加TIMEOUT=180，即登录后无操作3分钟将超时断开连接。]]></content>
+    <content type="text"><![CDATA[帐户与口令此方面的加固主要为了防止针对帐户的暴力破解。 禁用或删除无用帐户：使用命令userdel &lt;用户名&gt;删除不必要的帐户，使用参数-r即可删除相应用户的家目录和邮箱目录。使用命令passwd -l &lt;用户名&gt;锁定不必要的帐户，解锁可使用passwd -u &lt;用户名&gt;。 检查特殊帐户：使用命令awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow查看空口令帐户，若存在，则使用命令passwd &lt;用户名&gt;为空口令帐户设定密码。使用命令awk -F: &#39;($3==0)&#39; /etc/passwd查看uid为0的帐户，确认uid为0的帐户只有root帐户。 添加口令策略：使用命令change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;修改帐户口令策略，-m表示密码最小使用天数，-M表示密码最大使用天数，-E表示密码到期时间，-W表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。 设置用户锁定：在CentOS7中，编辑/etc/pam.d/system-auth文件，添加auth required pam_tally2.so onerr=fail deny=6 unlock_time=300此行，表示当密码连续输错6次后锁定，锁定时间300秒。限制能su到root的用户：编辑/etc/pam.d/su文件，添加auth required pam_wheel.so group=test此行，表示只允许test组用户su到root。 服务安全服务越少，系统越安全。 关闭不必要的服务：在CentOS中，使用命令chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset设置服务在指定init级别下开机是否启动。 SSH服务安全：编辑/etc/ssh/sshd_config文件，修改默认端口，即Port项；禁止root用户远程登录，即PermitRootLogin项；禁止空密码登录，即PermitEmptyPasswords项；限制登录密码输错次数；最好使用密钥登录而不是密码登录。 文件系统安全权限越小，系统越安全 设置umask值：编辑/etc/profile文件，修改umask值为027。 设置登录超时：编辑/etc/profile文件，添加TIMEOUT=180，即登录后无操作3分钟将超时断开连接。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
