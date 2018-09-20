@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[top的增强版：htop]]></title>
+    <url>%2F2018%2F09%2F19%2Fhtop-top%2F</url>
+    <content type="text"><![CDATA[toptop是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是top命令的运行界面：top的运行结果可以大致分为7个部分： 第1行显示了系统概况 第2行显示了进程概况 第3行显示了CPU概况 第4行显示了内存概况 第5行显示了Swap分区概况 第6行为空行，用以显示运行命令时输入的参数 剩下部分则为每个进程的详细信息 第1行 字符 含义 top - 系统概况 18:37:24 当前系统时间 up 130 days, 6:22, 系统已运行时间 1 user, 当前登录用户数 load average: 0.02, 0.04, 0.00 系统平均负载，三个数值分别为1分钟、5分钟、15分钟前到现在的平均值。 第2行 字符 含义 Tasks: 进程(任务)概况 23 total, 总进程数 1 running, 运行的进程数 22 sleeping, 睡眠的进程数 0 stopped, 停止的进程数 0 zombie 僵尸进程数 第3行 字符 含义 Cpu(s): CPU概况 3.7%us, 用户(user)进程占用CPU百分率 0.7%sy, 系统(system)进程占用CPU百分率 0.0%ni, 用户进程空间内改变过优先级(niced)的进程占用CPU百分比 95.7%id, CPU空闲(idle)率 0.0%wa, 等待(wait)IO的CPU时间百分比 0.0%hi, 硬中断(hardware interrupt)占用CPU的百分比 0.0%si, 软中断(software interrupt)占用CPU的百分比 0.0%st 第4行 字符 含义 Mem: 内存(memory)概况，数值以kb为单位 524288k total, 内存总量 278140k used, 内存使用量 246148k free, 内存空闲量 0k buffers 缓冲的内存量 第5行 字符 含义 Swap: Swap分区概况，数值以kb为单位 65536k total, Swap分区总量 65536k used, Swap分区使用量 0k free, Swap分区空闲量 28800k cached 缓冲的Swap分区量 剩下部分 字符 含义 PID 进程号 USER 进程创建者 PR 进程优先级 NI nice值。越小优先级越高，最小-20，最大20（用户设置最大19） VIRT 进程使用的虚拟(virtual)内存总量，单位kb。VIRT=SWAP+RES RES 进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA SHR 共享(share)内存大小，单位kb S 进程状态。D=不可中断的睡眠状态，R=运行态，S=睡眠态，T=跟踪/停止态，Z=僵尸态 %CPU 进程占用CPU百分比 %MEM 进程占用内存百分比 TIME+ 进程运行时间 COMMAND 运行进程时所使用的命令 命令在top命令运行界面也可以输入相关命令，具体如下： q：退出top运行界面 P：以占据CPU百分比排序 M：以占据内存百分比排序 T：以累积占用CPU时间排序 s：修改刷新时间间隔，默认每隔3秒刷新信息。按下s键，然后按下数字，即可修改刷新时间间隔为你输入的数字，单位为秒。例如：按下s键，在按数字1键，即可实现每秒刷新一次 回车或空格：手动立即刷新 k：终止指定的进程。按下k键，再输入要杀死的进程的pid，再按回车键，选择信号类型，以数字标示，默认15为杀死，本步可省略直接按回车键（常用为-9） h：显示可输入的命令帮助菜单 htophtop是一款第三方的命令行工具，它可以被视为是top的增强版，在Ubuntu下可使用apt install htop命令安装，下图是htop命令的运行界面：当了解了top运行界面的各种参数的含义后，htop运行界面就变得不言而喻了，下面简要介绍一下可以在htop运行界面执行的相关命令： 优势综上所述，htop相比top有以下优势： 彩色标识CPU、内存、Swap分区 CPU、内存、Swap分区使用情况直观易懂 底部有命令提示 支持方向键选择进程]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[curl wget]]></title>
+    <url>%2F2018%2F09%2F19%2Fcurl-wget%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[terminal与shell]]></title>
+    <url>%2F2018%2F09%2F19%2Fterminal-shell%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[强大的autojump]]></title>
+    <url>%2F2018%2F09%2F19%2Fautojump%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[那么，你想在安全行业工作吗？]]></title>
     <url>%2F2018%2F09%2F18%2Fso-you-want-to-work-in-security%2F</url>
     <content type="text"><![CDATA[本文翻译自https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23 ，正文如下： 每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。 警告：这不像电影。在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。 没有标准或完美的课程。安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设……然后找出如何最好地修复（或利用）它们。我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！在文化方面，我建议阅读黑客宣言或如何成为一名黑客，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自我的Twitter安全列表上的人。 停止阅读，开始做。这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。 写代码。我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。 破坏代码。花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用https://www.hackthissite.org ，并在https://infosec.rocks 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点这里。或者查找并报告你使用的实际软件中的bug。有许多软件供应商为安全漏洞提供现金奖励，包括Chrome和Google，以及Internet Bug Bounty计划涵盖的一些核心开源项目。除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（bugtraq，fulldisclosure，oss-sec）。 分享知识。我开始了解安全是从大学中由同龄人组织的一个名为SigMil的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的DEFCON朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全书籍或杂志，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。分享知识很重要，原因如下： 分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。 我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。 我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。 把爱传出去。 练习你的沟通。在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对FUD(即恐惧、不确定、怀疑)，你必须让人们不受欢迎，然后专注于危机之外的行动。所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。 期望努力工作，有时会失败。也许这很明显，但值得明确表示。安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。 （尝试）保持乐观。由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者说出我们为什么都失败的完全雄辩点。现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。 请求帮忙。如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。如果您需要帮助，请尽管问。只要确保你做尽职调查，尽可能让人们帮助你。大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。 祝你好运并且快乐Hacking！我偶然发现了一些其他安全职业建议的想法： Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法http://krebsonsecurity.com/tag/security-career-advice/ 我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议https://noncombatant.org/2016/06/20/get-into-security-engineering Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html 译者注本文作者为Parisa Tabriz，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。]]></content>
@@ -52,7 +90,7 @@
   <entry>
     <title><![CDATA[使用Zsh替代Bash]]></title>
     <url>%2F2018%2F09%2F18%2Fzsh%2F</url>
-    <content type="text"><![CDATA[众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详细命令，具体如下：1234# 通过curl安装sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"# 通过wget安装sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"]]></content>
+    <content type="text"><![CDATA[众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详细命令，具体如下：1234# 通过curl安装sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"# 通过wget安装sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 安装完成后，会在当前用户的家目录下生成多个隐藏文件：其中.zshrc类似于.bashrc，存放zsh的配置信息；.zsh_history类似于.bash_history，存放zsh的命令历史记录；.oh-my-zsh的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的themes文件夹下主要存放自带的主题，plugins文件夹下主要存放自带的插件，custom文件夹下主要存放用户自己下载的主题和插件。 配置Oh My Zsh的主要配置都位于$HOME/.zshrc文件中，主要配置如下：12345678910# 配置主题，默认为自带的robbyrussell主题，# 个人喜欢自带的ys主题ZSH_THEME="ys"# 配置插件，默认只启用了自带的git插件,# 要启用更多的插件可直接在括号中写入，# 必须是自带的插件或已下载到指定位置的插件plugins=( git) 插件Zsh的强大之处就在于它有相当多的插件，只需安装相关插件，并进行配置，即可体验相应功能。Oh My Zsh安装并启用插件相当简便，所以，可把Oh My Zsh当成是一个Zsh的插件管理器。个人常用的插件如下： gitOh My Zsh自带的插件，用于显示Git仓库的分支等信息。 autojumpOh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，apt install autojump即可。 zsh-autosuggestionsZsh下的命令自动建议插件，使用如下命令即可安装：1git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-autosuggestions zsh-syntax-highlightingZsh下的命令语法高亮插件，使用如下命令即可安装：1git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting 当安装并启用以上的所有插件后，$HOME/.zshrc文件中插件相关配置应该是下面这样的：123456789plugins=( git autojump zsh-autosuggestions zsh-syntax-highlighting)source $ZSH/oh-my-zsh.shsource ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 尾巴Oh My Zsh自带了很多主题，在这里可以查看每个主题的显示效果，可根据自己的喜好选择合适的主题，值得注意的是，当在$HOME/.zshrc配置文件中将主题设置为random时，它每次会选择随机的主题。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -578,8 +616,8 @@
       </categories>
       <tags>
         <tag>渗透</tag>
-        <tag>计算机取证</tag>
         <tag>Linux</tag>
+        <tag>计算机取证</tag>
       </tags>
   </entry>
   <entry>

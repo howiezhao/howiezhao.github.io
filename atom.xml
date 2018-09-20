@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-09-18T10:00:22.151Z</updated>
+  <updated>2018-09-19T12:39:04.595Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,86 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>top的增强版：htop</title>
+    <link href="https://howiezhao.github.io/2018/09/19/htop-top/"/>
+    <id>https://howiezhao.github.io/2018/09/19/htop-top/</id>
+    <published>2018-09-19T09:50:14.000Z</published>
+    <updated>2018-09-19T12:39:04.595Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>top是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是<code>top</code>命令的运行界面：<br><img src="/images/top.PNG" alt="top">top的运行结果可以大致分为7个部分：</p><ul><li>第1行显示了<strong>系统</strong>概况</li><li>第2行显示了<strong>进程</strong>概况</li><li>第3行显示了<strong>CPU</strong>概况</li><li>第4行显示了<strong>内存</strong>概况</li><li>第5行显示了<strong>Swap分区</strong>概况</li><li>第6行为空行，用以显示运行命令时输入的<strong>参数</strong></li><li>剩下部分则为<strong>每个进程的详细信息</strong><a id="more"></a><h3 id="第1行"><a href="#第1行" class="headerlink" title="第1行"></a>第1行</h3></li></ul><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>top -</td><td>系统概况</td></tr><tr><td>18:37:24</td><td>当前系统时间</td></tr><tr><td>up 130 days, 6:22,</td><td>系统已运行时间</td></tr><tr><td>1 user,</td><td>当前登录用户数</td></tr><tr><td>load average: 0.02, 0.04, 0.00</td><td>系统平均负载，三个数值分别为1分钟、5分钟、15分钟前到现在的平均值。</td></tr></tbody></table><h3 id="第2行"><a href="#第2行" class="headerlink" title="第2行"></a>第2行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Tasks:</td><td>进程(任务)概况</td></tr><tr><td>23 total,</td><td>总进程数</td></tr><tr><td>1 running,</td><td>运行的进程数</td></tr><tr><td>22 sleeping,</td><td>睡眠的进程数</td></tr><tr><td>0 stopped,</td><td>停止的进程数</td></tr><tr><td>0 zombie</td><td>僵尸进程数</td></tr></tbody></table><h3 id="第3行"><a href="#第3行" class="headerlink" title="第3行"></a>第3行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Cpu(s):</td><td>CPU概况</td></tr><tr><td>3.7%us,</td><td>用户(user)进程占用CPU百分率</td></tr><tr><td>0.7%sy,</td><td>系统(system)进程占用CPU百分率</td></tr><tr><td>0.0%ni,</td><td>用户进程空间内改变过优先级(niced)的进程占用CPU百分比</td></tr><tr><td>95.7%id,</td><td>CPU空闲(idle)率</td></tr><tr><td>0.0%wa,</td><td>等待(wait)IO的CPU时间百分比</td></tr><tr><td>0.0%hi,</td><td>硬中断(hardware interrupt)占用CPU的百分比</td></tr><tr><td>0.0%si,</td><td>软中断(software interrupt)占用CPU的百分比</td></tr><tr><td>0.0%st</td><td></td></tr></tbody></table><h3 id="第4行"><a href="#第4行" class="headerlink" title="第4行"></a>第4行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Mem:</td><td>内存(memory)概况，数值以kb为单位</td></tr><tr><td>524288k total,</td><td>内存总量</td></tr><tr><td>278140k used,</td><td>内存使用量</td></tr><tr><td>246148k free,</td><td>内存空闲量</td></tr><tr><td>0k buffers</td><td>缓冲的内存量</td></tr></tbody></table><h3 id="第5行"><a href="#第5行" class="headerlink" title="第5行"></a>第5行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Swap:</td><td>Swap分区概况，数值以kb为单位</td></tr><tr><td>65536k total,</td><td>Swap分区总量</td></tr><tr><td>65536k used,</td><td>Swap分区使用量</td></tr><tr><td>0k free,</td><td>Swap分区空闲量</td></tr><tr><td>28800k cached</td><td>缓冲的Swap分区量</td></tr></tbody></table><h3 id="剩下部分"><a href="#剩下部分" class="headerlink" title="剩下部分"></a>剩下部分</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>PID</td><td>进程号</td></tr><tr><td>USER</td><td>进程创建者</td></tr><tr><td>PR</td><td>进程优先级</td></tr><tr><td>NI</td><td>nice值。越小优先级越高，最小-20，最大20（用户设置最大19）</td></tr><tr><td>VIRT</td><td>进程使用的虚拟(virtual)内存总量，单位kb。VIRT=SWAP+RES</td></tr><tr><td>RES</td><td>进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA</td></tr><tr><td>SHR</td><td>共享(share)内存大小，单位kb</td></tr><tr><td>S</td><td>进程状态。D=不可中断的睡眠状态，R=运行态，S=睡眠态，T=跟踪/停止态，Z=僵尸态</td></tr><tr><td>%CPU</td><td>进程占用CPU百分比</td></tr><tr><td>%MEM</td><td>进程占用内存百分比</td></tr><tr><td>TIME+</td><td>进程运行时间</td></tr><tr><td>COMMAND</td><td>运行进程时所使用的命令</td></tr></tbody></table><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>在<code>top</code>命令运行界面也可以输入相关命令，具体如下：</p><ul><li><code>q</code>：退出<code>top</code>运行界面</li><li><code>P</code>：以占据CPU百分比排序</li><li><code>M</code>：以占据内存百分比排序</li><li><code>T</code>：以累积占用CPU时间排序</li><li><code>s</code>：修改刷新时间间隔，默认每隔3秒刷新信息。按下s键，然后按下数字，即可修改刷新时间间隔为你输入的数字，单位为秒。例如：按下s键，在按数字1键，即可实现每秒刷新一次</li><li>回车或空格：手动立即刷新</li><li><code>k</code>：终止指定的进程。按下k键，再输入要杀死的进程的pid，再按回车键，选择信号类型，以数字标示，默认15为杀死，本步可省略直接按回车键（常用为-9）</li><li><code>h</code>：显示可输入的命令帮助菜单</li></ul><h2 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h2><p>htop是一款第三方的命令行工具，它可以被视为是top的增强版，在Ubuntu下可使用<code>apt install htop</code>命令安装，下图是<code>htop</code>命令的运行界面：<br><img src="/images/htop.PNG" alt="htop">当了解了<code>top</code>运行界面的各种参数的含义后，<code>htop</code>运行界面就变得不言而喻了，下面简要介绍一下可以在htop运行界面执行的相关命令：</p><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>综上所述，htop相比top有以下优势：</p><ul><li>彩色标识CPU、内存、Swap分区</li><li>CPU、内存、Swap分区使用情况直观易懂</li><li>底部有命令提示</li><li>支持方向键选择进程</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;top&quot;&gt;&lt;a href=&quot;#top&quot; class=&quot;headerlink&quot; title=&quot;top&quot;&gt;&lt;/a&gt;top&lt;/h2&gt;&lt;p&gt;top是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是&lt;code&gt;top&lt;/code&gt;命令的运行界面：&lt;br&gt;&lt;img src=&quot;/images/top.PNG&quot; alt=&quot;top&quot;&gt;top的运行结果可以大致分为7个部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第1行显示了&lt;strong&gt;系统&lt;/strong&gt;概况&lt;/li&gt;
+&lt;li&gt;第2行显示了&lt;strong&gt;进程&lt;/strong&gt;概况&lt;/li&gt;
+&lt;li&gt;第3行显示了&lt;strong&gt;CPU&lt;/strong&gt;概况&lt;/li&gt;
+&lt;li&gt;第4行显示了&lt;strong&gt;内存&lt;/strong&gt;概况&lt;/li&gt;
+&lt;li&gt;第5行显示了&lt;strong&gt;Swap分区&lt;/strong&gt;概况&lt;/li&gt;
+&lt;li&gt;第6行为空行，用以显示运行命令时输入的&lt;strong&gt;参数&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;剩下部分则为&lt;strong&gt;每个进程的详细信息&lt;/strong&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>curl wget</title>
+    <link href="https://howiezhao.github.io/2018/09/19/curl-wget/"/>
+    <id>https://howiezhao.github.io/2018/09/19/curl-wget/</id>
+    <published>2018-09-19T09:50:05.000Z</published>
+    <updated>2018-09-19T09:50:05.128Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>terminal与shell</title>
+    <link href="https://howiezhao.github.io/2018/09/19/terminal-shell/"/>
+    <id>https://howiezhao.github.io/2018/09/19/terminal-shell/</id>
+    <published>2018-09-19T09:00:22.000Z</published>
+    <updated>2018-09-19T09:01:03.339Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>强大的autojump</title>
+    <link href="https://howiezhao.github.io/2018/09/19/autojump/"/>
+    <id>https://howiezhao.github.io/2018/09/19/autojump/</id>
+    <published>2018-09-19T08:59:39.000Z</published>
+    <updated>2018-09-19T09:01:34.957Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>那么，你想在安全行业工作吗？</title>
@@ -117,17 +197,15 @@
     <link href="https://howiezhao.github.io/2018/09/18/zsh/"/>
     <id>https://howiezhao.github.io/2018/09/18/zsh/</id>
     <published>2018-09-18T04:09:36.000Z</published>
-    <updated>2018-09-18T10:12:41.178Z</updated>
+    <updated>2018-09-19T08:59:07.125Z</updated>
     
-    <content type="html"><![CDATA[<p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p><p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中<code>.zshrc</code>类似于<code>.bashrc</code>，存放zsh的配置信息；<br><code>.zsh_history</code>类似于<code>.bash_history</code>，存放zsh的命令历史记录；<br><code>.oh-my-zsh</code>的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的<code>themes</code>文件夹下主要存放自带的主题，<code>plugins</code>文件夹下主要存放自带的插件，<code>custom</code>文件夹下主要存放用户自己下载的主题和插件。<br><a id="more"></a></p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Oh My Zsh的主要配置都位于<code>$HOME/.zshrc</code>文件中，主要配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置主题，默认为自带的robbyrussell主题，</span></span><br><span class="line"><span class="comment"># 个人喜欢自带的ys主题</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置插件，默认只启用了自带的git插件,</span></span><br><span class="line"><span class="comment"># 要启用更多的插件可直接在括号中写入，</span></span><br><span class="line"><span class="comment"># 必须是自带的插件或已下载到指定位置的插件</span></span><br><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Zsh的强大之处就在于它有相当多的插件，只需安装相关插件，并进行配置，即可体验相应功能。Oh My Zsh安装并启用插件相当简便，所以，可把Oh My Zsh当成是一个Zsh的插件管理器。个人常用的插件如下：</p><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>Oh My Zsh自带的插件，用于显示Git仓库的分支等信息。</p><h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><p>Oh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，<code>apt install autojump</code>即可。</p><h3 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="noopener">zsh-autosuggestions</a></h3><p>Zsh下的命令自动建议插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure></p><h3 id="zsh-syntax-highlighting"><a href="#zsh-syntax-highlighting" class="headerlink" title="zsh-syntax-highlighting"></a><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">zsh-syntax-highlighting</a></h3><p>Zsh下的命令语法高亮插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p><p>当安装并启用以上的所有插件后，<code>$HOME/.zshrc</code>文件中插件相关配置应该是下面这样的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">  autojump</span><br><span class="line">  zsh-autosuggestions</span><br><span class="line">  zsh-syntax-highlighting</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"><span class="built_in">source</span> ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br></pre></td></tr></table></figure></p><h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>Oh My Zsh自带了很多主题，<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="noopener">在这里</a>可以查看每个主题的显示效果，可根据自己的喜好选择合适的主题，值得注意的是，当在<code>$HOME/.zshrc</code>配置文件中将主题设置为<code>random</code>时，它每次会选择随机的主题。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。&lt;/p&gt;
-&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;Zsh的安装很简单，在Ubun
-      
+      &lt;p&gt;众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。&lt;/p&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;Zsh的安装很简单，在Ubuntu中，只需要&lt;code&gt;apt install zsh&lt;/code&gt;一条命令即可，启用也很简单，&lt;code&gt;chsh -s $(which zsh)&lt;/code&gt;即可，但它的配置却相当复杂，由此诞生了&lt;a href=&quot;https://ohmyz.sh/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oh My Zsh&lt;/a&gt;项目，该项目的主要目的是简化Zsh的配置。&lt;br&gt;Oh My Zsh的官网给出了利用&lt;code&gt;curl&lt;/code&gt;或&lt;code&gt;wget&lt;/code&gt;安装的详细命令，具体如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 通过curl安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh -c &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 通过wget安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh -c &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后，会在当前用户的家目录下生成多个隐藏文件：&lt;br&gt;其中&lt;code&gt;.zshrc&lt;/code&gt;类似于&lt;code&gt;.bashrc&lt;/code&gt;，存放zsh的配置信息；&lt;br&gt;&lt;code&gt;.zsh_history&lt;/code&gt;类似于&lt;code&gt;.bash_history&lt;/code&gt;，存放zsh的命令历史记录；&lt;br&gt;&lt;code&gt;.oh-my-zsh&lt;/code&gt;的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的&lt;code&gt;themes&lt;/code&gt;文件夹下主要存放自带的主题，&lt;code&gt;plugins&lt;/code&gt;文件夹下主要存放自带的插件，&lt;code&gt;custom&lt;/code&gt;文件夹下主要存放用户自己下载的主题和插件。&lt;br&gt;
     
     </summary>
     
@@ -340,97 +418,6 @@
     
     
       <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>巴科斯范式</title>
-    <link href="https://howiezhao.github.io/2018/09/12/bnf/"/>
-    <id>https://howiezhao.github.io/2018/09/12/bnf/</id>
-    <published>2018-09-12T13:51:01.000Z</published>
-    <updated>2018-09-12T13:52:03.353Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>基于人的信息收集</title>
-    <link href="https://howiezhao.github.io/2018/09/09/human-based-information-gathering/"/>
-    <id>https://howiezhao.github.io/2018/09/09/human-based-information-gathering/</id>
-    <published>2018-09-09T05:43:26.000Z</published>
-    <updated>2018-09-11T04:30:06.784Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p><h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;照片&quot;&gt;&lt;a href=&quot;#照片&quot; class=&quot;headerlink&quot; title=&quot;照片&quot;&gt;&lt;/a&gt;照片&lt;/h2&gt;&lt;p&gt;根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。&lt;/p&gt;
-&lt;h2 id=&quot;WiFi&quot;&gt;&lt;a
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="社会工程学" scheme="https://howiezhao.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker入坑指南</title>
-    <link href="https://howiezhao.github.io/2018/08/31/docker/"/>
-    <id>https://howiezhao.github.io/2018/08/31/docker/</id>
-    <published>2018-08-31T08:59:28.000Z</published>
-    <updated>2018-09-10T14:14:39.932Z</updated>
-    
-    <content type="html"><![CDATA[<p>Docker是一种基于Linux的容器化技术，类似于轻量的虚拟机。它采用C/S架构，使用Go语言开发。</p><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker分为2个版本：<strong>社区版</strong>(Community Edition, CE)和<strong>企业版</strong>(Enterprise Edition, EE)，顾名思义，企业版是收费的。针对macOS10.10.3和Windows 10，Docker还推出了<a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop又分为2个渠道(channel)，<strong>稳定渠道</strong>(Stable)和<strong>抢先渠道</strong>(Edge)，需要注意的是，Docker Desktop对系统是有要求的，例如，针对Win10的<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a>因为要用到Hyper-V虚拟机，所以要求系统是64位专业版或企业版并开启Hyper-V功能。针对老版本的Windows或macOS，可以使用<a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个VirtualBox虚拟机。<br>使用<code>docker version</code>可以查看docker版本，直接输入<code>docker</code>可以查看docker相关命令。<br><a id="more"></a></p><h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><strong>镜像</strong>(image)文件可以用来生成容器实例，其类似于在虚拟机中安装操作系统时所使用的ISO镜像。<br>image文件可以包含一个tag(标签)，即版本号。<br>你可以使用远程仓库中别人制作好的image文件，也可以自己制作image文件。要制作image文件就要编写<strong>Dockerfile</strong>文件，其类似于Makefile文件<br>image的常用命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image ls</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image rm [image-name]</span><br><span class="line">docker rmi [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull [image-name]</span><br><span class="line">docker pull [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure></p><h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>image文件生成的容器(container)实例，本身也是一个文件，称为<strong>容器文件</strong>。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。<br>类似于在虚拟机中安装的操作系统，其本身会在硬盘中创建一系列文件，当关闭操作系统时，相应的文件并不会删除。<br>container的常用命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动抓取下来</span></span><br><span class="line">docker container run [image-name]</span><br><span class="line">docker run [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container rm [container-id]</span><br><span class="line">docker rm [container-id]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> [container-id]</span><br><span class="line">docker <span class="built_in">kill</span> [container-id]</span><br></pre></td></tr></table></figure></p><h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>(repository)是不同标签的image的集合，注册处(registry)又是不同仓库的集合，Docker的官方Registry是<a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，类似于GitHub。使用<code>docker login</code>可以登录到自己在Docker Hub上注册的帐号。值得注意的是，国内访问Docker Hub速度较慢，建议设置代理或使用<a href="https://www.docker-cn.com/registry-mirror" target="_blank" rel="noopener">国内镜像站</a>。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从Docker Hub中拉取。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Docker是一种基于Linux的容器化技术，类似于轻量的虚拟机。它采用C/S架构，使用Go语言开发。&lt;/p&gt;
-&lt;h2 id=&quot;版本&quot;&gt;&lt;a href=&quot;#版本&quot; class=&quot;headerlink&quot; title=&quot;版本&quot;&gt;&lt;/a&gt;版本&lt;/h2&gt;&lt;p&gt;Docker分为2个版本：&lt;strong&gt;社区版&lt;/strong&gt;(Community Edition, CE)和&lt;strong&gt;企业版&lt;/strong&gt;(Enterprise Edition, EE)，顾名思义，企业版是收费的。针对macOS10.10.3和Windows 10，Docker还推出了&lt;a href=&quot;https://www.docker.com/products/docker-desktop&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker Desktop&lt;/a&gt;，Docker Desktop又分为2个渠道(channel)，&lt;strong&gt;稳定渠道&lt;/strong&gt;(Stable)和&lt;strong&gt;抢先渠道&lt;/strong&gt;(Edge)，需要注意的是，Docker Desktop对系统是有要求的，例如，针对Win10的&lt;a href=&quot;https://store.docker.com/editions/community/docker-ce-desktop-windows&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker for Windows&lt;/a&gt;因为要用到Hyper-V虚拟机，所以要求系统是64位专业版或企业版并开启Hyper-V功能。针对老版本的Windows或macOS，可以使用&lt;a href=&quot;https://docs.docker.com/toolbox/overview/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker Toolbox&lt;/a&gt;，它会附带安装一个VirtualBox虚拟机。&lt;br&gt;使用&lt;code&gt;docker version&lt;/code&gt;可以查看docker版本，直接输入&lt;code&gt;docker&lt;/code&gt;可以查看docker相关命令。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Git小记</title>
-    <link href="https://howiezhao.github.io/2018/08/31/git/"/>
-    <id>https://howiezhao.github.io/2018/08/31/git/</id>
-    <published>2018-08-31T08:59:18.000Z</published>
-    <updated>2018-09-11T05:03:36.197Z</updated>
-    
-    <content type="html"><![CDATA[<p>Git是目前最流行的<strong>分布式版本控制系统</strong>(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p><ul><li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令配置</li><li>某个用户主目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令配置</li><li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li></ul><p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>一般来说，针对新安装的Git环境，要配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.name <span class="string">"Howie Zhao"</span></span><br><span class="line">git config --global user.email howiezhaohr@hotmail.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br><a id="more"></a></p><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>要开始对某个项目进行版本控制，需要先在其所在路径下执行<code>git init</code>进行初始化，此命令会在当前路径下创建一个<code>.git</code>的隐藏文件夹，这就是Git仓库目录。<br>Git分为3个区域，Git仓库、工作目录、暂存区域：</p><ul><li><strong>Git仓库目录</strong>是Git用来保存项目的元数据和对象数据库的地方。这是Git中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</li><li><strong>工作目录</strong>是对项目的某个版本独立提取出来的内容。这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</li><li><strong>暂存区域</strong>是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”，不过一般说法还是叫暂存区域。</li></ul><p>基本的 Git 工作流程如下：</p><ol><li>在工作目录中修改文件。</li><li>暂存文件，将文件的快照放入暂存区域。</li><li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li></ol><p>如果Git目录中保存着的特定版本文件，就属于<strong>已提交状态</strong>(committed)。如果作了修改并已放入暂存区域，就属于<strong>已暂存状态</strong>(staged)。如果自上次取出后，作了修改但还没有放到暂存区域，就是<strong>已修改状态</strong>(modified)。</p><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>使用<code>git add test.txt</code>可以将需要被追踪的文件(test.txt)添加到缓存区，使用<code>git commit -m &#39;first commit&#39;</code>可以将缓存区的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息，使用<code>git push</code>可以将本地仓库推送到远程仓库，使用<code>git clone</code>可以将远程仓库克隆到本地，使用<code>git pull</code>可以将远程仓库的更新拉取到本地仓库。<br>使用<code>git status</code>可以查看Git仓库状态，使用<code>git log</code>可以查看commit记录。</p><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p><strong>直接记录快照，而非差异比较</strong>：Git与其他版本控制系统的主要区别在于对待数据的方法，其他的VCS主要记录不同版本之间的差异，而Git则相当于直接记录不同版本的快照。<br><strong>近乎所有操作都是本地执行</strong>：在Git中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。<br><strong>Git保证完整性</strong>：Git中所有数据在存储前都计算校验和(SHA-1)，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。若你在传送过程中丢失信息或损坏文件，Git就能发现。<br><strong>Git一般只添加数据</strong>：你执行的Git操作，几乎只往Git数据库中增加数据。很难让Git执行任何不可逆操作，或者让它以任何方式清除数据。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>应明确一点，Git是由Linux创始人Linus Torvalds开发的分布式版本控制系统，而GitHub是使用Git实现的代码托管网站，两者并非一类。</p><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>在命令行中直接输入<code>git</code>，可查看相关命令，要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《Pro Git》</a>一书。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Git是目前最流行的&lt;strong&gt;分布式版本控制系统&lt;/strong&gt;(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。&lt;/p&gt;
-&lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;p&gt;Git共有3个配置文件，分别是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/etc/gitconfig&lt;/code&gt;文件用于配置所有用户的配置信息，使用&lt;code&gt;git config --system&lt;/code&gt;命令配置&lt;/li&gt;
-&lt;li&gt;某个用户主目录下的&lt;code&gt;.gitconfig&lt;/code&gt;文件只适用于该用户，使用&lt;code&gt;git config --global&lt;/code&gt;命令配置&lt;/li&gt;
-&lt;li&gt;当前Git仓库的&lt;code&gt;.git/config&lt;/code&gt;仅针对当前项目，直接使用&lt;code&gt;git config&lt;/code&gt;命令进行配置&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;注意：每一个级别会覆盖上一级别的配置，所以&lt;code&gt;.git/config&lt;/code&gt;的配置变量会覆盖&lt;code&gt;/etc/gitconfig&lt;/code&gt;中的配置变量。&lt;br&gt;一般来说，针对新安装的Git环境，要配置如下信息：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 配置提交时使用的用户名和邮箱，必须配置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;Howie Zhao&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email howiezhaohr@hotmail.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 开启颜色显示&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global color.ui &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：&lt;code&gt;git config --global core.editor emacs&lt;/code&gt;。&lt;br&gt;最后，你可以使用&lt;code&gt;git config --list&lt;/code&gt;来查看所有配置信息。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
     
   </entry>
   
