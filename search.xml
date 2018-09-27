@@ -1,6 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[盘点那些互联网公司的学生优惠]]></title>
+    <url>%2F2018%2F09%2F26%2Fit-student-discount%2F</url>
+    <content type="text"><![CDATA[JetBrainsJetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— Intellij IDEA，Python的IDE —— PyCharm，JavaScript的IDE —— WebStorm，C/C++的IDE —— CLion等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供免费授权计划，学生只要验证学生身份即可免费使用JetBrains的所有IDE。 Microsoft ImagineMicrosoft Imagine原名为DreamSpark，是微软为学生提供的一个资源集合，它包括了一些软件和服务，学生只要验证学生身份即可使用其中的工具。个人认为，Imagine相比之前的DreamSpark，为学生提供的免费资源少了许多。具体而言，它提供如下资源： Parallels Desktop for Mac Pro Edition：macOS上最好的虚拟机产品，提供免费试用3个月 Visual Studio Community 2017：原本就是免费的 面向学生的 Microsoft Azure 入门版 Microsoft虚拟学院课程：原本就是免费的 Pluralsight SQL Server 2017 Developer Edition Visual Studio Code：微软推出的编辑器，原本就是开源免费的 Visual Studio for Mac：原本就是免费的 Windows Embedded 8.1 Industry Pro Update Windows Server 2016 Windows应用商店免费开发人员帐户 WintellectNow Xamarin Studio Community Edition：原本就是免费的 Visual Studio的PHP Tools插件 GitHub Student Developer PackGitHub学生开发者包（GitHub Student Developer Pack）是GitHub与其他公司一起创建的，旨在让学生从一个地方免费访问最好的开发者工具，这样他们就可以边做边学。其中包括的工具有： Algolia Atom：GitHub推出的编辑器，原本就是开源免费的 AWS Bitnami CARTO CrowdFlower Datadog DigitalOcean：美国一家VPS提供商，提供50美元优惠劵 Flatiron School GitHub无限制的私人仓库 Gitkraken：跨平台的Git GUI客户端，提供免费一年的专业帐户 HackHands Heroku JetBrains系列IDE Namecheap：美国的一家域名注册商，提供免费一年SSL证书、一年.me后缀域名优惠 SendGrid Sentry Stripe Taplytics Thinkful Transifex Travis CI Unreal Engine 学生只要验证学生身份就可以使用GitHub学生开发者包中提供的工具。 阿里云云翼计划学生验证学生身份后，每月仅需9.9元即可租用一台阿里云服务器。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Jupyter Notebook常用扩展]]></title>
+    <url>%2F2018%2F09%2F25%2Fjupyter-notebook-extensions%2F</url>
+    <content type="text"><![CDATA[扩展机制在介绍常用扩展之前，有必要先来介绍一下 jupyter_contrib_nbextensions与其说这是一个插件，倒不如说这是一群插件，该插件集合了大多数的Jupyter Notebook常用扩展。使用pip install jupyter_contrib_nbextensions命令即可安装，安装完成后使用jupyter contrib nbextension install --user命令进行些许配置，参数--user指定安装到当前用户家目录下的.jupyter文件夹下。等到安装并配置完成后，打开Jupyter Notebook网页，会出现Nbextensions选项卡，点击进入此选项卡中，可以启用或禁用相应的插件。 ##]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[editorconfig 是什么]]></title>
+    <url>%2F2018%2F09%2F23%2Fwhat-is-editorconfig%2F</url>
+    <content type="text"><![CDATA[开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了EditorConfig，它包含了一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。一个典型的 EditorConfig 配置文件如下所示：123456789101112131415161718192021222324252627282930313233# 这是一行注释，以#开头# 表示此文件为最顶级root = true# 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行[*]end_of_line = lfinsert_final_newline = true# 匹配所有以 js 和 py 为后缀名的文件# 设定其编码为 UTF-8[*.&#123;js,py&#125;]charset = utf-8# 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格[*.py]indent_style = spaceindent_size = 4# 设定 Makefile 文件的缩进为 Tab[Makefile]indent_style = tab# 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格[lib/**.js]indent_style = spaceindent_size = 2# 设定 package.json 和 .travis.yml 的缩进为 2 个空格[&#123;package.json,.travis.yml&#125;]indent_style = spaceindent_size = 2 此配置文件应该保存为.editorconfig并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见root = true为止。有很多项目在初始化时都会生成相应的.editorconfig文件，比如 Angular。另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[写代码应该用哪种字体]]></title>
+    <url>%2F2018%2F09%2F23%2Fcode-font%2F</url>
+    <content type="text"><![CDATA[等宽字体与比例字体等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 i，j 显得两侧余白较多，而字母 w，m 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。Windows 中常用的等宽字体为 Consolas；macOS 中常用的等宽字体为 Menlo；Linux 中常用的等宽字体为 Mono。 衬线字体与非衬线字体顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无衬线，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为宋体，非衬线字体为黑体，如下：衬线字体常用于印刷业，而且特别适用于长篇文章段落；非衬线字体简洁大方，适用于广告、标志、牌子等短句。另外，系统、程序和网页中的字体也几乎都是非衬线字体，即使是很长的段落，这是因为显示器分辨率低，字体不能减小，如果用衬线字体，那些边边角角就很难用像素显示清楚，结果反而不利于阅读。Google 在 2015 年就将其原本的衬线体 Logo 换成了无衬线体 Logo:我们在写 Word 文档时，常用的英文衬线字体就是 Times New Roman；而在做 PPT 时，个人倾向于使用非衬线字体微软雅黑。 编程写代码应该使用的字体对于衬线或非衬线要求不大，但强烈建议使用等宽字体，这样可以便于代码对齐，因为比例字体的宽度不定，这会对代码对齐造成极大的困难。另外，还应该对特殊字符有较高的辨识度，比如 I（大写i）、l（小写L）、1（数字1），0（数字0）、O（大写o） 等。基于以上，个人倾向于使用 Consolas，它是 Windows 中自带的一款等宽、非衬线字体。 术语在下载别的字体时，可能会遇到相关术语，如下： sans：无衬线体 gothic：哥特体，即无衬线体 mono：等宽字体 bold：粗体 italic：斜体 bolditalic：加粗斜体 regular：常规体 sc：即 Simplified Chinese，简体中文 ts：即 Traditional Chinese，繁体中文 配色关于代码配色，就真是个“仁者见仁，智者见智”的问题了，个人要求满足以下两点： 采用黑色背景 官网提供多种编辑器的支持 综上，个人倾向于使用Dracula。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[开发环境代表什么]]></title>
+    <url>%2F2018%2F09%2F23%2Fwhat-is-development-environment%2F</url>
+    <content type="text"><![CDATA[按照编程语言的执行原理，一般将其分为编译型语言（如 C）和解释型语言（如 Python），对于编译型语言来说，它的开发环境就代表该语言的编译器和其基本类库，对于解释型语言来说，它的开发环境就代表该语言的解释器和其基本类库。请注意，这里我并没有提到编辑器，因为编辑器并不属于每种语言所特有的范畴。对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种先编译后解释的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器/解释器、基本类库等于一体。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[谈谈SEO]]></title>
+    <url>%2F2018%2F09%2F23%2Ftalk-about-seo%2F</url>
+    <content type="text"><![CDATA[SEO，即搜索引擎优化(Search Engine Optimization)，下面列出几点SEO方面的建议： 页面的URL应该足够反映页面的内容]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[隐写术]]></title>
+    <url>%2F2018%2F09%2F22%2Fsteganography%2F</url>
+    <content type="text"><![CDATA[第一步拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 file 命令，直接输入 file a即可检查 a 文件的类型。知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索CTF或FLAG等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件HexViewer查看二进制信息。Linux 下可以使用 xxd 命令查看文件二进制数据。 图片隐写图片内容首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试谷歌搜图，或许可以发现更多信息。 ExifExif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片： JPEGPNGGIFBMP音频隐写音频隐写一般会用到MP3stego，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。下载该软件后在其MP3Stego文件夹下会有 2 个命令：Encode和Decode，Encode命令用于隐写信息，Decode命令用于解密被隐写的信息，使用decode -X -P pass svega_stego.mp3即可从svega_stego.mp3文件中解码所需信息，-P指定解密密码。 视频隐写其他隐写Word 文档Word 文档可能会隐藏某些信息，遇到 doc 文档可以尝试在 Word 选项中选择显示并打开隐藏文字选项。如下所示：像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。类似的题可以参考Fonts,认真你就输了等等。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[微软平台技术简介]]></title>
+    <url>%2F2018%2F09%2F22%2Fmicrosoft-technology%2F</url>
+    <content type="text"><![CDATA[Windows微软最初的操作系统的DOS，DOS只是一个命令行形式，后来 .NETWindows Phone]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[网站统计与分析]]></title>
+    <url>%2F2018%2F09%2F22%2Fweb-analytics%2F</url>
+    <content type="text"><![CDATA[几个术语 PV：Page View，即页面浏览量或点击量，用户每次刷新即被计算一次。 UV：Unique Visitor，指独立访客数，以cookie为依据，访问网站的一台电脑客户端为一个访客。一天内相同的客户端只会被计算一次。 IP：指独立IP数。一天内相同IP地址只被计算一次。 相关工具有许多第三方的工具可以帮助站长统计和分析网站流量，比如百度统计、腾讯分析、Google Analytics(GA)等。个人经常使用Google Analytics。这类工具的原理大致为：它们会生成一段特定的JS代码，站长需要将这段代码插入到自己网站的页面中，当访客访问网站时，这段代码会收集访客的行为信息，并上传到它们的服务器上。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[版本号的意义]]></title>
+    <url>%2F2018%2F09%2F21%2Fversion-number%2F</url>
+    <content type="text"><![CDATA[软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即X.Y.Z格式，其中： X代表主版本号，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段； Y代表次版本号，增删功能时增加Y，同时重置Z为0； Z代表修订号，修复Bug时增加Z。 除此之外，还会有一些修饰词，比如： alpha表示内部测试版； beta表示公开测试版； rc即Release Candidate，表示候选版本，即将作为正式版发布； release表示正式发行版； lts即Long Term Support，表示长期支持版。 有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。随着版本号定义的越来越混乱，GitHub起草了一个语义化版本(Semantic Versioning)规范，为开源项目做出了一定指导意义。]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[top的增强版：htop]]></title>
     <url>%2F2018%2F09%2F19%2Fhtop-top%2F</url>
     <content type="text"><![CDATA[toptop是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是top命令的运行界面：top的运行结果可以大致分为7个部分： 第1行显示了系统概况 第2行显示了进程概况 第3行显示了CPU概况 第4行显示了内存概况 第5行显示了Swap分区概况 第6行为空行，用以显示运行命令时输入的参数 剩下部分则为每个进程的详细信息 第1行 字符 含义 top - 系统概况 18:37:24 当前系统时间 up 130 days, 6:22, 系统已运行时间 1 user, 当前登录用户数 load average: 0.02, 0.04, 0.00 系统平均负载，三个数值分别为1分钟、5分钟、15分钟前到现在的平均值。 第2行 字符 含义 Tasks: 进程(任务)概况 23 total, 总进程数 1 running, 运行的进程数 22 sleeping, 睡眠的进程数 0 stopped, 停止的进程数 0 zombie 僵尸进程数 第3行 字符 含义 Cpu(s): CPU概况 3.7%us, 用户(user)进程占用CPU百分率 0.7%sy, 系统(system)进程占用CPU百分率 0.0%ni, 用户进程空间内改变过优先级(niced)的进程占用CPU百分比 95.7%id, CPU空闲(idle)率 0.0%wa, 等待(wait)IO的CPU时间百分比 0.0%hi, 硬中断(hardware interrupt)占用CPU的百分比 0.0%si, 软中断(software interrupt)占用CPU的百分比 0.0%st 第4行 字符 含义 Mem: 内存(memory)概况，数值以kb为单位 524288k total, 内存总量 278140k used, 内存使用量 246148k free, 内存空闲量 0k buffers 缓冲的内存量 第5行 字符 含义 Swap: Swap分区概况，数值以kb为单位 65536k total, Swap分区总量 65536k used, Swap分区使用量 0k free, Swap分区空闲量 28800k cached 缓冲的Swap分区量 剩下部分 字符 含义 PID 进程号 USER 进程创建者 PR 进程优先级 NI nice值。越小优先级越高，最小-20，最大20（用户设置最大19） VIRT 进程使用的虚拟(virtual)内存总量，单位kb。VIRT=SWAP+RES RES 进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA SHR 共享(share)内存大小，单位kb S 进程状态。D=不可中断的睡眠状态，R=运行态，S=睡眠态，T=跟踪/停止态，Z=僵尸态 %CPU 进程占用CPU百分比 %MEM 进程占用内存百分比 TIME+ 进程运行时间 COMMAND 运行进程时所使用的命令 命令在top命令运行界面也可以输入相关命令，具体如下： q：退出top运行界面 P：以占据CPU百分比排序 M：以占据内存百分比排序 T：以累积占用CPU时间排序 s：修改刷新时间间隔，默认每隔3秒刷新信息。按下s键，然后按下数字，即可修改刷新时间间隔为你输入的数字，单位为秒。例如：按下s键，在按数字1键，即可实现每秒刷新一次 回车或空格：手动立即刷新 k：终止指定的进程。按下k键，再输入要杀死的进程的pid，再按回车键，选择信号类型，以数字标示，默认15为杀死，本步可省略直接按回车键（常用为-9） h：显示可输入的命令帮助菜单 htophtop是一款第三方的命令行工具，它可以被视为是top的增强版，在Ubuntu下可使用apt install htop命令安装，下图是htop命令的运行界面：当了解了top运行界面的各种参数的含义后，htop运行界面就变得不言而喻了，下面简要介绍一下可以在htop运行界面执行的相关命令： 优势综上所述，htop相比top有以下优势： 彩色标识CPU、内存、Swap分区 CPU、内存、Swap分区使用情况直观易懂 底部有命令提示 支持方向键选择进程]]></content>
@@ -90,7 +179,7 @@
   <entry>
     <title><![CDATA[使用Zsh替代Bash]]></title>
     <url>%2F2018%2F09%2F18%2Fzsh%2F</url>
-    <content type="text"><![CDATA[众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详细命令，具体如下：1234# 通过curl安装sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"# 通过wget安装sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 安装完成后，会在当前用户的家目录下生成多个隐藏文件：其中.zshrc类似于.bashrc，存放zsh的配置信息；.zsh_history类似于.bash_history，存放zsh的命令历史记录；.oh-my-zsh的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的themes文件夹下主要存放自带的主题，plugins文件夹下主要存放自带的插件，custom文件夹下主要存放用户自己下载的主题和插件。 配置Oh My Zsh的主要配置都位于$HOME/.zshrc文件中，主要配置如下：12345678910# 配置主题，默认为自带的robbyrussell主题，# 个人喜欢自带的ys主题ZSH_THEME="ys"# 配置插件，默认只启用了自带的git插件,# 要启用更多的插件可直接在括号中写入，# 必须是自带的插件或已下载到指定位置的插件plugins=( git) 插件Zsh的强大之处就在于它有相当多的插件，只需安装相关插件，并进行配置，即可体验相应功能。Oh My Zsh安装并启用插件相当简便，所以，可把Oh My Zsh当成是一个Zsh的插件管理器。个人常用的插件如下： gitOh My Zsh自带的插件，用于显示Git仓库的分支等信息。 autojumpOh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，apt install autojump即可。 zsh-autosuggestionsZsh下的命令自动建议插件，使用如下命令即可安装：1git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-autosuggestions zsh-syntax-highlightingZsh下的命令语法高亮插件，使用如下命令即可安装：1git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting 当安装并启用以上的所有插件后，$HOME/.zshrc文件中插件相关配置应该是下面这样的：123456789plugins=( git autojump zsh-autosuggestions zsh-syntax-highlighting)source $ZSH/oh-my-zsh.shsource ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 尾巴Oh My Zsh自带了很多主题，在这里可以查看每个主题的显示效果，可根据自己的喜好选择合适的主题，值得注意的是，当在$HOME/.zshrc配置文件中将主题设置为random时，它每次会选择随机的主题。]]></content>
+    <content type="text"><![CDATA[众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详细命令，具体如下：1234# 通过curl安装sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"# 通过wget安装sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 安装完成后，会在当前用户的家目录下生成多个隐藏文件：其中.zshrc类似于.bashrc，存放zsh的配置信息；.zsh_history类似于.bash_history，存放zsh的命令历史记录；.oh-my-zsh的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的themes文件夹下主要存放自带的主题，plugins文件夹下主要存放自带的插件，custom文件夹下主要存放用户自己下载的主题和插件。 配置Oh My Zsh的主要配置都位于$HOME/.zshrc文件中，主要配置如下：1234567891011121314151617# 配置主题，默认为自带的robbyrussell主题，# 个人喜欢自带的ys主题ZSH_THEME="ys"# 启动错误命令自动更正，默认是注释的ENABLE_CORRECTION="true"# 在命令执行的过程中，使用小红点进行提示# 默认是注释的COMPLETION_WAITING_DOTS="true"# 配置插件，默认只启用了自带的git插件,# 要启用更多的插件可直接在括号中写入，# 必须是自带的插件或已下载到指定位置的插件plugins=( git) 插件Zsh的强大之处就在于它有相当多的插件，只需安装相关插件，并进行配置，即可体验相应功能。Oh My Zsh安装并启用插件相当简便，所以，可把Oh My Zsh当成是一个Zsh的插件管理器。个人常用的插件如下： gitOh My Zsh自带的插件，用于显示Git仓库的分支等信息。 autojumpOh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，apt install autojump即可。 zsh-autosuggestionsZsh下的命令自动建议插件，使用如下命令即可安装：1git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-autosuggestions zsh-completionsZsh下的命令自动补全插件，使用如下命令即可安装：1git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions zsh-syntax-highlightingZsh下的命令语法高亮插件，使用如下命令即可安装：1git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting 当安装并启用以上的所有插件后，$HOME/.zshrc文件中插件相关配置应该是下面这样的：123456789101112plugins=( git autojump zsh-autosuggestions zsh-completions zsh-syntax-highlighting)source $ZSH/oh-my-zsh.shsource ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh# 值得注意的是，根据官方文档，zsh-syntax-highlighting插件需放在最后，# 并且要加上相应的source语句 尾巴Oh My Zsh自带了很多主题，在这里可以查看每个主题的显示效果，可根据自己的喜好选择合适的主题，值得注意的是，当在$HOME/.zshrc配置文件中将主题设置为random时，它每次会选择随机的主题。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -136,7 +225,7 @@
   <entry>
     <title><![CDATA[前端相关术语]]></title>
     <url>%2F2018%2F09%2F14%2Ffront-end-terminology%2F</url>
-    <content type="text"><![CDATA[轮播图轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。 视差滚动视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。 ToolTipToolTip，在Bootstrap 4 中又被称为提示冒泡 手风琴效果手风琴效果，又被称为Accordion 哈林摇哈林摇，又称Harlem Shake]]></content>
+    <content type="text"><![CDATA[轮播图轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。 视差滚动视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。 ToolTipToolTip，在Bootstrap 4 中又被称为提示冒泡。 手风琴效果手风琴效果，又被称为Accordion。 哈林摇哈林摇，又称Harlem Shake。 响应式布局响应式布局，又称Responsive Layout，即一个布局可以适应多个不同终端。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -301,6 +390,7 @@
       </categories>
       <tags>
         <tag>密码学</tag>
+        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -602,8 +692,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>Windows</tag>
+        <tag>渗透</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>

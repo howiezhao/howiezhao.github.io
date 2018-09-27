@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-09-19T12:39:04.595Z</updated>
+  <updated>2018-09-27T05:33:13.191Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,246 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>盘点那些互联网公司的学生优惠</title>
+    <link href="https://howiezhao.github.io/2018/09/26/it-student-discount/"/>
+    <id>https://howiezhao.github.io/2018/09/26/it-student-discount/</id>
+    <published>2018-09-26T14:33:32.000Z</published>
+    <updated>2018-09-27T05:33:13.191Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains</a></h2><p>JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">Intellij IDEA</a>，Python的IDE —— <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">PyCharm</a>，JavaScript的IDE —— <a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">WebStorm</a>，C/C++的IDE —— <a href="https://www.jetbrains.com/clion/" target="_blank" rel="noopener">CLion</a>等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。<br>JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供<a href="https://www.jetbrains.com/zh/student/" target="_blank" rel="noopener">免费授权计划</a>，学生只要验证学生身份即可免费使用JetBrains的所有IDE。<br><a id="more"></a></p><h2 id="Microsoft-Imagine"><a href="#Microsoft-Imagine" class="headerlink" title="Microsoft Imagine"></a><a href="https://imagine.microsoft.com/zh-CN" target="_blank" rel="noopener">Microsoft Imagine</a></h2><p>Microsoft Imagine原名为DreamSpark，是微软为学生提供的一个资源集合，它包括了一些<a href="https://imagine.microsoft.com/zh-cn/catalog" target="_blank" rel="noopener">软件和服务</a>，学生只要验证学生身份即可使用其中的工具。<br>个人认为，Imagine相比之前的DreamSpark，为学生提供的免费资源少了许多。具体而言，它提供如下资源：</p><ul><li>Parallels Desktop for Mac Pro Edition：macOS上最好的虚拟机产品，提供免费试用3个月</li><li>Visual Studio Community 2017：原本就是免费的</li><li>面向学生的 Microsoft Azure 入门版</li><li>Microsoft虚拟学院课程：原本就是免费的</li><li>Pluralsight</li><li>SQL Server 2017 Developer Edition</li><li>Visual Studio Code：微软推出的编辑器，原本就是开源免费的</li><li>Visual Studio for Mac：原本就是免费的</li><li>Windows Embedded 8.1 Industry Pro Update</li><li>Windows Server 2016</li><li>Windows应用商店免费开发人员帐户</li><li>WintellectNow</li><li>Xamarin Studio Community Edition：原本就是免费的</li><li>Visual Studio的PHP Tools插件</li></ul><h2 id="GitHub-Student-Developer-Pack"><a href="#GitHub-Student-Developer-Pack" class="headerlink" title="GitHub Student Developer Pack"></a><a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Student Developer Pack</a></h2><p>GitHub学生开发者包（GitHub Student Developer Pack）是GitHub与其他公司一起创建的，旨在让学生从一个地方免费访问最好的开发者工具，这样他们就可以边做边学。其中包括的工具有：</p><ul><li>Algolia</li><li>Atom：GitHub推出的编辑器，原本就是开源免费的</li><li>AWS</li><li>Bitnami</li><li>CARTO</li><li>CrowdFlower</li><li>Datadog</li><li>DigitalOcean：美国一家VPS提供商，提供50美元优惠劵</li><li>Flatiron School</li><li>GitHub无限制的私人仓库</li><li>Gitkraken：跨平台的Git GUI客户端，提供免费一年的专业帐户</li><li>HackHands</li><li>Heroku</li><li>JetBrains系列IDE</li><li>Namecheap：美国的一家域名注册商，提供免费一年SSL证书、一年.me后缀域名优惠</li><li>SendGrid</li><li>Sentry</li><li>Stripe</li><li>Taplytics</li><li>Thinkful</li><li>Transifex</li><li>Travis CI</li><li>Unreal Engine</li></ul><p>学生只要验证学生身份就可以使用GitHub学生开发者包中提供的工具。</p><h2 id="阿里云云翼计划"><a href="#阿里云云翼计划" class="headerlink" title="阿里云云翼计划"></a><a href="https://promotion.aliyun.com/ntms/act/campus2018.html" target="_blank" rel="noopener">阿里云云翼计划</a></h2><p>学生验证学生身份后，每月仅需9.9元即可租用一台阿里云服务器。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;JetBrains&quot;&gt;&lt;a href=&quot;#JetBrains&quot; class=&quot;headerlink&quot; title=&quot;JetBrains&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.jetbrains.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JetBrains&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— &lt;a href=&quot;https://www.jetbrains.com/idea/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Intellij IDEA&lt;/a&gt;，Python的IDE —— &lt;a href=&quot;https://www.jetbrains.com/pycharm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PyCharm&lt;/a&gt;，JavaScript的IDE —— &lt;a href=&quot;https://www.jetbrains.com/webstorm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;WebStorm&lt;/a&gt;，C/C++的IDE —— &lt;a href=&quot;https://www.jetbrains.com/clion/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CLion&lt;/a&gt;等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。&lt;br&gt;JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供&lt;a href=&quot;https://www.jetbrains.com/zh/student/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;免费授权计划&lt;/a&gt;，学生只要验证学生身份即可免费使用JetBrains的所有IDE。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jupyter Notebook常用扩展</title>
+    <link href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/"/>
+    <id>https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/</id>
+    <published>2018-09-25T09:01:20.000Z</published>
+    <updated>2018-09-26T14:44:13.449Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="扩展机制"><a href="#扩展机制" class="headerlink" title="扩展机制"></a>扩展机制</h2><p>在介绍常用扩展之前，有必要先来介绍一下</p><h2 id="jupyter-contrib-nbextensions"><a href="#jupyter-contrib-nbextensions" class="headerlink" title="jupyter_contrib_nbextensions"></a><a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions" target="_blank" rel="noopener">jupyter_contrib_nbextensions</a></h2><p>与其说这是一个插件，倒不如说这是一群插件，该插件集合了大多数的Jupyter Notebook常用扩展。<br>使用<code>pip install jupyter_contrib_nbextensions</code>命令即可安装，安装完成后使用<code>jupyter contrib nbextension install --user</code>命令进行些许配置，参数<code>--user</code>指定安装到当前用户家目录下的<code>.jupyter</code>文件夹下。<br>等到安装并配置完成后，打开Jupyter Notebook网页，会出现<code>Nbextensions</code>选项卡，点击进入此选项卡中，可以启用或禁用相应的插件。</p><p>## </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;扩展机制&quot;&gt;&lt;a href=&quot;#扩展机制&quot; class=&quot;headerlink&quot; title=&quot;扩展机制&quot;&gt;&lt;/a&gt;扩展机制&lt;/h2&gt;&lt;p&gt;在介绍常用扩展之前，有必要先来介绍一下&lt;/p&gt;
+&lt;h2 id=&quot;jupyter-contrib-nbextensions&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>editorconfig 是什么</title>
+    <link href="https://howiezhao.github.io/2018/09/23/what-is-editorconfig/"/>
+    <id>https://howiezhao.github.io/2018/09/23/what-is-editorconfig/</id>
+    <published>2018-09-23T09:55:34.000Z</published>
+    <updated>2018-09-23T10:56:54.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了<a href="https://editorconfig.org/" target="_blank" rel="noopener">EditorConfig</a>，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。<br>一个典型的 EditorConfig 配置文件如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># 这是一行注释，以#开头</span><br><span class="line"></span><br><span class="line"># 表示此文件为最顶级</span><br><span class="line">root = true</span><br><span class="line"></span><br><span class="line"># 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行</span><br><span class="line">[*]</span><br><span class="line">end_of_line = lf</span><br><span class="line">insert_final_newline = true</span><br><span class="line"></span><br><span class="line"># 匹配所有以 js 和 py 为后缀名的文件</span><br><span class="line"># 设定其编码为 UTF-8</span><br><span class="line">[*.&#123;js,py&#125;]</span><br><span class="line">charset = utf-8</span><br><span class="line"></span><br><span class="line"># 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格</span><br><span class="line">[*.py]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 4</span><br><span class="line"></span><br><span class="line"># 设定 Makefile 文件的缩进为 Tab</span><br><span class="line">[Makefile]</span><br><span class="line">indent_style = tab</span><br><span class="line"></span><br><span class="line"># 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格</span><br><span class="line">[lib/**.js]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br><span class="line"></span><br><span class="line"># 设定 package.json 和 .travis.yml 的缩进为 2 个空格</span><br><span class="line">[&#123;package.json,.travis.yml&#125;]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br></pre></td></tr></table></figure></p><p>此配置文件应该保存为<code>.editorconfig</code>并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见<code>root = true</code>为止。<br>有很多项目在初始化时都会生成相应的<code>.editorconfig</code>文件，比如 Angular。<br>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了&lt;a href=&quot;https://editorconfig.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Edito
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>写代码应该用哪种字体</title>
+    <link href="https://howiezhao.github.io/2018/09/23/code-font/"/>
+    <id>https://howiezhao.github.io/2018/09/23/code-font/</id>
+    <published>2018-09-23T09:52:35.000Z</published>
+    <updated>2018-09-24T04:34:46.724Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：<br><img src="/images/monospaced.PNG" alt="等宽字体与比例字体">在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 i，j 显得两侧余白较多，而字母 w，m 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。<br><a id="more"></a></p><h2 id="衬线字体与非衬线字体"><a href="#衬线字体与非衬线字体" class="headerlink" title="衬线字体与非衬线字体"></a>衬线字体与非衬线字体</h2><p>顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无<strong>衬线</strong>，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：<br><img src="/images/serif.PNG" alt="衬线字体与非衬线字体">这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为<strong>宋体</strong>，非衬线字体为<strong>黑体</strong>，如下：<br><img src="/images/song-hei.png" alt="宋体与黑体">衬线字体常用于印刷业，而且特别适用于长篇文章段落；非衬线字体简洁大方，适用于广告、标志、牌子等短句。另外，系统、程序和网页中的字体也几乎都是非衬线字体，即使是很长的段落，这是因为显示器分辨率低，字体不能减小，如果用衬线字体，那些边边角角就很难用像素显示清楚，结果反而不利于阅读。<br>Google 在 2015 年就将其原本的衬线体 Logo 换成了无衬线体 Logo:<br><img src="/images/google.gif" alt="Google Logo 变化">我们在写 Word 文档时，常用的英文衬线字体就是 <strong>Times New Roman</strong>；而在做 PPT 时，个人倾向于使用非衬线字体<strong>微软雅黑</strong>。</p><h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>写代码应该使用的字体对于衬线或非衬线要求不大，但强烈建议使用等宽字体，这样可以便于代码对齐，因为比例字体的宽度不定，这会对代码对齐造成极大的困难。另外，还应该对特殊字符有较高的辨识度，比如 I（大写i）、l（小写L）、1（数字1），0（数字0）、O（大写o） 等。<br>基于以上，个人倾向于使用 Consolas，它是 Windows 中自带的一款等宽、非衬线字体。</p><h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>在下载别的字体时，可能会遇到相关术语，如下：</p><ul><li>sans：无衬线体</li><li>gothic：哥特体，即无衬线体</li><li>mono：等宽字体</li><li>bold：粗体</li><li>italic：斜体</li><li>bolditalic：加粗斜体</li><li>regular：常规体</li><li>sc：即 Simplified Chinese，简体中文</li><li>ts：即 Traditional Chinese，繁体中文</li></ul><h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>关于代码配色，就真是个“仁者见仁，智者见智”的问题了，个人要求满足以下两点：</p><ol><li>采用黑色背景</li><li>官网提供多种编辑器的支持</li></ol><p>综上，个人倾向于使用<a href="https://draculatheme.com/" target="_blank" rel="noopener">Dracula</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;等宽字体与比例字体&quot;&gt;&lt;a href=&quot;#等宽字体与比例字体&quot; class=&quot;headerlink&quot; title=&quot;等宽字体与比例字体&quot;&gt;&lt;/a&gt;等宽字体与比例字体&lt;/h2&gt;&lt;p&gt;等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：&lt;br&gt;&lt;img src=&quot;/images/monospaced.PNG&quot; alt=&quot;等宽字体与比例字体&quot;&gt;在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 i，j 显得两侧余白较多，而字母 w，m 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。&lt;br&gt;Windows 中常用的等宽字体为 &lt;strong&gt;Consolas&lt;/strong&gt;；macOS 中常用的等宽字体为 &lt;strong&gt;Menlo&lt;/strong&gt;；Linux 中常用的等宽字体为 &lt;strong&gt;Mono&lt;/strong&gt;。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>开发环境代表什么</title>
+    <link href="https://howiezhao.github.io/2018/09/23/what-is-development-environment/"/>
+    <id>https://howiezhao.github.io/2018/09/23/what-is-development-environment/</id>
+    <published>2018-09-23T09:41:59.000Z</published>
+    <updated>2018-09-24T05:40:11.478Z</updated>
+    
+    <content type="html"><![CDATA[<p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。<br>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。<br>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器/解释器、基本类库等于一体。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;按照编程语言的执行原理，一般将其分为&lt;strong&gt;编译型语言&lt;/strong&gt;（如 C）和&lt;strong&gt;解释型语言&lt;/strong&gt;（如 Python），对于编译型语言来说，它的开发环境就代表该语言的&lt;strong&gt;编译器&lt;/strong&gt;和其&lt;strong&gt;基本类库&lt;
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈SEO</title>
+    <link href="https://howiezhao.github.io/2018/09/23/talk-about-seo/"/>
+    <id>https://howiezhao.github.io/2018/09/23/talk-about-seo/</id>
+    <published>2018-09-23T04:34:47.000Z</published>
+    <updated>2018-09-23T09:42:52.739Z</updated>
+    
+    <content type="html"><![CDATA[<p>SEO，即搜索引擎优化(Search Engine Optimization)，下面列出几点SEO方面的建议：</p><ul><li>页面的URL应该足够反映页面的内容</li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;SEO，即搜索引擎优化(Search Engine Optimization)，下面列出几点SEO方面的建议：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;页面的URL应该足够反映页面的内容&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>隐写术</title>
+    <link href="https://howiezhao.github.io/2018/09/22/steganography/"/>
+    <id>https://howiezhao.github.io/2018/09/22/steganography/</id>
+    <published>2018-09-22T15:45:31.000Z</published>
+    <updated>2018-09-24T12:20:34.058Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code>即可检查 a 文件的类型。<br>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索<code>CTF</code>或<code>FLAG</code>等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件<a href="http://facelessuser.github.io/HexViewer/" target="_blank" rel="noopener">HexViewer</a>查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p><h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp" target="_blank" rel="noopener">谷歌搜图</a>，或许可以发现更多信息。</p><h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片：<br><img src="/images/meinv.jpg" alt="exif"><br><a id="more"></a></p><h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到<a href="http://www.petitcolas.net/steganography/mp3stego/" target="_blank" rel="noopener">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。下载该软件后在其<code>MP3Stego</code>文件夹下会有 2 个命令：<code>Encode</code>和<code>Decode</code>，<code>Encode</code>命令用于隐写信息，<code>Decode</code>命令用于解密被隐写的信息，使用<code>decode -X -P pass svega_stego.mp3</code>即可从<code>svega_stego.mp3</code>文件中解码所需信息，<code>-P</code>指定解密密码。</p><h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：<br><img src="/images/word.PNG" alt="word"><br>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。<br>类似的题可以参考<a href="http://www.shiyanbar.com/ctf/1927" target="_blank" rel="noopener">Fonts</a>,<a href="http://www.shiyanbar.com/ctf/1849" target="_blank" rel="noopener">认真你就输了</a>等等。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h2&gt;&lt;p&gt;拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 &lt;code&gt;file&lt;/code&gt; 命令，直接输入 &lt;code&gt;file a&lt;/code&gt;即可检查 a 文件的类型。&lt;br&gt;知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索&lt;code&gt;CTF&lt;/code&gt;或&lt;code&gt;FLAG&lt;/code&gt;等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件&lt;a href=&quot;http://facelessuser.github.io/HexViewer/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HexViewer&lt;/a&gt;查看二进制信息。Linux 下可以使用 &lt;code&gt;xxd&lt;/code&gt; 命令查看文件二进制数据。&lt;/p&gt;
+&lt;h2 id=&quot;图片隐写&quot;&gt;&lt;a href=&quot;#图片隐写&quot; class=&quot;headerlink&quot; title=&quot;图片隐写&quot;&gt;&lt;/a&gt;图片隐写&lt;/h2&gt;&lt;h3 id=&quot;图片内容&quot;&gt;&lt;a href=&quot;#图片内容&quot; class=&quot;headerlink&quot; title=&quot;图片内容&quot;&gt;&lt;/a&gt;图片内容&lt;/h3&gt;&lt;p&gt;首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试&lt;a href=&quot;https://www.google.com/imghp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;谷歌搜图&lt;/a&gt;，或许可以发现更多信息。&lt;/p&gt;
+&lt;h3 id=&quot;Exif&quot;&gt;&lt;a href=&quot;#Exif&quot; class=&quot;headerlink&quot; title=&quot;Exif&quot;&gt;&lt;/a&gt;Exif&lt;/h3&gt;&lt;p&gt;Exif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片：&lt;br&gt;&lt;img src=&quot;/images/meinv.jpg&quot; alt=&quot;exif&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="CTF" scheme="https://howiezhao.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微软平台技术简介</title>
+    <link href="https://howiezhao.github.io/2018/09/22/microsoft-technology/"/>
+    <id>https://howiezhao.github.io/2018/09/22/microsoft-technology/</id>
+    <published>2018-09-22T12:30:09.000Z</published>
+    <updated>2018-09-22T16:13:05.530Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>微软最初的操作系统的DOS，DOS只是一个命令行形式，后来</p><h2 id="NET"><a href="#NET" class="headerlink" title=".NET"></a>.NET</h2><h2 id="Windows-Phone"><a href="#Windows-Phone" class="headerlink" title="Windows Phone"></a>Windows Phone</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h2&gt;&lt;p&gt;微软最初的操作系统的DOS，DOS只是一个命令行形式，后来&lt;/p&gt;
+&lt;h2 id=&quot;NET&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网站统计与分析</title>
+    <link href="https://howiezhao.github.io/2018/09/22/web-analytics/"/>
+    <id>https://howiezhao.github.io/2018/09/22/web-analytics/</id>
+    <published>2018-09-22T09:59:29.000Z</published>
+    <updated>2018-09-22T11:02:32.435Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="几个术语"><a href="#几个术语" class="headerlink" title="几个术语"></a>几个术语</h2><ul><li>PV：Page View，即页面浏览量或点击量，用户每次刷新即被计算一次。</li><li>UV：Unique Visitor，指独立访客数，以cookie为依据，访问网站的一台电脑客户端为一个访客。一天内相同的客户端只会被计算一次。</li><li>IP：指独立IP数。一天内相同IP地址只被计算一次。</li></ul><h2 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h2><p>有许多第三方的工具可以帮助站长统计和分析网站流量，比如<a href="https://tongji.baidu.com" target="_blank" rel="noopener">百度统计</a>、<a href="http://ta.qq.com/" target="_blank" rel="noopener">腾讯分析</a>、<a href="https://analytics.google.com/analytics/web" target="_blank" rel="noopener">Google Analytics(GA)</a>等。个人经常使用Google Analytics。<br>这类工具的原理大致为：它们会生成一段特定的JS代码，站长需要将这段代码插入到自己网站的页面中，当访客访问网站时，这段代码会收集访客的行为信息，并上传到它们的服务器上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;几个术语&quot;&gt;&lt;a href=&quot;#几个术语&quot; class=&quot;headerlink&quot; title=&quot;几个术语&quot;&gt;&lt;/a&gt;几个术语&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;PV：Page View，即页面浏览量或点击量，用户每次刷新即被计算一次。&lt;/li&gt;
+&lt;li&gt;UV：Unique
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>版本号的意义</title>
+    <link href="https://howiezhao.github.io/2018/09/21/version-number/"/>
+    <id>https://howiezhao.github.io/2018/09/21/version-number/</id>
+    <published>2018-09-21T12:51:08.000Z</published>
+    <updated>2018-09-22T09:54:42.867Z</updated>
+    
+    <content type="html"><![CDATA[<p>软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即<code>X.Y.Z</code>格式，其中：</p><ul><li>X代表<strong>主版本号</strong>，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段；</li><li>Y代表<strong>次版本号</strong>，增删功能时增加Y，同时重置Z为0；</li><li>Z代表<strong>修订号</strong>，修复Bug时增加Z。</li></ul><p>除此之外，还会有一些修饰词，比如：</p><ul><li><code>alpha</code>表示内部测试版；</li><li><code>beta</code>表示公开测试版；</li><li><code>rc</code>即Release Candidate，表示候选版本，即将作为正式版发布；</li><li><code>release</code>表示正式发行版；</li><li><code>lts</code>即Long Term Support，表示长期支持版。</li></ul><p>有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。<br>随着版本号定义的越来越混乱，GitHub起草了一个<a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener">语义化版本(Semantic Versioning)</a>规范，为开源项目做出了一定指导意义。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即&lt;code&gt;X.Y.Z&lt;/code&gt;格式，其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;X代表&lt;strong&gt;主版本号&lt;/strong&gt;，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>top的增强版：htop</title>
@@ -197,220 +437,15 @@
     <link href="https://howiezhao.github.io/2018/09/18/zsh/"/>
     <id>https://howiezhao.github.io/2018/09/18/zsh/</id>
     <published>2018-09-18T04:09:36.000Z</published>
-    <updated>2018-09-19T08:59:07.125Z</updated>
+    <updated>2018-09-25T08:59:11.383Z</updated>
     
-    <content type="html"><![CDATA[<p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p><p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中<code>.zshrc</code>类似于<code>.bashrc</code>，存放zsh的配置信息；<br><code>.zsh_history</code>类似于<code>.bash_history</code>，存放zsh的命令历史记录；<br><code>.oh-my-zsh</code>的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的<code>themes</code>文件夹下主要存放自带的主题，<code>plugins</code>文件夹下主要存放自带的插件，<code>custom</code>文件夹下主要存放用户自己下载的主题和插件。<br><a id="more"></a></p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Oh My Zsh的主要配置都位于<code>$HOME/.zshrc</code>文件中，主要配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置主题，默认为自带的robbyrussell主题，</span></span><br><span class="line"><span class="comment"># 个人喜欢自带的ys主题</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置插件，默认只启用了自带的git插件,</span></span><br><span class="line"><span class="comment"># 要启用更多的插件可直接在括号中写入，</span></span><br><span class="line"><span class="comment"># 必须是自带的插件或已下载到指定位置的插件</span></span><br><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Zsh的强大之处就在于它有相当多的插件，只需安装相关插件，并进行配置，即可体验相应功能。Oh My Zsh安装并启用插件相当简便，所以，可把Oh My Zsh当成是一个Zsh的插件管理器。个人常用的插件如下：</p><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>Oh My Zsh自带的插件，用于显示Git仓库的分支等信息。</p><h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><p>Oh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，<code>apt install autojump</code>即可。</p><h3 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="noopener">zsh-autosuggestions</a></h3><p>Zsh下的命令自动建议插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure></p><h3 id="zsh-syntax-highlighting"><a href="#zsh-syntax-highlighting" class="headerlink" title="zsh-syntax-highlighting"></a><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">zsh-syntax-highlighting</a></h3><p>Zsh下的命令语法高亮插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p><p>当安装并启用以上的所有插件后，<code>$HOME/.zshrc</code>文件中插件相关配置应该是下面这样的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">  autojump</span><br><span class="line">  zsh-autosuggestions</span><br><span class="line">  zsh-syntax-highlighting</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"><span class="built_in">source</span> ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br></pre></td></tr></table></figure></p><h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>Oh My Zsh自带了很多主题，<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="noopener">在这里</a>可以查看每个主题的显示效果，可根据自己的喜好选择合适的主题，值得注意的是，当在<code>$HOME/.zshrc</code>配置文件中将主题设置为<code>random</code>时，它每次会选择随机的主题。</p>]]></content>
+    <content type="html"><![CDATA[<p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p><p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中<code>.zshrc</code>类似于<code>.bashrc</code>，存放zsh的配置信息；<br><code>.zsh_history</code>类似于<code>.bash_history</code>，存放zsh的命令历史记录；<br><code>.oh-my-zsh</code>的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的<code>themes</code>文件夹下主要存放自带的主题，<code>plugins</code>文件夹下主要存放自带的插件，<code>custom</code>文件夹下主要存放用户自己下载的主题和插件。<br><a id="more"></a></p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Oh My Zsh的主要配置都位于<code>$HOME/.zshrc</code>文件中，主要配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置主题，默认为自带的robbyrussell主题，</span></span><br><span class="line"><span class="comment"># 个人喜欢自带的ys主题</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动错误命令自动更正，默认是注释的</span></span><br><span class="line">ENABLE_CORRECTION=<span class="string">"true"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在命令执行的过程中，使用小红点进行提示</span></span><br><span class="line"><span class="comment"># 默认是注释的</span></span><br><span class="line">COMPLETION_WAITING_DOTS=<span class="string">"true"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置插件，默认只启用了自带的git插件,</span></span><br><span class="line"><span class="comment"># 要启用更多的插件可直接在括号中写入，</span></span><br><span class="line"><span class="comment"># 必须是自带的插件或已下载到指定位置的插件</span></span><br><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Zsh的强大之处就在于它有相当多的插件，只需安装相关插件，并进行配置，即可体验相应功能。Oh My Zsh安装并启用插件相当简便，所以，可把Oh My Zsh当成是一个Zsh的插件管理器。个人常用的插件如下：</p><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>Oh My Zsh自带的插件，用于显示Git仓库的分支等信息。</p><h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><p>Oh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，<code>apt install autojump</code>即可。</p><h3 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="noopener">zsh-autosuggestions</a></h3><p>Zsh下的命令自动建议插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure></p><h3 id="zsh-completions"><a href="#zsh-completions" class="headerlink" title="zsh-completions"></a><a href="https://github.com/zsh-users/zsh-completions" target="_blank" rel="noopener">zsh-completions</a></h3><p>Zsh下的命令自动补全插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions</span><br></pre></td></tr></table></figure></p><h3 id="zsh-syntax-highlighting"><a href="#zsh-syntax-highlighting" class="headerlink" title="zsh-syntax-highlighting"></a><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">zsh-syntax-highlighting</a></h3><p>Zsh下的命令语法高亮插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p><p>当安装并启用以上的所有插件后，<code>$HOME/.zshrc</code>文件中插件相关配置应该是下面这样的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">  autojump</span><br><span class="line">  zsh-autosuggestions</span><br><span class="line">  zsh-completions</span><br><span class="line">  zsh-syntax-highlighting</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"><span class="built_in">source</span> ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br><span class="line"><span class="comment"># 值得注意的是，根据官方文档，zsh-syntax-highlighting插件需放在最后，</span></span><br><span class="line"><span class="comment"># 并且要加上相应的source语句</span></span><br></pre></td></tr></table></figure></p><h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>Oh My Zsh自带了很多主题，<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="noopener">在这里</a>可以查看每个主题的显示效果，可根据自己的喜好选择合适的主题，值得注意的是，当在<code>$HOME/.zshrc</code>配置文件中将主题设置为<code>random</code>时，它每次会选择随机的主题。</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。&lt;/p&gt;
 &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;Zsh的安装很简单，在Ubuntu中，只需要&lt;code&gt;apt install zsh&lt;/code&gt;一条命令即可，启用也很简单，&lt;code&gt;chsh -s $(which zsh)&lt;/code&gt;即可，但它的配置却相当复杂，由此诞生了&lt;a href=&quot;https://ohmyz.sh/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oh My Zsh&lt;/a&gt;项目，该项目的主要目的是简化Zsh的配置。&lt;br&gt;Oh My Zsh的官网给出了利用&lt;code&gt;curl&lt;/code&gt;或&lt;code&gt;wget&lt;/code&gt;安装的详细命令，具体如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 通过curl安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh -c &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 通过wget安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sh -c &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;安装完成后，会在当前用户的家目录下生成多个隐藏文件：&lt;br&gt;其中&lt;code&gt;.zshrc&lt;/code&gt;类似于&lt;code&gt;.bashrc&lt;/code&gt;，存放zsh的配置信息；&lt;br&gt;&lt;code&gt;.zsh_history&lt;/code&gt;类似于&lt;code&gt;.bash_history&lt;/code&gt;，存放zsh的命令历史记录；&lt;br&gt;&lt;code&gt;.oh-my-zsh&lt;/code&gt;的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的&lt;code&gt;themes&lt;/code&gt;文件夹下主要存放自带的主题，&lt;code&gt;plugins&lt;/code&gt;文件夹下主要存放自带的插件，&lt;code&gt;custom&lt;/code&gt;文件夹下主要存放用户自己下载的主题和插件。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>reStructuredText小记</title>
-    <link href="https://howiezhao.github.io/2018/09/17/restructuredtext/"/>
-    <id>https://howiezhao.github.io/2018/09/17/restructuredtext/</id>
-    <published>2018-09-17T12:32:11.000Z</published>
-    <updated>2018-09-18T04:11:05.842Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>reStructuredText</strong>是一种类似于Markdown的轻量标记语言，其含义为“重新构建的文本”，也被简称为<strong>reST</strong>，文件后缀名为<code>.rst</code>，是Python的Docutils项目的一部分，目前reST被广泛应用于编写Python文档。</p><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>和Markdown一样：<br>- 无序列表项<br>- 无序列表项<br>- 无序列表项</p><p>1. 有序列表项<br>2. 有序列表项<br>3. 有序列表项</p><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>和Markdown一样：<br>*斜体*<br>**粗体**</p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><h2 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;reStructuredText&lt;/strong&gt;是一种类似于Markdown的轻量标记语言，其含义为“重新构建的文本”，也被简称为&lt;strong&gt;reST&lt;/strong&gt;，文件后缀名为&lt;code&gt;.rst&lt;/code&gt;，是Python的Docutils项
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用Let&#39;s Encrypt获取免费SSL证书</title>
-    <link href="https://howiezhao.github.io/2018/09/16/let-s-encrypt/"/>
-    <id>https://howiezhao.github.io/2018/09/16/let-s-encrypt/</id>
-    <published>2018-09-16T14:38:04.000Z</published>
-    <updated>2018-09-16T14:58:22.835Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>，可以用来获取SSL证书。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt&lt;/a&gt;是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：&lt;a href=&quot;https://certbot.
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>库与框架</title>
-    <link href="https://howiezhao.github.io/2018/09/16/library-framework/"/>
-    <id>https://howiezhao.github.io/2018/09/16/library-framework/</id>
-    <published>2018-09-16T13:58:22.000Z</published>
-    <updated>2018-09-16T14:29:50.481Z</updated>
-    
-    <content type="html"><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：</p><h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><p><strong>库</strong>(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。<br>库的优点是自由度高，可定制性强，较适用于小项目。</p><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p><strong>框架</strong>(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，Angular、Spring等是一个个的框架。<br>框架的优点是流程性高，便于开发，较适用于大项目。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：&lt;/p&gt;
-&lt;h2 id=&quot;库&quot;&gt;&lt;a href=&quot;#库&quot; class=&quot;headerlink&quot; title=&quot;库&quot;&gt;&lt;/a&gt;库&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;库&lt;/strong&gt;(library)是一个工具集，它不告诉
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用IPython替代原生Python Shell</title>
-    <link href="https://howiezhao.github.io/2018/09/16/ipython/"/>
-    <id>https://howiezhao.github.io/2018/09/16/ipython/</id>
-    <published>2018-09-16T05:15:34.000Z</published>
-    <updated>2018-09-16T13:49:17.026Z</updated>
-    
-    <content type="html"><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。</p><h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/" target="_blank" rel="noopener"><strong>IPython</strong></a>最初只是一种基于Python的交互式解释器(REPL)，慢慢的，IPython项目中集成了许多新的工具，比如<strong>IPython Notebook</strong>，这是一种基于Web的强大编辑器。从IPython 4.0开始，IPython项目中和语言无关的工具已独立出来形成一个新的项目<a href="http://jupyter.org/" target="_blank" rel="noopener"><strong>Jupyter</strong></a>，从此，IPython Notebook升级为<strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而IPython将只专注于提供Python交互式解释器以及为Jupyter提供Python内核。当写这篇文章时，IPython的最新版本为6.5。<br>如今，当你去IPython官网下载时，它会跳转到Jupyter的下载页面，因为Jupyter中已经包含了IPython，同时也建议下载Jupyter，因为其包含了强大的Jupyter Notebook，使用<code>pip install jupyter</code>即可下载，安装完成后直接输入<code>ipython</code>即可进入IPython交互式环境。<br><a id="more"></a></p><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出IPython相比原生Python Shell的一些优势：</p><ul><li>Tab自动补全</li><li>自动缩进</li><li>语法高亮</li><li>支持命令历史记录</li><li>命令前加<code>!</code>可调用系统命令</li><li>命令后加1个或2个<code>?</code>可方便查看对象信息</li><li>有众多的魔法函数(Magic Functions)</li></ul><h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出IPython中使用较多的魔法函数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%timeit <span class="comment">#测试代码段执行时间</span></span><br><span class="line">%hist   <span class="comment">#查看历史记录</span></span><br><span class="line">%debug  <span class="comment">#激活交互的调试器(ipdb)</span></span><br><span class="line">%load   <span class="comment">#加载外部代码</span></span><br><span class="line">%edit   <span class="comment">#使用编辑器打开</span></span><br></pre></td></tr></table></figure></p><p>要查看更多的魔法函数，可以访问<a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html" target="_blank" rel="noopener">IPython的官方文档</a></p><h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动Jupyter Notebook直接在命令行输入<code>jupyter notebook</code>即可，它会监听本机的8888端口，并自动打开浏览器访问。输入<code>jupyter notebook --help</code>可以查看它的更多参数。<br>Jupyter Notebook默认采用<strong>Token</strong>的方式进行登录，启动后在命令行中会显示当前的token值，若没有自动打开浏览器，则可以复制命令行中带token的链接并在浏览器中打开即可。<br>使用命令<code>jupyter notebook --generate-config</code>可生成Jupyter Notebook配置文件，默认为<code>$HOME/.jupyter/jupyter_notebook_config.py</code>文件。常用的配置项如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'localhost'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure></p><p>最后，在Linux下，使用<code>nohup jupyter notebook &gt; jupyter.log &amp;</code>可使Jupyter Notebook在后台运行并记录日志到当前目录下的<code>jupyter.log</code>文件中。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。&lt;/p&gt;
-&lt;h2 id=&quot;名称&quot;&gt;&lt;a href=&quot;#名称&quot; class=&quot;headerlink&quot; title=&quot;名称&quot;&gt;&lt;/a&gt;名称&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://ipython.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;IPython&lt;/strong&gt;&lt;/a&gt;最初只是一种基于Python的交互式解释器(REPL)，慢慢的，IPython项目中集成了许多新的工具，比如&lt;strong&gt;IPython Notebook&lt;/strong&gt;，这是一种基于Web的强大编辑器。从IPython 4.0开始，IPython项目中和语言无关的工具已独立出来形成一个新的项目&lt;a href=&quot;http://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;，从此，IPython Notebook升级为&lt;strong&gt;Jupyter Notebook&lt;/strong&gt;，开始支持更多的编程语言。而IPython将只专注于提供Python交互式解释器以及为Jupyter提供Python内核。当写这篇文章时，IPython的最新版本为6.5。&lt;br&gt;如今，当你去IPython官网下载时，它会跳转到Jupyter的下载页面，因为Jupyter中已经包含了IPython，同时也建议下载Jupyter，因为其包含了强大的Jupyter Notebook，使用&lt;code&gt;pip install jupyter&lt;/code&gt;即可下载，安装完成后直接输入&lt;code&gt;ipython&lt;/code&gt;即可进入IPython交互式环境。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>前端相关术语</title>
-    <link href="https://howiezhao.github.io/2018/09/14/front-end-terminology/"/>
-    <id>https://howiezhao.github.io/2018/09/14/front-end-terminology/</id>
-    <published>2018-09-14T13:46:24.000Z</published>
-    <updated>2018-09-14T14:17:08.629Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><p>轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。</p><h2 id="视差滚动"><a href="#视差滚动" class="headerlink" title="视差滚动"></a>视差滚动</h2><p>视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。</p><h2 id="ToolTip"><a href="#ToolTip" class="headerlink" title="ToolTip"></a>ToolTip</h2><p>ToolTip，在Bootstrap 4 中又被称为提示冒泡</p><h2 id="手风琴效果"><a href="#手风琴效果" class="headerlink" title="手风琴效果"></a>手风琴效果</h2><p>手风琴效果，又被称为Accordion</p><h2 id="哈林摇"><a href="#哈林摇" class="headerlink" title="哈林摇"></a>哈林摇</h2><p>哈林摇，又称Harlem Shake</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;轮播图&quot;&gt;&lt;a href=&quot;#轮播图&quot; class=&quot;headerlink&quot; title=&quot;轮播图&quot;&gt;&lt;/a&gt;轮播图&lt;/h2&gt;&lt;p&gt;轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。&lt;/p&gt;
-&lt;h2 id=&quot;视差滚动&quot;&gt;
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网站的WWW问题</title>
-    <link href="https://howiezhao.github.io/2018/09/12/web-www/"/>
-    <id>https://howiezhao.github.io/2018/09/12/web-www/</id>
-    <published>2018-09-12T14:07:51.000Z</published>
-    <updated>2018-09-12T14:09:12.586Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LaTeX小记</title>
-    <link href="https://howiezhao.github.io/2018/09/12/latex/"/>
-    <id>https://howiezhao.github.io/2018/09/12/latex/</id>
-    <published>2018-09-12T14:05:52.000Z</published>
-    <updated>2018-09-12T14:06:35.727Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>辗转相除法</title>
-    <link href="https://howiezhao.github.io/2018/09/12/euclidean/"/>
-    <id>https://howiezhao.github.io/2018/09/12/euclidean/</id>
-    <published>2018-09-12T14:00:58.000Z</published>
-    <updated>2018-09-12T14:01:32.369Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>IRC是什么</title>
-    <link href="https://howiezhao.github.io/2018/09/12/what-is-irc/"/>
-    <id>https://howiezhao.github.io/2018/09/12/what-is-irc/</id>
-    <published>2018-09-12T13:59:18.000Z</published>
-    <updated>2018-09-12T14:00:01.455Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ifconfig与ip</title>
-    <link href="https://howiezhao.github.io/2018/09/12/ifconfig-ip/"/>
-    <id>https://howiezhao.github.io/2018/09/12/ifconfig-ip/</id>
-    <published>2018-09-12T13:53:46.000Z</published>
-    <updated>2018-09-12T13:54:21.943Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
