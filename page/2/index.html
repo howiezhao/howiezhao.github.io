@@ -1679,7 +1679,7 @@
       
         
           <p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Oh My Zsh前需要安装git</span></span><br><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中<code>.zshrc</code>类似于<code>.bashrc</code>，存放zsh的配置信息；<br><code>.zsh_history</code>类似于<code>.bash_history</code>，存放zsh的命令历史记录；<br><code>.oh-my-zsh</code>的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的<code>themes</code>文件夹下主要存放自带的主题，<code>plugins</code>文件夹下主要存放自带的插件，<code>custom</code>文件夹下主要存放用户自己下载的主题和插件。<br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1897,7 +1897,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.6k</span>
+    <span title="Site words total count">38.1k</span>
   
 </div>
 
