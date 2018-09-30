@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Stay Hungry, Stay Foolish">
+<meta name="description" content="在几乎所有的Linux发行版中，都会自带vi文本编辑器，而Vim(Vi IMproved)则是vi的一个增强版，大多数Linux中也都预装了Vim，若没有安装，可使用相应的包管理工具进行安装，具体而言，在Ubuntu中，使用apt install vim即可安装。输入vim --version可以查看所使用的Vim版本，当前最新版本为Vim 8.x。值得注意的是，在有的系统中，vi命令实际是指向v">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim小记">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/18/vim/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
+<meta property="og:description" content="在几乎所有的Linux发行版中，都会自带vi文本编辑器，而Vim(Vi IMproved)则是vi的一个增强版，大多数Linux中也都预装了Vim，若没有安装，可使用相应的包管理工具进行安装，具体而言，在Ubuntu中，使用apt install vim即可安装。输入vim --version可以查看所使用的Vim版本，当前最新版本为Vim 8.x。值得注意的是，在有的系统中，vi命令实际是指向v">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-18T04:11:00.476Z">
+<meta property="og:updated_time" content="2018-09-30T04:51:20.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim小记">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:description" content="在几乎所有的Linux发行版中，都会自带vi文本编辑器，而Vim(Vi IMproved)则是vi的一个增强版，大多数Linux中也都预装了Vim，若没有安装，可使用相应的包管理工具进行安装，具体而言，在Ubuntu中，使用apt install vim即可安装。输入vim --version可以查看所使用的Vim版本，当前最新版本为Vim 8.x。值得注意的是，在有的系统中，vi命令实际是指向v">
 
 
 
@@ -409,7 +409,33 @@
       
 
       
-        
+        <p>在几乎所有的Linux发行版中，都会自带vi文本编辑器，而<a href="https://www.vim.org/" target="_blank" rel="noopener">Vim(Vi IMproved)</a>则是vi的一个增强版，大多数Linux中也都预装了Vim，若没有安装，可使用相应的包管理工具进行安装，具体而言，在Ubuntu中，使用<code>apt install vim</code>即可安装。输入<code>vim --version</code>可以查看所使用的Vim版本，当前最新版本为Vim 8.x。值得注意的是，在有的系统中，<code>vi</code>命令实际是指向<code>vim</code>命令的一个链接。<br>在2015年，开源组织发布了<a href="https://neovim.io/" target="_blank" rel="noopener">Neovim</a>项目，它是Vim的重构版本，需自行安装。另外，GVim是Vim的一个图形客户端。<br><a id="more"></a></p>
+<h2 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h2><p>Vim有许多模式，但常用的其实是普通模式、插入模式、命令行模式这三种。</p>
+<h3 id="普通模式"><a href="#普通模式" class="headerlink" title="普通模式"></a>普通模式</h3><p>Vim启动后默认为普通模式，此时Vim编辑器左下角将依次显示文件名、行数、字符数，右下角将依次显示当前所在的行与列、当前屏幕显示的字数占文件总字数的百分比。在普通模式下可以使用相当多的快捷键来完成相应的操作，常用的命令如下：</p>
+<ul>
+<li><code>x</code>：删除当前光标所在字符</li>
+<li><code>dd</code>：删除当前行</li>
+<li><code>0</code>：到行头</li>
+<li><code>$</code>：到行尾</li>
+</ul>
+<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>在普通模式下输入<code>i</code>(insert)，即可切换到插入模式，此时Vim编辑器左下角将显示<code>-- INSERT --</code>标识。在插入模式下，可完成输入文字等功能。最后，按下<code>Esc</code>键可退回普通模式。</p>
+<h3 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h3><p>在命令行模式下可以输入会被执行的相关命令，例如执行命令(<code>:</code>键)、搜索命令(<code>/</code>键)或者过滤命令(<code>!</code>键)。此时，Vim编辑器左下角将显示输入的命令。在命令执行之后，Vim将返回到命令行模式之前的模式，通常是普通模式。<br>在命令行模式下常使用的命令有：</p>
+<ul>
+<li><code>:wq</code>：保存(write)并退出(quit)</li>
+<li><code>:1</code>：跳转到第一行，类似的，跳转到第n行则为<code>:n</code></li>
+<li><code>:set nu</code>：显示行号(number)，类似的，<code>:set nonu</code>为不显示行号</li>
+<li><code>:set ff=unix</code>：设置文件为unix格式</li>
+</ul>
+<h2 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h2><p>Vim有多个配置文件，当前用户的配置文件为用户家目录下的<code>.vimrc</code>隐藏文件，Vim启动时会按照该文件中的配置开启相应的功能。个人常做的基本配置项如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&quot; 这是一行注释</span><br><span class="line">&quot; 显示行号</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot; 语法高亮</span><br><span class="line">syntax enable</span><br><span class="line"></span><br><span class="line">&quot; tab缩进</span><br><span class="line">set tabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set smarttab</span><br><span class="line"></span><br><span class="line">&quot; 鼠标可用</span><br><span class="line">&quot;set mouse=a</span><br><span class="line"></span><br><span class="line">&quot; 配色方案</span><br><span class="line">set t_Co=256</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme monokai</span><br><span class="line"></span><br><span class="line">&quot; 匹配模式</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">&quot; 自动缩进</span><br><span class="line">set autoindent</span><br><span class="line">set smartindent</span><br><span class="line"></span><br><span class="line">&quot; 显示命令</span><br><span class="line">set showcmd</span><br></pre></td></tr></table></figure></p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Vim支持很多插件，为了简化插件的安装，由此诞生了许多的插件管理器，<a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="noopener">Vundle</a>是使用最多的Vim插件管理器，但个人倾向于使用<a href="https://github.com/junegunn/vim-plug" target="_blank" rel="noopener">vim-plug</a>插件管理器，vim-plug相比Vundle最大的优势是支持异步安装，该特性可以极大的加速多个插件的安装速度。<br>使用如下命令即可安装vim-plug：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure></p>
+<p>安装完vim-plug插件管理器后，只需在<code>.vimrc</code>文件中做相关配置，然后进入Vim的命令行模式，输入<code>:PlugInstall</code>命令，即可自动下载并安装相应的插件，升级插件可使用<code>:PlugUpdate</code>命令，升级vim-plug本身，可使用<code>:PlugUpgrade</code>命令。个人常用的插件如下：</p>
+<ul>
+<li><a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="noopener">NERDTree</a>：显示文件树形目录</li>
+<li><a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="noopener">YouCompleteMe</a>：代码自动补全</li>
+<li><a href="https://github.com/mhinz/vim-startify" target="_blank" rel="noopener">startify</a>：自定义起始页</li>
+</ul>
+<p>相应的，<code>.vimrc</code>文件中插件相关的配置项如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&quot; vim-plug</span><br><span class="line">call plug#begin(&apos;~/.vim/plugged&apos;)</span><br><span class="line"></span><br><span class="line">function! BuildYCM(info)</span><br><span class="line">  &quot; info is a dictionary with 3 fields</span><br><span class="line">  &quot; - name:   name of the plugin</span><br><span class="line">  &quot; - status: &apos;installed&apos;, &apos;updated&apos;, or &apos;unchanged&apos;</span><br><span class="line">  &quot; - force:  set on PlugInstall! or PlugUpdate!</span><br><span class="line">  if a:info.status == &apos;installed&apos; || a:info.force</span><br><span class="line">    !./install.py</span><br><span class="line">  endif</span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">Plug &apos;Valloric/YouCompleteMe&apos;, &#123; &apos;do&apos;: function(&apos;BuildYCM&apos;) &#125;</span><br><span class="line">Plug &apos;scrooloose/nerdtree&apos;, &#123; &apos;on&apos;:  &apos;NERDTreeToggle&apos; &#125;</span><br><span class="line">Plug &apos;mhinz/vim-startify&apos;</span><br><span class="line"></span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -508,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -623,6 +658,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三种模式"><span class="nav-number">1.</span> <span class="nav-text">三种模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通模式"><span class="nav-number">1.1.</span> <span class="nav-text">普通模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模式"><span class="nav-number">1.2.</span> <span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行模式"><span class="nav-number">1.3.</span> <span class="nav-text">命令行模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vimrc"><span class="nav-number">2.</span> <span class="nav-text">vimrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">3.</span> <span class="nav-text">插件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -650,7 +701,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">38.1k</span>
+    <span title="Site words total count">39.1k</span>
   
 </div>
 
