@@ -1255,9 +1255,15 @@
 
       
         
-          
-            
-          
+          <p>Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。</p>
+<h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><p>在Linux中获得root权限有2个命令，<code>su</code>与<code>sudo</code>，<code>sudo</code>只是为了短暂的获得root权限以执行某些操作(superuser do)，而<code>su</code>其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用<code>sudo</code>执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用<code>su</code>切换到root用户时，需要输入root用户的密码。<br>在Linux中，文件的权限有<code>rwx</code>三种，即可读(read)、可写(write)、可执行(execute)，其中<code>r</code>又等于4，<code>w</code>等于2，<code>x</code>等于1。所以，如果一个文件同时具有<code>rwx</code>权限，那么它的权限位就等于7。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/18/android-root/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1902,7 +1908,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">39.1k</span>
+    <span title="Site words total count">40.5k</span>
   
 </div>
 

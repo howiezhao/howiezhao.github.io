@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Stay Hungry, Stay Foolish">
+<meta name="description" content="Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。 Linux相关在Linux中获得root权限有2个命令，su与sudo，sudo只是为了短暂的获得root权限以执行某些操作(superuser do)，而su其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谈谈Android的root">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/18/android-root/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
+<meta property="og:description" content="Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。 Linux相关在Linux中获得root权限有2个命令，su与sudo，sudo只是为了短暂的获得root权限以执行某些操作(superuser do)，而su其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-18T04:14:53.718Z">
+<meta property="og:updated_time" content="2018-09-30T11:20:45.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈Android的root">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:description" content="Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。 Linux相关在Linux中获得root权限有2个命令，su与sudo，sudo只是为了短暂的获得root权限以执行某些操作(superuser do)，而su其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用">
 
 
 
@@ -409,7 +409,13 @@
       
 
       
-        
+        <p>Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。</p>
+<h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><p>在Linux中获得root权限有2个命令，<code>su</code>与<code>sudo</code>，<code>sudo</code>只是为了短暂的获得root权限以执行某些操作(superuser do)，而<code>su</code>其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用<code>sudo</code>执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用<code>su</code>切换到root用户时，需要输入root用户的密码。<br>在Linux中，文件的权限有<code>rwx</code>三种，即可读(read)、可写(write)、可执行(execute)，其中<code>r</code>又等于4，<code>w</code>等于2，<code>x</code>等于1。所以，如果一个文件同时具有<code>rwx</code>权限，那么它的权限位就等于7。<br><a id="more"></a></p>
+<h2 id="Android相关"><a href="#Android相关" class="headerlink" title="Android相关"></a>Android相关</h2><p>Android本身是不愿意让用户获得root权限的，所以Android中没有<code>su</code>或<code>sudo</code>这些命令。所以，获得root权限的第一步就是要把<code>su</code>命令拷贝到Android的<code>/system/bin</code>或<code>/system/xbin</code>目录下。但是拷贝之后并不能直接使用<code>su</code>命令，因为Android中<code>su</code>的运行机制和Linux中不同。在Android中只有root用户才能使用<code>su</code>命令，非root用户无权使用<code>su</code>命令。这其实是一个逻辑闭环：使用<code>su</code>命令可以切换到root，但只有root用户才可以使用<code>su</code>命令。好在Linux中文件的权限除了<code>rwx</code>三种之外，还有<code>s</code>权限，<code>s</code>代表当任何一个用户执行该文件时都拥有文件所有者的权限，换句话来说，如果一个文件的所有者是root，且它的执行权限标志位是<code>s</code>，那么不管谁执行这个文件，他执行的时候都是以root身份执行的。<br>基于以上，Android获取root权限大致可以分为如下3步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拷贝su到指定目录下</span></span><br><span class="line">cp /data/tmp/su /system/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su所有者设为root</span></span><br><span class="line">chown root:root su</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su标志位设为-rwsr-xr-x</span></span><br><span class="line">chmod 4775 /system/bin/su</span><br></pre></td></tr></table></figure></p>
+<p>但是，除了上面第一步以外，剩下两步都需要root权限才能成功执行，这就又造成了一个逻辑闭环：即通过上面的代码可以获得root权限，但必须有root权限才能执行上面的代码。这时的解决办法就是寻找Android系统的漏洞，系统中有些进程是以root权限运行的，只有找出那些有漏洞的进程，然后利用缓冲区溢出让其执行我们上面的命令，即可完成root。<br>所以，总的来说，Android获取root权限最重要的一步，就是寻找系统的漏洞，然后利用之。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>了解了Android root的基本原理后，需要理清一些常用术语：</p>
+<h3 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h3><h3 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h3><h3 id="线刷"><a href="#线刷" class="headerlink" title="线刷"></a>线刷</h3><h3 id="卡刷"><a href="#卡刷" class="headerlink" title="卡刷"></a>卡刷</h3><h2 id="Nexus的root"><a href="#Nexus的root" class="headerlink" title="Nexus的root"></a>Nexus的root</h2><p>Nexus系列作为Google的亲儿子，自然少不了root解决方案，目前root Nexus设备使用最多的软件是<a href="http://www.wugfresh.com/nrt/" target="_blank" rel="noopener">Nexus Root Toolkit(NRT)</a>。请注意，此软件运行前会先进行更新，这会花费较长的时间，需要耐心等待。</p>
+
       
     </div>
     
@@ -508,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -623,6 +638,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux相关"><span class="nav-number">1.</span> <span class="nav-text">Linux相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android相关"><span class="nav-number">2.</span> <span class="nav-text">Android相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-number">3.</span> <span class="nav-text">术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#刷机"><span class="nav-number">3.1.</span> <span class="nav-text">刷机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootloader"><span class="nav-number">3.2.</span> <span class="nav-text">Bootloader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线刷"><span class="nav-number">3.3.</span> <span class="nav-text">线刷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡刷"><span class="nav-number">3.4.</span> <span class="nav-text">卡刷</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nexus的root"><span class="nav-number">4.</span> <span class="nav-text">Nexus的root</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -650,7 +681,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">39.1k</span>
+    <span title="Site words total count">40.5k</span>
   
 </div>
 

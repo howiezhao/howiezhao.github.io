@@ -146,7 +146,7 @@
   <entry>
     <title><![CDATA[谈谈Android的root]]></title>
     <url>%2F2018%2F09%2F18%2Fandroid-root%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。 Linux相关在Linux中获得root权限有2个命令，su与sudo，sudo只是为了短暂的获得root权限以执行某些操作(superuser do)，而su其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用sudo执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用su切换到root用户时，需要输入root用户的密码。在Linux中，文件的权限有rwx三种，即可读(read)、可写(write)、可执行(execute)，其中r又等于4，w等于2，x等于1。所以，如果一个文件同时具有rwx权限，那么它的权限位就等于7。 Android相关Android本身是不愿意让用户获得root权限的，所以Android中没有su或sudo这些命令。所以，获得root权限的第一步就是要把su命令拷贝到Android的/system/bin或/system/xbin目录下。但是拷贝之后并不能直接使用su命令，因为Android中su的运行机制和Linux中不同。在Android中只有root用户才能使用su命令，非root用户无权使用su命令。这其实是一个逻辑闭环：使用su命令可以切换到root，但只有root用户才可以使用su命令。好在Linux中文件的权限除了rwx三种之外，还有s权限，s代表当任何一个用户执行该文件时都拥有文件所有者的权限，换句话来说，如果一个文件的所有者是root，且它的执行权限标志位是s，那么不管谁执行这个文件，他执行的时候都是以root身份执行的。基于以上，Android获取root权限大致可以分为如下3步：12345678# 拷贝su到指定目录下cp /data/tmp/su /system/bin/# 将su所有者设为rootchown root:root su# 将su标志位设为-rwsr-xr-xchmod 4775 /system/bin/su 但是，除了上面第一步以外，剩下两步都需要root权限才能成功执行，这就又造成了一个逻辑闭环：即通过上面的代码可以获得root权限，但必须有root权限才能执行上面的代码。这时的解决办法就是寻找Android系统的漏洞，系统中有些进程是以root权限运行的，只有找出那些有漏洞的进程，然后利用缓冲区溢出让其执行我们上面的命令，即可完成root。所以，总的来说，Android获取root权限最重要的一步，就是寻找系统的漏洞，然后利用之。 术语了解了Android root的基本原理后，需要理清一些常用术语： 刷机Bootloader线刷卡刷Nexus的rootNexus系列作为Google的亲儿子，自然少不了root解决方案，目前root Nexus设备使用最多的软件是Nexus Root Toolkit(NRT)。请注意，此软件运行前会先进行更新，这会花费较长的时间，需要耐心等待。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -263,7 +263,7 @@
   <entry>
     <title><![CDATA[IRC是什么]]></title>
     <url>%2F2018%2F09%2F12%2Fwhat-is-irc%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[IRC，全称Internet Relay Chat，即因特网中继聊天，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。IRC协议属于应用层协议，使用的传输层协议为TCP，使用的端口为6667(明文传输，如irc://chat.freenode.net)或6697(SSL加密传输，如ircs://chat.freenode.net:6697)。IRC是一个分布式的C/S架构，一个IRC服务器可以连接其他的IRC服务器以扩展为一个IRC网络，通过连接到一个IRC服务器，我们可以访问这个服务器以及它所连接的其他服务器上的频道，频道存在于一个IRC服务器上，一个频道类似于一个聊天室，频道名称必须以#符号开始，例如#irchelp。大多数的IRC服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。目前使用最广的IRC服务器为freenode，而IRC客户端软件有多种，比如基于Firefox浏览器的IRC插件ChatZilla，基于网页的Webchat，基于命令行的Irssi等等。个人经常使用的IRC客户端为Irssi，在Ubuntu中可以使用apt install irssi安装，之后直接输入irssi即可启动，输入irssi --help可查看更多命令参数。启动irssi后可输入更多的命令，输入/help可查看所有可用命令，输入/connect Freenode即可连接到freenode服务器，之后再输入/join #linuxba即可加入#linuxba频道。这里需要注意，freenode服务器由于种种原因，在国内无法访问，而irssi又不支持代理，所以推荐使用proxychains代理irssi。最后，值得推荐的IRC频道有下(基于freenode)： #ubuntu-cn：Ubuntu中文社区频道 #archlinux-cn：Arch Linux中文社区频道 #linuxba：Linux贴吧频道 #haskell：Haskell语言频道 #vim：Vim社区频道]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -588,7 +588,7 @@
   <entry>
     <title><![CDATA[HTTP协议分析]]></title>
     <url>%2F2018%2F05%2F11%2FHTTP%2F</url>
-    <content type="text"><![CDATA[HTTP(Hypertext Transfer Protocol，超文本传输协议) 报文格式HTTP请求报文方法字段可以取几种不同的值，包括GET、POST、HEAD、PUT和DELETE。绝大部分的HTTP请求报文使用GET方法。Host首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；Connection首部行指明采用非持续连接还是持续连接；User-Agent首部行指明用户代理；Accept-Language首部行指明用户想得到的语言版本。使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。 HTTP响应报文Date首部行指示服务器产生并发送该响应报文的日期和时间；Last-Modified首部行指示了对象创建或者最后修改的日期和时间；Server首部行指示服务器类型，类似于User-Agent首部行；Content-Length首部行指示了被发送对象中的字节数；Content-Type首部行指示了实体体中的对象的MIME类型。常见的状态码和其对应的短语：200 OK：请求成功，信息在返回的响应报文中。301 Moved Permanently：请求的对象已经被永久转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。404 Not Found：被请求的文档不在服务器上。505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。 Web缓存条件GET(conditional GET)方法：请求报文使用GET方法，并且请求报文中包含一个If-Modified-Since首部行。Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。 注意 HTTP是一个无状态协议(stateless protocol)。 HTTP可以采用非持续连接或持续连接，默认采用持续连接。]]></content>
+    <content type="text"><![CDATA[HTTP(Hypertext Transfer Protocol，超文本传输协议) 报文格式HTTP请求报文方法字段可以取几种不同的值，包括GET、POST、HEAD、PUT和DELETE。绝大部分的HTTP请求报文使用GET方法。Host首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；Connection首部行指明采用非持续连接还是持续连接；User-Agent首部行指明用户代理；Accept-Language首部行指明用户想得到的语言版本。使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。 HTTP响应报文Date首部行指示服务器产生并发送该响应报文的日期和时间；Last-Modified首部行指示了对象创建或者最后修改的日期和时间；Server首部行指示服务器类型，类似于User-Agent首部行；Content-Length首部行指示了被发送对象中的字节数；Content-Type首部行指示了实体体中的对象的MIME类型。常见的状态码和其对应的短语：200 OK：请求成功，信息在返回的响应报文中。301 Moved Permanently：请求的对象已经被永久转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。404 Not Found：被请求的文档不在服务器上。505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。一般而言，200系列代表正常，300系列代表重定向，400系列代表客户端错误，500系列代表服务端错误。 Web缓存条件GET(conditional GET)方法：请求报文使用GET方法，并且请求报文中包含一个If-Modified-Since首部行。Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。 注意 HTTP是一个无状态协议(stateless protocol)。 HTTP可以采用非持续连接或持续连接，默认采用持续连接。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -732,7 +732,7 @@
   <entry>
     <title><![CDATA[URI与URL的区别]]></title>
     <url>%2F2018%2F04%2F29%2Furl-uri%2F</url>
-    <content type="text"><![CDATA[URI，全称”Uniform Resource Identifier”，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。 URL，全称”Uniform Resource Locator”，中文“统一资源定位符”，URL是URI的子集。示例如下：https://howiezhao.github.io/2018/04/29/url-uri/上面这个URL唯一标识了互联网中一台服务器上的一篇文章。 URN，全称”Uniform Resource Name”，中文“统一资源名称”，是另一种形式的URI，它通过特定命名空间中的唯一名称来标识资源。示例如下：urn:isbn:9780141036144上面这个URN唯一标识了乔治·奥威尔所著的《1984》。 简单说，URL代表一个人的位置，URN代表一个人的身份证号，通过URL和URN都可以唯一的找到这个人，所以它们都属于URI。]]></content>
+    <content type="text"><![CDATA[URI，全称”Uniform Resource Identifier”，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。 URL，全称”Uniform Resource Locator”，中文“统一资源定位符”，URL是URI的子集。示例如下：https://howiezhao.github.io/2018/04/29/url-uri/上面这个URL唯一标识了互联网中一台服务器上的一篇文章(即本篇文章)。URL的格式一般为scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment] URN，全称”Uniform Resource Name”，中文“统一资源名称”，是另一种形式的URI，它通过特定命名空间中的唯一名称来标识资源。示例如下：urn:isbn:9780141036144上面这个URN唯一标识了乔治·奥威尔所著的《1984》。 简单说，URL代表一个人的位置，URN代表一个人的身份证号，通过URL和URN都可以唯一的找到这个人，所以它们都属于URI。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
