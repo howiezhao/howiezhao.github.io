@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Git是目前最流行的分布式版本控制系统(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是：  /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-11T05:03:36.197Z">
+<meta property="og:updated_time" content="2018-10-25T03:44:00.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git小记">
 <meta name="twitter:description" content="Git是目前最流行的分布式版本控制系统(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是：  /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git c">
@@ -403,22 +403,6 @@
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-11 13:03:36" itemprop="dateModified" datetime="2018-09-11T13:03:36+08:00">2018-09-11</time>
-              
-            
           </span>
 
           
@@ -497,10 +481,20 @@
 <li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
 </ol>
 <p>如果Git目录中保存着的特定版本文件，就属于<strong>已提交状态</strong>(committed)。如果作了修改并已放入暂存区域，就属于<strong>已暂存状态</strong>(staged)。如果自上次取出后，作了修改但还没有放到暂存区域，就是<strong>已修改状态</strong>(modified)。</p>
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>使用<code>git add test.txt</code>可以将需要被追踪的文件(test.txt)添加到缓存区，使用<code>git commit -m &#39;first commit&#39;</code>可以将缓存区的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息，使用<code>git push</code>可以将本地仓库推送到远程仓库，使用<code>git clone</code>可以将远程仓库克隆到本地，使用<code>git pull</code>可以将远程仓库的更新拉取到本地仓库。<br>使用<code>git status</code>可以查看Git仓库状态，使用<code>git log</code>可以查看commit记录。</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li><code>git --version</code>：查看Git版本信息</li>
+<li><code>git add test.txt</code>：将需要被追踪的文件(test.txt)添加到缓存区</li>
+<li><code>git commit -m &#39;first commit&#39;</code>：将缓存区的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息</li>
+<li><code>git push</code>：将本地仓库推送到远程仓库</li>
+<li><code>git clone</code>：将远程仓库克隆到本地</li>
+<li><code>git pull</code>：将远程仓库的更新拉取到本地仓库</li>
+<li><code>git status</code>：查看Git仓库状态</li>
+<li><code>git log</code>：查看commit记录。</li>
+<li><code>git diff &lt;first-commit-id&gt; &lt;second-commit-id&gt;</code>：对比两个commit之间的不同，参数为两个commit ID，为方便可以取ID的前4个字符</li>
+</ul>
 <h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p><strong>直接记录快照，而非差异比较</strong>：Git与其他版本控制系统的主要区别在于对待数据的方法，其他的VCS主要记录不同版本之间的差异，而Git则相当于直接记录不同版本的快照。<br><strong>近乎所有操作都是本地执行</strong>：在Git中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。<br><strong>Git保证完整性</strong>：Git中所有数据在存储前都计算校验和(SHA-1)，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。若你在传送过程中丢失信息或损坏文件，Git就能发现。<br><strong>Git一般只添加数据</strong>：你执行的Git操作，几乎只往Git数据库中增加数据。很难让Git执行任何不可逆操作，或者让它以任何方式清除数据。</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>应明确一点，Git是由Linux创始人Linus Torvalds开发的分布式版本控制系统，而GitHub是使用Git实现的代码托管网站，两者并非一类。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>在命令行中直接输入<code>git</code>，可查看相关命令，要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《Pro Git》</a>一书。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>在命令行中直接输入<code>git</code>，可查看相关命令，要具体查看某个命令的帮助信息，可输入<code>git help &lt;command&gt;</code>，如<code>git help diff</code>，要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《Pro Git》</a>一书。</p>
 
       
     </div>
@@ -614,7 +608,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -793,7 +787,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">78k</span>
+    <span title="Symbols count total">81k</span>
   
 
   

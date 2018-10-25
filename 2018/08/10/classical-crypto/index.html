@@ -115,21 +115,21 @@
 
 
 
-  <meta name="description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个">
+  <meta name="description" content="密码学（Cryptography）大致可分为古典密码学（Classic cryptography）和现代密码学（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于字符的，而现代密码学是基于二进制位的。古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换">
 <meta name="keywords" content="密码学,CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="古典密码学">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/10/classical-crypto/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个">
+<meta property="og:description" content="密码学（Cryptography）大致可分为古典密码学（Classic cryptography）和现代密码学（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于字符的，而现代密码学是基于二进制位的。古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://howiezhao.github.io/images/vigenere.png">
 <meta property="og:image" content="https://howiezhao.github.io/images/pigpen.png">
 <meta property="og:image" content="https://howiezhao.github.io/images/pigpen-eg.png">
-<meta property="og:updated_time" content="2018-09-22T15:46:39.111Z">
+<meta property="og:updated_time" content="2018-10-25T03:43:51.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="古典密码学">
-<meta name="twitter:description" content="古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换密码，类似的，若整个加密过程中每个字符采用不同的表替代，则为多表代换密码，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。 凯撒密码凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个">
+<meta name="twitter:description" content="密码学（Cryptography）大致可分为古典密码学（Classic cryptography）和现代密码学（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于字符的，而现代密码学是基于二进制位的。古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换">
 <meta name="twitter:image" content="https://howiezhao.github.io/images/vigenere.png">
 
 
@@ -408,22 +408,6 @@
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-22 23:46:39" itemprop="dateModified" datetime="2018-09-22T23:46:39+08:00">2018-09-22</time>
-              
-            
           </span>
 
           
@@ -480,7 +464,7 @@
       
 
       
-        <p>古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
+        <p>密码学（Cryptography）大致可分为<strong>古典密码学</strong>（Classic cryptography）和<strong>现代密码学</strong>（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于<strong>字符</strong>的，而现代密码学是基于<strong>二进制位</strong>的。古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
 <h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p>
 <h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p>
 <ol>
@@ -814,7 +798,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -993,7 +977,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">78k</span>
+    <span title="Symbols count total">81k</span>
   
 
   

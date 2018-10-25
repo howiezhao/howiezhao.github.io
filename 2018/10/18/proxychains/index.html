@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="proxychains，顾名思义，是一种代理链工具，它可以强制任何Linux下的命令行应用使用其提供的代理连接到网络。Linux中有的应用本身并不支持代理，这时便可以使用proxychains强制其使用代理。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-18T03:56:38.033Z">
+<meta property="og:updated_time" content="2018-10-18T07:36:11.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代理链工具：proxychains">
 <meta name="twitter:description" content="proxychains，顾名思义，是一种代理链工具，它可以强制任何Linux下的命令行应用使用其提供的代理连接到网络。Linux中有的应用本身并不支持代理，这时便可以使用proxychains强制其使用代理。">
@@ -400,13 +400,9 @@
                 
               
 
-              <time title="Created: 2018-10-18 10:21:58 / Modified: 11:56:38" itemprop="dateCreated datePublished" datetime="2018-10-18T10:21:58+08:00">2018-10-18</time>
+              <time title="Created: 2018-10-18 10:21:58" itemprop="dateCreated datePublished" datetime="2018-10-18T10:21:58+08:00">2018-10-18</time>
             
 
-            
-              
-
-              
             
           </span>
 
@@ -465,7 +461,7 @@
 
       
         <p><a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a>，顾名思义，是一种代理链工具，它可以强制任何Linux下的命令行应用使用其提供的代理连接到网络。Linux中有的应用本身并不支持代理，这时便可以使用proxychains强制其使用代理。<br><a id="more"></a></p>
-<h2 id="安装及使用"><a href="#安装及使用" class="headerlink" title="安装及使用"></a>安装及使用</h2><p>在Ubuntu下可以使用<code>sudo apt install proxychains</code>直接安装，安装完成后会在<code>/etc</code>文件夹下生成<code>proxychains.conf</code>配置文件，在这个配置文件下可以配置代理链的工作模式和代理地址等。<br>proxychains提供了3种代理模式，分别是<strong>动态链</strong>（dynamic_chain）、<strong>静态链</strong>（strict_chain）、<strong>随机链</strong>（random_chain），建议选择动态链。此外，proxychains默认设置的代理地址未为Tor的地址，但其实最新版的Tor已经更改端口为9150，用户可以根据自己的需求按照示例格式配置地址。<br>配置完成后，要使用proxychains，只需在相应命令前加上<code>proxychains</code>即可，例如<code>proxychains nmap -sS 192.168.1.1</code>，即可强制nmap使用proxychains中设置的代理进行扫描。</p>
+<h2 id="安装及使用"><a href="#安装及使用" class="headerlink" title="安装及使用"></a>安装及使用</h2><p>在Ubuntu下可以使用<code>sudo apt install proxychains</code>直接安装，安装完成后会在<code>/etc</code>文件夹下生成<code>proxychains.conf</code>配置文件，在这个配置文件下可以配置代理链的工作模式和代理地址等。<br>proxychains提供了3种代理模式，分别是<strong>动态链</strong>（dynamic_chain）、<strong>严格链</strong>（strict_chain）、<strong>随机链</strong>（random_chain），建议选择动态链。此外，proxychains默认设置的代理地址未为Tor的地址，但其实最新版的Tor已经更改端口为9150，用户可以根据自己的需求按照示例格式配置地址。<br>配置完成后，要使用proxychains，只需在相应命令前加上<code>proxychains</code>即可，例如<code>proxychains nmap -sS 192.168.1.1</code>，即可强制nmap使用proxychains中设置的代理进行扫描。</p>
 <h2 id="与proxychains-ng"><a href="#与proxychains-ng" class="headerlink" title="与proxychains-ng"></a>与proxychains-ng</h2><p><a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a>是proxychains的升级版，其中ng寓意为new generation（新一代），目前并不知晓proxychains-ng与proxychains是否为同一组织开发，但二者的配置与使用极为相似。<br>在Ubuntu下可以使用<code>sudo apt install proxychains-ng</code>直接安装，要使用proxychains-ng，只需在相应命令前加上<code>proxychains4</code>即可。</p>
 <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>由于Windows与Linux的设计哲学不同，Linux偏向使用命令行，Windows偏向使用图形界面，所以proxychains并未提供Windows版。在Windows下可以使用另一款代理工具<a href="https://www.proxifier.com/" target="_blank" rel="noopener">Proxifier</a>，它可以看作是proxychains的图形界面版，值得注意的是，Proxifier是收费的，但你可以免费体验31天。</p>
 
@@ -510,6 +506,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/18/rsa/" rel="prev" title="RSA加密算法">
+                RSA加密算法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -583,7 +583,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -762,7 +762,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">78k</span>
+    <span title="Symbols count total">81k</span>
   
 
   
