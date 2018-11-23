@@ -115,18 +115,18 @@
 
 
 
-  <meta name="description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。">
+  <meta name="description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOp">
 <meta name="keywords" content="Windows,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSL相关问题解决">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/21/wsl-problem/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。">
+<meta property="og:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOp">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-22T05:35:38.617Z">
+<meta property="og:updated_time" content="2018-11-01T12:50:49.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSL相关问题解决">
-<meta name="twitter:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。">
+<meta name="twitter:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOp">
 
 
 
@@ -460,13 +460,15 @@
       
 
       
-        <h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。<br><a id="more"></a></p>
+        <h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。</p>
+<h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在<strong>启动或关闭Windows功能</strong>中勾选<strong>适用于Linux的Windows子系统</strong>，或者直接在管理员权限的PowerShell中输入<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>此条命令，也能达到同样的效果。<br>完成上述操作后，可直接在<strong>Microsoft Store</strong>中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。<br>到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行<code>do-release-upgrade</code>命令升级到最新版。<br>下载完成后，要启动Ubuntu有多种方式，可以在<strong>PowerShell</strong>或<strong>cmd</strong>中输入<code>wsl</code>或<code>bash</code>或<code>ubuntu</code>都可启动，也可以直接在<strong>开始菜单</strong>中点击Ubuntu图标启动。<br><a id="more"></a></p>
 <h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure></p>
 <p>修改完成后用<code>sudo service ssh start</code>启动SSH服务，可能会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p>
 <p>并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure></p>
 <p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p>
 <p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p>
-<h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2>
+<h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2><h2 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关WSL的更多内容，可以查看<a href="https://docs.microsoft.com/zh-cn/windows/wsl/about" target="_blank" rel="noopener">WSL官方文档</a>，或者<a href="https://blogs.msdn.microsoft.com/wsl/" target="_blank" rel="noopener">WSL官方博客</a>，在使用WSL的过程中遇到任何问题，可以去<a href="https://github.com/Microsoft/WSL" target="_blank" rel="noopener">WSL的GitHub地址</a>提Issues。</p>
+
       
     </div>
 
@@ -587,7 +589,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -734,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名称问题"><span class="nav-number">1.</span> <span class="nav-text">名称问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH问题"><span class="nav-number">2.</span> <span class="nav-text">SSH问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形界面问题"><span class="nav-number">3.</span> <span class="nav-text">图形界面问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EXE程序问题"><span class="nav-number">4.</span> <span class="nav-text">EXE程序问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#netstat和ps"><span class="nav-number">5.</span> <span class="nav-text">netstat和ps</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名称问题"><span class="nav-number">1.</span> <span class="nav-text">名称问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装及运行"><span class="nav-number">2.</span> <span class="nav-text">安装及运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH问题"><span class="nav-number">3.</span> <span class="nav-text">SSH问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形界面问题"><span class="nav-number">4.</span> <span class="nav-text">图形界面问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EXE程序问题"><span class="nav-number">5.</span> <span class="nav-text">EXE程序问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#netstat和ps"><span class="nav-number">6.</span> <span class="nav-text">netstat和ps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台运行问题"><span class="nav-number">7.</span> <span class="nav-text">后台运行问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">8.</span> <span class="nav-text">更多</span></a></li></ol></div>
             
 
           </div>
@@ -766,7 +768,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">114k</span>
   
 
   

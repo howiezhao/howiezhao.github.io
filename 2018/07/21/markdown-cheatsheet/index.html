@@ -115,17 +115,17 @@
 
 
 
-  <meta name="description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。 基本语法标题# 一级标题#### 四级标题对应HTML，最高6级标题。 列表- 无序列表项- 无序列表项- 无序列表项 1. 有序列表项2. 有序列表项3.">
+  <meta name="description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种风格（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown小记">
 <meta property="og:url" content="https://howiezhao.github.io/2018/07/21/markdown-cheatsheet/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。 基本语法标题# 一级标题#### 四级标题对应HTML，最高6级标题。 列表- 无序列表项- 无序列表项- 无序列表项 1. 有序列表项2. 有序列表项3.">
+<meta property="og:description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种风格（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-18T04:30:09.885Z">
+<meta property="og:updated_time" content="2018-11-17T11:59:48.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown小记">
-<meta name="twitter:description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。 基本语法标题# 一级标题#### 四级标题对应HTML，最高6级标题。 列表- 无序列表项- 无序列表项- 无序列表项 1. 有序列表项2. 有序列表项3.">
+<meta name="twitter:description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种风格（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如">
 
 
 
@@ -459,31 +459,38 @@
       
 
       
-        <p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p># 一级标题<br>#### 四级标题<br>对应HTML，最高6级标题。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>- 无序列表项<br>- 无序列表项<br>- 无序列表项</p>
-<p>1. 有序列表项<br>2. 有序列表项<br>3. 有序列表项<br><a id="more"></a></p>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>[Howie’s Blog](<a href="http://howiezhao.com" target="_blank" rel="noopener">http://howiezhao.com</a>)<br>超文本链接必须带http。</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>![一张图片](/images/abc.jpg)<br>当图片无法显示时，则显示中括号中的语句。图片的路径为相对路径，即当前markdown文件所在路径下的images中的abc.jpg。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>*斜体*<br>**粗体**</p>
+        <p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
+<p>对应HTML，最高6级标题。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
+<p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。<br><a id="more"></a></p>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Howie&apos;s Blog](http://howiezhao.com)</span><br></pre></td></tr></table></figure>
+<p>超文本链接必须带http。</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![一张图片](/images/abc.jpg)</span><br></pre></td></tr></table></figure>
+<p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br></pre></td></tr></table></figure>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
 <p>`这里是单行代码`</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>表头1 | 表头2<br>-– | -–<br>单元格1 | 单元格2<br>单元格3 | 单元格4</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>> 这是引用</p>
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><p>-–，这是一条水平区分线，用3个或以上的短横线表示</p>
-<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，markdown使用 \ 转义以上特殊字符。</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>这是一条水平区分线，用3个或以上的短横线表示</p>
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
 <h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
 <li>在特殊字符与要书写的文字之间加上空格</li>
 <li>不同段之间加一空行</li>
 <li>链接后加一个空格</li>
 </ol>
-<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为GFM，即GitHub风格的Markdown语法，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
+<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为<strong>GFM</strong>，即<strong>GitHub风格的Markdown语法</strong>，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
 <ol>
 <li>链接自动识别：GFM会自动为标准的URL加上链接</li>
-<li>语法着色：在```后输入语言，即可着色</li>
-<li>删除线：使用~~表示删除线</li>
-<li>任务列表：使用- []或- [1]表示未勾选或已勾选的列表</li>
+<li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank" rel="noopener">官方文档</a></li>
+<li>删除线：使用<code>~~</code>表示删除线</li>
+<li>任务列表：使用<code>- []</code>或<code>- [1]</code>表示未勾选或已勾选的任务列表</li>
+<li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">Emoji cheat sheet</a></li>
 </ol>
+<p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/" target="_blank" rel="noopener">GitHub官方的文档</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/" target="_blank" rel="noopener">Dillinger</a>是一个在线的Markdown编辑器。<br>Sublime Text拥有众多的Markdown插件，其中<a href="https://packagecontrol.io/packages/MarkdownPreview" target="_blank" rel="noopener">Markdown​Preview</a>可以在浏览器中预览Markdown文件，而<a href="https://packagecontrol.io/packages/MarkdownEditing" target="_blank" rel="noopener">Markdown​Editing</a>可以快速的编辑Markdown文件。</p>
 
       
     </div>
@@ -597,7 +604,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -744,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">1.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">1.2.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.3.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">1.4.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">1.5.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.6.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">1.7.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">1.8.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横线"><span class="nav-number">1.9.</span> <span class="nav-text">横线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义"><span class="nav-number">1.10.</span> <span class="nav-text">转义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳实践"><span class="nav-number">2.</span> <span class="nav-text">最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-Flavored-Markdown"><span class="nav-number">3.</span> <span class="nav-text">GitHub Flavored Markdown</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">1.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">1.2.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.3.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">1.4.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">1.5.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.6.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">1.7.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">1.8.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横线"><span class="nav-number">1.9.</span> <span class="nav-text">横线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义"><span class="nav-number">1.10.</span> <span class="nav-text">转义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳实践"><span class="nav-number">2.</span> <span class="nav-text">最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-Flavored-Markdown"><span class="nav-number">3.</span> <span class="nav-text">GitHub Flavored Markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">4.</span> <span class="nav-text">更多</span></a></li></ol></div>
             
 
           </div>
@@ -776,7 +783,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">114k</span>
   
 
   

@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-17T07:34:31.249Z">
+<meta property="og:updated_time" content="2018-11-06T06:58:39.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="set、env与export">
 <meta name="twitter:description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同">
@@ -460,9 +460,14 @@
       
 
       
-        <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。<br>环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。<br>在Shell中可以使用<code>declare</code>命令直接定义Shell环境变量，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> A=hello  <span class="comment">#定义Shell环境变量a，值为hello，注意等号两边不能有空格</span></span><br></pre></td></tr></table></figure></p>
-<p>使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span>  <span class="comment">#打印HOME的值</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。<br>环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。<br>在Shell中可以使用<code>declare</code>命令直接定义Shell环境变量，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义Shell环境变量A，值为hello，注意等号两边不能有空格</span></span><br><span class="line"><span class="comment"># 按照传统，环境变量一般为全大写</span></span><br><span class="line"><span class="built_in">declare</span> A=hello</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印A的值，环境变量前需加“$”符号，</span></span><br><span class="line"><span class="comment"># 表示要打印的是环境变量而不是一般字符串</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span></span><br></pre></td></tr></table></figure></p>
 <p>值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。</p>
+<p>常见的Shell环境变量有：</p>
+<ul>
+<li>COLUMNS：当前终端的宽度</li>
+<li>LINES：当前终端的高度</li>
+</ul>
 <p>常见的用户环境变量有：</p>
 <ul>
 <li>PATH：用以指定命令的搜索目录</li>
@@ -594,7 +599,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -773,7 +778,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">114k</span>
   
 
   

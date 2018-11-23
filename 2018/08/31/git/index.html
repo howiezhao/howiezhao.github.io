@@ -115,17 +115,17 @@
 
 
 
-  <meta name="description" content="Git是目前最流行的分布式版本控制系统(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是：  /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git c">
+  <meta name="description" content="Git是目前最流行的分布式版本控制系统（Distributed Version Control System, DVCS），类似的工具还有Mercurial（由hg命令操作）等；在早期，人们常使用集中式版本控制系统（Centralized Version Control System，CVCS），其典型有CVS、Subversion（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git小记">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/31/git/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Git是目前最流行的分布式版本控制系统(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是：  /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git c">
+<meta property="og:description" content="Git是目前最流行的分布式版本控制系统（Distributed Version Control System, DVCS），类似的工具还有Mercurial（由hg命令操作）等；在早期，人们常使用集中式版本控制系统（Centralized Version Control System，CVCS），其典型有CVS、Subversion（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-25T03:44:00.580Z">
+<meta property="og:updated_time" content="2018-11-16T14:41:47.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git小记">
-<meta name="twitter:description" content="Git是目前最流行的分布式版本控制系统(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。 配置Git共有3个配置文件，分别是：  /etc/gitconfig文件用于配置所有用户的配置信息，使用git config --system命令配置 某个用户主目录下的.gitconfig文件只适用于该用户，使用git c">
+<meta name="twitter:description" content="Git是目前最流行的分布式版本控制系统（Distributed Version Control System, DVCS），类似的工具还有Mercurial（由hg命令操作）等；在早期，人们常使用集中式版本控制系统（Centralized Version Control System，CVCS），其典型有CVS、Subversion（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系">
 
 
 
@@ -459,40 +459,51 @@
       
 
       
-        <p>Git是目前最流行的<strong>分布式版本控制系统</strong>(Distributed Version Control System, DVCS)，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p>
+        <p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a href="https://www.mercurial-scm.org/" target="_blank" rel="noopener">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a href="https://www.nongnu.org/cvs/" target="_blank" rel="noopener">CVS</a>、<a href="https://subversion.apache.org/" target="_blank" rel="noopener">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p>
 <ul>
 <li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令配置</li>
-<li>某个用户主目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令配置</li>
+<li>某个用户家目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令配置</li>
 <li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li>
 </ul>
-<p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>一般来说，针对新安装的Git环境，要配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.name <span class="string">"Howie Zhao"</span></span><br><span class="line">git config --global user.email howiezhaohr@hotmail.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>按照个人偏好，针对新安装的Git环境，会配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.name <span class="string">"Howie Zhao"</span></span><br><span class="line">git config --global user.email howiezhaohr@hotmail.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg2 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg <span class="string">'!"git lg1"'</span></span><br><span class="line">git config --global alias.adog <span class="string">"log --all --decorate --oneline --graph"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
 <p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br><a id="more"></a></p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>要开始对某个项目进行版本控制，需要先在其所在路径下执行<code>git init</code>进行初始化，此命令会在当前路径下创建一个<code>.git</code>的隐藏文件夹，这就是Git仓库目录。<br>Git分为3个区域，Git仓库、工作目录、暂存区域：</p>
 <ul>
-<li><strong>Git仓库目录</strong>是Git用来保存项目的元数据和对象数据库的地方。这是Git中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</li>
-<li><strong>工作目录</strong>是对项目的某个版本独立提取出来的内容。这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</li>
-<li><strong>暂存区域</strong>是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”，不过一般说法还是叫暂存区域。</li>
+<li><strong>Git仓库目录</strong>（Repository）是Git用来保存项目的元数据和对象数据库的地方。这是Git中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</li>
+<li><strong>工作目录</strong>（Working directory）是对项目的某个版本独立提取出来的内容。这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</li>
+<li><strong>暂存区域</strong>（Staging area）是一个文件，保存了下次将提交（commit）的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”，不过一般说法还是叫暂存区域。</li>
 </ul>
-<p>基本的 Git 工作流程如下：</p>
+<p>基本的Git工作流程如下：</p>
 <ol>
 <li>在工作目录中修改文件。</li>
 <li>暂存文件，将文件的快照放入暂存区域。</li>
-<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
+<li>提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录。</li>
 </ol>
-<p>如果Git目录中保存着的特定版本文件，就属于<strong>已提交状态</strong>(committed)。如果作了修改并已放入暂存区域，就属于<strong>已暂存状态</strong>(staged)。如果自上次取出后，作了修改但还没有放到暂存区域，就是<strong>已修改状态</strong>(modified)。</p>
+<p>根据Git的三个区域，一个文件可以有如下几种状态：</p>
+<ul>
+<li><strong>未跟踪状态</strong>（untracked）：指新创建且还没有添加到暂存区域的文件</li>
+<li><strong>已暂存状态</strong>（staged）：指已经添加到暂存区域的文件</li>
+<li><strong>已提交状态</strong>（committed）：指已经从暂存区提交到Git仓库的文件</li>
+<li><strong>已修改状态</strong>（modified）：指作了修改但还没有放到暂存区域的文件</li>
+</ul>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>每一次提交都是文件的一个版本，可以将这一系列提交看作一条<strong>链表</strong>，链表的头指针（<strong>HEAD</strong>）始终指向最新的提交，即最新的版本。要检出到某一版本，本质上是将HEAD指针指向某一提交。链表中的节点（即提交）都有唯一的父节点和唯一的子节点，Git中<strong>分支</strong>（branch）的本质就是将链表变为<strong>树</strong>。当使用<code>git init</code>初始化Git仓库时，会默认创建<code>master</code>分支，这种一个分支等价于一条链表。<br>使用<code>git branch</code>可列出所有分支，使用<code>git branch dev</code>即可在当前提交点创建新分支<code>dev</code>，接着使用<code>git checkout dev</code>即可切换到<code>dev</code>分支，或者直接使用<code>git checkout -b dev</code>即可一步创建并切换到<code>dev</code>新分支。</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
-<li><code>git --version</code>：查看Git版本信息</li>
-<li><code>git add test.txt</code>：将需要被追踪的文件(test.txt)添加到缓存区</li>
-<li><code>git commit -m &#39;first commit&#39;</code>：将缓存区的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息</li>
+<li><code>git version</code>：查看Git版本信息</li>
+<li><code>git add test1.txt</code>：将需要被追踪的文件（test1.txt）添加到暂存区域</li>
+<li><code>git reset test2.txt</code>：将误被追踪的文件（test2.txt）移除出暂存区域，文件仍会存在于工作目录</li>
+<li><code>git commit -m &#39;first commit&#39;</code>：将暂存区域的内容提交到本地仓库，参数<code>-m</code>指定提交时的附带信息，若不带参数<code>-m</code>执行此命令则会自动打开默认的Vim编辑器并要求输入附带信息</li>
 <li><code>git push</code>：将本地仓库推送到远程仓库</li>
 <li><code>git clone</code>：将远程仓库克隆到本地</li>
 <li><code>git pull</code>：将远程仓库的更新拉取到本地仓库</li>
 <li><code>git status</code>：查看Git仓库状态</li>
-<li><code>git log</code>：查看commit记录。</li>
-<li><code>git diff &lt;first-commit-id&gt; &lt;second-commit-id&gt;</code>：对比两个commit之间的不同，参数为两个commit ID，为方便可以取ID的前4个字符</li>
+<li><code>git log</code>：查看commit记录，参数<code>--graph</code>可以图形化显示，参数<code>--oneline</code>可以一行显示。</li>
+<li><code>git diff</code>：对比工作目录和暂存区域中文件之间的不同</li>
+<li><code>git diff --staged</code>：对比暂存区域和Git仓库中最新commit文件之间的不同</li>
+<li><code>git diff &lt;first-commit-id&gt; &lt;second-commit-id&gt;</code>：对比Git仓库中两个commit之间的不同，参数为两个commit ID，为方便可以取ID的前7个字符</li>
+<li><code>git checkout &lt;commit-id&gt;</code>：切换到某个具体的commit，要切换回最新的commit可使用<code>git checkout master</code></li>
 </ul>
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p><strong>直接记录快照，而非差异比较</strong>：Git与其他版本控制系统的主要区别在于对待数据的方法，其他的VCS主要记录不同版本之间的差异，而Git则相当于直接记录不同版本的快照。<br><strong>近乎所有操作都是本地执行</strong>：在Git中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。<br><strong>Git保证完整性</strong>：Git中所有数据在存储前都计算校验和(SHA-1)，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。若你在传送过程中丢失信息或损坏文件，Git就能发现。<br><strong>Git一般只添加数据</strong>：你执行的Git操作，几乎只往Git数据库中增加数据。很难让Git执行任何不可逆操作，或者让它以任何方式清除数据。</p>
+<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p><strong>直接记录快照，而非差异比较</strong>：Git与其他版本控制系统的主要区别在于对待数据的方法，其他的VCS主要记录不同版本之间的差异，而Git则相当于直接记录不同版本的快照。<br><strong>近乎所有操作都是本地执行</strong>：在Git中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。<br><strong>Git保证完整性</strong>：Git中所有数据在存储前都计算校验和(SHA-1)，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。若你在传送过程中丢失信息或损坏文件，Git就能发现。<br><strong>Git一般只添加数据</strong>：你执行的Git操作，几乎只往Git数据库中增加数据。很难让Git执行任何不可逆操作，或者让它以任何方式清除数据。</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>应明确一点，Git是由Linux创始人Linus Torvalds开发的分布式版本控制系统，而GitHub是使用Git实现的代码托管网站，两者并非一类。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>在命令行中直接输入<code>git</code>，可查看相关命令，要具体查看某个命令的帮助信息，可输入<code>git help &lt;command&gt;</code>，如<code>git help diff</code>，要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">《Pro Git》</a>一书。</p>
 
@@ -608,7 +619,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -755,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构"><span class="nav-number">2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">3.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-number">4.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思想"><span class="nav-number">5.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">6.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub"><span class="nav-number">7.</span> <span class="nav-text">GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">8.</span> <span class="nav-text">更多</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构"><span class="nav-number">3.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-number">4.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">5.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore"><span class="nav-number">6.</span> <span class="nav-text">.gitignore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思想"><span class="nav-number">7.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">8.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub"><span class="nav-number">9.</span> <span class="nav-text">GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">10.</span> <span class="nav-text">更多</span></a></li></ol></div>
             
 
           </div>
@@ -787,7 +798,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">114k</span>
   
 
   

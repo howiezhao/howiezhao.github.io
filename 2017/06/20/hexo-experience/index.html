@@ -115,18 +115,18 @@
 
 
 
-  <meta name="description" content="Hexo是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的Jekyll，基于Go的Hugo，基于Python的Pelican等等。 安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入node -v来测试Node.js是否成">
+  <meta name="description" content="Hexo是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的Jekyll，基于Go的Hugo，基于Python的Pelican等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。 安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo初体验">
 <meta property="og:url" content="https://howiezhao.github.io/2017/06/20/hexo-experience/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Hexo是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的Jekyll，基于Go的Hugo，基于Python的Pelican等等。 安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入node -v来测试Node.js是否成">
+<meta property="og:description" content="Hexo是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的Jekyll，基于Go的Hugo，基于Python的Pelican等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。 安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-18T07:15:40.118Z">
+<meta property="og:updated_time" content="2018-11-16T09:38:44.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo初体验">
-<meta name="twitter:description" content="Hexo是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的Jekyll，基于Go的Hugo，基于Python的Pelican等等。 安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入node -v来测试Node.js是否成">
+<meta name="twitter:description" content="Hexo是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的Jekyll，基于Go的Hugo，基于Python的Pelican等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。 安装安装Hexo前，需要安装Node.js和Git，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。">
 
 
 
@@ -460,7 +460,7 @@
       
 
       
-        <p><a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="noopener">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>，基于Go的<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/" target="_blank" rel="noopener">Pelican</a>等等。</p>
+        <p><a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="noopener">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>，基于Go的<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/" target="_blank" rel="noopener">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
 <p><strong>本地安装</strong></p>
 <ul>
@@ -474,27 +474,47 @@
 </li>
 </ul>
 <p>关于npm更多的内容请参考<a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html" target="_blank" rel="noopener">npm模块安装机制简介</a>。</p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
-<p>如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。</p>
-<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<p>如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>hexo version</code>即可查看Hexo版本信息，在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
+<p>如果没有设置<code>folder</code>，Hexo 默认在目前的文件夹建立网站。</p>
+<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt;</span><br><span class="line">或 hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>如果没有设置<code>layout</code>的话，默认使用 _config.yml 中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">或 hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line">或 hexo server</span><br></pre></td></tr></table></figure>
+<p>默认情况下，访问网址为：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 。</p>
+<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br><span class="line">或 hexo deploy</span><br></pre></td></tr></table></figure>
 <h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
 <p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>在Hexo生成的网站目录中，public目录保存着已经生成的静态文件，source目录保存着markdown格式的源文件，themes目录保存着主题文件，_config.yml文件为站点配置文件。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>Hexo生成的网站目录结构如下：</p>
+<ul>
+<li><code>public</code>：此目录下保存着已经生成的静态文件</li>
+<li><code>scaffolds</code>：此目录下存放Hexo模板，当您新建文章时，Hexo会根据scaffold来建立文件。</li>
+<li><code>source</code>：此目录下存放用户资源<ul>
+<li><code>_posts</code>：此目录下存放Markdown格式的源文章</li>
+<li><code>images</code>：此目录下存放相关图片文件</li>
+</ul>
+</li>
+<li><code>themes</code>：此目录下保存着主题文件</li>
+<li><code>_config.yml</code>：此文件为<strong>站点配置文件</strong></li>
+</ul>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>站点配置文件（<code>_config.yml</code>）中的<code>url</code>字段务必要填写为自己站点的正确网址，否则分享自己站点内文章时会生成错误链接。<br>新建文章（<code>hexo n &lt;title&gt;</code>）时建议使用小写英文作为文件名，此文件名将作为文章链接的一部分，英文中的空格将自动用<code>-</code>替代，文章标题可以在文件中另行设置。<br>和传统的博客一样，建议开启<strong>分类</strong>（category）和<strong>标签</strong>（tag）功能，在Hexo中，分类具有<strong>顺序性</strong>和<strong>层次性</strong>，也就是说<code>Foo，Bar</code>不等于<code>Bar，Foo</code>，而标签没有顺序和层次。简单来说，分类应该是经过深思熟虑的，而标签则可适文章而决定，分类一般只有几个，而标签可以有一堆。具体而言，可以参考本站点的分类标签设计。</p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Hexo支持<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">许多插件</a>，个人经常使用的插件如下：</p>
 <ul>
 <li><a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a>：为Hexo打造的Git部署插件，适用于将博客部署到GitHub仓库上。</li>
 <li><a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">hexo-symbols-count-time</a>：适用于为文章添加字数统计和阅读时长统计，比同类型的<a href="https://github.com/willin/hexo-wordcount" target="_blank" rel="noopener">hexo-wordcount</a>插件要更好。</li>
+<li><a href="https://github.com/theme-next/hexo-generator-searchdb" target="_blank" rel="noopener">hexo-generator-searchdb</a>：适用于为博客添加本地搜索功能。</li>
+<li><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a>：适用于为博客添加RSS功能。</li>
 </ul>
-<p>使用<code>npm install hexo-deployer-git hexo-symbols-count-time --save</code>命令即可安装上面提到的插件。</p>
+<p>使用如下命令即可安装上面提到的所有插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git hexo-symbols-count-time hexo-generator-searchdb hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装Hexo后，默认使用的主题为landscape，个人不是很喜欢这个主题，所幸的是Hexo提供<a href="https://hexo.io/themes/" target="_blank" rel="noopener">更多的第三方主题</a>，个人倾向于使用广为流行的<a href="https://theme-next.org/" target="_blank" rel="noopener">NexT主题</a>。<br>值得注意的是，NexT主题在6.0.0版本之前由iissnan个人维护，其官方仓库为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> ，官网为<a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">https://theme-next.iissnan.com/</a> ，在6.0.0版本之后由theme-next组织维护，其官方仓库更改为<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a> ，官网为<a href="https://theme-next.org" target="_blank" rel="noopener">https://theme-next.org</a> 。这里所介绍的使用方法均以6.0.0版本之后为例。</p>
 <h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装NexT主题，首先要进入Hexo站点目录下，接着执行<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>命令，即可将NexT仓库克隆到本地。要启用NexT主题，只需在<strong>站点配置文件</strong>中找到<code>theme</code>字段，并将其值更改为<code>next</code>即可。</p>
-<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>要查看正在使用的NexT主题的版本，可直接打开<strong>主题配置文件</strong>（即站点目录下的<code>/themes/next/_config.yml</code>文件），在其底部<code>version</code>字段即可查看版本号。进入站点目录下的<code>/themes/next</code>文件夹，执行<code>git pull</code>命令即可从官方仓库拉取最新代码进行更新。<br>如果你使用的是6.0.0之前的版本，现在想要升级到6.0.0之后的版本，可参考NexT主题官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md" target="_blank" rel="noopener">解决方案</a>。</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>关于Hexo的更多问题，请参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a>，关于NexT主题的更多问题，请参考<a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT使用文档</a>，关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
+<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>要查看正在使用的NexT主题的版本，有如下几种方法：</p>
+<ul>
+<li>可直接打开<strong>主题配置文件</strong>（即站点目录下的<code>/themes/next/_config.yml</code>文件），在其底部<code>version</code>字段即可查看版本号。</li>
+<li>在自己站点的底部一般会有Hexo和NexT的版本号</li>
+</ul>
+<p>和传统的Git仓库更新一样，进入站点目录下的<code>/themes/next</code>文件夹，执行<code>git pull</code>命令即可从官方仓库拉取最新代码进行更新。<br>如果你使用的是6.0.0之前的版本，现在想要升级到6.0.0之后的版本，可参考NexT主题官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md" target="_blank" rel="noopener">解决方案</a>。</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>关于Hexo的更多问题，请参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a>，或YouTube上<a href="https://www.youtube.com/watch?v=bCj0iVVqkSg&amp;feature=youtu.be" target="_blank" rel="noopener">Hexo系列教程</a>视频；关于NexT主题的更多问题，请参考<a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT使用文档</a>；关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
 
       
     </div>
@@ -610,7 +630,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -757,7 +777,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">2.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">3.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个网站"><span class="nav-number">3.1.</span> <span class="nav-text">新建一个网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一篇文章"><span class="nav-number">3.2.</span> <span class="nav-text">新建一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态文件"><span class="nav-number">3.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务预览"><span class="nav-number">3.4.</span> <span class="nav-text">启动服务预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署网站"><span class="nav-number">3.5.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除缓存文件-db-json-和已生成的静态文件-public-。"><span class="nav-number">3.6.</span> <span class="nav-text">清除缓存文件(db.json)和已生成的静态文件(public)。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">4.</span> <span class="nav-text">更多</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">4.1.</span> <span class="nav-text">目录结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">5.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">6.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">6.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-1"><span class="nav-number">6.2.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">6.3.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">2.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">3.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个网站"><span class="nav-number">3.1.</span> <span class="nav-text">新建一个网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一篇文章"><span class="nav-number">3.2.</span> <span class="nav-text">新建一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态文件"><span class="nav-number">3.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务预览"><span class="nav-number">3.4.</span> <span class="nav-text">启动服务预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署网站"><span class="nav-number">3.5.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除缓存文件-db-json-和已生成的静态文件-public-。"><span class="nav-number">3.6.</span> <span class="nav-text">清除缓存文件(db.json)和已生成的静态文件(public)。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">4.</span> <span class="nav-text">更多</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">4.1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最佳实践"><span class="nav-number">4.2.</span> <span class="nav-text">最佳实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">5.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">6.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">6.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-1"><span class="nav-number">6.2.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题配置"><span class="nav-number">6.3.</span> <span class="nav-text">主题配置</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -789,7 +809,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">81k</span>
+    <span title="Symbols count total">114k</span>
   
 
   
