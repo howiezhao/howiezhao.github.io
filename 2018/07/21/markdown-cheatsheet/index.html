@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种风格（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-17T11:59:48.070Z">
+<meta property="og:updated_time" content="2018-11-21T02:56:11.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown小记">
 <meta name="twitter:description" content="Markdown是一种轻量标记语言，其文件后缀名为.md，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种风格（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如">
@@ -462,19 +462,19 @@
         <p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
 <p>对应HTML，最高6级标题。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">    - 这是是嵌套列表项</span><br><span class="line">    - 这里也是嵌套列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
 <p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。<br><a id="more"></a></p>
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Howie&apos;s Blog](http://howiezhao.com)</span><br></pre></td></tr></table></figure>
 <p>超文本链接必须带http。</p>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![一张图片](/images/abc.jpg)</span><br></pre></td></tr></table></figure>
 <p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br></pre></td></tr></table></figure>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***粗斜体***</span><br></pre></td></tr></table></figure>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
 <p>`这里是单行代码`</p>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>这是一条水平区分线，用3个或以上的短横线表示</p>
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+<p>这是一条水平区分线，用3个或以上的短横线表示，个人习惯使用4个短横线。</p>
 <h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
 <h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
 <li>在特殊字符与要书写的文字之间加上空格</li>
@@ -486,7 +486,7 @@
 <li>链接自动识别：GFM会自动为标准的URL加上链接</li>
 <li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank" rel="noopener">官方文档</a></li>
 <li>删除线：使用<code>~~</code>表示删除线</li>
-<li>任务列表：使用<code>- []</code>或<code>- [1]</code>表示未勾选或已勾选的任务列表</li>
+<li>任务列表：使用<code>- [ ]</code>或<code>- [x]</code>表示未勾选或已勾选的任务列表</li>
 <li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">Emoji cheat sheet</a></li>
 </ol>
 <p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/" target="_blank" rel="noopener">GitHub官方的文档</a>。</p>
@@ -783,7 +783,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">114k</span>
+    <span title="Symbols count total">89k</span>
   
 
   
