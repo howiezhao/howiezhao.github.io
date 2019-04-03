@@ -115,18 +115,18 @@
 
 
 
-  <meta name="description" content="众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详">
+  <meta name="description" content="众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要sudo apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wge">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Zsh替代Bash">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/18/zsh/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详">
+<meta property="og:description" content="众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要sudo apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wge">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-28T04:52:18.083Z">
+<meta property="og:updated_time" content="2019-03-13T05:49:01.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Zsh替代Bash">
-<meta name="twitter:description" content="众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wget安装的详">
+<meta name="twitter:description" content="众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。 安装Zsh的安装很简单，在Ubuntu中，只需要sudo apt install zsh一条命令即可，启用也很简单，chsh -s $(which zsh)即可，但它的配置却相当复杂，由此诞生了Oh My Zsh项目，该项目的主要目的是简化Zsh的配置。Oh My Zsh的官网给出了利用curl或wge">
 
 
 
@@ -461,12 +461,12 @@
 
       
         <p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Oh My Zsh前需要安装git</span></span><br><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>sudo apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Oh My Zsh前需要安装git（`sudo apt install git`）</span></span><br><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>
 <p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中<code>.zshrc</code>类似于<code>.bashrc</code>，存放zsh的配置信息；<br><code>.zsh_history</code>类似于<code>.bash_history</code>，存放zsh的命令历史记录；<br><code>.oh-my-zsh</code>的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的<code>themes</code>文件夹下主要存放自带的主题，<code>plugins</code>文件夹下主要存放自带的插件，<code>custom</code>文件夹下主要存放用户自己下载的主题和插件。<br><a id="more"></a></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Oh My Zsh的主要配置都位于<code>$HOME/.zshrc</code>文件中，主要配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置主题，默认为自带的robbyrussell主题，</span></span><br><span class="line"><span class="comment"># 个人喜欢自带的ys主题</span></span><br><span class="line">ZSH_THEME=<span class="string">"ys"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动错误命令自动更正，默认是注释的</span></span><br><span class="line">ENABLE_CORRECTION=<span class="string">"true"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在命令执行的过程中，使用小红点进行提示</span></span><br><span class="line"><span class="comment"># 默认是注释的</span></span><br><span class="line">COMPLETION_WAITING_DOTS=<span class="string">"true"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置插件，默认只启用了自带的git插件,</span></span><br><span class="line"><span class="comment"># 要启用更多的插件可直接在括号中写入，</span></span><br><span class="line"><span class="comment"># 必须是自带的插件或已下载到指定位置的插件</span></span><br><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Zsh的强大之处就在于它有相当多的插件，只需安装相关插件，并进行配置，即可体验相应功能。Oh My Zsh安装并启用插件相当简便，所以，可把Oh My Zsh当成是一个Zsh的插件管理器。个人常用的插件如下：</p>
 <h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>Oh My Zsh自带的插件，用于显示Git仓库的分支等信息。</p>
-<h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><p>Oh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，<code>apt install autojump</code>即可。</p>
+<h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><p>Oh My Zsh自带的插件，实现快速跳转到指定文件夹，前提是要安装autojump命令行工具，<code>sudo apt install autojump</code>即可。</p>
 <h3 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="noopener">zsh-autosuggestions</a></h3><p>Zsh下的命令自动建议插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure></p>
 <h3 id="zsh-completions"><a href="#zsh-completions" class="headerlink" title="zsh-completions"></a><a href="https://github.com/zsh-users/zsh-completions" target="_blank" rel="noopener">zsh-completions</a></h3><p>Zsh下的命令自动补全插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions</span><br></pre></td></tr></table></figure></p>
 <h3 id="zsh-syntax-highlighting"><a href="#zsh-syntax-highlighting" class="headerlink" title="zsh-syntax-highlighting"></a><a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="noopener">zsh-syntax-highlighting</a></h3><p>Zsh下的命令语法高亮插件，使用如下命令即可安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p>
@@ -591,7 +591,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -762,7 +762,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -774,7 +774,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">89k</span>
+    <span title="Symbols count total">119k</span>
   
 
   

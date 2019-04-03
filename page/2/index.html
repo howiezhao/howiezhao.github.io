@@ -357,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/what-is-editorconfig/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/12/16/digital-currency/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -376,8 +376,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/23/what-is-editorconfig/" itemprop="url">
-                  editorconfig 是什么
+                <a class="post-title-link" href="/2018/12/16/digital-currency/" itemprop="url">
+                  数字货币中的相关术语
                 </a>
               
             
@@ -403,7 +403,7 @@
                 
               
 
-              <time title="Created: 2018-09-23 17:55:34" itemprop="dateCreated datePublished" datetime="2018-09-23T17:55:34+08:00">2018-09-23</time>
+              <time title="Created: 2018-12-16 17:04:51" itemprop="dateCreated datePublished" datetime="2018-12-16T17:04:51+08:00">2018-12-16</time>
             
 
             
@@ -457,8 +457,781 @@
       
         
           
-            <p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了<a href="https://editorconfig.org/" target="_blank" rel="noopener">EditorConfig</a>，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。<br>一个典型的 EditorConfig 配置文件如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># 这是一行注释，以#开头</span><br><span class="line"></span><br><span class="line"># 表示此文件为最顶级</span><br><span class="line">root = true</span><br><span class="line"></span><br><span class="line"># 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行</span><br><span class="line">[*]</span><br><span class="line">end_of_line = lf</span><br><span class="line">insert_final_newline = true</span><br><span class="line"></span><br><span class="line"># 匹配所有以 js 和 py 为后缀名的文件</span><br><span class="line"># 设定其编码为 UTF-8</span><br><span class="line">[*.&#123;js,py&#125;]</span><br><span class="line">charset = utf-8</span><br><span class="line"></span><br><span class="line"># 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格</span><br><span class="line">[*.py]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 4</span><br><span class="line"></span><br><span class="line"># 设定 Makefile 文件的缩进为 Tab</span><br><span class="line">[Makefile]</span><br><span class="line">indent_style = tab</span><br><span class="line"></span><br><span class="line"># 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格</span><br><span class="line">[lib/**.js]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br><span class="line"></span><br><span class="line"># 设定 package.json 和 .travis.yml 的缩进为 2 个空格</span><br><span class="line">[&#123;package.json,.travis.yml&#125;]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br></pre></td></tr></table></figure></p>
-<p>此配置文件应该保存为<code>.editorconfig</code>并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见<code>root = true</code>为止。<br>有很多项目在初始化时都会生成相应的<code>.editorconfig</code>文件，比如 Angular。<br>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>
+            <h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><h2 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h2><h2 id="矿池"><a href="#矿池" class="headerlink" title="矿池"></a>矿池</h2><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/12/16/wikipedia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/16/wikipedia/" itemprop="url">
+                  编写Wikipedia的几点注意
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-16 17:03:06" itemprop="dateCreated datePublished" datetime="2018-12-16T17:03:06+08:00">2018-12-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/12/16/gitbook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/16/gitbook/" itemprop="url">
+                  使用GitBook编写电子书籍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-16 17:01:38" itemprop="dateCreated datePublished" datetime="2018-12-16T17:01:38+08:00">2018-12-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/20/advanced-search-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/20/advanced-search-tips/" itemprop="url">
+                  高级搜索技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-20 14:37:11" itemprop="dateCreated datePublished" datetime="2018-11-20T14:37:11+08:00">2018-11-20</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/16/authentication/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/16/authentication/" itemprop="url">
+                  身份认证的几种方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-16 17:26:53" itemprop="dateCreated datePublished" datetime="2018-11-16T17:26:53+08:00">2018-11-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/12/regex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/12/regex/" itemprop="url">
+                  正则表达式小记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-12 18:43:19" itemprop="dateCreated datePublished" datetime="2018-11-12T18:43:19+08:00">2018-11-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>正则表达式</strong>，即<strong>Regular Expression</strong>，直译为<strong>描述某种规则的表达式</strong>，通常被简写为<strong>regex</strong>或<strong>RE</strong>，是指使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<li><code>?</code>：匹配前一个字符0次或1次</li>
+<li><code>+</code>：匹配前一个字符1次或多次</li>
+<li><code>*</code>：匹配前一个字符0次、1次或多次</li>
+<li><code>|</code>：代表选择（即或集），具有最低优先级</li>
+<li><code>()</code>：用来定义操作符的范围和优先级</li>
+<li><code>[abc]</code>：匹配任何一个列在方括号中的字符，在这个例子中，要么匹配一个a，要么匹配一个b，要么匹配一个c</li>
+<li><code>[0-9]</code>：如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配，在这个例子中，表示匹配所有0到9的数字</li>
+</ul>
 
           
         
@@ -512,7 +1285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/code-font/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/02/readme/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -531,8 +1304,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/23/code-font/" itemprop="url">
-                  写代码应该用哪种字体
+                <a class="post-title-link" href="/2018/11/02/readme/" itemprop="url">
+                  编写规范的README文档
                 </a>
               
             
@@ -558,7 +1331,7 @@
                 
               
 
-              <time title="Created: 2018-09-23 17:52:35" itemprop="dateCreated datePublished" datetime="2018-09-23T17:52:35+08:00">2018-09-23</time>
+              <time title="Created: 2018-11-02 16:59:24" itemprop="dateCreated datePublished" datetime="2018-11-02T16:59:24+08:00">2018-11-02</time>
             
 
             
@@ -611,10 +1384,10 @@
 
       
         
-          <h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：<br><img src="/images/monospaced.PNG" alt="等宽字体与比例字体">在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 i，j 显得两侧余白较多，而字母 w，m 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。<br>
+          <p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用<strong>README</strong>文件来做整体描述，README这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README这6个字母通常都是大写的，这是因为<strong>在Linux中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定README文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的README文档应该是什么样子的。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/23/code-font/#more" rel="contents">
+            <a class="btn" href="/2018/11/02/readme/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -670,7 +1443,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/what-is-development-environment/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/02/open-sourse-license/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -689,8 +1462,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/23/what-is-development-environment/" itemprop="url">
-                  开发环境代表什么
+                <a class="post-title-link" href="/2018/11/02/open-sourse-license/" itemprop="url">
+                  开源协议漫谈
                 </a>
               
             
@@ -716,7 +1489,7 @@
                 
               
 
-              <time title="Created: 2018-09-23 17:41:59" itemprop="dateCreated datePublished" datetime="2018-09-23T17:41:59+08:00">2018-09-23</time>
+              <time title="Created: 2018-11-02 10:32:10" itemprop="dateCreated datePublished" datetime="2018-11-02T10:32:10+08:00">2018-11-02</time>
             
 
             
@@ -769,326 +1542,10 @@
 
       
         
-          
-            <p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。</p>
-<p>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。</p>
-<p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器/解释器、基本类库等于一体。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/talk-about-seo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/23/talk-about-seo/" itemprop="url">
-                  谈谈SEO
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-23 12:34:47" itemprop="dateCreated datePublished" datetime="2018-09-23T12:34:47+08:00">2018-09-23</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>SEO，即搜索引擎优化(Search Engine Optimization)，下面列出几点SEO方面的建议：</p>
-<ul>
-<li>页面的URL应该足够反映页面的内容</li>
-<li></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/22/steganography/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/22/steganography/" itemprop="url">
-                  隐写术
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-22 23:45:31" itemprop="dateCreated datePublished" datetime="2018-09-22T23:45:31+08:00">2018-09-22</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code>即可检查 a 文件的类型。<br>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索<code>CTF</code>或<code>FLAG</code>等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件<a href="http://facelessuser.github.io/HexViewer/" target="_blank" rel="noopener">HexViewer</a>查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
-<h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp" target="_blank" rel="noopener">谷歌搜图</a>，或许可以发现更多信息。</p>
-<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片：<br><img src="/images/meinv.jpg" alt="exif"><br>
+          <p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/22/steganography/#more" rel="contents">
+            <a class="btn" href="/2018/11/02/open-sourse-license/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1144,7 +1601,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/22/microsoft-technology/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/19/diff/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -1163,8 +1620,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/22/microsoft-technology/" itemprop="url">
-                  微软平台技术简介
+                <a class="post-title-link" href="/2018/10/19/diff/" itemprop="url">
+                  如何比较两个文件之间的差异
                 </a>
               
             
@@ -1190,7 +1647,7 @@
                 
               
 
-              <time title="Created: 2018-09-22 20:30:09" itemprop="dateCreated datePublished" datetime="2018-09-22T20:30:09+08:00">2018-09-22</time>
+              <time title="Created: 2018-10-19 14:05:51" itemprop="dateCreated datePublished" datetime="2018-10-19T14:05:51+08:00">2018-10-19</time>
             
 
             
@@ -1243,499 +1700,11 @@
 
       
         
-          
-            <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>微软最初的操作系统的DOS，DOS只是一个命令行形式，后来</p>
-<h2 id="NET"><a href="#NET" class="headerlink" title=".NET"></a>.NET</h2><h2 id="Windows-Phone"><a href="#Windows-Phone" class="headerlink" title="Windows Phone"></a>Windows Phone</h2>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/22/web-analytics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/22/web-analytics/" itemprop="url">
-                  网站统计与分析
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-22 17:59:29" itemprop="dateCreated datePublished" datetime="2018-09-22T17:59:29+08:00">2018-09-22</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="几个术语"><a href="#几个术语" class="headerlink" title="几个术语"></a>几个术语</h2><ul>
-<li>PV：Page View，即页面浏览量或点击量，用户每次刷新即被计算一次。</li>
-<li>UV：Unique Visitor，指独立访客数，以cookie为依据，访问网站的一台电脑客户端为一个访客。一天内相同的客户端只会被计算一次。</li>
-<li>IP：指独立IP数。一天内相同IP地址只被计算一次。</li>
-</ul>
-<h2 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h2><p>有许多第三方的工具可以帮助站长统计和分析网站流量，比如<a href="https://tongji.baidu.com" target="_blank" rel="noopener">百度统计</a>、<a href="http://ta.qq.com/" target="_blank" rel="noopener">腾讯分析</a>、<a href="https://analytics.google.com/analytics/web" target="_blank" rel="noopener">Google Analytics(GA)</a>等。个人经常使用Google Analytics。<br>这类工具的原理大致为：它们会生成一段特定的JS代码，站长需要将这段代码插入到自己网站的页面中，当访客访问网站时，这段代码会收集访客的行为信息，并上传到它们的服务器上。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/21/version-number/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/21/version-number/" itemprop="url">
-                  版本号的意义
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-21 20:51:08" itemprop="dateCreated datePublished" datetime="2018-09-21T20:51:08+08:00">2018-09-21</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即<code>X.Y.Z</code>格式，其中：</p>
-<ul>
-<li>X代表<strong>主版本号</strong>，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段；</li>
-<li>Y代表<strong>次版本号</strong>，增删功能时增加Y，同时重置Z为0；</li>
-<li>Z代表<strong>修订号</strong>，修复Bug时增加Z。</li>
-</ul>
-<p>除此之外，还会有一些修饰词，比如：</p>
-<ul>
-<li><code>alpha</code>表示内部测试版；</li>
-<li><code>beta</code>表示公开测试版；</li>
-<li><code>rc</code>即Release Candidate，表示候选版本，即将作为正式版发布；</li>
-<li><code>release</code>表示正式发行版；</li>
-<li><code>lts</code>即Long Term Support，表示长期支持版。</li>
-</ul>
-<p>有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。<br>随着版本号定义的越来越混乱，GitHub起草了一个<a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener">语义化版本(Semantic Versioning)</a>规范，为开源项目做出了一定指导意义。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/19/htop-top/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/19/htop-top/" itemprop="url">
-                  top的增强版：htop
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-19 17:50:14" itemprop="dateCreated datePublished" datetime="2018-09-19T17:50:14+08:00">2018-09-19</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>top是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是<code>top</code>命令的运行界面：<br><img src="/images/top.PNG" alt="top">top的运行结果可以大致分为7个部分：</p>
-<ul>
-<li>第1行显示了<strong>系统</strong>概况</li>
-<li>第2行显示了<strong>进程</strong>概况</li>
-<li>第3行显示了<strong>CPU</strong>概况</li>
-<li>第4行显示了<strong>内存</strong>概况</li>
-<li>第5行显示了<strong>Swap分区</strong>概况</li>
-<li>第6行为空行，用以显示运行命令时输入的<strong>参数</strong></li>
-<li>剩下部分则为<strong>每个进程的详细信息</strong>
+          <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  32: &apos;space&apos;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  13: &apos;enter&apos;,</span><br><span class="line">  32: &apos;space&apos;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &apos;left&apos;,</span><br><span class="line">  38: &apos;up&apos;,</span><br><span class="line">  39: &apos;right&apos;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &apos;left&apos;,</span><br><span class="line">  39: &apos;right&apos;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure></p>
+<p>可见，<code>fc</code>命令会把两个文件中不同的片段显示出来，并分别标注属于哪个文件。输入<code>fc /?</code>可以查看<code>fc</code>命令的更多参数。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/19/htop-top/#more" rel="contents">
+            <a class="btn" href="/2018/10/19/diff/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1791,7 +1760,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/19/curl-wget/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/18/rsa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -1810,8 +1779,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/19/curl-wget/" itemprop="url">
-                  curl wget
+                <a class="post-title-link" href="/2018/10/18/rsa/" itemprop="url">
+                  RSA加密算法
                 </a>
               
             
@@ -1837,12 +1806,30 @@
                 
               
 
-              <time title="Created: 2018-09-19 17:50:05" itemprop="dateCreated datePublished" datetime="2018-09-19T17:50:05+08:00">2018-09-19</time>
+              <time title="Created: 2018-10-18 16:03:58" itemprop="dateCreated datePublished" datetime="2018-10-18T16:03:58+08:00">2018-10-18</time>
             
 
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1872,9 +1859,14 @@
 
       
         
-          
-            
-          
+          <p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/18/rsa/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1915,7 +1907,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1962,7 +1954,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2117,7 +2109,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -2129,7 +2121,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">89k</span>
+    <span title="Symbols count total">119k</span>
   
 
   
@@ -2652,9 +2644,35 @@
       
     
       
+        
+      
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

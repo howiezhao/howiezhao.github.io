@@ -357,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/31/docker/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/18/zsh/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -376,8 +376,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/31/docker/" itemprop="url">
-                  Docker入坑指南
+                <a class="post-title-link" href="/2018/09/18/zsh/" itemprop="url">
+                  使用Zsh替代Bash
                 </a>
               
             
@@ -403,7 +403,7 @@
                 
               
 
-              <time title="Created: 2018-08-31 16:59:28" itemprop="dateCreated datePublished" datetime="2018-08-31T16:59:28+08:00">2018-08-31</time>
+              <time title="Created: 2018-09-18 12:09:36" itemprop="dateCreated datePublished" datetime="2018-09-18T12:09:36+08:00">2018-09-18</time>
             
 
             
@@ -456,11 +456,12 @@
 
       
         
-          <p>Docker是一种基于Linux的容器化技术，类似于轻量的虚拟机。它采用C/S架构，使用Go语言开发。</p>
-<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker分为2个版本：<strong>社区版</strong>(Community Edition, CE)和<strong>企业版</strong>(Enterprise Edition, EE)，顾名思义，企业版是收费的。针对macOS10.10.3和Windows 10，Docker还推出了<a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop又分为2个渠道(channel)，<strong>稳定渠道</strong>(Stable)和<strong>抢先渠道</strong>(Edge)，需要注意的是，Docker Desktop对系统是有要求的，例如，针对Win10的<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a>因为要用到Hyper-V虚拟机，所以要求系统是64位专业版或企业版并开启Hyper-V功能。针对老版本的Windows或macOS，可以使用<a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个VirtualBox虚拟机。<br>使用<code>docker version</code>可以查看docker版本，直接输入<code>docker</code>可以查看docker相关命令。<br>
+          <p>众所周知，Bash几乎是所有Linux发行版预装的Shell，但Zsh却能带给你更强大的功能。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Zsh的安装很简单，在Ubuntu中，只需要<code>sudo apt install zsh</code>一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code>即可，但它的配置却相当复杂，由此诞生了<a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a>项目，该项目的主要目的是简化Zsh的配置。<br>Oh My Zsh的官网给出了利用<code>curl</code>或<code>wget</code>安装的详细命令，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Oh My Zsh前需要安装git（`sudo apt install git`）</span></span><br><span class="line"><span class="comment"># 通过curl安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过wget安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中<code>.zshrc</code>类似于<code>.bashrc</code>，存放zsh的配置信息；<br><code>.zsh_history</code>类似于<code>.bash_history</code>，存放zsh的命令历史记录；<br><code>.oh-my-zsh</code>的文件夹则是Oh My Zsh项目GitHub仓库的克隆版，其中的<code>themes</code>文件夹下主要存放自带的主题，<code>plugins</code>文件夹下主要存放自带的插件，<code>custom</code>文件夹下主要存放用户自己下载的主题和插件。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/08/31/docker/#more" rel="contents">
+            <a class="btn" href="/2018/09/18/zsh/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -516,7 +517,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/31/git/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/17/restructuredtext/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Howie Zhao">
@@ -535,8 +536,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/31/git/" itemprop="url">
-                  Git小记
+                <a class="post-title-link" href="/2018/09/17/restructuredtext/" itemprop="url">
+                  reStructuredText小记
                 </a>
               
             
@@ -562,7 +563,7 @@
                 
               
 
-              <time title="Created: 2018-08-31 16:59:18" itemprop="dateCreated datePublished" datetime="2018-08-31T16:59:18+08:00">2018-08-31</time>
+              <time title="Created: 2018-09-17 20:32:11" itemprop="dateCreated datePublished" datetime="2018-09-17T20:32:11+08:00">2018-09-17</time>
             
 
             
@@ -615,1474 +616,1266 @@
 
       
         
-          <p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a href="https://www.mercurial-scm.org/" target="_blank" rel="noopener">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a href="https://www.nongnu.org/cvs/" target="_blank" rel="noopener">CVS</a>、<a href="https://subversion.apache.org/" target="_blank" rel="noopener">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p>
+          <p><strong>reStructuredText</strong>是一种类似于Markdown的轻量标记语言，其含义为“重新构建的文本”，也被简称为<strong>reST</strong>，文件后缀名为<code>.rst</code>，是Python的Docutils项目的一部分，目前reST被广泛应用于编写Python文档。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
+<p>reST使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/17/restructuredtext/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/16/let-s-encrypt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/16/let-s-encrypt/" itemprop="url">
+                  使用Let's Encrypt获取免费SSL证书
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-16 22:38:04" itemprop="dateCreated datePublished" datetime="2018-09-16T22:38:04+08:00">2018-09-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/16/let-s-encrypt/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/16/library-framework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/16/library-framework/" itemprop="url">
+                  库与框架
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-16 21:58:22" itemprop="dateCreated datePublished" datetime="2018-09-16T21:58:22+08:00">2018-09-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：<br><strong>库</strong>(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。<br>库的优点是自由度高，可定制性强，较适用于小项目。<br><strong>框架</strong>(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，Angular、Spring等是一个个的框架。<br>框架的优点是流程性高，便于开发，较适用于大项目。<br>通常，我们把库也称为<strong>类库</strong>(class library)，这也从另一个方面反映了库中包含的主要是<strong>类</strong>，类似的，框架中也主要包含类，据此，我们可以把程序员分为<strong>类创建者</strong>和<strong>客户端程序员</strong>，客户端程序员通过调用其类来使用库或框架。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/16/ipython/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/16/ipython/" itemprop="url">
+                  使用IPython替代原生Python Shell
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-16 13:15:34" itemprop="dateCreated datePublished" datetime="2018-09-16T13:15:34+08:00">2018-09-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但IPython相比原生Python Shell的众多优秀特性，让我不由得使用上它。</p>
+<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/" target="_blank" rel="noopener"><strong>IPython</strong></a>最初只是一种基于Python的交互式解释器(REPL)，慢慢的，IPython项目中集成了许多新的工具，比如<strong>IPython Notebook</strong>，这是一种基于Web的强大编辑器。从IPython 4.0开始，IPython项目中和语言无关的工具已独立出来形成一个新的项目<a href="http://jupyter.org/" target="_blank" rel="noopener"><strong>Jupyter</strong></a>，从此，IPython Notebook升级为<strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而IPython将只专注于提供Python交互式解释器以及为Jupyter提供Python内核。当写这篇文章时，IPython的最新版本为6.5。<br>如今，当你去IPython官网下载时，它会跳转到Jupyter的下载页面，因为Jupyter中已经包含了IPython，同时也建议下载Jupyter，因为其包含了强大的Jupyter Notebook，使用<code>pip install jupyter</code>即可下载，安装完成后直接输入<code>ipython</code>即可进入IPython交互式环境。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/16/ipython/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/14/front-end-terminology/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/front-end-terminology/" itemprop="url">
+                  前端相关术语
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-14 21:46:24" itemprop="dateCreated datePublished" datetime="2018-09-14T21:46:24+08:00">2018-09-14</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><p>轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。</p>
+<h2 id="视差滚动"><a href="#视差滚动" class="headerlink" title="视差滚动"></a>视差滚动</h2><p>视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。</p>
+<h2 id="ToolTip"><a href="#ToolTip" class="headerlink" title="ToolTip"></a>ToolTip</h2><p>ToolTip，在Bootstrap 4 中又被称为提示冒泡。</p>
+<h2 id="手风琴效果"><a href="#手风琴效果" class="headerlink" title="手风琴效果"></a>手风琴效果</h2><p>手风琴效果，又被称为Accordion。</p>
+<h2 id="哈林摇"><a href="#哈林摇" class="headerlink" title="哈林摇"></a>哈林摇</h2><p>哈林摇，又称Harlem Shake。</p>
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><p>响应式布局，又称Responsive Layout，即一个布局可以适应多个不同终端。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/web-www/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/12/web-www/" itemprop="url">
+                  网站的WWW问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-12 22:07:51" itemprop="dateCreated datePublished" datetime="2018-09-12T22:07:51+08:00">2018-09-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/latex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/12/latex/" itemprop="url">
+                  LaTeX小记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-12 22:05:52" itemprop="dateCreated datePublished" datetime="2018-09-12T22:05:52+08:00">2018-09-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="TeX与LaTeX"><a href="#TeX与LaTeX" class="headerlink" title="TeX与LaTeX"></a>TeX与LaTeX</h2><p><a href="https://www.tug.org/begin.html" target="_blank" rel="noopener">TeX</a>是由<a href="https://zh.wikipedia.org/zh-cn/%E9%AB%98%E5%BE%B7%E7%BA%B3" target="_blank" rel="noopener">Donald Knuth</a>开发的一个排版系统，特别适合处理复杂的数学公式等。之后，<a href="https://zh.wikipedia.org/zh-cn/%E8%8E%B1%E6%96%AF%E5%88%A9%C2%B7%E5%85%B0%E6%B3%A2%E7%89%B9" target="_blank" rel="noopener">Leslie Lamport</a>改进了TeX，形成了<a href="https://www.latex-project.org/" target="_blank" rel="noopener">LaTeX</a>(Lamport TeX)。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a>是一个JavaScript引擎，可以用来在网页上显示使用LaTeX语言书写的数学公式。<br><a href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn" target="_blank" rel="noopener">在线LaTeX公式编辑器</a>是一个将公式符号转化为LaTeX语言的网站，对于尚不熟悉的人书写LaTeX公式提供一点便利。<br><a href="https://cn.sharelatex.com/" target="_blank" rel="noopener">ShareLaTeX</a>是一个在线的LaTeX编辑环境，同时也提供了足够多的LaTeX模板。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/euclidean/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/12/euclidean/" itemprop="url">
+                  辗转相除法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-12 22:00:58" itemprop="dateCreated datePublished" datetime="2018-09-12T22:00:58+08:00">2018-09-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/what-is-irc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/12/what-is-irc/" itemprop="url">
+                  IRC是什么
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-12 21:59:18" itemprop="dateCreated datePublished" datetime="2018-09-12T21:59:18+08:00">2018-09-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>IRC</strong>，全称Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。<br>IRC协议属于应用层协议，使用的传输层协议为TCP，使用的端口为<strong>6667</strong>(明文传输，如irc://chat.freenode.net)或<strong>6697</strong>(SSL加密传输，如ircs://chat.freenode.net:6697)。<br>IRC是一个<strong>分布式</strong>的<strong>C/S</strong>架构，一个IRC服务器可以连接其他的IRC服务器以扩展为一个<strong>IRC网络</strong>，通过连接到一个IRC服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个IRC服务器上，一个频道类似于一个聊天室，频道名称必须以<code>#</code>符号开始，例如<code>#irchelp</code>。大多数的IRC服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。目前使用最广的IRC服务器为<a href="https://freenode.net/" target="_blank" rel="noopener">freenode</a>，而IRC客户端软件有多种，比如基于Firefox浏览器的IRC插件<a href="http://chatzilla.hacksrus.com/" target="_blank" rel="noopener">ChatZilla</a>，基于网页的<a href="https://webchat.freenode.net/" target="_blank" rel="noopener">Webchat</a>，基于命令行的<a href="https://irssi.org/" target="_blank" rel="noopener">Irssi</a>等等。<br>个人经常使用的IRC客户端为Irssi，在Ubuntu中可以使用<code>apt install irssi</code>安装，之后直接输入<code>irssi</code>即可启动，输入<code>irssi --help</code>可查看更多命令参数。启动irssi后可输入更多的命令，输入<code>/help</code>可查看所有可用命令，输入<code>/connect Freenode</code>即可连接到freenode服务器，之后再输入<code>/join #linuxba</code>即可加入<code>#linuxba</code>频道。这里需要注意，freenode服务器由于种种原因，在国内无法访问，而irssi又不支持代理，所以推荐使用<a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a>代理irssi。<br>最后，值得推荐的IRC频道有下(基于freenode)：</p>
 <ul>
-<li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令配置</li>
-<li>某个用户家目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令配置</li>
-<li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li>
+<li><code>#ubuntu-cn</code>：Ubuntu中文社区频道</li>
+<li><code>#archlinux-cn</code>：Arch Linux中文社区频道</li>
+<li><code>#linuxba</code>：Linux贴吧频道</li>
+<li><code>#haskell</code>：Haskell语言频道</li>
+<li><code>#vim</code>：Vim社区频道</li>
 </ul>
-<p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>按照个人偏好，针对新安装的Git环境，会配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.name <span class="string">"Howie Zhao"</span></span><br><span class="line">git config --global user.email howiezhaohr@hotmail.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg2 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg <span class="string">'!"git lg1"'</span></span><br><span class="line">git config --global alias.adog <span class="string">"log --all --decorate --oneline --graph"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
-<p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/31/git/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/telnet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/24/telnet/" itemprop="url">
-                  telnet协议分析
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-24 19:44:44" itemprop="dateCreated datePublished" datetime="2018-08-24T19:44:44+08:00">2018-08-24</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/ssh/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/24/ssh/" itemprop="url">
-                  SSH协议分析
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-24 19:44:35" itemprop="dateCreated datePublished" datetime="2018-08-24T19:44:35+08:00">2018-08-24</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>SSH(Secure Shell)即<strong>安全外壳协议</strong>，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。</p>
-<h2 id="OpenSSH的运行机制"><a href="#OpenSSH的运行机制" class="headerlink" title="OpenSSH的运行机制"></a>OpenSSH的运行机制</h2><p>SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用<code>ssh user@host</code>命令进行登录时，所完成的整个过程如下：</p>
-<ol>
-<li>远程主机收到用户的登录请求，把自己的公钥发给用户</li>
-<li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li>
-<li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li>
-<li>后续过程中，用户发送的信息都采用此方式进行加密发送</li>
-</ol>
-<p>因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'host (12.18.429.21)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure></p>
-<p>即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。<br>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在<code>$HOME/.ssh/known_hosts</code>文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。<br>除了采用口令登录外，还可使用公钥登录，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。<br>OpenSSH提供了一个工具 —— <code>ssh-keygen</code>，使用它可以方便的生成一对公私钥，生成的公钥为id_rsa.pub，私钥为id_rsa，保存在<code>$HOME/.ssh</code>目录下，当然你可以使用<code>-t</code>参数指定密钥的类型（默认生成类型为RSA），使用<code>-f</code>参数指定生成的目录，更多的参数可以使用<code>--help</code>参数查看。<br>有了密钥对后，可以使用<code>ssh-copy-id user@host</code>命令将自己的公钥上传至远程主机，远程主机会将用户的公钥，保存在登录后的用户主目录的<code>$HOME/.ssh/authorized_keys</code>文件中。实际上，<code>ssh-copy-id</code>命令的整个过程就如下命令一样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host <span class="string">'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys'</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
-<p>最后还要对远程主机的SSH服务端配置文件，即<code>/etc/ssh/sshd_config</code>文件进行相关配置，并重启SSH服务即可生效。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/21/wsl-problem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/21/wsl-problem/" itemprop="url">
-                  WSL相关问题解决
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-21 19:23:05" itemprop="dateCreated datePublished" datetime="2018-08-21T19:23:05+08:00">2018-08-21</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。</p>
-<h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在<strong>启动或关闭Windows功能</strong>中勾选<strong>适用于Linux的Windows子系统</strong>，或者直接在管理员权限的PowerShell中输入<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>此条命令，也能达到同样的效果。<br>完成上述操作后，可直接在<strong>Microsoft Store</strong>中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。<br>到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行<code>do-release-upgrade</code>命令升级到最新版。<br>下载完成后，要启动Ubuntu有多种方式，可以在<strong>PowerShell</strong>或<strong>cmd</strong>中输入<code>wsl</code>或<code>bash</code>或<code>ubuntu</code>都可启动，也可以直接在<strong>开始菜单</strong>中点击Ubuntu图标启动。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/21/wsl-problem/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/21/android-emulator-problem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/21/android-emulator-problem/" itemprop="url">
-                  Android Studio模拟器相关问题解决
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-21 19:22:50" itemprop="dateCreated datePublished" datetime="2018-08-21T19:22:50+08:00">2018-08-21</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/21/android-emulator-problem/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/20/hyper-v-problem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/20/hyper-v-problem/" itemprop="url">
-                  Hyper-V相关问题解决
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-20 20:12:02" itemprop="dateCreated datePublished" datetime="2018-08-20T20:12:02+08:00">2018-08-20</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改<code>/etc/default/grub</code>文件，更改其中<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>，接着<code>update-grub</code>并重启即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/20/hyper-v-problem/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/10/base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/10/base/" itemprop="url">
-                  Base编码家族
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-10 17:07:56" itemprop="dateCreated datePublished" datetime="2018-08-10T17:07:56+08:00">2018-08-10</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于<strong>64</strong>个可打印字符来表示二进制数据的表示方法，这64个字符分别为<code>A-Z</code>、<code>a-z</code>、<code>0-9</code>以及<code>+</code>与<code>/</code>。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：</p>
-<table>
-<thead>
-<tr>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>A</td>
-<td>16</td>
-<td>Q</td>
-<td>32</td>
-<td>g</td>
-<td>48</td>
-<td>w</td>
-</tr>
-<tr>
-<td>1</td>
-<td>B</td>
-<td>17</td>
-<td>R</td>
-<td>33</td>
-<td>h</td>
-<td>49</td>
-<td>x</td>
-</tr>
-<tr>
-<td>2</td>
-<td>C</td>
-<td>18</td>
-<td>S</td>
-<td>34</td>
-<td>i</td>
-<td>50</td>
-<td>y</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D</td>
-<td>19</td>
-<td>T</td>
-<td>35</td>
-<td>j</td>
-<td>51</td>
-<td>z</td>
-</tr>
-<tr>
-<td>4</td>
-<td>E</td>
-<td>20</td>
-<td>U</td>
-<td>36</td>
-<td>k</td>
-<td>52</td>
-<td>0</td>
-</tr>
-<tr>
-<td>5</td>
-<td>F</td>
-<td>21</td>
-<td>V</td>
-<td>37</td>
-<td>l</td>
-<td>53</td>
-<td>1</td>
-</tr>
-<tr>
-<td>6</td>
-<td>G</td>
-<td>22</td>
-<td>W</td>
-<td>38</td>
-<td>m</td>
-<td>54</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>H</td>
-<td>23</td>
-<td>X</td>
-<td>39</td>
-<td>n</td>
-<td>55</td>
-<td>3</td>
-</tr>
-<tr>
-<td>8</td>
-<td>I</td>
-<td>24</td>
-<td>Y</td>
-<td>40</td>
-<td>o</td>
-<td>56</td>
-<td>4</td>
-</tr>
-<tr>
-<td>9</td>
-<td>J</td>
-<td>25</td>
-<td>Z</td>
-<td>41</td>
-<td>p</td>
-<td>57</td>
-<td>5</td>
-</tr>
-<tr>
-<td>10</td>
-<td>K</td>
-<td>26</td>
-<td>a</td>
-<td>42</td>
-<td>q</td>
-<td>58</td>
-<td>6</td>
-</tr>
-<tr>
-<td>11</td>
-<td>L</td>
-<td>27</td>
-<td>b</td>
-<td>43</td>
-<td>r</td>
-<td>59</td>
-<td>7</td>
-</tr>
-<tr>
-<td>12</td>
-<td>M</td>
-<td>28</td>
-<td>c</td>
-<td>44</td>
-<td>s</td>
-<td>60</td>
-<td>8</td>
-</tr>
-<tr>
-<td>13</td>
-<td>N</td>
-<td>29</td>
-<td>d</td>
-<td>45</td>
-<td>t</td>
-<td>61</td>
-<td>9</td>
-</tr>
-<tr>
-<td>14</td>
-<td>O</td>
-<td>30</td>
-<td>e</td>
-<td>46</td>
-<td>u</td>
-<td>62</td>
-<td>+</td>
-</tr>
-<tr>
-<td>15</td>
-<td>P</td>
-<td>31</td>
-<td>f</td>
-<td>47</td>
-<td>v</td>
-<td>63</td>
-<td>/</td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/10/base/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/10/classical-crypto/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/10/classical-crypto/" itemprop="url">
-                  古典密码学
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-10 11:17:41" itemprop="dateCreated datePublished" datetime="2018-08-10T11:17:41+08:00">2018-08-10</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>密码学（Cryptography）大致可分为<strong>古典密码学</strong>（Classic cryptography）和<strong>现代密码学</strong>（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于<strong>字符</strong>的，而现代密码学是基于<strong>二进制位</strong>的。古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
-<h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p>
-<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p>
-<ol>
-<li>取偏移量为3</li>
-<li>计算<code>H</code>的后3位为<code>K</code></li>
-<li>以此类推</li>
-<li>密文为：<code>Khoor Zruog</code></li>
-</ol>
-<p>类似的，解密过程如下：</p>
-<ol>
-<li>计算<code>K</code>的前3位为<code>H</code></li>
-<li>以此类推</li>
-<li>明文为：<code>Hello World</code></li>
-</ol>
-<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/10/classical-crypto/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/10/jsfuck/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/10/jsfuck/" itemprop="url">
-                  JSFuck
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-10 08:59:58" itemprop="dateCreated datePublished" datetime="2018-08-10T08:59:58+08:00">2018-08-10</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure></p>
-<p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a href="http://www.jsfuck.com/" target="_blank" rel="noopener">JSFuck</a>。</p>
 
           
         
@@ -2125,7 +1918,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2172,7 +1965,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2327,7 +2120,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -2339,7 +2132,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">89k</span>
+    <span title="Symbols count total">119k</span>
   
 
   

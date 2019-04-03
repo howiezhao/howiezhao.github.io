@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="本文翻译自https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/ ，正文如下： 从受信任的VPS进行网络钓鱼活动和托管Metasploit会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的VPS非常有限，因为大多数提供商对任何类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="白帽子VPS选购指南">
+<meta property="og:url" content="https://howiezhao.github.io/2019/02/25/whitehat-vps/index.html">
+<meta property="og:site_name" content="Howie&#39;s Notes">
+<meta property="og:description" content="本文翻译自https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/ ，正文如下： 从受信任的VPS进行网络钓鱼活动和托管Metasploit会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的VPS非常有限，因为大多数提供商对任何类型">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://img.wonderhowto.com/img/36/31/63655508941243/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg">
+<meta property="og:image" content="https://img.wonderhowto.com/img/36/93/63655505111133/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg">
+<meta property="og:image" content="https://img.wonderhowto.com/img/33/95/63655505142883/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg">
+<meta property="og:image" content="https://img.wonderhowto.com/img/69/58/63655505152117/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg">
+<meta property="og:image" content="https://img.wonderhowto.com/img/00/36/63655505163524/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg">
+<meta property="og:image" content="https://img.wonderhowto.com/img/55/35/63655505173336/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg">
+<meta property="og:updated_time" content="2019-02-25T10:22:43.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="白帽子VPS选购指南">
+<meta name="twitter:description" content="本文翻译自https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/ ，正文如下： 从受信任的VPS进行网络钓鱼活动和托管Metasploit会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的VPS非常有限，因为大多数提供商对任何类型">
+<meta name="twitter:image" content="https://img.wonderhowto.com/img/36/31/63655508941243/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://howiezhao.github.io/2019/02/25/whitehat-vps/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>白帽子VPS选购指南 | Howie's Notes</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-104250838-2');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Howie's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Machine Learning and Cyber Security</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2019/02/25/whitehat-vps/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">白帽子VPS选购指南
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-25 18:17:38" itemprop="dateCreated datePublished" datetime="2019-02-25T18:17:38+08:00">2019-02-25</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Translation/" itemprop="url" rel="index"><span itemprop="name">Translation</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文翻译自<a href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/</a> ，正文如下：</p>
+<p>从受信任的VPS进行网络钓鱼活动和托管Metasploit会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的VPS非常有限，因为大多数提供商对任何类型的黑客都有零容忍政策，无论好坏。在研究了数十种产品之后，我们选出了5个理想的产品，非常适合Null Byte读者。<br><a id="more"></a><br>首先要理解的事情是……什么是VPS？嗯，它代表虚拟专用服务器，是许多用户认为的专用或私有服务器的虚拟化形式，即使它安装在同时运行多个操作系统的物理计算机上。VPS最常用于在线托管网站。</p>
+<p>当我们从提供商处购买VPS时，我们实际上是在一个有着许多虚拟服务器的功能强大的高性能物理机器上“租用”一个分区。每个VPS都连接到互联网，使个人客户能够使用不同的操作系统，并提供对操作系统的完全root访问权限。每个客户（或服务器管理员）独立于共享VPS公司提供的物理计算机上的其他客户运营。</p>
+<ul>
+<li>不要错过：<a href="https://null-byte.wonderhowto.com/news/what-is-white-hat-hacker-0166878/" target="_blank" rel="noopener">什么是白帽黑客？</a></li>
+</ul>
+<p>从本质上讲，虚拟专用服务器是我们可以从世界上任何连接互联网的设备远程控制的计算机。这给了我们很大的能力。对于远程服务器而言，下面是它可以完成的一些事情：</p>
+<ul>
+<li>创建VPN连接</li>
+<li>托管网络钓鱼站点</li>
+<li>进行暴力攻击</li>
+<li>创建IRC机器人</li>
+<li>服务器代理</li>
+<li>托管有效载荷</li>
+<li>使用端口扫描器</li>
+<li>创建蜜罐</li>
+<li>托管Metasploit会话</li>
+</ul>
+<p>为了做到这一点，从我们的研究来看，<a href="https://bulletshield.su/" target="_blank" rel="noopener">BulletShield</a>是迄今为止最好的白帽和渗透测试人员的VPS提供商，紧随其后的是<a href="https://buyvm.net/" target="_blank" rel="noopener">BuyVM</a>和<a href="https://www.clientvps.com/" target="_blank" rel="noopener">ClientVPS</a>。亚军是<a href="https://vpsdime.com/" target="_blank" rel="noopener">VPSDime</a>和<a href="https://onehostcloud.hosting/" target="_blank" rel="noopener">OneHost Cloud</a>。你可以在下面的图表中看到原因，但跳到下面可以深入研究每个比较点的含义。<br><img src="https://img.wonderhowto.com/img/36/31/63655508941243/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="图表"></p>
+<h2 id="关键比较点"><a href="#关键比较点" class="headerlink" title="关键比较点"></a>关键比较点</h2><p>网上有几个VPS对比图表，但没有一个对我来说是与渗透测试人员和白帽子有所联系的。在大多数专业的渗透测试场景中，我们需要在几天内启动VPS来托管有效载荷，接收泄漏数据或执行网络钓鱼攻击。</p>
+<p>无论VPS提供商是否提供实时技术支持，难以理解的硬件规格或过多的操作系统选择都很重要。理想情况下，我们希望使用比特币（BTC）从位于尊重隐私的国家的VPS提供商处快速购买最新的Debian版本。</p>
+<p>在比较本文中介绍的VPS提供商时，我试图尽可能客观公正。本文中没有VPS提供商付费参与比较图表。我使用下面的标准来得出上面的图表。</p>
+<ul>
+<li>不要错过：<a href="https://smartphones.gadgethacks.com/how-to/binance-101-sell-your-stellar-ripple-other-alt-coins-for-bitcoin-ethereum-0182373/" target="_blank" rel="noopener">如何在比特币和以太坊中出售你的Stellar，Ripple和其他替代币？</a></li>
+</ul>
+<h3 id="最好的价钱（Best-Price）"><a href="#最好的价钱（Best-Price）" class="headerlink" title="最好的价钱（Best Price）"></a>最好的价钱（Best Price）</h3><p>我相信定价透明度。这意味着提供商完全诚实地说他们的月费是多少。我的图表中列出的价格可能并不总是反映出给定提供商在主页上公布的价格。我的图表中的价格是计算所有强制性和隐藏费用后的结账价格。这些也是我在网站上找到的最便宜的VPS计划的价格。在大多数情况下，这通常有着512 MB的RAM和1个CPU内核。</p>
+<h3 id="渗透测试人员友好型（Pentester-Friendly）"><a href="#渗透测试人员友好型（Pentester-Friendly）" class="headerlink" title="渗透测试人员友好型（Pentester-Friendly）"></a>渗透测试人员友好型（Pentester-Friendly）</h3><p>服务条款（ToS）和可接受的使用政策（AUP）可能是进入此比较图表的最高优先项。虽然最初考虑了数十个VPS提供商，但大多数明确禁止或阻止端口扫描器，有效载荷分发，网络钓鱼和（或）任何类型的黑客攻击。除了少数例外，这会立即取消VPS提供商在比较图表中的资格。</p>
+<p>IT专业人员，安全研究人员和自学成才的白帽黑客在远程服务器上做了大量工作。对我来说很重要的是，这里的VPS提供商保留了最符合Null Byte受众需求的ToS政策。我的图表中的VPS提供商是少数几个没有完全敌视“黑客攻击”的ToS政策的提供商。</p>
+<p>那些被认为是对渗透测试人员友好的提供商并没有在他们的ToS中明确声明允许“黑客攻击”（或任何相关术语）。没有一个VPS提供商会这样做。大多数这些提供商要么没有提及他们的ToS中的黑客攻击，要么他们的网站上根本没有提供ToS。这被认为表明黑客攻击活动非常不受欢迎，但可能不会导致帐户终止。</p>
+<h3 id="请求个人信息（Requests-Personal-Info）"><a href="#请求个人信息（Requests-Personal-Info）" class="headerlink" title="请求个人信息（Requests Personal Info）"></a>请求个人信息（Requests Personal Info）</h3><p>向任何网站提交我们的真实姓名，地址，电话号码和其他个人身份信息都是不可取的。即使匿名不是你的首要任务，VPS提供商仍有一天可能会受到攻击，并且所有客户数据都会在网上泄露。</p>
+<p>购买VPS订阅是理想的匿名完成，因为没有人知道我们在研究或渗透测试期间会遇到什么麻烦。对于你购买的服务器上发生的事情，有朝一日可能会对VPS提供商采取法律行动，因此最好将有关你自己的少量信息存储在提供商的客户数据库中。</p>
+<p>在大多数情况下，我发现在注册期间可以提交一个完全虚假的姓名，地址和电话号码，但我并不认为这是提供商的“好功能”。向任何合法公司提交虚假信息几乎肯定会违反提供商的服务条款并导致帐户立即终止。</p>
+<p>VPS提供商要求的电子邮件地址不属于“个人信息”，因为匿名获取一次性电子邮件地址很容易。毕竟VPS提供商需要建立与客户沟通的有效方法。</p>
+<h3 id="接受比特币付款（Accepts-BTC-Payments）"><a href="#接受比特币付款（Accepts-BTC-Payments）" class="headerlink" title="接受比特币付款（Accepts BTC Payments）"></a>接受比特币付款（Accepts BTC Payments）</h3><p>如果获得比特币（BTC）不是障碍，这可能是你的首选付款方式。目前大多数提供商都接受比特币，但使用匿名加密货币的好处大部分都被VPS提供商对个人身份信息的请求所抵消。我发现使用比特币进行在线购物比使用信用卡更快更方便。</p>
+<h3 id="接受预付信用卡（Accepts-Prepaid-Credit-Cards）"><a href="#接受预付信用卡（Accepts-Prepaid-Credit-Cards）" class="headerlink" title="接受预付信用卡（Accepts Prepaid Credit Cards）"></a>接受预付信用卡（Accepts Prepaid Credit Cards）</h3><p>获取比特币进行匿名交易可能很困难。用现金购买<a href="https://null-byte.wonderhowto.com/how-to/securely-anonymously-spend-money-online-0131351/" target="_blank" rel="noopener">预付卡或一次性借记卡</a>可能更方便。如果没有使用预付借记卡实际提交付款，很难验证这一点。在大多数情况下，我能够联系客户服务代表，并从他们那里获得有关使用预付卡进行交易的直接答复。</p>
+<h3 id="Tor友好型网站（Tor-Friendly-Website）"><a href="#Tor友好型网站（Tor-Friendly-Website）" class="headerlink" title="Tor友好型网站（Tor-Friendly Website）"></a>Tor友好型网站（Tor-Friendly Website）</h3><p>如果你通过安全的VPN连接使用信用卡进行在线购买或通过Tor匿名进行在线购买，VPS提供商有时会暂停你的帐户。联系客户支持并解决暂停可能需要数天时间。</p>
+<p>我使用同一个常用的Firefox浏览器通过Tor浏览了每个站点。要求访问者填写验证码以查看其网站或处理结帐的提供商被标记为对希望保持匿名的用户不友好。这并不意味着可以通过Tor进行事务处理。在查看这些网站时，我只尽可能地进入结账过程，而不实际提交付款。</p>
+<ul>
+<li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/access-dark-web-while-staying-anonymous-with-tor-0179341/" target="_blank" rel="noopener">如何使用Tor匿名的访问暗网？</a></li>
+</ul>
+<h3 id="公司总部所在国（Company-HQ’s-Country）"><a href="#公司总部所在国（Company-HQ’s-Country）" class="headerlink" title="公司总部所在国（Company HQ’s Country）"></a>公司总部所在国（Company HQ’s Country）</h3><p>认为提供安全加密交易的公司将与当局充分<a href="https://www.theregister.co.uk/2011/09/26/hidemyass_lulzsec_controversy/" target="_blank" rel="noopener">合作以捕获黑客</a>并不是不切实际的。VPS的IP地址是否来自尊重隐私的国家并不总是重要的。如果向你提供VPS的公司位于美国或英国，他们很可能会毫不犹豫地将你的个人信息交给任何权威人士。</p>
+<p>进一步涉及隐私问题，<a href="https://zh.wikipedia.org/wiki/%E8%8B%B1%E7%BE%8E%E5%8D%94%E5%AE%9A" target="_blank" rel="noopener">UKUSA协议</a>是英国，美国，澳大利亚，加拿大和新西兰之间的协议，旨在合作收集，分析和共享情报。这个群体的成员被称为<a href="https://zh.wikipedia.org/wiki/%E4%BA%94%E7%9C%BC%E8%81%AF%E7%9B%9F" target="_blank" rel="noopener">五眼联盟</a>。这些国家因拥有侵犯隐私的法律和政策而臭名昭著。</p>
+<p>在最尊重隐私的国家选择VPS提供商可能不是最优先考虑的问题，但至少考虑具有<a href="https://nomadcapitalist.com/2013/12/15/top-5-best-countries-host-website-data-privacy/" target="_blank" rel="noopener">良好隐私法律的国家</a>的提供商是有意义的。</p>
+<h3 id="离岸解决方案（Offshore-Solutions）"><a href="#离岸解决方案（Offshore-Solutions）" class="headerlink" title="离岸解决方案（Offshore Solutions）"></a>离岸解决方案（Offshore Solutions）</h3><p>“离岸VPS”意味着服务器位于公司的国家边界位置之外，并且可能允许一定程度的自由裁量权。这对你作为渗透测试人员以及你受委托保护的公司非常重要，因为你可能会收到不应共享或泄露的妥协和敏感信息。我们鼓励读者独立询问VPS提供商，以确定他们的离岸解决方案是否适合你。</p>
+<p>提供商指出，提供离岸解决方案通常要付出一定的代价。不应该假设他们最便宜的VPS解决方案也是其离岸选项的价格。</p>
+<h2 id="1、BulletShield"><a href="#1、BulletShield" class="headerlink" title="1、BulletShield"></a>1、BulletShield</h2><p><a href="https://bulletshield.su/" target="_blank" rel="noopener">BulletShield</a>是我的首选，是Null Byte读者的最佳VPS提供商。BulletShield在注册账户或准备提交比特币交易时不要求任何类型的个人信息。他们还强制要求比特币交易，并且没有明确禁止任何渗透测试活动的ToS。<br><img src="https://img.wonderhowto.com/img/36/93/63655505111133/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="BulletShield"><br>缺点是他们不接受预付信用卡，最便宜的价格有点贵，但如果你重视隐私，价格不一定是主要考虑因素。</p>
+<p>在涉及公司总部时，BulletShield不会透露这些信息。快速域名搜索显示，它是由加拿大公司Tucows Domains Inc.购买的，是从位于西印度群岛偏远岛屿的Charlestown购买的。但是，这并不意味着这就是BulletShield的总部所在地，这只是域名注册商BulletShield使用注册域名的地方。</p>
+<p>他们提供离岸解决方案和Tor友好型网站，使BulletShield整体处于领先地位。但是，一位客户服务代表向我提到“渗透测试”是“仅允许……防弹服务”，这可能是成本方面的问题。</p>
+<ul>
+<li>ToS：无可用</li>
+<li>AUP：无可用</li>
+<li>隐私：无可用</li>
+</ul>
+<h2 id="2、BuyVM"><a href="#2、BuyVM" class="headerlink" title="2、BuyVM"></a>2、BuyVM</h2><p><a href="https://buyvm.net/" target="_blank" rel="noopener">BuyVM</a>是允许合法渗透测试的亚军，如果公司或相关人员给出明确和合法的书面同意。一位代表证实了这一点，他们说“他们需要一份来自法律团队的完整文件，代表有关目标的授权书”。<br><img src="https://img.wonderhowto.com/img/33/95/63655505142883/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="BuyVM"><br>他们的起价确实提升了他们的排名，VPS解决方案每月只需2.42美元。但是，他们确实要求你提供个人信息，并且为了注册帐户，“帐户详细信息必须与付款方式提供的信息相符”，这可能意味着匿名预付卡将无法使用。不过，比特币是可以被接受的。</p>
+<p>虽然他们确实有一个Tor友好的网站，但他们总部设在加拿大，并不提供离岸解决方案，这可能是负面的，取决于你使用VPS的目的。</p>
+<ul>
+<li>ToS：<a href="https://buyvm.net/terms-of-service/" target="_blank" rel="noopener">链接</a></li>
+<li>AUP：<a href="https://buyvm.net/acceptable-use-policy/" target="_blank" rel="noopener">链接</a></li>
+<li>隐私：<a href="https://buyvm.net/privacy-policy/" target="_blank" rel="noopener">链接</a></li>
+</ul>
+<h2 id="3、ClientVPS"><a href="#3、ClientVPS" class="headerlink" title="3、ClientVPS"></a>3、ClientVPS</h2><p><a href="https://www.clientvps.com/" target="_blank" rel="noopener">ClientVPS</a>有一个ToS，即你所执行的任何导致对人身或财产“受到伤害”，侵犯版权等的行为都要你自己承担全部责任。<br><img src="https://img.wonderhowto.com/img/69/58/63655505152117/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="ClientVPS"><br>总的来说，他们的价格是最昂贵的，但亮点包括接受比特币（预付Visa尚卡不清楚），拥有Tor友好的网站，总部设在俄罗斯（信息请求经常被忽略），并提供离岸解决方案，所有这些都巩固了其目前在排名中的地位。</p>
+<p>除了高昂的价格外，其他缺点包括他们缺乏有关合法渗透测试的信息（他们没有回复我的询问），他们确实要求你提供个人数据。</p>
+<ul>
+<li>ToS：<a href="https://www.clientvps.com/terms-of-service" target="_blank" rel="noopener">链接</a></li>
+<li>AUP：无公开链接</li>
+<li>隐私：<a href="https://www.clientvps.com/privacy-policy" target="_blank" rel="noopener">链接</a></li>
+</ul>
+<h2 id="4、VPSDime"><a href="#4、VPSDime" class="headerlink" title="4、VPSDime"></a>4、VPSDime</h2><p><a href="https://vpsdime.com/" target="_blank" rel="noopener">VPSDime</a>不是一个非常理想的选择，因为它们没有比特币支付选项，不允许客户匿名查看他们的网站，也没有任何离岸VPS解决方案。但是，他们的ToS只是明确禁止“端口扫描”。他们没有提及渗透测试，漏洞扫描，网络钓鱼或其他常见的渗透活动。<br><img src="https://img.wonderhowto.com/img/00/36/63655505163524/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="VPSDime"><br>当询问澄清他们的合法渗透测试政策时，他们没有回复我的电子邮件。他们的ToS太模糊了，我无法确定是否允许这样的（合法）活动。出于这个原因，我建议读者在使用他们的服务之前联系VPSDime澄清。</p>
+<p>虽然VPSDime没有明显的好处，但它们是最便宜的选择之一。</p>
+<ul>
+<li>ToS：<a href="https://vpsdime.com/tos.html" target="_blank" rel="noopener">链接</a></li>
+<li>AUP：<a href="https://vpsdime.com/aup.html" target="_blank" rel="noopener">链接</a></li>
+<li>隐私：<a href="https://vpsdime.com/privacy.html" target="_blank" rel="noopener">链接</a></li>
+</ul>
+<h2 id="5、OneHost-Cloud"><a href="#5、OneHost-Cloud" class="headerlink" title="5、OneHost Cloud"></a>5、OneHost Cloud</h2><p><a href="https://onehostcloud.hosting/" target="_blank" rel="noopener">OneHost Cloud</a>是我能找到的唯一提供Kali Linux VPS和渗透测试解决方案的VPS提供商。他们的价格仅为每月6.59美元，这是该提供商的另一个主要好处，并且他们接受比特币付款。<br><img src="https://img.wonderhowto.com/img/55/35/63655505173336/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="OneHost Cloud"><br>对于那些不打算在未经同意的情况下非法扫描网站或入侵实体的白帽子来说，OneHost Cloud<br>似乎是最佳选择。毕竟如果它们提供Kali解决方案但不允许合法的渗透测试，那么对于客户来说也会非常混乱。但是，当我询问合法渗透测试时，他们只是回答：</p>
+<blockquote>
+<p>来自此地址的所有未来电子邮件都将被阻止。</p>
+</blockquote>
+<p>这是在没有任何理由或解释的情况下发给我的。出于这个原因，OneHost Cloud排在最后，我建议读者在执行任何类型的渗透测试之前，独立地向OneHost Cloud询问他们的ToS策略。</p>
+<p>该提供商的其他缺点是要求提供个人信息；位于英国伦敦；没有匿名网站；并且缺乏有关离岸解决方案和预付卡的信息。</p>
+<ul>
+<li>ToS：<a href="https://onehostcloud.hosting/legal/" target="_blank" rel="noopener">链接</a></li>
+<li>AUP：无公开链接</li>
+<li>隐私：<a href="https://onehostcloud.hosting/privacy-policy/" target="_blank" rel="noopener">链接</a></li>
+</ul>
+<h2 id="意见"><a href="#意见" class="headerlink" title="意见"></a>意见</h2><p>专业和独立渗透测试人员的选择是非常有限的。大多数VPS提供商都有检测系统，如果检测到任何类型的扫描，网络钓鱼或垃圾邮件，它们会自动暂停客户帐户。在我们的测试计划中，可能需要数天才能解决暂停并造成重大挫折。</p>
+<p>选择愿意与我们合作以更好地保护公司网站的提供商是至关重要的。如果你是一个专业的渗透测试者，或者只是一个希望以安全和匿名的方式加强技能的新手黑客，那么选择最能满足你需求并获得乐趣的提供商。</p>
+<ul>
+<li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/hack-anyones-wi-fi-password-using-birthday-card-part-1-creating-payload-0183043/" target="_blank" rel="noopener">如何使用生日卡片破解任何人的Wi-Fi密码？</a></li>
+</ul>
+<h2 id="一些评论"><a href="#一些评论" class="headerlink" title="一些评论"></a>一些评论</h2><p>Pulkit Singhania：</p>
+<blockquote>
+<p>Cloudsigma实际上也是一个不错的选择。<br>  他们提供免费的vps，没有任何登录或任何注册的免费，但只有一个小时。<br>  我亲自尝试过，它提供2GB内存和50GB硬盘，最高可达25兆字节/秒的互联网流量。<br>  如果你使用公司电子邮件注册，则可免费试用7天</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/25/after-kali/" rel="next" title="安装Kali Linux后要做的10件事">
+                <i class="fa fa-chevron-left"></i> 安装Kali Linux后要做的10件事
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/25/hacker-essential-skills/" rel="prev" title="成为黑客高手的必备技能">
+                成为黑客高手的必备技能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Howie Zhao" />
+            
+              <p class="site-author-name" itemprop="name">Howie Zhao</p>
+              <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">106</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu"><i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/howiezhao" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://howiezhao.com/" title="Howie's Blog" target="_blank">Howie's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wenc1997.github.io" title="Wenc" target="_blank">Wenc</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/qq_35490191" title="songshaoのblog" target="_blank">songshaoのblog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键比较点"><span class="nav-number">1.</span> <span class="nav-text">关键比较点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最好的价钱（Best-Price）"><span class="nav-number">1.1.</span> <span class="nav-text">最好的价钱（Best Price）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渗透测试人员友好型（Pentester-Friendly）"><span class="nav-number">1.2.</span> <span class="nav-text">渗透测试人员友好型（Pentester-Friendly）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求个人信息（Requests-Personal-Info）"><span class="nav-number">1.3.</span> <span class="nav-text">请求个人信息（Requests Personal Info）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接受比特币付款（Accepts-BTC-Payments）"><span class="nav-number">1.4.</span> <span class="nav-text">接受比特币付款（Accepts BTC Payments）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接受预付信用卡（Accepts-Prepaid-Credit-Cards）"><span class="nav-number">1.5.</span> <span class="nav-text">接受预付信用卡（Accepts Prepaid Credit Cards）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tor友好型网站（Tor-Friendly-Website）"><span class="nav-number">1.6.</span> <span class="nav-text">Tor友好型网站（Tor-Friendly Website）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公司总部所在国（Company-HQ’s-Country）"><span class="nav-number">1.7.</span> <span class="nav-text">公司总部所在国（Company HQ’s Country）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离岸解决方案（Offshore-Solutions）"><span class="nav-number">1.8.</span> <span class="nav-text">离岸解决方案（Offshore Solutions）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、BulletShield"><span class="nav-number">2.</span> <span class="nav-text">1、BulletShield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、BuyVM"><span class="nav-number">3.</span> <span class="nav-text">2、BuyVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、ClientVPS"><span class="nav-number">4.</span> <span class="nav-text">3、ClientVPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、VPSDime"><span class="nav-number">5.</span> <span class="nav-text">4、VPSDime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、OneHost-Cloud"><span class="nav-number">6.</span> <span class="nav-text">5、OneHost Cloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#意见"><span class="nav-number">7.</span> <span class="nav-text">意见</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些评论"><span class="nav-number">8.</span> <span class="nav-text">一些评论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Howie</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">119k</span>
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.2</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="Total Views">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -115,18 +115,18 @@
 
 
 
-  <meta name="description" content="Stay Hungry, Stay Foolish">
+  <meta name="description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tmux小记">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/18/tmux/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
+<meta property="og:description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-18T04:11:42.544Z">
+<meta property="og:updated_time" content="2019-03-20T03:19:33.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tmux小记">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
 
 
 
@@ -460,7 +460,47 @@
       
 
       
-        
+        <p>tmux是一款优秀的终端复用工具，在Ubuntu下，使用<code>sudo apt install tmux</code>即可安装，输入<code>tmux</code>即可开始使用。与tmux相似的软件还有screen等。</p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Session（会话）"><a href="#Session（会话）" class="headerlink" title="Session（会话）"></a>Session（会话）</h3><p>当输入<code>tmux</code>后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。</p>
+<h3 id="Window（窗口）"><a href="#Window（窗口）" class="headerlink" title="Window（窗口）"></a>Window（窗口）</h3><p>Window是显示给你的一整片窗口，你可以创建多个Window，在一个Window里面你又可以创建多个Pane，以此来执行多个任务。</p>
+<h3 id="Pane（窗格）"><a href="#Pane（窗格）" class="headerlink" title="Pane（窗格）"></a>Pane（窗格）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>tmux中的绝大部分操作都需要一个快捷键前缀加上相应的指令，tmux中默认的快捷键前缀是<code>Ctrl+b</code>，举例来说，使用<code>prefix + %</code>可以将当前Window分为左右两个Pane，这实际上是说，先按下<code>Ctrl+b</code>，再按下<code>%</code>，即可完成操作。值得注意的是，tmux默认的快捷键前缀是很糟糕的，因为很多程序都会使用到Ctrl+b，但同时，快捷键前缀也是可以自定义的。常用的快捷键如下：</p>
+<ul>
+<li>Session<ul>
+<li><code>prefix + d</code>：离开（datach）当前Session，即退出tmux</li>
+</ul>
+</li>
+<li>Window<ul>
+<li><code>prefix + c</code>：创建（create）一个新的窗口</li>
+<li><code>prefix + n</code>：切换到下一个（next）窗口</li>
+<li><code>prefix + p</code>：切换到上一个（previous）窗口</li>
+<li><code>prefix + &amp;</code>：关闭当前Window</li>
+</ul>
+</li>
+<li>Pane<ul>
+<li><code>prefix + %</code>：将当前光标所在Pane分为左右两个Pane</li>
+<li><code>prefix + &quot;</code>：将当前光标所在Pane分为上下两个Pane</li>
+<li><code>prefix + o</code>：在多个Pane之间切换光标，或按上下左右键</li>
+<li><code>prefix + x</code>：关闭当前光标所在Pane</li>
+</ul>
+</li>
+</ul>
+<p>除了这些在tmux中常使用的快捷键外，<code>tmux</code>命令还有众多参数，如下所示：</p>
+<ul>
+<li><code>tmux ls</code>：列出所有tmux Session</li>
+<li><code>tmux a</code>：连接到（attach）上一次的Session</li>
+<li><code>tmux a -t 0</code>：连接到名为0的Session</li>
+<li><code>tmux new -a foo</code>：新建名为foo的Session，若不指定<code>-a</code>参数，则默认按数字命名</li>
+<li><code>tmux kill-session -t foo</code>：删除名为foo的Session</li>
+<li><code>tmux kill-server</code>：删除所有Session</li>
+<li><code>tmux -V</code>：显示tmux版本号</li>
+<li><code>tmux source ~/.tmux.conf</code>：重载配置文件</li>
+</ul>
+<h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><p><code>$HOME/.tmux.conf</code>文件是tmux的配置文件，tmux在启动时会按照此文件中的命令进行相关配置，个人常用的配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 这是一行注释</span><br><span class="line"># 设定快捷键前缀</span><br><span class="line">unbind-key C-b</span><br><span class="line">set-option -g prefix C-x</span><br><span class="line">bind-key C-x send-prefix</span><br><span class="line">set-option -g escape-time 0</span><br><span class="line"></span><br><span class="line"># 开启鼠标模式</span><br><span class="line">set -g mouse on</span><br></pre></td></tr></table></figure></p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>tmux支持许多插件，在安装插件之前最好先安装插件管理器TPM，使用如下命令即可下载TPM：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span><br></pre></td></tr></table></figure></p>
+<p>下载完之后，只需在<code>.tmux.conf</code>文件底部添加相关配置，然后进入tmux输入<code>prefix + I</code>，即可自动下载并安装相应的插件，升级插件可使用<code>prefix + U</code>。个人常用的插件如下：<br>相应的，<code>.tmux.conf</code>文件中插件相关的配置项如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 插件</span><br><span class="line"># List of plugins</span><br><span class="line">set -g @plugin &apos;tmux-plugins/tpm&apos;</span><br><span class="line">set -g @plugin &apos;tmux-plugins/tmux-sensible&apos;</span><br><span class="line"></span><br><span class="line"># Other examples:</span><br><span class="line"># set -g @plugin &apos;github_username/plugin_name&apos;</span><br><span class="line"># set -g @plugin &apos;git@github.com/user/plugin&apos;</span><br><span class="line"># set -g @plugin &apos;git@bitbucket.com/user/plugin&apos;</span><br><span class="line"></span><br><span class="line"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span><br><span class="line">run -b &apos;~/.tmux/plugins/tpm/tpm&apos;</span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是，在更改<code>.tmux.conf</code>文件后，应该重启tmux，或者重载配置文件。</p>
+
       
     </div>
 
@@ -550,8 +590,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -570,7 +619,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -712,6 +761,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名词解释"><span class="nav-number">1.</span> <span class="nav-text">名词解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Session（会话）"><span class="nav-number">1.1.</span> <span class="nav-text">Session（会话）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window（窗口）"><span class="nav-number">1.2.</span> <span class="nav-text">Window（窗口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pane（窗格）"><span class="nav-number">1.3.</span> <span class="nav-text">Pane（窗格）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷键"><span class="nav-number">2.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux-conf"><span class="nav-number">3.</span> <span class="nav-text">.tmux.conf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">4.</span> <span class="nav-text">插件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -725,7 +790,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -737,7 +802,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">89k</span>
+    <span title="Symbols count total">119k</span>
   
 
   

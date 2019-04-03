@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2018-11-20T06:37:38.627Z</updated>
+  <updated>2019-03-24T06:03:33.499Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,273 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android刷机指南</title>
+    <link href="https://howiezhao.github.io/2019/03/23/android-shuaji-guide/"/>
+    <id>https://howiezhao.github.io/2019/03/23/android-shuaji-guide/</id>
+    <published>2019-03-23T03:42:58.000Z</published>
+    <updated>2019-03-24T06:03:33.499Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="软重启与硬重启"><a href="#软重启与硬重启" class="headerlink" title="软重启与硬重启"></a>软重启与硬重启</h3><p><strong>软重启</strong>（又称<strong>热重启</strong>）是指从操作系统层面上关机再开机，而<strong>硬重启</strong>（又称<strong>冷重启</strong>）是指直接关掉电源再开机。类似的，也有<strong>软（热）关机</strong>和<strong>硬（冷）关机</strong>，其区别类似于在Windows“开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。<br><a id="more"></a></p><h3 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;名词解释&quot;&gt;&lt;a href=&quot;#名词解释&quot; class=&quot;headerlink&quot; title=&quot;名词解释&quot;&gt;&lt;/a&gt;名词解释&lt;/h2&gt;&lt;h3 id=&quot;软重启与硬重启&quot;&gt;&lt;a href=&quot;#软重启与硬重启&quot; class=&quot;headerlink&quot; title=&quot;软重启与硬重启&quot;&gt;&lt;/a&gt;软重启与硬重启&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;软重启&lt;/strong&gt;（又称&lt;strong&gt;热重启&lt;/strong&gt;）是指从操作系统层面上关机再开机，而&lt;strong&gt;硬重启&lt;/strong&gt;（又称&lt;strong&gt;冷重启&lt;/strong&gt;）是指直接关掉电源再开机。类似的，也有&lt;strong&gt;软（热）关机&lt;/strong&gt;和&lt;strong&gt;硬（冷）关机&lt;/strong&gt;，其区别类似于在Windows“开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>汇编语言小记</title>
+    <link href="https://howiezhao.github.io/2019/03/09/assembly/"/>
+    <id>https://howiezhao.github.io/2019/03/09/assembly/</id>
+    <published>2019-03-09T09:41:13.000Z</published>
+    <updated>2019-03-10T06:08:19.132Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>汇编语言</strong>（Assembly Language，简称<strong>ASM</strong>）由<strong>汇编指令</strong>、<strong>伪指令</strong>和<strong>其他符合</strong>组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由编译器识别执行。</p><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>汇编语言是依赖底层CPU架构的，不同的CPU架构拥有不同的汇编语言，比如，常用于PC的<strong>x86汇编</strong>和常用于嵌入式设备的<strong>ARM汇编</strong>。由于x86架构又分为16位、32位、64位等，其相应的汇编也有稍许不同。本文以32位x86汇编为例简要介绍。<br><a id="more"></a></p><h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>汇编语言的大部分指令都是直接操作CPU中的寄存器的，所以有必要了解以下x86架构的CPU中常见的寄存器。</p><p>16位x86CPU中常见的寄存器有：</p><ul><li>通用寄存器（<strong>8个</strong>）：<ul><li>数据寄存器：<ul><li>AX：累加寄存器，Accumulator</li><li>BX：基址寄存器，Base</li><li>CX：计数寄存器，Count</li><li>DX：数据寄存器，Data</li></ul></li><li>指针寄存器：<ul><li>SP：堆栈指针寄存器，Stack Pointer</li><li>BP：基址指针寄存器，Base Pointer</li></ul></li><li>变址寄存器：<ul><li>SI：源变址寄存器，Source Index</li><li>DI：目的变址寄存器，Destinatin Index</li></ul></li></ul></li><li>段寄存器：<ul><li>CS：代码段寄存器，Code Segment</li><li>DS：数据段寄存器，Data Segment</li><li>ES：附加段寄存器，Extra Segment</li><li>SS：堆栈段寄存器，Stack Segment</li></ul></li><li>控制寄存器：<ul><li>IP：指令指针寄存器，Instruction Pointer</li><li>FLAGS：标志寄存器</li></ul></li></ul><p>为了保证兼容性，AX、BX、CX、DX这四个寄存器都可分为两个可独立使用的8位寄存器来用，如AX可分为<strong>AH</strong>和<strong>AL</strong>，其中AH代表高（High）8位，AL代表低（Low）8位，其他3个也是如此。</p><p>32位x86CPU在16位的基础上增加了一些寄存器，那些和原来作用相同的寄存器一般会在前面加上<code>E</code>，其中常见的寄存器有：</p><ul><li>通用寄存器（<strong>8个</strong>）：EAX、EBX、ECX、EDX、ESP、EBP、ESI、EDI</li><li>段寄存器：CS、SS、DS、ES、FS、GS，增加的FS、GS和ES一样，属于附加段寄存器</li><li>指令指针寄存器：EIP</li><li>标志寄存器：EFLAGS</li><li>系统表寄存器：GDTR、IDTR、LDTR、TR</li><li>控制寄存器：CR0、CR1、CR2、CR3、CR4</li><li>调试寄存器：DR0、DR1、DR2、DR3、DR4、DR5、DR6、DR7</li><li>测试寄存器：TR0、TR1、TR2、TR3、TR4、TR5、TR6、TR7</li></ul><p>类似的，64位又在32位的基础上增加了一些寄存器，那些和原来作用相同的寄存器一般会将前面的<code>E</code>改为<code>R</code>，其中常见的寄存器有：</p><ul><li>通用寄存器（<strong>16个</strong>）：RAX、RBX、RCX、RDX、RSP、RBP、RSI、RDI、R8、R9、R10、R11、R12、R13、R14、R15</li><li>指令指针寄存器：RIP</li><li>标志寄存器：RFLAGS</li></ul><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>常见的汇编指令如下：</p><ul><li><code>mov</code>：传送指令，两个操作对象的位数应该一致，如<code>mov eax,ebx</code>，表示将EBX的值送入EAX中。8086CPU不支持将数据直接送入段寄存器的操作，要想实现此功能，只能用一个寄存器来进行中转。</li><li><code>add</code>：加法指令，两个操作对象的位数应该一致，如<code>add eax,ebx</code>，表示将EAX和EBX相加，其值赋给EAX。</li><li><code>sub</code>：减法指令，如<code>sub eax,ebx</code>，表示用EAX减EBX，其值赋给EAX。</li><li><code>push</code>：</li><li><code>pop</code>：</li><li><code>jmp</code>：跳转指令，属于转移指令，如<code>jmp 2AE3:3</code>，表示将CS设为2AE3H，将IP设为0003H，CPU将从CS:IP（即2AE33H）处读取指令；<code>jmp eax</code>表示将EAX的值赋给IP，CS保持不变。</li></ul><p>注意：汇编指令和寄存器名称不区分大小写。</p><h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>汇编语言的两大风格分别是<strong>Intel风格</strong>和<strong>AT&amp;T风格</strong>，分别被Microsoft和GNU所采用，两种风格的详细区别如下表所示：</p><table><thead><tr><th>项目</th><th>Intel风格</th><th>AT&amp;T风格</th></tr></thead><tbody><tr><td>操作数顺序</td><td>目标操作数在前，如<code>mov eax,8</code></td><td>源操作数在前，如<code>movl $8,%eax</code></td></tr><tr><td>寄存器名字</td><td>原样，如<code>mov eax,8</code></td><td>加<code>%</code>前缀，如<code>movl $8,%eax</code></td></tr><tr><td>立即数</td><td>原样，如<code>mov eax,8</code></td><td>加<code>$</code>前缀，如<code>movl $8,%eax</code></td></tr><tr><td>16进制立即数</td><td>用后缀<code>b</code>与<code>h</code>分别表示二进制与十六进制，对于16进制字母开头的要加前缀<code>0</code></td><td>加前缀<code>0x</code></td></tr><tr><td>访问内存长度的表示</td><td>前缀<code>byte ptr</code>，<code>word ptr</code>，<code>dword ptr</code></td><td>后缀<code>b</code>、<code>w</code>、<code>l</code>表示字节、字、长型</td></tr><tr><td>引用全局或静态变量var的值</td><td>[_var]</td><td>_var</td></tr><tr><td>引用全局或静态变量var的地址</td><td>_var</td><td>$_var</td></tr><tr><td>寄存器间址</td><td>[reg]</td><td>(%reg)</td></tr><tr><td>寄存器变址寻址</td><td>[reg + _x]</td><td>_x(%reg)</td></tr><tr><td>立即数变址寻址</td><td>[reg + 1]</td><td>1(%reg)</td></tr><tr><td>整数数组寻址</td><td>[eax*4 + array]</td><td>_array (,%eax, 4)</td></tr><tr><td>注释</td><td>:注释以英文分号开头</td><td>#注释以井号开头</td></tr></tbody></table><p>本文的书写风格以Intel风格为主。</p><h2 id="内联汇编"><a href="#内联汇编" class="headerlink" title="内联汇编"></a>内联汇编</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解汇编语言更多的知识，可以阅读王爽的<a href="https://book.douban.com/subject/25726019/" target="_blank" rel="noopener">《汇编语言》</a>一书，这本书基于16位的8086CPU来讲解汇编，虽然处理器已过时，但思想永不褪色。</p><p>其次，<a href="https://www.ibm.com/developerworks/cn/linux/l-assembly/index.html" target="_blank" rel="noopener">Linux汇编语言开发指南</a>，也是一篇不错的介绍文章。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;汇编语言&lt;/strong&gt;（Assembly Language，简称&lt;strong&gt;ASM&lt;/strong&gt;）由&lt;strong&gt;汇编指令&lt;/strong&gt;、&lt;strong&gt;伪指令&lt;/strong&gt;和&lt;strong&gt;其他符合&lt;/strong&gt;组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由编译器识别执行。&lt;/p&gt;
+&lt;h2 id=&quot;架构&quot;&gt;&lt;a href=&quot;#架构&quot; class=&quot;headerlink&quot; title=&quot;架构&quot;&gt;&lt;/a&gt;架构&lt;/h2&gt;&lt;p&gt;汇编语言是依赖底层CPU架构的，不同的CPU架构拥有不同的汇编语言，比如，常用于PC的&lt;strong&gt;x86汇编&lt;/strong&gt;和常用于嵌入式设备的&lt;strong&gt;ARM汇编&lt;/strong&gt;。由于x86架构又分为16位、32位、64位等，其相应的汇编也有稍许不同。本文以32位x86汇编为例简要介绍。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>成为黑客高手的必备技能</title>
+    <link href="https://howiezhao.github.io/2019/02/25/hacker-essential-skills/"/>
+    <id>https://howiezhao.github.io/2019/02/25/hacker-essential-skills/</id>
+    <published>2019-02-25T12:39:30.000Z</published>
+    <updated>2019-02-25T14:51:36.435Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文翻译自<a href="https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/</a> ，正文如下：</p><p>我的许多有抱负的黑客写信给我，都问同样的问题。“我需要什么技能才能成为一个好的黑客？”</p><p>由于黑客是最熟练的信息技术学科之一，因此需要广泛的IT技术和技术知识。要真正成为一名优秀的黑客，必须掌握许多技能。如果你没有我在此列出的所有技能，请不要气馁，可以将此列表作为你在不久的将来学习和掌握所需内容的起点。<br><a id="more"></a><br><img src="https://img.wonderhowto.com/img/original/78/70/63533756748235/0/635337567482357870.jpg" alt=""><br>这是我进入这个精英IT行业的万神殿所需技能的概述列表。我将这些技能分为三类，以帮助你从一个级别转到另一个级别，更容易掌握基本技能、中级技能和无形技能，并提供了指向Null Byte相关文章的链接，供你了解。</p><h2 id="基本技能"><a href="#基本技能" class="headerlink" title="基本技能"></a>基本技能</h2><p>这些是每个黑客在尝试破解之前应该知道的基础知识。一旦掌握了本节中的所有内容，就可以进入中间层。</p><h3 id="基本的计算机技能"><a href="#基本的计算机技能" class="headerlink" title="基本的计算机技能"></a>基本的计算机技能</h3><p>不用说，要成为一名黑客，你需要一些基本的计算机技能。这些技能超出了创建Word文档或浏览Internet的能力。你需要能够在Windows中使用命令行，编辑注册表以及设置网络参数。</p><p>许多这些基本技能可以在像A+这样的基础计算机技能课程中获得。</p><h3 id="网络技能"><a href="#网络技能" class="headerlink" title="网络技能"></a>网络技能</h3><p>你需要了解网络的基础知识，例如以下内容。</p><ul><li>DHCP</li><li>NAT</li><li>子网划分</li><li>IPv4</li><li>IPv6</li><li>公有和私有IP</li><li>DNS</li><li>路由器和交换机</li><li>VLANs</li><li>OSI模型</li><li>MAC寻址</li><li>ARP</li></ul><p>由于我们经常利用这些技术，你越了解它们的工作方式，你就会越成功。请注意，我没有编写下面的两个指南，但它们非常有用，并涵盖了上面提到的一些网络基础知识。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/hacker-fundamentals-tale-two-standards-0133727/" target="_blank" rel="noopener">黑客基础：两个标准的故事</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hacker-fundamentals-everymans-guide-network-packets-are-routed-across-web-0134491/" target="_blank" rel="noopener">一般人的网络数据包路由指南</a></li></ul><h3 id="Linux技能"><a href="#Linux技能" class="headerlink" title="Linux技能"></a>Linux技能</h3><p>发展Linux技能对于成为黑客是非常关键的。我们用作黑客的几乎所有工具都是为Linux开发的，Linux为我们提供了使用Windows时没有的功能。</p><p>如果你需要提高你的Linux技能，或者你刚开始使用Linux，请查看下面我的Linux初学者系列。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/linux-basics/" target="_blank" rel="noopener">针对有抱负的黑客的Linux基础知识</a></li></ul><h3 id="Wireshark或Tcpdump"><a href="#Wireshark或Tcpdump" class="headerlink" title="Wireshark或Tcpdump"></a>Wireshark或Tcpdump</h3><p>Wireshark是使用最广泛的嗅探器/协议分析器，而tcpdump是命令行嗅探器/协议分析器。两者在分析TCP/IP流量和攻击方面都非常有用。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/spy-your-buddys-network-traffic-intro-wireshark-and-osi-model-0133807/" target="_blank" rel="noopener">Wireshark和OSI模型介绍</a></li><li><a href="https://null-byte.wonderhowto.com/news/8-wireshark-filters-every-wiretapper-uses-spy-web-conversations-and-surfing-habits-0134508/" target="_blank" rel="noopener">Wireshark过滤器</a></li></ul><h3 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>你需要熟练使用其中一个虚拟化软件包，如<a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a>或<a href="https://www.vmware.com/products/workstation-pro.html" target="_blank" rel="noopener">VMWare Workstation</a>。理想情况下，你需要一个安全的环境来练习你的黑客攻击行为，之后才能将它们带出现实世界。虚拟环境为你提供了一个安全的环境，可以在使用它们之前测试和优化你的黑客攻击。</p><h3 id="安全概念与技术"><a href="#安全概念与技术" class="headerlink" title="安全概念与技术"></a>安全概念与技术</h3><p>优秀的黑客了解安全概念和技术。克服安全管理员建立的障碍的唯一方法是熟悉它们。黑客必须了解诸如PKI（公钥基础架构），SSL（安全套接层），IDS（入侵检测系统），防火墙等等。</p><p>黑客初学者可以在Security+等基本安全课程中获得许多这些技能。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/snort/" target="_blank" rel="noopener">如何读写Snort规则来躲避IDS</a></li></ul><h3 id="无线技术"><a href="#无线技术" class="headerlink" title="无线技术"></a>无线技术</h3><p>为了能够破解无线，你必须首先了解它的工作原理。诸如加密算法（WEP，WPA，WPA2），四次握手和WPS之类的东西。此外，理解诸如连接和认证协议以及无线技术的法律约束等。</p><p>要开始学习，请查看以下有关无线术语和技术入门的指南，然后阅读我们的Wi-Fi黑客指南集，了解有关各种加密算法的详细信息以及每种黑客如何工作的示例。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-terms-technologies-0147659/" target="_blank" rel="noopener">Wi-Fi术语和技术入门</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/wi-fi-hacking/" target="_blank" rel="noopener">有抱负的黑客入侵Wi-Fi指南</a></li></ul><h2 id="中级技能"><a href="#中级技能" class="headerlink" title="中级技能"></a>中级技能</h2><p>这是事情变得有趣的地方，你真正开始感受到你作为黑客的能力。知道所有这些将允许你进入更直观的黑客攻击所有镜头 - 而不是其他一些黑客。</p><h3 id="编写脚本"><a href="#编写脚本" class="headerlink" title="编写脚本"></a>编写脚本</h3><p>如果没有<a href="https://null-byte.wonderhowto.com/how-to/scripting/" target="_blank" rel="noopener">编写脚本的技能</a>，黑客将被降级为使用其他黑客工具。这限制了你的效率。每天都会有一个新工具失效，因为安全管理员提出了防御措施。</p><p>要开发自己独特的工具，你需要至少熟练掌握一种脚本语言，包括BASH shell。这些应该包括Perl，Python或Ruby之一。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-perl-scripting-for-aspiring-hacker-part-1-0151750/" target="_blank" rel="noopener">针对有抱负的黑客的Perl脚本</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-1-bash-basics-0149422/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第1部分：BASH基础知识</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-2-conditional-statements-0149695/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第2部分：条件语句</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-3-windows-powershell-0151075/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第3部分：Windows PowerShell</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-ultimate-list-hacking-scripts-for-metasploits-meterpreter-0149339/" target="_blank" rel="noopener">Metasploit中Meterpreter的黑客脚本终极列表</a></li></ul><h3 id="数据库技能"><a href="#数据库技能" class="headerlink" title="数据库技能"></a>数据库技能</h3><p>如果你希望能够熟练地<a href="https://null-byte.wonderhowto.com/how-to/db-hacking/" target="_blank" rel="noopener">破解数据库</a>，则需要了解数据库及其工作原理。这包括SQL语言。我还建议掌握一个主要的DBMS，如SQL Server，Oracle或MySQL。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-terms-technologies-you-need-know-before-getting-started-0148773/" target="_blank" rel="noopener">入门前需要了解的术语和技术</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-hunting-for-microsofts-sql-server-0148993/" target="_blank" rel="noopener">寻找微软的SQL Server</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-cracking-sql-server-passwords-owning-server-0149636/" target="_blank" rel="noopener">破解SQL Server密码并拥有服务器</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-hacking-mysql-online-databases-with-sqlmap-0150368/" target="_blank" rel="noopener">使用Sqlmap攻击MySQL在线数据库</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-extracting-data-from-online-databases-using-sqlmap-0150688/" target="_blank" rel="noopener">使用Sqlmap从在线数据库中提取数据</a></li></ul><h3 id="Web应用程序"><a href="#Web应用程序" class="headerlink" title="Web应用程序"></a>Web应用程序</h3><p>Web应用程序可能是近年来黑客最肥沃的土壤。你对Web应用程序如何工作以及它们背后的数据库了解得越多，你就会越成功。此外，你可能需要建立自己的网站以进行网络钓鱼和其他恶意目的。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-clone-any-website-using-httrack-0152420/" target="_blank" rel="noopener">如何使用HTTrack克隆任何网站</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-spoof-dns-lan-redirect-traffic-your-fake-website-0151620/" target="_blank" rel="noopener">如何将流量重定向到假网站</a></li></ul><h3 id="取证"><a href="#取证" class="headerlink" title="取证"></a>取证</h3><p>要成为好黑客，一定不要被抓住！你不能成为一名坐在牢房里5年的职业黑客。你对数字取证的了解越多，就越能避免和规避检测。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-1-tools-techniques-0149732/" target="_blank" rel="noopener">数字取证，第1部分：工具和技术</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-2-network-forensics-0149958/" target="_blank" rel="noopener">数字取证，第2部分：网络取证</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-3-recovering-deleted-files-0149868/" target="_blank" rel="noopener">数字取证，第3部分：恢复已删除的文件</a></li><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-4-evading-detection-while-dosing-0150445/" target="_blank" rel="noopener">数字取证，第4部分：DoSing时的逃避检测</a></li></ul><h3 id="高级TCP-IP"><a href="#高级TCP-IP" class="headerlink" title="高级TCP/IP"></a>高级TCP/IP</h3><p>黑客初学者必须了解TCP/IP基础知识，但要升级到中级，你必须了解TCP/IP协议栈和字段的详细信息。这些包括TCP和IP数据包中的每个字段（flags，window，df，tos，seq，ack等）如何被操纵并用于对抗受害者系统以启用中间人攻击等。</p><h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>虽然要成为一个好的黑客不需要成为一个密码学家，但是你越了解每种密码算法的优缺点，就越有可能打败它。此外，黑客还可以利用密码学来隐藏他们的活动并逃避检测。</p><h3 id="逆向工程"><a href="#逆向工程" class="headerlink" title="逆向工程"></a>逆向工程</h3><p>通过逆向工程，你可以打开一个恶意软件并使用其他功能重新构建它。就像在软件工程中一样，没有人从头开始构建新的应用程序。几乎每个新漏洞或恶意软件都使用其他现有恶意软件中的组件。</p><p>此外，逆向工程使黑客能够利用现有漏洞并更改其签名，以便它可以绕过IDS和<a href="https://null-byte.wonderhowto.com/how-to/evading-av-software/" target="_blank" rel="noopener">防病毒检测</a>。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-change-signature-metasploit-payloads-evade-antivirus-detection-0149867/" target="_blank" rel="noopener">如何更改Metasploit有效载荷签名以避免防病毒检测</a></li></ul><h2 id="无形技能"><a href="#无形技能" class="headerlink" title="无形技能"></a>无形技能</h2><p>除了所有这些计算机技能外，成功的黑客还必须具备一些无形技能。这些包括以下内容。</p><h3 id="创造性地思考"><a href="#创造性地思考" class="headerlink" title="创造性地思考"></a>创造性地思考</h3><p>黑客攻击系统总是有办法的，而且有很多方法可以实现。一个好的黑客可以创造性地思考同一个黑客的多种方法。</p><ul><li><a href="https://null-byte.wonderhowto.com/how-to/social-engineering/" target="_blank" rel="noopener">Null Byte的社会工程学指南</a></li><li><a href="https://null-byte.wonderhowto.com/forum/cryptolocker-innovative-creative-hack-0151753/" target="_blank" rel="noopener">CryptoLocker：一个创新和创造性的黑客</a></li></ul><h3 id="解决问题的能力"><a href="#解决问题的能力" class="headerlink" title="解决问题的能力"></a>解决问题的能力</h3><p>黑客总是遇到看似无法解决的问题。这就要求黑客习惯于分析性思维和解决问题。这通常要求黑客准确地诊断出问题所在，然后将问题分解为不同的组件。这是伴随着许多小时的练习而来的能力之一。</p><ul><li><a href="https://null-byte.wonderhowto.com/forum/problem-solving-is-essential-hacker-skill-0150882/" target="_blank" rel="noopener">解决问题是一项必不可少的黑客技能</a></li></ul><h3 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h3><p>黑客必须坚持不懈。如果你一开始失败了，请再试一次。如果再失败，请提出一种新的方法并重试。只有坚持不懈，你才能破解最安全的系统。</p><ul><li><a href="https://null-byte.wonderhowto.com/forum/so-you-want-be-hacker-0148983/" target="_blank" rel="noopener">那么……你想成为黑客吗？</a></li></ul><p>我希望这能给你一些指导，让你了解你需要学习和掌握什么，才能提升到黑客的中级水平。在未来的一篇文章中，我将讨论你需要掌握什么才能提升到高级或大师级的黑客，所以请记着回来，我的新手黑客们！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文翻译自&lt;a href=&quot;https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/&lt;/a&gt; ，正文如下：&lt;/p&gt;
+&lt;p&gt;我的许多有抱负的黑客写信给我，都问同样的问题。“我需要什么技能才能成为一个好的黑客？”&lt;/p&gt;
+&lt;p&gt;由于黑客是最熟练的信息技术学科之一，因此需要广泛的IT技术和技术知识。要真正成为一名优秀的黑客，必须掌握许多技能。如果你没有我在此列出的所有技能，请不要气馁，可以将此列表作为你在不久的将来学习和掌握所需内容的起点。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Translation" scheme="https://howiezhao.github.io/categories/Translation/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>白帽子VPS选购指南</title>
+    <link href="https://howiezhao.github.io/2019/02/25/whitehat-vps/"/>
+    <id>https://howiezhao.github.io/2019/02/25/whitehat-vps/</id>
+    <published>2019-02-25T10:17:38.000Z</published>
+    <updated>2019-02-25T10:22:43.658Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文翻译自<a href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/</a> ，正文如下：</p><p>从受信任的VPS进行网络钓鱼活动和托管Metasploit会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的VPS非常有限，因为大多数提供商对任何类型的黑客都有零容忍政策，无论好坏。在研究了数十种产品之后，我们选出了5个理想的产品，非常适合Null Byte读者。<br><a id="more"></a><br>首先要理解的事情是……什么是VPS？嗯，它代表虚拟专用服务器，是许多用户认为的专用或私有服务器的虚拟化形式，即使它安装在同时运行多个操作系统的物理计算机上。VPS最常用于在线托管网站。</p><p>当我们从提供商处购买VPS时，我们实际上是在一个有着许多虚拟服务器的功能强大的高性能物理机器上“租用”一个分区。每个VPS都连接到互联网，使个人客户能够使用不同的操作系统，并提供对操作系统的完全root访问权限。每个客户（或服务器管理员）独立于共享VPS公司提供的物理计算机上的其他客户运营。</p><ul><li>不要错过：<a href="https://null-byte.wonderhowto.com/news/what-is-white-hat-hacker-0166878/" target="_blank" rel="noopener">什么是白帽黑客？</a></li></ul><p>从本质上讲，虚拟专用服务器是我们可以从世界上任何连接互联网的设备远程控制的计算机。这给了我们很大的能力。对于远程服务器而言，下面是它可以完成的一些事情：</p><ul><li>创建VPN连接</li><li>托管网络钓鱼站点</li><li>进行暴力攻击</li><li>创建IRC机器人</li><li>服务器代理</li><li>托管有效载荷</li><li>使用端口扫描器</li><li>创建蜜罐</li><li>托管Metasploit会话</li></ul><p>为了做到这一点，从我们的研究来看，<a href="https://bulletshield.su/" target="_blank" rel="noopener">BulletShield</a>是迄今为止最好的白帽和渗透测试人员的VPS提供商，紧随其后的是<a href="https://buyvm.net/" target="_blank" rel="noopener">BuyVM</a>和<a href="https://www.clientvps.com/" target="_blank" rel="noopener">ClientVPS</a>。亚军是<a href="https://vpsdime.com/" target="_blank" rel="noopener">VPSDime</a>和<a href="https://onehostcloud.hosting/" target="_blank" rel="noopener">OneHost Cloud</a>。你可以在下面的图表中看到原因，但跳到下面可以深入研究每个比较点的含义。<br><img src="https://img.wonderhowto.com/img/36/31/63655508941243/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="图表"></p><h2 id="关键比较点"><a href="#关键比较点" class="headerlink" title="关键比较点"></a>关键比较点</h2><p>网上有几个VPS对比图表，但没有一个对我来说是与渗透测试人员和白帽子有所联系的。在大多数专业的渗透测试场景中，我们需要在几天内启动VPS来托管有效载荷，接收泄漏数据或执行网络钓鱼攻击。</p><p>无论VPS提供商是否提供实时技术支持，难以理解的硬件规格或过多的操作系统选择都很重要。理想情况下，我们希望使用比特币（BTC）从位于尊重隐私的国家的VPS提供商处快速购买最新的Debian版本。</p><p>在比较本文中介绍的VPS提供商时，我试图尽可能客观公正。本文中没有VPS提供商付费参与比较图表。我使用下面的标准来得出上面的图表。</p><ul><li>不要错过：<a href="https://smartphones.gadgethacks.com/how-to/binance-101-sell-your-stellar-ripple-other-alt-coins-for-bitcoin-ethereum-0182373/" target="_blank" rel="noopener">如何在比特币和以太坊中出售你的Stellar，Ripple和其他替代币？</a></li></ul><h3 id="最好的价钱（Best-Price）"><a href="#最好的价钱（Best-Price）" class="headerlink" title="最好的价钱（Best Price）"></a>最好的价钱（Best Price）</h3><p>我相信定价透明度。这意味着提供商完全诚实地说他们的月费是多少。我的图表中列出的价格可能并不总是反映出给定提供商在主页上公布的价格。我的图表中的价格是计算所有强制性和隐藏费用后的结账价格。这些也是我在网站上找到的最便宜的VPS计划的价格。在大多数情况下，这通常有着512 MB的RAM和1个CPU内核。</p><h3 id="渗透测试人员友好型（Pentester-Friendly）"><a href="#渗透测试人员友好型（Pentester-Friendly）" class="headerlink" title="渗透测试人员友好型（Pentester-Friendly）"></a>渗透测试人员友好型（Pentester-Friendly）</h3><p>服务条款（ToS）和可接受的使用政策（AUP）可能是进入此比较图表的最高优先项。虽然最初考虑了数十个VPS提供商，但大多数明确禁止或阻止端口扫描器，有效载荷分发，网络钓鱼和（或）任何类型的黑客攻击。除了少数例外，这会立即取消VPS提供商在比较图表中的资格。</p><p>IT专业人员，安全研究人员和自学成才的白帽黑客在远程服务器上做了大量工作。对我来说很重要的是，这里的VPS提供商保留了最符合Null Byte受众需求的ToS政策。我的图表中的VPS提供商是少数几个没有完全敌视“黑客攻击”的ToS政策的提供商。</p><p>那些被认为是对渗透测试人员友好的提供商并没有在他们的ToS中明确声明允许“黑客攻击”（或任何相关术语）。没有一个VPS提供商会这样做。大多数这些提供商要么没有提及他们的ToS中的黑客攻击，要么他们的网站上根本没有提供ToS。这被认为表明黑客攻击活动非常不受欢迎，但可能不会导致帐户终止。</p><h3 id="请求个人信息（Requests-Personal-Info）"><a href="#请求个人信息（Requests-Personal-Info）" class="headerlink" title="请求个人信息（Requests Personal Info）"></a>请求个人信息（Requests Personal Info）</h3><p>向任何网站提交我们的真实姓名，地址，电话号码和其他个人身份信息都是不可取的。即使匿名不是你的首要任务，VPS提供商仍有一天可能会受到攻击，并且所有客户数据都会在网上泄露。</p><p>购买VPS订阅是理想的匿名完成，因为没有人知道我们在研究或渗透测试期间会遇到什么麻烦。对于你购买的服务器上发生的事情，有朝一日可能会对VPS提供商采取法律行动，因此最好将有关你自己的少量信息存储在提供商的客户数据库中。</p><p>在大多数情况下，我发现在注册期间可以提交一个完全虚假的姓名，地址和电话号码，但我并不认为这是提供商的“好功能”。向任何合法公司提交虚假信息几乎肯定会违反提供商的服务条款并导致帐户立即终止。</p><p>VPS提供商要求的电子邮件地址不属于“个人信息”，因为匿名获取一次性电子邮件地址很容易。毕竟VPS提供商需要建立与客户沟通的有效方法。</p><h3 id="接受比特币付款（Accepts-BTC-Payments）"><a href="#接受比特币付款（Accepts-BTC-Payments）" class="headerlink" title="接受比特币付款（Accepts BTC Payments）"></a>接受比特币付款（Accepts BTC Payments）</h3><p>如果获得比特币（BTC）不是障碍，这可能是你的首选付款方式。目前大多数提供商都接受比特币，但使用匿名加密货币的好处大部分都被VPS提供商对个人身份信息的请求所抵消。我发现使用比特币进行在线购物比使用信用卡更快更方便。</p><h3 id="接受预付信用卡（Accepts-Prepaid-Credit-Cards）"><a href="#接受预付信用卡（Accepts-Prepaid-Credit-Cards）" class="headerlink" title="接受预付信用卡（Accepts Prepaid Credit Cards）"></a>接受预付信用卡（Accepts Prepaid Credit Cards）</h3><p>获取比特币进行匿名交易可能很困难。用现金购买<a href="https://null-byte.wonderhowto.com/how-to/securely-anonymously-spend-money-online-0131351/" target="_blank" rel="noopener">预付卡或一次性借记卡</a>可能更方便。如果没有使用预付借记卡实际提交付款，很难验证这一点。在大多数情况下，我能够联系客户服务代表，并从他们那里获得有关使用预付卡进行交易的直接答复。</p><h3 id="Tor友好型网站（Tor-Friendly-Website）"><a href="#Tor友好型网站（Tor-Friendly-Website）" class="headerlink" title="Tor友好型网站（Tor-Friendly Website）"></a>Tor友好型网站（Tor-Friendly Website）</h3><p>如果你通过安全的VPN连接使用信用卡进行在线购买或通过Tor匿名进行在线购买，VPS提供商有时会暂停你的帐户。联系客户支持并解决暂停可能需要数天时间。</p><p>我使用同一个常用的Firefox浏览器通过Tor浏览了每个站点。要求访问者填写验证码以查看其网站或处理结帐的提供商被标记为对希望保持匿名的用户不友好。这并不意味着可以通过Tor进行事务处理。在查看这些网站时，我只尽可能地进入结账过程，而不实际提交付款。</p><ul><li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/access-dark-web-while-staying-anonymous-with-tor-0179341/" target="_blank" rel="noopener">如何使用Tor匿名的访问暗网？</a></li></ul><h3 id="公司总部所在国（Company-HQ’s-Country）"><a href="#公司总部所在国（Company-HQ’s-Country）" class="headerlink" title="公司总部所在国（Company HQ’s Country）"></a>公司总部所在国（Company HQ’s Country）</h3><p>认为提供安全加密交易的公司将与当局充分<a href="https://www.theregister.co.uk/2011/09/26/hidemyass_lulzsec_controversy/" target="_blank" rel="noopener">合作以捕获黑客</a>并不是不切实际的。VPS的IP地址是否来自尊重隐私的国家并不总是重要的。如果向你提供VPS的公司位于美国或英国，他们很可能会毫不犹豫地将你的个人信息交给任何权威人士。</p><p>进一步涉及隐私问题，<a href="https://zh.wikipedia.org/wiki/%E8%8B%B1%E7%BE%8E%E5%8D%94%E5%AE%9A" target="_blank" rel="noopener">UKUSA协议</a>是英国，美国，澳大利亚，加拿大和新西兰之间的协议，旨在合作收集，分析和共享情报。这个群体的成员被称为<a href="https://zh.wikipedia.org/wiki/%E4%BA%94%E7%9C%BC%E8%81%AF%E7%9B%9F" target="_blank" rel="noopener">五眼联盟</a>。这些国家因拥有侵犯隐私的法律和政策而臭名昭著。</p><p>在最尊重隐私的国家选择VPS提供商可能不是最优先考虑的问题，但至少考虑具有<a href="https://nomadcapitalist.com/2013/12/15/top-5-best-countries-host-website-data-privacy/" target="_blank" rel="noopener">良好隐私法律的国家</a>的提供商是有意义的。</p><h3 id="离岸解决方案（Offshore-Solutions）"><a href="#离岸解决方案（Offshore-Solutions）" class="headerlink" title="离岸解决方案（Offshore Solutions）"></a>离岸解决方案（Offshore Solutions）</h3><p>“离岸VPS”意味着服务器位于公司的国家边界位置之外，并且可能允许一定程度的自由裁量权。这对你作为渗透测试人员以及你受委托保护的公司非常重要，因为你可能会收到不应共享或泄露的妥协和敏感信息。我们鼓励读者独立询问VPS提供商，以确定他们的离岸解决方案是否适合你。</p><p>提供商指出，提供离岸解决方案通常要付出一定的代价。不应该假设他们最便宜的VPS解决方案也是其离岸选项的价格。</p><h2 id="1、BulletShield"><a href="#1、BulletShield" class="headerlink" title="1、BulletShield"></a>1、BulletShield</h2><p><a href="https://bulletshield.su/" target="_blank" rel="noopener">BulletShield</a>是我的首选，是Null Byte读者的最佳VPS提供商。BulletShield在注册账户或准备提交比特币交易时不要求任何类型的个人信息。他们还强制要求比特币交易，并且没有明确禁止任何渗透测试活动的ToS。<br><img src="https://img.wonderhowto.com/img/36/93/63655505111133/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="BulletShield"><br>缺点是他们不接受预付信用卡，最便宜的价格有点贵，但如果你重视隐私，价格不一定是主要考虑因素。</p><p>在涉及公司总部时，BulletShield不会透露这些信息。快速域名搜索显示，它是由加拿大公司Tucows Domains Inc.购买的，是从位于西印度群岛偏远岛屿的Charlestown购买的。但是，这并不意味着这就是BulletShield的总部所在地，这只是域名注册商BulletShield使用注册域名的地方。</p><p>他们提供离岸解决方案和Tor友好型网站，使BulletShield整体处于领先地位。但是，一位客户服务代表向我提到“渗透测试”是“仅允许……防弹服务”，这可能是成本方面的问题。</p><ul><li>ToS：无可用</li><li>AUP：无可用</li><li>隐私：无可用</li></ul><h2 id="2、BuyVM"><a href="#2、BuyVM" class="headerlink" title="2、BuyVM"></a>2、BuyVM</h2><p><a href="https://buyvm.net/" target="_blank" rel="noopener">BuyVM</a>是允许合法渗透测试的亚军，如果公司或相关人员给出明确和合法的书面同意。一位代表证实了这一点，他们说“他们需要一份来自法律团队的完整文件，代表有关目标的授权书”。<br><img src="https://img.wonderhowto.com/img/33/95/63655505142883/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="BuyVM"><br>他们的起价确实提升了他们的排名，VPS解决方案每月只需2.42美元。但是，他们确实要求你提供个人信息，并且为了注册帐户，“帐户详细信息必须与付款方式提供的信息相符”，这可能意味着匿名预付卡将无法使用。不过，比特币是可以被接受的。</p><p>虽然他们确实有一个Tor友好的网站，但他们总部设在加拿大，并不提供离岸解决方案，这可能是负面的，取决于你使用VPS的目的。</p><ul><li>ToS：<a href="https://buyvm.net/terms-of-service/" target="_blank" rel="noopener">链接</a></li><li>AUP：<a href="https://buyvm.net/acceptable-use-policy/" target="_blank" rel="noopener">链接</a></li><li>隐私：<a href="https://buyvm.net/privacy-policy/" target="_blank" rel="noopener">链接</a></li></ul><h2 id="3、ClientVPS"><a href="#3、ClientVPS" class="headerlink" title="3、ClientVPS"></a>3、ClientVPS</h2><p><a href="https://www.clientvps.com/" target="_blank" rel="noopener">ClientVPS</a>有一个ToS，即你所执行的任何导致对人身或财产“受到伤害”，侵犯版权等的行为都要你自己承担全部责任。<br><img src="https://img.wonderhowto.com/img/69/58/63655505152117/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="ClientVPS"><br>总的来说，他们的价格是最昂贵的，但亮点包括接受比特币（预付Visa尚卡不清楚），拥有Tor友好的网站，总部设在俄罗斯（信息请求经常被忽略），并提供离岸解决方案，所有这些都巩固了其目前在排名中的地位。</p><p>除了高昂的价格外，其他缺点包括他们缺乏有关合法渗透测试的信息（他们没有回复我的询问），他们确实要求你提供个人数据。</p><ul><li>ToS：<a href="https://www.clientvps.com/terms-of-service" target="_blank" rel="noopener">链接</a></li><li>AUP：无公开链接</li><li>隐私：<a href="https://www.clientvps.com/privacy-policy" target="_blank" rel="noopener">链接</a></li></ul><h2 id="4、VPSDime"><a href="#4、VPSDime" class="headerlink" title="4、VPSDime"></a>4、VPSDime</h2><p><a href="https://vpsdime.com/" target="_blank" rel="noopener">VPSDime</a>不是一个非常理想的选择，因为它们没有比特币支付选项，不允许客户匿名查看他们的网站，也没有任何离岸VPS解决方案。但是，他们的ToS只是明确禁止“端口扫描”。他们没有提及渗透测试，漏洞扫描，网络钓鱼或其他常见的渗透活动。<br><img src="https://img.wonderhowto.com/img/00/36/63655505163524/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="VPSDime"><br>当询问澄清他们的合法渗透测试政策时，他们没有回复我的电子邮件。他们的ToS太模糊了，我无法确定是否允许这样的（合法）活动。出于这个原因，我建议读者在使用他们的服务之前联系VPSDime澄清。</p><p>虽然VPSDime没有明显的好处，但它们是最便宜的选择之一。</p><ul><li>ToS：<a href="https://vpsdime.com/tos.html" target="_blank" rel="noopener">链接</a></li><li>AUP：<a href="https://vpsdime.com/aup.html" target="_blank" rel="noopener">链接</a></li><li>隐私：<a href="https://vpsdime.com/privacy.html" target="_blank" rel="noopener">链接</a></li></ul><h2 id="5、OneHost-Cloud"><a href="#5、OneHost-Cloud" class="headerlink" title="5、OneHost Cloud"></a>5、OneHost Cloud</h2><p><a href="https://onehostcloud.hosting/" target="_blank" rel="noopener">OneHost Cloud</a>是我能找到的唯一提供Kali Linux VPS和渗透测试解决方案的VPS提供商。他们的价格仅为每月6.59美元，这是该提供商的另一个主要好处，并且他们接受比特币付款。<br><img src="https://img.wonderhowto.com/img/55/35/63655505173336/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="OneHost Cloud"><br>对于那些不打算在未经同意的情况下非法扫描网站或入侵实体的白帽子来说，OneHost Cloud<br>似乎是最佳选择。毕竟如果它们提供Kali解决方案但不允许合法的渗透测试，那么对于客户来说也会非常混乱。但是，当我询问合法渗透测试时，他们只是回答：</p><blockquote><p>来自此地址的所有未来电子邮件都将被阻止。</p></blockquote><p>这是在没有任何理由或解释的情况下发给我的。出于这个原因，OneHost Cloud排在最后，我建议读者在执行任何类型的渗透测试之前，独立地向OneHost Cloud询问他们的ToS策略。</p><p>该提供商的其他缺点是要求提供个人信息；位于英国伦敦；没有匿名网站；并且缺乏有关离岸解决方案和预付卡的信息。</p><ul><li>ToS：<a href="https://onehostcloud.hosting/legal/" target="_blank" rel="noopener">链接</a></li><li>AUP：无公开链接</li><li>隐私：<a href="https://onehostcloud.hosting/privacy-policy/" target="_blank" rel="noopener">链接</a></li></ul><h2 id="意见"><a href="#意见" class="headerlink" title="意见"></a>意见</h2><p>专业和独立渗透测试人员的选择是非常有限的。大多数VPS提供商都有检测系统，如果检测到任何类型的扫描，网络钓鱼或垃圾邮件，它们会自动暂停客户帐户。在我们的测试计划中，可能需要数天才能解决暂停并造成重大挫折。</p><p>选择愿意与我们合作以更好地保护公司网站的提供商是至关重要的。如果你是一个专业的渗透测试者，或者只是一个希望以安全和匿名的方式加强技能的新手黑客，那么选择最能满足你需求并获得乐趣的提供商。</p><ul><li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/hack-anyones-wi-fi-password-using-birthday-card-part-1-creating-payload-0183043/" target="_blank" rel="noopener">如何使用生日卡片破解任何人的Wi-Fi密码？</a></li></ul><h2 id="一些评论"><a href="#一些评论" class="headerlink" title="一些评论"></a>一些评论</h2><p>Pulkit Singhania：</p><blockquote><p>Cloudsigma实际上也是一个不错的选择。<br>  他们提供免费的vps，没有任何登录或任何注册的免费，但只有一个小时。<br>  我亲自尝试过，它提供2GB内存和50GB硬盘，最高可达25兆字节/秒的互联网流量。<br>  如果你使用公司电子邮件注册，则可免费试用7天</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文翻译自&lt;a href=&quot;https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/&lt;/a&gt; ，正文如下：&lt;/p&gt;
+&lt;p&gt;从受信任的VPS进行网络钓鱼活动和托管Metasploit会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的VPS非常有限，因为大多数提供商对任何类型的黑客都有零容忍政策，无论好坏。在研究了数十种产品之后，我们选出了5个理想的产品，非常适合Null Byte读者。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Translation" scheme="https://howiezhao.github.io/categories/Translation/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>安装Kali Linux后要做的10件事</title>
+    <link href="https://howiezhao.github.io/2019/02/25/after-kali/"/>
+    <id>https://howiezhao.github.io/2019/02/25/after-kali/</id>
+    <published>2019-02-25T09:45:28.000Z</published>
+    <updated>2019-02-25T10:01:50.552Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文翻译自<a href="https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/</a> ，正文如下：</p><p>默认情况下，对于完成日常的渗透测试，<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-getting-started-with-kali-your-new-hacking-system-0151631/" target="_blank" rel="noopener">Kali Linux</a>可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用Kali。</p><p>大多数Linux发行版都是高度可定制的。这使得个性化你的渗透测试发行版有点令人生畏。只需几个命令，我们就可以自动执行任务，安装我们喜欢的软件，创建其他用户帐户，正确配置匿名软件，以及优化我们与终端的互动。我们可以采取一些措施来改善与操作系统的交互。<br><a id="more"></a><br><div class="video-container"><iframe src="//www.youtube.com/embed/8VL0K0rFgxw" frameborder="0" allowfullscreen></iframe></div></p><h2 id="1、安装Git"><a href="#1、安装Git" class="headerlink" title="1、安装Git"></a>1、安装Git</h2><p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>是一个开源软件版本控制应用程序。它可以用于协作共享和编辑代码，但在Null Byte中通常被引用作为复制（或“<a href="https://www.git-scm.com/docs/git-clone" target="_blank" rel="noopener">克隆</a>”）GitHub上的代码存储库的主要工具。Git是渗透测试人员必备的工具，他们希望将自己的工具集扩展到默认Kali存储库中可用的工具集之外。</p><p>可以使用下面的<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-5-installing-new-software-0147591/" target="_blank" rel="noopener">apt-get</a>命令安装Git。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install git</span><br></pre></td></tr></table></figure></p><h2 id="2、配置Bash别名"><a href="#2、配置Bash别名" class="headerlink" title="2、配置Bash别名"></a>2、配置Bash别名</h2><p>Bash别名非常适合创建自定义命令行快捷方式。例如，我们可以重新分配<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/" target="_blank" rel="noopener">ls</a>命令以自动使用我们最喜欢的参数。下面是正常<strong>ls</strong>输出的示例。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line"> androidbins.txt                                      folder-pictures.png     smtp.cracked         text-x-generic.png</span><br><span class="line"> bogus_gmail.creds                                    folder.png              smtp.list            Windows-10</span><br><span class="line"> dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39   package-x-generic.png   text-x-generic.ico  &apos;Windows 10 Icons&apos;</span><br></pre></td></tr></table></figure></p><p>在创建<strong>ls</strong>别名后再次输出的示例。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line">total 220K</span><br><span class="line">-rw-------  1 root root  15K Aug 24  2015  folder-pictures.png</span><br><span class="line">-rw-------  1 root root 8.7K Aug 24  2015  folder.png</span><br><span class="line">-rw-------  1 root root  11K Aug 24  2015  package-x-generic.png</span><br><span class="line">-rw-------  1 root root 5.5K Sep  3  2015  text-x-generic.png</span><br><span class="line">drwxr-xr-x 12 root root 4.0K May 31 00:44 &apos;Windows 10 Icons&apos;/</span><br><span class="line">drwxr-xr-x 18 root root 4.0K May 31 00:44  Windows-10/</span><br><span class="line">-rwxr-x---  1 root root 103K May 31 00:49  text-x-generic.ico*</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jun 11 21:57  dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39/</span><br><span class="line">-rw-r--r--  1 root root   52 Jul  5 18:13  bogus_gmail.creds</span><br><span class="line">-rw-r--r--  1 root root  15K Jul  5 18:28  smtp.list</span><br><span class="line">-rw-r--r--  1 root root  181 Jul  5 18:43  smtp.cracked</span><br><span class="line">-rw-r--r--  1 root root  23K Jul 23 18:18  androidbins.txt</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jul 23 19:22  ./</span><br><span class="line">drwxr-xr-x 23 root root 4.0K Aug  9 04:25  ../</span><br></pre></td></tr></table></figure></p><p>我们得到了更详细的输出。<strong>ls</strong>命令现在自动使用<strong>-l</strong>，<strong>-a</strong>，<strong>-t</strong>，<strong>-h</strong>和<strong>-r</strong>参数。所有这些参数都将指示<strong>ls</strong>使用列表（<strong>-l</strong>）格式，列出所有（<strong>-a</strong>）文件——包括隐藏文件——并以人类可读（<strong>-h</strong>）的格式打印文件大小（例如，1K，234M，5G）。</p><p>我的别名还将按修改时间（<strong>-t</strong>）对输出进行排序，并反转（<strong>-r</strong>）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的<strong>ls</strong>偏好，但你的可能会有所不同。</p><p>要创建别名，请使用<strong>nano</strong>或你喜欢的文本编辑器打开/root/.bash_aliases。添加以下行以创建别名。</p><ul><li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/intro-vim-unix-text-editor-every-hacker-should-be-familiar-with-0174674/" target="_blank" rel="noopener">Vim简介，每个黑客都应该知道的Unix文本编辑器</a></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&apos;ls --color=always -rthla&apos;</span><br></pre></td></tr></table></figure><p>我们还可以进一步向.bash_aliases文件添加更复杂的函数。下面是一个简单的函数示例，旨在使Kali保持最新状态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function apt-updater &#123;</span><br><span class="line">    apt-get update &amp;&amp;</span><br><span class="line">    apt-get dist-upgrade -Vy &amp;&amp;</span><br><span class="line">    apt-get autoremove -y &amp;&amp;</span><br><span class="line">    apt-get autoclean &amp;&amp;</span><br><span class="line">    apt-get clean &amp;&amp;</span><br><span class="line">    reboot</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p><p>保存对.bash_aliases文件所做的更改后，打开一个新终端以使更改生效。运行新创建的<strong>apt-updater</strong>函数将调用一系列<strong>apt-get</strong>命令，这些命令将自动更新和维护你的系统。如果先前的命令失败，＆符号（<strong>&amp;&amp;</strong>）确保该函数不会继续执行以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-updater</span><br></pre></td></tr></table></figure></p><p>有关Bash别名的更多信息，请查看Kody的“<a href="https://null-byte.wonderhowto.com/how-to/mac-for-hackers-set-up-macos-system-for-wi-fi-packet-capturing-0186354/" target="_blank" rel="noopener">为Wi-Fi数据包捕获设置MacOS系统</a>”一文。</p><h2 id="3、创建一个新的低权限用户"><a href="#3、创建一个新的低权限用户" class="headerlink" title="3、创建一个新的低权限用户"></a>3、创建一个新的低权限用户</h2><p>许多应用程序（如Chromium浏览器和Tor浏览器）都不应该以root用户身份打开或使用。此类应用程序在很大程度上依赖于低级别权限来提供某种程度的安全性。某些用户为这些活动创建低特权用户帐户可能是有益的。</p><p>Takhion的“<a href="https://null-byte.wonderhowto.com/how-to/install-lock-down-kali-linux-for-safe-desktop-use-0184531/#jump-step2" target="_blank" rel="noopener">锁定Kali Linux以用于安全桌面使用</a>”一文中详细介绍了这一概念，因此请务必查看帮助。</p><h2 id="4、安装一个终端复用器"><a href="#4、安装一个终端复用器" class="headerlink" title="4、安装一个终端复用器"></a>4、安装一个终端复用器</h2><p>复用器是一种平铺终端仿真器，允许我们在一个窗口内打开多个终端会话。这样做的主要好处是能够立即看到我们所有打开的终端会话，而不是将窗口叠加在一起。以下是复用器示例。<br><img src="https://img.wonderhowto.com/img/10/19/63669458451029/0/top-10-things-do-after-installing-kali-linux.w1456.jpg" alt="复用器"><br>有许多值得注意的复用器。如上面的屏幕截图所示，<a href="https://github.com/gnunn1/tilix" target="_blank" rel="noopener">Tilix</a>是一个开源且可靠的选项。替代方案包括<a href="https://github.com/tmux/tmux/" target="_blank" rel="noopener">tmux</a>和<a href="https://savannah.gnu.org/projects/screen" target="_blank" rel="noopener">screen</a>。</p><p>Tilix可在Kali的APT存储库中使用，可以使用以下命令进行安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">apt-get install tilix</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  libgtkd-3-0 libphobos2-ldc-shared78 libvted-3-0 tilix-common</span><br><span class="line">Suggested packages:</span><br><span class="line">  python-nautilus</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  libgtkd-3-0 libphobos2-ldc-shared78 libvted-3-0 tilix tilix-common</span><br><span class="line">0 upgraded, 5 newly installed, 0 to remove and 466 not upgraded.</span><br><span class="line">Need to get 10.7 MB of archives.</span><br><span class="line">After this operation, 49.1 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y/n] y</span><br></pre></td></tr></table></figure></p><p>亚马逊推荐：<a href="https://www.amazon.cn/dp/B00BQTWC0U" target="_blank" rel="noopener">William E. Shotts Jr.撰写的“Linux命令行大全”</a></p><h2 id="5、安装你喜爱的黑客工具"><a href="#5、安装你喜爱的黑客工具" class="headerlink" title="5、安装你喜爱的黑客工具"></a>5、安装你喜爱的黑客工具</h2><p>某些版本的Kali面向极简主义的渗透测试者，他们不希望预先安装数百个黑客工具。这意味着我们必须手动安装我们喜欢的工具。我们使用的工具类型根据我们的技能和专业领域而有所不同，但以下是一些流行的黑客工具。</p><ul><li><a href="https://www.aircrack-ng.org/" target="_blank" rel="noopener">Aircrack-ng</a>：无线<a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-aircrack-ng-suite-wi-fi-hacking-tools-0147893/" target="_blank" rel="noopener">WEP/WPA破解实用程序</a>。</li><li><a href="https://beefproject.com/" target="_blank" rel="noopener">BeEF</a>：通过Web应用程序的浏览器<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-browsers-with-beef-0159961/" target="_blank" rel="noopener">漏洞利用框架</a>。</li><li><a href="https://portswigger.net/burp/" target="_blank" rel="noopener">Burp Suite</a>：专为<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-apps-part-4-hacking-form-authentication-with-burp-suite-0163642/" target="_blank" rel="noopener">Web应用程序安全性</a>而设计的图形应用。</li><li><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank" rel="noopener">Hydra</a>：登录<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/" target="_blank" rel="noopener">密码暴力破解</a>实用程序。</li><li><a href="https://cirt.net/Nikto2" target="_blank" rel="noopener">Nikto</a>：Web<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/" target="_blank" rel="noopener">服务器安全扫描器</a>。</li><li><a href="https://www.paterva.com/web7/" target="_blank" rel="noopener">Maltego</a>：开源取证和情报收集。</li><li><a href="https://nmap.org/" target="_blank" rel="noopener">Nmap</a>：端口扫描器和<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-advanced-nmap-for-reconnaissance-0151619/" target="_blank" rel="noopener">网络映射器</a>。</li><li><a href="https://www.wireshark.org/download.html" target="_blank" rel="noopener">Wireshark</a>：用于<a href="https://null-byte.wonderhowto.com/news/8-wireshark-filters-every-wiretapper-uses-spy-web-conversations-and-surfing-habits-0134508/" target="_blank" rel="noopener">网络流量分析</a>的图形应用程序。</li></ul><p>可以使用以下命令安装这些工具。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">apt-get install maltego metasploit-framework burpsuite wireshark aircrack-ng hydra nmap beef-xss nikto</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">hydra is already the newest version (8.6-1kali1).</span><br><span class="line"></span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  beef-xss binfmt-support burpsuite fastjar fonts-droid-fallback fonts-lato</span><br><span class="line">  fonts-noto-mono ghostscript gsfonts imagemagick imagemagick-6-common</span><br><span class="line">  imagemagick-6.q16 jarwrapper java-wrappers javascript-common libc-ares2</span><br><span class="line">  libcupsfilters1 libcupsimage2 libdjvulibre-text libdjvulibre21 libdouble-conversion1</span><br><span class="line">  libfftw3-double3 libgmp-dev libgmpxx4ldbl libgs9 libgs9-common libhttp-parser2.8</span><br><span class="line">  libijs-0.35 libilmbase23 libjbig2dec0 libjs-jquery libjs-jquery-easing</span><br><span class="line">  libjs-jquery-fancybox libjs-jquery-mousewheel libjs-jquery-ui libjs-source-map</span><br><span class="line">  libjs-uglify libjxr-tools libjxr0 liblqr-1-0 liblua5.2-0 libmagickcore-6.q16-6</span><br><span class="line">  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libnetpbm10 libnl-route-3-200</span><br><span class="line">  libopenexr23 libpaper-utils libpaper1 libpcre2-16-0 libqt5core5a libqt5dbus5</span><br><span class="line">  libqt5gui5 libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediagsttools5</span><br><span class="line">  libqt5multimediawidgets5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5svg5</span><br><span class="line">  libqt5widgets5 libruby2.5 libsbc1 libsmi2ldbl libspandsp2 libssh-gcrypt-4 libuv1</span><br><span class="line">  libwhisker2-perl libwireshark-data libwireshark11 libwiretap8 libwmf0.2-7</span><br><span class="line">  libwscodecs2 libwsutil9 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0</span><br><span class="line">  libxcb-render-util0 libxcb-xinerama0 libxcb-xkb1 libxkbcommon-x11-0 libyaml-0-2</span><br><span class="line">  maltego netpbm nikto nodejs nodejs-doc openjdk-8-jre openjdk-8-jre-headless</span><br><span class="line">  qt5-gtk-platformtheme qttranslations5-l10n rake ruby ruby-addressable ruby-ansi</span><br><span class="line">  ruby-atomic ruby-buftok ruby-celluloid ruby-celluloid-io ruby-daemons</span><br><span class="line">  ruby-dataobjects ruby-dataobjects-mysql ruby-dataobjects-postgres</span><br><span class="line">  ruby-dataobjects-sqlite3 ruby-dev ruby-did-you-mean ruby-diff-lcs ruby-dm-core</span><br><span class="line">  ruby-dm-do-adapter ruby-dm-migrations ruby-dm-serializer ruby-dm-sqlite-adapter</span><br><span class="line">  ruby-docile ruby-domain-name ruby-em-websocket ruby-equalizer ruby-erubis</span><br><span class="line">  ruby-eventmachine ruby-execjs ruby-faraday ruby-geoip ruby-hitimes ruby-http</span><br><span class="line">  ruby-http-cookie ruby-http-form-data ruby-http-parser.rb ruby-json ruby-librex</span><br><span class="line">  ruby-libv8 ruby-memoizable ruby-mime-types ruby-mime-types-data ruby-minitest</span><br><span class="line">  ruby-mojo-magick ruby-msfrpc-client ruby-msgpack ruby-multi-json ruby-multipart-post</span><br><span class="line">  ruby-naught ruby-net-telnet ruby-nio4r ruby-oj ruby-parseconfig ruby-power-assert</span><br><span class="line">  ruby-public-suffix ruby-qr4r ruby-rack ruby-rack-protection ruby-ref ruby-rqrcode</span><br><span class="line">  ruby-rspec-expectations ruby-rspec-support ruby-rubydns ruby-simple-oauth</span><br><span class="line">  ruby-simplecov ruby-simplecov-html ruby-sinatra ruby-sqlite3 ruby-term-ansicolor</span><br><span class="line">  ruby-test-unit ruby-therubyracer ruby-thread-safe ruby-tilt ruby-timers ruby-tins</span><br><span class="line">  ruby-twitter ruby-uglifier ruby-unf ruby-unf-ext ruby-xmlrpc ruby-zip ruby2.5</span><br><span class="line">  ruby2.5-dev ruby2.5-doc rubygems-integration thin wireshark wireshark-common</span><br><span class="line">  wireshark-qt zip</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">  aircrack-ng libcups2 libnl-3-200 libnl-genl-3-200 libxkbcommon0 metasploit-framework</span><br><span class="line">  nmap nmap-common</span><br><span class="line">8 upgraded, 182 newly installed, 0 to remove and 458 not upgraded.</span><br><span class="line">Need to get 381 MB of archives.</span><br><span class="line">After this operation, 616 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y/n] y</span><br></pre></td></tr></table></figure></p><h2 id="6、安装最新版本的Tor"><a href="#6、安装最新版本的Tor" class="headerlink" title="6、安装最新版本的Tor"></a>6、安装最新版本的Tor</h2><p>Tor可以在Kali的存储库中使用，但匿名软件应该直接从源代码获取（torproject.org）。此外，Kali的Tor版本无法可靠地维护或更新。这意味着我们可能会缺少关键的稳定性和安全性更新。</p><p>将Tor项目存储库添加到APT存储库列表中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;deb https://deb.torproject.org/torproject.org stretch main</span><br><span class="line">deb-src https://deb.torproject.org/torproject.org stretch main&apos; &gt; /etc/apt/sources.list.d/tor.list</span><br></pre></td></tr></table></figure></p><p>然后，下载<a href="https://www.torproject.org/docs/debian.html.en" target="_blank" rel="noopener">Tor Project包签名密钥</a>并将其导入APT密钥环。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">--2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</span><br><span class="line">Resolving deb.torproject.org (deb.torproject.org)... 138.201.14.197</span><br><span class="line">Connecting to deb.torproject.org (deb.torproject.org)|138.201.14.197|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 19665 (19K) [text/plain]</span><br><span class="line">Saving to: ‘STDOUT’</span><br><span class="line"></span><br><span class="line">-                                              100%[=================================================================================================&gt;]  19.20K  47.5KB/s    in 0.4s</span><br><span class="line"></span><br><span class="line">2019-02-18 19:28:25 (47.5 KB/s) - written to stdout [19665/19665]</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure></p><p>将签名密钥添加到密钥环后，您将看到“OK”输出。接下来，使用以下apt-get命令更新APT。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease</span><br><span class="line">Get:2 https://deb.torproject.org/torproject.org stretch InRelease [4,965 B]</span><br><span class="line">Get:4 https://deb.torproject.org/torproject.org stretch/main Sources [1,169 B]</span><br><span class="line">Get:5 https://deb.torproject.org/torproject.org stretch/main amd64 Packages [2,400 B]</span><br><span class="line">Hit:3 http://archive-3.kali.org/kali kali-rolling InRelease</span><br><span class="line">Fetched 8,534 B in 8s (1,091 B/s)</span><br><span class="line">Reading package lists... Done</span><br></pre></td></tr></table></figure></p><p>使用以下命令安装Tor，你就完成了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">apt-get install tor deb.torproject.org-keyring</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Suggested packages:</span><br><span class="line">  mixmaster torbrowser-launcher socat tor-arm apparmor-utils obfs4proxy</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  deb.torproject.org-keyring</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">  tor</span><br></pre></td></tr></table></figure></p><h2 id="7、使用Syncthing配置文件共享"><a href="#7、使用Syncthing配置文件共享" class="headerlink" title="7、使用Syncthing配置文件共享"></a>7、使用Syncthing配置文件共享</h2><p>由<a href="https://twitter.com/jakobborg" target="_blank" rel="noopener">Jakob Borg</a>创建的<a href="https://github.com/syncthing/syncthing" target="_blank" rel="noopener">Syncthing</a>是一种<a href="https://github.com/syncthing/syncthing/releases/" target="_blank" rel="noopener">跨平台</a>，私有，轻量级文件同步（Dropbox）替代方案。作为渗透测试人员，在<a href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/" target="_blank" rel="noopener">VPS</a>和本地Kali机器之间传输按键日志，屏幕截图，网络摄像头录像和<a href="https://null-byte.wonderhowto.com/how-to/hacking-windows-10-capture-exfiltrate-screenshots-remotely-0183646/#jump-step4" target="_blank" rel="noopener">敏感的战利品文件</a>可能是一项令人沮丧的任务。Syncthing使安全的文件共享完全无痛。</p><p>我在前一篇文章中介绍了<a href="https://null-byte.wonderhowto.com/how-to/securely-sync-files-between-two-machines-using-syncthing-0185999/" target="_blank" rel="noopener">Syncthing的安装和配置</a>。读者应参考该详细的分步指南。</p><h2 id="8、安装代码编辑器"><a href="#8、安装代码编辑器" class="headerlink" title="8、安装代码编辑器"></a>8、安装代码编辑器</h2><p><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>是一个免费的，开源的，功能丰富且高度可定制的文本编辑器。其功能包括实时协作共享代码，直观的编码自动补全功能，以及<a href="https://atom.io/packages" target="_blank" rel="noopener">安装软件包</a>的能力，这些都进一步增强了Atom的多功能性。其他值得注意的文本编辑包括<a href="https://wiki.geany.org/doku.php" target="_blank" rel="noopener">Geany</a>和<a href="https://wiki.gnome.org/Apps/Gedit" target="_blank" rel="noopener">Gedit</a>。</p><p>要安装Atom，请访问他们的网站并下载最新的<a href="https://atom.io/download/deb" target="_blank" rel="noopener">Debian安装程序</a>。接下来，使用下面的apt-get命令打开终端并安装所需的依赖项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">apt-get install gvfs gvfs-common gvfs-daemons gvfs-libs gconf-service gconf2 gconf2-common gvfs-bin psmisc</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Correcting dependencies... Done</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">   gconf-service (3.2.6-4.1)</span><br><span class="line">   gconf2 (3.2.6-4.1)</span><br><span class="line">   gconf2-common (3.2.6-4.1)</span><br><span class="line">   gvfs-bin (1.36.2-1)</span><br><span class="line">   libgconf-2-4 (3.2.6-4.1)</span><br><span class="line">   psmisc (23.1-1+b1)</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">   gvfs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-common (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-daemons (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-libs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">4 upgraded, 6 newly installed, 0 to remove and 462 not upgraded.</span><br><span class="line">1 not fully installed or removed.</span><br><span class="line">Need to get 3,317 kB of archives.</span><br><span class="line">After this operation, 8,909 kB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y/n] y</span><br></pre></td></tr></table></figure></p><p>最后，使用命令行包管理器<strong>dpkg</strong>和install（<strong>-i</strong>）参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i ~/Downloads/atom-amd64.deb</span><br><span class="line"></span><br><span class="line">(Reading database ... 191882 files and directories currently installed.)</span><br><span class="line">Preparing to unpack atom-amd64.deb ...</span><br><span class="line">Unpacking atom (1.29.0) over (1.29.0) ...</span><br><span class="line">Setting up atom (1.29.0) ...</span><br><span class="line">Processing triggers for desktop-file-utils (0.23-3) ...</span><br><span class="line">Processing triggers for mime-support (3.60) ...</span><br></pre></td></tr></table></figure></p><p>完成后，Atom将显示在“应用程序”菜单中。<br><img src="https://img.wonderhowto.com/img/original/05/68/63669459068404/0/636694590684040568.jpg" alt="Atom"></p><h2 id="9、克隆橡皮鸭（Rubber-Ducky）编码器"><a href="#9、克隆橡皮鸭（Rubber-Ducky）编码器" class="headerlink" title="9、克隆橡皮鸭（Rubber Ducky）编码器"></a>9、克隆橡皮鸭（Rubber Ducky）编码器</h2><p>USB橡皮鸭是臭名昭著的按键注入工具。利用<a href="https://ducktoolkit.com/" target="_blank" rel="noopener">DuckToolKit网站</a>可以很容易地创建<a href="https://null-byte.wonderhowto.com/how-to/use-usb-rubber-ducky-disable-antivirus-software-install-ransomware-0180418/#jump-step2" target="_blank" rel="noopener">ducky payloads</a>，但作为一个渗透测试人员，与随机网站共享客户信息是不安全的。将有效载荷内容上载到第三方网站可能很危险。</p><p>相反，我们可以使用<strong>Git</strong>克隆USB橡皮鸭<a href="https://github.com/hak5darren/USB-Rubber-Ducky" target="_blank" rel="noopener">存储库</a>并在本地编码有效载荷。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/hak5darren/USB-Rubber-Ducky</span><br><span class="line"></span><br><span class="line">Cloning into &apos;USB-Rubber-Ducky&apos;...</span><br><span class="line">remote: Counting objects: 1657, done.</span><br><span class="line">remote: Total 1657 (delta 0), reused 0 (delta 0), pack-reused 1657</span><br><span class="line">Receiving objects: 100% (1657/1657), 31.88 MiB | 162.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (745/745), done.</span><br><span class="line">Checking out files: 100% (1509/1509), done.</span><br></pre></td></tr></table></figure></p><p>然后，将当前目录更改（<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/" target="_blank" rel="noopener">cd</a>）为USB-Rubber-Ducky/Encoder/ 目录，并使用以下<strong>java</strong>命令开始编码没有第三方网站的<a href="https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload" target="_blank" rel="noopener">ducky payloads</a>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd USB-Rubber-Ducky/Encoder/</span><br><span class="line">java -jar encoder.jar -i input_payload.txt -o inject.bin</span><br></pre></td></tr></table></figure></p><h2 id="10、更改SSH密钥和默认密码"><a href="#10、更改SSH密钥和默认密码" class="headerlink" title="10、更改SSH密钥和默认密码"></a>10、更改SSH密钥和默认密码</h2><p>每个Kali Linux安装的默认密码都是相同的（toor），这使得自动化攻击非常容易。此外，当你通过SSH控制树莓派之类的东西时，默认的SSH密钥可以允许攻击者拦截你的通信。</p><p>要更改SSH密钥，请首先切换目录。执行以下两个命令将重置SSH密钥的默认值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/ssh/</span><br><span class="line">dpkg-reconfigure openssh-server</span><br><span class="line"></span><br><span class="line">rescue-ssh.target is a disabled or a static unit, not starting it.</span><br></pre></td></tr></table></figure></p><p>现在，对于你的Kali系统密码，输入<strong>passwd root</strong>，然后输入你的新密码。然后，重新输入以确认。如果你未以root用户身份登录，则可能会在执行此操作之前询问你当前的密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">passwd root</span><br><span class="line"></span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure></p><h2 id="安装Kali后你做的第一件事是什么？"><a href="#安装Kali后你做的第一件事是什么？" class="headerlink" title="安装Kali后你做的第一件事是什么？"></a>安装Kali后你做的第一件事是什么？</h2><p>我们都有不同程度的兴趣，技能和经验水平。这使得编写完整的安装后步骤列表变得棘手。我错过了任何关键步骤吗？你如何个性化和定制新安装的Kali？请务必在下面发表评论。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文翻译自&lt;a href=&quot;https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/&lt;/a&gt; ，正文如下：&lt;/p&gt;
+&lt;p&gt;默认情况下，对于完成日常的渗透测试，&lt;a href=&quot;https://null-byte.wonderhowto.com/how-to/hack-like-pro-getting-started-with-kali-your-new-hacking-system-0151631/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Kali Linux&lt;/a&gt;可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用Kali。&lt;/p&gt;
+&lt;p&gt;大多数Linux发行版都是高度可定制的。这使得个性化你的渗透测试发行版有点令人生畏。只需几个命令，我们就可以自动执行任务，安装我们喜欢的软件，创建其他用户帐户，正确配置匿名软件，以及优化我们与终端的互动。我们可以采取一些措施来改善与操作系统的交互。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Translation" scheme="https://howiezhao.github.io/categories/Translation/"/>
+    
+    
+      <category term="Kali" scheme="https://howiezhao.github.io/tags/Kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>说说VPS</title>
+    <link href="https://howiezhao.github.io/2019/01/08/talk-about-vps/"/>
+    <id>https://howiezhao.github.io/2019/01/08/talk-about-vps/</id>
+    <published>2019-01-08T10:38:07.000Z</published>
+    <updated>2019-02-27T06:16:38.943Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>VPS</strong>（Virtual Private Server）即<strong>虚拟专用服务器</strong>，它不等同于<strong>独立服务器</strong>，独立服务器是指货真价实的物理机器，而VPS则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，<strong>虚拟空间</strong>（或虚拟主机）则是指VPS上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而VPS这一中间选择成为了广大爱好者的首选。<br><a id="more"></a></p><h2 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h2><p>VPS所使用的虚拟化技术主要有<strong>KVM</strong>和<strong>OpenVZ</strong>（简称OVZ），以下是两者的优缺点对比：<br>KVM：</p><ul><li>优点：独占内核、内存等</li><li>缺点：价格较贵</li></ul><p>OpenVZ：</p><ul><li>优点：价格低</li><li>缺点：共享内核、内存等</li></ul><p>简单来说，KVM拥有对内核更多的控制权，而OpenVZ因为共享资源的情况受<strong>超售</strong>影响较大，现在，越来越多的VPS商家也开始使用KVM架构来虚拟化VPS。个人建议，尽量选择KVM架构的VPS。</p><h2 id="收费方式"><a href="#收费方式" class="headerlink" title="收费方式"></a>收费方式</h2><p>VPS一般按两种方式收费，即<strong>按月收费</strong>或<strong>按小时收费</strong>，显然，按小时收费更加灵活，当不需要使用时，直接关机就能停止收费。除此之外，VPS一般会限制每月最多可使用的流量，当超过额度后，会收取流量费。</p><h2 id="VPS商家"><a href="#VPS商家" class="headerlink" title="VPS商家"></a>VPS商家</h2><p>当前主流的VPS商家有：<a href="https://bandwagonhost.com/index.php" target="_blank" rel="noopener">BandwagonHost</a>，<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>，<a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a>。</p><p>BandwagonHost，中文又称搬瓦工，它们采用按月收费，支持支付宝付款，在2019年之前，它们推出过最低每年19.99美元的VPS，这应该是那时候最便宜且稳定的VPS商家了，但如今它们已经取消了这一方案，并全部使用KVM架构，现在它们的最低方案是每年49.99美元，配置1G内存，20G固态，每月1T的流量。</p><p>Vultr，它们采用按小时收费的方式，支持支付宝付款，全部采用KVM架构，现在最低的方案是每年42美元，配置512MB内存，10G固态，每月0.5T的流量，个人非常推荐。</p><p>DigitalOcean，它们同样采用按小时收费的方式，使用信用卡付款，全部采用KVM架构，现在最低的方案是每年60美元，配置1G内存，25G固态，每月1T的流量。</p><h2 id="黑话"><a href="#黑话" class="headerlink" title="黑话"></a>黑话</h2><ul><li>杜甫：即独服的意思，指前面提到的独立服务器。</li><li>母鸡：指用来虚拟化VPS的物理主机。</li><li>小鸡：即VPS，尤其指配置比较低的廉价VPS。</li><li>养鸡：续费VPS的过程。</li><li>CN2线路：指中国电信与美国日本韩国香港等地机房直连的服务器线路，速度快且稳定。</li></ul><h2 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h2><p>如果你的VPS内存较小，比如512M内存，则建议安装32位操作系统。操作系统建议选择CentOS。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;VPS&lt;/strong&gt;（Virtual Private Server）即&lt;strong&gt;虚拟专用服务器&lt;/strong&gt;，它不等同于&lt;strong&gt;独立服务器&lt;/strong&gt;，独立服务器是指货真价实的物理机器，而VPS则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，&lt;strong&gt;虚拟空间&lt;/strong&gt;（或虚拟主机）则是指VPS上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而VPS这一中间选择成为了广大爱好者的首选。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>说说MS Office</title>
+    <link href="https://howiezhao.github.io/2019/01/08/talk-about-ms-office/"/>
+    <id>https://howiezhao.github.io/2019/01/08/talk-about-ms-office/</id>
+    <published>2019-01-08T10:37:56.000Z</published>
+    <updated>2019-02-27T06:42:46.492Z</updated>
+    
+    <content type="html"><![CDATA[<p>Office是最常使用的<strong>办公套件</strong>，一般来说，提到Office，最先想到的是微软的Office，即<strong>MS Office</strong>，除此之外，还有<strong>WPS Office</strong>，这是由金山推出的。</p><p>Office原生支持Windows桌面版，这也是目前功能最全且<strong>收费</strong>的Office版本，时至今日，Office也可以用于UWP、Android、iOS、macOS以及Web等。一般来说，我们说的Office是指Windows桌面版的Office套件。</p><p>在本文写作之际，最新的Office版本为<strong>Office 2019</strong>，但据个人观察，<strong>Office 2010</strong>仍然被大多数人所使用。<br><a id="more"></a><br>Office套件一般包括以下软件：</p><ul><li><strong>Word</strong>：文档编辑工具</li><li><strong>Excel</strong>：表格编辑工具</li><li><strong>PowerPoint</strong>：幻灯片演示文稿制作工具</li><li><strong>Access</strong>：小型数据库</li><li><strong>OneNote</strong>：在线笔记应用</li><li><strong>Outlook</strong>：电子邮箱应用</li><li><strong>Publisher</strong>：桌面出版应用软件</li><li><strong>Visio</strong>：流程图制作工具</li></ul><p>以Office 2016为例，其中自带的OneNote全称为<strong>OneNote 2016</strong>（桌面版）；除此之外，还有Microsoft Store中<strong>UWP版</strong>的OneNote，即<strong>OneNote for Windows 10</strong>，简称为OneNote，此版本的OneNote是功能最全的OneNote，也是微软的主要开发版，并内置于所有的Windows 10电脑中，另外，Office 2019套件中也已替换成了此版本的OneNote。关于OneNote（OneNote for Windows 10）与OneNote 2016的详细区别请参考微软Office官方帮助信息：<a href="https://support.office.com/zh-cn/article/onenote-%E4%B8%8E-onenote-2016-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F-a624e692-b78b-4c09-b07f-46181958118f" target="_blank" rel="noopener">OneNote与OneNote 2016有什么区别？</a></p><h2 id="Office-365"><a href="#Office-365" class="headerlink" title="Office 365"></a>Office 365</h2><p>不同于Office 2016或Office 2019的一次性购买模式，<strong>Office 365</strong>采用订阅模式，即每月支付一定费用。它可以享受到更多的优惠，比如1TB的OneDrive空间和持续的软件更新等。具体可参考微软Office官方帮助信息：<a href="https://support.office.com/zh-cn/article/office-365-%E5%92%8C-office-2019-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-ed447ebf-6060-46f9-9e90-a239bd27eb96" target="_blank" rel="noopener">Office 365和Office 2019之间的区别是什么？</a></p><h2 id="G-Suite"><a href="#G-Suite" class="headerlink" title="G Suite"></a>G Suite</h2><p><strong>G Suite</strong>是由Google公司推出的办公套件，其中主要包括<strong>Google Docs（文档）</strong>、<strong>Google Sheets（表格）</strong>、<strong>Google Slides（幻灯片）</strong>等，适用于Android、iOS、Web平台。这些软件兼容Office的文件格式。</p><h2 id="iWork"><a href="#iWork" class="headerlink" title="iWork"></a>iWork</h2><p><strong>iWork</strong>是由苹果公司推出的办公套件，其中主要包括<strong>Pages文稿</strong>、<strong>Numbers表格</strong>、<strong>Keynote讲演</strong>，适用于macOS、iOS平台。这些软件生成的文件格式与Office中的Word、Excel、PowerPoint互不兼容。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Office是最常使用的&lt;strong&gt;办公套件&lt;/strong&gt;，一般来说，提到Office，最先想到的是微软的Office，即&lt;strong&gt;MS Office&lt;/strong&gt;，除此之外，还有&lt;strong&gt;WPS Office&lt;/strong&gt;，这是由金山推出的。&lt;/p&gt;
+&lt;p&gt;Office原生支持Windows桌面版，这也是目前功能最全且&lt;strong&gt;收费&lt;/strong&gt;的Office版本，时至今日，Office也可以用于UWP、Android、iOS、macOS以及Web等。一般来说，我们说的Office是指Windows桌面版的Office套件。&lt;/p&gt;
+&lt;p&gt;在本文写作之际，最新的Office版本为&lt;strong&gt;Office 2019&lt;/strong&gt;，但据个人观察，&lt;strong&gt;Office 2010&lt;/strong&gt;仍然被大多数人所使用。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>说说信用卡</title>
+    <link href="https://howiezhao.github.io/2019/01/08/talk-about-credit-card/"/>
+    <id>https://howiezhao.github.io/2019/01/08/talk-about-credit-card/</id>
+    <published>2019-01-08T10:37:43.000Z</published>
+    <updated>2019-03-11T02:03:19.566Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="年费"><a href="#年费" class="headerlink" title="年费"></a>年费</h2><p>所谓<strong>年费</strong>，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即<strong>刷够指定额度</strong>或<strong>刷够指定笔数</strong>，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“<strong>终身免年费</strong>”的，这里的终身一般指信用卡的<strong>有效期</strong>内。</p><h2 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h2><p>为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的<strong>VALID THRU</strong>字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。<br><a id="more"></a></p><h2 id="等级"><a href="#等级" class="headerlink" title="等级"></a>等级</h2><p>信用卡的等级从低到高一般分为<strong>普卡</strong>、<strong>金卡</strong>（Gold）、<strong>白金卡</strong>（Platinum）等，等级越高，优惠越多，额度越大，但相应的，年费也会越高。</p><h2 id="溢缴款"><a href="#溢缴款" class="headerlink" title="溢缴款"></a>溢缴款</h2><p>信用卡不同于借记卡（或储蓄卡），信用卡的主要目的是用于消费，而不是存款，因此，存在信用卡里面的钱是没有利息的，这笔钱被叫做<strong>溢缴款</strong>，溢缴款取现是要收取手续费的。但在消费时，会优先扣除溢缴款，随后扣除额度。</p><h2 id="银行卡组织"><a href="#银行卡组织" class="headerlink" title="银行卡组织"></a>银行卡组织</h2><p>不同银行之间要实现互相转账就要靠<strong>银行卡组织</strong>的协调，在中国使用最多的卡组织是<strong>银联</strong>（UnionPay），在美国使用最多的卡组织是<strong>Visa</strong>，在欧洲使用最多的卡组织是<strong>MasterCard</strong>（万事达），在日本使用最多的卡组织是<strong>JCB</strong>。当你准备在海外购物时，就十分有必要办一张支持海外卡组织的信用卡，比如Visa信用卡。</p><h2 id="双标卡"><a href="#双标卡" class="headerlink" title="双标卡"></a>双标卡</h2><p>国内有一些信用卡上面既有银联的标志，也有海外卡组织的标志，这种卡就是<strong>双标卡</strong>。它可以在付款的时候选择指定的卡组织，比如在国内购物使用银联，在国外购物使用Visa。但是，按照国际惯例，一张卡只能归属于一个银行卡组织，这样看来，还是传统的两张单标卡更靠谱一点。</p><h2 id="信用卡安全码"><a href="#信用卡安全码" class="headerlink" title="信用卡安全码"></a>信用卡安全码</h2><p><strong>信用卡安全码</strong>常为3位数字，印在卡片背面卡号后四位处，Visa的安全码叫做<strong>CVV2</strong>（Card Verification Value 2），银联的安全码叫做CVN2（Card Validation Number 2），JCB的安全码叫做CAV2（Card Authentication Value 2）。安全码相当于信用卡的密码，常用于网络交易的过程中，所以，请保护好自己的安全码，不要被泄露。</p><h2 id="主卡副卡"><a href="#主卡副卡" class="headerlink" title="主卡副卡"></a>主卡副卡</h2><h2 id="币种"><a href="#币种" class="headerlink" title="币种"></a>币种</h2><h2 id="PayPal"><a href="#PayPal" class="headerlink" title="PayPal"></a>PayPal</h2><h2 id="借记卡和储蓄卡"><a href="#借记卡和储蓄卡" class="headerlink" title="借记卡和储蓄卡"></a>借记卡和储蓄卡</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;年费&quot;&gt;&lt;a href=&quot;#年费&quot; class=&quot;headerlink&quot; title=&quot;年费&quot;&gt;&lt;/a&gt;年费&lt;/h2&gt;&lt;p&gt;所谓&lt;strong&gt;年费&lt;/strong&gt;，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即&lt;strong&gt;刷够指定额度&lt;/strong&gt;或&lt;strong&gt;刷够指定笔数&lt;/strong&gt;，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“&lt;strong&gt;终身免年费&lt;/strong&gt;”的，这里的终身一般指信用卡的&lt;strong&gt;有效期&lt;/strong&gt;内。&lt;/p&gt;
+&lt;h2 id=&quot;有效期&quot;&gt;&lt;a href=&quot;#有效期&quot; class=&quot;headerlink&quot; title=&quot;有效期&quot;&gt;&lt;/a&gt;有效期&lt;/h2&gt;&lt;p&gt;为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的&lt;strong&gt;VALID THRU&lt;/strong&gt;字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派初体验</title>
+    <link href="https://howiezhao.github.io/2018/12/24/raspberry-pi-experience/"/>
+    <id>https://howiezhao.github.io/2018/12/24/raspberry-pi-experience/</id>
+    <published>2018-12-24T05:43:49.000Z</published>
+    <updated>2019-01-08T11:44:38.198Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Raspbian"><a href="#Raspbian" class="headerlink" title="Raspbian"></a>Raspbian</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Raspbian&quot;&gt;&lt;a href=&quot;#Raspbian&quot; class=&quot;headerlink&quot; title=&quot;Raspbian&quot;&gt;&lt;/a&gt;Raspbian&lt;/h2&gt;
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用BOINC来挖掘格雷德币</title>
+    <link href="https://howiezhao.github.io/2018/12/16/boinc-gridcoin/"/>
+    <id>https://howiezhao.github.io/2018/12/16/boinc-gridcoin/</id>
+    <published>2018-12-16T09:06:10.000Z</published>
+    <updated>2018-12-16T09:06:44.572Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数字货币中的相关术语</title>
+    <link href="https://howiezhao.github.io/2018/12/16/digital-currency/"/>
+    <id>https://howiezhao.github.io/2018/12/16/digital-currency/</id>
+    <published>2018-12-16T09:04:51.000Z</published>
+    <updated>2019-01-10T13:33:45.943Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><h2 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h2><h2 id="矿池"><a href="#矿池" class="headerlink" title="矿池"></a>矿池</h2><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h2&gt;&lt;h2 id=&quot;挖矿&quot;&gt;&lt;a href=&quot;#挖矿&quot; class=&quot;headerlink&quot; title=&quot;挖矿&quot;&gt;&lt;/a&gt;挖矿&lt;/h2&gt;&lt;h2 id
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>编写Wikipedia的几点注意</title>
+    <link href="https://howiezhao.github.io/2018/12/16/wikipedia/"/>
+    <id>https://howiezhao.github.io/2018/12/16/wikipedia/</id>
+    <published>2018-12-16T09:03:06.000Z</published>
+    <updated>2018-12-16T09:03:36.121Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用GitBook编写电子书籍</title>
+    <link href="https://howiezhao.github.io/2018/12/16/gitbook/"/>
+    <id>https://howiezhao.github.io/2018/12/16/gitbook/</id>
+    <published>2018-12-16T09:01:38.000Z</published>
+    <updated>2018-12-16T09:02:17.360Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>高级搜索技巧</title>
@@ -96,16 +363,13 @@
     <link href="https://howiezhao.github.io/2018/11/02/open-sourse-license/"/>
     <id>https://howiezhao.github.io/2018/11/02/open-sourse-license/</id>
     <published>2018-11-02T02:32:10.000Z</published>
-    <updated>2018-11-02T08:55:23.638Z</updated>
+    <updated>2019-02-27T09:38:58.376Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p><h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html" target="_blank" rel="noopener">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p><h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html" target="_blank" rel="noopener">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p><h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/" target="_blank" rel="noopener">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p><h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/" target="_blank" rel="noopener">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p><h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p><h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p><h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p><h2 id="作何选择？"><a href="#作何选择？" class="headerlink" title="作何选择？"></a>作何选择？</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html" target="_blank" rel="noopener">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/" target="_blank" rel="noopener">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。<br><a id="more"></a></p><h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html" target="_blank" rel="noopener">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p><h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html" target="_blank" rel="noopener">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p><h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/" target="_blank" rel="noopener">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p><h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/" target="_blank" rel="noopener">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p><h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p><h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p><h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p><h2 id="作何选择？"><a href="#作何选择？" class="headerlink" title="作何选择？"></a>作何选择？</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html" target="_blank" rel="noopener">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/" target="_blank" rel="noopener">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;&lt;strong&gt;开源协议&lt;/strong&gt;（Open Source License）往往又被称为&lt;strong&gt;开源许可证&lt;/strong&gt;，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个
-      
+      &lt;p&gt;&lt;strong&gt;开源协议&lt;/strong&gt;（Open Source License）往往又被称为&lt;strong&gt;开源许可证&lt;/strong&gt;，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。&lt;br&gt;
     
     </summary>
     
@@ -156,311 +420,6 @@
     
     
       <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代理链工具：proxychains</title>
-    <link href="https://howiezhao.github.io/2018/10/18/proxychains/"/>
-    <id>https://howiezhao.github.io/2018/10/18/proxychains/</id>
-    <published>2018-10-18T02:21:58.000Z</published>
-    <updated>2018-10-18T07:36:11.736Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a>，顾名思义，是一种代理链工具，它可以强制任何Linux下的命令行应用使用其提供的代理连接到网络。Linux中有的应用本身并不支持代理，这时便可以使用proxychains强制其使用代理。<br><a id="more"></a></p><h2 id="安装及使用"><a href="#安装及使用" class="headerlink" title="安装及使用"></a>安装及使用</h2><p>在Ubuntu下可以使用<code>sudo apt install proxychains</code>直接安装，安装完成后会在<code>/etc</code>文件夹下生成<code>proxychains.conf</code>配置文件，在这个配置文件下可以配置代理链的工作模式和代理地址等。<br>proxychains提供了3种代理模式，分别是<strong>动态链</strong>（dynamic_chain）、<strong>严格链</strong>（strict_chain）、<strong>随机链</strong>（random_chain），建议选择动态链。此外，proxychains默认设置的代理地址未为Tor的地址，但其实最新版的Tor已经更改端口为9150，用户可以根据自己的需求按照示例格式配置地址。<br>配置完成后，要使用proxychains，只需在相应命令前加上<code>proxychains</code>即可，例如<code>proxychains nmap -sS 192.168.1.1</code>，即可强制nmap使用proxychains中设置的代理进行扫描。</p><h2 id="与proxychains-ng"><a href="#与proxychains-ng" class="headerlink" title="与proxychains-ng"></a>与proxychains-ng</h2><p><a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a>是proxychains的升级版，其中ng寓意为new generation（新一代），目前并不知晓proxychains-ng与proxychains是否为同一组织开发，但二者的配置与使用极为相似。<br>在Ubuntu下可以使用<code>sudo apt install proxychains-ng</code>直接安装，要使用proxychains-ng，只需在相应命令前加上<code>proxychains4</code>即可。</p><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>由于Windows与Linux的设计哲学不同，Linux偏向使用命令行，Windows偏向使用图形界面，所以proxychains并未提供Windows版。在Windows下可以使用另一款代理工具<a href="https://www.proxifier.com/" target="_blank" rel="noopener">Proxifier</a>，它可以看作是proxychains的图形界面版，值得注意的是，Proxifier是收费的，但你可以免费体验31天。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://github.com/haad/proxychains&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;proxychains&lt;/a&gt;，顾名思义，是一种代理链工具，它可以强制任何Linux下的命令行应用使用其提供的代理连接到网络。Linux中有的应用本身并不支持代理，这时便可以使用proxychains强制其使用代理。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>盘点那些互联网公司的学生优惠</title>
-    <link href="https://howiezhao.github.io/2018/09/26/it-student-discount/"/>
-    <id>https://howiezhao.github.io/2018/09/26/it-student-discount/</id>
-    <published>2018-09-26T14:33:32.000Z</published>
-    <updated>2018-11-21T06:20:09.805Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains</a></h2><p>JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">Intellij IDEA</a>，Python的IDE —— <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">PyCharm</a>，JavaScript的IDE —— <a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">WebStorm</a>，C/C++的IDE —— <a href="https://www.jetbrains.com/clion/" target="_blank" rel="noopener">CLion</a>等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。<br>JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供<a href="https://www.jetbrains.com/zh/student/" target="_blank" rel="noopener">免费授权计划</a>，学生只要验证学生身份即可免费使用JetBrains的所有IDE。<br><a id="more"></a></p><h2 id="Microsoft-Imagine"><a href="#Microsoft-Imagine" class="headerlink" title="Microsoft Imagine"></a><a href="https://imagine.microsoft.com/zh-CN" target="_blank" rel="noopener">Microsoft Imagine</a></h2><p>Microsoft Imagine原名为DreamSpark，是微软为学生提供的一个资源集合，它包括了一些<a href="https://imagine.microsoft.com/zh-cn/catalog" target="_blank" rel="noopener">软件和服务</a>，学生只要验证学生身份即可使用其中的工具。<br>个人认为，Imagine相比之前的DreamSpark，为学生提供的免费资源少了许多。具体而言，它提供如下资源：</p><ul><li>Parallels Desktop for Mac Pro Edition：macOS上最好的虚拟机产品，提供免费试用3个月</li><li>Visual Studio Community 2017：原本就是免费的</li><li>面向学生的 Microsoft Azure 入门版</li><li>Microsoft虚拟学院课程：原本就是免费的</li><li>Pluralsight</li><li>SQL Server 2017 Developer Edition</li><li>Visual Studio Code：微软推出的编辑器，原本就是开源免费的</li><li>Visual Studio for Mac：原本就是免费的</li><li>Windows Embedded 8.1 Industry Pro Update</li><li>Windows Server 2016</li><li>Windows应用商店免费开发人员帐户</li><li>WintellectNow</li><li>Xamarin Studio Community Edition：原本就是免费的</li><li>Visual Studio的PHP Tools插件</li></ul><h2 id="GitHub-Student-Developer-Pack"><a href="#GitHub-Student-Developer-Pack" class="headerlink" title="GitHub Student Developer Pack"></a><a href="https://education.github.com/pack" target="_blank" rel="noopener">GitHub Student Developer Pack</a></h2><p>GitHub学生开发者包（GitHub Student Developer Pack）是GitHub与其他公司一起创建的，旨在让学生从一个地方免费访问最好的开发者工具，这样他们就可以边做边学。其中包括的工具有：</p><ul><li>Algolia</li><li>Atom：GitHub推出的编辑器，原本就是开源免费的</li><li>AWS</li><li>Bitnami</li><li>CARTO</li><li>CrowdFlower</li><li>Datadog</li><li>DigitalOcean：美国一家VPS提供商，提供50美元优惠劵</li><li>Flatiron School</li><li>GitHub无限制的私人仓库</li><li>Gitkraken：跨平台的Git GUI客户端，提供免费一年的专业帐户</li><li>HackHands</li><li>Heroku：美国的一家PaaS厂商，提供一个长达2年的Hobby类型Dyno，Dyno是Heroku上所有应用程序的基本运行环境，Hobby类型的Dyno比免费的要稍微好一些，详细配置信息请参考<a href="https://devcenter.heroku.com/articles/dyno-types" target="_blank" rel="noopener">官方文档</a></li><li>JetBrains系列IDE</li><li>Namecheap：美国的一家域名注册商，提供免费一年SSL证书、一年<code>.me</code>后缀域名优惠</li><li>SendGrid</li><li>Sentry</li><li>Stripe</li><li>Taplytics</li><li>Thinkful</li><li>Transifex</li><li>Travis CI：一个流行的持续集成平台，针对开源项目免费，此学生包提供私有项目免费使用。</li><li>Unreal Engine</li></ul><p>学生只要验证学生身份就可以使用GitHub学生开发者包中提供的工具。</p><h2 id="阿里云云翼计划"><a href="#阿里云云翼计划" class="headerlink" title="阿里云云翼计划"></a><a href="https://promotion.aliyun.com/ntms/act/campus2018.html" target="_blank" rel="noopener">阿里云云翼计划</a></h2><p>学生验证学生身份后，每月仅需9.9元即可租用一台阿里云服务器。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;JetBrains&quot;&gt;&lt;a href=&quot;#JetBrains&quot; class=&quot;headerlink&quot; title=&quot;JetBrains&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.jetbrains.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JetBrains&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— &lt;a href=&quot;https://www.jetbrains.com/idea/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Intellij IDEA&lt;/a&gt;，Python的IDE —— &lt;a href=&quot;https://www.jetbrains.com/pycharm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PyCharm&lt;/a&gt;，JavaScript的IDE —— &lt;a href=&quot;https://www.jetbrains.com/webstorm/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;WebStorm&lt;/a&gt;，C/C++的IDE —— &lt;a href=&quot;https://www.jetbrains.com/clion/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CLion&lt;/a&gt;等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。&lt;br&gt;JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供&lt;a href=&quot;https://www.jetbrains.com/zh/student/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;免费授权计划&lt;/a&gt;，学生只要验证学生身份即可免费使用JetBrains的所有IDE。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Jupyter Notebook常用扩展</title>
-    <link href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/"/>
-    <id>https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/</id>
-    <published>2018-09-25T09:01:20.000Z</published>
-    <updated>2018-11-14T13:57:01.922Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="扩展机制"><a href="#扩展机制" class="headerlink" title="扩展机制"></a>扩展机制</h2><p>在介绍常用扩展之前，有必要先来介绍一下Jupyter Notebook的扩展机制：本质上来说，所有的Jupyter Notebook扩展都是一个个的Python包，所以大部分可以通过<code>pip</code>快速安装，另外，Jupyter Notebook是一个典型的B/S架构的应用，用户通过访问浏览器来使用Jupyter Notebook，因此，Jupyter Notebook的插件可以只针对服务器端，也可以扩展前端资源页面，而如果一个插件扩展了Jupyter Notebook的前端资源页面，则它还必须使用如下命令安装资源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbextension install helpful_package --py # or --sys-prefix if using virtualenv or conda</span><br></pre></td></tr></table></figure></p><p>安装完资源后，如果这个资源需要在每次Jupyter Notebook启动后被加载，则还应使用如下命令启用资源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbextension enable helpful_package --py # or --sys-prefix if using virtualenv or conda</span><br></pre></td></tr></table></figure></p><h2 id="jupyter-contrib-nbextensions"><a href="#jupyter-contrib-nbextensions" class="headerlink" title="jupyter_contrib_nbextensions"></a><a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions" target="_blank" rel="noopener">jupyter_contrib_nbextensions</a></h2><p>与其说这是一个插件，倒不如说这是一群插件，该插件集合了大多数的Jupyter Notebook常用扩展。<br>使用<code>pip install jupyter_contrib_nbextensions</code>命令即可安装，安装完成后使用<code>jupyter contrib nbextension install --user</code>命令进行些许配置，参数<code>--user</code>指定安装到当前用户家目录下的<code>.jupyter</code>文件夹下。<br>等到安装并配置完成后，打开Jupyter Notebook网页，会出现<code>Nbextensions</code>选项卡，点击进入此选项卡中，可以启用或禁用相应的插件。</p><h2 id="RISE"><a href="#RISE" class="headerlink" title="RISE"></a><a href="https://github.com/damianavila/RISE" target="_blank" rel="noopener">RISE</a></h2><p>该插件可以将Jupyter Notebook中的一个个单元格转换为一张张的幻灯片。<br>使用<code>pip install RISE</code>命令即可安装，安装完成后使用<code>jupyter-nbextension install rise --py --sys-prefix</code>命令安装前端资源，接着使用<code>jupyter-nbextension enable rise --py --sys-prefix</code>命令启用前端资源。</p><p>##</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;扩展机制&quot;&gt;&lt;a href=&quot;#扩展机制&quot; class=&quot;headerlink&quot; title=&quot;扩展机制&quot;&gt;&lt;/a&gt;扩展机制&lt;/h2&gt;&lt;p&gt;在介绍常用扩展之前，有必要先来介绍一下Jupyter Notebook的扩展机制：本质上来说，所有的Jupyter Note
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>editorconfig 是什么</title>
-    <link href="https://howiezhao.github.io/2018/09/23/what-is-editorconfig/"/>
-    <id>https://howiezhao.github.io/2018/09/23/what-is-editorconfig/</id>
-    <published>2018-09-23T09:55:34.000Z</published>
-    <updated>2018-09-23T10:56:54.074Z</updated>
-    
-    <content type="html"><![CDATA[<p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了<a href="https://editorconfig.org/" target="_blank" rel="noopener">EditorConfig</a>，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。<br>一个典型的 EditorConfig 配置文件如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># 这是一行注释，以#开头</span><br><span class="line"></span><br><span class="line"># 表示此文件为最顶级</span><br><span class="line">root = true</span><br><span class="line"></span><br><span class="line"># 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行</span><br><span class="line">[*]</span><br><span class="line">end_of_line = lf</span><br><span class="line">insert_final_newline = true</span><br><span class="line"></span><br><span class="line"># 匹配所有以 js 和 py 为后缀名的文件</span><br><span class="line"># 设定其编码为 UTF-8</span><br><span class="line">[*.&#123;js,py&#125;]</span><br><span class="line">charset = utf-8</span><br><span class="line"></span><br><span class="line"># 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格</span><br><span class="line">[*.py]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 4</span><br><span class="line"></span><br><span class="line"># 设定 Makefile 文件的缩进为 Tab</span><br><span class="line">[Makefile]</span><br><span class="line">indent_style = tab</span><br><span class="line"></span><br><span class="line"># 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格</span><br><span class="line">[lib/**.js]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br><span class="line"></span><br><span class="line"># 设定 package.json 和 .travis.yml 的缩进为 2 个空格</span><br><span class="line">[&#123;package.json,.travis.yml&#125;]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br></pre></td></tr></table></figure></p><p>此配置文件应该保存为<code>.editorconfig</code>并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见<code>root = true</code>为止。<br>有很多项目在初始化时都会生成相应的<code>.editorconfig</code>文件，比如 Angular。<br>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了&lt;a href=&quot;https://editorconfig.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Edito
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>写代码应该用哪种字体</title>
-    <link href="https://howiezhao.github.io/2018/09/23/code-font/"/>
-    <id>https://howiezhao.github.io/2018/09/23/code-font/</id>
-    <published>2018-09-23T09:52:35.000Z</published>
-    <updated>2018-09-24T04:34:46.724Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：<br><img src="/images/monospaced.PNG" alt="等宽字体与比例字体">在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 i，j 显得两侧余白较多，而字母 w，m 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。<br><a id="more"></a></p><h2 id="衬线字体与非衬线字体"><a href="#衬线字体与非衬线字体" class="headerlink" title="衬线字体与非衬线字体"></a>衬线字体与非衬线字体</h2><p>顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无<strong>衬线</strong>，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：<br><img src="/images/serif.PNG" alt="衬线字体与非衬线字体">这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为<strong>宋体</strong>，非衬线字体为<strong>黑体</strong>，如下：<br><img src="/images/song-hei.png" alt="宋体与黑体">衬线字体常用于印刷业，而且特别适用于长篇文章段落；非衬线字体简洁大方，适用于广告、标志、牌子等短句。另外，系统、程序和网页中的字体也几乎都是非衬线字体，即使是很长的段落，这是因为显示器分辨率低，字体不能减小，如果用衬线字体，那些边边角角就很难用像素显示清楚，结果反而不利于阅读。<br>Google 在 2015 年就将其原本的衬线体 Logo 换成了无衬线体 Logo:<br><img src="/images/google.gif" alt="Google Logo 变化">我们在写 Word 文档时，常用的英文衬线字体就是 <strong>Times New Roman</strong>；而在做 PPT 时，个人倾向于使用非衬线字体<strong>微软雅黑</strong>。</p><h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>写代码应该使用的字体对于衬线或非衬线要求不大，但强烈建议使用等宽字体，这样可以便于代码对齐，因为比例字体的宽度不定，这会对代码对齐造成极大的困难。另外，还应该对特殊字符有较高的辨识度，比如 I（大写i）、l（小写L）、1（数字1），0（数字0）、O（大写o） 等。<br>基于以上，个人倾向于使用 Consolas，它是 Windows 中自带的一款等宽、非衬线字体。</p><h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>在下载别的字体时，可能会遇到相关术语，如下：</p><ul><li>sans：无衬线体</li><li>gothic：哥特体，即无衬线体</li><li>mono：等宽字体</li><li>bold：粗体</li><li>italic：斜体</li><li>bolditalic：加粗斜体</li><li>regular：常规体</li><li>sc：即 Simplified Chinese，简体中文</li><li>ts：即 Traditional Chinese，繁体中文</li></ul><h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>关于代码配色，就真是个“仁者见仁，智者见智”的问题了，个人要求满足以下两点：</p><ol><li>采用黑色背景</li><li>官网提供多种编辑器的支持</li></ol><p>综上，个人倾向于使用<a href="https://draculatheme.com/" target="_blank" rel="noopener">Dracula</a>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;等宽字体与比例字体&quot;&gt;&lt;a href=&quot;#等宽字体与比例字体&quot; class=&quot;headerlink&quot; title=&quot;等宽字体与比例字体&quot;&gt;&lt;/a&gt;等宽字体与比例字体&lt;/h2&gt;&lt;p&gt;等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：&lt;br&gt;&lt;img src=&quot;/images/monospaced.PNG&quot; alt=&quot;等宽字体与比例字体&quot;&gt;在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 i，j 显得两侧余白较多，而字母 w，m 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。&lt;br&gt;Windows 中常用的等宽字体为 &lt;strong&gt;Consolas&lt;/strong&gt;；macOS 中常用的等宽字体为 &lt;strong&gt;Menlo&lt;/strong&gt;；Linux 中常用的等宽字体为 &lt;strong&gt;Mono&lt;/strong&gt;。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>开发环境代表什么</title>
-    <link href="https://howiezhao.github.io/2018/09/23/what-is-development-environment/"/>
-    <id>https://howiezhao.github.io/2018/09/23/what-is-development-environment/</id>
-    <published>2018-09-23T09:41:59.000Z</published>
-    <updated>2018-11-21T09:21:16.497Z</updated>
-    
-    <content type="html"><![CDATA[<p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。</p><p>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。</p><p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器/解释器、基本类库等于一体。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;按照编程语言的执行原理，一般将其分为&lt;strong&gt;编译型语言&lt;/strong&gt;（如 C）和&lt;strong&gt;解释型语言&lt;/strong&gt;（如 Python），对于编译型语言来说，它的开发环境就代表该语言的&lt;strong&gt;编译器&lt;/strong&gt;和其&lt;strong&gt;基本类库&lt;
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>谈谈SEO</title>
-    <link href="https://howiezhao.github.io/2018/09/23/talk-about-seo/"/>
-    <id>https://howiezhao.github.io/2018/09/23/talk-about-seo/</id>
-    <published>2018-09-23T04:34:47.000Z</published>
-    <updated>2018-09-23T09:42:52.739Z</updated>
-    
-    <content type="html"><![CDATA[<p>SEO，即搜索引擎优化(Search Engine Optimization)，下面列出几点SEO方面的建议：</p><ul><li>页面的URL应该足够反映页面的内容</li><li></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;SEO，即搜索引擎优化(Search Engine Optimization)，下面列出几点SEO方面的建议：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;页面的URL应该足够反映页面的内容&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>隐写术</title>
-    <link href="https://howiezhao.github.io/2018/09/22/steganography/"/>
-    <id>https://howiezhao.github.io/2018/09/22/steganography/</id>
-    <published>2018-09-22T15:45:31.000Z</published>
-    <updated>2018-09-24T12:20:34.058Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code>即可检查 a 文件的类型。<br>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索<code>CTF</code>或<code>FLAG</code>等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件<a href="http://facelessuser.github.io/HexViewer/" target="_blank" rel="noopener">HexViewer</a>查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p><h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp" target="_blank" rel="noopener">谷歌搜图</a>，或许可以发现更多信息。</p><h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片：<br><img src="/images/meinv.jpg" alt="exif"><br><a id="more"></a></p><h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到<a href="http://www.petitcolas.net/steganography/mp3stego/" target="_blank" rel="noopener">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。下载该软件后在其<code>MP3Stego</code>文件夹下会有 2 个命令：<code>Encode</code>和<code>Decode</code>，<code>Encode</code>命令用于隐写信息，<code>Decode</code>命令用于解密被隐写的信息，使用<code>decode -X -P pass svega_stego.mp3</code>即可从<code>svega_stego.mp3</code>文件中解码所需信息，<code>-P</code>指定解密密码。</p><h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：<br><img src="/images/word.PNG" alt="word"><br>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。<br>类似的题可以参考<a href="http://www.shiyanbar.com/ctf/1927" target="_blank" rel="noopener">Fonts</a>,<a href="http://www.shiyanbar.com/ctf/1849" target="_blank" rel="noopener">认真你就输了</a>等等。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h2&gt;&lt;p&gt;拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 &lt;code&gt;file&lt;/code&gt; 命令，直接输入 &lt;code&gt;file a&lt;/code&gt;即可检查 a 文件的类型。&lt;br&gt;知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索&lt;code&gt;CTF&lt;/code&gt;或&lt;code&gt;FLAG&lt;/code&gt;等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件&lt;a href=&quot;http://facelessuser.github.io/HexViewer/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HexViewer&lt;/a&gt;查看二进制信息。Linux 下可以使用 &lt;code&gt;xxd&lt;/code&gt; 命令查看文件二进制数据。&lt;/p&gt;
-&lt;h2 id=&quot;图片隐写&quot;&gt;&lt;a href=&quot;#图片隐写&quot; class=&quot;headerlink&quot; title=&quot;图片隐写&quot;&gt;&lt;/a&gt;图片隐写&lt;/h2&gt;&lt;h3 id=&quot;图片内容&quot;&gt;&lt;a href=&quot;#图片内容&quot; class=&quot;headerlink&quot; title=&quot;图片内容&quot;&gt;&lt;/a&gt;图片内容&lt;/h3&gt;&lt;p&gt;首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试&lt;a href=&quot;https://www.google.com/imghp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;谷歌搜图&lt;/a&gt;，或许可以发现更多信息。&lt;/p&gt;
-&lt;h3 id=&quot;Exif&quot;&gt;&lt;a href=&quot;#Exif&quot; class=&quot;headerlink&quot; title=&quot;Exif&quot;&gt;&lt;/a&gt;Exif&lt;/h3&gt;&lt;p&gt;Exif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片：&lt;br&gt;&lt;img src=&quot;/images/meinv.jpg&quot; alt=&quot;exif&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="CTF" scheme="https://howiezhao.github.io/tags/CTF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微软平台技术简介</title>
-    <link href="https://howiezhao.github.io/2018/09/22/microsoft-technology/"/>
-    <id>https://howiezhao.github.io/2018/09/22/microsoft-technology/</id>
-    <published>2018-09-22T12:30:09.000Z</published>
-    <updated>2018-09-22T16:13:05.530Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>微软最初的操作系统的DOS，DOS只是一个命令行形式，后来</p><h2 id="NET"><a href="#NET" class="headerlink" title=".NET"></a>.NET</h2><h2 id="Windows-Phone"><a href="#Windows-Phone" class="headerlink" title="Windows Phone"></a>Windows Phone</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h2&gt;&lt;p&gt;微软最初的操作系统的DOS，DOS只是一个命令行形式，后来&lt;/p&gt;
-&lt;h2 id=&quot;NET&quot;&gt;&lt;a 
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>网站统计与分析</title>
-    <link href="https://howiezhao.github.io/2018/09/22/web-analytics/"/>
-    <id>https://howiezhao.github.io/2018/09/22/web-analytics/</id>
-    <published>2018-09-22T09:59:29.000Z</published>
-    <updated>2018-09-22T11:02:32.435Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="几个术语"><a href="#几个术语" class="headerlink" title="几个术语"></a>几个术语</h2><ul><li>PV：Page View，即页面浏览量或点击量，用户每次刷新即被计算一次。</li><li>UV：Unique Visitor，指独立访客数，以cookie为依据，访问网站的一台电脑客户端为一个访客。一天内相同的客户端只会被计算一次。</li><li>IP：指独立IP数。一天内相同IP地址只被计算一次。</li></ul><h2 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h2><p>有许多第三方的工具可以帮助站长统计和分析网站流量，比如<a href="https://tongji.baidu.com" target="_blank" rel="noopener">百度统计</a>、<a href="http://ta.qq.com/" target="_blank" rel="noopener">腾讯分析</a>、<a href="https://analytics.google.com/analytics/web" target="_blank" rel="noopener">Google Analytics(GA)</a>等。个人经常使用Google Analytics。<br>这类工具的原理大致为：它们会生成一段特定的JS代码，站长需要将这段代码插入到自己网站的页面中，当访客访问网站时，这段代码会收集访客的行为信息，并上传到它们的服务器上。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;几个术语&quot;&gt;&lt;a href=&quot;#几个术语&quot; class=&quot;headerlink&quot; title=&quot;几个术语&quot;&gt;&lt;/a&gt;几个术语&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;PV：Page View，即页面浏览量或点击量，用户每次刷新即被计算一次。&lt;/li&gt;
-&lt;li&gt;UV：Unique
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Web" scheme="https://howiezhao.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>版本号的意义</title>
-    <link href="https://howiezhao.github.io/2018/09/21/version-number/"/>
-    <id>https://howiezhao.github.io/2018/09/21/version-number/</id>
-    <published>2018-09-21T12:51:08.000Z</published>
-    <updated>2018-09-22T09:54:42.867Z</updated>
-    
-    <content type="html"><![CDATA[<p>软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即<code>X.Y.Z</code>格式，其中：</p><ul><li>X代表<strong>主版本号</strong>，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段；</li><li>Y代表<strong>次版本号</strong>，增删功能时增加Y，同时重置Z为0；</li><li>Z代表<strong>修订号</strong>，修复Bug时增加Z。</li></ul><p>除此之外，还会有一些修饰词，比如：</p><ul><li><code>alpha</code>表示内部测试版；</li><li><code>beta</code>表示公开测试版；</li><li><code>rc</code>即Release Candidate，表示候选版本，即将作为正式版发布；</li><li><code>release</code>表示正式发行版；</li><li><code>lts</code>即Long Term Support，表示长期支持版。</li></ul><p>有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。<br>随着版本号定义的越来越混乱，GitHub起草了一个<a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener">语义化版本(Semantic Versioning)</a>规范，为开源项目做出了一定指导意义。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即&lt;code&gt;X.Y.Z&lt;/code&gt;格式，其中：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;X代表&lt;strong&gt;主版本号&lt;/strong&gt;，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，
-      
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>top的增强版：htop</title>
-    <link href="https://howiezhao.github.io/2018/09/19/htop-top/"/>
-    <id>https://howiezhao.github.io/2018/09/19/htop-top/</id>
-    <published>2018-09-19T09:50:14.000Z</published>
-    <updated>2018-09-19T12:39:04.595Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>top是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是<code>top</code>命令的运行界面：<br><img src="/images/top.PNG" alt="top">top的运行结果可以大致分为7个部分：</p><ul><li>第1行显示了<strong>系统</strong>概况</li><li>第2行显示了<strong>进程</strong>概况</li><li>第3行显示了<strong>CPU</strong>概况</li><li>第4行显示了<strong>内存</strong>概况</li><li>第5行显示了<strong>Swap分区</strong>概况</li><li>第6行为空行，用以显示运行命令时输入的<strong>参数</strong></li><li>剩下部分则为<strong>每个进程的详细信息</strong><a id="more"></a><h3 id="第1行"><a href="#第1行" class="headerlink" title="第1行"></a>第1行</h3></li></ul><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>top -</td><td>系统概况</td></tr><tr><td>18:37:24</td><td>当前系统时间</td></tr><tr><td>up 130 days, 6:22,</td><td>系统已运行时间</td></tr><tr><td>1 user,</td><td>当前登录用户数</td></tr><tr><td>load average: 0.02, 0.04, 0.00</td><td>系统平均负载，三个数值分别为1分钟、5分钟、15分钟前到现在的平均值。</td></tr></tbody></table><h3 id="第2行"><a href="#第2行" class="headerlink" title="第2行"></a>第2行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Tasks:</td><td>进程(任务)概况</td></tr><tr><td>23 total,</td><td>总进程数</td></tr><tr><td>1 running,</td><td>运行的进程数</td></tr><tr><td>22 sleeping,</td><td>睡眠的进程数</td></tr><tr><td>0 stopped,</td><td>停止的进程数</td></tr><tr><td>0 zombie</td><td>僵尸进程数</td></tr></tbody></table><h3 id="第3行"><a href="#第3行" class="headerlink" title="第3行"></a>第3行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Cpu(s):</td><td>CPU概况</td></tr><tr><td>3.7%us,</td><td>用户(user)进程占用CPU百分率</td></tr><tr><td>0.7%sy,</td><td>系统(system)进程占用CPU百分率</td></tr><tr><td>0.0%ni,</td><td>用户进程空间内改变过优先级(niced)的进程占用CPU百分比</td></tr><tr><td>95.7%id,</td><td>CPU空闲(idle)率</td></tr><tr><td>0.0%wa,</td><td>等待(wait)IO的CPU时间百分比</td></tr><tr><td>0.0%hi,</td><td>硬中断(hardware interrupt)占用CPU的百分比</td></tr><tr><td>0.0%si,</td><td>软中断(software interrupt)占用CPU的百分比</td></tr><tr><td>0.0%st</td><td></td></tr></tbody></table><h3 id="第4行"><a href="#第4行" class="headerlink" title="第4行"></a>第4行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Mem:</td><td>内存(memory)概况，数值以kb为单位</td></tr><tr><td>524288k total,</td><td>内存总量</td></tr><tr><td>278140k used,</td><td>内存使用量</td></tr><tr><td>246148k free,</td><td>内存空闲量</td></tr><tr><td>0k buffers</td><td>缓冲的内存量</td></tr></tbody></table><h3 id="第5行"><a href="#第5行" class="headerlink" title="第5行"></a>第5行</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>Swap:</td><td>Swap分区概况，数值以kb为单位</td></tr><tr><td>65536k total,</td><td>Swap分区总量</td></tr><tr><td>65536k used,</td><td>Swap分区使用量</td></tr><tr><td>0k free,</td><td>Swap分区空闲量</td></tr><tr><td>28800k cached</td><td>缓冲的Swap分区量</td></tr></tbody></table><h3 id="剩下部分"><a href="#剩下部分" class="headerlink" title="剩下部分"></a>剩下部分</h3><table><thead><tr><th>字符</th><th>含义</th></tr></thead><tbody><tr><td>PID</td><td>进程号</td></tr><tr><td>USER</td><td>进程创建者</td></tr><tr><td>PR</td><td>进程优先级</td></tr><tr><td>NI</td><td>nice值。越小优先级越高，最小-20，最大20（用户设置最大19）</td></tr><tr><td>VIRT</td><td>进程使用的虚拟(virtual)内存总量，单位kb。VIRT=SWAP+RES</td></tr><tr><td>RES</td><td>进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA</td></tr><tr><td>SHR</td><td>共享(share)内存大小，单位kb</td></tr><tr><td>S</td><td>进程状态。D=不可中断的睡眠状态，R=运行态，S=睡眠态，T=跟踪/停止态，Z=僵尸态</td></tr><tr><td>%CPU</td><td>进程占用CPU百分比</td></tr><tr><td>%MEM</td><td>进程占用内存百分比</td></tr><tr><td>TIME+</td><td>进程运行时间</td></tr><tr><td>COMMAND</td><td>运行进程时所使用的命令</td></tr></tbody></table><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>在<code>top</code>命令运行界面也可以输入相关命令，具体如下：</p><ul><li><code>q</code>：退出<code>top</code>运行界面</li><li><code>P</code>：以占据CPU百分比排序</li><li><code>M</code>：以占据内存百分比排序</li><li><code>T</code>：以累积占用CPU时间排序</li><li><code>s</code>：修改刷新时间间隔，默认每隔3秒刷新信息。按下s键，然后按下数字，即可修改刷新时间间隔为你输入的数字，单位为秒。例如：按下s键，在按数字1键，即可实现每秒刷新一次</li><li>回车或空格：手动立即刷新</li><li><code>k</code>：终止指定的进程。按下k键，再输入要杀死的进程的pid，再按回车键，选择信号类型，以数字标示，默认15为杀死，本步可省略直接按回车键（常用为-9）</li><li><code>h</code>：显示可输入的命令帮助菜单</li></ul><h2 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h2><p>htop是一款第三方的命令行工具，它可以被视为是top的增强版，在Ubuntu下可使用<code>apt install htop</code>命令安装，下图是<code>htop</code>命令的运行界面：<br><img src="/images/htop.PNG" alt="htop">当了解了<code>top</code>运行界面的各种参数的含义后，<code>htop</code>运行界面就变得不言而喻了，下面简要介绍一下可以在htop运行界面执行的相关命令：</p><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>综上所述，htop相比top有以下优势：</p><ul><li>彩色标识CPU、内存、Swap分区</li><li>CPU、内存、Swap分区使用情况直观易懂</li><li>底部有命令提示</li><li>支持方向键选择进程</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;top&quot;&gt;&lt;a href=&quot;#top&quot; class=&quot;headerlink&quot; title=&quot;top&quot;&gt;&lt;/a&gt;top&lt;/h2&gt;&lt;p&gt;top是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是&lt;code&gt;top&lt;/code&gt;命令的运行界面：&lt;br&gt;&lt;img src=&quot;/images/top.PNG&quot; alt=&quot;top&quot;&gt;top的运行结果可以大致分为7个部分：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;第1行显示了&lt;strong&gt;系统&lt;/strong&gt;概况&lt;/li&gt;
-&lt;li&gt;第2行显示了&lt;strong&gt;进程&lt;/strong&gt;概况&lt;/li&gt;
-&lt;li&gt;第3行显示了&lt;strong&gt;CPU&lt;/strong&gt;概况&lt;/li&gt;
-&lt;li&gt;第4行显示了&lt;strong&gt;内存&lt;/strong&gt;概况&lt;/li&gt;
-&lt;li&gt;第5行显示了&lt;strong&gt;Swap分区&lt;/strong&gt;概况&lt;/li&gt;
-&lt;li&gt;第6行为空行，用以显示运行命令时输入的&lt;strong&gt;参数&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;剩下部分则为&lt;strong&gt;每个进程的详细信息&lt;/strong&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>curl wget</title>
-    <link href="https://howiezhao.github.io/2018/09/19/curl-wget/"/>
-    <id>https://howiezhao.github.io/2018/09/19/curl-wget/</id>
-    <published>2018-09-19T09:50:05.000Z</published>
-    <updated>2018-09-19T09:50:05.128Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

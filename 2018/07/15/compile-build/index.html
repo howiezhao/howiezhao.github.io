@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="编译编译(compile)，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为编译器(compiler)。但要注意，编译器在同一时刻只能转换一个编译单元，所谓编译单元是指单个的源文件。目前在Linux中使用最广的编译器是GCC，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C+">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-15T08:50:54.648Z">
+<meta property="og:updated_time" content="2019-03-14T04:34:09.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译与构建">
 <meta name="twitter:description" content="编译编译(compile)，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为编译器(compiler)。但要注意，编译器在同一时刻只能转换一个编译单元，所谓编译单元是指单个的源文件。目前在Linux中使用最广的编译器是GCC，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C+">
@@ -460,10 +460,34 @@
 
       
         <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器(compiler)</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。目前在Linux中使用最广的编译器是<strong>GCC</strong>，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。使用GCC编译C语言源代码的一般格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure></p>
-<p>若不指定生成文件，则默认生成a.out。<br><a id="more"></a></p>
+<p>若不使用<code>-o</code>参数指定生成文件，则默认生成a.out。<br><a id="more"></a></p>
 <h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统(build system)</strong>，构建系统所作的就是<strong>构建(build)</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。在Linux中使用最广的构建系统是<strong>GNU make</strong>，它会读取<strong>makefile</strong>文件中的配置信息来完成构建，makefile的简要格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure></p>
-<p>冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个target:dependencies对的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies可以为空，如常用的target为clean时，就没有依赖，只有命令。<br>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若editor这个target文件不存在，或者main.o、text.o这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到main.o和text.o，make会检查main.o的依赖main.c、def.h有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于text.o。当输入<code>make install</code>，make会检查install的依赖editor是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。<br>makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">OBJECTS = main.o text.o</span><br><span class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></span><br><span class="line">editor : $(OBJECTS)</span><br><span class="line">    gcc -o editor $(OBJECTS)</span><br><span class="line">main.o : main.c</span><br><span class="line">    gcc -c main.c</span><br><span class="line">text.o : text.c</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor $(INSTALL_PATH)</span><br></pre></td></tr></table></figure></p>
-<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>为了在Windows中使用GCC，诞生了<a href="http://www.mingw.org/" target="_blank" rel="noopener"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a href="https://mingw-w64.org/doku.php/start" target="_blank" rel="noopener"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。<br>Java世界中使用最广的构建系统是<strong>Maven</strong>，而在Android Studio中则使用到了后起之秀<strong>Gradle</strong>。<br>C语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
+<p>冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个<strong>target:dependencies对</strong>的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies可以为空，如常用的target为<strong>clean</strong>时，就没有依赖，只有命令。</p>
+<p>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若editor这个target文件不存在，或者main.o、text.o这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到main.o和text.o，make会检查main.o的依赖main.c、def.h有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于text.o。当输入<code>make install</code>，make会检查install的依赖editor是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。</p>
+<p>makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">OBJECTS = main.o text.o</span><br><span class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></span><br><span class="line">editor : $(OBJECTS)</span><br><span class="line">    gcc -o editor $(OBJECTS)</span><br><span class="line">main.o : main.c</span><br><span class="line">    gcc -c main.c</span><br><span class="line">text.o : text.c</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor $(INSTALL_PATH)</span><br></pre></td></tr></table></figure></p>
+<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><p>Linux下<code>gcc</code>命令常见的参数及其含义如下所示：</p>
+<ul>
+<li><code>--help</code>：显示帮助信息</li>
+<li><code>-o</code>：指定生成的文件名</li>
+<li><code>-E</code>：生成<code>.i</code>格式的预处理文件</li>
+<li><code>-S</code>：生成<code>.s</code>格式的汇编文件</li>
+<li><code>-c</code>：生成<code>.o</code>格式的二进制文件</li>
+<li><code>-save-temps</code>：保留所有生成的中间文件</li>
+<li><code>-g</code>：生成必要的符号信息，为调试而用</li>
+<li><code>-ggdb</code>：生成可特供于gdb使用的调试信息</li>
+<li><code>-gstabs</code>：生成stabs格式的调试信息</li>
+<li><code>-Wall</code>：显示所有常用的警告信息，即Warning all</li>
+<li><code>-m32</code>：指定生成32位程序</li>
+<li><code>-Os</code>：为减小代码大小而进行优化，即Optimizers small</li>
+<li><code>-nostdinc</code>：不使用标准库</li>
+<li><code>-fno-stack-protector</code>：不生成用于检测缓冲区溢出的代码</li>
+<li><code>-I&lt;dir&gt;</code>：添加搜索头文件的路径</li>
+<li><code>-fno-builtin</code>：除非用<code>__builtin_</code>前缀，否则不进行<code>builtin</code>函数的优化</li>
+</ul>
+<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>为了在Windows中使用GCC，诞生了<a href="http://www.mingw.org/" target="_blank" rel="noopener"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a href="https://mingw-w64.org/doku.php/start" target="_blank" rel="noopener"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。</p>
+<p>Java世界中使用最广的构建系统是<strong>Maven</strong>，而在Android Studio中则使用到了后起之秀<strong>Gradle</strong>。</p>
+<p>C语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
+<p>普通编译是生成当前系统平台下的目标文件，而<strong>交叉编译</strong>是指生成另一个系统平台下的目标文件。</p>
 
       
     </div>
@@ -577,7 +601,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -728,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建"><span class="nav-number">2.</span> <span class="nav-text">构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另外的"><span class="nav-number">3.</span> <span class="nav-text">另外的</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建"><span class="nav-number">2.</span> <span class="nav-text">构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gcc"><span class="nav-number">3.</span> <span class="nav-text">gcc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另外的"><span class="nav-number">4.</span> <span class="nav-text">另外的</span></a></li></ol></div>
             
 
           </div>
@@ -748,7 +772,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -760,7 +784,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">89k</span>
+    <span title="Symbols count total">119k</span>
   
 
   
