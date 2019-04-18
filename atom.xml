@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2019-03-24T06:03:33.499Z</updated>
+  <updated>2019-04-18T05:22:56.524Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Makefile小记</title>
+    <link href="https://howiezhao.github.io/2019/04/18/makefile/"/>
+    <id>https://howiezhao.github.io/2019/04/18/makefile/</id>
+    <published>2019-04-18T04:40:39.000Z</published>
+    <updated>2019-04-18T05:22:56.524Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux中使用最广的构建工具是<strong>make</strong>，而make会读取<strong>Makefile</strong>文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure></p><p>具体而言，冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个<strong>target:dependencies对</strong>的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies也可以为空，如常用的target为<code>clean</code>时，就没有依赖，只有命令，一般用于清理工作。</p><p>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若<code>editor</code>这个target文件不存在，或者<code>main.o</code>、<code>text.o</code>这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到<code>main.o</code>和<code>text.o</code>，make会检查<code>main.o</code>的依赖<code>main.c</code>、<code>def.h</code>有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于<code>text.o</code>。当输入<code>make install</code>，make会检查install的依赖<code>editor</code>是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。</p><p>Makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">OBJECTS = main.o text.o</span><br><span class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></span><br><span class="line">editor : $(OBJECTS)</span><br><span class="line">    gcc -o editor $(OBJECTS)</span><br><span class="line">main.o : main.c</span><br><span class="line">    gcc -c main.c</span><br><span class="line">text.o : text.c</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor $(INSTALL_PATH)</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Linux中使用最广的构建工具是&lt;strong&gt;make&lt;/strong&gt;，而make会读取&lt;strong&gt;Makefile&lt;/strong&gt;文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：&lt;br&gt;&lt;figure class=&quot;highlight bas
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对比几种文件共享协议</title>
+    <link href="https://howiezhao.github.io/2019/04/17/file-sharing-protocol/"/>
+    <id>https://howiezhao.github.io/2019/04/17/file-sharing-protocol/</id>
+    <published>2019-04-17T10:07:32.000Z</published>
+    <updated>2019-04-17T15:24:33.596Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="SMB"><a href="#SMB" class="headerlink" title="SMB"></a>SMB</h2><p><strong>SMB</strong>全称Server Message Block（即服务器消息块），又称Common Internet File System（即网络文件共享系统），所以也常被缩写为<strong>SMB/CIFS</strong>。</p><h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><h2 id="NFS"><a href="#NFS" class="headerlink" title="NFS"></a>NFS</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;SMB&quot;&gt;&lt;a href=&quot;#SMB&quot; class=&quot;headerlink&quot; title=&quot;SMB&quot;&gt;&lt;/a&gt;SMB&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;SMB&lt;/strong&gt;全称Server Message Block（即服务器消息块），又称Common Inter
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Android刷机指南</title>
@@ -375,51 +423,6 @@
     
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>如何比较两个文件之间的差异</title>
-    <link href="https://howiezhao.github.io/2018/10/19/diff/"/>
-    <id>https://howiezhao.github.io/2018/10/19/diff/</id>
-    <published>2018-10-19T06:05:51.000Z</published>
-    <updated>2018-10-25T08:36:20.313Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  32: &apos;space&apos;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  13: &apos;enter&apos;,</span><br><span class="line">  32: &apos;space&apos;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &apos;left&apos;,</span><br><span class="line">  38: &apos;up&apos;,</span><br><span class="line">  39: &apos;right&apos;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &apos;left&apos;,</span><br><span class="line">  39: &apos;right&apos;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure></p><p>可见，<code>fc</code>命令会把两个文件中不同的片段显示出来，并分别标注属于哪个文件。输入<code>fc /?</code>可以查看<code>fc</code>命令的更多参数。<br><a id="more"></a></p><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在Linux下，可以使用系统自带的<code>diff</code>命令（即difference的缩写），它要比Windows中的<code>fc</code>命令更为强大，比如<code>diff -u game_old.js game_new.js</code>，其中<code>-u</code>参数表示使用标准区别格式，这将使输出内容更容易阅读，结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">--- game_old.js 2018-10-19 11:31:58.054834600 +0800</span><br><span class="line">+++ game_new.js 2018-10-19 11:32:19.667759500 +0800</span><br><span class="line">@@ -4,9 +4,9 @@</span><br><span class="line"> //</span><br><span class="line"></span><br><span class="line"> KEY_CODES = &#123;</span><br><span class="line">+  13: &apos;enter&apos;,</span><br><span class="line">   32: &apos;space&apos;,</span><br><span class="line">   37: &apos;left&apos;,</span><br><span class="line">-  38: &apos;up&apos;,</span><br><span class="line">   39: &apos;right&apos;,</span><br><span class="line">   40: &apos;down&apos;,</span><br><span class="line">   70: &apos;f&apos;,</span><br><span class="line">@@ -392,7 +392,7 @@</span><br><span class="line">       this.vel.rot = 0;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">-    if (KEY_STATUS.up) &#123;</span><br><span class="line">+    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">       var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">       this.acc.x = 0.5 * Math.cos(rad);</span><br><span class="line">       this.acc.y = 0.5 * Math.sin(rad);</span><br></pre></td></tr></table></figure></p><p>可见，<code>diff</code>命令的输出结果更加丰富，开始它展示了正在比较的2个文件，紧接着它显示了不同之处，其中<code>-</code>开始的段落代表只存在于前一个文件中，不存在于后一个文件中，同理，<code>+</code>开始的段落代表只存在于后一个文件中，不存在于前一个文件中，除此之外的所有段落代表共同存在于2个文件中。一般而言，我们将前一个文件表示为旧文件，后一个文件表示为新文件。输入<code>diff --help</code>可以查看<code>diff</code>命令的更多参数。</p><h2 id="图形化程序"><a href="#图形化程序" class="headerlink" title="图形化程序"></a>图形化程序</h2><p>或许使用像前面所述的命令行程序观察结果不是很方便，因此有些人可能会倾向于使用图形化程序，而<a href="http://meldmerge.org/" target="_blank" rel="noopener">Meld</a>就是个不错的选择，它开源且跨平台，可用来可视化的观察文件之间的差异。使用Meld比较两文件差异的结果如下：<img src="/images/meld.PNG" alt="Meld结果">可见，Meld用高亮显示文件之间的差异，同时它还提供了前往上一个/下一个差异的按钮，方便用户快速跳转。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h2&gt;&lt;p&gt;在Windows下，可以使用系统自带的&lt;code&gt;fc&lt;/code&gt;命令（即file compare的缩写），比如&lt;code&gt;fc game_old.js game_new.js&lt;/code&gt;，结果如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;正在比较文件 game_old.js 和 GAME_NEW.JS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;***** game_old.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;KEY_CODES = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  32: &amp;apos;space&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;***** GAME_NEW.JS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;KEY_CODES = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  13: &amp;apos;enter&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  32: &amp;apos;space&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*****&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;***** game_old.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  37: &amp;apos;left&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  38: &amp;apos;up&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  39: &amp;apos;right&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;***** GAME_NEW.JS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  37: &amp;apos;left&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  39: &amp;apos;right&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*****&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;***** game_old.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if (KEY_STATUS.up) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      var rad = ((this.rot-90) * Math.PI)/180;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;***** GAME_NEW.JS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if (KEY_STATUS.spacr) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      var rad = ((this.rot-90) * Math.PI)/180;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*****&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;可见，&lt;code&gt;fc&lt;/code&gt;命令会把两个文件中不同的片段显示出来，并分别标注属于哪个文件。输入&lt;code&gt;fc /?&lt;/code&gt;可以查看&lt;code&gt;fc&lt;/code&gt;命令的更多参数。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RSA加密算法</title>
-    <link href="https://howiezhao.github.io/2018/10/18/rsa/"/>
-    <id>https://howiezhao.github.io/2018/10/18/rsa/</id>
-    <published>2018-10-18T08:03:58.000Z</published>
-    <updated>2018-10-19T01:58:56.556Z</updated>
-    
-    <content type="html"><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。<br><a id="more"></a></p><h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p><ol><li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li><li>计算n的欧拉函数φ(n)<br>φ(3233)=60×52=3120</li><li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n)互质，并计算e对于φ(n)的模反元素d<br>取e=17，d=2753</li><li>将n和e封装成公钥，n和d封装成私钥<br>公钥位(n, e)，私钥为(n, d)</li></ol><h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是&lt;strong&gt;现代密码学&lt;/strong&gt;中&lt;strong&gt;非对称加密&lt;/strong&gt;的一个典型，所谓非对称加密其实就是&lt;strong&gt;公钥用于加密，私钥用于解密&lt;/strong&gt;而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于&lt;strong&gt;因数分解难题&lt;/strong&gt;发明的，所谓因数分解难题就是指目前没有一个&lt;strong&gt;快速&lt;/strong&gt;的计算机算法可以对极大整数做因数分解。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-      <category term="密码学" scheme="https://howiezhao.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   
