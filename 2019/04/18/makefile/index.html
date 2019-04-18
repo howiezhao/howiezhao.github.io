@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Linux中使用最广的构建工具是make，而make会读取Makefile文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：12345678editor : main.o text.o    gcc -o editor main.o text.omain.o : main.c def.h    gcc -c main.c  #-c参数指定生成.o文件text.o : text.c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-18T05:22:56.524Z">
+<meta property="og:updated_time" content="2019-04-18T08:31:18.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makefile小记">
 <meta name="twitter:description" content="Linux中使用最广的构建工具是make，而make会读取Makefile文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：12345678editor : main.o text.o    gcc -o editor main.o text.omain.o : main.c def.h    gcc -c main.c  #-c参数指定生成.o文件text.o : text.c">
@@ -461,9 +461,44 @@
 
       
         <p>Linux中使用最广的构建工具是<strong>make</strong>，而make会读取<strong>Makefile</strong>文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure></p>
-<p>具体而言，冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个<strong>target:dependencies对</strong>的下一行为要执行的命令。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>伪target</strong>，如第7行所示。dependencies也可以为空，如常用的target为<code>clean</code>时，就没有依赖，只有命令，一般用于清理工作。</p>
-<p>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若<code>editor</code>这个target文件不存在，或者<code>main.o</code>、<code>text.o</code>这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到<code>main.o</code>和<code>text.o</code>，make会检查<code>main.o</code>的依赖<code>main.c</code>、<code>def.h</code>有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于<code>text.o</code>。当输入<code>make install</code>，make会检查install的依赖<code>editor</code>是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。</p>
-<p>Makefile中也可以包含<strong>宏</strong>，上面的文件使用宏后如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">OBJECTS = main.o text.o</span><br><span class="line">INSTALL_PATH = /usr/<span class="built_in">local</span></span><br><span class="line">editor : $(OBJECTS)</span><br><span class="line">    gcc -o editor $(OBJECTS)</span><br><span class="line">main.o : main.c</span><br><span class="line">    gcc -c main.c</span><br><span class="line">text.o : text.c</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor $(INSTALL_PATH)</span><br></pre></td></tr></table></figure></p>
+<p>具体而言，冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个<strong>target:dependencies对</strong>的下一行为要执行的<strong>命令</strong>（注意要以Tab键起首）。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>phony target</strong>（即伪target），如第7行所示。dependencies也可以为空，如常用的target为<code>clean</code>时，就没有依赖，只有命令，一般用于清理工作。</p>
+<p>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若<code>editor</code>这个target文件不存在，或者<code>main.o</code>、<code>text.o</code>这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到<code>main.o</code>和<code>text.o</code>，make会检查<code>main.o</code>的依赖<code>main.c</code>、<code>def.h</code>有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于<code>text.o</code>。当输入<code>make install</code>，make会检查install的依赖<code>editor</code>是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。<br><a id="more"></a></p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Makefile中以<code>#</code>开头的均为注释。</p>
+<h2 id="回声"><a href="#回声" class="headerlink" title="回声"></a>回声</h2><p>正常情况下，make会打印每条命令，然后再执行，这就叫做<strong>回声</strong>。在命令的前面加上<code>@</code>，就可以关闭回声。由于在构建过程中，需要了解当前在执行哪条命令，所以通常只在注释和纯显示的echo命令前面加上<code>@</code>。</p>
+<h2 id="内置目标名"><a href="#内置目标名" class="headerlink" title="内置目标名"></a>内置目标名</h2><p><strong>内置目标名</strong>指示了如果某些名称作为target（目标名）出现，则具有特殊含义，常用的如下所示：</p>
+<ul>
+<li><code>.PHONY</code>：明确声明伪目标</li>
+<li><code>.SUFFIXES</code>：消除默认后缀规则</li>
+<li><code>.DELETE_ON_ERROR</code>：如果遇到错误（或make中断）则删除目标文件</li>
+</ul>
+<p>更多的内置目标名可以参考<a href="https://www.gnu.org/software/make/manual/html_node/Special-Targets.html#Special-Targets" target="_blank" rel="noopener">make官方手册</a>。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Makefile中也可以使用变量，如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TXT = Hello World</span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    <span class="built_in">echo</span> $(TXT)</span><br></pre></td></tr></table></figure></p>
+<p>这类似于C语言中的宏，按照传统，变量名一般大写，使用变量时要放在<code>$()</code>之中。</p>
+<p>有时，变量的值可能指向另一个变量，比如：<code>V1 = $(V2)</code>，这时会出现一个问题，V1的值到底在定义时扩展（静态扩展），还是在运行时扩展（动态扩展）？如果V2的值是动态变化的，这两种扩展方式的结果可能会差异很大。为了解决类似问题，Makefile一共提供了四个赋值运算符，如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">VARIABLE = value</span><br><span class="line"><span class="comment"># 在运行时扩展，允许递归扩展。</span></span><br><span class="line"></span><br><span class="line">VARIABLE := value</span><br><span class="line"><span class="comment"># 在定义时扩展。</span></span><br><span class="line"></span><br><span class="line">VARIABLE ?= value</span><br><span class="line"><span class="comment"># 只有在该变量为空时才设置值。</span></span><br><span class="line"></span><br><span class="line">VARIABLE += value</span><br><span class="line"><span class="comment"># 将值追加到变量的尾端。</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h2><p>Makefile提供了一系列的内置变量，常见的如下所示：</p>
+<ul>
+<li><code>$(CC)</code>：指向当前使用的编译器</li>
+</ul>
+<p>更多的内置变量可以参考<a href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html" target="_blank" rel="noopener">make官方手册</a>。</p>
+<h2 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h2><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><p>使用条件判断，可以让make根据运行时的不同情况选择不同的执行分支。如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ifeq ($(CC),gcc)</span><br><span class="line">  libs=$(libs_for_gcc)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  libs=$(normal_libs)</span><br><span class="line">endif</span><br></pre></td></tr></table></figure></p>
+<p>上面代码判断当前编译器是否为gcc，然后指定不同的库文件。其中<code>ifeq</code>比较参数<code>arg1</code>和<code>arg2</code>是否相同，类似的，<code>ifneq</code>比较参数<code>arg1</code>和<code>arg2</code>是否不相同。</p>
+<p>除此之外，还有<code>ifdef</code>判断变量是否被定义，<code>ifndef</code>判断变量是否没有被定义。</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Makefile中还内置了许多函数，可供调用，格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">function</span> arguments)</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="variable">$&#123;function arguments&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>常用的函数有：</p>
+<ul>
+<li><code>$(shell)</code>：用来执行shell命令</li>
+<li><code>$(wildcard)</code>：用来在Makefile中，替换Bash的通配符。</li>
+<li><code>$(patsubst)</code>：用于模式匹配的替换，语法为<code>$(patsubst &lt;pattern&gt;,&lt;replacement&gt;,&lt;text&gt;)</code></li>
+<li><code>$(filter)</code>：</li>
+<li><code>$(addsuffix)</code>：</li>
+<li><code>$(addprefix)</code>：</li>
+<li><code>$(if)</code>：</li>
+<li><code>$(foreach)</code>：</li>
+<li><code>$(call)</code>：唯一一个可以用来创建新的参数化的函数，语法为<code>$(call &lt;expression&gt;,&lt;parm1&gt;,&lt;parm2&gt;,...,&lt;parmn&gt;)</code>，值得注意的是，call函数在处理参数时，第2个及其之后的参数中的空格会被保留，因而在向call函数提供参数时，最安全的做法是去除所有多余的空格，避免造成一些奇怪的效果。</li>
+</ul>
+<p>相关示例如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell函数用法</span></span><br><span class="line">contents := $(shell cat foo) <span class="comment"># 将foo文件中的内容赋值给contents</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># call函数用法</span></span><br><span class="line">reverse =  $(2) $(1)</span><br><span class="line">foo = $(call reverse,a,b) <span class="comment"># 最终foo的值为b a</span></span><br></pre></td></tr></table></figure></p>
+<p>更多的内置函数可以参考<a href="https://www.gnu.org/software/make/manual/html_node/Functions.html" target="_blank" rel="noopener">make官方手册</a></p>
+<h2 id="引用其它的Makefile"><a href="#引用其它的Makefile" class="headerlink" title="引用其它的Makefile"></a>引用其它的Makefile</h2><p>在Makefile中可以使用<code>include</code>关键字把别的Makefile包含进来，这很像C语言的<code>#include</code>，被包含的文件会原模原样的放在当前文件的包含位置。<code>include</code>的语法是：<code>include &lt;filename&gt;</code>，其中被包含的Makefile文件通常以<code>.mk</code>结尾。</p>
 
       
     </div>
@@ -506,6 +541,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/18/qemu/" rel="prev" title="QEMU小记">
+                QEMU小记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -550,8 +589,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -570,7 +618,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">108</span>
+                    <span class="site-state-item-count">110</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -712,6 +760,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回声"><span class="nav-number">2.</span> <span class="nav-text">回声</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内置目标名"><span class="nav-number">3.</span> <span class="nav-text">内置目标名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内置变量"><span class="nav-number">5.</span> <span class="nav-text">内置变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动变量"><span class="nav-number">6.</span> <span class="nav-text">自动变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断"><span class="nav-number">7.</span> <span class="nav-text">判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">8.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用其它的Makefile"><span class="nav-number">9.</span> <span class="nav-text">引用其它的Makefile</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -737,7 +801,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">119k</span>
+    <span title="Symbols count total">122k</span>
   
 
   
