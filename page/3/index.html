@@ -17,30 +17,9 @@
 <html class="theme-next pisces use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="theme-color" content="#222"/>
 
 
 
@@ -63,23 +42,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
 
-<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
 
 
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
 
 
 
@@ -87,13 +64,15 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '6.4.2',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -105,15 +84,14 @@
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
     }
   };
 </script>
-
-
-  
-
-
-
 
   <meta name="description" content="Stay Hungry, Stay Foolish">
 <meta property="og:type" content="website">
@@ -128,35 +106,31 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml"/>
 
 
 
-
+  
+  
   <link rel="canonical" href="https://howiezhao.github.io/page/3/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
 </script>
 
+  
   <title>Howie's Notes</title>
   
 
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-104250838-2');
-</script>
+
 
 
 
@@ -164,29 +138,27 @@
 
 
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
@@ -205,7 +177,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -219,6 +191,7 @@
       
         <p class="site-subtitle">Machine Learning and Cyber Security</p>
       
+    
     
   </div>
 
@@ -242,40 +215,80 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>About</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>Tags</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>Categories</a>
+
   </li>
         
         
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+
   </li>
 
       
@@ -285,7 +298,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>Search</a>
         </li>
       
     </ul>
@@ -321,10 +334,6 @@
 
 
 
-  
-
-
-
 </div>
     </header>
 
@@ -357,16 +366,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/02/readme/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/02/readme/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -376,22 +385,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/02/readme/" itemprop="url">
-                  编写规范的README文档
-                </a>
+                
+                <a href="/2018/11/02/readme/" class="post-title-link" itemprop="url">编写规范的README文档</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -404,16 +412,13 @@
               
 
               <time title="Created: 2018-11-02 16:59:24" itemprop="dateCreated datePublished" datetime="2018-11-02T16:59:24+08:00">2018-11-02</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -431,11 +436,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -458,11 +469,13 @@
         
           <p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用<strong>README</strong>文件来做整体描述，README这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README这6个字母通常都是大写的，这是因为<strong>在Linux中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定README文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的README文档应该是什么样子的。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/02/readme/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/02/readme/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -471,11 +484,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -515,16 +533,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/02/open-sourse-license/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/11/02/open-sourse-license/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -534,22 +552,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/02/open-sourse-license/" itemprop="url">
-                  开源协议漫谈
-                </a>
+                
+                <a href="/2018/11/02/open-sourse-license/" class="post-title-link" itemprop="url">开源协议漫谈</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -562,16 +579,13 @@
               
 
               <time title="Created: 2018-11-02 10:32:10" itemprop="dateCreated datePublished" datetime="2018-11-02T10:32:10+08:00">2018-11-02</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -589,11 +603,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -616,11 +636,13 @@
         
           <p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/02/open-sourse-license/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/02/open-sourse-license/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -629,11 +651,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -673,16 +700,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/19/diff/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/19/diff/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -692,22 +719,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/19/diff/" itemprop="url">
-                  如何比较两个文件之间的差异
-                </a>
+                
+                <a href="/2018/10/19/diff/" class="post-title-link" itemprop="url">如何比较两个文件之间的差异</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -720,16 +746,13 @@
               
 
               <time title="Created: 2018-10-19 14:05:51" itemprop="dateCreated datePublished" datetime="2018-10-19T14:05:51+08:00">2018-10-19</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -747,11 +770,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -775,11 +804,13 @@
           <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  32: &apos;space&apos;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  13: &apos;enter&apos;,</span><br><span class="line">  32: &apos;space&apos;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &apos;left&apos;,</span><br><span class="line">  38: &apos;up&apos;,</span><br><span class="line">  39: &apos;right&apos;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &apos;left&apos;,</span><br><span class="line">  39: &apos;right&apos;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure></p>
 <p>可见，<code>fc</code>命令会把两个文件中不同的片段显示出来，并分别标注属于哪个文件。输入<code>fc /?</code>可以查看<code>fc</code>命令的更多参数。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/19/diff/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/19/diff/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -788,11 +819,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -832,16 +868,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/18/rsa/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/18/rsa/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -851,22 +887,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/18/rsa/" itemprop="url">
-                  RSA加密算法
-                </a>
+                
+                <a href="/2018/10/18/rsa/" class="post-title-link" itemprop="url">RSA加密算法</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -879,16 +914,13 @@
               
 
               <time title="Created: 2018-10-18 16:03:58" itemprop="dateCreated datePublished" datetime="2018-10-18T16:03:58+08:00">2018-10-18</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -906,11 +938,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -933,11 +971,13 @@
         
           <p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/18/rsa/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/18/rsa/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -946,11 +986,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -990,16 +1035,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/18/proxychains/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/10/18/proxychains/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -1009,22 +1054,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/18/proxychains/" itemprop="url">
-                  代理链工具：proxychains
-                </a>
+                
+                <a href="/2018/10/18/proxychains/" class="post-title-link" itemprop="url">代理链工具：proxychains</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1037,16 +1081,13 @@
               
 
               <time title="Created: 2018-10-18 10:21:58" itemprop="dateCreated datePublished" datetime="2018-10-18T10:21:58+08:00">2018-10-18</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1064,11 +1105,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1091,11 +1138,13 @@
         
           <p><a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a>，顾名思义，是一种代理链工具，它可以强制任何Linux下的命令行应用使用其提供的代理连接到网络。Linux中有的应用本身并不支持代理，这时便可以使用proxychains强制其使用代理。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/18/proxychains/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/10/18/proxychains/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1104,11 +1153,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1148,16 +1202,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/26/it-student-discount/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/26/it-student-discount/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -1167,22 +1221,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/26/it-student-discount/" itemprop="url">
-                  盘点那些互联网公司的学生优惠
-                </a>
+                
+                <a href="/2018/09/26/it-student-discount/" class="post-title-link" itemprop="url">盘点那些互联网公司的学生优惠</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1195,16 +1248,13 @@
               
 
               <time title="Created: 2018-09-26 22:33:32" itemprop="dateCreated datePublished" datetime="2018-09-26T22:33:32+08:00">2018-09-26</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1222,11 +1272,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1249,11 +1305,13 @@
         
           <h2 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains</a></h2><p>JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— <a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">Intellij IDEA</a>，Python的IDE —— <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">PyCharm</a>，JavaScript的IDE —— <a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">WebStorm</a>，C/C++的IDE —— <a href="https://www.jetbrains.com/clion/" target="_blank" rel="noopener">CLion</a>等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。<br>JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供<a href="https://www.jetbrains.com/zh/student/" target="_blank" rel="noopener">免费授权计划</a>，学生只要验证学生身份即可免费使用JetBrains的所有IDE。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/26/it-student-discount/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/09/26/it-student-discount/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1262,11 +1320,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1306,16 +1369,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -1325,22 +1388,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/25/jupyter-notebook-extensions/" itemprop="url">
-                  Jupyter Notebook常用扩展
-                </a>
+                
+                <a href="/2018/09/25/jupyter-notebook-extensions/" class="post-title-link" itemprop="url">Jupyter Notebook常用扩展</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1353,16 +1415,13 @@
               
 
               <time title="Created: 2018-09-25 17:01:20" itemprop="dateCreated datePublished" datetime="2018-09-25T17:01:20+08:00">2018-09-25</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1380,11 +1439,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1420,11 +1485,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1464,16 +1534,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/what-is-editorconfig/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/what-is-editorconfig/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -1483,22 +1553,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/23/what-is-editorconfig/" itemprop="url">
-                  editorconfig 是什么
-                </a>
+                
+                <a href="/2018/09/23/what-is-editorconfig/" class="post-title-link" itemprop="url">editorconfig 是什么</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1511,16 +1580,13 @@
               
 
               <time title="Created: 2018-09-23 17:55:34" itemprop="dateCreated datePublished" datetime="2018-09-23T17:55:34+08:00">2018-09-23</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1538,11 +1604,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1575,11 +1647,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1619,16 +1696,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/code-font/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/code-font/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -1638,22 +1715,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/23/code-font/" itemprop="url">
-                  写代码应该用哪种字体
-                </a>
+                
+                <a href="/2018/09/23/code-font/" class="post-title-link" itemprop="url">写代码应该用哪种字体</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1666,16 +1742,13 @@
               
 
               <time title="Created: 2018-09-23 17:52:35" itemprop="dateCreated datePublished" datetime="2018-09-23T17:52:35+08:00">2018-09-23</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1693,11 +1766,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1720,11 +1799,13 @@
         
           <h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：<br><img src="/images/monospaced.PNG" alt="等宽字体与比例字体">在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 i，j 显得两侧余白较多，而字母 w，m 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/23/code-font/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/09/23/code-font/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
@@ -1733,11 +1814,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1777,16 +1863,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/what-is-development-environment/">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/23/what-is-development-environment/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="name" content="Howie's Notes"/>
     </span>
 
     
@@ -1796,22 +1882,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/23/what-is-development-environment/" itemprop="url">
-                  开发环境代表什么
-                </a>
+                
+                <a href="/2018/09/23/what-is-development-environment/" class="post-title-link" itemprop="url">开发环境代表什么</a>
               
             
           </h1>
         
 
         <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
+          
+          
+          
 
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -1824,16 +1909,13 @@
               
 
               <time title="Created: 2018-09-23 17:41:59" itemprop="dateCreated datePublished" datetime="2018-09-23T17:41:59+08:00">2018-09-23</time>
-            
-
-            
-          </span>
+            </span>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
@@ -1851,11 +1933,17 @@
 
           
             
+            
           
 
           
           
 
+          
+
+          
+
+          <br/>
           
 
           
@@ -1889,11 +1977,16 @@
     
 
     
+
+    
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1943,172 +2036,189 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
+
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="Howie Zhao" />
-            
-              <p class="site-author-name" itemprop="name">Howie Zhao</p>
-              <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</p>
-          </div>
+  
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Howie Zhao"/>
+  
+  <p class="site-author-name" itemprop="name">Howie Zhao</p>
+  <div class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu &rarr; https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Zhihu</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/howiezhao" title="GitHub &rarr; https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+        </li>
+      
+    </ul>
+  </div>
+
 
           
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">110</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">15</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
           
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/howiezhao" target="_blank" title="Zhihu"><i class="fa fa-fw fa-globe"></i>Zhihu</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/howiezhao" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://howiezhao.com/" title="Howie's Blog" target="_blank">Howie's Blog</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://tomorrowli.github.io" title="TomorrowLi's Blog" target="_blank">TomorrowLi's Blog</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://bururen.com" title="Twelvelv" target="_blank">Twelvelv</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://wenc1997.github.io" title="Wenc" target="_blank">Wenc</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://blog.csdn.net/qq_35490191" title="songshaoのblog" target="_blank">songshaoのblog</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
         </div>
-      </section>
+      </div>
 
       
 
@@ -2116,6 +2226,7 @@
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
         
@@ -2143,9 +2254,7 @@
 </div>
 
 
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1</div>
 
 
 
@@ -2153,7 +2262,7 @@
 
 
 
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.2</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.2.0</div>
 
 
 
@@ -2163,15 +2272,23 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv" title="Total Visitors">
+    <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
 
   
-    <span class="site-pv" title="Total Views">
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
     </span>
   
@@ -2197,15 +2314,13 @@
     
 
     
-	
-    
 
     
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2220,79 +2335,18 @@
 
 
 
-
-
-
-
   
-
-
-
-
-
-
-
-
+  
 
 
 
 
 
   
+    
+    
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
-
-
-
-  
-
-
-
-  
-
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
@@ -2303,8 +2357,51 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
 
-  <script type="text/javascript">
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+  
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -2390,7 +2487,7 @@
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
                 
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -2559,9 +2656,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -2633,8 +2730,6 @@
   
 
   
-
-  
   
 
   
@@ -2667,31 +2762,54 @@
   
     
       <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
     });
+  });
 </script>
 
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
   
 
 
   
+
+  
+
+  
+
+  
+
   
 
   
@@ -2701,6 +2819,9 @@
   
 
   
+
+  
+
 
   
 
