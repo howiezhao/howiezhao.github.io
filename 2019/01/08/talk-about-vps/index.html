@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="VPS（Virtual Private Server）即虚拟专用服务器，它不等同于独立服务器，独立服务器是指货真价实的物理机器，而VPS则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，虚拟空间（或虚拟主机）则是指VPS上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而VPS这一中间选择成为了广大爱好者的首选。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-27T06:16:38.943Z">
+<meta property="og:updated_time" content="2019-07-09T03:38:31.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="说说VPS">
 <meta name="twitter:description" content="VPS（Virtual Private Server）即虚拟专用服务器，它不等同于独立服务器，独立服务器是指货真价实的物理机器，而VPS则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，虚拟空间（或虚拟主机）则是指VPS上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而VPS这一中间选择成为了广大爱好者的首选。">
@@ -476,14 +476,19 @@
 <p>BandwagonHost，中文又称搬瓦工，它们采用按月收费，支持支付宝付款，在2019年之前，它们推出过最低每年19.99美元的VPS，这应该是那时候最便宜且稳定的VPS商家了，但如今它们已经取消了这一方案，并全部使用KVM架构，现在它们的最低方案是每年49.99美元，配置1G内存，20G固态，每月1T的流量。</p>
 <p>Vultr，它们采用按小时收费的方式，支持支付宝付款，全部采用KVM架构，现在最低的方案是每年42美元，配置512MB内存，10G固态，每月0.5T的流量，个人非常推荐。</p>
 <p>DigitalOcean，它们同样采用按小时收费的方式，使用信用卡付款，全部采用KVM架构，现在最低的方案是每年60美元，配置1G内存，25G固态，每月1T的流量。</p>
-<h2 id="黑话"><a href="#黑话" class="headerlink" title="黑话"></a>黑话</h2><ul>
+<h2 id="测试VPS性能"><a href="#测试VPS性能" class="headerlink" title="测试VPS性能"></a>测试VPS性能</h2><p>一般在首次连接到VPS之后，建议进行一个性能测试，通常要测试的项目包括磁盘性能、网络性能以及一些基本参数等。这里推荐使用oldking开发的一键测试脚本<a href="https://www.oldking.net/350.html" target="_blank" rel="noopener">SuperBench.sh</a>，具体使用方法如下命令所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh | bash</span><br></pre></td></tr></table></figure></p>
+<h2 id="黑话"><a href="#黑话" class="headerlink" title="黑话"></a>黑话</h2><p>VPS相关的论坛中经常会有一些行业黑话，以下做简要说明：</p>
+<ul>
 <li>杜甫：即独服的意思，指前面提到的独立服务器。</li>
 <li>母鸡：指用来虚拟化VPS的物理主机。</li>
 <li>小鸡：即VPS，尤其指配置比较低的廉价VPS。</li>
 <li>养鸡：续费VPS的过程。</li>
 <li>CN2线路：指中国电信与美国日本韩国香港等地机房直连的服务器线路，速度快且稳定。</li>
+<li>套路云：指阿里云。</li>
+<li>良心云：指腾讯云。</li>
+<li>雨林云：指AWS，取自亚马逊热带雨林。</li>
 </ul>
-<h2 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h2><p>如果你的VPS内存较小，比如512M内存，则建议安装32位操作系统。操作系统建议选择CentOS。</p>
+<h2 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h2><p>如果你的VPS内存较小，比如512M内存以下，则建议安装32位操作系统。操作系统建议选择CentOS 7以上。</p>
 
       
     </div>
@@ -748,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟化技术"><span class="nav-number">1.</span> <span class="nav-text">虚拟化技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收费方式"><span class="nav-number">2.</span> <span class="nav-text">收费方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS商家"><span class="nav-number">3.</span> <span class="nav-text">VPS商家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑话"><span class="nav-number">4.</span> <span class="nav-text">黑话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些建议"><span class="nav-number">5.</span> <span class="nav-text">一些建议</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟化技术"><span class="nav-number">1.</span> <span class="nav-text">虚拟化技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收费方式"><span class="nav-number">2.</span> <span class="nav-text">收费方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS商家"><span class="nav-number">3.</span> <span class="nav-text">VPS商家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试VPS性能"><span class="nav-number">4.</span> <span class="nav-text">测试VPS性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑话"><span class="nav-number">5.</span> <span class="nav-text">黑话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些建议"><span class="nav-number">6.</span> <span class="nav-text">一些建议</span></a></li></ol></div>
             
 
           </div>
@@ -780,7 +785,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">122k</span>
+    <span title="Symbols count total">123k</span>
   
 
   

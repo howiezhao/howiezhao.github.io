@@ -115,18 +115,18 @@
 
 
 
-  <meta name="description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同">
+  <meta name="description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。 在Linux中，环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与Zsh的Shel">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="set、env与export">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/09/set-env-export/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同">
+<meta property="og:description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。 在Linux中，环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与Zsh的Shel">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-06T06:58:39.449Z">
+<meta property="og:updated_time" content="2019-07-13T11:38:15.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="set、env与export">
-<meta name="twitter:description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同">
+<meta name="twitter:description" content="环境变量环境变量，顾名思义由环境和变量两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。 在Linux中，环境变量可以大致分为Shell环境变量和用户环境变量两大类，不同的Shell有不同的Shell环境变量，例如bash与Zsh的Shel">
 
 
 
@@ -460,9 +460,11 @@
       
 
       
-        <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。<br>环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。<br>在Shell中可以使用<code>declare</code>命令直接定义Shell环境变量，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义Shell环境变量A，值为hello，注意等号两边不能有空格</span></span><br><span class="line"><span class="comment"># 按照传统，环境变量一般为全大写</span></span><br><span class="line"><span class="built_in">declare</span> A=hello</span><br></pre></td></tr></table></figure></p>
-<p>使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印A的值，环境变量前需加“$”符号，</span></span><br><span class="line"><span class="comment"># 表示要打印的是环境变量而不是一般字符串</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span></span><br></pre></td></tr></table></figure></p>
-<p>值得注意的是，这种定义只对本Shell有效，关闭Shell后失效。</p>
+        <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。</p>
+<p>在Linux中，环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与Zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。</p>
+<p>在Linux中可以使用<code>declare</code>命令直接定义<strong>Shell环境变量</strong>，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义Shell环境变量A，值为hello，注意等号两边不能有空格</span></span><br><span class="line"><span class="comment"># 按照传统，环境变量一般为全大写</span></span><br><span class="line"><span class="built_in">declare</span> A=hello</span><br></pre></td></tr></table></figure></p>
+<p>同样的，在Linux中使用<code>echo</code>命令即可打印环境变量的值，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印A的值，环境变量前需加“$”符号，</span></span><br><span class="line"><span class="comment"># 表示要打印的是环境变量而不是一般字符串</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span></span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是，这种定义只对当前终端有效，关闭终端后失效。</p>
 <p>常见的Shell环境变量有：</p>
 <ul>
 <li>COLUMNS：当前终端的宽度</li>
@@ -473,12 +475,15 @@
 <li>PATH：用以指定命令的搜索目录</li>
 <li>HOME：用以指定用户的家目录</li>
 <li>SHELL：用以指定用户的登录Shell</li>
+<li>HTTP_PROXY：用以指定终端的HTTP代理信息，与下一个变量要同时设置</li>
+<li>HTTPS_PROXY：用以指定终端的HTTPS代理信息</li>
 </ul>
 <a id="more"></a>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code>命令用来显示或设置Shell环境变量，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>值得注意的是，当<code>declare</code>命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比<code>set</code>显示的结果要更加清晰。<br>关于set命令更多的参数使用说明可参考<a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html" target="_blank" rel="noopener">Bash脚本set命令教程</a></p>
-<h2 id="env"><a href="#env" class="headerlink" title="env"></a>env</h2><p><code>env</code>命令用来显示或设置用户环境变量，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p><code>export</code>命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> a=hello</span><br></pre></td></tr></table></figure></p>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code>命令用来显示或设置<strong>Shell环境变量</strong>，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> A=hello</span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是，当<code>declare</code>命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比<code>set</code>显示的结果要更加清晰。</p>
+<p>关于set命令更多的参数使用说明可参考阮一峰的博文：<a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html" target="_blank" rel="noopener">Bash脚本set命令教程</a></p>
+<h2 id="env（仅限于Linux）"><a href="#env（仅限于Linux）" class="headerlink" title="env（仅限于Linux）"></a>env（仅限于Linux）</h2><p><code>env</code>命令用来显示或设置<strong>用户环境变量</strong>，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h2 id="export（仅限于Linux）"><a href="#export（仅限于Linux）" class="headerlink" title="export（仅限于Linux）"></a>export（仅限于Linux）</h2><p><code>export</code>命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> a=hello</span><br></pre></td></tr></table></figure></p>
 <p>这一步操作实际上完成了两步操作，即：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span> a=hello  <span class="comment">#定义一个Shell环境变量$a</span></span><br><span class="line"><span class="built_in">export</span> <span class="variable">$a</span>  <span class="comment">#导出至用户环境变量</span></span><br></pre></td></tr></table></figure></p>
 
       
@@ -750,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">1.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">2.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#env"><span class="nav-number">3.</span> <span class="nav-text">env</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#export"><span class="nav-number">4.</span> <span class="nav-text">export</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">1.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">2.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#env（仅限于Linux）"><span class="nav-number">3.</span> <span class="nav-text">env（仅限于Linux）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#export（仅限于Linux）"><span class="nav-number">4.</span> <span class="nav-text">export（仅限于Linux）</span></a></li></ol></div>
             
 
           </div>
@@ -782,7 +787,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">122k</span>
+    <span title="Symbols count total">123k</span>
   
 
   
