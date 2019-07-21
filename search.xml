@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Nexus/Pixel相关问题解决]]></title>
+    <url>%2F2019%2F07%2F21%2Fnexus-pixel-problem%2F</url>
+    <content type="text"><![CDATA[移动网络/Wifi出现叹号或叉号Captive Portal是从Android 5开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过HTTP访问一个Google的服务器，若返回200状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回204状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。 显然，Google的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接ADB，针对不同的系统版本，下方分别给出了相关命令： Android 9.0/8.1/8.0/7.1.2/7.1.1：1adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204 Android 7.1/7.0：12adb shell settings delete global captive_portal_server adb shell settings put global captive_portal_detection_enabled 0 Android 5.0-6.x：1adb shell settings put global captive_portal_server www.google.cn 执行之后，开启飞行模式，接着关闭飞行模式即可。 搜索不到WiFi因为美国2.4GHz频段的WiFi信道为1-11，而中国2.4GHz频段的WiFi信道为1-13，所以当2.4GHz频段的WiFi信道位于12或13时，美版的Nexus/Pixel会搜索不到WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为11以内任意信道即可。 4G信号问题由于联通的网络制式一直采用的是国际通用的网络制式，所以Nexus/Pixel可以完美支持联通2G/3G/4G。 移动的3G网络制式采用的是自主研发的技术，所以Nexus/Pixel并不支持移动3G，然而移动4G网络制式采用的是自主研发和国际通用并行的方式，所以Nexus/Pixel只支持部分移动4G频段。 简单来说，Nexus/Pixel完美支持联通2G/3G/4G，支持移动2G，不支持移动3G，部分支持移动4G（具体表现为在城市有4G网络，在农村没有4G网络），电信2G/3G/4G可通过破解（本文不讨论这点）实现支持。 Google（即负一屏）无法使用接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）严格来说，这不算是Nexus/Pixel特有的问题，究其原因是距离感应器坏了，可通过设置使用电源键挂断电话，具体方法为在设置 —&gt; 辅助功能/无障碍中开启按电源按钮结束通话。 蓝牙传输失败，显示不支持此内容由于版权问题，原生Android不支持传输以.apk结尾的文件，可通过将其改为.jpg结尾传输。 Google Play商店更新应用卡住Play商店是通过下载管理器下载应用的，出现这种情况可以直接将下载管理器强行停止，然后重新启动Play商店即可更新应用。]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>硬件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[GCC小记]]></title>
     <url>%2F2019%2F04%2F18%2Fgcc%2F</url>
     <content type="text"><![CDATA[GCC一般有两层意思，大的意思是指GNU Compiler Collection（即GNU编译器套装），小的意思是指GNU C Compiler（即GNU C语言编译器），在本文中，我默认大写的GCC指大的意思，小写的gcc指小的意思。 使用gcc编译C语言源代码的一般格式如下：1$ gcc test.c -o test 常用参数Linux下gcc命令常见的参数及其含义如下所示： --help：显示帮助信息 -o：指定生成的文件名，若不指定，则默认生成a.out -E：生成.i格式的预处理文件 -S：生成.s格式的汇编文件 -c：生成.o格式的二进制文件 -save-temps：保留所有生成的中间文件 -g：生成必要的符号信息，为调试而用 -ggdb：生成可特供于gdb使用的调试信息 -gstabs：生成stabs格式的调试信息 -Wall：显示所有常用的警告信息，即Warning all -m32：指定生成32位程序 -Os：为减小代码大小而进行优化，即Optimizers small -nostdinc：不使用标准库 -fno-stack-protector：不生成用于检测缓冲区溢出的代码 -I&lt;dir&gt;：添加搜索头文件的路径 -fno-builtin：除非用__builtin_前缀，否则不进行builtin函数的优化 跨平台为了在Windows中使用GCC，诞生了MinGW 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的MinGW-w64项目，是从原MinGW项目产生的分支。]]></content>
@@ -566,13 +578,13 @@
   <entry>
     <title><![CDATA[WSL相关问题解决]]></title>
     <url>%2F2018%2F08%2F21%2Fwsl-problem%2F</url>
-    <content type="text"><![CDATA[名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux此条命令，也能达到同样的效果。完成上述操作后，可直接在Microsoft Store中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行do-release-upgrade命令升级到最新版。下载完成后，要启动Ubuntu有多种方式，可以在PowerShell或cmd中输入wsl或bash或ubuntu都可启动，也可以直接在开始菜单中点击Ubuntu图标启动。 SSH问题要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：12345Port 2222 #将22改为2222，因Win10中自带的SSH服务也在监听22端口ListenAddress 0.0.0.0 #取消注释，监听所有端口UsePrivilegeSeparation no #将yes修改为noPermitRootLogin yes #将prohibit-password修改为yes，允许root用户登录，视个人情况而定PasswordAuthentication yes #将no修改为yes，允许密码登录 修改完成后用sudo service ssh start启动SSH服务，可能会报如下错误：1234Could not load host key: /etc/ssh/ssh_host_rsa_keyCould not load host key: /etc/ssh/ssh_host_dsa_keyCould not load host key: /etc/ssh/ssh_host_ecdsa_keyCould not load host key: /etc/ssh/ssh_host_ed25519_key 并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：1Connection closed by 127.0.0.1 port 2222 造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：1234ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_keyssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_keyssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_keyssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key 其中-t参数表示加密类型，-f参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。 图形界面问题在你当前所使用的shell的配置文件里（比如.bashrc或.zshrc），添加如下命令：1export DISPLAY=localhost:0 随后打开X Server客户端（比如Xming或VcXsrv）并将Display项设为0即可运行图形化应用。笔者所使用的是MobaXterm，其设置路径为Settings ——&gt; Configuration ——&gt; X11 ——&gt; Display offset。 EXE程序问题netstat和ps后台运行问题更多有关WSL的更多内容，可以查看WSL官方文档，或者WSL官方博客，在使用WSL的过程中遇到任何问题，可以去WSL的GitHub地址提Issues。]]></content>
+    <content type="text"><![CDATA[名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux此条命令，也能达到同样的效果。完成上述操作后，可直接在Microsoft Store中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行do-release-upgrade命令升级到最新版。下载完成后，要启动Ubuntu有多种方式，可以在PowerShell或cmd中输入wsl或bash或ubuntu都可启动，也可以直接在开始菜单中点击Ubuntu图标启动。 SSH问题要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：12345Port 2222 #将22改为2222，因Win10中自带的SSH服务也在监听22端口ListenAddress 0.0.0.0 #取消注释，监听所有端口UsePrivilegeSeparation no #将yes修改为noPermitRootLogin yes #将prohibit-password修改为yes，允许root用户登录，视个人情况而定PasswordAuthentication yes #将no修改为yes，允许密码登录 修改完成后用sudo service ssh start启动SSH服务，可能会报如下错误：1234Could not load host key: /etc/ssh/ssh_host_rsa_keyCould not load host key: /etc/ssh/ssh_host_dsa_keyCould not load host key: /etc/ssh/ssh_host_ecdsa_keyCould not load host key: /etc/ssh/ssh_host_ed25519_key 并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：1Connection closed by 127.0.0.1 port 2222 造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：1234ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_keyssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_keyssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_keyssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key 其中-t参数表示加密类型，-f参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。 图形界面问题在你当前所使用的shell的配置文件里（比如.bashrc或.zshrc），添加如下命令：1export DISPLAY=localhost:0 随后打开X Server客户端（比如Xming或VcXsrv）并将Display项设为0即可运行图形化应用。笔者所使用的是MobaXterm，其设置路径为Settings —&gt; Configuration —&gt; X11 —&gt; Display offset。 EXE程序问题netstat和ps后台运行问题更多有关WSL的更多内容，可以查看WSL官方文档，或者WSL官方博客，在使用WSL的过程中遇到任何问题，可以去WSL的GitHub地址提Issues。]]></content>
       <categories>
         <category>Bug</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Linux</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -916,9 +928,9 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>渗透</tag>
         <tag>计算机取证</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>

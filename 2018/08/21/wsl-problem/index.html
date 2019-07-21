@@ -94,14 +94,14 @@
 </script>
 
   <meta name="description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOp">
-<meta name="keywords" content="Windows,Linux">
+<meta name="keywords" content="Linux,Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WSL相关问题解决">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/21/wsl-problem/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOp">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-19T16:00:40.669Z">
+<meta property="og:updated_time" content="2019-07-21T05:17:13.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSL相关问题解决">
 <meta name="twitter:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOp">
@@ -482,7 +482,7 @@
 <p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure></p>
 <p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p>
 <h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><p>在你当前所使用的shell的配置文件里（比如<code>.bashrc</code>或<code>.zshrc</code>），添加如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export DISPLAY=localhost:0</span><br></pre></td></tr></table></figure></p>
-<p>随后打开X Server客户端（比如<a href="https://sourceforge.net/projects/xming/" target="_blank" rel="noopener">Xming</a>或<a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="noopener">VcXsrv</a>）并将Display项设为0即可运行图形化应用。笔者所使用的是<a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener">MobaXterm</a>，其设置路径为Settings ——&gt; Configuration ——&gt; X11 ——&gt; Display offset。</p>
+<p>随后打开X Server客户端（比如<a href="https://sourceforge.net/projects/xming/" target="_blank" rel="noopener">Xming</a>或<a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="noopener">VcXsrv</a>）并将Display项设为0即可运行图形化应用。笔者所使用的是<a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener">MobaXterm</a>，其设置路径为<strong>Settings</strong> —&gt; <strong>Configuration</strong> —&gt; <strong>X11</strong> —&gt; <strong>Display offset</strong>。</p>
 <h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2><h2 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关WSL的更多内容，可以查看<a href="https://docs.microsoft.com/zh-cn/windows/wsl/about" target="_blank" rel="noopener">WSL官方文档</a>，或者<a href="https://blogs.msdn.microsoft.com/wsl/" target="_blank" rel="noopener">WSL官方博客</a>，在使用WSL的过程中遇到任何问题，可以去<a href="https://github.com/Microsoft/WSL" target="_blank" rel="noopener">WSL的GitHub地址</a>提Issues。</p>
 
       
@@ -514,9 +514,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
-          
             <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
           
         </div>
       
@@ -619,7 +619,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">111</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -691,7 +691,9 @@
         
           
         
-        <span class="site-state-item-count">15</span>
+          
+        
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -821,7 +823,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">123k</span>
+    <span title="Symbols count total">124k</span>
   
 
   
