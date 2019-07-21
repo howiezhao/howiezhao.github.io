@@ -583,8 +583,8 @@
         <category>Bug</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Windows</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -928,9 +928,9 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
+        <tag>Windows</tag>
         <tag>渗透</tag>
         <tag>计算机取证</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
