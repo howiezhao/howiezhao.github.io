@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2019-07-21T16:02:34.406Z</updated>
+  <updated>2019-07-29T05:09:00.844Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -17,13 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ADB小记</title>
+    <link href="https://howiezhao.github.io/2019/07/29/adb/"/>
+    <id>https://howiezhao.github.io/2019/07/29/adb/</id>
+    <published>2019-07-29T04:56:04.000Z</published>
+    <updated>2019-07-29T05:09:00.844Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="error-device-still-connecting"><a href="#error-device-still-connecting" class="headerlink" title="error: device still connecting"></a>error: device still connecting</h3><p>输入<code>adb shell</code>时显示<code>error: device still connecting</code>，一般可通过：关闭<strong>开发者模式</strong>然后重新打开<strong>开发者模式</strong>，接着开启<strong>USB调试</strong>并重新和电脑配对，即可解决。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;相关问题&quot;&gt;&lt;a href=&quot;#相关问题&quot; class=&quot;headerlink&quot; title=&quot;相关问题&quot;&gt;&lt;/a&gt;相关问题&lt;/h2&gt;&lt;h3 id=&quot;error-device-still-connecting&quot;&gt;&lt;a href=&quot;#error-device-sti
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Android" scheme="https://howiezhao.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Windows的代理设置</title>
+    <link href="https://howiezhao.github.io/2019/07/29/about-the-proxy-settings-for-windows/"/>
+    <id>https://howiezhao.github.io/2019/07/29/about-the-proxy-settings-for-windows/</id>
+    <published>2019-07-29T04:21:18.000Z</published>
+    <updated>2019-07-29T04:52:40.009Z</updated>
+    
+    <content type="html"><![CDATA[<p>Windows的<strong>系统代理</strong>使用的其实是<strong>IE的代理设置</strong>，此外，对于<strong>绝大多数</strong>的应用程序而言，它们默认使用的也是IE的代理设置，比如，Chrome、Firefox、Microsoft Store等。因此，如果想让绝大多数的应用程序使用代理，一个简单的方法是直接设置IE的代理（即系统代理）。不过，对于一小部分没有使用IE代理设置的应用程序，比如Android Studio等，你可能需要单独设置它们的代理（一般在软件的设置项中）。</p><p>值得注意的是，同为应用程序的<strong>Shell</strong>（包括<strong>命令提示符</strong>和<strong>PowerShell</strong>）就没有使用IE的代理设置，它们各自有自己的代理设置。具体而言，要为命令提示符设置代理，可使用如下两条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set HTTP_PROXY=http://user:password@proxy.domain.com:port</span><br><span class="line">set HTTPS_PROXY=https://user:password@proxy.domain.com:port</span><br></pre></td></tr></table></figure></p><p>而要为PowerShell设置代理则要使用<a href="">这个脚本</a>。</p><p>最后，对于Shell中运行的程序，有一部分使用的是IE的代理设置，比如<code>pip</code>、<code>git</code>、<code>npm</code>等，另一部分则使用的是Shell的代理设置，比如<code>curl</code>等。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Windows的&lt;strong&gt;系统代理&lt;/strong&gt;使用的其实是&lt;strong&gt;IE的代理设置&lt;/strong&gt;，此外，对于&lt;strong&gt;绝大多数&lt;/strong&gt;的应用程序而言，它们默认使用的也是IE的代理设置，比如，Chrome、Firefox、Microsof
+      
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Nexus/Pixel相关问题解决</title>
     <link href="https://howiezhao.github.io/2019/07/21/nexus-pixel-problem/"/>
     <id>https://howiezhao.github.io/2019/07/21/nexus-pixel-problem/</id>
     <published>2019-07-21T02:15:55.000Z</published>
-    <updated>2019-07-21T16:02:34.406Z</updated>
+    <updated>2019-07-29T05:40:28.445Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="移动网络-Wifi出现叹号或叉号"><a href="#移动网络-Wifi出现叹号或叉号" class="headerlink" title="移动网络/Wifi出现叹号或叉号"></a>移动网络/Wifi出现叹号或叉号</h2><p>Captive Portal是从Android 5开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过HTTP访问一个Google的服务器，若返回200状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回204状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。</p><p>显然，Google的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接ADB，针对不同的系统版本，下方分别给出了相关命令：</p><p>Android 9.0/8.1/8.0/7.1.2/7.1.1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure></p><p>Android 7.1/7.0：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure></p><p>Android 5.0-6.x：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure></p><p>执行之后，开启飞行模式，接着关闭飞行模式即可。<br><a id="more"></a></p><h2 id="搜索不到WiFi"><a href="#搜索不到WiFi" class="headerlink" title="搜索不到WiFi"></a>搜索不到WiFi</h2><p>因为美国2.4GHz频段的WiFi信道为1-11，而中国2.4GHz频段的WiFi信道为1-13，所以当2.4GHz频段的WiFi信道位于12或13时，美版的Nexus/Pixel会搜索不到WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为11以内任意信道即可。</p><h2 id="4G信号问题"><a href="#4G信号问题" class="headerlink" title="4G信号问题"></a>4G信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以Nexus/Pixel可以完美支持联通2G/3G/4G。</p><p>移动的3G网络制式采用的是自主研发的技术，所以Nexus/Pixel并不支持移动3G，然而移动4G网络制式采用的是自主研发和国际通用并行的方式，所以Nexus/Pixel只支持部分移动4G频段。</p><p>简单来说，Nexus/Pixel完美支持联通2G/3G/4G，支持移动2G，不支持移动3G，部分支持移动4G（具体表现为在城市有4G网络，在农村没有4G网络），电信2G/3G/4G可通过破解（本文不讨论这点）实现支持。</p><h2 id="Google（即负一屏）无法使用"><a href="#Google（即负一屏）无法使用" class="headerlink" title="Google（即负一屏）无法使用"></a>Google（即负一屏）无法使用</h2><h2 id="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"><a href="#接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）" class="headerlink" title="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"></a>接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</h2><p>严格来说，这不算是Nexus/Pixel特有的问题，究其原因是距离感应器坏了，可通过设置使用电源键挂断电话，具体方法为在<strong>设置</strong> —&gt; <strong>辅助功能/无障碍</strong>中开启<strong>按电源按钮结束通话</strong>。</p><h2 id="蓝牙传输失败，显示不支持此内容"><a href="#蓝牙传输失败，显示不支持此内容" class="headerlink" title="蓝牙传输失败，显示不支持此内容"></a>蓝牙传输失败，显示不支持此内容</h2><p>由于版权问题，原生Android不支持传输以<code>.apk</code>结尾的文件，可通过将其改为<code>.jpg</code>结尾传输。</p><h2 id="Google-Play商店更新应用卡住"><a href="#Google-Play商店更新应用卡住" class="headerlink" title="Google Play商店更新应用卡住"></a>Google Play商店更新应用卡住</h2><p>Play商店是通过<strong>下载管理器</strong>下载应用的，出现这种情况可以直接将<strong>下载管理器</strong>强行停止，然后重新启动Play商店即可更新应用。</p><h2 id="系统无法更新"><a href="#系统无法更新" class="headerlink" title="系统无法更新"></a>系统无法更新</h2><p>具体表现为<strong>系统更新</strong>处永远显示<strong>正在安装系统更新</strong>，一般来说，这是由于网络原因引起的，目前并没有一个稳定的解决办法，建议直接下载新系统镜像并线刷。你可以在<a href="https://developers.google.cn/android/images" target="_blank" rel="noopener">这个官方地址</a>找到有关Nexus/Pixel的所有出厂镜像，其中也附带有详细的安装方法。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="移动网络-Wifi出现叹号或叉号"><a href="#移动网络-Wifi出现叹号或叉号" class="headerlink" title="移动网络/Wifi出现叹号或叉号"></a>移动网络/Wifi出现叹号或叉号</h2><p>Captive Portal是从Android 5开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过HTTP访问一个Google的服务器，若返回200状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回204状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。</p><p>显然，Google的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接ADB，针对不同的系统版本，下方分别给出了相关命令：</p><p>Android 9.0/8.1/8.0/7.1.2/7.1.1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure></p><p>Android 7.1/7.0：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure></p><p>Android 5.0-6.x：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure></p><p>执行之后，开启飞行模式，接着关闭飞行模式即可。<br><a id="more"></a></p><h2 id="搜索不到WiFi"><a href="#搜索不到WiFi" class="headerlink" title="搜索不到WiFi"></a>搜索不到WiFi</h2><p>因为美国2.4GHz频段的WiFi信道为1-11，而中国2.4GHz频段的WiFi信道为1-13，所以当2.4GHz频段的WiFi信道位于12或13时，美版的Nexus/Pixel会搜索不到WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为11以内任意信道即可。</p><h2 id="4G信号问题"><a href="#4G信号问题" class="headerlink" title="4G信号问题"></a>4G信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以Nexus/Pixel可以完美支持联通2G/3G/4G。</p><p>移动的3G网络制式采用的是自主研发的技术，所以Nexus/Pixel并不支持移动3G，然而移动4G网络制式采用的是自主研发和国际通用并行的方式，所以Nexus/Pixel只支持部分移动4G频段。</p><p>简单来说，Nexus/Pixel完美支持联通2G/3G/4G，支持移动2G，不支持移动3G，部分支持移动4G（具体表现为在城市有4G网络，在农村没有4G网络），电信2G/3G/4G可通过破解（本文不讨论这点）实现支持。</p><h2 id="Google（即负一屏）无法使用"><a href="#Google（即负一屏）无法使用" class="headerlink" title="Google（即负一屏）无法使用"></a>Google（即负一屏）无法使用</h2><h2 id="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"><a href="#接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）" class="headerlink" title="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"></a>接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</h2><p>严格来说，这不算是Nexus/Pixel特有的问题，究其原因是距离感应器坏了，可通过设置使用电源键挂断电话，具体方法为在<strong>设置</strong> —&gt; <strong>辅助功能/无障碍</strong>中开启<strong>按电源按钮结束通话</strong>。</p><h2 id="蓝牙传输失败，显示不支持此内容"><a href="#蓝牙传输失败，显示不支持此内容" class="headerlink" title="蓝牙传输失败，显示不支持此内容"></a>蓝牙传输失败，显示不支持此内容</h2><p>由于版权问题，原生Android不支持传输以<code>.apk</code>结尾的文件，可通过将其改为<code>.jpg</code>结尾传输。</p><h2 id="Google-Play商店更新应用卡住"><a href="#Google-Play商店更新应用卡住" class="headerlink" title="Google Play商店更新应用卡住"></a>Google Play商店更新应用卡住</h2><p>在Android 9.0之前，Play商店是通过<strong>下载管理器</strong>下载应用的，出现这种情况可以直接将<strong>下载管理器</strong>强行停止，然后重新启动Play商店即可更新应用。在Android 9.0之后，可直接将Play商店强行停止再重新启动即可。</p><h2 id="系统无法更新"><a href="#系统无法更新" class="headerlink" title="系统无法更新"></a>系统无法更新</h2><p>具体表现为<strong>系统更新</strong>处永远显示<strong>正在安装系统更新</strong>，一般来说，这是由于网络原因引起的，目前并没有一个稳定的解决办法，建议直接下载新系统镜像并线刷。你可以在<a href="https://developers.google.cn/android/images" target="_blank" rel="noopener">这个官方地址</a>找到有关Nexus/Pixel的所有出厂镜像，其中也附带有详细的安装方法。</p><p>具体而言，你需要先解锁Bootloader，然后连接ADB，紧接着执行<code>adb reboot bootloader</code>进入fastboot模式，最后执行相应系统的<code>flash-all</code>脚本即可。</p><h2 id="Pixel-Pixel-XL-Verizon版解锁Bootloader教程"><a href="#Pixel-Pixel-XL-Verizon版解锁Bootloader教程" class="headerlink" title="Pixel/Pixel XL Verizon版解锁Bootloader教程"></a>Pixel/Pixel XL Verizon版解锁Bootloader教程</h2><p>教程来源自xda上的一篇<a href="https://www.xda-developers.com/unlock-bootloader-verizon-google-pixel-xl/" target="_blank" rel="noopener">文章</a>，具体步骤如下：</p><ol><li>从您的设备中删除Google帐户和任何类型的屏幕锁定（指纹，PIN，图案等）。</li><li>从您的设备中取出SIM卡。</li><li>重置您的设备。在设置向导中，跳过所有内容，不要连接到WiFi，不要添加指纹或任何类型的屏幕锁定。</li><li>转到开发人员选项并启用USB调试。</li><li>将手机连接到PC。</li><li>在adb目录中打开CMD并输入：<code>adb shell pm uninstall --user 0 com.android.phone</code></li><li>重启您的设备。</li><li>连接到WiFi，打开Chrome并转到google.com（或任何网站）。</li><li>转到开发人员选项并启用OEM解锁。</li><li>重启到bootloader并通过CMD运行：<code>fastboot oem unlock</code>或<code>fastboot flashing unlock</code>。</li><li>完成。</li></ol>]]></content>
     
     <summary type="html">
     
@@ -144,9 +194,9 @@
     <link href="https://howiezhao.github.io/2019/03/23/android-shuaji-guide/"/>
     <id>https://howiezhao.github.io/2019/03/23/android-shuaji-guide/</id>
     <published>2019-03-23T03:42:58.000Z</published>
-    <updated>2019-03-24T06:03:33.499Z</updated>
+    <updated>2019-07-22T13:18:26.295Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="软重启与硬重启"><a href="#软重启与硬重启" class="headerlink" title="软重启与硬重启"></a>软重启与硬重启</h3><p><strong>软重启</strong>（又称<strong>热重启</strong>）是指从操作系统层面上关机再开机，而<strong>硬重启</strong>（又称<strong>冷重启</strong>）是指直接关掉电源再开机。类似的，也有<strong>软（热）关机</strong>和<strong>硬（冷）关机</strong>，其区别类似于在Windows“开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。<br><a id="more"></a></p><h3 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h3>]]></content>
+    <content type="html"><![CDATA[<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="软重启与硬重启"><a href="#软重启与硬重启" class="headerlink" title="软重启与硬重启"></a>软重启与硬重启</h3><p><strong>软重启</strong>（又称<strong>热重启</strong>）是指从操作系统层面上关机再开机，而<strong>硬重启</strong>（又称<strong>冷重启</strong>）是指直接关掉电源再开机。类似的，也有<strong>软（热）关机</strong>和<strong>硬（冷）关机</strong>，其区别类似于在Windows“开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。<br><a id="more"></a></p><h3 id="Bootloader-fastboot-Recovery"><a href="#Bootloader-fastboot-Recovery" class="headerlink" title="Bootloader/fastboot/Recovery"></a>Bootloader/fastboot/Recovery</h3><h3 id="Full-OTA-Image与Factory-Image"><a href="#Full-OTA-Image与Factory-Image" class="headerlink" title="Full OTA Image与Factory Image"></a>Full OTA Image与Factory Image</h3><h2 id="刷机流程"><a href="#刷机流程" class="headerlink" title="刷机流程"></a>刷机流程</h2><ol><li>提前备份必要的数据（下载的音乐、视频，QQ、微信的聊天记录，通话记录、短信、通讯录，相册等），尽量保持电量满。</li><li>恢复出厂设置（亦或，取消所有安全机制，如屏幕锁定等，并退出Google账号。）。</li><li>在开发者选项中开启USB调试。</li><li>解锁Bootloader（需要的话）。</li><li>刷入第三方Recovery，如TWRP。<a href="https://twrp.me/" target="_blank" rel="noopener">https://twrp.me/</a></li><li>从TWRP中安装第三方ROM，顺便root。</li></ol><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="开机无限进入TWRP"><a href="#开机无限进入TWRP" class="headerlink" title="开机无限进入TWRP"></a>开机无限进入TWRP</h3><p>碰到这种情况，你可能需要格式化Data分区。</p>]]></content>
     
     <summary type="html">
     
@@ -156,6 +206,8 @@
     
       <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
     
+    
+      <category term="Android" scheme="https://howiezhao.github.io/tags/Android/"/>
     
   </entry>
   
@@ -396,38 +448,6 @@
     <id>https://howiezhao.github.io/2018/12/16/gitbook/</id>
     <published>2018-12-16T09:01:38.000Z</published>
     <updated>2018-12-16T09:02:17.360Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>高级搜索技巧</title>
-    <link href="https://howiezhao.github.io/2018/11/20/advanced-search-tips/"/>
-    <id>https://howiezhao.github.io/2018/11/20/advanced-search-tips/</id>
-    <published>2018-11-20T06:37:11.000Z</published>
-    <updated>2018-11-20T06:37:38.627Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>身份认证的几种方式</title>
-    <link href="https://howiezhao.github.io/2018/11/16/authentication/"/>
-    <id>https://howiezhao.github.io/2018/11/16/authentication/</id>
-    <published>2018-11-16T09:26:53.000Z</published>
-    <updated>2018-11-22T06:46:49.974Z</updated>
     
     <summary type="html">
     
