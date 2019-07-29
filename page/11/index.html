@@ -1917,7 +1917,12 @@
         
           
             <h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以讲U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
+<p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以将U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
+<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好Kali并启动之后，会发现Kali的系统时间始终无法和Windows的系统时间保持一致，具体表现如下：</p>
+<blockquote>
+<p>开始时，Windows系统时间准确，启动Kali之后，Kali系统时间错误，将其更新正确之后，关闭Kali，进入Windows，发现Windows系统时间又错误。</p>
+</blockquote>
+<p>出现这种情况的原因是Windows和Linux的时间机制不一样，具体而言，Windows的时间就是硬件BIOS的时间，而Linux的时间则是硬件BIOS加上所在时区的时间。解决方法是，在Kali中执行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl <span class="built_in">set</span>-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure></p>
 
           
         
