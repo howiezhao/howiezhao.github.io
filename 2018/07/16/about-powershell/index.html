@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：  Windows XP SP2 / Server 2003 SP1：PowerShell 1.0 Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated S">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-21T09:20:41.856Z">
+<meta property="og:updated_time" content="2019-07-30T13:52:49.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于PowerShell">
 <meta name="twitter:description" content="PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：  Windows XP SP2 / Server 2003 SP1：PowerShell 1.0 Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated S">
@@ -486,13 +486,14 @@
 <a id="more"></a>
 <h2 id="优势及劣势"><a href="#优势及劣势" class="headerlink" title="优势及劣势"></a>优势及劣势</h2><p>PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。<br>劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。</p>
 <h2 id="Cmdlets与pipeline"><a href="#Cmdlets与pipeline" class="headerlink" title="Cmdlets与pipeline"></a>Cmdlets与pipeline</h2><p>Cmdlets与pipeline是PowerShell中的两个核心概念，</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如ls、mv、ps、cat、kill、wget、clear等，下面介绍的命令为PowerShell所不同于Linux中的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Get-Host <span class="comment">#查看PowerShell版本信息</span></span><br><span class="line"><span class="built_in">help</span> <span class="comment">#查看帮助信息</span></span><br><span class="line">Install-Module <span class="comment">#从powershellgallery.com下载安装第三方模块</span></span><br><span class="line">Import-Module <span class="comment">#导入模块，安装的模块需要先导入才能使用</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如<code>ls</code>、<code>mv</code>、<code>ps</code>、<code>cat</code>、<code>kill</code>、<code>wget</code>、<code>clear</code>等，下面介绍的命令为PowerShell所不同于Linux中的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看PowerShell版本信息</span></span><br><span class="line">Get-Host</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看帮助信息</span></span><br><span class="line"><span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有已经设置的别名</span></span><br><span class="line">Get-Alias</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从powershellgallery.com下载安装第三方模块</span></span><br><span class="line">Install-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入模块，安装的模块需要先导入才能使用</span></span><br><span class="line">Import-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载模块</span></span><br><span class="line">Uninstall-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新模块</span></span><br><span class="line">Update-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出已安装模块</span></span><br><span class="line">Get-InstalledModule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PowerShellGet模块有哪些命令</span></span><br><span class="line">Get-Command -Module PowerShellGet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 升级帮助手册</span></span><br><span class="line">Update-Help</span><br></pre></td></tr></table></figure></p>
 <h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><ul>
 <li><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="noopener">posh-git</a>：PowerShell中的Git增强模块</li>
 <li><a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener">oh-my-posh</a>：类似于oh-my-zsh</li>
 <li><a href="https://github.com/lzybkr/PSReadLine" target="_blank" rel="noopener">PSReadline</a>：一个增强的命令行编辑模块</li>
 <li><a href="https://github.com/JulianChow94/Windows-screenFetch" target="_blank" rel="noopener">windows-screenfetch</a>：Windows下的screenfetch模块</li>
 </ul>
+<h2 id="Microsoft-PowerShell-profile-ps1"><a href="#Microsoft-PowerShell-profile-ps1" class="headerlink" title="Microsoft.PowerShell_profile.ps1"></a>Microsoft.PowerShell_profile.ps1</h2><p>和一般的Linux中的Shell一样，PowerShell也有一个配置文件，即<code>Microsoft.PowerShell_profile.ps1</code>，当PowerShell运行时会默认加载此配置文件中的设置。一般而言，用户级别的配置文件位于<code>%HOMEPATH%\Documents\WindowsPowerShell</code>下，当然，你也可以使用<code>echo $profile</code>命令查看具体的位置。</p>
 
       
     </div>
@@ -797,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本"><span class="nav-number">1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优势及劣势"><span class="nav-number">2.</span> <span class="nav-text">优势及劣势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cmdlets与pipeline"><span class="nav-number">3.</span> <span class="nav-text">Cmdlets与pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用模块"><span class="nav-number">5.</span> <span class="nav-text">常用模块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本"><span class="nav-number">1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优势及劣势"><span class="nav-number">2.</span> <span class="nav-text">优势及劣势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cmdlets与pipeline"><span class="nav-number">3.</span> <span class="nav-text">Cmdlets与pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用模块"><span class="nav-number">5.</span> <span class="nav-text">常用模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Microsoft-PowerShell-profile-ps1"><span class="nav-number">6.</span> <span class="nav-text">Microsoft.PowerShell_profile.ps1</span></a></li></ol></div>
             
 
           </div>
@@ -830,7 +831,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">126k</span>
+    <span title="Symbols count total">127k</span>
   
 
   
