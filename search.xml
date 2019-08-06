@@ -623,7 +623,7 @@
   <entry>
     <title><![CDATA[Hyper-V相关问题解决]]></title>
     <url>%2F2018%2F08%2F20%2Fhyper-v-problem%2F</url>
-    <content type="text"><![CDATA[全屏问题由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用远程桌面连接，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改/etc/default/grub文件，更改其中GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;（注意是x不是*），接着执行update-grub并重启即可。 显卡问题开启Hyper-V功能后，原主机的显卡可能会出现问题，对于我的1803版Win10来说，电脑中原来的Intel(R) HD Graphics 4600核芯显卡不能正常工作，具体表现在工具栏中英特尔核芯显卡控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。究其原因是系统中原本的4624版驱动程序与Hyper-V不兼容，解决办法是去官网下载最新版驱动程序并升级即可。 兼容性问题由于Hyper-V采用的是硬件虚拟化技术，所以开启Hyper-V功能后相当于原本的物理机也运行在虚拟化上了，因此不能再使用VMware或者VirtualBox，它们不允许在虚拟机上运行虚拟机，而此时原主机在它们眼中就是一个虚拟机。早期的Android Studio中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4版之后自带模拟器(v27.3.9)已经可以支持Hyper-V，在开启Hyper-V的系统中，它使用Windows虚拟机监控程序平台替代了Intel的HAXM，使用前需要在Windows功能中启用Windows虚拟机监控程序平台功能。 网卡问题要想使Hyper-V中的虚拟机上网，可以通过创建虚拟交换机实现，虚拟交换机有3种类型，外部相当于VMware的桥接模式，内部相当于VMware的NAT模式，专用相当于VMware的仅主机模式，所有虚拟机会默认使用内部类型的默认交换机，这是虚拟交换机管理器自动创建的。如果我们选择创建外部类型的虚拟交换机，则会把Hyper-V的网络桥接在物理网卡上，那物理网卡将变成一个虚拟交换机。因此我们会发现原来使用的网卡变成了vEthernet，这是正常现象，不用担心。Hyper-V会自动创建一个虚拟网卡来继承原物理网卡的配置，物理计算机可以正常使用网络。 代数问题在创建虚拟机时可以选择虚拟机代数，简单来说，第一代虚拟机支持创建32位与64位操作系统，创建的虚拟硬盘为.vhd格式，第二代虚拟机只能创建64位操作系统，创建的虚拟硬盘为.vhdx格式，并且必须是Windows 8或者Windows Server 2012以上版本，对于Linux，微软官方有一份详细的清单表明哪些版本可以创建第二代虚拟机。为方便起见，可以在首次创建时选择第二代虚拟机，若不能成功启动，且屏幕显示No operating system was loaded. Press a key to retry the boot sequence...信息，则可以在设置中关闭安全启动并重启虚拟机，或者删掉虚拟机并重新创建第一代虚拟机。]]></content>
+    <content type="text"><![CDATA[全屏问题由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用远程桌面连接，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改/etc/default/grub文件，更改其中GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;（注意是x不是*），接着执行update-grub并重启即可。 显卡问题开启Hyper-V功能后，原主机的显卡可能会出现问题，对于我的1803版Win10来说，电脑中原来的Intel(R) HD Graphics 4600核芯显卡（针对我的电脑而言）不能正常工作，具体表现在工具栏中英特尔核芯显卡控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。究其原因是系统中原本的4624版驱动程序与Hyper-V不兼容，解决办法是去官网下载最新版驱动程序并升级即可。 兼容性问题由于Hyper-V采用的是硬件虚拟化技术，所以开启Hyper-V功能后相当于原本的物理机也运行在虚拟化上了，因此不能再使用VMware或者VirtualBox，它们不允许在虚拟机上运行虚拟机，而此时原主机在它们眼中就是一个虚拟机。早期的Android Studio中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4版之后自带模拟器(v27.3.9)已经可以支持Hyper-V，在开启Hyper-V的系统中，它使用Windows虚拟机监控程序平台替代了Intel的HAXM，使用前需要在Windows功能中启用Windows虚拟机监控程序平台功能。 网卡问题要想使Hyper-V中的虚拟机上网，可以通过创建虚拟交换机实现，虚拟交换机有3种类型，外部相当于VMware的桥接模式，内部相当于VMware的NAT模式，专用相当于VMware的仅主机模式，所有虚拟机会默认使用内部类型的默认交换机，这是虚拟交换机管理器自动创建的。如果我们选择创建外部类型的虚拟交换机，则会把Hyper-V的网络桥接在物理网卡上，那物理网卡将变成一个虚拟交换机。因此我们会发现原来使用的网卡变成了vEthernet，这是正常现象，不用担心。Hyper-V会自动创建一个虚拟网卡来继承原物理网卡的配置，物理计算机可以正常使用网络。 代数问题在创建虚拟机时可以选择虚拟机代数，简单来说，第一代虚拟机支持创建32位与64位操作系统，创建的虚拟硬盘为.vhd格式，第二代虚拟机只能创建64位操作系统，创建的虚拟硬盘为.vhdx格式，并且必须是Windows 8或者Windows Server 2012以上版本，对于Linux，微软官方有一份详细的清单表明哪些版本可以创建第二代虚拟机。为方便起见，可以在首次创建时选择第二代虚拟机，若不能成功启动，且屏幕显示No operating system was loaded. Press a key to retry the boot sequence...信息，则可以在设置中关闭安全启动并重启虚拟机，或者删掉虚拟机并重新创建第一代虚拟机。]]></content>
       <categories>
         <category>Bug</category>
       </categories>
@@ -953,8 +953,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>Windows</tag>
+        <tag>渗透</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>
