@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2019-07-29T05:09:00.844Z</updated>
+  <updated>2019-08-07T14:35:40.229Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scheme的五法十诫</title>
+    <link href="https://howiezhao.github.io/2019/08/07/scheme-commandments-and-laws/"/>
+    <id>https://howiezhao.github.io/2019/08/07/scheme-commandments-and-laws/</id>
+    <published>2019-08-07T13:42:23.000Z</published>
+    <updated>2019-08-07T14:35:40.229Z</updated>
+    
+    <content type="html"><![CDATA[<p>节选自《The Little Schemer》</p><h2 id="Scheme-五法"><a href="#Scheme-五法" class="headerlink" title="Scheme 五法"></a>Scheme 五法</h2><h3 id="Scheme-五法之第一法-——-car-之法则"><a href="#Scheme-五法之第一法-——-car-之法则" class="headerlink" title="Scheme 五法之第一法 —— car 之法则"></a>Scheme 五法之第一法 —— car 之法则</h3><p>基本元件 <em>car</em> 仅定义为针对非空列表。</p><h3 id="Scheme-五法之第二法-——-cdr-之法则"><a href="#Scheme-五法之第二法-——-cdr-之法则" class="headerlink" title="Scheme 五法之第二法 —— cdr 之法则"></a>Scheme 五法之第二法 —— cdr 之法则</h3><p>基本元件 <em>cdr</em> 仅定义为针对非空列表。任意非空列表的 <em>cdr</em> 总是另一个列表。</p><h3 id="Scheme-五法之第三法-——-cons-之法则"><a href="#Scheme-五法之第三法-——-cons-之法则" class="headerlink" title="Scheme 五法之第三法 —— cons 之法则"></a>Scheme 五法之第三法 —— cons 之法则</h3><p>基本元件 <em>cons</em> 需要两个参数。第二个参数必须是一个列表。结果是一个列表。</p><h3 id="Scheme-五法之第四法-——-Null-之法则"><a href="#Scheme-五法之第四法-——-Null-之法则" class="headerlink" title="Scheme 五法之第四法 —— Null? 之法则"></a>Scheme 五法之第四法 —— Null? 之法则</h3><p>基本元件 <em>null?</em> 仅定义为针对列表。</p><h3 id="Scheme-五法之第五法-——-eq-之法则"><a href="#Scheme-五法之第五法-——-eq-之法则" class="headerlink" title="Scheme 五法之第五法 —— eq? 之法则"></a>Scheme 五法之第五法 —— eq? 之法则</h3><p>基本元件 <em>eq?</em> 需要两个参数。每个参数都必须是一个非数字的原子。<br><a id="more"></a></p><h2 id="Scheme十诫"><a href="#Scheme十诫" class="headerlink" title="Scheme十诫"></a>Scheme十诫</h2><h3 id="第一诫"><a href="#第一诫" class="headerlink" title="第一诫"></a>第一诫</h3><p>当对一个原子列表 <em>lat</em> 进行递归调用时，询问两个有关 <em>lat</em> 的问题：<em>(null? lat)</em> 和 <strong>else</strong>。</p><p>当对一个数字 <em>n</em> 进行递归调用时，询问两个有关 <em>n</em> 的问题：<em>(zero? n)</em> 和 <strong>else</strong>。</p><p>当对一个S-表达式列表 <em>l</em> 进行递归调用时，询问三个有关 <em>l</em> 的问题：<em>(null? lat)</em>、<em>(atom? (car l))</em> 和 <strong>else</strong>。</p><h3 id="第二诫"><a href="#第二诫" class="headerlink" title="第二诫"></a>第二诫</h3><p>使用 <em>cons</em> 来构建列表。</p><h3 id="第三诫"><a href="#第三诫" class="headerlink" title="第三诫"></a>第三诫</h3><p>构建一个列表的时候，描述第一个典型元素，之后 <em>cons</em> 该元素到一般性递归（natural recursion）上。</p><h3 id="第四诫"><a href="#第四诫" class="headerlink" title="第四诫"></a>第四诫</h3><p>在递归时总是改变至少一个参数。当对一个原子列表 <em>lat</em> 进行递归调用时，使用 <em>(cdr lat)</em>。当对数字 <em>n</em> 进行递归调用时，使用 <em>(sub1 n)</em>。当对一个S-表达式 <em>l</em> 进行递归调用时，只要是 <em>(null? l)</em> 和 <em>(atom? (car l))</em> 都不为 true，那么就同时使用 <em>(car l)</em> 和 <em>(cdr l)</em>。</p><p>在递归时改变的参数，必须向着不断接近结束条件而改变。改变的参数必须在结束条件中得以测试：<br>    当使用 <em>cdr</em> 时，用 <em>null?</em> 测试是否结束；<br>    当使用 <em>sub1</em> 时,用 <em>zero?</em> 测试是否结束。</p><h3 id="第五诫"><a href="#第五诫" class="headerlink" title="第五诫"></a>第五诫</h3><p>当用 ➕ 构建一个值时，总是使用 0 作为结束代码行的值，因为加上 0 不会改变加法的值。</p><p>当用 ✖ 构建一个值时，总是使用 1 作为结柬代码行的值，因为乘以 1 不会改变乘法的值。</p><p>当用 <em>cons</em> 构建一个值时，总是考虑把 0 作为结束代码行的值。</p><h3 id="第六诫"><a href="#第六诫" class="headerlink" title="第六诫"></a>第六诫</h3><p>简化工作只在功能正确之后开展。</p><h3 id="第七诫"><a href="#第七诫" class="headerlink" title="第七诫"></a>第七诫</h3><p>对具有相同性质的 <em>subparts</em>（子部件）进行递归调用：</p><ul><li>列表的子列表。</li><li>算术表达式的子表达式。</li></ul><h3 id="第八诫"><a href="#第八诫" class="headerlink" title="第八诫"></a>第八诫</h3><p>使用辅助函数来抽象表示方式。</p><h3 id="第九诫"><a href="#第九诫" class="headerlink" title="第九诫"></a>第九诫</h3><p>用函数来抽象通用模式。</p><h3 id="第十诫"><a href="#第十诫" class="headerlink" title="第十诫"></a>第十诫</h3><p>构建函数,一次收集多个值。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;节选自《The Little Schemer》&lt;/p&gt;
+&lt;h2 id=&quot;Scheme-五法&quot;&gt;&lt;a href=&quot;#Scheme-五法&quot; class=&quot;headerlink&quot; title=&quot;Scheme 五法&quot;&gt;&lt;/a&gt;Scheme 五法&lt;/h2&gt;&lt;h3 id=&quot;Scheme-五法之第一法-——-car-之法则&quot;&gt;&lt;a href=&quot;#Scheme-五法之第一法-——-car-之法则&quot; class=&quot;headerlink&quot; title=&quot;Scheme 五法之第一法 —— car 之法则&quot;&gt;&lt;/a&gt;Scheme 五法之第一法 —— car 之法则&lt;/h3&gt;&lt;p&gt;基本元件 &lt;em&gt;car&lt;/em&gt; 仅定义为针对非空列表。&lt;/p&gt;
+&lt;h3 id=&quot;Scheme-五法之第二法-——-cdr-之法则&quot;&gt;&lt;a href=&quot;#Scheme-五法之第二法-——-cdr-之法则&quot; class=&quot;headerlink&quot; title=&quot;Scheme 五法之第二法 —— cdr 之法则&quot;&gt;&lt;/a&gt;Scheme 五法之第二法 —— cdr 之法则&lt;/h3&gt;&lt;p&gt;基本元件 &lt;em&gt;cdr&lt;/em&gt; 仅定义为针对非空列表。任意非空列表的 &lt;em&gt;cdr&lt;/em&gt; 总是另一个列表。&lt;/p&gt;
+&lt;h3 id=&quot;Scheme-五法之第三法-——-cons-之法则&quot;&gt;&lt;a href=&quot;#Scheme-五法之第三法-——-cons-之法则&quot; class=&quot;headerlink&quot; title=&quot;Scheme 五法之第三法 —— cons 之法则&quot;&gt;&lt;/a&gt;Scheme 五法之第三法 —— cons 之法则&lt;/h3&gt;&lt;p&gt;基本元件 &lt;em&gt;cons&lt;/em&gt; 需要两个参数。第二个参数必须是一个列表。结果是一个列表。&lt;/p&gt;
+&lt;h3 id=&quot;Scheme-五法之第四法-——-Null-之法则&quot;&gt;&lt;a href=&quot;#Scheme-五法之第四法-——-Null-之法则&quot; class=&quot;headerlink&quot; title=&quot;Scheme 五法之第四法 —— Null? 之法则&quot;&gt;&lt;/a&gt;Scheme 五法之第四法 —— Null? 之法则&lt;/h3&gt;&lt;p&gt;基本元件 &lt;em&gt;null?&lt;/em&gt; 仅定义为针对列表。&lt;/p&gt;
+&lt;h3 id=&quot;Scheme-五法之第五法-——-eq-之法则&quot;&gt;&lt;a href=&quot;#Scheme-五法之第五法-——-eq-之法则&quot; class=&quot;headerlink&quot; title=&quot;Scheme 五法之第五法 —— eq? 之法则&quot;&gt;&lt;/a&gt;Scheme 五法之第五法 —— eq? 之法则&lt;/h3&gt;&lt;p&gt;基本元件 &lt;em&gt;eq?&lt;/em&gt; 需要两个参数。每个参数都必须是一个非数字的原子。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://howiezhao.github.io/categories/Notes/"/>
+    
+    
+      <category term="函数式编程" scheme="https://howiezhao.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>ADB小记</title>
@@ -432,22 +459,6 @@
     <id>https://howiezhao.github.io/2018/12/16/wikipedia/</id>
     <published>2018-12-16T09:03:06.000Z</published>
     <updated>2018-12-16T09:03:36.121Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>使用GitBook编写电子书籍</title>
-    <link href="https://howiezhao.github.io/2018/12/16/gitbook/"/>
-    <id>https://howiezhao.github.io/2018/12/16/gitbook/</id>
-    <published>2018-12-16T09:01:38.000Z</published>
-    <updated>2018-12-16T09:02:17.360Z</updated>
     
     <summary type="html">
     

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Scheme的五法十诫]]></title>
+    <url>%2F2019%2F08%2F07%2Fscheme-commandments-and-laws%2F</url>
+    <content type="text"><![CDATA[节选自《The Little Schemer》 Scheme 五法Scheme 五法之第一法 —— car 之法则基本元件 car 仅定义为针对非空列表。 Scheme 五法之第二法 —— cdr 之法则基本元件 cdr 仅定义为针对非空列表。任意非空列表的 cdr 总是另一个列表。 Scheme 五法之第三法 —— cons 之法则基本元件 cons 需要两个参数。第二个参数必须是一个列表。结果是一个列表。 Scheme 五法之第四法 —— Null? 之法则基本元件 null? 仅定义为针对列表。 Scheme 五法之第五法 —— eq? 之法则基本元件 eq? 需要两个参数。每个参数都必须是一个非数字的原子。 Scheme十诫第一诫当对一个原子列表 lat 进行递归调用时，询问两个有关 lat 的问题：(null? lat) 和 else。 当对一个数字 n 进行递归调用时，询问两个有关 n 的问题：(zero? n) 和 else。 当对一个S-表达式列表 l 进行递归调用时，询问三个有关 l 的问题：(null? lat)、(atom? (car l)) 和 else。 第二诫使用 cons 来构建列表。 第三诫构建一个列表的时候，描述第一个典型元素，之后 cons 该元素到一般性递归（natural recursion）上。 第四诫在递归时总是改变至少一个参数。当对一个原子列表 lat 进行递归调用时，使用 (cdr lat)。当对数字 n 进行递归调用时，使用 (sub1 n)。当对一个S-表达式 l 进行递归调用时，只要是 (null? l) 和 (atom? (car l)) 都不为 true，那么就同时使用 (car l) 和 (cdr l)。 在递归时改变的参数，必须向着不断接近结束条件而改变。改变的参数必须在结束条件中得以测试： 当使用 cdr 时，用 null? 测试是否结束； 当使用 sub1 时,用 zero? 测试是否结束。 第五诫当用 ➕ 构建一个值时，总是使用 0 作为结束代码行的值，因为加上 0 不会改变加法的值。 当用 ✖ 构建一个值时，总是使用 1 作为结柬代码行的值，因为乘以 1 不会改变乘法的值。 当用 cons 构建一个值时，总是考虑把 0 作为结束代码行的值。 第六诫简化工作只在功能正确之后开展。 第七诫对具有相同性质的 subparts（子部件）进行递归调用： 列表的子列表。 算术表达式的子表达式。 第八诫使用辅助函数来抽象表示方式。 第九诫用函数来抽象通用模式。 第十诫构建函数,一次收集多个值。]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>函数式编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ADB小记]]></title>
     <url>%2F2019%2F07%2F29%2Fadb%2F</url>
     <content type="text"><![CDATA[相关问题error: device still connecting输入adb shell时显示error: device still connecting，一般可通过：关闭开发者模式然后重新打开开发者模式，接着开启USB调试并重新和电脑配对，即可解决。]]></content>
@@ -953,8 +964,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>渗透</tag>
+        <tag>Windows</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>

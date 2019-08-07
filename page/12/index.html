@@ -366,6 +366,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/04/metasploit-luanma/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Howie Zhao"/>
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
+      <meta itemprop="image" content="/images/avatar.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/12/04/metasploit-luanma/" class="post-title-link" itemprop="url">Metasploit中shell中文乱码解决方案</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-12-04 23:46:32" itemprop="dateCreated datePublished" datetime="2017-12-04T23:46:32+08:00">2017-12-04</time>
+            </span>
+          
+
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br/>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。<br><strong>解决方法：</strong></p>
+<ol>
+<li>在shell窗口的工具栏选择“编辑”——&gt;“首选项”——&gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾并退出</li>
+<li>接着在“终端”——&gt;“设定字符编码”中选择添加的三个简体中文编码之一即可<br><strong>注意：</strong></li>
+<li>这个设置会随着操作系统的重启而失效</li>
+<li>设定简体中文编码之后，Linux中的中文字符就会乱码，因为Linux使用UTF-8编码</li>
+<li>建议只在需要的时候设定简体中文编码</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/25/kali-update-bug/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -925,7 +1093,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">113</span>
+          <span class="site-state-item-count">114</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -999,7 +1167,9 @@
         
           
         
-        <span class="site-state-item-count">16</span>
+          
+        
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -1112,7 +1282,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">127k</span>
+    <span title="Symbols count total">129k</span>
   
 
   
@@ -1599,6 +1769,8 @@
 
   
   
+    
+      
     
       
     
