@@ -93,18 +93,18 @@
   };
 </script>
 
-  <meta name="description" content="Let’s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
+  <meta name="description" content="Let&amp;#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
 <meta name="keywords" content="Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Let&#39;s Encrypt获取免费SSL证书">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/16/let-s-encrypt/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Let’s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
+<meta property="og:description" content="Let&amp;#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-29T12:20:05.818Z">
+<meta property="og:updated_time" content="2019-08-16T09:56:11.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Let&#39;s Encrypt获取免费SSL证书">
-<meta name="twitter:description" content="Let’s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
+<meta name="twitter:description" content="Let&amp;#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
 
 
 
@@ -474,10 +474,10 @@
       
 
       
-        <p><a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：<br><a id="more"></a></p>
+        <p><a href="https://letsencrypt.org/zh-cn/" target="_blank" rel="noopener">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：<br><a id="more"></a></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载certbot-auto脚本</span></span><br><span class="line">wget https://dl.eff.org/certbot-auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置相关权限</span></span><br><span class="line">chmod a+x certbot-auto</span><br></pre></td></tr></table></figure>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>请注意，获取或更新SSL证书之前需关闭相应的Web服务器，具体而言，需要执行<code>service nginx stop</code>。另外，第一次执行<code>certbot-auto</code>命令时，它会下载并安装相关环境，耐心等待即可。<br>Certbot提供了一个Nginx插件，直接使用<code>./certbot-auto --nginx</code>即可完成所有配置。<br>如果你想手动配置，可执行<code>./certbot-auto certonly --standalone</code>命令，此命令运行过程中会要求用户输入要获取SSl证书的域名，按要求输入即可，命令运行成功后会显示证书相关文件所在的目录。<br>接下来只需在Nginx的配置文件<code>nginx.conf</code>中进行如下配置即可(以howiezhao.com域名为例)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssl on;</span><br><span class="line">ssl_certificate /etc/letsencrypt/live/howiezhao.com/fullchain.pem;</span><br><span class="line">ssl_certificate_key /etc/letsencrypt/live/howiezhao.com/privkey.pem;</span><br></pre></td></tr></table></figure></p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>Let’s Encrypt的证书默认时间为90天，当到期后，需要使用<code>./certbot-auto renew</code>命令进行证书更新。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>Let&#39;s Encrypt的证书默认时间为90天，当到期后，需要使用<code>./certbot-auto renew</code>命令进行证书更新。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要查看<code>certbot-auto</code>的更多命令，可以使用<code>certbot-auto --help all</code>命令查看之。要了解SSL的详细知识，可参考我之前写的笔记<a href="http://localhost:4000/2018/05/11/https/" target="_blank" rel="noopener">HTTPS运行机制</a>。要了解Nginx的相关知识，可参考我之前写的笔记<a href="">利用Nginx进行反向代理</a>。</p>
 
       
