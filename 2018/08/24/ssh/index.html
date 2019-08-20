@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="SSH(Secure Shell)即安全外壳协议，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。 OpenSSH的运行机制SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用ssh user@host命令进行登录时，所完成的整个过程如下：  远程主机收到用户的">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-18T08:20:14.104Z">
+<meta property="og:updated_time" content="2019-08-19T06:57:40.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH协议分析">
 <meta name="twitter:description" content="SSH(Secure Shell)即安全外壳协议，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。 OpenSSH的运行机制SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用ssh user@host命令进行登录时，所完成的整个过程如下：  远程主机收到用户的">
@@ -480,9 +480,10 @@
 <li>远程主机收到用户的登录请求，把自己的公钥发给用户</li>
 <li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li>
 <li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li>
-<li>后续过程中，用户发送的信息都采用此方式进行加密发送</li>
+<li>后续过程中，用户发送的信息都采用此方式进行加密发送<a id="more"></a>
+因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'host (12.18.429.21)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'host (12.18.429.21)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure></p>
 <p>即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。</p>
 <p>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在<code>$HOME/.ssh/known_hosts</code>文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。</p>
 <p>除了采用口令登录外，还可使用<strong>公钥登录</strong>，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。</p>

@@ -804,7 +804,7 @@
             <p>Windows的<strong>系统代理</strong>使用的其实是<strong>IE的代理设置</strong>，此外，对于<strong>绝大多数</strong>的应用程序而言，它们默认使用的也是IE的代理设置，比如，Chrome、Firefox、Microsoft Store等。因此，如果想让绝大多数的应用程序使用代理，一个简单的方法是直接设置IE的代理（即系统代理）。不过，对于一小部分没有使用IE代理设置的应用程序，比如Android Studio等，你可能需要单独设置它们的代理（一般在软件的设置项中）。</p>
 <p>值得注意的是，同为应用程序的<strong>Shell</strong>（包括<strong>命令提示符</strong>和<strong>PowerShell</strong>）就没有使用IE的代理设置，它们各自有自己的代理设置。具体而言，要为命令提示符设置代理，可使用如下两条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set HTTP_PROXY=http://user:password@proxy.domain.com:port</span><br><span class="line">set HTTPS_PROXY=https://user:password@proxy.domain.com:port</span><br></pre></td></tr></table></figure></p>
 <p>而要为PowerShell设置代理则要使用<a href="">这个脚本</a>。</p>
-<p>最后，对于Shell中运行的程序，有一部分使用的是IE的代理设置，比如<code>pip</code>、<code>git</code>、<code>npm</code>等，另一部分则使用的是Shell的代理设置，比如<code>curl</code>等。</p>
+<p>最后，对于Shell中运行的程序，有一部分使用的是IE的代理设置，比如<code>pip</code>、<code>git</code>、<code>npm</code>等，另一部分则使用的是Shell的代理设置，比如<code>curl</code>、<code>gem</code>等。</p>
 
           
         
