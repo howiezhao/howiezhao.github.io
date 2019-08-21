@@ -102,7 +102,7 @@
 <meta property="og:description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有Screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://howiezhao.github.io/images/tmux.jpg">
-<meta property="og:updated_time" content="2019-07-30T08:52:05.840Z">
+<meta property="og:updated_time" content="2019-08-21T13:16:00.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tmux小记">
 <meta name="twitter:description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有Screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
@@ -479,8 +479,7 @@
         <p><a href="https://github.com/tmux/tmux" target="_blank" rel="noopener">tmux</a>是一款优秀的<strong>终端复用</strong>工具，在Ubuntu下，使用<code>sudo apt install tmux</code>即可安装，输入<code>tmux</code>即可开始使用。与tmux相似的软件还有<a href="https://www.gnu.org/software/screen/" target="_blank" rel="noopener">Screen</a>等。</p>
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Session（会话）"><a href="#Session（会话）" class="headerlink" title="Session（会话）"></a>Session（会话）</h3><p>当输入<code>tmux</code>后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。</p>
 <h3 id="Window（窗口）"><a href="#Window（窗口）" class="headerlink" title="Window（窗口）"></a>Window（窗口）</h3><p>Window是显示给你的一整片窗口，你可以创建多个Window，在一个Window里面你又可以创建多个Pane，以此来执行多个任务。</p>
-<h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格/面板）"></a>Pane（窗格/面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。</p>
-<p>一个常见的tmux运行效果可能如下图所示：<br><img src="/images/tmux.jpg" alt="tmux"><br>其中，Window被分成了3个Pane，每个Pane之间通过<strong>Pane Border</strong>（面板分隔符）加以区分。Window底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了Session的名称，窗口列表则显示了当前Window的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。</p>
+<h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格/面板）"></a>Pane（窗格/面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。<br><a id="more"></a><br>一个常见的tmux运行效果可能如下图所示：<br><img src="/images/tmux.jpg" alt="tmux"><br>其中，Window被分成了3个Pane，每个Pane之间通过<strong>Pane Border</strong>（面板分隔符）加以区分。Window底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了Session的名称，窗口列表则显示了当前Window的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><code>tmux</code>命令拥有众多参数，如下所示：</p>
 <ul>
 <li><code>tmux -V</code>：显示tmux版本号</li>
