@@ -129,6 +129,17 @@
 
 
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-104250838-2');
+    }
+  </script>
+
 
 
 
@@ -629,8 +640,10 @@
 
       
         
-          <p>Docker是一种基于Linux的容器化技术，类似于轻量的虚拟机。它采用C/S架构，使用Go语言开发。</p>
-<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker分为2个版本：<strong>社区版</strong>(Community Edition, CE)和<strong>企业版</strong>(Enterprise Edition, EE)，顾名思义，企业版是收费的。针对macOS10.10.3和Windows 10，Docker还推出了<a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop又分为2个渠道(channel)，<strong>稳定渠道</strong>(Stable)和<strong>抢先渠道</strong>(Edge)，需要注意的是，Docker Desktop对系统是有要求的，例如，针对Win10的<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a>因为要用到Hyper-V虚拟机，所以要求系统是64位专业版或企业版并开启Hyper-V功能。针对老版本的Windows或macOS，可以使用<a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个VirtualBox虚拟机。<br>使用<code>docker version</code>可以查看docker版本，直接输入<code>docker</code>可以查看docker相关命令。<br>
+          <p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C/S 架构，使用 Go 语言开发。</p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker 分为 2 个版本：<strong>社区版</strong>（Community Edition, CE）和<strong>企业版</strong>（Enterprise Edition, EE），顾名思义，企业版是收费的。</p>
+<p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
+<p>使用<code>docker version</code>可以查看 docker 版本号，使用<code>docker info</code>可以查看 docker 详细信息，直接输入<code>docker</code>可以查看 docker 相关命令。<br>
           <!--noindex-->
           
             <div class="post-button text-center">
