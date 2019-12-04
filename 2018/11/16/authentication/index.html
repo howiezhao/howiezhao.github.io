@@ -93,17 +93,17 @@
   };
 </script>
 
-  <meta name="description" content="Stay Hungry, Stay Foolish">
+  <meta name="description" content="身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认你是你。 身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="身份认证的几种方式">
 <meta property="og:url" content="https://howiezhao.github.io/2018/11/16/authentication/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Stay Hungry, Stay Foolish">
+<meta property="og:description" content="身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认你是你。 身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-22T06:46:49.974Z">
+<meta property="og:updated_time" content="2019-12-04T08:03:32.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="身份认证的几种方式">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
+<meta name="twitter:description" content="身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认你是你。 身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：">
 
 
 
@@ -484,7 +484,17 @@
       
 
       
-        
+        <p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
+<p>身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：<br><a id="more"></a></p>
+<h2 id="基于生物学特征的身份认证"><a href="#基于生物学特征的身份认证" class="headerlink" title="基于生物学特征的身份认证"></a>基于生物学特征的身份认证</h2><p>基于生物学特征的身份认证是指基于每个人身体上独一无二的特征，如指纹、虹膜等等。</p>
+<p>这种认证方式极具便利性，但同时安全性也最低，此外，生物学特征信息一旦泄露，无法更改。</p>
+<h2 id="基于共享密钥的身份认证"><a href="#基于共享密钥的身份认证" class="headerlink" title="基于共享密钥的身份认证"></a>基于共享密钥的身份认证</h2><p>基于共享密钥的身份认证是指服务器端和用户共同拥有一个或一组密码。用户通过输入或通过保管有密码的设备提交由用户和服务器共同拥有的密码，服务器检查用户所提交的密码是否与服务器端保存的密码一致，如果一致，就判断用户为合法用户，否则判定身份验证失败。</p>
+<p>这种认证方式是目前互联网上所广泛应用的。</p>
+<h2 id="基于公钥加密算法的身份认证"><a href="#基于公钥加密算法的身份认证" class="headerlink" title="基于公钥加密算法的身份认证"></a>基于公钥加密算法的身份认证</h2><p>基于公钥加密算法的身份认证是指通信中的双方分别持有公钥和私钥，由其中的一方采用私钥对特定数据进行加密，而对方采用公钥对数据进行解密，如果解密成功，就认为用户是合法用户，否则就认为是身份验证失败。</p>
+<p>很难说明，<strong>基于共享密钥的身份认证</strong>和<strong>基于公钥加密算法的身份认证</strong>哪个更为安全，<strong>基于共享密钥的身份认证</strong>的不安全处主要在于共享密钥的传播过程中，而<strong>基于公钥加密算法的身份认证</strong>的不安全处则主要在于私钥的存储过程中。</p>
+<hr>
+<p>为了提升身份认证的安全性，有时会结合使用以上三种认证方式，这便是<strong>多因素认证</strong>（Multi-factor authentication），如果只使用了以上三种认证方式中的两种，则又称为<strong>双因素认证</strong>（Two-factor authentication），简称 <strong>2FA</strong>。</p>
+
       
     </div>
 
@@ -578,8 +588,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -599,7 +618,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">115</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -784,6 +803,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于生物学特征的身份认证"><span class="nav-number">1.</span> <span class="nav-text">基于生物学特征的身份认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于共享密钥的身份认证"><span class="nav-number">2.</span> <span class="nav-text">基于共享密钥的身份认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于公钥加密算法的身份认证"><span class="nav-number">3.</span> <span class="nav-text">基于公钥加密算法的身份认证</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -810,7 +846,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">129k</span>
+    <span title="Symbols count total">130k</span>
   
 
   

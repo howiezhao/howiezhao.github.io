@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2019-08-07T14:35:40.229Z</updated>
+  <updated>2019-12-01T05:40:39.567Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Proxmark 入坑指南</title>
+    <link href="https://howiezhao.github.io/2019/12/01/proxmark/"/>
+    <id>https://howiezhao.github.io/2019/12/01/proxmark/</id>
+    <published>2019-12-01T05:37:30.000Z</published>
+    <updated>2019-12-01T05:40:39.567Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+      <category term="硬件" scheme="https://howiezhao.github.io/tags/%E7%A1%AC%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>Scheme的五法十诫</title>
@@ -445,22 +463,6 @@
       
         &lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h2&gt;&lt;h2 id=&quot;挖矿&quot;&gt;&lt;a href=&quot;#挖矿&quot; class=&quot;headerlink&quot; title=&quot;挖矿&quot;&gt;&lt;/a&gt;挖矿&lt;/h2&gt;&lt;h2 id
       
-    
-    </summary>
-    
-      <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>编写Wikipedia的几点注意</title>
-    <link href="https://howiezhao.github.io/2018/12/16/wikipedia/"/>
-    <id>https://howiezhao.github.io/2018/12/16/wikipedia/</id>
-    <published>2018-12-16T09:03:06.000Z</published>
-    <updated>2018-12-16T09:03:36.121Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
