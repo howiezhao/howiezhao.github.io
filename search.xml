@@ -471,9 +471,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[reStructuredText小记]]></title>
+    <title><![CDATA[reStructuredText 小记]]></title>
     <url>%2F2018%2F09%2F17%2Frestructuredtext%2F</url>
-    <content type="text"><![CDATA[reStructuredText是一种类似于Markdown的轻量标记语言，其含义为“重新构建的文本”，也被简称为reST，文件后缀名为.rst，是Python的Docutils项目的一部分，目前reST被广泛应用于编写Python文档。 基本语法标题12345678这是一级标题============这是二级标题------------这是三级标题************ reST使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。 列表和Markdown一样：1234567- 无序列表项- 无序列表项- 无序列表项1. 有序列表项2. 有序列表项3. 有序列表项 链接1`Howie&apos;s Blog &lt;http://howiezhao.com&gt;`_ 横线1---- 这是一条水平区分线，用4个或以上的短横线表示 转义和传统编程语言一样，reST使用\转义特殊字符。 注释注释以两个点和一个空格开始。如下：1.. 这是一行注释 Interpreted Text RolesInterpreted Text Roles（直译为“解释文本角色”）是reST中非常重要的一个概念，Interpreted Text（解释文本）是指以两个`包裹起来的文本，Role（角色）是指解释文本的显示规则。Interpreted Text的语法为:role:`text`或`text`:role:，功能是根据role规则对text进行Interprete（解释）。 字体和Markdown一样：12*斜体*，等价于 :emphasis:`斜体`**粗体**，等价于 :strong:`粗体` 单行代码1``这里是单行代码``，等价于:literal:`这里是单行代码` DirectivesDirectives（直译为“指令”）是reST中另一个非常重要的概念，指令具有如下语法：12345+-------+-------------------------------+| &quot;.. &quot; | directive type &quot;::&quot; directive |+-------+ block | | | +-------------------------------+ 指令以明确的标记开始（两个句点和一个空格），后跟指令类型和两个冒号（统称为“指令标记”）。指令块在指令标记之后立即开始，并包括所有后续的缩进行。指令块分为参数，选项（字段列表）和内容（按此顺序），其中任何一个都可能出现。 多行代码1234.. code:: python def my_function(): print(&quot;hello&quot;) 图片12.. image:: picture.png :alt: 当图片无法显示时，则显示这里的语句。 表格引用最佳实践 在特殊字符与要书写的文字之间加上空格，否则可能无法正常显示 不同段之间加一空行 解析器与Markdown相比更多这里有一个在线的reST编辑器。 要了解更多关于reST的知识可参考Docutils官方文档，或者Sphinx官方文档。]]></content>
+    <content type="text"><![CDATA[reStructuredText 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 reST，文件后缀名为 .rst，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。 基本语法标题12345678这是一级标题============这是二级标题------------这是三级标题************ reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。 列表和 Markdown 一样： 1234567- 无序列表项- 无序列表项- 无序列表项1. 有序列表项2. 有序列表项3. 有序列表项 链接1`Howie&apos;s Blog &lt;http://howiezhao.com&gt;`_ 横线1---- 这是一条水平区分线，用 4 个或以上的短横线表示 转义和传统编程语言一样，reST 使用 \ 转义特殊字符。 注释注释以两个点和一个空格开始。如下： 1.. 这是一行注释 Interpreted Text RolesInterpreted Text Roles（直译为“解释文本角色”）是 reST 中非常重要的一个概念，Interpreted Text（解释文本）是指以一对 ` 包裹起来的文本，Role（角色）是指 Interpreted Text（解释文本）的显示规则。Interpreted Text（解释文本）的语法为 :role:`text` 或 `text`:role:，功能是根据 role（角色）规则对 text（文本）进行 interprete（解释）。 字体和 Markdown 一样： 12*斜体*，等价于 :emphasis:`斜体`**粗体**，等价于 :strong:`粗体` 单行代码1``这里是单行代码``，等价于:literal:`这里是单行代码` 要了解更多 reST 中内置的标准 Roles，可参考 Docutils 官方文档。 DirectivesDirectives（直译为“指令”）是 reST 中另一个非常重要的概念，Directive（指令）具有如下语法： 12345+-------+-------------------------------+| &quot;.. &quot; | directive type &quot;::&quot; directive |+-------+ block | | | +-------------------------------+ Directive（指令）以明确的标记开始（两个句点和一个空格），后跟 directive type（指令类型）和两个冒号，统称为“directive marker（指令标记）”。directive block（指令块）在 directive marker（指令标记）之后立即开始，并包括所有后续的缩进行。directive block（指令块）分为 arguments（参数），options（选项，即字段列表）和 content（内容，按此顺序），其中任何一个都可能出现。 多行代码1234.. code:: python def my_function(): print(&quot;hello&quot;) 图片12.. image:: picture.png :alt: 当图片无法显示时，则显示这里的语句。 表格引用要了解更多 reST 中内置的 Directives，可参考 Docutils 官方文档。 最佳实践 在特殊字符与要书写的文字之间加上空格，否则可能无法正常显示 不同段之间加一空行 解析器与Markdown相比更多这里有一个在线的 reST 编辑器。 要了解更多关于 reST 的知识可参考 Docutils 官方文档，或者 Sphinx 官方文档。]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -975,8 +975,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>Windows</tag>
+        <tag>渗透</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>
