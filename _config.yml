@@ -70,7 +70,7 @@ plugins: hexo-generate-feed
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:howiezhao/howiezhao.github.io.git
+  repo: https://github.com/howiezhao/howiezhao.github.io.git
   branch: master
 
 search:
