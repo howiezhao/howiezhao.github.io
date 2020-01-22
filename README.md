@@ -1,11 +1,14 @@
 # Howie's Notes Source Code
 
+## Premise
+
+`sudo npm install -g hexo-cli`
+
 ## Init
 
 1. `git clone -b source --recursive git@github.com:howiezhao/howiezhao.github.io.git`
 2. `cd howiezhao.github.io`
-3. `sudo npm install -g hexo-cli`
-4. `npm install`
+3. `npm install`
 
 Then you can build and run:
 
