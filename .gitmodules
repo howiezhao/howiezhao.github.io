@@ -1,3 +1,6 @@
 [submodule "themes/next-reloaded"]
 	path = themes/next-reloaded
 	url = https://github.com/theme-next/hexo-theme-next
+[submodule "themes/hexo-theme-next"]
+	path = themes/hexo-theme-next
+	url = https://github.com/howiezhao/hexo-theme-next
