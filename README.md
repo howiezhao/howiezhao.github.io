@@ -22,7 +22,7 @@ If the submodule is modified, push the submodule **first**:
 1. `cd themes/hexo-theme-next`
 2. `git add .`
 3. `git commit -m "modify submodule"`
-4. `git push`
+4. `git push origin HEAD:howie`
 
 Then push this repository:
 
