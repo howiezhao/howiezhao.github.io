@@ -1,95 +1,48 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0"/>
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('https://howiezhao.github.io').hostname,
     root: '/',
     scheme: 'Pisces',
-    version: '7.2.0',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
-    }
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
 </script>
 
@@ -104,44 +57,29 @@
 <meta name="twitter:title" content="Howie&#39;s Notes">
 <meta name="twitter:description" content="Stay Hungry, Stay Foolish">
 
+<link rel="canonical" href="https://howiezhao.github.io/page/7/">
 
 
-  <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml"/>
-
-
-
-  
-  
-  <link rel="canonical" href="https://howiezhao.github.io/page/7/"/>
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: true,
+    isPost: false
   };
 </script>
 
-  
   <title>Howie's Notes</title>
   
-
-
-
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-104250838-2');
-    }
-  </script>
-
-
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-104250838-2');
+      }
+    </script>
 
 
 
@@ -150,7 +88,6 @@
 
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -159,9 +96,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -175,298 +111,320 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
-    
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Howie's Notes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">Machine Learning and Cyber Security</p>
-      
-    
-    
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
 
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
 
+</div>
+<div class="search-pop-overlay"></div>
 
-
+  </div>
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
+
+          <div class="content">
             
 
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
+  <div class="posts-expand">
+        
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/bnf/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/what-is-irc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/09/12/bnf/" class="post-title-link" itemprop="url">巴科斯范式</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/09/12/what-is-irc/" class="post-title-link" itemprop="url">IRC是什么</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
+              <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
+              <time title="Created: 2018-09-12 21:59:18" itemprop="dateCreated datePublished" datetime="2018-09-12T21:59:18+08:00">2018-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>IRC</strong>，全称Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。<br>IRC协议属于应用层协议，使用的传输层协议为TCP，使用的端口为<strong>6667</strong>(明文传输，如irc://chat.freenode.net)或<strong>6697</strong>(SSL加密传输，如ircs://chat.freenode.net:6697)。<br>IRC是一个<strong>分布式</strong>的<strong>C/S</strong>架构，一个IRC服务器可以连接其他的IRC服务器以扩展为一个<strong>IRC网络</strong>，通过连接到一个IRC服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个IRC服务器上，一个频道类似于一个聊天室，频道名称必须以<code>#</code>符号开始，例如<code>#irchelp</code>。大多数的IRC服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。目前使用最广的IRC服务器为<a href="https://freenode.net/" target="_blank" rel="noopener">freenode</a>，而IRC客户端软件有多种，比如基于Firefox浏览器的IRC插件<a href="http://chatzilla.hacksrus.com/" target="_blank" rel="noopener">ChatZilla</a>，基于网页的<a href="https://webchat.freenode.net/" target="_blank" rel="noopener">Webchat</a>，基于命令行的<a href="https://irssi.org/" target="_blank" rel="noopener">Irssi</a>等等。<br>个人经常使用的IRC客户端为Irssi，在Ubuntu中可以使用<code>apt install irssi</code>安装，之后直接输入<code>irssi</code>即可启动，输入<code>irssi --help</code>可查看更多命令参数。启动irssi后可输入更多的命令，输入<code>/help</code>可查看所有可用命令，输入<code>/connect Freenode</code>即可连接到freenode服务器，之后再输入<code>/join #linuxba</code>即可加入<code>#linuxba</code>频道。这里需要注意，freenode服务器由于种种原因，在国内无法访问，而irssi又不支持代理，所以推荐使用<a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a>代理irssi。<br>最后，值得推荐的IRC频道有下(基于freenode)：</p>
+<ul>
+<li><code>#ubuntu-cn</code>：Ubuntu中文社区频道</li>
+<li><code>#archlinux-cn</code>：Arch Linux中文社区频道</li>
+<li><code>#linuxba</code>：Linux贴吧频道</li>
+<li><code>#haskell</code>：Haskell语言频道</li>
+<li><code>#vim</code>：Vim社区频道</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/ifconfig-ip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/09/12/ifconfig-ip/" class="post-title-link" itemprop="url">ifconfig与ip</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-09-12 21:53:46" itemprop="dateCreated datePublished" datetime="2018-09-12T21:53:46+08:00">2018-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/bnf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/09/12/bnf/" class="post-title-link" itemprop="url">巴科斯范式</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-09-12 21:51:01" itemprop="dateCreated datePublished" datetime="2018-09-12T21:51:01+08:00">2018-09-12</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -474,159 +432,74 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
-            
-          
-        
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/09/human-based-information-gathering/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/09/human-based-information-gathering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/09/09/human-based-information-gathering/" class="post-title-link" itemprop="url">基于人的信息收集</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/09/09/human-based-information-gathering/" class="post-title-link" itemprop="url">基于人的信息收集</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-09-09 13:43:26" itemprop="dateCreated datePublished" datetime="2018-09-09T13:43:26+08:00">2018-09-09</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -634,161 +507,76 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-            <h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p>
+          <h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p>
 <h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>
 
-          
-        
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/31/docker/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/31/docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/31/docker/" class="post-title-link" itemprop="url">Docker入坑指南</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/31/docker/" class="post-title-link" itemprop="url">Docker 入坑指南</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-08-31 16:59:28" itemprop="dateCreated datePublished" datetime="2018-08-31T16:59:28+08:00">2018-08-31</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-18 10:28:56" itemprop="dateModified" datetime="2020-02-18T10:28:56+08:00">2020-02-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -796,169 +584,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C/S 架构，使用 Go 语言开发。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker 分为 2 个版本：<strong>社区版</strong>（Community Edition, CE）和<strong>企业版</strong>（Enterprise Edition, EE），顾名思义，企业版是收费的。</p>
 <p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
-<p>使用<code>docker version</code>可以查看 docker 版本号，使用<code>docker info</code>可以查看 docker 详细信息，直接输入<code>docker</code>可以查看 docker 相关命令。<br>
+<p>使用 <code>docker version</code> 可以查看 docker 版本号，使用 <code>docker info</code> 可以查看 docker 详细信息，直接输入 <code>docker</code> 可以查看 docker 相关命令。<br>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/2018/08/31/docker/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/31/git/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/31/git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/31/git/" class="post-title-link" itemprop="url">Git小记</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/31/git/" class="post-title-link" itemprop="url">Git小记</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-08-31 16:59:18" itemprop="dateCreated datePublished" datetime="2018-08-31T16:59:18+08:00">2018-08-31</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -966,10 +670,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a href="https://www.mercurial-scm.org/" target="_blank" rel="noopener">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a href="https://www.nongnu.org/cvs/" target="_blank" rel="noopener">CVS</a>、<a href="https://subversion.apache.org/" target="_blank" rel="noopener">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p>
 <ul>
@@ -980,160 +680,80 @@
 <p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>按照个人偏好，针对新安装的Git环境，会配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.email <span class="string">"you@example.com"</span></span><br><span class="line">git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg2 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg <span class="string">'!"git lg1"'</span></span><br><span class="line">git config --global alias.adog <span class="string">"log --all --decorate --oneline --graph"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
 <p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/2018/08/31/git/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/telnet/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/telnet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/24/telnet/" class="post-title-link" itemprop="url">telnet协议分析</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/24/telnet/" class="post-title-link" itemprop="url">telnet协议分析</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-08-24 19:44:44" itemprop="dateCreated datePublished" datetime="2018-08-24T19:44:44+08:00">2018-08-24</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1141,159 +761,74 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           
-            
-          
-        
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/ssh/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/ssh/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/24/ssh/" class="post-title-link" itemprop="url">SSH协议分析</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/24/ssh/" class="post-title-link" itemprop="url">SSH协议分析</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-08-24 19:44:35" itemprop="dateCreated datePublished" datetime="2018-08-24T19:44:35+08:00">2018-08-24</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
+                    <span itemprop="name">CheatSheet</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1301,10 +836,6 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <p>SSH(Secure Shell)即<strong>安全外壳协议</strong>，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。</p>
 <h2 id="OpenSSH的运行机制"><a href="#OpenSSH的运行机制" class="headerlink" title="OpenSSH的运行机制"></a>OpenSSH的运行机制</h2><p>SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用<code>ssh user@host</code>命令进行登录时，所完成的整个过程如下：</p>
 <ol>
@@ -1313,160 +844,80 @@
 <li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li>
 <li>后续过程中，用户发送的信息都采用此方式进行加密发送
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/2018/08/24/ssh/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/21/wsl-problem/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/21/wsl-problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/21/wsl-problem/" class="post-title-link" itemprop="url">WSL相关问题解决</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/21/wsl-problem/" class="post-title-link" itemprop="url">WSL相关问题解决</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-08-21 19:23:05" itemprop="dateCreated datePublished" datetime="2018-08-21T19:23:05+08:00">2018-08-21</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bug/" itemprop="url" rel="index">
+                    <span itemprop="name">Bug</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1474,167 +925,83 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。</p>
 <h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在<strong>启动或关闭Windows功能</strong>中勾选<strong>适用于Linux的Windows子系统</strong>，或者直接在管理员权限的PowerShell中输入<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>此条命令，也能达到同样的效果。<br>完成上述操作后，可直接在<strong>Microsoft Store</strong>中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。<br>到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行<code>do-release-upgrade</code>命令升级到最新版。<br>下载完成后，要启动Ubuntu有多种方式，可以在<strong>PowerShell</strong>或<strong>cmd</strong>中输入<code>wsl</code>或<code>bash</code>或<code>ubuntu</code>都可启动，也可以直接在<strong>开始菜单</strong>中点击Ubuntu图标启动。<br>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/2018/08/21/wsl-problem/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/21/android-emulator-problem/"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/21/android-emulator-problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
+      <meta itemprop="name" content="Howie's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/21/android-emulator-problem/" class="post-title-link" itemprop="url">Android Studio模拟器相关问题解决</a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/21/android-emulator-problem/" class="post-title-link" itemprop="url">Android Studio模拟器相关问题解决</a>
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-08-21 19:22:50" itemprop="dateCreated datePublished" datetime="2018-08-21T19:22:50+08:00">2018-08-21</time>
             </span>
-          
-
-          
-
-          
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-17 17:07:50" itemprop="dateModified" datetime="2020-02-17T17:07:50+08:00">2020-02-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bug/" itemprop="url" rel="index">
+                    <span itemprop="name">Bug</span>
+                  </a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1642,572 +1009,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           <h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2>
           <!--noindex-->
-          
-            <div class="post-button text-center">
+            <div class="post-button">
               <a class="btn" href="/2018/08/21/android-emulator-problem/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
-          
           <!--/noindex-->
         
       
     </div>
 
     
-
-    
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/20/hyper-v-problem/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/20/hyper-v-problem/" class="post-title-link" itemprop="url">Hyper-V相关问题解决</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-20 20:12:02" itemprop="dateCreated datePublished" datetime="2018-08-20T20:12:02+08:00">2018-08-20</time>
-            </span>
-          
-
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于Hyper-V最初是为服务器设计的，所以到目前为止，Hyper-V对于全屏的支持没有VMware做得好，同样，Hyper-V也不能像VMware那样随意更改窗口大小，这多少显得很不方便。对于Windows虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于Linux虚拟机的全屏操作，可以通过修改<code>/etc/default/grub</code>文件，更改其中<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>（注意是<code>x</code>不是<code>*</code>），接着执行<code>update-grub</code>并重启即可。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/08/20/hyper-v-problem/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/10/base/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Howie Zhao"/>
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish"/>
-      <meta itemprop="image" content="/images/avatar.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/10/base/" class="post-title-link" itemprop="url">Base编码家族</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-10 17:07:56" itemprop="dateCreated datePublished" datetime="2018-08-10T17:07:56+08:00">2018-08-10</time>
-            </span>
-          
-
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br/>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于<strong>64</strong>个可打印字符来表示二进制数据的表示方法，这64个字符分别为<code>A-Z</code>、<code>a-z</code>、<code>0-9</code>以及<code>+</code>与<code>/</code>。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：</p>
-<table>
-<thead>
-<tr>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-<th>数值</th>
-<th>字符</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>A</td>
-<td>16</td>
-<td>Q</td>
-<td>32</td>
-<td>g</td>
-<td>48</td>
-<td>w</td>
-</tr>
-<tr>
-<td>1</td>
-<td>B</td>
-<td>17</td>
-<td>R</td>
-<td>33</td>
-<td>h</td>
-<td>49</td>
-<td>x</td>
-</tr>
-<tr>
-<td>2</td>
-<td>C</td>
-<td>18</td>
-<td>S</td>
-<td>34</td>
-<td>i</td>
-<td>50</td>
-<td>y</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D</td>
-<td>19</td>
-<td>T</td>
-<td>35</td>
-<td>j</td>
-<td>51</td>
-<td>z</td>
-</tr>
-<tr>
-<td>4</td>
-<td>E</td>
-<td>20</td>
-<td>U</td>
-<td>36</td>
-<td>k</td>
-<td>52</td>
-<td>0</td>
-</tr>
-<tr>
-<td>5</td>
-<td>F</td>
-<td>21</td>
-<td>V</td>
-<td>37</td>
-<td>l</td>
-<td>53</td>
-<td>1</td>
-</tr>
-<tr>
-<td>6</td>
-<td>G</td>
-<td>22</td>
-<td>W</td>
-<td>38</td>
-<td>m</td>
-<td>54</td>
-<td>2</td>
-</tr>
-<tr>
-<td>7</td>
-<td>H</td>
-<td>23</td>
-<td>X</td>
-<td>39</td>
-<td>n</td>
-<td>55</td>
-<td>3</td>
-</tr>
-<tr>
-<td>8</td>
-<td>I</td>
-<td>24</td>
-<td>Y</td>
-<td>40</td>
-<td>o</td>
-<td>56</td>
-<td>4</td>
-</tr>
-<tr>
-<td>9</td>
-<td>J</td>
-<td>25</td>
-<td>Z</td>
-<td>41</td>
-<td>p</td>
-<td>57</td>
-<td>5</td>
-</tr>
-<tr>
-<td>10</td>
-<td>K</td>
-<td>26</td>
-<td>a</td>
-<td>42</td>
-<td>q</td>
-<td>58</td>
-<td>6</td>
-</tr>
-<tr>
-<td>11</td>
-<td>L</td>
-<td>27</td>
-<td>b</td>
-<td>43</td>
-<td>r</td>
-<td>59</td>
-<td>7</td>
-</tr>
-<tr>
-<td>12</td>
-<td>M</td>
-<td>28</td>
-<td>c</td>
-<td>44</td>
-<td>s</td>
-<td>60</td>
-<td>8</td>
-</tr>
-<tr>
-<td>13</td>
-<td>N</td>
-<td>29</td>
-<td>d</td>
-<td>45</td>
-<td>t</td>
-<td>61</td>
-<td>9</td>
-</tr>
-<tr>
-<td>14</td>
-<td>O</td>
-<td>30</td>
-<td>e</td>
-<td>46</td>
-<td>u</td>
-<td>62</td>
-<td>+</td>
-</tr>
-<tr>
-<td>15</td>
-<td>P</td>
-<td>31</td>
-<td>f</td>
-<td>47</td>
-<td>v</td>
-<td>63</td>
-<td>/</td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/08/10/base/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
   <nav class="pagination">
@@ -2219,301 +1044,181 @@
           </div>
           
 
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  
-    <img class="site-author-image" itemprop="image"
-      src="/images/avatar.jpg"
-      alt="Howie Zhao"/>
-  
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Howie Zhao"
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Howie Zhao</p>
-  <div class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</div>
+  <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
 </div>
-
-
-  <nav class="site-state motion-element">
-    
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
-          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-count">117</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
-    
-
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">categories</span>
-        </a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
-    
-
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">17</span>
-        <span class="site-state-item-name">tags</span>
-        </a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
-    
   </nav>
-
-
-
-  <div class="feed-link motion-element">
-    <a href="/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
-
-
-
-
-
+</div>
   <div class="links-of-author motion-element">
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/howiezhao" title="GitHub &rarr; https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow &rarr; https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu &rarr; https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://space.bilibili.com/23433050" title="bilibili &rarr; https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
-    
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
   </div>
 
 
-
-
-
-
-  <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+  <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-link"></i>
+      <i class="fa fa-fw fa-link"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
-      
         <li class="links-of-blogroll-item">
           <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
-      
         <li class="links-of-blogroll-item">
           <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
-      
     </ul>
   </div>
 
-
-          
-          
-        </div>
       </div>
-
-      
-
-      
 
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Howie</span>
-
-  
+  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    
-    <span title="Symbols count total">130k</span>
-  
-
-  
+    <span title="Symbols count total">136k</span>
 </div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1</div>
-
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.2.0</div>
-
-
-
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-    <span class="site-uv" title="Total Visitors">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
     <span class="post-meta-divider">|</span>
-  
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
-    <span class="site-pv" title="Total Views">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
 </div>
 
 
@@ -2523,30 +1228,30 @@
 
 
 
-
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
   </div>
 
   
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@latest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
 
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
 
 
 
@@ -2558,452 +1263,9 @@
 
 
   
-  
-
-
-
-
-
-  
-    
-    
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-
-
-  <script src="/js/utils.js?v=7.2.0"></script>
-
-  <script src="/js/motion.js?v=7.2.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.2.0"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
-
-
 
   
 
-  <script src="/js/next-boot.js?v=7.2.0"></script>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
 
 </body>
 </html>
