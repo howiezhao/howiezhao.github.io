@@ -33,3 +33,4 @@ jobs:
         hexo g
         cd public
         git status
+        git diff 2017/12/04/the-art-of-deception/
