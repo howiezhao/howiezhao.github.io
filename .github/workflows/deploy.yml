@@ -27,6 +27,6 @@ jobs:
 
     - name: Deploy
       run: |
-        ls -alh themes
+        ls -alh themes/hexo-theme-next
         hexo g
-        ls -alh
+        ls -alh public
