@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ source ]
+  pull_request:
+    branches: [ source ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup node
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+
+    - name: Setup Hexo
+      run: |
+        git config --global user.name 'howiezhao'
+        git config --global user.email 'howiezhaohr@hotmail.com'
+        npm install -g hexo-cli
+        npm install
+
+    - name: Deploy
+      run: |
+        ls -alh
+        hexo g
