@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
 
     - name: Setup node
       uses: actions/setup-node@v2-beta
@@ -30,3 +32,4 @@ jobs:
         ls -alh themes/hexo-theme-next
         hexo g
         ls -alh public
+        git show-branch
