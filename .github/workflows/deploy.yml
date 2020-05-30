@@ -31,5 +31,5 @@ jobs:
       run: |
         git clone https://github.com/howiezhao/howiezhao.github.io.git public
         hexo g
-        ls -alh
-        ls -alh public
+        cd public
+        git status
