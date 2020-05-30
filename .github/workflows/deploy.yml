@@ -29,8 +29,7 @@ jobs:
 
     - name: Deploy
       run: |
-        ls -alh themes/hexo-theme-next
+        git clone https://github.com/howiezhao/howiezhao.github.io.git public
         hexo g
-        ls -alh public
-        git clone https://github.com/howiezhao/howiezhao.github.io.git
         ls -alh
+        ls -alh public
