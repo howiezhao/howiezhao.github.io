@@ -21,20 +21,24 @@ jobs:
         node-version: '12'
 
     - name: Setup Hexo
+      env:
+        GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
       run: |
         export TZ='Asia/Shanghai'
         git config --global user.name 'howiezhao'
         git config --global user.email 'howiezhaohr@hotmail.com'
+        mkdir -p ~/.ssh/
+        echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
         # Ref: https://theme-next.js.org/docs/getting-started/deployment.html
         git ls-files -z | while read -d '' path; do touch -d $(git log -1 --format=@%ct $path) $path; done
+        git clone https://github.com/howiezhao/howiezhao.github.io.git .deploy_git
         npm install -g hexo-cli
         npm install
 
     - name: Deploy
       run: |
-        git clone https://github.com/howiezhao/howiezhao.github.io.git .deploy_git
         hexo g
         ls -alh
-        cd .deploy_git
-        git status
-        git diff 2017/06/20/hexo-experience/index.html
+        ssh -T git@github.com
