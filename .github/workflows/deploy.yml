@@ -35,13 +35,11 @@ jobs:
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         # Ref: https://theme-next.js.org/docs/getting-started/deployment.html
         git ls-files -z | while read -d '' path; do touch -d $(git log -1 --format=@%ct $path) $path; done
-        ls -alh source/_posts/
         git clone https://github.com/howiezhao/howiezhao.github.io.git .deploy_git
         npm install -g hexo-cli
         npm install
 
     - name: Deploy
       run: |
-        ls -alh source/_posts/
         hexo g
         hexo d
