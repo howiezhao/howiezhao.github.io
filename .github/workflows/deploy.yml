@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      TZ: 'Asia/Shanghai'
 
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +26,6 @@ jobs:
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
       run: |
-        export TZ='Asia/Shanghai'
         git config --global user.name 'howiezhao'
         git config --global user.email 'howiezhaohr@hotmail.com'
         mkdir -p ~/.ssh/
@@ -36,9 +37,9 @@ jobs:
         git clone https://github.com/howiezhao/howiezhao.github.io.git .deploy_git
         npm install -g hexo-cli
         npm install
+        ls -alh
 
     - name: Deploy
       run: |
         hexo g
         ls -alh
-        ssh -T git@github.com
