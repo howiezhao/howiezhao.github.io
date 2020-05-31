@@ -37,9 +37,8 @@ jobs:
         git clone https://github.com/howiezhao/howiezhao.github.io.git .deploy_git
         npm install -g hexo-cli
         npm install
-        ls -alh
 
     - name: Deploy
       run: |
         hexo g
-        ls -alh
+        hexo d
