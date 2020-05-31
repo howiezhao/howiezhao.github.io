@@ -35,6 +35,6 @@ jobs:
       run: |
         git clone https://github.com/howiezhao/howiezhao.github.io.git .deploy_git
         hexo g
-        cd public
+        cd .deploy_git
         git status
         git diff 2017/06/20/hexo-experience/index.html
