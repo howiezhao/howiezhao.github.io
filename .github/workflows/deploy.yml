@@ -24,13 +24,13 @@ jobs:
       run: |
         git config --global user.name 'howiezhao'
         git config --global user.email 'howiezhaohr@hotmail.com'
+        git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done
         npm install -g hexo-cli
         npm install
 
     - name: Deploy
       run: |
         git clone https://github.com/howiezhao/howiezhao.github.io.git public
-        git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" \"$path\")\" \"$path\"; done
         hexo g
         cd public
         git status
