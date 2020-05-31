@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>关于区块链的二三事</title>
-    <url>/2020/02/06/about-blockchain/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>YubiKey 使用指南</title>
-    <url>/2020/02/06/yubikey-usage-guide/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>PGP 与 GPG</title>
-    <url>/2020/02/06/pgp-gpg/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>macOS 下的包管理器：Homebrew</title>
-    <url>/2020/02/06/homebrew-for-macos/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>无线电基础</title>
-    <url>/2020/01/22/radio-basics/</url>
-    <content><![CDATA[<h2 id="频率、频段和频谱"><a href="#频率、频段和频谱" class="headerlink" title="频率、频段和频谱"></a>频率、频段和频谱</h2><p><a href="https://www.zhihu.com/question/20883383" target="_blank" rel="noopener">https://www.zhihu.com/question/20883383</a></p>
-<h2 id="采样率"><a href="#采样率" class="headerlink" title="采样率"></a>采样率</h2><h2 id="分贝"><a href="#分贝" class="headerlink" title="分贝"></a>分贝</h2><h2 id="LNA和VGA"><a href="#LNA和VGA" class="headerlink" title="LNA和VGA"></a>LNA和VGA</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HackRF 初体验</title>
     <url>/2020/01/22/hackrf/</url>
     <content><![CDATA[<p><a href="https://greatscottgadgets.com/hackrf/" target="_blank" rel="noopener">HackRF</a> 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其<a href="https://greatscottgadgets.com/wheretobuy/" target="_blank" rel="noopener">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
@@ -807,10 +766,11 @@
       </tags>
   </entry>
   <entry>
-    <title>说说VPS</title>
+    <title>说说 VPS</title>
     <url>/2019/01/08/talk-about-vps/</url>
-    <content><![CDATA[<p><strong>VPS</strong>（Virtual Private Server）即<strong>虚拟专用服务器</strong>，它不等同于<strong>独立服务器</strong>，独立服务器是指货真价实的物理机器，而VPS则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，<strong>虚拟空间</strong>（或虚拟主机）则是指VPS上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而VPS这一中间选择成为了广大爱好者的首选。<br><a id="more"></a></p>
-<h2 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h2><p>VPS所使用的虚拟化技术主要有<strong>KVM</strong>和<strong>OpenVZ</strong>（简称OVZ），以下是两者的优缺点对比：<br>KVM：</p>
+    <content><![CDATA[<p><strong>VPS</strong>（Virtual Private Server）即<strong>虚拟专用服务器</strong>，它不等同于<strong>独立服务器</strong>，独立服务器是指货真价实的物理机器，而 VPS 则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，<strong>虚拟空间</strong>（或虚拟主机）则是指 VPS 上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而 VPS 这一中间选择成为了广大爱好者的首选。<br><a id="more"></a></p>
+<h2 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h2><p>VPS 所使用的虚拟化技术主要有 <strong>KVM</strong> 和 <strong>OpenVZ</strong> （简称 OVZ），以下是两者的优缺点对比：</p>
+<p>KVM：</p>
 <ul>
 <li>优点：独占内核、内存等</li>
 <li>缺点：价格较贵</li>
@@ -820,25 +780,26 @@
 <li>优点：价格低</li>
 <li>缺点：共享内核、内存等</li>
 </ul>
-<p>简单来说，KVM拥有对内核更多的控制权，而OpenVZ因为共享资源的情况受<strong>超售</strong>影响较大，现在，越来越多的VPS商家也开始使用KVM架构来虚拟化VPS。个人建议，尽量选择KVM架构的VPS。</p>
-<h2 id="收费方式"><a href="#收费方式" class="headerlink" title="收费方式"></a>收费方式</h2><p>VPS一般按两种方式收费，即<strong>按月收费</strong>或<strong>按小时收费</strong>，显然，按小时收费更加灵活，当不需要使用时，直接关机就能停止收费。除此之外，VPS一般会限制每月最多可使用的流量，当超过额度后，会收取流量费。</p>
-<h2 id="VPS商家"><a href="#VPS商家" class="headerlink" title="VPS商家"></a>VPS商家</h2><p>当前主流的VPS商家有：<a href="https://bandwagonhost.com/index.php" target="_blank" rel="noopener">BandwagonHost</a>，<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>，<a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a>。</p>
-<p>BandwagonHost，中文又称搬瓦工，它们采用按月收费，支持支付宝付款，在2019年之前，它们推出过最低每年19.99美元的VPS，这应该是那时候最便宜且稳定的VPS商家了，但如今它们已经取消了这一方案，并全部使用KVM架构，现在它们的最低方案是每年49.99美元，配置1G内存，20G固态，每月1T的流量。</p>
-<p>Vultr，它们采用按小时收费的方式，支持支付宝付款，全部采用KVM架构，现在最低的方案是每年42美元，配置512MB内存，10G固态，每月0.5T的流量，个人非常推荐。</p>
-<p>DigitalOcean，它们同样采用按小时收费的方式，使用信用卡付款，全部采用KVM架构，现在最低的方案是每年60美元，配置1G内存，25G固态，每月1T的流量。</p>
-<h2 id="测试VPS性能"><a href="#测试VPS性能" class="headerlink" title="测试VPS性能"></a>测试VPS性能</h2><p>一般在首次连接到VPS之后，建议进行一个性能测试，通常要测试的项目包括磁盘性能、网络性能以及一些基本参数等。这里推荐使用oldking开发的一键测试脚本<a href="https://www.oldking.net/350.html" target="_blank" rel="noopener">SuperBench.sh</a>，具体使用方法如下命令所示：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh | bash</span><br></pre></td></tr></table></figure></p>
-<h2 id="黑话"><a href="#黑话" class="headerlink" title="黑话"></a>黑话</h2><p>VPS相关的论坛中经常会有一些行业黑话，以下做简要说明：</p>
+<p>简单来说，KVM 拥有对内核更多的控制权，而 OpenVZ 因为共享资源的情况受<strong>超售</strong>影响较大，现在，越来越多的 VPS 商家也开始使用 KVM 架构来虚拟化 VPS。个人建议，尽量选择 KVM 架构的 VPS。</p>
+<h2 id="收费方式"><a href="#收费方式" class="headerlink" title="收费方式"></a>收费方式</h2><p>VPS 一般按两种方式收费，即<strong>按月收费</strong>或<strong>按小时收费</strong>，显然，按小时收费更加灵活，当不需要使用时，直接关机就能停止收费。除此之外，VPS 一般会限制每月最多可使用的流量，当超过额度后，会收取流量费。</p>
+<h2 id="VPS-商家"><a href="#VPS-商家" class="headerlink" title="VPS 商家"></a>VPS 商家</h2><p>当前主流的 VPS 商家有：<a href="https://bandwagonhost.com/index.php" target="_blank" rel="noopener">BandwagonHost</a>，<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>，<a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a>。</p>
+<p>BandwagonHost，中文又称搬瓦工，它们采用按月收费，支持支付宝付款，在 2019 年之前，它们推出过最低每年 19.99 美元的 VPS，这应该是那时候最便宜且稳定的 VPS 商家了，但如今它们已经取消了这一方案，并全部使用 KVM 架构，现在它们的最低方案是每年 49.99 美元，配置 1G 内存，20G 固态，每月 1T 的流量。</p>
+<p>Vultr，它们采用按小时收费的方式，支持支付宝付款，全部采用 KVM 架构，现在最低的方案是每年 42 美元，配置 512MB 内存，10G 固态，每月 0.5T 的流量，个人非常推荐。</p>
+<p>DigitalOcean，它们同样采用按小时收费的方式，使用信用卡付款，全部采用 KVM 架构，现在最低的方案是每年 60 美元，配置 1G 内存，25G 固态，每月 1T 的流量。</p>
+<h2 id="测试-VPS-性能"><a href="#测试-VPS-性能" class="headerlink" title="测试 VPS 性能"></a>测试 VPS 性能</h2><p>一般在首次连接到 VPS 之后，建议进行一个性能测试，通常要测试的项目包括磁盘性能、网络性能以及一些基本参数等。这里推荐使用 oldking 开发的一键测试脚本 <a href="https://www.oldking.net/350.html" target="_blank" rel="noopener">SuperBench.sh</a>，具体使用方法如下命令所示：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh | bash</span><br></pre></td></tr></table></figure>
+<h2 id="黑话"><a href="#黑话" class="headerlink" title="黑话"></a>黑话</h2><p>VPS 相关的论坛中经常会有一些行业黑话，以下做简要说明：</p>
 <ul>
 <li>杜甫：即独服的意思，指前面提到的独立服务器。</li>
-<li>母鸡：指用来虚拟化VPS的物理主机。</li>
-<li>小鸡：即VPS，尤其指配置比较低的廉价VPS。</li>
-<li>养鸡：续费VPS的过程。</li>
-<li>CN2线路：指中国电信与美国日本韩国香港等地机房直连的服务器线路，速度快且稳定。</li>
+<li>母鸡：指用来虚拟化 VPS 的物理主机。</li>
+<li>小鸡：即 VPS，尤其指配置比较低的廉价 VPS。</li>
+<li>养鸡：续费 VPS 的过程。</li>
+<li>CN2 线路：指中国电信与美国日本韩国香港等地机房直连的服务器线路，速度快且稳定。</li>
 <li>套路云：指阿里云。</li>
 <li>良心云：指腾讯云。</li>
-<li>雨林云：指AWS，取自亚马逊热带雨林。</li>
+<li>雨林云：指 AWS，取自亚马逊热带雨林。</li>
 </ul>
-<h2 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h2><p>如果你的VPS内存较小，比如512M内存以下，则建议安装32位操作系统。操作系统建议选择CentOS 7以上。</p>
+<h2 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h2><p>如果你的 VPS 内存较小，比如 512M 内存以下，则建议安装 32 位操作系统。操作系统建议选择 CentOS 7 以上。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2011,21 +1972,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Docker入坑指南</title>
+    <title>Docker 入坑指南</title>
     <url>/2018/08/31/docker/</url>
-    <content><![CDATA[<p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C/S 架构，使用 Go 语言开发。</p>
+    <content><![CDATA[<p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C/S</strong> 架构，使用 Go 语言开发。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker 分为 2 个版本：<strong>社区版</strong>（Community Edition, CE）和<strong>企业版</strong>（Enterprise Edition, EE），顾名思义，企业版是收费的。</p>
-<p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
-<p>使用<code>docker version</code>可以查看 docker 版本号，使用<code>docker info</code>可以查看 docker 详细信息，直接输入<code>docker</code>可以查看 docker 相关命令。<br><a id="more"></a></p>
+<p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
+<p>针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
+<p>使用 <code>docker version</code> 可以查看 docker 版本号，使用 <code>docker info</code> 可以查看 docker 详细信息，直接输入 <code>docker</code> 可以查看 docker 相关命令。<br><a id="more"></a></p>
 <h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><strong>镜像</strong>（image）文件可以用来生成容器实例，其类似于在虚拟机中安装操作系统时所使用的 ISO 镜像。</p>
-<p>image 文件可以包含一个 tag（标签），即版本号。</p>
-<p>你可以使用远程仓库中别人制作好的 image 文件，也可以自己制作 image 文件。要制作 image 文件就要编写<strong>Dockerfile</strong>文件，其类似于 Makefile 文件。</p>
-<p>image 的常用命令如下：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image ls</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image rm [image-name]</span><br><span class="line">docker rmi [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull [image-name]</span><br><span class="line">docker pull [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure></p>
-<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>image 文件生成的容器（container）实例，本身也是一个文件，称为<strong>容器文件</strong>。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。</p>
+<p>镜像文件可以包含一个标签（tag），即版本号。</p>
+<p>你可以使用远程仓库中别人制作好的镜像文件，也可以自己制作镜像文件。要制作镜像文件就要编写 <strong>Dockerfile</strong> 文件，其类似于 Makefile 文件。</p>
+<p>与 image 相关的常用命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image ls</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image rm &lt;image-name&gt;</span><br><span class="line">docker rmi &lt;image-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull &lt;image-name&gt;[:tag]</span><br><span class="line">docker pull &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>镜像文件生成的容器（container）实例，本身也是一个文件，称为<strong>容器文件</strong>。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。</p>
 <p>类似于在虚拟机中安装的操作系统，其本身会在硬盘中创建一系列文件，当关闭操作系统时，相应的文件并不会删除。</p>
-<p>container 的常用命令如下：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动抓取下来</span></span><br><span class="line">docker container run [image-name]</span><br><span class="line">docker run [image-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container rm [container-id]</span><br><span class="line">docker rm [container-id]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> [container-id]</span><br><span class="line">docker <span class="built_in">kill</span> [container-id]</span><br></pre></td></tr></table></figure></p>
-<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>（repository）是不同 tag 的 image 的集合，注册处（registry）又是不同仓库的集合，Docker 的官方 Registry 是 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，类似于 GitHub。使用<code>docker login</code>可以登录到自己在 Docker Hub 上注册的帐号。值得注意的是，国内访问 Docker Hub 速度较慢，建议设置代理或使用<a href="https://www.docker-cn.com/registry-mirror" target="_blank" rel="noopener">国内镜像站</a>。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从 Docker Hub 中拉取。</p>
-<p>与 repository 有关的命令如下：<br>bash<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 从Docker Hub中搜索某个 image</span><br><span class="line">docker search [image-name]</span><br></pre></td></tr></table></figure></p>
+<p>与 container 相关的常用命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动拉取下来并运行</span></span><br><span class="line"><span class="comment"># 使用参数`-it`返回容器实例的终端</span></span><br><span class="line"><span class="comment"># `--rm`</span></span><br><span class="line"><span class="comment"># 使用参数`-p`将容器内端口映射到主机端口</span></span><br><span class="line"><span class="comment"># 使用参数`-v`将主机目录和容器内目录进行绑定</span></span><br><span class="line">docker container run &lt;image-name&gt;[:tag]</span><br><span class="line">docker run &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container ls</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container rm &lt;container-id&gt;</span><br><span class="line">docker rm &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动指定的容器实例</span></span><br><span class="line">docker container start &lt;container-id&gt;</span><br><span class="line">docker start &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启指定的容器实例</span></span><br><span class="line">docker container restart &lt;container-id&gt;</span><br><span class="line">docker restart &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container stop &lt;container-id&gt;</span><br><span class="line">docker stop &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line">docker cp</span><br><span class="line">docker attach</span><br><span class="line">docker <span class="built_in">exec</span>（重要）</span><br></pre></td></tr></table></figure>
+<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>（repository）是不同标签的镜像的集合，注册处（registry）又是不同仓库的集合，Docker 的官方注册处是 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，类似于 GitHub。使用 <code>docker login</code> 可以登录到自己在 Docker Hub 上注册的帐号。值得注意的是，国内访问 Docker Hub 速度较慢，建议设置代理或使用国内镜像站。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从 Docker Hub 中拉取。</p>
+<p>与 repository 相关的命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从Docker Hub中搜索某个 image</span></span><br><span class="line">docker search [image-name]</span><br></pre></td></tr></table></figure>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>阿里云镜像加速</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Drive-has-not-been-shared"><a href="#Drive-has-not-been-shared" class="headerlink" title="Drive has not been shared"></a>Drive has not been shared</h3><p>在 Windows 10 上启动 Docker 可能会遇到 <code>Unhandled exception: Drive has not been shared</code> 这样的问题，可以通过勾选 Settings ——&gt; Resources ——&gt; FILE SHARING 中相应的磁盘以解决此问题。若提示 <code>Cannot change shared directories</code>，则你可能需要重启 Docker 后再次进行上述操作。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
