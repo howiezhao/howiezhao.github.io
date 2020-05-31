@@ -13,7 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 0
         submodules: 'recursive'
 
     - name: Setup node
@@ -35,6 +34,7 @@ jobs:
       run: |
         git clone https://github.com/howiezhao/howiezhao.github.io.git .deploy_git
         hexo g
+        ls -alh
         cd .deploy_git
         git status
         git diff 2017/06/20/hexo-experience/index.html
