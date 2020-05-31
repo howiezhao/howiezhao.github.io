@@ -29,7 +29,7 @@ jobs:
         # git ls-files -z | while read -d '' path; do git log -1 --format=\"%ct\" $path; done
         git log -1 --format=@%ct .github/workflows/deploy.yml
         # git ls-files -z | while read -d '' path; do touch -t $(git log -1 --format=%ct $path) \"$path\"; done
-        git ls-files -z | while read -d '' path; do touch -d \"$(git log -1 --format=\"@%ct\" $path)\" \"$path\"; done
+        git ls-files -z | while read -d '' path; do touch -d $(git log -1 --format=@%ct $path) \"$path\"; done
         npm install -g hexo-cli
         npm install
 
