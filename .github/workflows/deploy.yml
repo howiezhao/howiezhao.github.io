@@ -26,10 +26,9 @@ jobs:
         git config --global user.name 'howiezhao'
         git config --global user.email 'howiezhaohr@hotmail.com'
         export TZ='Asia/Shanghai'
-        ls -alh .github/workflows/
         # git ls-files -z | while read -d '' path; do git log -1 --format=\"%ct\" $path; done
-        git log -1 --format=\"%ct\" .github/workflows/deploy.yml
-        git ls-files -z | while read -d '' path; do touch -t \"$(git log -1 --format=\"%ct\" $path)\" \"$path\"; done
+        git log -1 --format=%ct .github/workflows/deploy.yml
+        git ls-files -z | while read -d '' path; do touch -t $(git log -1 --format=\"%ct\" $path) \"$path\"; done
         npm install -g hexo-cli
         npm install
 
