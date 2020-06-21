@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="proxychains，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。">
+  <meta name="description" content="proxychains ，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代理链工具：proxychains">
 <meta property="og:url" content="https://howiezhao.github.io/2018/10/18/proxychains/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="proxychains，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。">
+<meta property="og:description" content="proxychains ，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-05T15:49:16.000Z">
+<meta property="og:updated_time" content="2020-06-21T11:18:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代理链工具：proxychains">
-<meta name="twitter:description" content="proxychains，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。">
+<meta name="twitter:description" content="proxychains ，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/10/18/proxychains/">
 
@@ -250,7 +250,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-05 23:49:16" itemprop="dateModified" datetime="2020-02-05T23:49:16+08:00">2020-02-05</time>
+                <time title="Modified: 2020-06-21 19:18:56" itemprop="dateModified" datetime="2020-06-21T19:18:56+08:00">2020-06-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,13 +282,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a>，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。<br><a id="more"></a></p>
+        <p><a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a> ，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。<br><a id="more"></a></p>
 <h2 id="安装及使用"><a href="#安装及使用" class="headerlink" title="安装及使用"></a>安装及使用</h2><p>在 Ubuntu 下可以使用 <code>sudo apt install proxychains</code> 直接安装，安装完成后会在 <code>/etc</code> 文件夹下生成 <code>proxychains.conf</code> 配置文件，在这个配置文件中可以配置代理链的工作模式和代理地址等。</p>
 <p>proxychains 提供了 3 种代理模式，分别是<strong>动态链</strong>（dynamic_chain）、<strong>严格链</strong>（strict_chain）、<strong>随机链</strong>（random_chain），建议选择动态链。此外，proxychains 默认设置的代理地址为 Tor 的地址，但其实最新版的 Tor 已经更改端口为 9150，用户可以根据自己的需求按照示例格式配置地址。</p>
 <p>配置完成后，要使用 proxychains，只需在相应命令前加上 <code>proxychains</code> 即可，例如 <code>proxychains nmap -sS 192.168.1.1</code>，即可强制 nmap 使用 proxychains 中设置的代理进行扫描。</p>
 <h2 id="与-proxychains-ng"><a href="#与-proxychains-ng" class="headerlink" title="与 proxychains-ng"></a>与 proxychains-ng</h2><p><a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a> 是 proxychains 的升级版，其中 ng 寓意为 new generation（新一代），目前并不知晓 proxychains-ng 与 proxychains 是否为同一组织开发，但二者的配置与使用极为相似。</p>
 <p>在 Ubuntu 下可以使用 <code>sudo apt install proxychains-ng</code> 直接安装，要使用 proxychains-ng，只需在相应命令前加上 <code>proxychains4</code> 即可。</p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>由于 Windows 与 Linux 的设计哲学不同，Linux 偏向使用命令行，Windows 偏向使用图形界面，所以 proxychains 并未提供 Windows 版。在 Windows 下可以使用另一款代理工具 <a href="https://www.proxifier.com/" target="_blank" rel="noopener">Proxifier</a>，它可以看作是 proxychains 的图形界面版，值得注意的是，Proxifier 是收费的，但你可以免费体验 31 天。</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>由于 Windows 与 Linux 的设计哲学不同，Linux 偏向使用命令行，Windows 偏向使用图形界面，所以 proxychains 并未提供 Windows 版。在 Windows 下可以使用另一款代理工具 <a href="https://www.proxifier.com/" target="_blank" rel="noopener">Proxifier</a> ，它可以看作是 proxychains 的图形界面版，值得注意的是，Proxifier 是收费的，但你可以免费体验 31 天。</p>
 
     </div>
 
@@ -477,7 +477,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">136k</span>
+    <span title="Symbols count total">137k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>

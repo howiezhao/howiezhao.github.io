@@ -46,17 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了EditorConfig，它包含了一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。一个典型的 EditorConfig 配置文件如下所示：1234567891011121314151617181920212223242526">
+  <meta name="description" content="开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了 EditorConfig ，它包含了一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。 一个典型的 EditorConfig 配置文件如下所示： 123456789101112131415161718192021222324">
 <meta property="og:type" content="article">
 <meta property="og:title" content="editorconfig 是什么">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/23/what-is-editorconfig/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了EditorConfig，它包含了一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。一个典型的 EditorConfig 配置文件如下所示：1234567891011121314151617181920212223242526">
+<meta property="og:description" content="开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了 EditorConfig ，它包含了一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。 一个典型的 EditorConfig 配置文件如下所示： 123456789101112131415161718192021222324">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:updated_time" content="2020-06-21T11:18:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="editorconfig 是什么">
-<meta name="twitter:description" content="开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了EditorConfig，它包含了一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。一个典型的 EditorConfig 配置文件如下所示：1234567891011121314151617181920212223242526">
+<meta name="twitter:description" content="开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了 EditorConfig ，它包含了一个用于定义代码格式的文件和一批编辑器插件，这些插件可以让编辑器读取配置文件并依此格式化代码。 一个典型的 EditorConfig 配置文件如下所示： 123456789101112131415161718192021222324">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/23/what-is-editorconfig/">
 
@@ -249,7 +249,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+                <time title="Modified: 2020-06-21 19:18:56" itemprop="dateModified" datetime="2020-06-21T19:18:56+08:00">2020-06-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,8 +281,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了<a href="https://editorconfig.org/" target="_blank" rel="noopener">EditorConfig</a>，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。<br>一个典型的 EditorConfig 配置文件如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># 这是一行注释，以#开头</span><br><span class="line"></span><br><span class="line"># 表示此文件为最顶级</span><br><span class="line">root = true</span><br><span class="line"></span><br><span class="line"># 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行</span><br><span class="line">[*]</span><br><span class="line">end_of_line = lf</span><br><span class="line">insert_final_newline = true</span><br><span class="line"></span><br><span class="line"># 匹配所有以 js 和 py 为后缀名的文件</span><br><span class="line"># 设定其编码为 UTF-8</span><br><span class="line">[*.&#123;js,py&#125;]</span><br><span class="line">charset = utf-8</span><br><span class="line"></span><br><span class="line"># 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格</span><br><span class="line">[*.py]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 4</span><br><span class="line"></span><br><span class="line"># 设定 Makefile 文件的缩进为 Tab</span><br><span class="line">[Makefile]</span><br><span class="line">indent_style = tab</span><br><span class="line"></span><br><span class="line"># 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格</span><br><span class="line">[lib/**.js]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br><span class="line"></span><br><span class="line"># 设定 package.json 和 .travis.yml 的缩进为 2 个空格</span><br><span class="line">[&#123;package.json,.travis.yml&#125;]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br></pre></td></tr></table></figure></p>
-<p>此配置文件应该保存为<code>.editorconfig</code>并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见<code>root = true</code>为止。<br>有很多项目在初始化时都会生成相应的<code>.editorconfig</code>文件，比如 Angular。<br>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>
+        <p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了 <a href="https://editorconfig.org/" target="_blank" rel="noopener">EditorConfig</a> ，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。</p>
+<p>一个典型的 EditorConfig 配置文件如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># 这是一行注释，以#开头</span><br><span class="line"></span><br><span class="line"># 表示此文件为最顶级</span><br><span class="line">root = true</span><br><span class="line"></span><br><span class="line"># 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行</span><br><span class="line">[*]</span><br><span class="line">end_of_line = lf</span><br><span class="line">insert_final_newline = true</span><br><span class="line"></span><br><span class="line"># 匹配所有以 js 和 py 为后缀名的文件</span><br><span class="line"># 设定其编码为 UTF-8</span><br><span class="line">[*.&#123;js,py&#125;]</span><br><span class="line">charset = utf-8</span><br><span class="line"></span><br><span class="line"># 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格</span><br><span class="line">[*.py]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 4</span><br><span class="line"></span><br><span class="line"># 设定 Makefile 文件的缩进为 Tab</span><br><span class="line">[Makefile]</span><br><span class="line">indent_style = tab</span><br><span class="line"></span><br><span class="line"># 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格</span><br><span class="line">[lib/**.js]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br><span class="line"></span><br><span class="line"># 设定 package.json 和 .travis.yml 的缩进为 2 个空格</span><br><span class="line">[&#123;package.json,.travis.yml&#125;]</span><br><span class="line">indent_style = space</span><br><span class="line">indent_size = 2</span><br></pre></td></tr></table></figure>
+<p>此配置文件应该保存为 <code>.editorconfig</code> 并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见 <code>root = true</code> 为止。</p>
+<p>有很多项目在初始化时都会生成相应的 <code>.editorconfig</code> 文件，比如 Angular。</p>
+<p>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>
 
     </div>
 
@@ -467,7 +471,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">136k</span>
+    <span title="Symbols count total">137k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>

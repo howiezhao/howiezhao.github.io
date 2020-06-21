@@ -232,7 +232,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2018/09/12/what-is-irc/" class="post-title-link" itemprop="url">IRC是什么</a>
+            <a href="/2018/09/12/what-is-irc/" class="post-title-link" itemprop="url">IRC 是什么</a>
         </h1>
 
         <div class="post-meta">
@@ -249,7 +249,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+                <time title="Modified: 2020-06-21 19:18:56" itemprop="dateModified" datetime="2020-06-21T19:18:56+08:00">2020-06-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,13 +274,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>IRC</strong>，全称Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。<br>IRC协议属于应用层协议，使用的传输层协议为TCP，使用的端口为<strong>6667</strong>(明文传输，如irc://chat.freenode.net)或<strong>6697</strong>(SSL加密传输，如ircs://chat.freenode.net:6697)。<br>IRC是一个<strong>分布式</strong>的<strong>C/S</strong>架构，一个IRC服务器可以连接其他的IRC服务器以扩展为一个<strong>IRC网络</strong>，通过连接到一个IRC服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个IRC服务器上，一个频道类似于一个聊天室，频道名称必须以<code>#</code>符号开始，例如<code>#irchelp</code>。大多数的IRC服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。目前使用最广的IRC服务器为<a href="https://freenode.net/" target="_blank" rel="noopener">freenode</a>，而IRC客户端软件有多种，比如基于Firefox浏览器的IRC插件<a href="http://chatzilla.hacksrus.com/" target="_blank" rel="noopener">ChatZilla</a>，基于网页的<a href="https://webchat.freenode.net/" target="_blank" rel="noopener">Webchat</a>，基于命令行的<a href="https://irssi.org/" target="_blank" rel="noopener">Irssi</a>等等。<br>个人经常使用的IRC客户端为Irssi，在Ubuntu中可以使用<code>apt install irssi</code>安装，之后直接输入<code>irssi</code>即可启动，输入<code>irssi --help</code>可查看更多命令参数。启动irssi后可输入更多的命令，输入<code>/help</code>可查看所有可用命令，输入<code>/connect Freenode</code>即可连接到freenode服务器，之后再输入<code>/join #linuxba</code>即可加入<code>#linuxba</code>频道。这里需要注意，freenode服务器由于种种原因，在国内无法访问，而irssi又不支持代理，所以推荐使用<a href="https://github.com/haad/proxychains" target="_blank" rel="noopener">proxychains</a>代理irssi。<br>最后，值得推荐的IRC频道有下(基于freenode)：</p>
+          <p><strong>IRC</strong>，全称 Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。</p>
+<p>IRC 协议属于应用层协议，使用的传输层协议为 TCP，使用的端口为 <strong>6667</strong>（明文传输，如 irc://chat.freenode.net）或 <strong>6697</strong>（SSL 加密传输，如 ircs://chat.freenode.net:6697）。</p>
+<p>IRC 是一个<strong>分布式</strong>的 <strong>C/S</strong> 架构，一个 IRC 服务器可以连接其他的 IRC 服务器以扩展为一个<strong>IRC 网络</strong>，通过连接到一个 IRC 服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个 IRC 服务器上，一个频道类似于一个聊天室，频道名称必须以 <code>#</code> 符号开始，例如 <code>#irchelp</code>。</p>
+<p>大多数的 IRC 服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。</p>
+<p>目前使用最广的 IRC 服务器为 <a href="https://freenode.net/" target="_blank" rel="noopener">freenode</a> ，而 IRC 客户端软件有多种，比如基于 Firefox 浏览器的 IRC 插件<a href="http://chatzilla.hacksrus.com/" target="_blank" rel="noopener">ChatZilla</a> ，基于网页的 <a href="https://webchat.freenode.net/" target="_blank" rel="noopener">Webchat</a> ，基于命令行的 <a href="https://irssi.org/" target="_blank" rel="noopener">Irssi</a> 、<a href="https://weechat.org/" target="_blank" rel="noopener">WeeChat</a> 等等。</p>
+<p>个人经常使用的 IRC 客户端为 Irssi，在 Ubuntu 中可以使用 <code>apt install irssi</code> 安装，之后直接输入 <code>irssi</code> 即可启动，输入 <code>irssi --help</code> 可查看更多命令参数。<br>启动 irssi 后可输入更多的命令，输入 <code>/help</code> 可查看所有可用命令，输入 <code>/connect Freenode</code> 即可连接到freenode服务器，之后再输入 <code>/join #linuxba</code> 即可加入 <code>#linuxba</code> 频道。<br>这里需要注意，freenode 服务器由于种种原因，在国内无法访问，而 irssi 又不支持代理，所以推荐使用 <a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a> 代理 irssi。</p>
+<p>最后，值得推荐的 IRC 频道有下（基于 freenode）：</p>
 <ul>
-<li><code>#ubuntu-cn</code>：Ubuntu中文社区频道</li>
-<li><code>#archlinux-cn</code>：Arch Linux中文社区频道</li>
-<li><code>#linuxba</code>：Linux贴吧频道</li>
-<li><code>#haskell</code>：Haskell语言频道</li>
-<li><code>#vim</code>：Vim社区频道</li>
+<li><code>#ubuntu-cn</code>：Ubuntu 中文社区频道</li>
+<li><code>#archlinux-cn</code>：Arch Linux 中文社区频道</li>
+<li><code>#linuxba</code>：Linux 贴吧频道</li>
+<li><code>#haskell</code>：Haskell 语言频道</li>
+<li><code>#vim</code>：Vim 社区频道</li>
 </ul>
 
       
@@ -1192,7 +1198,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">136k</span>
+    <span title="Symbols count total">137k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>

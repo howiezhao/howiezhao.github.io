@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。解决方法：  在shell窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾">
+  <meta name="description" content="有时在 Kali Linux 中获得了一个 Windows shell 或者在 meterpreter 中进入 shell 后，执行命令可能会出现中文乱码，其原因是 Windows 和 Linux 的编码不同，导致 Windows 中的中文在 Linux 中无法正常显示。 解决方法：  在 shell 窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB">
 <meta name="keywords" content="Kali">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Metasploit中shell中文乱码解决方案">
+<meta property="og:title" content="Metasploit 中 shell 中文乱码解决方案">
 <meta property="og:url" content="https://howiezhao.github.io/2017/12/04/metasploit-luanma/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。解决方法：  在shell窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾">
+<meta property="og:description" content="有时在 Kali Linux 中获得了一个 Windows shell 或者在 meterpreter 中进入 shell 后，执行命令可能会出现中文乱码，其原因是 Windows 和 Linux 的编码不同，导致 Windows 中的中文在 Linux 中无法正常显示。 解决方法：  在 shell 窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:updated_time" content="2020-06-21T11:18:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Metasploit中shell中文乱码解决方案">
-<meta name="twitter:description" content="有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。解决方法：  在shell窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾">
+<meta name="twitter:title" content="Metasploit 中 shell 中文乱码解决方案">
+<meta name="twitter:description" content="有时在 Kali Linux 中获得了一个 Windows shell 或者在 meterpreter 中进入 shell 后，执行命令可能会出现中文乱码，其原因是 Windows 和 Linux 的编码不同，导致 Windows 中的中文在 Linux 中无法正常显示。 解决方法：  在 shell 窗口的工具栏选择“编辑”——&amp;gt;“首选项”——&amp;gt;“编码”，选中简体中文的三个编码：GB">
 
 <link rel="canonical" href="https://howiezhao.github.io/2017/12/04/metasploit-luanma/">
 
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>Metasploit中shell中文乱码解决方案 | Howie's Notes</title>
+  <title>Metasploit 中 shell 中文乱码解决方案 | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -233,7 +233,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Metasploit中shell中文乱码解决方案
+          Metasploit 中 shell 中文乱码解决方案
         </h1>
 
         <div class="post-meta">
@@ -250,7 +250,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+                <time title="Modified: 2020-06-21 19:18:56" itemprop="dateModified" datetime="2020-06-21T19:18:56+08:00">2020-06-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,12 +282,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>有时在Kali Linux中获得了一个Windows shell或者在meterpreter中进入shell后，执行命令可能会出现中文乱码，其原因是Windows和Linux的编码不同，导致Windows中的中文在Linux中无法正常显示。<br><strong>解决方法：</strong></p>
+        <p>有时在 Kali Linux 中获得了一个 Windows shell 或者在 meterpreter 中进入 shell 后，执行命令可能会出现中文乱码，其原因是 Windows 和 Linux 的编码不同，导致 Windows 中的中文在 Linux 中无法正常显示。</p>
+<p><strong>解决方法：</strong></p>
 <ol>
-<li>在shell窗口的工具栏选择“编辑”——&gt;“首选项”——&gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾并退出</li>
-<li>接着在“终端”——&gt;“设定字符编码”中选择添加的三个简体中文编码之一即可<br><strong>注意：</strong></li>
+<li>在 shell 窗口的工具栏选择“编辑”——&gt;“首选项”——&gt;“编码”，选中简体中文的三个编码：GB18030，GB2312，GBK，打勾并退出</li>
+<li>接着在“终端”——&gt;“设定字符编码”中选择添加的三个简体中文编码之一即可</li>
+</ol>
+<p><strong>注意：</strong></p>
+<ol>
 <li>这个设置会随着操作系统的重启而失效</li>
-<li>设定简体中文编码之后，Linux中的中文字符就会乱码，因为Linux使用UTF-8编码</li>
+<li>设定简体中文编码之后，Linux 中的中文字符就会乱码，因为 Linux 使用 UTF-8 编码</li>
 <li>建议只在需要的时候设定简体中文编码</li>
 </ol>
 
@@ -477,7 +481,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">136k</span>
+    <span title="Symbols count total">137k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>
