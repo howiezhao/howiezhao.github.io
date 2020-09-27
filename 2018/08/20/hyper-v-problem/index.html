@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="全屏问题由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。 对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用远程桌面连接，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 /etc/d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-05T15:49:16.000Z">
+<meta property="og:updated_time" content="2020-09-27T15:03:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hyper-V 相关问题解决">
 <meta name="twitter:description" content="全屏问题由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。 对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用远程桌面连接，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 /etc/d">
@@ -250,7 +250,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-05 23:49:16" itemprop="dateModified" datetime="2020-02-05T23:49:16+08:00">2020-02-05</time>
+                <time title="Modified: 2020-09-27 23:03:15" itemprop="dateModified" datetime="2020-09-27T23:03:15+08:00">2020-09-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,7 +284,9 @@
       
         <h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。</p>
 <p>对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 <code>/etc/default/grub</code> 文件，更改其中 <code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>（注意是 <code>x</code> 不是 <code>*</code>），接着执行 <code>update-grub</code> 并重启即可。<br><a id="more"></a></p>
-<h2 id="显卡问题"><a href="#显卡问题" class="headerlink" title="显卡问题"></a>显卡问题</h2><p>开启 Hyper-V 功能后，原主机的显卡可能会出现问题，对于我当时的 1803 版 Win10 来说，电脑中原来的 Intel(R) HD Graphics 4600 核芯显卡（针对我的电脑而言）不能正常工作，具体表现在工具栏中英特尔核芯显卡控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。究其原因是系统中原本的 4624 版驱动程序与 Hyper-V 不兼容，解决办法是去<a href="https://downloadcenter.intel.com/zh-cn" target="_blank" rel="noopener">官网</a>下载最新版驱动程序并升级即可。</p>
+<h2 id="显卡问题"><a href="#显卡问题" class="headerlink" title="显卡问题"></a>显卡问题</h2><p>开启 Hyper-V 功能后，原主机的显卡可能会出现问题，对于我当时的 1803 版 Win10 来说，电脑中原来的 <strong>Intel(R) HD Graphics 4600</strong> 核芯显卡（针对我的电脑而言）不能正常工作，具体表现在工具栏中<strong>英特尔核芯显卡</strong>控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。</p>
+<p>究其原因是系统中原本的 4624 版驱动程序与 Hyper-V 不兼容，解决办法是去<a href="https://downloadcenter.intel.com/zh-cn" target="_blank" rel="noopener">官网</a>下载最新版驱动程序并升级即可。</p>
+<p>具体操作步骤可参考<a href="https://www.youtube.com/watch?v=dYfeOnFZegI&amp;ab_channel=AlexanderSchmidt" target="_blank" rel="noopener">此视频</a> 。</p>
 <h2 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h2><p>由于 Hyper-V 采用的是硬件虚拟化技术，所以开启 Hyper-V 功能后相当于原本的物理机也运行在虚拟化上了，因此不能再使用 VMware 或者 VirtualBox，它们不允许在虚拟机上运行虚拟机，而此时原主机在它们眼中就是一个虚拟机。</p>
 <p>早期的 Android Studio 中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4 版之后自带模拟器(v27.3.9)已经可以支持 Hyper-V，在开启 Hyper-V 的系统中，它使用 <strong>Windows 虚拟机监控程序平台</strong>替代了 Intel 的 <strong>HAXM</strong>，使用前需要在 Windows 功能中启用 <strong>Windows 虚拟机监控程序平台</strong>功能。</p>
 <h2 id="网卡问题"><a href="#网卡问题" class="headerlink" title="网卡问题"></a>网卡问题</h2><p>要想使 Hyper-V 中的虚拟机上网，可以通过创建<strong>虚拟交换机</strong>实现，虚拟交换机有 3 种类型，<strong>外部</strong>相当于 VMware 的<strong>桥接模式</strong>，<strong>内部</strong>相当于 VMware 的 <strong>NAT 模式</strong>，<strong>专用</strong>相当于 VMware 的<strong>仅主机模式</strong>，所有虚拟机会默认使用<strong>内部</strong>类型的<strong>默认交换机</strong>，这是<strong>虚拟交换机管理器</strong>自动创建的。</p>
