@@ -724,7 +724,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/07/21/nexus-pixel-problem/" class="post-title-link" itemprop="url">Nexus/Pixel相关问题解决</a>
+            <a href="/2019/07/21/nexus-pixel-problem/" class="post-title-link" itemprop="url">Nexus/Pixel 相关问题解决</a>
         </h1>
 
         <div class="post-meta">
@@ -741,7 +741,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+                <time title="Modified: 2020-11-27 23:52:11" itemprop="dateModified" datetime="2020-11-27T23:52:11+08:00">2020-11-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -766,11 +766,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="移动网络-Wifi出现叹号或叉号"><a href="#移动网络-Wifi出现叹号或叉号" class="headerlink" title="移动网络/Wifi出现叹号或叉号"></a>移动网络/Wifi出现叹号或叉号</h2><p>Captive Portal是从Android 5开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过HTTP访问一个Google的服务器，若返回200状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回204状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。</p>
-<p>显然，Google的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接ADB，针对不同的系统版本，下方分别给出了相关命令：</p>
-<p>Android 9.0/8.1/8.0/7.1.2/7.1.1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure></p>
-<p>Android 7.1/7.0：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure></p>
-<p>Android 5.0-6.x：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure></p>
+          <h2 id="移动网络-WiFi-出现叹号或叉号"><a href="#移动网络-WiFi-出现叹号或叉号" class="headerlink" title="移动网络/WiFi 出现叹号或叉号"></a>移动网络/WiFi 出现叹号或叉号</h2><p>Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。</p>
+<p>显然，Google 的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接 ADB，针对不同的系统版本，下方分别给出了相关命令：</p>
+<p>Android 9.0/8.1/8.0/7.1.2/7.1.1：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure>
+<p>Android 7.1/7.0：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure>
+<p>Android 5.0-6.x：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure>
 <p>执行之后，开启飞行模式，接着关闭飞行模式即可。<br>
           <!--noindex-->
             <div class="post-button">

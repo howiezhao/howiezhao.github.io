@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="全屏问题由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。 对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用远程桌面连接，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 /etc/d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-27T15:03:15.000Z">
+<meta property="og:updated_time" content="2020-11-27T15:52:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hyper-V 相关问题解决">
 <meta name="twitter:description" content="全屏问题由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。 对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用远程桌面连接，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 /etc/d">
@@ -250,7 +250,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-27 23:03:15" itemprop="dateModified" datetime="2020-09-27T23:03:15+08:00">2020-09-27</time>
+                <time title="Modified: 2020-11-27 23:52:11" itemprop="dateModified" datetime="2020-11-27T23:52:11+08:00">2020-11-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,7 +288,7 @@
 <p>究其原因是系统中原本的 4624 版驱动程序与 Hyper-V 不兼容，解决办法是去<a href="https://downloadcenter.intel.com/zh-cn" target="_blank" rel="noopener">官网</a>下载最新版驱动程序并升级即可。</p>
 <p>具体操作步骤可参考<a href="https://www.youtube.com/watch?v=dYfeOnFZegI&amp;ab_channel=AlexanderSchmidt" target="_blank" rel="noopener">此视频</a> 。</p>
 <h2 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h2><p>由于 Hyper-V 采用的是硬件虚拟化技术，所以开启 Hyper-V 功能后相当于原本的物理机也运行在虚拟化上了，因此不能再使用 VMware 或者 VirtualBox，它们不允许在虚拟机上运行虚拟机，而此时原主机在它们眼中就是一个虚拟机。</p>
-<p>早期的 Android Studio 中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4 版之后自带模拟器(v27.3.9)已经可以支持 Hyper-V，在开启 Hyper-V 的系统中，它使用 <strong>Windows 虚拟机监控程序平台</strong>替代了 Intel 的 <strong>HAXM</strong>，使用前需要在 Windows 功能中启用 <strong>Windows 虚拟机监控程序平台</strong>功能。</p>
+<p>早期的 Android Studio 中自带的模拟器也会由于这种原因导致模拟器无法启动，只需将模拟器升级到最新版即可解决，Android Studio 3.1.4 版之后自带模拟器（v27.3.9）已经可以支持 Hyper-V，在开启 Hyper-V 的系统中，它使用 <strong>Windows 虚拟机监控程序平台</strong>替代了 Intel 的 <strong>HAXM</strong>，使用前需要在 Windows 功能中启用 <strong>Windows 虚拟机监控程序平台</strong>功能。</p>
 <h2 id="网卡问题"><a href="#网卡问题" class="headerlink" title="网卡问题"></a>网卡问题</h2><p>要想使 Hyper-V 中的虚拟机上网，可以通过创建<strong>虚拟交换机</strong>实现，虚拟交换机有 3 种类型，<strong>外部</strong>相当于 VMware 的<strong>桥接模式</strong>，<strong>内部</strong>相当于 VMware 的 <strong>NAT 模式</strong>，<strong>专用</strong>相当于 VMware 的<strong>仅主机模式</strong>，所有虚拟机会默认使用<strong>内部</strong>类型的<strong>默认交换机</strong>，这是<strong>虚拟交换机管理器</strong>自动创建的。</p>
 <p>如果我们选择创建<strong>外部</strong>类型的虚拟交换机，则会把 Hyper-V 的网络桥接在物理网卡上，那物理网卡将变成一个虚拟交换机。因此我们会发现原来使用的网卡变成了 <strong>vEthernet</strong>，这是正常现象，不用担心。Hyper-V 会自动创建一个虚拟网卡来继承原物理网卡的配置，物理计算机可以正常使用网络。</p>
 <h2 id="代数问题"><a href="#代数问题" class="headerlink" title="代数问题"></a>代数问题</h2><p>在创建虚拟机时可以选择虚拟机代数，简单来说，第一代虚拟机支持创建 32 位与 64 位操作系统，创建的虚拟硬盘为 <code>.vhd</code> 格式，第二代虚拟机只能创建 64 位操作系统，创建的虚拟硬盘为 <code>.vhdx</code> 格式，并且必须是 Windows 8 或 Windows Server 2012 以上版本，对于 Linux，微软官方有一份详细的清单表明哪些版本可以创建第二代虚拟机。</p>
