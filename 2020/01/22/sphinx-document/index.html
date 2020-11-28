@@ -53,7 +53,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Sphinx 是一个用 Python 编写的文档生成工具，其使用 reStructuredText 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 Python 官方文档就是基于 Sphinx 生成的，此外 Linux 内核文档的生成也于 2016 年从 Doxygen 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其官方列表。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-05T12:51:43.000Z">
+<meta property="og:updated_time" content="2020-11-28T05:45:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Sphinx 生成项目文档">
 <meta name="twitter:description" content="Sphinx 是一个用 Python 编写的文档生成工具，其使用 reStructuredText 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 Python 官方文档就是基于 Sphinx 生成的，此外 Linux 内核文档的生成也于 2016 年从 Doxygen 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其官方列表。">
@@ -249,7 +249,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-05 20:51:43" itemprop="dateModified" datetime="2020-02-05T20:51:43+08:00">2020-02-05</time>
+                <time title="Modified: 2020-11-28 13:45:25" itemprop="dateModified" datetime="2020-11-28T13:45:25+08:00">2020-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -305,8 +305,8 @@
 </ul>
 <p>编写完文档后，使用 <code>make html</code> 命令即可将其构建为 HTML 文件，其中，<code>html</code> 被称为构建器（builder），当然，你也可以使用别的构建器，比如 <code>latex</code>、<code>epub</code> 等。</p>
 <p>输入 <code>make help</code> 可查看 make 支持的相关命令。</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster" target="_blank" rel="noopener">Alabaster</a>（个人觉得挺好看的，<a href="https://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Request</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes" target="_blank" rel="noopener">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
-<p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank" rel="noopener">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/" target="_blank" rel="noopener">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>‘sphinx_rtd_theme’</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster" target="_blank" rel="noopener">Alabaster</a>（个人觉得挺好看的，<a href="https://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes" target="_blank" rel="noopener">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
+<p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank" rel="noopener">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/" target="_blank" rel="noopener">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>&#39;sphinx_rtd_theme&#39;</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
 <p>要探索更多的第三方主题，可参考 <a href="https://sphinx-themes.org/" target="_blank" rel="noopener">Sphinx Themes</a> 网站上收录的。</p>
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>Sphinx 支持扩展，安装完 Sphinx 后就已经内置了一些扩展，除此之外，你也可以下载第三方扩展。</p>
 <h3 id="内置扩展"><a href="#内置扩展" class="headerlink" title="内置扩展"></a>内置扩展</h3><h4 id="sphinx-ext-autodoc"><a href="#sphinx-ext-autodoc" class="headerlink" title="sphinx.ext.autodoc"></a>sphinx.ext.autodoc</h4><h4 id="sphinx-ext-coverage"><a href="#sphinx-ext-coverage" class="headerlink" title="sphinx.ext.coverage"></a>sphinx.ext.coverage</h4><h4 id="sphinx-ext-viewcode"><a href="#sphinx-ext-viewcode" class="headerlink" title="sphinx.ext.viewcode"></a>sphinx.ext.viewcode</h4><h4 id="sphinx-ext-napoleon"><a href="#sphinx-ext-napoleon" class="headerlink" title="sphinx.ext.napoleon"></a>sphinx.ext.napoleon</h4><h4 id="sphinx-ext-graphviz"><a href="#sphinx-ext-graphviz" class="headerlink" title="sphinx.ext.graphviz"></a>sphinx.ext.graphviz</h4><h4 id="sphinx-ext-todo"><a href="#sphinx-ext-todo" class="headerlink" title="sphinx.ext.todo"></a>sphinx.ext.todo</h4><h3 id="第三方扩展"><a href="#第三方扩展" class="headerlink" title="第三方扩展"></a>第三方扩展</h3><h4 id="recommonmark"><a href="#recommonmark" class="headerlink" title="recommonmark"></a>recommonmark</h4><h4 id="nbsphinx"><a href="#nbsphinx" class="headerlink" title="nbsphinx"></a>nbsphinx</h4><h4 id="sphinx-autodoc-typehints"><a href="#sphinx-autodoc-typehints" class="headerlink" title="sphinx-autodoc-typehints"></a>sphinx-autodoc-typehints</h4><h4 id="sphinx-gallery"><a href="#sphinx-gallery" class="headerlink" title="sphinx-gallery"></a>sphinx-gallery</h4><h2 id="Read-the-Docs"><a href="#Read-the-Docs" class="headerlink" title="Read the Docs"></a>Read the Docs</h2>

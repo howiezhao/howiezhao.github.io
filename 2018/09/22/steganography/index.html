@@ -46,20 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="第一步拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 file 命令，直接输入 file a即可检查 a 文件的类型。知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索CTF或FLAG等关键字">
+  <meta name="description" content="第一步拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 file 命令，直接输入 file a 即可检查 a 文件的类型。 知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 CTF 或 FLA">
 <meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="隐写术">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/22/steganography/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="第一步拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 file 命令，直接输入 file a即可检查 a 文件的类型。知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索CTF或FLAG等关键字">
+<meta property="og:description" content="第一步拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 file 命令，直接输入 file a 即可检查 a 文件的类型。 知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 CTF 或 FLA">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://howiezhao.github.io/images/meinv.jpg">
 <meta property="og:image" content="https://howiezhao.github.io/images/word.PNG">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:updated_time" content="2020-11-28T05:45:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="隐写术">
-<meta name="twitter:description" content="第一步拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 file 命令，直接输入 file a即可检查 a 文件的类型。知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索CTF或FLAG等关键字">
+<meta name="twitter:description" content="第一步拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 file 命令，直接输入 file a 即可检查 a 文件的类型。 知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 CTF 或 FLA">
 <meta name="twitter:image" content="https://howiezhao.github.io/images/meinv.jpg">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/22/steganography/">
@@ -253,7 +253,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+                <time title="Modified: 2020-11-28 13:45:25" itemprop="dateModified" datetime="2020-11-28T13:45:25+08:00">2020-11-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,11 +285,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code>即可检查 a 文件的类型。<br>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索<code>CTF</code>或<code>FLAG</code>等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件<a href="http://facelessuser.github.io/HexViewer/" target="_blank" rel="noopener">HexViewer</a>查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
+        <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code> 即可检查 a 文件的类型。</p>
+<p>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 <code>CTF</code> 或 <code>FLAG</code> 等关键字，发现是否存在隐藏信息。Windows 下可以使用 Sublime Text 3 的插件 <a href="http://facelessuser.github.io/HexViewer/" target="_blank" rel="noopener">HexViewer</a> 查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
 <h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp" target="_blank" rel="noopener">谷歌搜图</a>，或许可以发现更多信息。</p>
-<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片：<br><img src="/images/meinv.jpg" alt="exif"><br><a id="more"></a></p>
-<h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到<a href="http://www.petitcolas.net/steganography/mp3stego/" target="_blank" rel="noopener">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。下载该软件后在其<code>MP3Stego</code>文件夹下会有 2 个命令：<code>Encode</code>和<code>Decode</code>，<code>Encode</code>命令用于隐写信息，<code>Decode</code>命令用于解密被隐写的信息，使用<code>decode -X -P pass svega_stego.mp3</code>即可从<code>svega_stego.mp3</code>文件中解码所需信息，<code>-P</code>指定解密密码。</p>
-<h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：<br><img src="/images/word.PNG" alt="word"><br>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。<br>类似的题可以参考<a href="http://www.shiyanbar.com/ctf/1927" target="_blank" rel="noopener">Fonts</a>,<a href="http://www.shiyanbar.com/ctf/1849" target="_blank" rel="noopener">认真你就输了</a>等等。</p>
+<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式（Exchangeable image file format），可以记录 JPEG 格式图片的属性信息和拍摄数据。有的 JPEG 格式图片会具有 Exif 信息，在 Windows 中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备 Exif 信息。如下图片：</p>
+<p><img src="/images/meinv.jpg" alt="exif"></p>
+<a id="more"></a>
+<h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到 <a href="http://www.petitcolas.net/steganography/mp3stego/" target="_blank" rel="noopener">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。</p>
+<p>下载该软件后在其 <code>MP3Stego</code> 文件夹下会有 2 个命令：<code>Encode</code> 和 <code>Decode</code>，<code>Encode</code> 命令用于隐写信息，<code>Decode</code> 命令用于解密被隐写的信息，使用 <code>decode -X -P pass svega_stego.mp3</code> 即可从 <code>svega_stego.mp3</code> 文件中解码所需信息，<code>-P</code> 指定解密密码。</p>
+<h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：</p>
+<p><img src="/images/word.PNG" alt="word"></p>
+<p>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。</p>
+<p>类似的题可以参考 <a href="http://www.shiyanbar.com/ctf/1927" target="_blank" rel="noopener">Fonts</a>，<a href="http://www.shiyanbar.com/ctf/1849" target="_blank" rel="noopener">认真你就输了</a>等等。</p>
 
     </div>
 

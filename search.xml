@@ -41,8 +41,8 @@
 </ul>
 <p>编写完文档后，使用 <code>make html</code> 命令即可将其构建为 HTML 文件，其中，<code>html</code> 被称为构建器（builder），当然，你也可以使用别的构建器，比如 <code>latex</code>、<code>epub</code> 等。</p>
 <p>输入 <code>make help</code> 可查看 make 支持的相关命令。</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster" target="_blank" rel="noopener">Alabaster</a>（个人觉得挺好看的，<a href="https://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Request</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes" target="_blank" rel="noopener">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
-<p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank" rel="noopener">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/" target="_blank" rel="noopener">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>‘sphinx_rtd_theme’</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster" target="_blank" rel="noopener">Alabaster</a>（个人觉得挺好看的，<a href="https://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes" target="_blank" rel="noopener">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
+<p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank" rel="noopener">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/" target="_blank" rel="noopener">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>&#39;sphinx_rtd_theme&#39;</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
 <p>要探索更多的第三方主题，可参考 <a href="https://sphinx-themes.org/" target="_blank" rel="noopener">Sphinx Themes</a> 网站上收录的。</p>
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>Sphinx 支持扩展，安装完 Sphinx 后就已经内置了一些扩展，除此之外，你也可以下载第三方扩展。</p>
 <h3 id="内置扩展"><a href="#内置扩展" class="headerlink" title="内置扩展"></a>内置扩展</h3><h4 id="sphinx-ext-autodoc"><a href="#sphinx-ext-autodoc" class="headerlink" title="sphinx.ext.autodoc"></a>sphinx.ext.autodoc</h4><h4 id="sphinx-ext-coverage"><a href="#sphinx-ext-coverage" class="headerlink" title="sphinx.ext.coverage"></a>sphinx.ext.coverage</h4><h4 id="sphinx-ext-viewcode"><a href="#sphinx-ext-viewcode" class="headerlink" title="sphinx.ext.viewcode"></a>sphinx.ext.viewcode</h4><h4 id="sphinx-ext-napoleon"><a href="#sphinx-ext-napoleon" class="headerlink" title="sphinx.ext.napoleon"></a>sphinx.ext.napoleon</h4><h4 id="sphinx-ext-graphviz"><a href="#sphinx-ext-graphviz" class="headerlink" title="sphinx.ext.graphviz"></a>sphinx.ext.graphviz</h4><h4 id="sphinx-ext-todo"><a href="#sphinx-ext-todo" class="headerlink" title="sphinx.ext.todo"></a>sphinx.ext.todo</h4><h3 id="第三方扩展"><a href="#第三方扩展" class="headerlink" title="第三方扩展"></a>第三方扩展</h3><h4 id="recommonmark"><a href="#recommonmark" class="headerlink" title="recommonmark"></a>recommonmark</h4><h4 id="nbsphinx"><a href="#nbsphinx" class="headerlink" title="nbsphinx"></a>nbsphinx</h4><h4 id="sphinx-autodoc-typehints"><a href="#sphinx-autodoc-typehints" class="headerlink" title="sphinx-autodoc-typehints"></a>sphinx-autodoc-typehints</h4><h4 id="sphinx-gallery"><a href="#sphinx-gallery" class="headerlink" title="sphinx-gallery"></a>sphinx-gallery</h4><h2 id="Read-the-Docs"><a href="#Read-the-Docs" class="headerlink" title="Read the Docs"></a>Read the Docs</h2>]]></content>
@@ -330,12 +330,12 @@
   <entry>
     <title>汇编语言小记</title>
     <url>/2019/03/09/assembly/</url>
-    <content><![CDATA[<p><strong>汇编语言</strong>（Assembly Language，简称<strong>ASM</strong>）由<strong>汇编指令</strong>、<strong>伪指令</strong>和<strong>其他符号</strong>组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。</p>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>汇编语言是依赖底层CPU架构的，不同的CPU架构拥有不同的汇编语言，比如，常用于PC的<strong>x86汇编</strong>和常用于嵌入式设备的<strong>ARM汇编</strong>。由于x86架构又分为16位、32位、64位等，其相应的汇编也有稍许不同。本文主要以32位x86汇编为例做简要介绍。<br><a id="more"></a></p>
-<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>汇编语言的大部分指令都是直接操作CPU中的寄存器的，所以有必要了解以下x86架构的CPU中常见的寄存器。</p>
-<p>16位x86CPU中常见的寄存器有：</p>
+    <content><![CDATA[<p><strong>汇编语言</strong>（Assembly Language，简称 <strong>ASM</strong>）由<strong>汇编指令</strong>、<strong>伪指令</strong>和<strong>其他符号</strong>组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。</p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的<strong>x86 汇编</strong>和常用于嵌入式设备的<strong>ARM 汇编</strong>。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也有稍许不同。本文主要以 32 位 x86 汇编为例做简要介绍。<br><a id="more"></a></p>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>汇编语言的大部分指令都是直接操作 CPU 中的寄存器的，所以有必要了解以下 x86 架构的 CPU 中常见的寄存器。</p>
+<p>16 位 x86 CPU 中常见的寄存器有：</p>
 <ul>
-<li>通用寄存器（<strong>8个</strong>）：<ul>
+<li>通用寄存器（<strong>8 个</strong>）：<ul>
 <li>数据寄存器：<ul>
 <li>AX：累加寄存器，Accumulator</li>
 <li>BX：基址寄存器，Base</li>
@@ -368,11 +368,11 @@
 </ul>
 </li>
 </ul>
-<p>为了保证兼容性，AX、BX、CX、DX这四个寄存器都可分为两个可独立使用的8位寄存器来用，如AX可分为<strong>AH</strong>和<strong>AL</strong>，其中AH代表高（High）8位，AL代表低（Low）8位，其他3个也是如此。</p>
-<p>32位x86CPU在16位的基础上增加了一些寄存器，那些和原来作用相同的寄存器一般会在前面加上<code>E</code>，其中常见的寄存器有：</p>
+<p>为了保证兼容性，AX、BX、CX、DX 这四个寄存器都可分为两个可独立使用的 8 位寄存器来用，如 AX 可分为 <strong>AH</strong> 和 <strong>AL</strong>，其中 AH 代表高（High）8 位，AL 代表低（Low）8 位，其他 3 个也是如此。</p>
+<p>32 位 x86 CPU 在 16 位的基础上增加了一些寄存器，那些和原来作用相同的寄存器一般会在前面加上 <code>E</code>，其中常见的寄存器有：</p>
 <ul>
-<li>通用寄存器（<strong>8个</strong>）：EAX、EBX、ECX、EDX、ESP、EBP、ESI、EDI</li>
-<li>段寄存器：CS、DS、SS、ES、FS、GS，增加的FS、GS和ES一样，属于附加段寄存器</li>
+<li>通用寄存器（<strong>8 个</strong>）：EAX、EBX、ECX、EDX、ESP、EBP、ESI、EDI</li>
+<li>段寄存器：CS、DS、SS、ES、FS、GS，增加的 FS、GS 和 ES 一样，属于附加段寄存器</li>
 <li>指令指针寄存器：EIP</li>
 <li>标志寄存器：EFLAGS</li>
 <li>系统表寄存器：GDTR、LDTR、IDTR、TR</li>
@@ -380,82 +380,83 @@
 <li>调试寄存器：DR0、DR1、DR2、DR3、DR4、DR5、DR6、DR7</li>
 <li>测试寄存器：TR0、TR1、TR2、TR3、TR4、TR5、TR6、TR7</li>
 </ul>
-<p>类似的，64位又在32位的基础上增加了一些寄存器，那些和原来作用相同的寄存器一般会将前面的<code>E</code>改为<code>R</code>，其中常见的寄存器有：</p>
+<p>类似的，64 位又在 32 位的基础上增加了一些寄存器，那些和原来作用相同的寄存器一般会将前面的 <code>E</code> 改为 <code>R</code>，其中常见的寄存器有：</p>
 <ul>
-<li>通用寄存器（<strong>16个</strong>）：RAX、RBX、RCX、RDX、RSP、RBP、RSI、RDI、R8、R9、R10、R11、R12、R13、R14、R15</li>
+<li>通用寄存器（<strong>16 个</strong>）：RAX、RBX、RCX、RDX、RSP、RBP、RSI、RDI、R8、R9、R10、R11、R12、R13、R14、R15</li>
 <li>指令指针寄存器：RIP</li>
 <li>标志寄存器：RFLAGS</li>
 </ul>
 <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>常见的汇编指令如下：</p>
 <ul>
-<li><code>mov</code>：传送指令，两个操作对象的位数应该一致，如<code>mov eax,ebx</code>，表示将EBX的值送入EAX中。8086CPU不支持将数据直接送入段寄存器的操作，要想实现此功能，只能用一个寄存器来进行中转。</li>
-<li><code>add</code>：加法指令，两个操作对象的位数应该一致，如<code>add eax,ebx</code>，表示将EAX和EBX相加，其值赋给EAX。</li>
-<li><code>sub</code>：减法指令，如<code>sub eax,ebx</code>，表示用EAX减EBX，其值赋给EAX。</li>
+<li><code>mov</code>：传送指令，两个操作对象的位数应该一致，如 <code>mov eax,ebx</code>，表示将 EBX 的值送入 EAX 中。8086 CPU 不支持将数据直接送入段寄存器的操作，要想实现此功能，只能用一个寄存器来进行中转。</li>
+<li><code>add</code>：加法指令，两个操作对象的位数应该一致，如 <code>add eax,ebx</code>，表示将 EAX 和 EBX 相加，其值赋给 EAX。</li>
+<li><code>sub</code>：减法指令，如 <code>sub eax,ebx</code>，表示用 EAX 减 EBX，其值赋给 EAX。</li>
 <li><code>push</code>：</li>
 <li><code>pop</code>：</li>
-<li><code>jmp</code>：跳转指令，属于转移指令，如<code>jmp 2AE3:3</code>，表示将CS设为2AE3H，将IP设为0003H，CPU将从CS:IP（即2AE33H）处读取指令；<code>jmp eax</code>表示将EAX的值赋给IP，CS保持不变。</li>
-<li><code>jnz</code>：条件跳转指令，检查EFLAGS标志寄存器中的ZF位（零标志位）是否为0，若不为0，则跳转。</li>
-<li><code>jz</code>：条件跳转指令，检查EFLAGS标志寄存器中的ZF位（零标志位）是否为0，若为0，则跳转。</li>
-<li><code>in</code>：从I/O端口读取内容，如<code>in al,21H</code>，表示从21H端口读取内容到AL中。</li>
-<li><code>out</code>：向I/O端口写入内容，如<code>out 21H,al</code>，表示将AL的值写入到21H端口中。</li>
-<li><code>xor</code>：按位异或运算，即相同为0，不同为1，如<code>xor eax,ebx</code>，表示将EAX和EBX按位异或，其值赋给EAX。对同一个值进行异或，会使其得0，汇编中常用这种方法得到0，如<code>xor eax,eax</code>。</li>
-<li><code>or</code>：按位或运算，如<code>or eax,ebx</code>，表示将EAX和EBX按位或，其值赋给EAX。</li>
+<li><code>jmp</code>：跳转指令，属于转移指令，如 <code>jmp 2AE3:3</code>，表示将 CS 设为 <code>2AE3H</code>，将 IP 设为 <code>0003H</code>，CPU 将从 CS:IP（即 <code>2AE33H</code>）处读取指令；<code>jmp eax</code> 表示将 EAX 的值赋给 IP，CS 保持不变。</li>
+<li><code>jnz</code>：条件跳转指令，检查 EFLAGS 标志寄存器中的 ZF 位（零标志位）是否为 0，若不为 0，则跳转。</li>
+<li><code>jz</code>：条件跳转指令，检查 EFLAGS 标志寄存器中的 ZF 位（零标志位）是否为 0，若为 0，则跳转。</li>
+<li><code>in</code>：从 I/O 端口读取内容，如 <code>in al,21H</code>，表示从 21H 端口读取内容到 AL 中。</li>
+<li><code>out</code>：向 I/O 端口写入内容，如 <code>out 21H,al</code>，表示将 AL 的值写入到 21H 端口中。</li>
+<li><code>xor</code>：按位异或运算，即相同为 0，不同为 1，如 <code>xor eax,ebx</code>，表示将 EAX 和 EBX 按位异或，其值赋给 EAX。对同一个值进行异或，会使其得 0，汇编中常用这种方法得到 0，如 <code>xor eax,eax</code>。</li>
+<li><code>or</code>：按位或运算，如 <code>or eax,ebx</code>，表示将 EAX 和 EBX 按位或，其值赋给 EAX。</li>
 </ul>
 <p>注意：汇编指令和寄存器名称不区分大小写。</p>
-<h2 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令"></a>伪指令</h2><p>伪指令依赖于具体的汇编器，这里我们以GNU中的as汇编器（gas）为例，讲述常见的伪指令及其含义：</p>
+<h2 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令"></a>伪指令</h2><p>伪指令依赖于具体的汇编器，这里我们以 GNU 中的 as 汇编器（gas）为例，讲述常见的伪指令及其含义：</p>
 <ul>
-<li><code>.set</code>：为变量设置一个值，如<code>.set CR0_PE_ON, 0x1</code>。</li>
-<li><code>.globl</code>或<code>.global</code>：设置外部链接，使其在其他文件中可被调用，如<code>.globl start</code>。</li>
-<li><code>.code16</code>：生成16位汇编代码。</li>
-<li><code>.code32</code>：生成32位汇编代码。</li>
+<li><code>.set</code>：为变量设置一个值，如 <code>.set CR0_PE_ON, 0x1</code>。</li>
+<li><code>.globl</code> 或 <code>.global</code>：设置外部链接，使其在其他文件中可被调用，如 <code>.globl start</code>。</li>
+<li><code>.code16</code>：生成 16 位汇编代码。</li>
+<li><code>.code32</code>：生成 32 位汇编代码。</li>
 <li><code>.p2align</code>：</li>
 <li><code>.word</code>：</li>
 <li><code>.long</code>：</li>
 </ul>
-<p>想要了解更多的伪指令可以参考<a href="https://sourceware.org/binutils/docs/as/Pseudo-Ops.html#Pseudo-Ops" target="_blank" rel="noopener">gas的官方文档</a>。</p>
-<h2 id="标号"><a href="#标号" class="headerlink" title="标号"></a>标号</h2><p>标号代表一个地址，类似于高级语言中的函数，在需要时可以使用跳转指令跳转到标号处执行，利用标号还可以实现死循环，如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spin:</span><br><span class="line">    jmp spin</span><br></pre></td></tr></table></figure></p>
-<h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>x86汇编语言的两大风格分别是<strong>Intel风格</strong>和<strong>AT&amp;T风格</strong>，分别被Microsoft和GNU所采用，两种风格的详细区别如下表所示：</p>
+<p>想要了解更多的伪指令可以参考 <a href="https://sourceware.org/binutils/docs/as/Pseudo-Ops.html#Pseudo-Ops" target="_blank" rel="noopener">gas 的官方文档</a>。</p>
+<h2 id="标号"><a href="#标号" class="headerlink" title="标号"></a>标号</h2><p>标号代表一个地址，类似于高级语言中的函数，在需要时可以使用跳转指令跳转到标号处执行，利用标号还可以实现死循环，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spin:</span><br><span class="line">    jmp spin</span><br></pre></td></tr></table></figure>
+<h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>x86 汇编语言的两大风格分别是 <strong>Intel 风格</strong>和 <strong>AT&amp;T 风格</strong>，分别被 Microsoft 和 GNU 所采用，两种风格的详细区别如下表所示：</p>
 <table>
 <thead>
 <tr>
 <th>项目</th>
-<th>Intel风格</th>
-<th>AT&amp;T风格</th>
+<th>Intel 风格</th>
+<th>AT&amp;T 风格</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>操作数顺序</td>
-<td>目标操作数在前，如<code>mov eax,8</code></td>
-<td>源操作数在前，如<code>movl $8,%eax</code></td>
+<td>目标操作数在前，如 <code>mov eax,8</code></td>
+<td>源操作数在前，如 <code>movl $8,%eax</code></td>
 </tr>
 <tr>
 <td>寄存器名字</td>
-<td>原样，如<code>mov eax,8</code></td>
-<td>加<code>%</code>前缀，如<code>movl $8,%eax</code></td>
+<td>原样，如 <code>mov eax,8</code></td>
+<td>加 <code>%</code> 前缀，如 <code>movl $8,%eax</code></td>
 </tr>
 <tr>
 <td>立即数</td>
-<td>原样，如<code>mov eax,8</code></td>
-<td>加<code>$</code>前缀，如<code>movl $8,%eax</code></td>
+<td>原样，如 <code>mov eax,8</code></td>
+<td>加 <code>$</code> 前缀，如 <code>movl $8,%eax</code></td>
 </tr>
 <tr>
 <td>16进制立即数</td>
-<td>用后缀<code>b</code>与<code>h</code>分别表示二进制与十六进制，对于16进制字母开头的要加前缀<code>0</code></td>
-<td>加前缀<code>0x</code></td>
+<td>用后缀 <code>b</code> 与 <code>h</code> 分别表示二进制与十六进制，对于 16 进制字母开头的要加前缀 <code>0</code></td>
+<td>加前缀 <code>0x</code></td>
 </tr>
 <tr>
 <td>访问内存长度的表示</td>
-<td>前缀<code>byte ptr</code>，<code>word ptr</code>，<code>dword ptr</code></td>
-<td>后缀<code>b</code>、<code>w</code>、<code>l</code>表示字节、字、长型</td>
+<td>前缀 <code>byte ptr</code>，<code>word ptr</code>，<code>dword ptr</code></td>
+<td>后缀 <code>b</code>、<code>w</code>、<code>l</code>表示字节、字、长型</td>
 </tr>
 <tr>
-<td>引用全局或静态变量var的值</td>
+<td>引用全局或静态变量 var 的值</td>
 <td>[_var]</td>
 <td>_var</td>
 </tr>
 <tr>
-<td>引用全局或静态变量var的地址</td>
+<td>引用全局或静态变量 var 的地址</td>
 <td>_var</td>
 <td>$_var</td>
 </tr>
@@ -486,10 +487,10 @@
 </tr>
 </tbody>
 </table>
-<p>本文的书写风格以Intel风格为主。</p>
-<h2 id="内联汇编"><a href="#内联汇编" class="headerlink" title="内联汇编"></a>内联汇编</h2><p>内联汇编（Inline Assembly）是指在C代码中嵌入汇编代码，显然，其语法是由具体的C编译器所决定的，这里主要以GNU中的gcc编译器为例简述其语法。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解汇编语言更多的知识，可以阅读王爽的<a href="https://book.douban.com/subject/25726019/" target="_blank" rel="noopener">《汇编语言》</a>一书，这本书基于16位的8086CPU来讲解汇编，虽然处理器已过时，但思想永不褪色。</p>
-<p>其次，<a href="https://www.ibm.com/developerworks/cn/linux/l-assembly/index.html" target="_blank" rel="noopener">Linux汇编语言开发指南</a>，也是一篇不错的介绍文章。</p>
+<p>本文的书写风格以 Intel 风格为主。</p>
+<h2 id="内联汇编"><a href="#内联汇编" class="headerlink" title="内联汇编"></a>内联汇编</h2><p>内联汇编（Inline Assembly）是指在 C 代码中嵌入汇编代码，显然，其语法是由具体的 C 编译器所决定的，这里主要以 GNU 中的 gcc 编译器为例简述其语法。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解汇编语言更多的知识，可以阅读王爽的<a href="https://book.douban.com/subject/25726019/" target="_blank" rel="noopener">《汇编语言》</a>一书，这本书基于 16 位的 8086 CPU 来讲解汇编，虽然处理器已过时，但思想永不褪色。</p>
+<p>其次，<a href="https://www.ibm.com/developerworks/cn/linux/l-assembly/index.html" target="_blank" rel="noopener">Linux 汇编语言开发指南</a>，也是一篇不错的介绍文章。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -498,12 +499,12 @@
   <entry>
     <title>成为黑客高手的必备技能</title>
     <url>/2019/02/25/hacker-essential-skills/</url>
-    <content><![CDATA[<p>本文翻译自<a href="https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/</a> ，正文如下：</p>
+    <content><![CDATA[<p>本文翻译自 <a href="https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/</a> ，正文如下：</p>
 <p>我的许多有抱负的黑客写信给我，都问同样的问题。“我需要什么技能才能成为一个好的黑客？”</p>
-<p>由于黑客是最熟练的信息技术学科之一，因此需要广泛的IT技术和技术知识。要真正成为一名优秀的黑客，必须掌握许多技能。如果你没有我在此列出的所有技能，请不要气馁，可以将此列表作为你在不久的将来学习和掌握所需内容的起点。<br><a id="more"></a><br><img src="https://img.wonderhowto.com/img/original/78/70/63533756748235/0/635337567482357870.jpg" alt><br>这是我进入这个精英IT行业的万神殿所需技能的概述列表。我将这些技能分为三类，以帮助你从一个级别转到另一个级别，更容易掌握基本技能、中级技能和无形技能，并提供了指向Null Byte相关文章的链接，供你了解。</p>
+<p>由于黑客是最熟练的信息技术学科之一，因此需要广泛的 IT 技术和技术知识。要真正成为一名优秀的黑客，必须掌握许多技能。如果你没有我在此列出的所有技能，请不要气馁，可以将此列表作为你在不久的将来学习和掌握所需内容的起点。<br><a id="more"></a><br><img src="https://img.wonderhowto.com/img/original/78/70/63533756748235/0/635337567482357870.jpg" alt="image"><br>这是我进入这个精英 IT 行业的万神殿所需技能的概述列表。我将这些技能分为三类，以帮助你从一个级别转到另一个级别，更容易掌握基本技能、中级技能和无形技能，并提供了指向 Null Byte 相关文章的链接，供你了解。</p>
 <h2 id="基本技能"><a href="#基本技能" class="headerlink" title="基本技能"></a>基本技能</h2><p>这些是每个黑客在尝试破解之前应该知道的基础知识。一旦掌握了本节中的所有内容，就可以进入中间层。</p>
-<h3 id="基本的计算机技能"><a href="#基本的计算机技能" class="headerlink" title="基本的计算机技能"></a>基本的计算机技能</h3><p>不用说，要成为一名黑客，你需要一些基本的计算机技能。这些技能超出了创建Word文档或浏览Internet的能力。你需要能够在Windows中使用命令行，编辑注册表以及设置网络参数。</p>
-<p>许多这些基本技能可以在像A+这样的基础计算机技能课程中获得。</p>
+<h3 id="基本的计算机技能"><a href="#基本的计算机技能" class="headerlink" title="基本的计算机技能"></a>基本的计算机技能</h3><p>不用说，要成为一名黑客，你需要一些基本的计算机技能。这些技能超出了创建 Word 文档或浏览 Internet 的能力。你需要能够在 Windows 中使用命令行，编辑注册表以及设置网络参数。</p>
+<p>许多这些基本技能可以在像 A+ 这样的基础计算机技能课程中获得。</p>
 <h3 id="网络技能"><a href="#网络技能" class="headerlink" title="网络技能"></a>网络技能</h3><p>你需要了解网络的基础知识，例如以下内容。</p>
 <ul>
 <li>DHCP</li>
@@ -511,12 +512,12 @@
 <li>子网划分</li>
 <li>IPv4</li>
 <li>IPv6</li>
-<li>公有和私有IP</li>
+<li>公有和私有 IP</li>
 <li>DNS</li>
 <li>路由器和交换机</li>
 <li>VLANs</li>
-<li>OSI模型</li>
-<li>MAC寻址</li>
+<li>OSI 模型</li>
+<li>MAC 寻址</li>
 <li>ARP</li>
 </ul>
 <p>由于我们经常利用这些技术，你越了解它们的工作方式，你就会越成功。请注意，我没有编写下面的两个指南，但它们非常有用，并涵盖了上面提到的一些网络基础知识。</p>
@@ -524,69 +525,69 @@
 <li><a href="https://null-byte.wonderhowto.com/how-to/hacker-fundamentals-tale-two-standards-0133727/" target="_blank" rel="noopener">黑客基础：两个标准的故事</a></li>
 <li><a href="https://null-byte.wonderhowto.com/how-to/hacker-fundamentals-everymans-guide-network-packets-are-routed-across-web-0134491/" target="_blank" rel="noopener">一般人的网络数据包路由指南</a></li>
 </ul>
-<h3 id="Linux技能"><a href="#Linux技能" class="headerlink" title="Linux技能"></a>Linux技能</h3><p>发展Linux技能对于成为黑客是非常关键的。我们用作黑客的几乎所有工具都是为Linux开发的，Linux为我们提供了使用Windows时没有的功能。</p>
-<p>如果你需要提高你的Linux技能，或者你刚开始使用Linux，请查看下面我的Linux初学者系列。</p>
+<h3 id="Linux-技能"><a href="#Linux-技能" class="headerlink" title="Linux 技能"></a>Linux 技能</h3><p>发展 Linux 技能对于成为黑客是非常关键的。我们用作黑客的几乎所有工具都是为 Linux 开发的，Linux 为我们提供了使用 Windows 时没有的功能。</p>
+<p>如果你需要提高你的 Linux 技能，或者你刚开始使用 Linux，请查看下面我的 Linux 初学者系列。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/linux-basics/" target="_blank" rel="noopener">针对有抱负的黑客的Linux基础知识</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/linux-basics/" target="_blank" rel="noopener">针对有抱负的黑客的 Linux 基础知识</a></li>
 </ul>
-<h3 id="Wireshark或Tcpdump"><a href="#Wireshark或Tcpdump" class="headerlink" title="Wireshark或Tcpdump"></a>Wireshark或Tcpdump</h3><p>Wireshark是使用最广泛的嗅探器/协议分析器，而tcpdump是命令行嗅探器/协议分析器。两者在分析TCP/IP流量和攻击方面都非常有用。</p>
+<h3 id="Wireshark-或-Tcpdump"><a href="#Wireshark-或-Tcpdump" class="headerlink" title="Wireshark 或 Tcpdump"></a>Wireshark 或 Tcpdump</h3><p>Wireshark 是使用最广泛的嗅探器/协议分析器，而 tcpdump 是命令行嗅探器/协议分析器。两者在分析 TCP/IP 流量和攻击方面都非常有用。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/spy-your-buddys-network-traffic-intro-wireshark-and-osi-model-0133807/" target="_blank" rel="noopener">Wireshark和OSI模型介绍</a></li>
-<li><a href="https://null-byte.wonderhowto.com/news/8-wireshark-filters-every-wiretapper-uses-spy-web-conversations-and-surfing-habits-0134508/" target="_blank" rel="noopener">Wireshark过滤器</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/spy-your-buddys-network-traffic-intro-wireshark-and-osi-model-0133807/" target="_blank" rel="noopener">Wireshark 和 OSI 模型介绍</a></li>
+<li><a href="https://null-byte.wonderhowto.com/news/8-wireshark-filters-every-wiretapper-uses-spy-web-conversations-and-surfing-habits-0134508/" target="_blank" rel="noopener">Wireshark 过滤器</a></li>
 </ul>
-<h3 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>你需要熟练使用其中一个虚拟化软件包，如<a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a>或<a href="https://www.vmware.com/products/workstation-pro.html" target="_blank" rel="noopener">VMWare Workstation</a>。理想情况下，你需要一个安全的环境来练习你的黑客攻击行为，之后才能将它们带出现实世界。虚拟环境为你提供了一个安全的环境，可以在使用它们之前测试和优化你的黑客攻击。</p>
+<h3 id="虚拟化"><a href="#虚拟化" class="headerlink" title="虚拟化"></a>虚拟化</h3><p>你需要熟练使用其中一个虚拟化软件包，如 <a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a> 或 <a href="https://www.vmware.com/products/workstation-pro.html" target="_blank" rel="noopener">VMWare Workstation</a>。理想情况下，你需要一个安全的环境来练习你的黑客攻击行为，之后才能将它们带出现实世界。虚拟环境为你提供了一个安全的环境，可以在使用它们之前测试和优化你的黑客攻击。</p>
 <h3 id="安全概念与技术"><a href="#安全概念与技术" class="headerlink" title="安全概念与技术"></a>安全概念与技术</h3><p>优秀的黑客了解安全概念和技术。克服安全管理员建立的障碍的唯一方法是熟悉它们。黑客必须了解诸如PKI（公钥基础架构），SSL（安全套接层），IDS（入侵检测系统），防火墙等等。</p>
-<p>黑客初学者可以在Security+等基本安全课程中获得许多这些技能。</p>
+<p>黑客初学者可以在 Security+ 等基本安全课程中获得许多这些技能。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/snort/" target="_blank" rel="noopener">如何读写Snort规则来躲避IDS</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/snort/" target="_blank" rel="noopener">如何读写 Snort 规则来躲避 IDS</a></li>
 </ul>
-<h3 id="无线技术"><a href="#无线技术" class="headerlink" title="无线技术"></a>无线技术</h3><p>为了能够破解无线，你必须首先了解它的工作原理。诸如加密算法（WEP，WPA，WPA2），四次握手和WPS之类的东西。此外，理解诸如连接和认证协议以及无线技术的法律约束等。</p>
-<p>要开始学习，请查看以下有关无线术语和技术入门的指南，然后阅读我们的Wi-Fi黑客指南集，了解有关各种加密算法的详细信息以及每种黑客如何工作的示例。</p>
+<h3 id="无线技术"><a href="#无线技术" class="headerlink" title="无线技术"></a>无线技术</h3><p>为了能够破解无线，你必须首先了解它的工作原理。诸如加密算法（WEP，WPA，WPA2），四次握手和 WPS 之类的东西。此外，理解诸如连接和认证协议以及无线技术的法律约束等。</p>
+<p>要开始学习，请查看以下有关无线术语和技术入门的指南，然后阅读我们的 Wi-Fi 黑客指南集，了解有关各种加密算法的详细信息以及每种黑客如何工作的示例。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-terms-technologies-0147659/" target="_blank" rel="noopener">Wi-Fi术语和技术入门</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/wi-fi-hacking/" target="_blank" rel="noopener">有抱负的黑客入侵Wi-Fi指南</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-terms-technologies-0147659/" target="_blank" rel="noopener">Wi-Fi 术语和技术入门</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/wi-fi-hacking/" target="_blank" rel="noopener">有抱负的黑客入侵 Wi-Fi 指南</a></li>
 </ul>
-<h2 id="中级技能"><a href="#中级技能" class="headerlink" title="中级技能"></a>中级技能</h2><p>这是事情变得有趣的地方，你真正开始感受到你作为黑客的能力。知道所有这些将允许你进入更直观的黑客攻击所有镜头 - 而不是其他一些黑客。</p>
+<h2 id="中级技能"><a href="#中级技能" class="headerlink" title="中级技能"></a>中级技能</h2><p>这是事情变得有趣的地方，你真正开始感受到你作为黑客的能力。知道所有这些将允许你进入更直观的黑客攻击所有镜头 —— 而不是其他一些黑客。</p>
 <h3 id="编写脚本"><a href="#编写脚本" class="headerlink" title="编写脚本"></a>编写脚本</h3><p>如果没有<a href="https://null-byte.wonderhowto.com/how-to/scripting/" target="_blank" rel="noopener">编写脚本的技能</a>，黑客将被降级为使用其他黑客工具。这限制了你的效率。每天都会有一个新工具失效，因为安全管理员提出了防御措施。</p>
-<p>要开发自己独特的工具，你需要至少熟练掌握一种脚本语言，包括BASH shell。这些应该包括Perl，Python或Ruby之一。</p>
+<p>要开发自己独特的工具，你需要至少熟练掌握一种脚本语言，包括 BASH shell。这些应该包括 Perl，Python 或 Ruby 之一。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-perl-scripting-for-aspiring-hacker-part-1-0151750/" target="_blank" rel="noopener">针对有抱负的黑客的Perl脚本</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-1-bash-basics-0149422/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第1部分：BASH基础知识</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-2-conditional-statements-0149695/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第2部分：条件语句</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-3-windows-powershell-0151075/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第3部分：Windows PowerShell</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-ultimate-list-hacking-scripts-for-metasploits-meterpreter-0149339/" target="_blank" rel="noopener">Metasploit中Meterpreter的黑客脚本终极列表</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-perl-scripting-for-aspiring-hacker-part-1-0151750/" target="_blank" rel="noopener">针对有抱负的黑客的 Perl 脚本</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-1-bash-basics-0149422/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第 1 部分：BASH 基础知识</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-2-conditional-statements-0149695/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第 2 部分：条件语句</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-scripting-for-aspiring-hacker-part-3-windows-powershell-0151075/" target="_blank" rel="noopener">为有抱负的黑客编写脚本，第 3 部分：Windows PowerShell</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-ultimate-list-hacking-scripts-for-metasploits-meterpreter-0149339/" target="_blank" rel="noopener">Metasploit 中 Meterpreter 的黑客脚本终极列表</a></li>
 </ul>
-<h3 id="数据库技能"><a href="#数据库技能" class="headerlink" title="数据库技能"></a>数据库技能</h3><p>如果你希望能够熟练地<a href="https://null-byte.wonderhowto.com/how-to/db-hacking/" target="_blank" rel="noopener">破解数据库</a>，则需要了解数据库及其工作原理。这包括SQL语言。我还建议掌握一个主要的DBMS，如SQL Server，Oracle或MySQL。</p>
+<h3 id="数据库技能"><a href="#数据库技能" class="headerlink" title="数据库技能"></a>数据库技能</h3><p>如果你希望能够熟练地<a href="https://null-byte.wonderhowto.com/how-to/db-hacking/" target="_blank" rel="noopener">破解数据库</a>，则需要了解数据库及其工作原理。这包括 SQL 语言。我还建议掌握一个主要的 DBMS，如 SQL Server，Oracle 或 MySQL。</p>
 <ul>
 <li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-terms-technologies-you-need-know-before-getting-started-0148773/" target="_blank" rel="noopener">入门前需要了解的术语和技术</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-hunting-for-microsofts-sql-server-0148993/" target="_blank" rel="noopener">寻找微软的SQL Server</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-cracking-sql-server-passwords-owning-server-0149636/" target="_blank" rel="noopener">破解SQL Server密码并拥有服务器</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-hacking-mysql-online-databases-with-sqlmap-0150368/" target="_blank" rel="noopener">使用Sqlmap攻击MySQL在线数据库</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-extracting-data-from-online-databases-using-sqlmap-0150688/" target="_blank" rel="noopener">使用Sqlmap从在线数据库中提取数据</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-hunting-for-microsofts-sql-server-0148993/" target="_blank" rel="noopener">寻找微软的 SQL Server</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-cracking-sql-server-passwords-owning-server-0149636/" target="_blank" rel="noopener">破解 SQL Server 密码并拥有服务器</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-hacking-mysql-online-databases-with-sqlmap-0150368/" target="_blank" rel="noopener">使用 Sqlmap 攻击 MySQL 在线数据库</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-databases-extracting-data-from-online-databases-using-sqlmap-0150688/" target="_blank" rel="noopener">使用 Sqlmap 从在线数据库中提取数据</a></li>
 </ul>
-<h3 id="Web应用程序"><a href="#Web应用程序" class="headerlink" title="Web应用程序"></a>Web应用程序</h3><p>Web应用程序可能是近年来黑客最肥沃的土壤。你对Web应用程序如何工作以及它们背后的数据库了解得越多，你就会越成功。此外，你可能需要建立自己的网站以进行网络钓鱼和其他恶意目的。</p>
+<h3 id="Web-应用程序"><a href="#Web-应用程序" class="headerlink" title="Web 应用程序"></a>Web 应用程序</h3><p>Web 应用程序可能是近年来黑客最肥沃的土壤。你对Web应用程序如何工作以及它们背后的数据库了解得越多，你就会越成功。此外，你可能需要建立自己的网站以进行网络钓鱼和其他恶意目的。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-clone-any-website-using-httrack-0152420/" target="_blank" rel="noopener">如何使用HTTrack克隆任何网站</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-clone-any-website-using-httrack-0152420/" target="_blank" rel="noopener">如何使用 HTTrack 克隆任何网站</a></li>
 <li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-spoof-dns-lan-redirect-traffic-your-fake-website-0151620/" target="_blank" rel="noopener">如何将流量重定向到假网站</a></li>
 </ul>
-<h3 id="取证"><a href="#取证" class="headerlink" title="取证"></a>取证</h3><p>要成为好黑客，一定不要被抓住！你不能成为一名坐在牢房里5年的职业黑客。你对数字取证的了解越多，就越能避免和规避检测。</p>
+<h3 id="取证"><a href="#取证" class="headerlink" title="取证"></a>取证</h3><p>要成为好黑客，一定不要被抓住！你不能成为一名坐在牢房里 5 年的职业黑客。你对数字取证的了解越多，就越能避免和规避检测。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-1-tools-techniques-0149732/" target="_blank" rel="noopener">数字取证，第1部分：工具和技术</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-2-network-forensics-0149958/" target="_blank" rel="noopener">数字取证，第2部分：网络取证</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-3-recovering-deleted-files-0149868/" target="_blank" rel="noopener">数字取证，第3部分：恢复已删除的文件</a></li>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-4-evading-detection-while-dosing-0150445/" target="_blank" rel="noopener">数字取证，第4部分：DoSing时的逃避检测</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-1-tools-techniques-0149732/" target="_blank" rel="noopener">数字取证，第 1 部分：工具和技术</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-2-network-forensics-0149958/" target="_blank" rel="noopener">数字取证，第 2 部分：网络取证</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-3-recovering-deleted-files-0149868/" target="_blank" rel="noopener">数字取证，第 3 部分：恢复已删除的文件</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-4-evading-detection-while-dosing-0150445/" target="_blank" rel="noopener">数字取证，第 4 部分：DoSing 时的逃避检测</a></li>
 </ul>
-<h3 id="高级TCP-IP"><a href="#高级TCP-IP" class="headerlink" title="高级TCP/IP"></a>高级TCP/IP</h3><p>黑客初学者必须了解TCP/IP基础知识，但要升级到中级，你必须了解TCP/IP协议栈和字段的详细信息。这些包括TCP和IP数据包中的每个字段（flags，window，df，tos，seq，ack等）如何被操纵并用于对抗受害者系统以启用中间人攻击等。</p>
+<h3 id="高级-TCP-IP"><a href="#高级-TCP-IP" class="headerlink" title="高级 TCP/IP"></a>高级 TCP/IP</h3><p>黑客初学者必须了解 TCP/IP 基础知识，但要升级到中级，你必须了解 TCP/IP 协议栈和字段的详细信息。这些包括 TCP 和 IP 数据包中的每个字段（flags，window，df，tos，seq，ack 等）如何被操纵并用于对抗受害者系统以启用中间人攻击等。</p>
 <h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>虽然要成为一个好的黑客不需要成为一个密码学家，但是你越了解每种密码算法的优缺点，就越有可能打败它。此外，黑客还可以利用密码学来隐藏他们的活动并逃避检测。</p>
 <h3 id="逆向工程"><a href="#逆向工程" class="headerlink" title="逆向工程"></a>逆向工程</h3><p>通过逆向工程，你可以打开一个恶意软件并使用其他功能重新构建它。就像在软件工程中一样，没有人从头开始构建新的应用程序。几乎每个新漏洞或恶意软件都使用其他现有恶意软件中的组件。</p>
-<p>此外，逆向工程使黑客能够利用现有漏洞并更改其签名，以便它可以绕过IDS和<a href="https://null-byte.wonderhowto.com/how-to/evading-av-software/" target="_blank" rel="noopener">防病毒检测</a>。</p>
+<p>此外，逆向工程使黑客能够利用现有漏洞并更改其签名，以便它可以绕过 IDS 和<a href="https://null-byte.wonderhowto.com/how-to/evading-av-software/" target="_blank" rel="noopener">防病毒检测</a>。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-change-signature-metasploit-payloads-evade-antivirus-detection-0149867/" target="_blank" rel="noopener">如何更改Metasploit有效载荷签名以避免防病毒检测</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-change-signature-metasploit-payloads-evade-antivirus-detection-0149867/" target="_blank" rel="noopener">如何更改 Metasploit 有效载荷签名以避免防病毒检测</a></li>
 </ul>
 <h2 id="无形技能"><a href="#无形技能" class="headerlink" title="无形技能"></a>无形技能</h2><p>除了所有这些计算机技能外，成功的黑客还必须具备一些无形技能。这些包括以下内容。</p>
 <h3 id="创造性地思考"><a href="#创造性地思考" class="headerlink" title="创造性地思考"></a>创造性地思考</h3><p>黑客攻击系统总是有办法的，而且有很多方法可以实现。一个好的黑客可以创造性地思考同一个黑客的多种方法。</p>
 <ul>
-<li><a href="https://null-byte.wonderhowto.com/how-to/social-engineering/" target="_blank" rel="noopener">Null Byte的社会工程学指南</a></li>
+<li><a href="https://null-byte.wonderhowto.com/how-to/social-engineering/" target="_blank" rel="noopener">Null Byte 的社会工程学指南</a></li>
 <li><a href="https://null-byte.wonderhowto.com/forum/cryptolocker-innovative-creative-hack-0151753/" target="_blank" rel="noopener">CryptoLocker：一个创新和创造性的黑客</a></li>
 </ul>
 <h3 id="解决问题的能力"><a href="#解决问题的能力" class="headerlink" title="解决问题的能力"></a>解决问题的能力</h3><p>黑客总是遇到看似无法解决的问题。这就要求黑客习惯于分析性思维和解决问题。这通常要求黑客准确地诊断出问题所在，然后将问题分解为不同的组件。这是伴随着许多小时的练习而来的能力之一。</p>
@@ -706,60 +707,80 @@
       </categories>
   </entry>
   <entry>
-    <title>安装Kali Linux后要做的10件事</title>
+    <title>安装 Kali Linux 后要做的 10 件事</title>
     <url>/2019/02/25/after-kali/</url>
-    <content><![CDATA[<p>本文翻译自<a href="https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/</a> ，正文如下：</p>
-<p>默认情况下，对于完成日常的渗透测试，<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-getting-started-with-kali-your-new-hacking-system-0151631/" target="_blank" rel="noopener">Kali Linux</a>可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用Kali。</p>
-<p>大多数Linux发行版都是高度可定制的。这使得个性化你的渗透测试发行版有点令人生畏。只需几个命令，我们就可以自动执行任务，安装我们喜欢的软件，创建其他用户帐户，正确配置匿名软件，以及优化我们与终端的互动。我们可以采取一些措施来改善与操作系统的交互。<br><a id="more"></a><br><div class="video-container"><iframe src="//www.youtube.com/embed/8VL0K0rFgxw" frameborder="0" allowfullscreen></iframe></div></p>
-<h2 id="1、安装Git"><a href="#1、安装Git" class="headerlink" title="1、安装Git"></a>1、安装Git</h2><p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>是一个开源软件版本控制应用程序。它可以用于协作共享和编辑代码，但在Null Byte中通常被引用作为复制（或“<a href="https://www.git-scm.com/docs/git-clone" target="_blank" rel="noopener">克隆</a>”）GitHub上的代码存储库的主要工具。Git是渗透测试人员必备的工具，他们希望将自己的工具集扩展到默认Kali存储库中可用的工具集之外。</p>
-<p>可以使用下面的<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-5-installing-new-software-0147591/" target="_blank" rel="noopener">apt-get</a>命令安装Git。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install git</span><br></pre></td></tr></table></figure></p>
-<h2 id="2、配置Bash别名"><a href="#2、配置Bash别名" class="headerlink" title="2、配置Bash别名"></a>2、配置Bash别名</h2><p>Bash别名非常适合创建自定义命令行快捷方式。例如，我们可以重新分配<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/" target="_blank" rel="noopener">ls</a>命令以自动使用我们最喜欢的参数。下面是正常<strong>ls</strong>输出的示例。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line"> androidbins.txt                                      folder-pictures.png     smtp.cracked         text-x-generic.png</span><br><span class="line"> bogus_gmail.creds                                    folder.png              smtp.list            Windows-10</span><br><span class="line"> dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39   package-x-generic.png   text-x-generic.ico  &apos;Windows 10 Icons&apos;</span><br></pre></td></tr></table></figure></p>
-<p>在创建<strong>ls</strong>别名后再次输出的示例。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line">total 220K</span><br><span class="line">-rw-------  1 root root  15K Aug 24  2015  folder-pictures.png</span><br><span class="line">-rw-------  1 root root 8.7K Aug 24  2015  folder.png</span><br><span class="line">-rw-------  1 root root  11K Aug 24  2015  package-x-generic.png</span><br><span class="line">-rw-------  1 root root 5.5K Sep  3  2015  text-x-generic.png</span><br><span class="line">drwxr-xr-x 12 root root 4.0K May 31 00:44 &apos;Windows 10 Icons&apos;/</span><br><span class="line">drwxr-xr-x 18 root root 4.0K May 31 00:44  Windows-10/</span><br><span class="line">-rwxr-x---  1 root root 103K May 31 00:49  text-x-generic.ico*</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jun 11 21:57  dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39/</span><br><span class="line">-rw-r--r--  1 root root   52 Jul  5 18:13  bogus_gmail.creds</span><br><span class="line">-rw-r--r--  1 root root  15K Jul  5 18:28  smtp.list</span><br><span class="line">-rw-r--r--  1 root root  181 Jul  5 18:43  smtp.cracked</span><br><span class="line">-rw-r--r--  1 root root  23K Jul 23 18:18  androidbins.txt</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jul 23 19:22  ./</span><br><span class="line">drwxr-xr-x 23 root root 4.0K Aug  9 04:25  ../</span><br></pre></td></tr></table></figure></p>
-<p>我们得到了更详细的输出。<strong>ls</strong>命令现在自动使用<strong>-l</strong>，<strong>-a</strong>，<strong>-t</strong>，<strong>-h</strong>和<strong>-r</strong>参数。所有这些参数都将指示<strong>ls</strong>使用列表（<strong>-l</strong>）格式，列出所有（<strong>-a</strong>）文件——包括隐藏文件——并以人类可读（<strong>-h</strong>）的格式打印文件大小（例如，1K，234M，5G）。</p>
-<p>我的别名还将按修改时间（<strong>-t</strong>）对输出进行排序，并反转（<strong>-r</strong>）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的<strong>ls</strong>偏好，但你的可能会有所不同。</p>
-<p>要创建别名，请使用<strong>nano</strong>或你喜欢的文本编辑器打开/root/.bash_aliases。添加以下行以创建别名。</p>
+    <content><![CDATA[<p>本文翻译自 <a href="https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/" target="_blank" rel="noopener">https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/</a> ，正文如下：</p>
+<p>默认情况下，对于完成日常的渗透测试，<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-getting-started-with-kali-your-new-hacking-system-0151631/" target="_blank" rel="noopener">Kali Linux</a> 可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用 Kali。</p>
+<p>大多数 Linux 发行版都是高度可定制的。这使得个性化你的渗透测试发行版有点令人生畏。只需几个命令，我们就可以自动执行任务，安装我们喜欢的软件，创建其他用户帐户，正确配置匿名软件，以及优化我们与终端的互动。我们可以采取一些措施来改善与操作系统的交互。<br><a id="more"></a><br><div class="video-container"><iframe src="//www.youtube.com/embed/8VL0K0rFgxw" frameborder="0" allowfullscreen></iframe></div></p>
+<h2 id="1、安装-Git"><a href="#1、安装-Git" class="headerlink" title="1、安装 Git"></a>1、安装 Git</h2><p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> 是一个开源软件版本控制应用程序。它可以用于协作共享和编辑代码，但在 Null Byte 中通常被引用作为复制（或“<a href="https://www.git-scm.com/docs/git-clone" target="_blank" rel="noopener">克隆</a>”）GitHub 上的代码存储库的主要工具。Git 是渗透测试人员必备的工具，他们希望将自己的工具集扩展到默认 Kali 存储库中可用的工具集之外。</p>
+<p>可以使用下面的 <a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-5-installing-new-software-0147591/" target="_blank" rel="noopener">apt-get</a> 命令安装 Git。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install git</span><br></pre></td></tr></table></figure>
+<h2 id="2、配置-Bash-别名"><a href="#2、配置-Bash-别名" class="headerlink" title="2、配置 Bash 别名"></a>2、配置 Bash 别名</h2><p>Bash 别名非常适合创建自定义命令行快捷方式。例如，我们可以重新分配 <a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/" target="_blank" rel="noopener">ls</a> 命令以自动使用我们最喜欢的参数。下面是正常 <strong>ls</strong> 输出的示例。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line"> androidbins.txt                                      folder-pictures.png     smtp.cracked         text-x-generic.png</span><br><span class="line"> bogus_gmail.creds                                    folder.png              smtp.list            Windows-10</span><br><span class="line"> dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39   package-x-generic.png   text-x-generic.ico  <span class="string">'Windows 10 Icons'</span></span><br></pre></td></tr></table></figure>
+<p>在创建 <strong>ls</strong> 别名后再次输出的示例。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line">total 220K</span><br><span class="line">-rw-------  1 root root  15K Aug 24  2015  folder-pictures.png</span><br><span class="line">-rw-------  1 root root 8.7K Aug 24  2015  folder.png</span><br><span class="line">-rw-------  1 root root  11K Aug 24  2015  package-x-generic.png</span><br><span class="line">-rw-------  1 root root 5.5K Sep  3  2015  text-x-generic.png</span><br><span class="line">drwxr-xr-x 12 root root 4.0K May 31 00:44 <span class="string">'Windows 10 Icons'</span>/</span><br><span class="line">drwxr-xr-x 18 root root 4.0K May 31 00:44  Windows-10/</span><br><span class="line">-rwxr-x---  1 root root 103K May 31 00:49  text-x-generic.ico*</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jun 11 21:57  dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39/</span><br><span class="line">-rw-r--r--  1 root root   52 Jul  5 18:13  bogus_gmail.creds</span><br><span class="line">-rw-r--r--  1 root root  15K Jul  5 18:28  smtp.list</span><br><span class="line">-rw-r--r--  1 root root  181 Jul  5 18:43  smtp.cracked</span><br><span class="line">-rw-r--r--  1 root root  23K Jul 23 18:18  androidbins.txt</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jul 23 19:22  ./</span><br><span class="line">drwxr-xr-x 23 root root 4.0K Aug  9 04:25  ../</span><br></pre></td></tr></table></figure>
+<p>我们得到了更详细的输出。<strong>ls</strong> 命令现在自动使用 <strong>-l</strong>，<strong>-a</strong>，<strong>-t</strong>，<strong>-h</strong> 和 <strong>-r</strong> 参数。所有这些参数都将指示 <strong>ls</strong> 使用列表（<strong>-l</strong>）格式，列出所有（<strong>-a</strong>）文件 —— 包括隐藏文件 —— 并以人类可读（<strong>-h</strong>）的格式打印文件大小（例如，1K，234M，5G）。</p>
+<p>我的别名还将按修改时间（<strong>-t</strong>）对输出进行排序，并反转（<strong>-r</strong>）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的 <strong>ls</strong> 偏好，但你的可能会有所不同。</p>
+<p>要创建别名，请使用 <strong>nano</strong> 或你喜欢的文本编辑器打开 <code>/root/.bash_aliases</code>。添加以下行以创建别名。</p>
 <ul>
-<li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/intro-vim-unix-text-editor-every-hacker-should-be-familiar-with-0174674/" target="_blank" rel="noopener">Vim简介，每个黑客都应该知道的Unix文本编辑器</a></li>
+<li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/intro-vim-unix-text-editor-every-hacker-should-be-familiar-with-0174674/" target="_blank" rel="noopener">Vim 简介，每个黑客都应该知道的 Unix 文本编辑器</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alias ls=&apos;ls --color=always -rthla&apos;</span><br></pre></td></tr></table></figure>
-<p>我们还可以进一步向.bash_aliases文件添加更复杂的函数。下面是一个简单的函数示例，旨在使Kali保持最新状态。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function apt-updater &#123;</span><br><span class="line">    apt-get update &amp;&amp;</span><br><span class="line">    apt-get dist-upgrade -Vy &amp;&amp;</span><br><span class="line">    apt-get autoremove -y &amp;&amp;</span><br><span class="line">    apt-get autoclean &amp;&amp;</span><br><span class="line">    apt-get clean &amp;&amp;</span><br><span class="line">    reboot</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>保存对.bash_aliases文件所做的更改后，打开一个新终端以使更改生效。运行新创建的<strong>apt-updater</strong>函数将调用一系列<strong>apt-get</strong>命令，这些命令将自动更新和维护你的系统。如果先前的命令失败，＆符号（<strong>&amp;&amp;</strong>）确保该函数不会继续执行以下命令。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-updater</span><br></pre></td></tr></table></figure></p>
-<p>有关Bash别名的更多信息，请查看Kody的“<a href="https://null-byte.wonderhowto.com/how-to/mac-for-hackers-set-up-macos-system-for-wi-fi-packet-capturing-0186354/" target="_blank" rel="noopener">为Wi-Fi数据包捕获设置MacOS系统</a>”一文。</p>
-<h2 id="3、创建一个新的低权限用户"><a href="#3、创建一个新的低权限用户" class="headerlink" title="3、创建一个新的低权限用户"></a>3、创建一个新的低权限用户</h2><p>许多应用程序（如Chromium浏览器和Tor浏览器）都不应该以root用户身份打开或使用。此类应用程序在很大程度上依赖于低级别权限来提供某种程度的安全性。某些用户为这些活动创建低特权用户帐户可能是有益的。</p>
-<p>Takhion的“<a href="https://null-byte.wonderhowto.com/how-to/install-lock-down-kali-linux-for-safe-desktop-use-0184531/#jump-step2" target="_blank" rel="noopener">锁定Kali Linux以用于安全桌面使用</a>”一文中详细介绍了这一概念，因此请务必查看帮助。</p>
-<h2 id="4、安装一个终端复用器"><a href="#4、安装一个终端复用器" class="headerlink" title="4、安装一个终端复用器"></a>4、安装一个终端复用器</h2><p>复用器是一种平铺终端仿真器，允许我们在一个窗口内打开多个终端会话。这样做的主要好处是能够立即看到我们所有打开的终端会话，而不是将窗口叠加在一起。以下是复用器示例。<br><img src="https://img.wonderhowto.com/img/10/19/63669458451029/0/top-10-things-do-after-installing-kali-linux.w1456.jpg" alt="复用器"><br>有许多值得注意的复用器。如上面的屏幕截图所示，<a href="https://github.com/gnunn1/tilix" target="_blank" rel="noopener">Tilix</a>是一个开源且可靠的选项。替代方案包括<a href="https://github.com/tmux/tmux/" target="_blank" rel="noopener">tmux</a>和<a href="https://savannah.gnu.org/projects/screen" target="_blank" rel="noopener">screen</a>。</p>
-<p>Tilix可在Kali的APT存储库中使用，可以使用以下命令进行安装。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install tilix</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  libgtkd-3-0 libphobos2-ldc-shared78 libvted-3-0 tilix-common</span><br><span class="line">Suggested packages:</span><br><span class="line">  python-nautilus</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  libgtkd-3-0 libphobos2-ldc-shared78 libvted-3-0 tilix tilix-common</span><br><span class="line">0 upgraded, 5 newly installed, 0 to remove and 466 not upgraded.</span><br><span class="line">Need to get 10.7 MB of archives.</span><br><span class="line">After this operation, 49.1 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y/n] y</span><br></pre></td></tr></table></figure></p>
-<p>亚马逊推荐：<a href="https://www.amazon.cn/dp/B00BQTWC0U" target="_blank" rel="noopener">William E. Shotts Jr.撰写的“Linux命令行大全”</a></p>
-<h2 id="5、安装你喜爱的黑客工具"><a href="#5、安装你喜爱的黑客工具" class="headerlink" title="5、安装你喜爱的黑客工具"></a>5、安装你喜爱的黑客工具</h2><p>某些版本的Kali面向极简主义的渗透测试者，他们不希望预先安装数百个黑客工具。这意味着我们必须手动安装我们喜欢的工具。我们使用的工具类型根据我们的技能和专业领域而有所不同，但以下是一些流行的黑客工具。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls --color=always -rthla'</span></span><br></pre></td></tr></table></figure>
+<p>我们还可以进一步向 <code>.bash_aliases</code> 文件添加更复杂的函数。下面是一个简单的函数示例，旨在使 Kali 保持最新状态。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> apt-updater &#123;</span><br><span class="line">    apt-get update &amp;&amp;</span><br><span class="line">    apt-get dist-upgrade -Vy &amp;&amp;</span><br><span class="line">    apt-get autoremove -y &amp;&amp;</span><br><span class="line">    apt-get autoclean &amp;&amp;</span><br><span class="line">    apt-get clean &amp;&amp;</span><br><span class="line">    reboot</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>保存对 <code>.bash_aliases</code> 文件所做的更改后，打开一个新终端以使更改生效。运行新创建的 <strong>apt-updater</strong> 函数将调用一系列 <strong>apt-get</strong> 命令，这些命令将自动更新和维护你的系统。如果先前的命令失败，＆ 符号（<strong>&amp;&amp;</strong>）确保该函数不会继续执行以下命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-updater</span><br></pre></td></tr></table></figure>
+<p>有关 Bash 别名的更多信息，请查看 Kody 的“<a href="https://null-byte.wonderhowto.com/how-to/mac-for-hackers-set-up-macos-system-for-wi-fi-packet-capturing-0186354/" target="_blank" rel="noopener">为 Wi-Fi 数据包捕获设置 MacOS 系统</a>”一文。</p>
+<h2 id="3、创建一个新的低权限用户"><a href="#3、创建一个新的低权限用户" class="headerlink" title="3、创建一个新的低权限用户"></a>3、创建一个新的低权限用户</h2><p>许多应用程序（如 Chromium 浏览器和 Tor 浏览器）都不应该以 root 用户身份打开或使用。此类应用程序在很大程度上依赖于低级别权限来提供某种程度的安全性。某些用户为这些活动创建低特权用户帐户可能是有益的。</p>
+<p>Takhion 的“<a href="https://null-byte.wonderhowto.com/how-to/install-lock-down-kali-linux-for-safe-desktop-use-0184531/#jump-step2" target="_blank" rel="noopener">锁定 Kali Linux 以用于安全桌面使用</a>”一文中详细介绍了这一概念，因此请务必查看帮助。</p>
+<h2 id="4、安装一个终端复用器"><a href="#4、安装一个终端复用器" class="headerlink" title="4、安装一个终端复用器"></a>4、安装一个终端复用器</h2><p>复用器是一种平铺终端仿真器，允许我们在一个窗口内打开多个终端会话。这样做的主要好处是能够立即看到我们所有打开的终端会话，而不是将窗口叠加在一起。以下是复用器示例。</p>
+<p><img src="https://img.wonderhowto.com/img/10/19/63669458451029/0/top-10-things-do-after-installing-kali-linux.w1456.jpg" alt="复用器"></p>
+<p>有许多值得注意的复用器。如上面的屏幕截图所示，<a href="https://github.com/gnunn1/tilix" target="_blank" rel="noopener">Tilix</a> 是一个开源且可靠的选项。替代方案包括 <a href="https://github.com/tmux/tmux/" target="_blank" rel="noopener">tmux</a> 和 <a href="https://savannah.gnu.org/projects/screen" target="_blank" rel="noopener">screen</a>。</p>
+<p>Tilix 可在 Kali 的 APT 存储库中使用，可以使用以下命令进行安装。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install tilix</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  libgtkd-3-0 libphobos2-ldc-shared78 libvted-3-0 tilix-common</span><br><span class="line">Suggested packages:</span><br><span class="line">  python-nautilus</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  libgtkd-3-0 libphobos2-ldc-shared78 libvted-3-0 tilix tilix-common</span><br><span class="line">0 upgraded, 5 newly installed, 0 to remove and 466 not upgraded.</span><br><span class="line">Need to get 10.7 MB of archives.</span><br><span class="line">After this operation, 49.1 MB of additional disk space will be used.</span><br><span class="line">Do you want to <span class="built_in">continue</span>? [Y/n] y</span><br></pre></td></tr></table></figure>
+<p>亚马逊推荐：<a href="https://www.amazon.cn/dp/B00BQTWC0U" target="_blank" rel="noopener">William E. Shotts Jr. 撰写的“Linux命令行大全”</a></p>
+<h2 id="5、安装你喜爱的黑客工具"><a href="#5、安装你喜爱的黑客工具" class="headerlink" title="5、安装你喜爱的黑客工具"></a>5、安装你喜爱的黑客工具</h2><p>某些版本的 Kali 面向极简主义的渗透测试者，他们不希望预先安装数百个黑客工具。这意味着我们必须手动安装我们喜欢的工具。我们使用的工具类型根据我们的技能和专业领域而有所不同，但以下是一些流行的黑客工具。</p>
 <ul>
-<li><a href="https://www.aircrack-ng.org/" target="_blank" rel="noopener">Aircrack-ng</a>：无线<a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-aircrack-ng-suite-wi-fi-hacking-tools-0147893/" target="_blank" rel="noopener">WEP/WPA破解实用程序</a>。</li>
-<li><a href="https://beefproject.com/" target="_blank" rel="noopener">BeEF</a>：通过Web应用程序的浏览器<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-browsers-with-beef-0159961/" target="_blank" rel="noopener">漏洞利用框架</a>。</li>
-<li><a href="https://portswigger.net/burp/" target="_blank" rel="noopener">Burp Suite</a>：专为<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-apps-part-4-hacking-form-authentication-with-burp-suite-0163642/" target="_blank" rel="noopener">Web应用程序安全性</a>而设计的图形应用。</li>
+<li><a href="https://www.aircrack-ng.org/" target="_blank" rel="noopener">Aircrack-ng</a>：无线 <a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-aircrack-ng-suite-wi-fi-hacking-tools-0147893/" target="_blank" rel="noopener">WEP/WPA 破解实用程序</a>。</li>
+<li><a href="https://beefproject.com/" target="_blank" rel="noopener">BeEF</a>：通过 Web 应用程序的浏览器<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-browsers-with-beef-0159961/" target="_blank" rel="noopener">漏洞利用框架</a>。</li>
+<li><a href="https://portswigger.net/burp/" target="_blank" rel="noopener">Burp Suite</a>：专为 <a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-apps-part-4-hacking-form-authentication-with-burp-suite-0163642/" target="_blank" rel="noopener">Web 应用程序安全性</a>而设计的图形应用。</li>
 <li><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank" rel="noopener">Hydra</a>：登录<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/" target="_blank" rel="noopener">密码暴力破解</a>实用程序。</li>
-<li><a href="https://cirt.net/Nikto2" target="_blank" rel="noopener">Nikto</a>：Web<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/" target="_blank" rel="noopener">服务器安全扫描器</a>。</li>
+<li><a href="https://cirt.net/Nikto2" target="_blank" rel="noopener">Nikto</a>：Web <a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/" target="_blank" rel="noopener">服务器安全扫描器</a>。</li>
 <li><a href="https://www.paterva.com/web7/" target="_blank" rel="noopener">Maltego</a>：开源取证和情报收集。</li>
 <li><a href="https://nmap.org/" target="_blank" rel="noopener">Nmap</a>：端口扫描器和<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-advanced-nmap-for-reconnaissance-0151619/" target="_blank" rel="noopener">网络映射器</a>。</li>
 <li><a href="https://www.wireshark.org/download.html" target="_blank" rel="noopener">Wireshark</a>：用于<a href="https://null-byte.wonderhowto.com/news/8-wireshark-filters-every-wiretapper-uses-spy-web-conversations-and-surfing-habits-0134508/" target="_blank" rel="noopener">网络流量分析</a>的图形应用程序。</li>
 </ul>
-<p>可以使用以下命令安装这些工具。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install maltego metasploit-framework burpsuite wireshark aircrack-ng hydra nmap beef-xss nikto</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">hydra is already the newest version (8.6-1kali1).</span><br><span class="line"></span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  beef-xss binfmt-support burpsuite fastjar fonts-droid-fallback fonts-lato</span><br><span class="line">  fonts-noto-mono ghostscript gsfonts imagemagick imagemagick-6-common</span><br><span class="line">  imagemagick-6.q16 jarwrapper java-wrappers javascript-common libc-ares2</span><br><span class="line">  libcupsfilters1 libcupsimage2 libdjvulibre-text libdjvulibre21 libdouble-conversion1</span><br><span class="line">  libfftw3-double3 libgmp-dev libgmpxx4ldbl libgs9 libgs9-common libhttp-parser2.8</span><br><span class="line">  libijs-0.35 libilmbase23 libjbig2dec0 libjs-jquery libjs-jquery-easing</span><br><span class="line">  libjs-jquery-fancybox libjs-jquery-mousewheel libjs-jquery-ui libjs-source-map</span><br><span class="line">  libjs-uglify libjxr-tools libjxr0 liblqr-1-0 liblua5.2-0 libmagickcore-6.q16-6</span><br><span class="line">  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libnetpbm10 libnl-route-3-200</span><br><span class="line">  libopenexr23 libpaper-utils libpaper1 libpcre2-16-0 libqt5core5a libqt5dbus5</span><br><span class="line">  libqt5gui5 libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediagsttools5</span><br><span class="line">  libqt5multimediawidgets5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5svg5</span><br><span class="line">  libqt5widgets5 libruby2.5 libsbc1 libsmi2ldbl libspandsp2 libssh-gcrypt-4 libuv1</span><br><span class="line">  libwhisker2-perl libwireshark-data libwireshark11 libwiretap8 libwmf0.2-7</span><br><span class="line">  libwscodecs2 libwsutil9 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0</span><br><span class="line">  libxcb-render-util0 libxcb-xinerama0 libxcb-xkb1 libxkbcommon-x11-0 libyaml-0-2</span><br><span class="line">  maltego netpbm nikto nodejs nodejs-doc openjdk-8-jre openjdk-8-jre-headless</span><br><span class="line">  qt5-gtk-platformtheme qttranslations5-l10n rake ruby ruby-addressable ruby-ansi</span><br><span class="line">  ruby-atomic ruby-buftok ruby-celluloid ruby-celluloid-io ruby-daemons</span><br><span class="line">  ruby-dataobjects ruby-dataobjects-mysql ruby-dataobjects-postgres</span><br><span class="line">  ruby-dataobjects-sqlite3 ruby-dev ruby-did-you-mean ruby-diff-lcs ruby-dm-core</span><br><span class="line">  ruby-dm-do-adapter ruby-dm-migrations ruby-dm-serializer ruby-dm-sqlite-adapter</span><br><span class="line">  ruby-docile ruby-domain-name ruby-em-websocket ruby-equalizer ruby-erubis</span><br><span class="line">  ruby-eventmachine ruby-execjs ruby-faraday ruby-geoip ruby-hitimes ruby-http</span><br><span class="line">  ruby-http-cookie ruby-http-form-data ruby-http-parser.rb ruby-json ruby-librex</span><br><span class="line">  ruby-libv8 ruby-memoizable ruby-mime-types ruby-mime-types-data ruby-minitest</span><br><span class="line">  ruby-mojo-magick ruby-msfrpc-client ruby-msgpack ruby-multi-json ruby-multipart-post</span><br><span class="line">  ruby-naught ruby-net-telnet ruby-nio4r ruby-oj ruby-parseconfig ruby-power-assert</span><br><span class="line">  ruby-public-suffix ruby-qr4r ruby-rack ruby-rack-protection ruby-ref ruby-rqrcode</span><br><span class="line">  ruby-rspec-expectations ruby-rspec-support ruby-rubydns ruby-simple-oauth</span><br><span class="line">  ruby-simplecov ruby-simplecov-html ruby-sinatra ruby-sqlite3 ruby-term-ansicolor</span><br><span class="line">  ruby-test-unit ruby-therubyracer ruby-thread-safe ruby-tilt ruby-timers ruby-tins</span><br><span class="line">  ruby-twitter ruby-uglifier ruby-unf ruby-unf-ext ruby-xmlrpc ruby-zip ruby2.5</span><br><span class="line">  ruby2.5-dev ruby2.5-doc rubygems-integration thin wireshark wireshark-common</span><br><span class="line">  wireshark-qt zip</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">  aircrack-ng libcups2 libnl-3-200 libnl-genl-3-200 libxkbcommon0 metasploit-framework</span><br><span class="line">  nmap nmap-common</span><br><span class="line">8 upgraded, 182 newly installed, 0 to remove and 458 not upgraded.</span><br><span class="line">Need to get 381 MB of archives.</span><br><span class="line">After this operation, 616 MB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y/n] y</span><br></pre></td></tr></table></figure></p>
-<h2 id="6、安装最新版本的Tor"><a href="#6、安装最新版本的Tor" class="headerlink" title="6、安装最新版本的Tor"></a>6、安装最新版本的Tor</h2><p>Tor可以在Kali的存储库中使用，但匿名软件应该直接从源代码获取（torproject.org）。此外，Kali的Tor版本无法可靠地维护或更新。这意味着我们可能会缺少关键的稳定性和安全性更新。</p>
-<p>将Tor项目存储库添加到APT存储库列表中。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &apos;deb https://deb.torproject.org/torproject.org stretch main</span><br><span class="line">deb-src https://deb.torproject.org/torproject.org stretch main&apos; &gt; /etc/apt/sources.list.d/tor.list</span><br></pre></td></tr></table></figure></p>
-<p>然后，下载<a href="https://www.torproject.org/docs/debian.html.en" target="_blank" rel="noopener">Tor Project包签名密钥</a>并将其导入APT密钥环。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">--2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</span><br><span class="line">Resolving deb.torproject.org (deb.torproject.org)... 138.201.14.197</span><br><span class="line">Connecting to deb.torproject.org (deb.torproject.org)|138.201.14.197|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 19665 (19K) [text/plain]</span><br><span class="line">Saving to: ‘STDOUT’</span><br><span class="line"></span><br><span class="line">-                                              100%[=================================================================================================&gt;]  19.20K  47.5KB/s    in 0.4s</span><br><span class="line"></span><br><span class="line">2019-02-18 19:28:25 (47.5 KB/s) - written to stdout [19665/19665]</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure></p>
-<p>将签名密钥添加到密钥环后，您将看到“OK”输出。接下来，使用以下apt-get命令更新APT。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease</span><br><span class="line">Get:2 https://deb.torproject.org/torproject.org stretch InRelease [4,965 B]</span><br><span class="line">Get:4 https://deb.torproject.org/torproject.org stretch/main Sources [1,169 B]</span><br><span class="line">Get:5 https://deb.torproject.org/torproject.org stretch/main amd64 Packages [2,400 B]</span><br><span class="line">Hit:3 http://archive-3.kali.org/kali kali-rolling InRelease</span><br><span class="line">Fetched 8,534 B in 8s (1,091 B/s)</span><br><span class="line">Reading package lists... Done</span><br></pre></td></tr></table></figure></p>
-<p>使用以下命令安装Tor，你就完成了。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install tor deb.torproject.org-keyring</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Suggested packages:</span><br><span class="line">  mixmaster torbrowser-launcher socat tor-arm apparmor-utils obfs4proxy</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  deb.torproject.org-keyring</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">  tor</span><br></pre></td></tr></table></figure></p>
-<h2 id="7、使用Syncthing配置文件共享"><a href="#7、使用Syncthing配置文件共享" class="headerlink" title="7、使用Syncthing配置文件共享"></a>7、使用Syncthing配置文件共享</h2><p>由<a href="https://twitter.com/jakobborg" target="_blank" rel="noopener">Jakob Borg</a>创建的<a href="https://github.com/syncthing/syncthing" target="_blank" rel="noopener">Syncthing</a>是一种<a href="https://github.com/syncthing/syncthing/releases/" target="_blank" rel="noopener">跨平台</a>，私有，轻量级文件同步（Dropbox）替代方案。作为渗透测试人员，在<a href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/" target="_blank" rel="noopener">VPS</a>和本地Kali机器之间传输按键日志，屏幕截图，网络摄像头录像和<a href="https://null-byte.wonderhowto.com/how-to/hacking-windows-10-capture-exfiltrate-screenshots-remotely-0183646/#jump-step4" target="_blank" rel="noopener">敏感的战利品文件</a>可能是一项令人沮丧的任务。Syncthing使安全的文件共享完全无痛。</p>
-<p>我在前一篇文章中介绍了<a href="https://null-byte.wonderhowto.com/how-to/securely-sync-files-between-two-machines-using-syncthing-0185999/" target="_blank" rel="noopener">Syncthing的安装和配置</a>。读者应参考该详细的分步指南。</p>
-<h2 id="8、安装代码编辑器"><a href="#8、安装代码编辑器" class="headerlink" title="8、安装代码编辑器"></a>8、安装代码编辑器</h2><p><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>是一个免费的，开源的，功能丰富且高度可定制的文本编辑器。其功能包括实时协作共享代码，直观的编码自动补全功能，以及<a href="https://atom.io/packages" target="_blank" rel="noopener">安装软件包</a>的能力，这些都进一步增强了Atom的多功能性。其他值得注意的文本编辑包括<a href="https://wiki.geany.org/doku.php" target="_blank" rel="noopener">Geany</a>和<a href="https://wiki.gnome.org/Apps/Gedit" target="_blank" rel="noopener">Gedit</a>。</p>
-<p>要安装Atom，请访问他们的网站并下载最新的<a href="https://atom.io/download/deb" target="_blank" rel="noopener">Debian安装程序</a>。接下来，使用下面的apt-get命令打开终端并安装所需的依赖项。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt-get install gvfs gvfs-common gvfs-daemons gvfs-libs gconf-service gconf2 gconf2-common gvfs-bin psmisc</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Correcting dependencies... Done</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">   gconf-service (3.2.6-4.1)</span><br><span class="line">   gconf2 (3.2.6-4.1)</span><br><span class="line">   gconf2-common (3.2.6-4.1)</span><br><span class="line">   gvfs-bin (1.36.2-1)</span><br><span class="line">   libgconf-2-4 (3.2.6-4.1)</span><br><span class="line">   psmisc (23.1-1+b1)</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">   gvfs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-common (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-daemons (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-libs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">4 upgraded, 6 newly installed, 0 to remove and 462 not upgraded.</span><br><span class="line">1 not fully installed or removed.</span><br><span class="line">Need to get 3,317 kB of archives.</span><br><span class="line">After this operation, 8,909 kB of additional disk space will be used.</span><br><span class="line">Do you want to continue? [Y/n] y</span><br></pre></td></tr></table></figure></p>
-<p>最后，使用命令行包管理器<strong>dpkg</strong>和install（<strong>-i</strong>）参数。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dpkg -i ~/Downloads/atom-amd64.deb</span><br><span class="line"></span><br><span class="line">(Reading database ... 191882 files and directories currently installed.)</span><br><span class="line">Preparing to unpack atom-amd64.deb ...</span><br><span class="line">Unpacking atom (1.29.0) over (1.29.0) ...</span><br><span class="line">Setting up atom (1.29.0) ...</span><br><span class="line">Processing triggers for desktop-file-utils (0.23-3) ...</span><br><span class="line">Processing triggers for mime-support (3.60) ...</span><br></pre></td></tr></table></figure></p>
-<p>完成后，Atom将显示在“应用程序”菜单中。<br><img src="https://img.wonderhowto.com/img/original/05/68/63669459068404/0/636694590684040568.jpg" alt="Atom"></p>
-<h2 id="9、克隆橡皮鸭（Rubber-Ducky）编码器"><a href="#9、克隆橡皮鸭（Rubber-Ducky）编码器" class="headerlink" title="9、克隆橡皮鸭（Rubber Ducky）编码器"></a>9、克隆橡皮鸭（Rubber Ducky）编码器</h2><p>USB橡皮鸭是臭名昭著的按键注入工具。利用<a href="https://ducktoolkit.com/" target="_blank" rel="noopener">DuckToolKit网站</a>可以很容易地创建<a href="https://null-byte.wonderhowto.com/how-to/use-usb-rubber-ducky-disable-antivirus-software-install-ransomware-0180418/#jump-step2" target="_blank" rel="noopener">ducky payloads</a>，但作为一个渗透测试人员，与随机网站共享客户信息是不安全的。将有效载荷内容上载到第三方网站可能很危险。</p>
-<p>相反，我们可以使用<strong>Git</strong>克隆USB橡皮鸭<a href="https://github.com/hak5darren/USB-Rubber-Ducky" target="_blank" rel="noopener">存储库</a>并在本地编码有效载荷。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/hak5darren/USB-Rubber-Ducky</span><br><span class="line"></span><br><span class="line">Cloning into &apos;USB-Rubber-Ducky&apos;...</span><br><span class="line">remote: Counting objects: 1657, done.</span><br><span class="line">remote: Total 1657 (delta 0), reused 0 (delta 0), pack-reused 1657</span><br><span class="line">Receiving objects: 100% (1657/1657), 31.88 MiB | 162.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (745/745), done.</span><br><span class="line">Checking out files: 100% (1509/1509), done.</span><br></pre></td></tr></table></figure></p>
-<p>然后，将当前目录更改（<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/" target="_blank" rel="noopener">cd</a>）为USB-Rubber-Ducky/Encoder/ 目录，并使用以下<strong>java</strong>命令开始编码没有第三方网站的<a href="https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload" target="_blank" rel="noopener">ducky payloads</a>。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd USB-Rubber-Ducky/Encoder/</span><br><span class="line">java -jar encoder.jar -i input_payload.txt -o inject.bin</span><br></pre></td></tr></table></figure></p>
-<h2 id="10、更改SSH密钥和默认密码"><a href="#10、更改SSH密钥和默认密码" class="headerlink" title="10、更改SSH密钥和默认密码"></a>10、更改SSH密钥和默认密码</h2><p>每个Kali Linux安装的默认密码都是相同的（toor），这使得自动化攻击非常容易。此外，当你通过SSH控制树莓派之类的东西时，默认的SSH密钥可以允许攻击者拦截你的通信。</p>
-<p>要更改SSH密钥，请首先切换目录。执行以下两个命令将重置SSH密钥的默认值。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /etc/ssh/</span><br><span class="line">dpkg-reconfigure openssh-server</span><br><span class="line"></span><br><span class="line">rescue-ssh.target is a disabled or a static unit, not starting it.</span><br></pre></td></tr></table></figure></p>
-<p>现在，对于你的Kali系统密码，输入<strong>passwd root</strong>，然后输入你的新密码。然后，重新输入以确认。如果你未以root用户身份登录，则可能会在执行此操作之前询问你当前的密码。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">passwd root</span><br><span class="line"></span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装Kali后你做的第一件事是什么？"><a href="#安装Kali后你做的第一件事是什么？" class="headerlink" title="安装Kali后你做的第一件事是什么？"></a>安装Kali后你做的第一件事是什么？</h2><p>我们都有不同程度的兴趣，技能和经验水平。这使得编写完整的安装后步骤列表变得棘手。我错过了任何关键步骤吗？你如何个性化和定制新安装的Kali？请务必在下面发表评论。</p>
+<p>可以使用以下命令安装这些工具。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install maltego metasploit-framework burpsuite wireshark aircrack-ng hydra nmap beef-xss nikto</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">hydra is already the newest version (8.6-1kali1).</span><br><span class="line"></span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  beef-xss binfmt-support burpsuite fastjar fonts-droid-fallback fonts-lato</span><br><span class="line">  fonts-noto-mono ghostscript gsfonts imagemagick imagemagick-6-common</span><br><span class="line">  imagemagick-6.q16 jarwrapper java-wrappers javascript-common libc-ares2</span><br><span class="line">  libcupsfilters1 libcupsimage2 libdjvulibre-text libdjvulibre21 libdouble-conversion1</span><br><span class="line">  libfftw3-double3 libgmp-dev libgmpxx4ldbl libgs9 libgs9-common libhttp-parser2.8</span><br><span class="line">  libijs-0.35 libilmbase23 libjbig2dec0 libjs-jquery libjs-jquery-easing</span><br><span class="line">  libjs-jquery-fancybox libjs-jquery-mousewheel libjs-jquery-ui libjs-source-map</span><br><span class="line">  libjs-uglify libjxr-tools libjxr0 liblqr-1-0 liblua5.2-0 libmagickcore-6.q16-6</span><br><span class="line">  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libnetpbm10 libnl-route-3-200</span><br><span class="line">  libopenexr23 libpaper-utils libpaper1 libpcre2-16-0 libqt5core5a libqt5dbus5</span><br><span class="line">  libqt5gui5 libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediagsttools5</span><br><span class="line">  libqt5multimediawidgets5 libqt5network5 libqt5opengl5 libqt5printsupport5 libqt5svg5</span><br><span class="line">  libqt5widgets5 libruby2.5 libsbc1 libsmi2ldbl libspandsp2 libssh-gcrypt-4 libuv1</span><br><span class="line">  libwhisker2-perl libwireshark-data libwireshark11 libwiretap8 libwmf0.2-7</span><br><span class="line">  libwscodecs2 libwsutil9 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0</span><br><span class="line">  libxcb-render-util0 libxcb-xinerama0 libxcb-xkb1 libxkbcommon-x11-0 libyaml-0-2</span><br><span class="line">  maltego netpbm nikto nodejs nodejs-doc openjdk-8-jre openjdk-8-jre-headless</span><br><span class="line">  qt5-gtk-platformtheme qttranslations5-l10n rake ruby ruby-addressable ruby-ansi</span><br><span class="line">  ruby-atomic ruby-buftok ruby-celluloid ruby-celluloid-io ruby-daemons</span><br><span class="line">  ruby-dataobjects ruby-dataobjects-mysql ruby-dataobjects-postgres</span><br><span class="line">  ruby-dataobjects-sqlite3 ruby-dev ruby-did-you-mean ruby-diff-lcs ruby-dm-core</span><br><span class="line">  ruby-dm-do-adapter ruby-dm-migrations ruby-dm-serializer ruby-dm-sqlite-adapter</span><br><span class="line">  ruby-docile ruby-domain-name ruby-em-websocket ruby-equalizer ruby-erubis</span><br><span class="line">  ruby-eventmachine ruby-execjs ruby-faraday ruby-geoip ruby-hitimes ruby-http</span><br><span class="line">  ruby-http-cookie ruby-http-form-data ruby-http-parser.rb ruby-json ruby-librex</span><br><span class="line">  ruby-libv8 ruby-memoizable ruby-mime-types ruby-mime-types-data ruby-minitest</span><br><span class="line">  ruby-mojo-magick ruby-msfrpc-client ruby-msgpack ruby-multi-json ruby-multipart-post</span><br><span class="line">  ruby-naught ruby-net-telnet ruby-nio4r ruby-oj ruby-parseconfig ruby-power-assert</span><br><span class="line">  ruby-public-suffix ruby-qr4r ruby-rack ruby-rack-protection ruby-ref ruby-rqrcode</span><br><span class="line">  ruby-rspec-expectations ruby-rspec-support ruby-rubydns ruby-simple-oauth</span><br><span class="line">  ruby-simplecov ruby-simplecov-html ruby-sinatra ruby-sqlite3 ruby-term-ansicolor</span><br><span class="line">  ruby-test-unit ruby-therubyracer ruby-thread-safe ruby-tilt ruby-timers ruby-tins</span><br><span class="line">  ruby-twitter ruby-uglifier ruby-unf ruby-unf-ext ruby-xmlrpc ruby-zip ruby2.5</span><br><span class="line">  ruby2.5-dev ruby2.5-doc rubygems-integration thin wireshark wireshark-common</span><br><span class="line">  wireshark-qt zip</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">  aircrack-ng libcups2 libnl-3-200 libnl-genl-3-200 libxkbcommon0 metasploit-framework</span><br><span class="line">  nmap nmap-common</span><br><span class="line">8 upgraded, 182 newly installed, 0 to remove and 458 not upgraded.</span><br><span class="line">Need to get 381 MB of archives.</span><br><span class="line">After this operation, 616 MB of additional disk space will be used.</span><br><span class="line">Do you want to <span class="built_in">continue</span>? [Y/n] y</span><br></pre></td></tr></table></figure>
+<h2 id="6、安装最新版本的-Tor"><a href="#6、安装最新版本的-Tor" class="headerlink" title="6、安装最新版本的 Tor"></a>6、安装最新版本的 Tor</h2><p>Tor 可以在 Kali 的存储库中使用，但匿名软件应该直接从源代码获取（torproject.org）。此外，Kali 的 Tor 版本无法可靠地维护或更新。这意味着我们可能会缺少关键的稳定性和安全性更新。</p>
+<p>将 Tor 项目存储库添加到 APT 存储库列表中。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'deb https://deb.torproject.org/torproject.org stretch main</span></span><br><span class="line"><span class="string">deb-src https://deb.torproject.org/torproject.org stretch main'</span> &gt; /etc/apt/sources.list.d/tor.list</span><br></pre></td></tr></table></figure>
+<p>然后，下载 <a href="https://www.torproject.org/docs/debian.html.en" target="_blank" rel="noopener">Tor Project 包签名密钥</a>并将其导入 APT 密钥环。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">--2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</span><br><span class="line">Resolving deb.torproject.org (deb.torproject.org)... 138.201.14.197</span><br><span class="line">Connecting to deb.torproject.org (deb.torproject.org)|138.201.14.197|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 19665 (19K) [text/plain]</span><br><span class="line">Saving to: ‘STDOUT’</span><br><span class="line"></span><br><span class="line">-                                              100%[=================================================================================================&gt;]  19.20K  47.5KB/s    <span class="keyword">in</span> 0.4s</span><br><span class="line"></span><br><span class="line">2019-02-18 19:28:25 (47.5 KB/s) - written to stdout [19665/19665]</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+<p>将签名密钥添加到密钥环后，您将看到“OK”输出。接下来，使用以下 apt-get 命令更新 APT。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease</span><br><span class="line">Get:2 https://deb.torproject.org/torproject.org stretch InRelease [4,965 B]</span><br><span class="line">Get:4 https://deb.torproject.org/torproject.org stretch/main Sources [1,169 B]</span><br><span class="line">Get:5 https://deb.torproject.org/torproject.org stretch/main amd64 Packages [2,400 B]</span><br><span class="line">Hit:3 http://archive-3.kali.org/kali kali-rolling InRelease</span><br><span class="line">Fetched 8,534 B <span class="keyword">in</span> 8s (1,091 B/s)</span><br><span class="line">Reading package lists... Done</span><br></pre></td></tr></table></figure>
+<p>使用以下命令安装 Tor，你就完成了。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install tor deb.torproject.org-keyring</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Suggested packages:</span><br><span class="line">  mixmaster torbrowser-launcher socat tor-arm apparmor-utils obfs4proxy</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">  deb.torproject.org-keyring</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">  tor</span><br></pre></td></tr></table></figure>
+<h2 id="7、使用-Syncthing-配置文件共享"><a href="#7、使用-Syncthing-配置文件共享" class="headerlink" title="7、使用 Syncthing 配置文件共享"></a>7、使用 Syncthing 配置文件共享</h2><p>由 <a href="https://twitter.com/jakobborg" target="_blank" rel="noopener">Jakob Borg</a> 创建的 <a href="https://github.com/syncthing/syncthing" target="_blank" rel="noopener">Syncthing</a> 是一种<a href="https://github.com/syncthing/syncthing/releases/" target="_blank" rel="noopener">跨平台</a>，私有，轻量级文件同步（Dropbox）替代方案。作为渗透测试人员，在 <a href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/" target="_blank" rel="noopener">VPS</a> 和本地 Kali 机器之间传输按键日志，屏幕截图，网络摄像头录像和<a href="https://null-byte.wonderhowto.com/how-to/hacking-windows-10-capture-exfiltrate-screenshots-remotely-0183646/#jump-step4" target="_blank" rel="noopener">敏感的战利品文件</a>可能是一项令人沮丧的任务。Syncthing 使安全的文件共享完全无痛。</p>
+<p>我在前一篇文章中介绍了 <a href="https://null-byte.wonderhowto.com/how-to/securely-sync-files-between-two-machines-using-syncthing-0185999/" target="_blank" rel="noopener">Syncthing 的安装和配置</a>。读者应参考该详细的分步指南。</p>
+<h2 id="8、安装代码编辑器"><a href="#8、安装代码编辑器" class="headerlink" title="8、安装代码编辑器"></a>8、安装代码编辑器</h2><p><a href="https://atom.io/" target="_blank" rel="noopener">Atom</a> 是一个免费的，开源的，功能丰富且高度可定制的文本编辑器。其功能包括实时协作共享代码，直观的编码自动补全功能，以及<a href="https://atom.io/packages" target="_blank" rel="noopener">安装软件包</a>的能力，这些都进一步增强了 Atom 的多功能性。其他值得注意的文本编辑包括 <a href="https://wiki.geany.org/doku.php" target="_blank" rel="noopener">Geany</a> 和 <a href="https://wiki.gnome.org/Apps/Gedit" target="_blank" rel="noopener">Gedit</a>。</p>
+<p>要安装 Atom，请访问他们的网站并下载最新的 <a href="https://atom.io/download/deb" target="_blank" rel="noopener">Debian 安装程序</a>。接下来，使用下面的 apt-get 命令打开终端并安装所需的依赖项。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install gvfs gvfs-common gvfs-daemons gvfs-libs gconf-service gconf2 gconf2-common gvfs-bin psmisc</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Correcting dependencies... Done</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">   gconf-service (3.2.6-4.1)</span><br><span class="line">   gconf2 (3.2.6-4.1)</span><br><span class="line">   gconf2-common (3.2.6-4.1)</span><br><span class="line">   gvfs-bin (1.36.2-1)</span><br><span class="line">   libgconf-2-4 (3.2.6-4.1)</span><br><span class="line">   psmisc (23.1-1+b1)</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">   gvfs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-common (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-daemons (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-libs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">4 upgraded, 6 newly installed, 0 to remove and 462 not upgraded.</span><br><span class="line">1 not fully installed or removed.</span><br><span class="line">Need to get 3,317 kB of archives.</span><br><span class="line">After this operation, 8,909 kB of additional disk space will be used.</span><br><span class="line">Do you want to <span class="built_in">continue</span>? [Y/n] y</span><br></pre></td></tr></table></figure>
+<p>最后，使用命令行包管理器 <strong>dpkg</strong> 和 install（<strong>-i</strong>）参数。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">dpkg -i ~/Downloads/atom-amd64.deb</span><br><span class="line"></span><br><span class="line">(Reading database ... 191882 files and directories currently installed.)</span><br><span class="line">Preparing to unpack atom-amd64.deb ...</span><br><span class="line">Unpacking atom (1.29.0) over (1.29.0) ...</span><br><span class="line">Setting up atom (1.29.0) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> desktop-file-utils (0.23-3) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> mime-support (3.60) ...</span><br></pre></td></tr></table></figure>
+<p>完成后，Atom 将显示在“应用程序”菜单中。</p>
+<p><img src="https://img.wonderhowto.com/img/original/05/68/63669459068404/0/636694590684040568.jpg" alt="Atom"></p>
+<h2 id="9、克隆橡皮鸭（Rubber-Ducky）编码器"><a href="#9、克隆橡皮鸭（Rubber-Ducky）编码器" class="headerlink" title="9、克隆橡皮鸭（Rubber Ducky）编码器"></a>9、克隆橡皮鸭（Rubber Ducky）编码器</h2><p>USB 橡皮鸭是臭名昭著的按键注入工具。利用 <a href="https://ducktoolkit.com/" target="_blank" rel="noopener">DuckToolKit 网站</a>可以很容易地创建 <a href="https://null-byte.wonderhowto.com/how-to/use-usb-rubber-ducky-disable-antivirus-software-install-ransomware-0180418/#jump-step2" target="_blank" rel="noopener">ducky payloads</a>，但作为一个渗透测试人员，与随机网站共享客户信息是不安全的。将有效载荷内容上载到第三方网站可能很危险。</p>
+<p>相反，我们可以使用 <strong>Git</strong> 克隆 USB 橡皮鸭<a href="https://github.com/hak5darren/USB-Rubber-Ducky" target="_blank" rel="noopener">存储库</a>并在本地编码有效载荷。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hak5darren/USB-Rubber-Ducky</span><br><span class="line"></span><br><span class="line">Cloning into <span class="string">'USB-Rubber-Ducky'</span>...</span><br><span class="line">remote: Counting objects: 1657, <span class="keyword">done</span>.</span><br><span class="line">remote: Total 1657 (delta 0), reused 0 (delta 0), pack-reused 1657</span><br><span class="line">Receiving objects: 100% (1657/1657), 31.88 MiB | 162.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (745/745), <span class="keyword">done</span>.</span><br><span class="line">Checking out files: 100% (1509/1509), <span class="keyword">done</span>.</span><br></pre></td></tr></table></figure>
+<p>然后，将当前目录更改（<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/" target="_blank" rel="noopener">cd</a>）为 <code>USB-Rubber-Ducky/Encoder/</code> 目录，并使用以下 <strong>java</strong> 命令开始编码没有第三方网站的 <a href="https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload" target="_blank" rel="noopener">ducky payloads</a>。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> USB-Rubber-Ducky/Encoder/</span><br><span class="line">java -jar encoder.jar -i input_payload.txt -o inject.bin</span><br></pre></td></tr></table></figure>
+<h2 id="10、更改-SSH-密钥和默认密码"><a href="#10、更改-SSH-密钥和默认密码" class="headerlink" title="10、更改 SSH 密钥和默认密码"></a>10、更改 SSH 密钥和默认密码</h2><p>每个 Kali Linux 安装的默认密码都是相同的（toor），这使得自动化攻击非常容易。此外，当你通过 SSH 控制树莓派之类的东西时，默认的 SSH 密钥可以允许攻击者拦截你的通信。</p>
+<p>要更改 SSH 密钥，请首先切换目录。执行以下两个命令将重置 SSH 密钥的默认值。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/ssh/</span><br><span class="line">dpkg-reconfigure openssh-server</span><br><span class="line"></span><br><span class="line">rescue-ssh.target is a disabled or a static unit, not starting it.</span><br></pre></td></tr></table></figure>
+<p>现在，对于你的 Kali 系统密码，输入 <strong>passwd root</strong>，然后输入你的新密码。然后，重新输入以确认。如果你未以 root 用户身份登录，则可能会在执行此操作之前询问你当前的密码。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">passwd root</span><br><span class="line"></span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
+<h2 id="安装-Kali-后你做的第一件事是什么？"><a href="#安装-Kali-后你做的第一件事是什么？" class="headerlink" title="安装 Kali 后你做的第一件事是什么？"></a>安装 Kali 后你做的第一件事是什么？</h2><p>我们都有不同程度的兴趣，技能和经验水平。这使得编写完整的安装后步骤列表变得棘手。我错过了任何关键步骤吗？你如何个性化和定制新安装的Kali？请务必在下面发表评论。</p>
 ]]></content>
       <categories>
         <category>Translation</category>
@@ -961,12 +982,17 @@
       </categories>
   </entry>
   <entry>
-    <title>编写规范的README文档</title>
+    <title>编写规范的 README 文档</title>
     <url>/2018/11/02/readme/</url>
-    <content><![CDATA[<p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用<strong>README</strong>文件来做整体描述，README这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README这6个字母通常都是大写的，这是因为<strong>在Linux中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定README文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的README文档应该是什么样子的。<br><a id="more"></a><br>README文档通常是用<strong>Markdown</strong>编写的，但有时你也会看到其他格式的README文档，比如：有关Python的项目喜欢用<strong>reStructuredText</strong>编写README文档，这也是一种类似于Markdown的标记语言。一个优秀的README文档中应包含：<strong>简短的项目说明</strong>、<strong>安装说明</strong>、<strong>使用说明</strong>、<strong>如何参与贡献</strong>、<strong>许可协议</strong>等。此外，随着代码量的增加，<strong>已知BUG</strong>、<strong>常见问题</strong>等也可以加入到README文档中。</p>
-<p>一个规范的README文档模板应该像下面这样的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Project Name</span><br><span class="line">填写简短的项目说明</span><br><span class="line"># Installation</span><br><span class="line">填写安装说明</span><br><span class="line"># Usage</span><br><span class="line">填写使用说明</span><br><span class="line"># Contributing</span><br><span class="line">填写如何参与此项目的贡献方法</span><br><span class="line"># License</span><br><span class="line">填写许可协议</span><br></pre></td></tr></table></figure></p>
-<p>有趣的是，在日常使用中，经常会见到各种各样的徽章或进度条，比如：<br><img src="https://img.shields.io/travis/rust-lang/rust.svg" alt="Travis (.org)"><img src="https://img.shields.io/github/release/qubyte/rubidium.svg" alt="GitHub release"><img src="https://img.shields.io/github/stars/git/git.svg" alt="GitHub stars"><br>它们的本质就是一个个的图片而已，要想自定义这些图片可以访问<a href="https://shields.io/#/" target="_blank" rel="noopener">Shields.io</a>。</p>
-<p>最后，我将给出几个GitHub中项目的文档，它们的README文档都写得不错：</p>
+    <content><![CDATA[<p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 <strong>README</strong> 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README 这 6 个字母通常都是大写的，这是因为<strong>在 Linux 中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的 README 文档应该是什么样子的。<br><a id="more"></a><br>README 文档通常是用 <strong>Markdown</strong> 编写的，但有时你也会看到其他格式的 README 文档，比如：有关 Python 的项目喜欢用 <strong>reStructuredText</strong> 编写 README 文档，这也是一种类似于 Markdown 的标记语言。一个优秀的 README 文档中应包含：<strong>简短的项目说明</strong>、<strong>安装说明</strong>、<strong>使用说明</strong>、<strong>如何参与贡献</strong>、<strong>许可协议</strong>等。此外，随着代码量的增加，<strong>已知 BUG</strong>、<strong>常见问题</strong>等也可以加入到 README 文档中。</p>
+<p>一个规范的 README 文档模板应该像下面这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Project Name</span></span><br><span class="line">填写简短的项目说明</span><br><span class="line"><span class="section"># Installation</span></span><br><span class="line">填写安装说明</span><br><span class="line"><span class="section"># Usage</span></span><br><span class="line">填写使用说明</span><br><span class="line"><span class="section"># Contributing</span></span><br><span class="line">填写如何参与此项目的贡献方法</span><br><span class="line"><span class="section"># License</span></span><br><span class="line">填写许可协议</span><br></pre></td></tr></table></figure>
+<p>有趣的是，在日常使用中，经常会见到各种各样的徽章或进度条，比如：</p>
+<p><img src="https://img.shields.io/travis/rust-lang/rust.svg" alt="Travis (.org)"></p>
+<p><img src="https://img.shields.io/github/release/qubyte/rubidium.svg" alt="GitHub release"></p>
+<p><img src="https://img.shields.io/github/stars/git/git.svg" alt="GitHub stars"></p>
+<p>它们的本质就是一个个的图片而已，要想自定义这些图片可以访问 <a href="https://shields.io/#/" target="_blank" rel="noopener">Shields.io</a>。</p>
+<p>最后，我将给出几个 GitHub 中项目的文档，它们的 README 文档都写得不错：</p>
 <ul>
 <li><a href="https://github.com/rails/rails" target="_blank" rel="noopener">Rails</a></li>
 <li><a href="https://github.com/thoughtbot/factory_bot" target="_blank" rel="noopener">factory_bot</a></li>
@@ -1108,9 +1134,9 @@
     <title>Jupyter Notebook 常用扩展</title>
     <url>/2018/09/25/jupyter-notebook-extensions/</url>
     <content><![CDATA[<h2 id="扩展机制"><a href="#扩展机制" class="headerlink" title="扩展机制"></a>扩展机制</h2><p>在介绍常用扩展之前，有必要先来介绍一下 Jupyter Notebook 的扩展机制：本质上来说，所有的 Jupyter Notebook 扩展都是一个个的 Python 包，所以大部分可以通过 <code>pip</code> 快速安装，另外，Jupyter Notebook 是一个典型的 <strong>B/S</strong> 架构的应用，用户通过访问浏览器来使用 Jupyter Notebook，因此，Jupyter Notebook 的扩展可以只针对服务器端，也可以针对前端资源页面，而如果一个扩展增强了 Jupyter Notebook 的前端资源页面，则它还必须使用如下命令安装资源：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter nbextension install helpful_package --py <span class="comment"># or --sys-prefix if using virtualenv or conda</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">jupyter nbextension install helpful_package --py <span class="comment"># or --sys-prefix if using virtualenv or conda</span></span><br></pre></td></tr></table></figure>
 <p>安装完资源后，如果这个资源需要在每次 Jupyter Notebook 启动后被加载，则还应使用如下命令启用资源：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter nbextension <span class="built_in">enable</span> helpful_package --py <span class="comment"># or --sys-prefix if using virtualenv or conda</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">jupyter nbextension <span class="built_in">enable</span> helpful_package --py <span class="comment"># or --sys-prefix if using virtualenv or conda</span></span><br></pre></td></tr></table></figure>
 <h2 id="jupyter-contrib-nbextensions"><a href="#jupyter-contrib-nbextensions" class="headerlink" title="jupyter_contrib_nbextensions"></a><a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions" target="_blank" rel="noopener">jupyter_contrib_nbextensions</a></h2><p>与其说这是一个扩展，倒不如说这是<strong>一群</strong>扩展，该扩展集合了大多数的 Jupyter Notebook 常用扩展。</p>
 <p>使用 <code>pip install jupyter_contrib_nbextensions</code> 命令即可安装，安装完成后使用 <code>jupyter contrib nbextension install --user</code> 命令进行些许配置，参数 <code>--user</code> 指定安装到当前用户家目录下的 <code>.jupyter</code> 文件夹下。</p>
 <p>等到安装并配置完成后，打开 Jupyter Notebook 网页，会出现 <code>Nbextensions</code> 选项卡，点击进入此选项卡中，可以启用或禁用相应的扩展。</p>
@@ -1206,11 +1232,18 @@
   <entry>
     <title>隐写术</title>
     <url>/2018/09/22/steganography/</url>
-    <content><![CDATA[<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code>即可检查 a 文件的类型。<br>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索<code>CTF</code>或<code>FLAG</code>等关键字，发现是否存在隐藏信息。Windows下可以使用Sublime Text 3 的插件<a href="http://facelessuser.github.io/HexViewer/" target="_blank" rel="noopener">HexViewer</a>查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
+    <content><![CDATA[<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code> 即可检查 a 文件的类型。</p>
+<p>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 <code>CTF</code> 或 <code>FLAG</code> 等关键字，发现是否存在隐藏信息。Windows 下可以使用 Sublime Text 3 的插件 <a href="http://facelessuser.github.io/HexViewer/" target="_blank" rel="noopener">HexViewer</a> 查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
 <h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp" target="_blank" rel="noopener">谷歌搜图</a>，或许可以发现更多信息。</p>
-<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式(Exchangeable image file format)，可以记录JPEG格式图片的属性信息和拍摄数据。有的JPEG格式图片会具有Exif信息，在Windows中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备Exif信息。如下图片：<br><img src="/images/meinv.jpg" alt="exif"><br><a id="more"></a></p>
-<h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到<a href="http://www.petitcolas.net/steganography/mp3stego/" target="_blank" rel="noopener">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。下载该软件后在其<code>MP3Stego</code>文件夹下会有 2 个命令：<code>Encode</code>和<code>Decode</code>，<code>Encode</code>命令用于隐写信息，<code>Decode</code>命令用于解密被隐写的信息，使用<code>decode -X -P pass svega_stego.mp3</code>即可从<code>svega_stego.mp3</code>文件中解码所需信息，<code>-P</code>指定解密密码。</p>
-<h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：<br><img src="/images/word.PNG" alt="word"><br>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。<br>类似的题可以参考<a href="http://www.shiyanbar.com/ctf/1927" target="_blank" rel="noopener">Fonts</a>,<a href="http://www.shiyanbar.com/ctf/1849" target="_blank" rel="noopener">认真你就输了</a>等等。</p>
+<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式（Exchangeable image file format），可以记录 JPEG 格式图片的属性信息和拍摄数据。有的 JPEG 格式图片会具有 Exif 信息，在 Windows 中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备 Exif 信息。如下图片：</p>
+<p><img src="/images/meinv.jpg" alt="exif"></p>
+<a id="more"></a>
+<h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到 <a href="http://www.petitcolas.net/steganography/mp3stego/" target="_blank" rel="noopener">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。</p>
+<p>下载该软件后在其 <code>MP3Stego</code> 文件夹下会有 2 个命令：<code>Encode</code> 和 <code>Decode</code>，<code>Encode</code> 命令用于隐写信息，<code>Decode</code> 命令用于解密被隐写的信息，使用 <code>decode -X -P pass svega_stego.mp3</code> 即可从 <code>svega_stego.mp3</code> 文件中解码所需信息，<code>-P</code> 指定解密密码。</p>
+<h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：</p>
+<p><img src="/images/word.PNG" alt="word"></p>
+<p>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。</p>
+<p>类似的题可以参考 <a href="http://www.shiyanbar.com/ctf/1927" target="_blank" rel="noopener">Fonts</a>，<a href="http://www.shiyanbar.com/ctf/1849" target="_blank" rel="noopener">认真你就输了</a>等等。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
