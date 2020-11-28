@@ -9,13 +9,13 @@ tags:
 
 在介绍常用扩展之前，有必要先来介绍一下 Jupyter Notebook 的扩展机制：本质上来说，所有的 Jupyter Notebook 扩展都是一个个的 Python 包，所以大部分可以通过 `pip` 快速安装，另外，Jupyter Notebook 是一个典型的 **B/S** 架构的应用，用户通过访问浏览器来使用 Jupyter Notebook，因此，Jupyter Notebook 的扩展可以只针对服务器端，也可以针对前端资源页面，而如果一个扩展增强了 Jupyter Notebook 的前端资源页面，则它还必须使用如下命令安装资源：
 
-```bash
+```sh
 jupyter nbextension install helpful_package --py # or --sys-prefix if using virtualenv or conda
 ```
 
 安装完资源后，如果这个资源需要在每次 Jupyter Notebook 启动后被加载，则还应使用如下命令启用资源：
 
-```bash
+```sh
 jupyter nbextension enable helpful_package --py # or --sys-prefix if using virtualenv or conda
 ```
 

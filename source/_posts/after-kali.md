@@ -1,37 +1,44 @@
 ---
-title: 安装Kali Linux后要做的10件事
+title: 安装 Kali Linux 后要做的 10 件事
 categories: Translation
 date: 2019-02-25 17:45:28
 tags:
   - Kali
 ---
 
-本文翻译自https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/ ，正文如下：
+本文翻译自 <https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/> ，正文如下：
 
-默认情况下，对于完成日常的渗透测试，[Kali Linux](https://null-byte.wonderhowto.com/how-to/hack-like-pro-getting-started-with-kali-your-new-hacking-system-0151631/)可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用Kali。
+默认情况下，对于完成日常的渗透测试，[Kali Linux](https://null-byte.wonderhowto.com/how-to/hack-like-pro-getting-started-with-kali-your-new-hacking-system-0151631/) 可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用 Kali。
 
-大多数Linux发行版都是高度可定制的。这使得个性化你的渗透测试发行版有点令人生畏。只需几个命令，我们就可以自动执行任务，安装我们喜欢的软件，创建其他用户帐户，正确配置匿名软件，以及优化我们与终端的互动。我们可以采取一些措施来改善与操作系统的交互。
+大多数 Linux 发行版都是高度可定制的。这使得个性化你的渗透测试发行版有点令人生畏。只需几个命令，我们就可以自动执行任务，安装我们喜欢的软件，创建其他用户帐户，正确配置匿名软件，以及优化我们与终端的互动。我们可以采取一些措施来改善与操作系统的交互。
 <!--more-->
 {% youtube 8VL0K0rFgxw %}
-## 1、安装Git
-[Git](https://git-scm.com/)是一个开源软件版本控制应用程序。它可以用于协作共享和编辑代码，但在Null Byte中通常被引用作为复制（或“[克隆](https://www.git-scm.com/docs/git-clone)”）GitHub上的代码存储库的主要工具。Git是渗透测试人员必备的工具，他们希望将自己的工具集扩展到默认Kali存储库中可用的工具集之外。
 
-可以使用下面的[apt-get](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-5-installing-new-software-0147591/)命令安装Git。
-```
+## 1、安装 Git
+
+[Git](https://git-scm.com/) 是一个开源软件版本控制应用程序。它可以用于协作共享和编辑代码，但在 Null Byte 中通常被引用作为复制（或“[克隆](https://www.git-scm.com/docs/git-clone)”）GitHub 上的代码存储库的主要工具。Git 是渗透测试人员必备的工具，他们希望将自己的工具集扩展到默认 Kali 存储库中可用的工具集之外。
+
+可以使用下面的 [apt-get](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-5-installing-new-software-0147591/) 命令安装 Git。
+
+```sh
 apt-get install git
 ```
 
-## 2、配置Bash别名
-Bash别名非常适合创建自定义命令行快捷方式。例如，我们可以重新分配[ls](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/)命令以自动使用我们最喜欢的参数。下面是正常**ls**输出的示例。
-```
+## 2、配置 Bash 别名
+
+Bash 别名非常适合创建自定义命令行快捷方式。例如，我们可以重新分配 [ls](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/) 命令以自动使用我们最喜欢的参数。下面是正常 **ls** 输出的示例。
+
+```sh
 ls
 
  androidbins.txt                                      folder-pictures.png     smtp.cracked         text-x-generic.png
  bogus_gmail.creds                                    folder.png              smtp.list            Windows-10
  dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39   package-x-generic.png   text-x-generic.ico  'Windows 10 Icons'
 ```
-在创建**ls**别名后再次输出的示例。
-```
+
+在创建 **ls** 别名后再次输出的示例。
+
+```sh
 ls
 
 total 220K
@@ -50,19 +57,22 @@ drwxr-xr-x  5 root root 4.0K Jun 11 21:57  dumpzilla-b3075d1960874ce82ea76a5be9f
 drwxr-xr-x  5 root root 4.0K Jul 23 19:22  ./
 drwxr-xr-x 23 root root 4.0K Aug  9 04:25  ../
 ```
-我们得到了更详细的输出。**ls**命令现在自动使用**-l**，**-a**，**-t**，**-h**和**-r**参数。所有这些参数都将指示**ls**使用列表（**-l**）格式，列出所有（**-a**）文件——包括隐藏文件——并以人类可读（**-h**）的格式打印文件大小（例如，1K，234M，5G）。
 
-我的别名还将按修改时间（**-t**）对输出进行排序，并反转（**-r**）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的**ls**偏好，但你的可能会有所不同。
+我们得到了更详细的输出。**ls** 命令现在自动使用 **-l**，**-a**，**-t**，**-h** 和 **-r** 参数。所有这些参数都将指示 **ls** 使用列表（**-l**）格式，列出所有（**-a**）文件 —— 包括隐藏文件 —— 并以人类可读（**-h**）的格式打印文件大小（例如，1K，234M，5G）。
 
-要创建别名，请使用**nano**或你喜欢的文本编辑器打开/root/.bash_aliases。添加以下行以创建别名。
+我的别名还将按修改时间（**-t**）对输出进行排序，并反转（**-r**）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的 **ls** 偏好，但你的可能会有所不同。
 
-- 不要错过：[Vim简介，每个黑客都应该知道的Unix文本编辑器](https://null-byte.wonderhowto.com/how-to/intro-vim-unix-text-editor-every-hacker-should-be-familiar-with-0174674/)
+要创建别名，请使用 **nano** 或你喜欢的文本编辑器打开 `/root/.bash_aliases`。添加以下行以创建别名。
 
-```
+- 不要错过：[Vim 简介，每个黑客都应该知道的 Unix 文本编辑器](https://null-byte.wonderhowto.com/how-to/intro-vim-unix-text-editor-every-hacker-should-be-familiar-with-0174674/)
+
+```sh
 alias ls='ls --color=always -rthla'
 ```
-我们还可以进一步向.bash_aliases文件添加更复杂的函数。下面是一个简单的函数示例，旨在使Kali保持最新状态。
-```
+
+我们还可以进一步向 `.bash_aliases` 文件添加更复杂的函数。下面是一个简单的函数示例，旨在使 Kali 保持最新状态。
+
+```sh
 function apt-updater {
     apt-get update &&
     apt-get dist-upgrade -Vy &&
@@ -72,24 +82,32 @@ function apt-updater {
     reboot
     }
 ```
-保存对.bash_aliases文件所做的更改后，打开一个新终端以使更改生效。运行新创建的**apt-updater**函数将调用一系列**apt-get**命令，这些命令将自动更新和维护你的系统。如果先前的命令失败，＆符号（**&&**）确保该函数不会继续执行以下命令。
-```
+
+保存对 `.bash_aliases` 文件所做的更改后，打开一个新终端以使更改生效。运行新创建的 **apt-updater** 函数将调用一系列 **apt-get** 命令，这些命令将自动更新和维护你的系统。如果先前的命令失败，＆ 符号（**&&**）确保该函数不会继续执行以下命令。
+
+```sh
 apt-updater
 ```
-有关Bash别名的更多信息，请查看Kody的“[为Wi-Fi数据包捕获设置MacOS系统](https://null-byte.wonderhowto.com/how-to/mac-for-hackers-set-up-macos-system-for-wi-fi-packet-capturing-0186354/)”一文。
+
+有关 Bash 别名的更多信息，请查看 Kody 的“[为 Wi-Fi 数据包捕获设置 MacOS 系统](https://null-byte.wonderhowto.com/how-to/mac-for-hackers-set-up-macos-system-for-wi-fi-packet-capturing-0186354/)”一文。
 
 ## 3、创建一个新的低权限用户
-许多应用程序（如Chromium浏览器和Tor浏览器）都不应该以root用户身份打开或使用。此类应用程序在很大程度上依赖于低级别权限来提供某种程度的安全性。某些用户为这些活动创建低特权用户帐户可能是有益的。
 
-Takhion的“[锁定Kali Linux以用于安全桌面使用](https://null-byte.wonderhowto.com/how-to/install-lock-down-kali-linux-for-safe-desktop-use-0184531/#jump-step2)”一文中详细介绍了这一概念，因此请务必查看帮助。
+许多应用程序（如 Chromium 浏览器和 Tor 浏览器）都不应该以 root 用户身份打开或使用。此类应用程序在很大程度上依赖于低级别权限来提供某种程度的安全性。某些用户为这些活动创建低特权用户帐户可能是有益的。
+
+Takhion 的“[锁定 Kali Linux 以用于安全桌面使用](https://null-byte.wonderhowto.com/how-to/install-lock-down-kali-linux-for-safe-desktop-use-0184531/#jump-step2)”一文中详细介绍了这一概念，因此请务必查看帮助。
 
 ## 4、安装一个终端复用器
-复用器是一种平铺终端仿真器，允许我们在一个窗口内打开多个终端会话。这样做的主要好处是能够立即看到我们所有打开的终端会话，而不是将窗口叠加在一起。以下是复用器示例。
-![复用器](https://img.wonderhowto.com/img/10/19/63669458451029/0/top-10-things-do-after-installing-kali-linux.w1456.jpg)
-有许多值得注意的复用器。如上面的屏幕截图所示，[Tilix](https://github.com/gnunn1/tilix)是一个开源且可靠的选项。替代方案包括[tmux](https://github.com/tmux/tmux/)和[screen](https://savannah.gnu.org/projects/screen)。
 
-Tilix可在Kali的APT存储库中使用，可以使用以下命令进行安装。
-```
+复用器是一种平铺终端仿真器，允许我们在一个窗口内打开多个终端会话。这样做的主要好处是能够立即看到我们所有打开的终端会话，而不是将窗口叠加在一起。以下是复用器示例。
+
+![复用器](https://img.wonderhowto.com/img/10/19/63669458451029/0/top-10-things-do-after-installing-kali-linux.w1456.jpg)
+
+有许多值得注意的复用器。如上面的屏幕截图所示，[Tilix](https://github.com/gnunn1/tilix) 是一个开源且可靠的选项。替代方案包括 [tmux](https://github.com/tmux/tmux/) 和 [screen](https://savannah.gnu.org/projects/screen)。
+
+Tilix 可在 Kali 的 APT 存储库中使用，可以使用以下命令进行安装。
+
+```sh
 apt-get install tilix
 
 Reading package lists... Done
@@ -106,22 +124,25 @@ Need to get 10.7 MB of archives.
 After this operation, 49.1 MB of additional disk space will be used.
 Do you want to continue? [Y/n] y
 ```
-亚马逊推荐：[William E. Shotts Jr.撰写的“Linux命令行大全”](https://www.amazon.cn/dp/B00BQTWC0U)
+
+亚马逊推荐：[William E. Shotts Jr. 撰写的“Linux命令行大全”](https://www.amazon.cn/dp/B00BQTWC0U)
 
 ## 5、安装你喜爱的黑客工具
-某些版本的Kali面向极简主义的渗透测试者，他们不希望预先安装数百个黑客工具。这意味着我们必须手动安装我们喜欢的工具。我们使用的工具类型根据我们的技能和专业领域而有所不同，但以下是一些流行的黑客工具。
 
-- [Aircrack-ng](https://www.aircrack-ng.org/)：无线[WEP/WPA破解实用程序](https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-aircrack-ng-suite-wi-fi-hacking-tools-0147893/)。
-- [BeEF](https://beefproject.com/)：通过Web应用程序的浏览器[漏洞利用框架](https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-browsers-with-beef-0159961/)。
-- [Burp Suite](https://portswigger.net/burp/)：专为[Web应用程序安全性](https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-apps-part-4-hacking-form-authentication-with-burp-suite-0163642/)而设计的图形应用。
+某些版本的 Kali 面向极简主义的渗透测试者，他们不希望预先安装数百个黑客工具。这意味着我们必须手动安装我们喜欢的工具。我们使用的工具类型根据我们的技能和专业领域而有所不同，但以下是一些流行的黑客工具。
+
+- [Aircrack-ng](https://www.aircrack-ng.org/)：无线 [WEP/WPA 破解实用程序](https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-aircrack-ng-suite-wi-fi-hacking-tools-0147893/)。
+- [BeEF](https://beefproject.com/)：通过 Web 应用程序的浏览器[漏洞利用框架](https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-browsers-with-beef-0159961/)。
+- [Burp Suite](https://portswigger.net/burp/)：专为 [Web 应用程序安全性](https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-apps-part-4-hacking-form-authentication-with-burp-suite-0163642/)而设计的图形应用。
 - [Hydra](https://github.com/vanhauser-thc/thc-hydra)：登录[密码暴力破解](https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/)实用程序。
-- [Nikto](https://cirt.net/Nikto2)：Web[服务器安全扫描器](https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/)。
+- [Nikto](https://cirt.net/Nikto2)：Web [服务器安全扫描器](https://null-byte.wonderhowto.com/how-to/hack-like-pro-find-vulnerabilities-for-any-website-using-nikto-0151729/)。
 - [Maltego](https://www.paterva.com/web7/)：开源取证和情报收集。
 - [Nmap](https://nmap.org/)：端口扫描器和[网络映射器](https://null-byte.wonderhowto.com/how-to/hack-like-pro-advanced-nmap-for-reconnaissance-0151619/)。
 - [Wireshark](https://www.wireshark.org/download.html)：用于[网络流量分析](https://null-byte.wonderhowto.com/news/8-wireshark-filters-every-wiretapper-uses-spy-web-conversations-and-surfing-habits-0134508/)的图形应用程序。
 
 可以使用以下命令安装这些工具。
-```
+
+```sh
 apt-get install maltego metasploit-framework burpsuite wireshark aircrack-ng hydra nmap beef-xss nikto
 
 Reading package lists... Done
@@ -174,16 +195,20 @@ After this operation, 616 MB of additional disk space will be used.
 Do you want to continue? [Y/n] y
 ```
 
-## 6、安装最新版本的Tor
-Tor可以在Kali的存储库中使用，但匿名软件应该直接从源代码获取（torproject.org）。此外，Kali的Tor版本无法可靠地维护或更新。这意味着我们可能会缺少关键的稳定性和安全性更新。
+## 6、安装最新版本的 Tor
 
-将Tor项目存储库添加到APT存储库列表中。
-```
+Tor 可以在 Kali 的存储库中使用，但匿名软件应该直接从源代码获取（torproject.org）。此外，Kali 的 Tor 版本无法可靠地维护或更新。这意味着我们可能会缺少关键的稳定性和安全性更新。
+
+将 Tor 项目存储库添加到 APT 存储库列表中。
+
+```sh
 echo 'deb https://deb.torproject.org/torproject.org stretch main
 deb-src https://deb.torproject.org/torproject.org stretch main' > /etc/apt/sources.list.d/tor.list
 ```
-然后，下载[Tor Project包签名密钥](https://www.torproject.org/docs/debian.html.en)并将其导入APT密钥环。
-```
+
+然后，下载 [Tor Project 包签名密钥](https://www.torproject.org/docs/debian.html.en)并将其导入 APT 密钥环。
+
+```sh
 wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -
 
 --2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc
@@ -199,8 +224,10 @@ Saving to: ‘STDOUT’
 
 OK
 ```
-将签名密钥添加到密钥环后，您将看到“OK”输出。接下来，使用以下apt-get命令更新APT。
-```
+
+将签名密钥添加到密钥环后，您将看到“OK”输出。接下来，使用以下 apt-get 命令更新 APT。
+
+```sh
 apt-get update
 
 Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease
@@ -211,8 +238,10 @@ Hit:3 http://archive-3.kali.org/kali kali-rolling InRelease
 Fetched 8,534 B in 8s (1,091 B/s)
 Reading package lists... Done
 ```
-使用以下命令安装Tor，你就完成了。
-```
+
+使用以下命令安装 Tor，你就完成了。
+
+```sh
 apt-get install tor deb.torproject.org-keyring
 
 Reading package lists... Done
@@ -226,16 +255,19 @@ The following packages will be upgraded:
   tor
 ```
 
-## 7、使用Syncthing配置文件共享
-由[Jakob Borg](https://twitter.com/jakobborg)创建的[Syncthing](https://github.com/syncthing/syncthing)是一种[跨平台](https://github.com/syncthing/syncthing/releases/)，私有，轻量级文件同步（Dropbox）替代方案。作为渗透测试人员，在[VPS](https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/)和本地Kali机器之间传输按键日志，屏幕截图，网络摄像头录像和[敏感的战利品文件](https://null-byte.wonderhowto.com/how-to/hacking-windows-10-capture-exfiltrate-screenshots-remotely-0183646/#jump-step4)可能是一项令人沮丧的任务。Syncthing使安全的文件共享完全无痛。
+## 7、使用 Syncthing 配置文件共享
 
-我在前一篇文章中介绍了[Syncthing的安装和配置](https://null-byte.wonderhowto.com/how-to/securely-sync-files-between-two-machines-using-syncthing-0185999/)。读者应参考该详细的分步指南。
+由 [Jakob Borg](https://twitter.com/jakobborg) 创建的 [Syncthing](https://github.com/syncthing/syncthing) 是一种[跨平台](https://github.com/syncthing/syncthing/releases/)，私有，轻量级文件同步（Dropbox）替代方案。作为渗透测试人员，在 [VPS](https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/) 和本地 Kali 机器之间传输按键日志，屏幕截图，网络摄像头录像和[敏感的战利品文件](https://null-byte.wonderhowto.com/how-to/hacking-windows-10-capture-exfiltrate-screenshots-remotely-0183646/#jump-step4)可能是一项令人沮丧的任务。Syncthing 使安全的文件共享完全无痛。
+
+我在前一篇文章中介绍了 [Syncthing 的安装和配置](https://null-byte.wonderhowto.com/how-to/securely-sync-files-between-two-machines-using-syncthing-0185999/)。读者应参考该详细的分步指南。
 
 ## 8、安装代码编辑器
-[Atom](https://atom.io/)是一个免费的，开源的，功能丰富且高度可定制的文本编辑器。其功能包括实时协作共享代码，直观的编码自动补全功能，以及[安装软件包](https://atom.io/packages)的能力，这些都进一步增强了Atom的多功能性。其他值得注意的文本编辑包括[Geany](https://wiki.geany.org/doku.php)和[Gedit](https://wiki.gnome.org/Apps/Gedit)。
 
-要安装Atom，请访问他们的网站并下载最新的[Debian安装程序](https://atom.io/download/deb)。接下来，使用下面的apt-get命令打开终端并安装所需的依赖项。
-```
+[Atom](https://atom.io/) 是一个免费的，开源的，功能丰富且高度可定制的文本编辑器。其功能包括实时协作共享代码，直观的编码自动补全功能，以及[安装软件包](https://atom.io/packages)的能力，这些都进一步增强了 Atom 的多功能性。其他值得注意的文本编辑包括 [Geany](https://wiki.geany.org/doku.php) 和 [Gedit](https://wiki.gnome.org/Apps/Gedit)。
+
+要安装 Atom，请访问他们的网站并下载最新的 [Debian 安装程序](https://atom.io/download/deb)。接下来，使用下面的 apt-get 命令打开终端并安装所需的依赖项。
+
+```sh
 apt-get install gvfs gvfs-common gvfs-daemons gvfs-libs gconf-service gconf2 gconf2-common gvfs-bin psmisc
 
 Reading package lists... Done
@@ -260,8 +292,10 @@ Need to get 3,317 kB of archives.
 After this operation, 8,909 kB of additional disk space will be used.
 Do you want to continue? [Y/n] y
 ```
-最后，使用命令行包管理器**dpkg**和install（**-i**）参数。
-```
+
+最后，使用命令行包管理器 **dpkg** 和 install（**-i**）参数。
+
+```sh
 dpkg -i ~/Downloads/atom-amd64.deb
 
 (Reading database ... 191882 files and directories currently installed.)
@@ -271,14 +305,18 @@ Setting up atom (1.29.0) ...
 Processing triggers for desktop-file-utils (0.23-3) ...
 Processing triggers for mime-support (3.60) ...
 ```
-完成后，Atom将显示在“应用程序”菜单中。
+
+完成后，Atom 将显示在“应用程序”菜单中。
+
 ![Atom](https://img.wonderhowto.com/img/original/05/68/63669459068404/0/636694590684040568.jpg)
 
 ## 9、克隆橡皮鸭（Rubber Ducky）编码器
-USB橡皮鸭是臭名昭著的按键注入工具。利用[DuckToolKit网站](https://ducktoolkit.com/)可以很容易地创建[ducky payloads](https://null-byte.wonderhowto.com/how-to/use-usb-rubber-ducky-disable-antivirus-software-install-ransomware-0180418/#jump-step2)，但作为一个渗透测试人员，与随机网站共享客户信息是不安全的。将有效载荷内容上载到第三方网站可能很危险。
 
-相反，我们可以使用**Git**克隆USB橡皮鸭[存储库](https://github.com/hak5darren/USB-Rubber-Ducky)并在本地编码有效载荷。
-```
+USB 橡皮鸭是臭名昭著的按键注入工具。利用 [DuckToolKit 网站](https://ducktoolkit.com/)可以很容易地创建 [ducky payloads](https://null-byte.wonderhowto.com/how-to/use-usb-rubber-ducky-disable-antivirus-software-install-ransomware-0180418/#jump-step2)，但作为一个渗透测试人员，与随机网站共享客户信息是不安全的。将有效载荷内容上载到第三方网站可能很危险。
+
+相反，我们可以使用 **Git** 克隆 USB 橡皮鸭[存储库](https://github.com/hak5darren/USB-Rubber-Ducky)并在本地编码有效载荷。
+
+```sh
 git clone https://github.com/hak5darren/USB-Rubber-Ducky
 
 Cloning into 'USB-Rubber-Ducky'...
@@ -288,24 +326,30 @@ Receiving objects: 100% (1657/1657), 31.88 MiB | 162.00 KiB/s, done.
 Resolving deltas: 100% (745/745), done.
 Checking out files: 100% (1509/1509), done.
 ```
-然后，将当前目录更改（[cd](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/)）为USB-Rubber-Ducky/Encoder/ 目录，并使用以下**java**命令开始编码没有第三方网站的[ducky payloads](https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload)。
-```
+
+然后，将当前目录更改（[cd](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/)）为 `USB-Rubber-Ducky/Encoder/` 目录，并使用以下 **java** 命令开始编码没有第三方网站的 [ducky payloads](https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload)。
+
+```sh
 cd USB-Rubber-Ducky/Encoder/
 java -jar encoder.jar -i input_payload.txt -o inject.bin
 ```
 
-## 10、更改SSH密钥和默认密码
-每个Kali Linux安装的默认密码都是相同的（toor），这使得自动化攻击非常容易。此外，当你通过SSH控制树莓派之类的东西时，默认的SSH密钥可以允许攻击者拦截你的通信。
+## 10、更改 SSH 密钥和默认密码
 
-要更改SSH密钥，请首先切换目录。执行以下两个命令将重置SSH密钥的默认值。
-```
+每个 Kali Linux 安装的默认密码都是相同的（toor），这使得自动化攻击非常容易。此外，当你通过 SSH 控制树莓派之类的东西时，默认的 SSH 密钥可以允许攻击者拦截你的通信。
+
+要更改 SSH 密钥，请首先切换目录。执行以下两个命令将重置 SSH 密钥的默认值。
+
+```sh
 cd /etc/ssh/
 dpkg-reconfigure openssh-server
 
 rescue-ssh.target is a disabled or a static unit, not starting it.
 ```
-现在，对于你的Kali系统密码，输入**passwd root**，然后输入你的新密码。然后，重新输入以确认。如果你未以root用户身份登录，则可能会在执行此操作之前询问你当前的密码。
-```
+
+现在，对于你的 Kali 系统密码，输入 **passwd root**，然后输入你的新密码。然后，重新输入以确认。如果你未以 root 用户身份登录，则可能会在执行此操作之前询问你当前的密码。
+
+```sh
 passwd root
 
 Enter new UNIX password:
@@ -313,5 +357,6 @@ Retype new UNIX password:
 passwd: password updated successfully
 ```
 
-## 安装Kali后你做的第一件事是什么？
+## 安装 Kali 后你做的第一件事是什么？
+
 我们都有不同程度的兴趣，技能和经验水平。这使得编写完整的安装后步骤列表变得棘手。我错过了任何关键步骤吗？你如何个性化和定制新安装的Kali？请务必在下面发表评论。

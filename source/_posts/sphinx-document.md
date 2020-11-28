@@ -39,9 +39,9 @@ tags:
 
 ## 主题
 
-Sphinx 生成的 HTML 文件默认使用的主题为 [Alabaster](https://github.com/bitprophet/alabaster)（个人觉得挺好看的，[Request](https://cn.python-requests.org/zh_CN/latest/) 和 [Flask](https://flask.palletsprojects.com/en/1.1.x/) 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其[官方文档中列出的](https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes)（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。
+Sphinx 生成的 HTML 文件默认使用的主题为 [Alabaster](https://github.com/bitprophet/alabaster)（个人觉得挺好看的，[Requests](https://cn.python-requests.org/zh_CN/latest/) 和 [Flask](https://flask.palletsprojects.com/en/1.1.x/) 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其[官方文档中列出的](https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes)（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。
 
-第三方主题中最常见的非 [sphinx_rtd_theme](https://github.com/readthedocs/sphinx_rtd_theme) 莫属，[Scrapy](https://docs.scrapy.org/en/latest/) 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 `pip install sphinx_rtd_theme` 命令下载它，然后修改 `conf.py` 配置文件中的 `html_theme` 变量为 `‘sphinx_rtd_theme’` 并在 `extensions` 列表中添加 `'sphinx_rtd_theme'`。
+第三方主题中最常见的非 [sphinx_rtd_theme](https://github.com/readthedocs/sphinx_rtd_theme) 莫属，[Scrapy](https://docs.scrapy.org/en/latest/) 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 `pip install sphinx_rtd_theme` 命令下载它，然后修改 `conf.py` 配置文件中的 `html_theme` 变量为 `'sphinx_rtd_theme'` 并在 `extensions` 列表中添加 `'sphinx_rtd_theme'`。
 
 要探索更多的第三方主题，可参考 [Sphinx Themes](https://sphinx-themes.org/) 网站上收录的。
 
