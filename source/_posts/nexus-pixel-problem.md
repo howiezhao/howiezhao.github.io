@@ -15,20 +15,20 @@ Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于
 
 Android 9.0/8.1/8.0/7.1.2/7.1.1：
 
-```shell
+```sh
 adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204
 ```
 
 Android 7.1/7.0：
 
-```shell
+```sh
 adb shell settings delete global captive_portal_server  
 adb shell settings put global captive_portal_detection_enabled 0
 ```
 
 Android 5.0-6.x：
 
-```shell
+```sh
 adb shell settings put global captive_portal_server www.google.cn
 ```
 
