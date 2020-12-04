@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="移动网络/WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-27T15:52:11.000Z">
+<meta property="og:updated_time" content="2020-12-04T10:01:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nexus&#x2F;Pixel 相关问题解决">
 <meta name="twitter:description" content="移动网络/WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
@@ -250,7 +250,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-27 23:52:11" itemprop="dateModified" datetime="2020-11-27T23:52:11+08:00">2020-11-27</time>
+                <time title="Modified: 2020-12-04 18:01:11" itemprop="dateModified" datetime="2020-12-04T18:01:11+08:00">2020-12-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,11 +285,11 @@
         <h2 id="移动网络-WiFi-出现叹号或叉号"><a href="#移动网络-WiFi-出现叹号或叉号" class="headerlink" title="移动网络/WiFi 出现叹号或叉号"></a>移动网络/WiFi 出现叹号或叉号</h2><p>Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。</p>
 <p>显然，Google 的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接 ADB，针对不同的系统版本，下方分别给出了相关命令：</p>
 <p>Android 9.0/8.1/8.0/7.1.2/7.1.1：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure>
 <p>Android 7.1/7.0：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure>
 <p>Android 5.0-6.x：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure>
 <p>执行之后，开启飞行模式，接着关闭飞行模式即可。<br><a id="more"></a></p>
 <h2 id="搜索不到-WiFi"><a href="#搜索不到-WiFi" class="headerlink" title="搜索不到 WiFi"></a>搜索不到 WiFi</h2><p>因为美国 2.4GHz 频段的 WiFi 信道为 1-11，而中国 2.4GHz 频段的 WiFi 信道为 1-13，所以当 2.4GHz 频段的 WiFi 信道位于 12 或 13 时，美版的 Nexus/Pixel 会搜索不到 WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为 11 以内任意信道即可。</p>
 <h2 id="4G-信号问题"><a href="#4G-信号问题" class="headerlink" title="4G 信号问题"></a>4G 信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以 Nexus/Pixel 可以完美支持联通 2G/3G/4G。</p>
