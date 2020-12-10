@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：  Windows XP SP2 / Server 2003 SP1：PowerShell 1.0 Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated S">
-<meta name="keywords" content="Windows">
+  <meta name="description" content="PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：  Windows XP SP2 &#x2F; Server 2003 SP1：PowerShell 1.0 Windows 7 &#x2F; Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于PowerShell">
 <meta property="og:url" content="https://howiezhao.github.io/2018/07/16/about-powershell/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：  Windows XP SP2 / Server 2003 SP1：PowerShell 1.0 Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated S">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:description" content="PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：  Windows XP SP2 &#x2F; Server 2003 SP1：PowerShell 1.0 Windows 7 &#x2F; Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated S">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-07-16T06:56:07.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于PowerShell">
-<meta name="twitter:description" content="PowerShell是微软用来取代CMD的一个强大的Shell。 版本在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：  Windows XP SP2 / Server 2003 SP1：PowerShell 1.0 Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated S">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/07/16/about-powershell/">
 
@@ -111,6 +111,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -294,12 +295,14 @@
 <a id="more"></a>
 <h2 id="优势及劣势"><a href="#优势及劣势" class="headerlink" title="优势及劣势"></a>优势及劣势</h2><p>PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。<br>劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。</p>
 <h2 id="Cmdlets与pipeline"><a href="#Cmdlets与pipeline" class="headerlink" title="Cmdlets与pipeline"></a>Cmdlets与pipeline</h2><p>Cmdlets与pipeline是PowerShell中的两个核心概念，</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如<code>ls</code>、<code>mv</code>、<code>ps</code>、<code>cat</code>、<code>kill</code>、<code>wget</code>、<code>clear</code>等，下面介绍的命令为PowerShell所不同于Linux中的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看PowerShell版本信息</span></span><br><span class="line">Get-Host</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看帮助信息</span></span><br><span class="line"><span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有已经设置的别名</span></span><br><span class="line">Get-Alias</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从powershellgallery.com下载安装第三方模块</span></span><br><span class="line">Install-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入模块，安装的模块需要先导入才能使用</span></span><br><span class="line">Import-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载模块</span></span><br><span class="line">Uninstall-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新模块</span></span><br><span class="line">Update-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出已安装模块</span></span><br><span class="line">Get-InstalledModule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PowerShellGet模块有哪些命令</span></span><br><span class="line">Get-Command -Module PowerShellGet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 升级帮助手册</span></span><br><span class="line">Update-Help</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如<code>ls</code>、<code>mv</code>、<code>ps</code>、<code>cat</code>、<code>kill</code>、<code>wget</code>、<code>clear</code>等，下面介绍的命令为PowerShell所不同于Linux中的命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看PowerShell版本信息</span></span><br><span class="line">Get-Host</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看帮助信息</span></span><br><span class="line"><span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有已经设置的别名</span></span><br><span class="line">Get-Alias</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从powershellgallery.com下载安装第三方模块</span></span><br><span class="line">Install-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入模块，安装的模块需要先导入才能使用</span></span><br><span class="line">Import-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载模块</span></span><br><span class="line">Uninstall-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新模块</span></span><br><span class="line">Update-Module</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出已安装模块</span></span><br><span class="line">Get-InstalledModule</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看PowerShellGet模块有哪些命令</span></span><br><span class="line">Get-Command -Module PowerShellGet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 升级帮助手册</span></span><br><span class="line">Update-Help</span><br></pre></td></tr></table></figure>
+
 <h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><ul>
-<li><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="noopener">posh-git</a>：PowerShell中的Git增强模块</li>
-<li><a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener">oh-my-posh</a>：类似于oh-my-zsh</li>
-<li><a href="https://github.com/lzybkr/PSReadLine" target="_blank" rel="noopener">PSReadline</a>：一个增强的命令行编辑模块</li>
-<li><a href="https://github.com/JulianChow94/Windows-screenFetch" target="_blank" rel="noopener">windows-screenfetch</a>：Windows下的screenfetch模块</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/dahlbyk/posh-git">posh-git</a>：PowerShell中的Git增强模块</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/JanDeDobbeleer/oh-my-posh">oh-my-posh</a>：类似于oh-my-zsh</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/lzybkr/PSReadLine">PSReadline</a>：一个增强的命令行编辑模块</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/JulianChow94/Windows-screenFetch">windows-screenfetch</a>：Windows下的screenfetch模块</li>
 </ul>
 <h2 id="Microsoft-PowerShell-profile-ps1"><a href="#Microsoft-PowerShell-profile-ps1" class="headerlink" title="Microsoft.PowerShell_profile.ps1"></a>Microsoft.PowerShell_profile.ps1</h2><p>和一般的Linux中的Shell一样，PowerShell也有一个配置文件，即<code>Microsoft.PowerShell_profile.ps1</code>，当PowerShell运行时会默认加载此配置文件中的设置。一般而言，用户级别的配置文件位于<code>%HOMEPATH%\Documents\WindowsPowerShell</code>下，当然，你也可以使用<code>echo $profile</code>命令查看具体的位置。</p>
 
@@ -387,7 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本"><span class="nav-number">1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优势及劣势"><span class="nav-number">2.</span> <span class="nav-text">优势及劣势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cmdlets与pipeline"><span class="nav-number">3.</span> <span class="nav-text">Cmdlets与pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用模块"><span class="nav-number">5.</span> <span class="nav-text">常用模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Microsoft-PowerShell-profile-ps1"><span class="nav-number">6.</span> <span class="nav-text">Microsoft.PowerShell_profile.ps1</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF%E5%8F%8A%E5%8A%A3%E5%8A%BF"><span class="nav-number">2.</span> <span class="nav-text">优势及劣势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cmdlets%E4%B8%8Epipeline"><span class="nav-number">3.</span> <span class="nav-text">Cmdlets与pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97"><span class="nav-number">5.</span> <span class="nav-text">常用模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Microsoft-PowerShell-profile-ps1"><span class="nav-number">6.</span> <span class="nav-text">Microsoft.PowerShell_profile.ps1</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -423,19 +426,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -447,19 +450,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -490,12 +493,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -537,9 +540,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -548,7 +559,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

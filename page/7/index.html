@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,10 +52,9 @@
 <meta property="og:url" content="https://howiezhao.github.io/page/7/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Stay Hungry, Stay Foolish">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Howie&#39;s Notes">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
 
 <link rel="canonical" href="https://howiezhao.github.io/page/7/">
 
@@ -109,6 +108,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -278,8 +278,8 @@
 <p>IRC 协议属于应用层协议，使用的传输层协议为 TCP，使用的端口为 <strong>6667</strong>（明文传输，如 irc://chat.freenode.net）或 <strong>6697</strong>（SSL 加密传输，如 ircs://chat.freenode.net:6697）。</p>
 <p>IRC 是一个<strong>分布式</strong>的 <strong>C/S</strong> 架构，一个 IRC 服务器可以连接其他的 IRC 服务器以扩展为一个<strong>IRC 网络</strong>，通过连接到一个 IRC 服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个 IRC 服务器上，一个频道类似于一个聊天室，频道名称必须以 <code>#</code> 符号开始，例如 <code>#irchelp</code>。</p>
 <p>大多数的 IRC 服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。</p>
-<p>目前使用最广的 IRC 服务器为 <a href="https://freenode.net/" target="_blank" rel="noopener">freenode</a> ，而 IRC 客户端软件有多种，比如基于 Firefox 浏览器的 IRC 插件<a href="http://chatzilla.hacksrus.com/" target="_blank" rel="noopener">ChatZilla</a> ，基于网页的 <a href="https://webchat.freenode.net/" target="_blank" rel="noopener">Webchat</a> ，基于命令行的 <a href="https://irssi.org/" target="_blank" rel="noopener">Irssi</a> 、<a href="https://weechat.org/" target="_blank" rel="noopener">WeeChat</a> 等等。</p>
-<p>个人经常使用的 IRC 客户端为 Irssi，在 Ubuntu 中可以使用 <code>apt install irssi</code> 安装，之后直接输入 <code>irssi</code> 即可启动，输入 <code>irssi --help</code> 可查看更多命令参数。<br>启动 irssi 后可输入更多的命令，输入 <code>/help</code> 可查看所有可用命令，输入 <code>/connect Freenode</code> 即可连接到freenode服务器，之后再输入 <code>/join #linuxba</code> 即可加入 <code>#linuxba</code> 频道。<br>这里需要注意，freenode 服务器由于种种原因，在国内无法访问，而 irssi 又不支持代理，所以推荐使用 <a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a> 代理 irssi。</p>
+<p>目前使用最广的 IRC 服务器为 <a target="_blank" rel="noopener" href="https://freenode.net/">freenode</a> ，而 IRC 客户端软件有多种，比如基于 Firefox 浏览器的 IRC 插件<a target="_blank" rel="noopener" href="http://chatzilla.hacksrus.com/">ChatZilla</a> ，基于网页的 <a target="_blank" rel="noopener" href="https://webchat.freenode.net/">Webchat</a> ，基于命令行的 <a target="_blank" rel="noopener" href="https://irssi.org/">Irssi</a> 、<a target="_blank" rel="noopener" href="https://weechat.org/">WeeChat</a> 等等。</p>
+<p>个人经常使用的 IRC 客户端为 Irssi，在 Ubuntu 中可以使用 <code>apt install irssi</code> 安装，之后直接输入 <code>irssi</code> 即可启动，输入 <code>irssi --help</code> 可查看更多命令参数。<br>启动 irssi 后可输入更多的命令，输入 <code>/help</code> 可查看所有可用命令，输入 <code>/connect Freenode</code> 即可连接到freenode服务器，之后再输入 <code>/join #linuxba</code> 即可加入 <code>#linuxba</code> 频道。<br>这里需要注意，freenode 服务器由于种种原因，在国内无法访问，而 irssi 又不支持代理，所以推荐使用 <a target="_blank" rel="noopener" href="https://github.com/rofl0r/proxychains-ng">proxychains-ng</a> 代理 irssi。</p>
 <p>最后，值得推荐的 IRC 频道有下（基于 freenode）：</p>
 <ul>
 <li><code>#ubuntu-cn</code>：Ubuntu 中文社区频道</li>
@@ -592,9 +592,9 @@
       
           <p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C/S</strong> 架构，使用 Go 语言开发。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker 分为 2 个版本：<strong>社区版</strong>（Community Edition, CE）和<strong>企业版</strong>（Enterprise Edition, EE），顾名思义，企业版是收费的。</p>
-<p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
-<p>针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
-<p>使用 <code>docker version</code> 可以查看 docker 版本号，使用 <code>docker info</code> 可以查看 docker 详细信息，直接输入 <code>docker</code> 可以查看 docker 相关命令。<br>
+<p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a target="_blank" rel="noopener" href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
+<p>针对老版本的 Windows 或 macOS，可以使用 <a target="_blank" rel="noopener" href="https://docs.docker.com/toolbox/overview/">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
+<p>使用 <code>docker version</code> 可以查看 docker 版本号，使用 <code>docker info</code> 可以查看 docker 详细信息，直接输入 <code>docker</code> 可以查看 docker 相关命令。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/31/docker/#more" rel="contents">
@@ -677,15 +677,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a href="https://www.mercurial-scm.org/" target="_blank" rel="noopener">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a href="https://www.nongnu.org/cvs/" target="_blank" rel="noopener">CVS</a>、<a href="https://subversion.apache.org/" target="_blank" rel="noopener">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
+          <p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a target="_blank" rel="noopener" href="https://www.mercurial-scm.org/">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a target="_blank" rel="noopener" href="https://www.nongnu.org/cvs/">CVS</a>、<a target="_blank" rel="noopener" href="https://subversion.apache.org/">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p>
 <ul>
 <li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令配置</li>
 <li>某个用户家目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令配置</li>
 <li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li>
 </ul>
-<p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>按照个人偏好，针对新安装的Git环境，会配置如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.email <span class="string">"you@example.com"</span></span><br><span class="line">git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg2 <span class="string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"</span></span><br><span class="line">git config --global alias.lg <span class="string">'!"git lg1"'</span></span><br><span class="line">git config --global alias.adog <span class="string">"log --all --decorate --oneline --graph"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">"C:\Program Files (x86)\Meld\Meld.exe"</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
-<p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。<br>
+<p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>按照个人偏好，针对新安装的Git环境，会配置如下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg2 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#x27;&#x27;          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg <span class="string">&#x27;!&quot;git lg1&quot;&#x27;</span></span><br><span class="line">git config --global alias.adog <span class="string">&quot;log --all --decorate --oneline --graph&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/31/git/#more" rel="contents">
@@ -933,7 +934,7 @@
 
       
           <h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。</p>
-<h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在<strong>启动或关闭Windows功能</strong>中勾选<strong>适用于Linux的Windows子系统</strong>，或者直接在管理员权限的PowerShell中输入<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>此条命令，也能达到同样的效果。<br>完成上述操作后，可直接在<strong>Microsoft Store</strong>中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。<br>到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行<code>do-release-upgrade</code>命令升级到最新版。<br>下载完成后，要启动Ubuntu有多种方式，可以在<strong>PowerShell</strong>或<strong>cmd</strong>中输入<code>wsl</code>或<code>bash</code>或<code>ubuntu</code>都可启动，也可以直接在<strong>开始菜单</strong>中点击Ubuntu图标启动。<br>
+<h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在<strong>启动或关闭Windows功能</strong>中勾选<strong>适用于Linux的Windows子系统</strong>，或者直接在管理员权限的PowerShell中输入<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>此条命令，也能达到同样的效果。<br>完成上述操作后，可直接在<strong>Microsoft Store</strong>中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。<br>到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行<code>do-release-upgrade</code>命令升级到最新版。<br>下载完成后，要启动Ubuntu有多种方式，可以在<strong>PowerShell</strong>或<strong>cmd</strong>中输入<code>wsl</code>或<code>bash</code>或<code>ubuntu</code>都可启动，也可以直接在<strong>开始菜单</strong>中点击Ubuntu图标启动。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/21/wsl-problem/#more" rel="contents">
@@ -1131,19 +1132,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -1155,19 +1156,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -1198,12 +1199,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -1245,9 +1246,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -1256,7 +1265,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

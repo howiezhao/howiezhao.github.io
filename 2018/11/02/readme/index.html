@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,14 +52,14 @@
 <meta property="og:url" content="https://howiezhao.github.io/2018/11/02/readme/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 README 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“读我”。有趣的是，README 这 6 个字母通常都是大写的，这是因为在 Linux 中大写的文件名往往意味着醒目和值得注意。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img.shields.io/travis/rust-lang/rust.svg">
 <meta property="og:image" content="https://img.shields.io/github/release/qubyte/rubidium.svg">
 <meta property="og:image" content="https://img.shields.io/github/stars/git/git.svg">
-<meta property="og:updated_time" content="2020-11-28T05:45:25.000Z">
+<meta property="article:published_time" content="2018-11-02T08:59:24.000Z">
+<meta property="article:modified_time" content="2020-11-28T05:45:25.000Z">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编写规范的 README 文档">
-<meta name="twitter:description" content="代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 README 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“读我”。有趣的是，README 这 6 个字母通常都是大写的，这是因为在 Linux 中大写的文件名往往意味着醒目和值得注意。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介">
 <meta name="twitter:image" content="https://img.shields.io/travis/rust-lang/rust.svg">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/11/02/readme/">
@@ -114,6 +114,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -285,22 +286,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 <strong>README</strong> 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README 这 6 个字母通常都是大写的，这是因为<strong>在 Linux 中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的 README 文档应该是什么样子的。<br><a id="more"></a><br>README 文档通常是用 <strong>Markdown</strong> 编写的，但有时你也会看到其他格式的 README 文档，比如：有关 Python 的项目喜欢用 <strong>reStructuredText</strong> 编写 README 文档，这也是一种类似于 Markdown 的标记语言。一个优秀的 README 文档中应包含：<strong>简短的项目说明</strong>、<strong>安装说明</strong>、<strong>使用说明</strong>、<strong>如何参与贡献</strong>、<strong>许可协议</strong>等。此外，随着代码量的增加，<strong>已知 BUG</strong>、<strong>常见问题</strong>等也可以加入到 README 文档中。</p>
+        <p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 <strong>README</strong> 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README 这 6 个字母通常都是大写的，这是因为<strong>在 Linux 中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的 README 文档应该是什么样子的。</p>
+<a id="more"></a>
+<p>README 文档通常是用 <strong>Markdown</strong> 编写的，但有时你也会看到其他格式的 README 文档，比如：有关 Python 的项目喜欢用 <strong>reStructuredText</strong> 编写 README 文档，这也是一种类似于 Markdown 的标记语言。一个优秀的 README 文档中应包含：<strong>简短的项目说明</strong>、<strong>安装说明</strong>、<strong>使用说明</strong>、<strong>如何参与贡献</strong>、<strong>许可协议</strong>等。此外，随着代码量的增加，<strong>已知 BUG</strong>、<strong>常见问题</strong>等也可以加入到 README 文档中。</p>
 <p>一个规范的 README 文档模板应该像下面这样的：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Project Name</span></span><br><span class="line">填写简短的项目说明</span><br><span class="line"><span class="section"># Installation</span></span><br><span class="line">填写安装说明</span><br><span class="line"><span class="section"># Usage</span></span><br><span class="line">填写使用说明</span><br><span class="line"><span class="section"># Contributing</span></span><br><span class="line">填写如何参与此项目的贡献方法</span><br><span class="line"><span class="section"># License</span></span><br><span class="line">填写许可协议</span><br></pre></td></tr></table></figure>
+
 <p>有趣的是，在日常使用中，经常会见到各种各样的徽章或进度条，比如：</p>
 <p><img src="https://img.shields.io/travis/rust-lang/rust.svg" alt="Travis (.org)"></p>
 <p><img src="https://img.shields.io/github/release/qubyte/rubidium.svg" alt="GitHub release"></p>
 <p><img src="https://img.shields.io/github/stars/git/git.svg" alt="GitHub stars"></p>
-<p>它们的本质就是一个个的图片而已，要想自定义这些图片可以访问 <a href="https://shields.io/#/" target="_blank" rel="noopener">Shields.io</a>。</p>
+<p>它们的本质就是一个个的图片而已，要想自定义这些图片可以访问 <a target="_blank" rel="noopener" href="https://shields.io/#/">Shields.io</a>。</p>
 <p>最后，我将给出几个 GitHub 中项目的文档，它们的 README 文档都写得不错：</p>
 <ul>
-<li><a href="https://github.com/rails/rails" target="_blank" rel="noopener">Rails</a></li>
-<li><a href="https://github.com/thoughtbot/factory_bot" target="_blank" rel="noopener">factory_bot</a></li>
-<li><a href="https://github.com/meolu/walle-web" target="_blank" rel="noopener">Walle</a></li>
-<li><a href="https://github.com/github/ledbetter" target="_blank" rel="noopener">Ledbetter</a></li>
-<li><a href="https://github.com/udacity/create-your-own-adventure" target="_blank" rel="noopener">Create-Your-Own-Adventure</a></li>
-<li><a href="https://github.com/zkat/can.viewify" target="_blank" rel="noopener">can.viewify</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rails/rails">Rails</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/thoughtbot/factory_bot">factory_bot</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/meolu/walle-web">Walle</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/github/ledbetter">Ledbetter</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/udacity/create-your-own-adventure">Create-Your-Own-Adventure</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/zkat/can.viewify">can.viewify</a></li>
 </ul>
 
     </div>
@@ -419,19 +423,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -443,19 +447,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -486,12 +490,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -533,9 +537,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -544,7 +556,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

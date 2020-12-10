@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,11 +52,11 @@
 <meta property="og:url" content="https://howiezhao.github.io/2019/01/08/talk-about-vps/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="VPS（Virtual Private Server）即虚拟专用服务器，它不等同于独立服务器，独立服务器是指货真价实的物理机器，而 VPS 则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，虚拟空间（或虚拟主机）则是指 VPS 上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而 VPS 这一中间选择成为了广大爱好者的首选。">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-31T12:21:17.000Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-01-08T10:38:07.000Z">
+<meta property="article:modified_time" content="2020-05-31T12:21:17.000Z">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="说说 VPS">
-<meta name="twitter:description" content="VPS（Virtual Private Server）即虚拟专用服务器，它不等同于独立服务器，独立服务器是指货真价实的物理机器，而 VPS 则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，虚拟空间（或虚拟主机）则是指 VPS 上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而 VPS 这一中间选择成为了广大爱好者的首选。">
 
 <link rel="canonical" href="https://howiezhao.github.io/2019/01/08/talk-about-vps/">
 
@@ -110,6 +110,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -281,7 +282,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>VPS</strong>（Virtual Private Server）即<strong>虚拟专用服务器</strong>，它不等同于<strong>独立服务器</strong>，独立服务器是指货真价实的物理机器，而 VPS 则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，<strong>虚拟空间</strong>（或虚拟主机）则是指 VPS 上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而 VPS 这一中间选择成为了广大爱好者的首选。<br><a id="more"></a></p>
+        <p><strong>VPS</strong>（Virtual Private Server）即<strong>虚拟专用服务器</strong>，它不等同于<strong>独立服务器</strong>，独立服务器是指货真价实的物理机器，而 VPS 则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，<strong>虚拟空间</strong>（或虚拟主机）则是指 VPS 上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而 VPS 这一中间选择成为了广大爱好者的首选。</p>
+<a id="more"></a>
 <h2 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h2><p>VPS 所使用的虚拟化技术主要有 <strong>KVM</strong> 和 <strong>OpenVZ</strong> （简称 OVZ），以下是两者的优缺点对比：</p>
 <p>KVM：</p>
 <ul>
@@ -295,12 +297,13 @@
 </ul>
 <p>简单来说，KVM 拥有对内核更多的控制权，而 OpenVZ 因为共享资源的情况受<strong>超售</strong>影响较大，现在，越来越多的 VPS 商家也开始使用 KVM 架构来虚拟化 VPS。个人建议，尽量选择 KVM 架构的 VPS。</p>
 <h2 id="收费方式"><a href="#收费方式" class="headerlink" title="收费方式"></a>收费方式</h2><p>VPS 一般按两种方式收费，即<strong>按月收费</strong>或<strong>按小时收费</strong>，显然，按小时收费更加灵活，当不需要使用时，直接关机就能停止收费。除此之外，VPS 一般会限制每月最多可使用的流量，当超过额度后，会收取流量费。</p>
-<h2 id="VPS-商家"><a href="#VPS-商家" class="headerlink" title="VPS 商家"></a>VPS 商家</h2><p>当前主流的 VPS 商家有：<a href="https://bandwagonhost.com/index.php" target="_blank" rel="noopener">BandwagonHost</a>，<a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a>，<a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a>。</p>
+<h2 id="VPS-商家"><a href="#VPS-商家" class="headerlink" title="VPS 商家"></a>VPS 商家</h2><p>当前主流的 VPS 商家有：<a target="_blank" rel="noopener" href="https://bandwagonhost.com/index.php">BandwagonHost</a>，<a target="_blank" rel="noopener" href="https://www.vultr.com/">Vultr</a>，<a target="_blank" rel="noopener" href="https://www.digitalocean.com/">DigitalOcean</a>。</p>
 <p>BandwagonHost，中文又称搬瓦工，它们采用按月收费，支持支付宝付款，在 2019 年之前，它们推出过最低每年 19.99 美元的 VPS，这应该是那时候最便宜且稳定的 VPS 商家了，但如今它们已经取消了这一方案，并全部使用 KVM 架构，现在它们的最低方案是每年 49.99 美元，配置 1G 内存，20G 固态，每月 1T 的流量。</p>
 <p>Vultr，它们采用按小时收费的方式，支持支付宝付款，全部采用 KVM 架构，现在最低的方案是每年 42 美元，配置 512MB 内存，10G 固态，每月 0.5T 的流量，个人非常推荐。</p>
 <p>DigitalOcean，它们同样采用按小时收费的方式，使用信用卡付款，全部采用 KVM 架构，现在最低的方案是每年 60 美元，配置 1G 内存，25G 固态，每月 1T 的流量。</p>
-<h2 id="测试-VPS-性能"><a href="#测试-VPS-性能" class="headerlink" title="测试 VPS 性能"></a>测试 VPS 性能</h2><p>一般在首次连接到 VPS 之后，建议进行一个性能测试，通常要测试的项目包括磁盘性能、网络性能以及一些基本参数等。这里推荐使用 oldking 开发的一键测试脚本 <a href="https://www.oldking.net/350.html" target="_blank" rel="noopener">SuperBench.sh</a>，具体使用方法如下命令所示：</p>
+<h2 id="测试-VPS-性能"><a href="#测试-VPS-性能" class="headerlink" title="测试 VPS 性能"></a>测试 VPS 性能</h2><p>一般在首次连接到 VPS 之后，建议进行一个性能测试，通常要测试的项目包括磁盘性能、网络性能以及一些基本参数等。这里推荐使用 oldking 开发的一键测试脚本 <a target="_blank" rel="noopener" href="https://www.oldking.net/350.html">SuperBench.sh</a>，具体使用方法如下命令所示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- git.io/superbench.sh | bash</span><br></pre></td></tr></table></figure>
+
 <h2 id="黑话"><a href="#黑话" class="headerlink" title="黑话"></a>黑话</h2><p>VPS 相关的论坛中经常会有一些行业黑话，以下做简要说明：</p>
 <ul>
 <li>杜甫：即独服的意思，指前面提到的独立服务器。</li>
@@ -395,7 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟化技术"><span class="nav-number">1.</span> <span class="nav-text">虚拟化技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收费方式"><span class="nav-number">2.</span> <span class="nav-text">收费方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS-商家"><span class="nav-number">3.</span> <span class="nav-text">VPS 商家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试-VPS-性能"><span class="nav-number">4.</span> <span class="nav-text">测试 VPS 性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑话"><span class="nav-number">5.</span> <span class="nav-text">黑话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些建议"><span class="nav-number">6.</span> <span class="nav-text">一些建议</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF"><span class="nav-number">1.</span> <span class="nav-text">虚拟化技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E8%B4%B9%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">收费方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS-%E5%95%86%E5%AE%B6"><span class="nav-number">3.</span> <span class="nav-text">VPS 商家</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95-VPS-%E6%80%A7%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">测试 VPS 性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%91%E8%AF%9D"><span class="nav-number">5.</span> <span class="nav-text">黑话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%BB%BA%E8%AE%AE"><span class="nav-number">6.</span> <span class="nav-text">一些建议</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -431,19 +434,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -455,19 +458,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -498,12 +501,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -545,9 +548,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -556,7 +567,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

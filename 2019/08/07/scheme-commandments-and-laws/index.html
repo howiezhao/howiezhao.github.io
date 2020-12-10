@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,17 +47,17 @@
 </script>
 
   <meta name="description" content="节选自《The Little Schemer》 Scheme 五法Scheme 五法之第一法 —— car 之法则基本元件 car 仅定义为针对非空列表。 Scheme 五法之第二法 —— cdr 之法则基本元件 cdr 仅定义为针对非空列表。任意非空列表的 cdr 总是另一个列表。 Scheme 五法之第三法 —— cons 之法则基本元件 cons 需要两个参数。第二个参数必须是一个列表。结果">
-<meta name="keywords" content="函数式编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scheme的五法十诫">
 <meta property="og:url" content="https://howiezhao.github.io/2019/08/07/scheme-commandments-and-laws/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="节选自《The Little Schemer》 Scheme 五法Scheme 五法之第一法 —— car 之法则基本元件 car 仅定义为针对非空列表。 Scheme 五法之第二法 —— cdr 之法则基本元件 cdr 仅定义为针对非空列表。任意非空列表的 cdr 总是另一个列表。 Scheme 五法之第三法 —— cons 之法则基本元件 cons 需要两个参数。第二个参数必须是一个列表。结果">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-07T13:42:23.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="函数式编程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Scheme的五法十诫">
-<meta name="twitter:description" content="节选自《The Little Schemer》 Scheme 五法Scheme 五法之第一法 —— car 之法则基本元件 car 仅定义为针对非空列表。 Scheme 五法之第二法 —— cdr 之法则基本元件 cdr 仅定义为针对非空列表。任意非空列表的 cdr 总是另一个列表。 Scheme 五法之第三法 —— cons 之法则基本元件 cons 需要两个参数。第二个参数必须是一个列表。结果">
 
 <link rel="canonical" href="https://howiezhao.github.io/2019/08/07/scheme-commandments-and-laws/">
 
@@ -111,6 +111,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -287,13 +288,14 @@
 <h3 id="Scheme-五法之第二法-——-cdr-之法则"><a href="#Scheme-五法之第二法-——-cdr-之法则" class="headerlink" title="Scheme 五法之第二法 —— cdr 之法则"></a>Scheme 五法之第二法 —— cdr 之法则</h3><p>基本元件 <em>cdr</em> 仅定义为针对非空列表。任意非空列表的 <em>cdr</em> 总是另一个列表。</p>
 <h3 id="Scheme-五法之第三法-——-cons-之法则"><a href="#Scheme-五法之第三法-——-cons-之法则" class="headerlink" title="Scheme 五法之第三法 —— cons 之法则"></a>Scheme 五法之第三法 —— cons 之法则</h3><p>基本元件 <em>cons</em> 需要两个参数。第二个参数必须是一个列表。结果是一个列表。</p>
 <h3 id="Scheme-五法之第四法-——-Null-之法则"><a href="#Scheme-五法之第四法-——-Null-之法则" class="headerlink" title="Scheme 五法之第四法 —— Null? 之法则"></a>Scheme 五法之第四法 —— Null? 之法则</h3><p>基本元件 <em>null?</em> 仅定义为针对列表。</p>
-<h3 id="Scheme-五法之第五法-——-eq-之法则"><a href="#Scheme-五法之第五法-——-eq-之法则" class="headerlink" title="Scheme 五法之第五法 —— eq? 之法则"></a>Scheme 五法之第五法 —— eq? 之法则</h3><p>基本元件 <em>eq?</em> 需要两个参数。每个参数都必须是一个非数字的原子。<br><a id="more"></a></p>
-<h2 id="Scheme十诫"><a href="#Scheme十诫" class="headerlink" title="Scheme十诫"></a>Scheme十诫</h2><h3 id="第一诫"><a href="#第一诫" class="headerlink" title="第一诫"></a>第一诫</h3><p>当对一个原子列表 <em>lat</em> 进行递归调用时，询问两个有关 <em>lat</em> 的问题：<em>(null? lat)</em> 和 <strong>else</strong>。</p>
-<p>当对一个数字 <em>n</em> 进行递归调用时，询问两个有关 <em>n</em> 的问题：<em>(zero? n)</em> 和 <strong>else</strong>。</p>
-<p>当对一个S-表达式列表 <em>l</em> 进行递归调用时，询问三个有关 <em>l</em> 的问题：<em>(null? lat)</em>、<em>(atom? (car l))</em> 和 <strong>else</strong>。</p>
+<h3 id="Scheme-五法之第五法-——-eq-之法则"><a href="#Scheme-五法之第五法-——-eq-之法则" class="headerlink" title="Scheme 五法之第五法 —— eq? 之法则"></a>Scheme 五法之第五法 —— eq? 之法则</h3><p>基本元件 <em>eq?</em> 需要两个参数。每个参数都必须是一个非数字的原子。</p>
+<a id="more"></a>
+<h2 id="Scheme十诫"><a href="#Scheme十诫" class="headerlink" title="Scheme十诫"></a>Scheme十诫</h2><h3 id="第一诫"><a href="#第一诫" class="headerlink" title="第一诫"></a>第一诫</h3><p>当对一个原子列表 <em>lat</em> 进行递归调用时，询问两个有关 <em>lat</em> 的问题：*(null? lat)* 和 <strong>else</strong>。</p>
+<p>当对一个数字 <em>n</em> 进行递归调用时，询问两个有关 <em>n</em> 的问题：*(zero? n)* 和 <strong>else</strong>。</p>
+<p>当对一个S-表达式列表 <em>l</em> 进行递归调用时，询问三个有关 <em>l</em> 的问题：*(null? lat)<em>、</em>(atom? (car l))* 和 <strong>else</strong>。</p>
 <h3 id="第二诫"><a href="#第二诫" class="headerlink" title="第二诫"></a>第二诫</h3><p>使用 <em>cons</em> 来构建列表。</p>
 <h3 id="第三诫"><a href="#第三诫" class="headerlink" title="第三诫"></a>第三诫</h3><p>构建一个列表的时候，描述第一个典型元素，之后 <em>cons</em> 该元素到一般性递归（natural recursion）上。</p>
-<h3 id="第四诫"><a href="#第四诫" class="headerlink" title="第四诫"></a>第四诫</h3><p>在递归时总是改变至少一个参数。当对一个原子列表 <em>lat</em> 进行递归调用时，使用 <em>(cdr lat)</em>。当对数字 <em>n</em> 进行递归调用时，使用 <em>(sub1 n)</em>。当对一个S-表达式 <em>l</em> 进行递归调用时，只要是 <em>(null? l)</em> 和 <em>(atom? (car l))</em> 都不为 true，那么就同时使用 <em>(car l)</em> 和 <em>(cdr l)</em>。</p>
+<h3 id="第四诫"><a href="#第四诫" class="headerlink" title="第四诫"></a>第四诫</h3><p>在递归时总是改变至少一个参数。当对一个原子列表 <em>lat</em> 进行递归调用时，使用 <em>(cdr lat)*。当对数字 *n</em> 进行递归调用时，使用 <em>(sub1 n)*。当对一个S-表达式 *l</em> 进行递归调用时，只要是 <em>(null? l)</em> 和 <em>(atom? (car l))</em> 都不为 true，那么就同时使用 <em>(car l)</em> 和 *(cdr l)*。</p>
 <p>在递归时改变的参数，必须向着不断接近结束条件而改变。改变的参数必须在结束条件中得以测试：<br>    当使用 <em>cdr</em> 时，用 <em>null?</em> 测试是否结束；<br>    当使用 <em>sub1</em> 时,用 <em>zero?</em> 测试是否结束。</p>
 <h3 id="第五诫"><a href="#第五诫" class="headerlink" title="第五诫"></a>第五诫</h3><p>当用 ➕ 构建一个值时，总是使用 0 作为结束代码行的值，因为加上 0 不会改变加法的值。</p>
 <p>当用 ✖ 构建一个值时，总是使用 1 作为结柬代码行的值，因为乘以 1 不会改变乘法的值。</p>
@@ -316,7 +318,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/函数式编程/" rel="tag"># 函数式编程</a>
+              <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag"># 函数式编程</a>
           </div>
 
         
@@ -392,7 +394,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheme-五法"><span class="nav-number">1.</span> <span class="nav-text">Scheme 五法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-五法之第一法-——-car-之法则"><span class="nav-number">1.1.</span> <span class="nav-text">Scheme 五法之第一法 —— car 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-五法之第二法-——-cdr-之法则"><span class="nav-number">1.2.</span> <span class="nav-text">Scheme 五法之第二法 —— cdr 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-五法之第三法-——-cons-之法则"><span class="nav-number">1.3.</span> <span class="nav-text">Scheme 五法之第三法 —— cons 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-五法之第四法-——-Null-之法则"><span class="nav-number">1.4.</span> <span class="nav-text">Scheme 五法之第四法 —— Null? 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-五法之第五法-——-eq-之法则"><span class="nav-number">1.5.</span> <span class="nav-text">Scheme 五法之第五法 —— eq? 之法则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheme十诫"><span class="nav-number">2.</span> <span class="nav-text">Scheme十诫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一诫"><span class="nav-number">2.1.</span> <span class="nav-text">第一诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二诫"><span class="nav-number">2.2.</span> <span class="nav-text">第二诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三诫"><span class="nav-number">2.3.</span> <span class="nav-text">第三诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四诫"><span class="nav-number">2.4.</span> <span class="nav-text">第四诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五诫"><span class="nav-number">2.5.</span> <span class="nav-text">第五诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六诫"><span class="nav-number">2.6.</span> <span class="nav-text">第六诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七诫"><span class="nav-number">2.7.</span> <span class="nav-text">第七诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八诫"><span class="nav-number">2.8.</span> <span class="nav-text">第八诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九诫"><span class="nav-number">2.9.</span> <span class="nav-text">第九诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十诫"><span class="nav-number">2.10.</span> <span class="nav-text">第十诫</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheme-%E4%BA%94%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">Scheme 五法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-%E4%BA%94%E6%B3%95%E4%B9%8B%E7%AC%AC%E4%B8%80%E6%B3%95-%E2%80%94%E2%80%94-car-%E4%B9%8B%E6%B3%95%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">Scheme 五法之第一法 —— car 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-%E4%BA%94%E6%B3%95%E4%B9%8B%E7%AC%AC%E4%BA%8C%E6%B3%95-%E2%80%94%E2%80%94-cdr-%E4%B9%8B%E6%B3%95%E5%88%99"><span class="nav-number">1.2.</span> <span class="nav-text">Scheme 五法之第二法 —— cdr 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-%E4%BA%94%E6%B3%95%E4%B9%8B%E7%AC%AC%E4%B8%89%E6%B3%95-%E2%80%94%E2%80%94-cons-%E4%B9%8B%E6%B3%95%E5%88%99"><span class="nav-number">1.3.</span> <span class="nav-text">Scheme 五法之第三法 —— cons 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-%E4%BA%94%E6%B3%95%E4%B9%8B%E7%AC%AC%E5%9B%9B%E6%B3%95-%E2%80%94%E2%80%94-Null-%E4%B9%8B%E6%B3%95%E5%88%99"><span class="nav-number">1.4.</span> <span class="nav-text">Scheme 五法之第四法 —— Null? 之法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme-%E4%BA%94%E6%B3%95%E4%B9%8B%E7%AC%AC%E4%BA%94%E6%B3%95-%E2%80%94%E2%80%94-eq-%E4%B9%8B%E6%B3%95%E5%88%99"><span class="nav-number">1.5.</span> <span class="nav-text">Scheme 五法之第五法 —— eq? 之法则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheme%E5%8D%81%E8%AF%AB"><span class="nav-number">2.</span> <span class="nav-text">Scheme十诫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%AF%AB"><span class="nav-number">2.1.</span> <span class="nav-text">第一诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%AF%AB"><span class="nav-number">2.2.</span> <span class="nav-text">第二诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E8%AF%AB"><span class="nav-number">2.3.</span> <span class="nav-text">第三诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E8%AF%AB"><span class="nav-number">2.4.</span> <span class="nav-text">第四诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E8%AF%AB"><span class="nav-number">2.5.</span> <span class="nav-text">第五诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E8%AF%AB"><span class="nav-number">2.6.</span> <span class="nav-text">第六诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E8%AF%AB"><span class="nav-number">2.7.</span> <span class="nav-text">第七诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E8%AF%AB"><span class="nav-number">2.8.</span> <span class="nav-text">第八诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B9%9D%E8%AF%AB"><span class="nav-number">2.9.</span> <span class="nav-text">第九诫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E8%AF%AB"><span class="nav-number">2.10.</span> <span class="nav-text">第十诫</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -428,19 +430,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -452,19 +454,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -495,12 +497,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -542,9 +544,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -553,7 +563,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

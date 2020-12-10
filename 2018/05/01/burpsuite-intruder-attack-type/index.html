@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]： SniperSniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：">
-<meta name="keywords" content="渗透">
+  <meta name="description" content="Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1&#x3D;[1, 2]，Payload set2&#x3D;[a, b, c, d]： SniperSniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sniper、Battering ram、Pitchfork、Cluster bomb的区别">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]： SniperSniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:description" content="Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1&#x3D;[1, 2]，Payload set2&#x3D;[a, b, c, d]： SniperSniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-05-01T14:45:55.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="渗透">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sniper、Battering ram、Pitchfork、Cluster bomb的区别">
-<meta name="twitter:description" content="Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]： SniperSniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/">
 
@@ -111,6 +111,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -292,8 +293,7 @@
 <th>Position2(default:y)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>#1</td>
 <td>1</td>
 <td>y</td>
@@ -313,8 +313,7 @@
 <td>x</td>
 <td>2</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="Battering-ram"><a href="#Battering-ram" class="headerlink" title="Battering ram"></a>Battering ram</h2><p>Battering ram，中文“攻城槌”，每次针对多个Payload Position，使用1个Payload set，示例如下：</p>
 <table>
 <thead>
@@ -324,8 +323,7 @@
 <th>Position2</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>#1</td>
 <td>1</td>
 <td>1</td>
@@ -335,8 +333,7 @@
 <td>2</td>
 <td>2</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="Pitchfork"><a href="#Pitchfork" class="headerlink" title="Pitchfork"></a>Pitchfork</h2><p>Pitchfork，中文“杈子”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用平行模式，请求次数以最小列表项为准，示例如下：</p>
 <table>
 <thead>
@@ -346,8 +343,7 @@
 <th>Position2</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>#1</td>
 <td>1</td>
 <td>a</td>
@@ -357,8 +353,7 @@
 <td>2</td>
 <td>b</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="Cluster-bomb"><a href="#Cluster-bomb" class="headerlink" title="Cluster bomb"></a>Cluster bomb</h2><p>Cluster bomb，中文“集束炸弹”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用交叉模式，请求次数为各列表项之积，示例如下：</p>
 <table>
 <thead>
@@ -368,8 +363,7 @@
 <th>Position2</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>#1</td>
 <td>1</td>
 <td>a</td>
@@ -409,8 +403,7 @@
 <td>2</td>
 <td>d</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
     </div>
 
@@ -420,7 +413,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/渗透/" rel="tag"># 渗透</a>
+              <a href="/tags/%E6%B8%97%E9%80%8F/" rel="tag"># 渗透</a>
           </div>
 
         
@@ -532,19 +525,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -556,19 +549,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -599,12 +592,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -646,9 +639,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -657,7 +658,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

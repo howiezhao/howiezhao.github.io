@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,10 +52,9 @@
 <meta property="og:url" content="https://howiezhao.github.io/page/12/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Stay Hungry, Stay Foolish">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Howie&#39;s Notes">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
 
 <link rel="canonical" href="https://howiezhao.github.io/page/12/">
 
@@ -109,6 +108,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -274,8 +274,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文翻译自<a href="https://artkond.com/2017/03/23/pivoting-guide/" target="_blank" rel="noopener">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
-<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。<br>
+          <p>本文翻译自<a target="_blank" rel="noopener" href="https://artkond.com/2017/03/23/pivoting-guide/">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
+<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是red team/pentest参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017/12/10/pivoting-guide/#more" rel="contents">
@@ -446,14 +446,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+          <h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以将U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
 <h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好Kali并启动之后，会发现Kali的系统时间始终无法和Windows的系统时间保持一致，具体表现如下：</p>
 <blockquote>
 <p>开始时，Windows系统时间准确，启动Kali之后，Kali系统时间错误，将其更新正确之后，关闭Kali，进入Windows，发现Windows系统时间又错误。</p>
 </blockquote>
-<p>出现这种情况的原因是Windows和Linux的时间机制不一样，具体而言，Windows的时间就是硬件BIOS的时间，而Linux的时间则是硬件BIOS加上所在时区的时间。解决方法是，在Kali中执行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl <span class="built_in">set</span>-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure></p>
-
+<p>出现这种情况的原因是Windows和Linux的时间机制不一样，具体而言，Windows的时间就是硬件BIOS的时间，而Linux的时间则是硬件BIOS加上所在时区的时间。解决方法是，在Kali中执行如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -615,7 +616,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新Kali后重新启动会出现如下显示，并无法进入系统界面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter <span class="string">'help'</span> <span class="keyword">for</span> a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure></p>
+          <h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新Kali后重新启动会出现如下显示，并无法进入系统界面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter <span class="string">&#x27;help&#x27;</span> <span class="keyword">for</span> a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
 <p><strong>解决方法：</strong></p>
 <ol>
 <li>在此界面输入<code>blkid</code>命令，查看自己的分区号</li>
@@ -697,17 +699,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure></p>
+          <h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure>
 <p><strong>解决方法2：</strong></p>
 <ol>
-<li><p>卸载w3af要求的pyOpenSSL版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装最新版pyOpenSSL</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pyOpenSSL</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</span><br></pre></td></tr></table></figure>
+<li>卸载w3af要求的pyOpenSSL版本<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure></li>
+<li>安装最新版pyOpenSSL<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pyOpenSSL</span><br></pre></td></tr></table></figure></li>
+<li>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PIPDependency(<span class="string">&#x27;OpenSSL&#x27;</span>, <span class="string">&#x27;pyOpenSSL&#x27;</span>, <span class="string">&#x27;Version of pyOpenSSL you are using&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
           <!--noindex-->
@@ -792,8 +791,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="noopener">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>，基于Go的<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/" target="_blank" rel="noopener">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
+          <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a target="_blank" rel="noopener" href="https://jekyllrb.com/">Jekyll</a>，基于Go的<a target="_blank" rel="noopener" href="https://gohugo.io/">Hugo</a>，基于Python的<a target="_blank" rel="noopener" href="https://blog.getpelican.com/">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js</a>和<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
 <p><strong>本地安装</strong></p>
 <ul>
 <li>将安装包放在 ./node_modules 下（运行npm时所在的目录）</li>
@@ -917,19 +916,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -941,19 +940,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -984,12 +983,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -1031,9 +1030,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -1042,7 +1049,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

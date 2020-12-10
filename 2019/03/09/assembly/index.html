@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,11 +52,11 @@
 <meta property="og:url" content="https://howiezhao.github.io/2019/03/09/assembly/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="汇编语言（Assembly Language，简称 ASM）由汇编指令、伪指令和其他符号组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。 架构汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的x86 汇编和常用于嵌入式设备的ARM 汇编。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-28T05:45:25.000Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-03-09T09:41:13.000Z">
+<meta property="article:modified_time" content="2020-11-28T05:45:25.000Z">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="汇编语言小记">
-<meta name="twitter:description" content="汇编语言（Assembly Language，简称 ASM）由汇编指令、伪指令和其他符号组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。 架构汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的x86 汇编和常用于嵌入式设备的ARM 汇编。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也">
 
 <link rel="canonical" href="https://howiezhao.github.io/2019/03/09/assembly/">
 
@@ -110,6 +110,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -282,7 +283,8 @@
 
       
         <p><strong>汇编语言</strong>（Assembly Language，简称 <strong>ASM</strong>）由<strong>汇编指令</strong>、<strong>伪指令</strong>和<strong>其他符号</strong>组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。</p>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的<strong>x86 汇编</strong>和常用于嵌入式设备的<strong>ARM 汇编</strong>。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也有稍许不同。本文主要以 32 位 x86 汇编为例做简要介绍。<br><a id="more"></a></p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的<strong>x86 汇编</strong>和常用于嵌入式设备的<strong>ARM 汇编</strong>。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也有稍许不同。本文主要以 32 位 x86 汇编为例做简要介绍。</p>
+<a id="more"></a>
 <h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>汇编语言的大部分指令都是直接操作 CPU 中的寄存器的，所以有必要了解以下 x86 架构的 CPU 中常见的寄存器。</p>
 <p>16 位 x86 CPU 中常见的寄存器有：</p>
 <ul>
@@ -363,9 +365,10 @@
 <li><code>.word</code>：</li>
 <li><code>.long</code>：</li>
 </ul>
-<p>想要了解更多的伪指令可以参考 <a href="https://sourceware.org/binutils/docs/as/Pseudo-Ops.html#Pseudo-Ops" target="_blank" rel="noopener">gas 的官方文档</a>。</p>
+<p>想要了解更多的伪指令可以参考 <a target="_blank" rel="noopener" href="https://sourceware.org/binutils/docs/as/Pseudo-Ops.html#Pseudo-Ops">gas 的官方文档</a>。</p>
 <h2 id="标号"><a href="#标号" class="headerlink" title="标号"></a>标号</h2><p>标号代表一个地址，类似于高级语言中的函数，在需要时可以使用跳转指令跳转到标号处执行，利用标号还可以实现死循环，如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spin:</span><br><span class="line">    jmp spin</span><br></pre></td></tr></table></figure>
+
 <h2 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h2><p>x86 汇编语言的两大风格分别是 <strong>Intel 风格</strong>和 <strong>AT&amp;T 风格</strong>，分别被 Microsoft 和 GNU 所采用，两种风格的详细区别如下表所示：</p>
 <table>
 <thead>
@@ -375,8 +378,7 @@
 <th>AT&amp;T 风格</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>操作数顺序</td>
 <td>目标操作数在前，如 <code>mov eax,8</code></td>
 <td>源操作数在前，如 <code>movl $8,%eax</code></td>
@@ -436,12 +438,11 @@
 <td>:注释以英文分号开头</td>
 <td>#注释以井号开头</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>本文的书写风格以 Intel 风格为主。</p>
 <h2 id="内联汇编"><a href="#内联汇编" class="headerlink" title="内联汇编"></a>内联汇编</h2><p>内联汇编（Inline Assembly）是指在 C 代码中嵌入汇编代码，显然，其语法是由具体的 C 编译器所决定的，这里主要以 GNU 中的 gcc 编译器为例简述其语法。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解汇编语言更多的知识，可以阅读王爽的<a href="https://book.douban.com/subject/25726019/" target="_blank" rel="noopener">《汇编语言》</a>一书，这本书基于 16 位的 8086 CPU 来讲解汇编，虽然处理器已过时，但思想永不褪色。</p>
-<p>其次，<a href="https://www.ibm.com/developerworks/cn/linux/l-assembly/index.html" target="_blank" rel="noopener">Linux 汇编语言开发指南</a>，也是一篇不错的介绍文章。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解汇编语言更多的知识，可以阅读王爽的<a target="_blank" rel="noopener" href="https://book.douban.com/subject/25726019/">《汇编语言》</a>一书，这本书基于 16 位的 8086 CPU 来讲解汇编，虽然处理器已过时，但思想永不褪色。</p>
+<p>其次，<a target="_blank" rel="noopener" href="https://www.ibm.com/developerworks/cn/linux/l-assembly/index.html">Linux 汇编语言开发指南</a>，也是一篇不错的介绍文章。</p>
 
     </div>
 
@@ -524,7 +525,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器"><span class="nav-number">2.</span> <span class="nav-text">寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">3.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪指令"><span class="nav-number">4.</span> <span class="nav-text">伪指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标号"><span class="nav-number">5.</span> <span class="nav-text">标号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风格"><span class="nav-number">6.</span> <span class="nav-text">风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联汇编"><span class="nav-number">7.</span> <span class="nav-text">内联汇编</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">8.</span> <span class="nav-text">更多</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">伪指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%8F%B7"><span class="nav-number">5.</span> <span class="nav-text">标号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E6%A0%BC"><span class="nav-number">6.</span> <span class="nav-text">风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96"><span class="nav-number">7.</span> <span class="nav-text">内联汇编</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A"><span class="nav-number">8.</span> <span class="nav-text">更多</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -560,19 +561,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -584,19 +585,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -627,12 +628,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -674,9 +675,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -685,7 +694,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

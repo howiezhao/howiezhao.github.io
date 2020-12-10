@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,18 +47,18 @@
 </script>
 
   <meta name="description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有Screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tmux小记">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/18/tmux/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有Screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/tmux.jpg">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:published_time" content="2018-09-18T04:10:07.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tmux小记">
-<meta name="twitter:description" content="tmux是一款优秀的终端复用工具，在Ubuntu下，使用sudo apt install tmux即可安装，输入tmux即可开始使用。与tmux相似的软件还有Screen等。 名词解释Session（会话）当输入tmux后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。 Window（窗口）Window是显示给你的一整片窗口，你">
 <meta name="twitter:image" content="https://howiezhao.github.io/images/tmux.jpg">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/18/tmux/">
@@ -113,6 +113,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -284,10 +285,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://github.com/tmux/tmux" target="_blank" rel="noopener">tmux</a>是一款优秀的<strong>终端复用</strong>工具，在Ubuntu下，使用<code>sudo apt install tmux</code>即可安装，输入<code>tmux</code>即可开始使用。与tmux相似的软件还有<a href="https://www.gnu.org/software/screen/" target="_blank" rel="noopener">Screen</a>等。</p>
+        <p><a target="_blank" rel="noopener" href="https://github.com/tmux/tmux">tmux</a>是一款优秀的<strong>终端复用</strong>工具，在Ubuntu下，使用<code>sudo apt install tmux</code>即可安装，输入<code>tmux</code>即可开始使用。与tmux相似的软件还有<a target="_blank" rel="noopener" href="https://www.gnu.org/software/screen/">Screen</a>等。</p>
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Session（会话）"><a href="#Session（会话）" class="headerlink" title="Session（会话）"></a>Session（会话）</h3><p>当输入<code>tmux</code>后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。</p>
 <h3 id="Window（窗口）"><a href="#Window（窗口）" class="headerlink" title="Window（窗口）"></a>Window（窗口）</h3><p>Window是显示给你的一整片窗口，你可以创建多个Window，在一个Window里面你又可以创建多个Pane，以此来执行多个任务。</p>
-<h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格/面板）"></a>Pane（窗格/面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。<br><a id="more"></a><br>一个常见的tmux运行效果可能如下图所示：<br><img src="/images/tmux.jpg" alt="tmux"><br>其中，Window被分成了3个Pane，每个Pane之间通过<strong>Pane Border</strong>（面板分隔符）加以区分。Window底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了Session的名称，窗口列表则显示了当前Window的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。</p>
+<h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格/面板）"></a>Pane（窗格/面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。</p>
+<a id="more"></a>
+<p>一个常见的tmux运行效果可能如下图所示：<br><img src="/images/tmux.jpg" alt="tmux"><br>其中，Window被分成了3个Pane，每个Pane之间通过<strong>Pane Border</strong>（面板分隔符）加以区分。Window底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了Session的名称，窗口列表则显示了当前Window的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><code>tmux</code>命令拥有众多参数，如下所示：</p>
 <ul>
 <li><code>tmux -V</code>：显示tmux版本号</li>
@@ -324,11 +327,15 @@
 </li>
 </ul>
 <p>值得注意的是，当创建Session后，默认会创建一个Window，当创建Window后，默认会创建一个Pane。</p>
-<h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><p><code>$HOME/.tmux.conf</code>文件是tmux的配置文件，tmux在启动时会按照此文件中的命令进行相关配置，个人常用的配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 设定快捷键前缀</span><br><span class="line">unbind-key C-b</span><br><span class="line">set-option -g prefix C-x</span><br><span class="line">bind-key C-x send-prefix</span><br><span class="line">set-option -g escape-time 0</span><br><span class="line"></span><br><span class="line"># 开启鼠标模式</span><br><span class="line">set -g mouse on</span><br></pre></td></tr></table></figure></p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>tmux支持许多插件，在安装插件之前最好先安装插件管理器<a href="https://github.com/tmux-plugins/tpm" target="_blank" rel="noopener">TPM</a>，使用如下命令即可下载TPM：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span><br></pre></td></tr></table></figure></p>
-<p>下载完之后，只需在<code>.tmux.conf</code>文件底部添加相关配置，然后进入tmux输入<code>prefix + I</code>，即可自动下载并安装相应的插件，升级插件可使用<code>prefix + U</code>。个人常用的插件如下：<br>相应的，<code>.tmux.conf</code>文件中插件相关的配置项如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 插件</span><br><span class="line"># List of plugins</span><br><span class="line">set -g @plugin &apos;tmux-plugins/tpm&apos;</span><br><span class="line">set -g @plugin &apos;tmux-plugins/tmux-sensible&apos;</span><br><span class="line"></span><br><span class="line"># Other examples:</span><br><span class="line"># set -g @plugin &apos;github_username/plugin_name&apos;</span><br><span class="line"># set -g @plugin &apos;git@github.com/user/plugin&apos;</span><br><span class="line"># set -g @plugin &apos;git@bitbucket.com/user/plugin&apos;</span><br><span class="line"></span><br><span class="line"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span><br><span class="line">run -b &apos;~/.tmux/plugins/tpm/tpm&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><p><code>$HOME/.tmux.conf</code>文件是tmux的配置文件，tmux在启动时会按照此文件中的命令进行相关配置，个人常用的配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 设定快捷键前缀</span><br><span class="line">unbind-key C-b</span><br><span class="line">set-option -g prefix C-x</span><br><span class="line">bind-key C-x send-prefix</span><br><span class="line">set-option -g escape-time 0</span><br><span class="line"></span><br><span class="line"># 开启鼠标模式</span><br><span class="line">set -g mouse on</span><br></pre></td></tr></table></figure>
+
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>tmux支持许多插件，在安装插件之前最好先安装插件管理器<a target="_blank" rel="noopener" href="https://github.com/tmux-plugins/tpm">TPM</a>，使用如下命令即可下载TPM：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;tmux-plugins&#x2F;tpm ~&#x2F;.tmux&#x2F;plugins&#x2F;tpm</span><br></pre></td></tr></table></figure>
+<p>下载完之后，只需在<code>.tmux.conf</code>文件底部添加相关配置，然后进入tmux输入<code>prefix + I</code>，即可自动下载并安装相应的插件，升级插件可使用<code>prefix + U</code>。个人常用的插件如下：<br>相应的，<code>.tmux.conf</code>文件中插件相关的配置项如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 插件</span><br><span class="line"># List of plugins</span><br><span class="line">set -g @plugin &#39;tmux-plugins&#x2F;tpm&#39;</span><br><span class="line">set -g @plugin &#39;tmux-plugins&#x2F;tmux-sensible&#39;</span><br><span class="line"></span><br><span class="line"># Other examples:</span><br><span class="line"># set -g @plugin &#39;github_username&#x2F;plugin_name&#39;</span><br><span class="line"># set -g @plugin &#39;git@github.com&#x2F;user&#x2F;plugin&#39;</span><br><span class="line"># set -g @plugin &#39;git@bitbucket.com&#x2F;user&#x2F;plugin&#39;</span><br><span class="line"></span><br><span class="line"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span><br><span class="line">run -b &#39;~&#x2F;.tmux&#x2F;plugins&#x2F;tpm&#x2F;tpm&#39;</span><br></pre></td></tr></table></figure>
 <p>值得注意的是，在更改<code>.tmux.conf</code>文件后，应该重启tmux，或者重载配置文件。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关tmux的更多使用技巧可以参考<a href="https://www.kancloud.cn/kancloud/tmux" target="_blank" rel="noopener">《tmux: Productive Mouse-Free Development》</a>一书。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关tmux的更多使用技巧可以参考<a target="_blank" rel="noopener" href="https://www.kancloud.cn/kancloud/tmux">《tmux: Productive Mouse-Free Development》</a>一书。</p>
 
     </div>
 
@@ -414,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名词解释"><span class="nav-number">1.</span> <span class="nav-text">名词解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Session（会话）"><span class="nav-number">1.1.</span> <span class="nav-text">Session（会话）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window（窗口）"><span class="nav-number">1.2.</span> <span class="nav-text">Window（窗口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pane（窗格-面板）"><span class="nav-number">1.3.</span> <span class="nav-text">Pane（窗格/面板）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">2.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷键"><span class="nav-number">3.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux-conf"><span class="nav-number">4.</span> <span class="nav-text">.tmux.conf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">5.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">6.</span> <span class="nav-text">更多</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">名词解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Session%EF%BC%88%E4%BC%9A%E8%AF%9D%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">Session（会话）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window%EF%BC%88%E7%AA%97%E5%8F%A3%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">Window（窗口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pane%EF%BC%88%E7%AA%97%E6%A0%BC-%E9%9D%A2%E6%9D%BF%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">Pane（窗格&#x2F;面板）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">3.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux-conf"><span class="nav-number">4.</span> <span class="nav-text">.tmux.conf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A"><span class="nav-number">6.</span> <span class="nav-text">更多</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -450,19 +457,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -474,19 +481,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -517,12 +524,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -564,9 +571,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -575,7 +590,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

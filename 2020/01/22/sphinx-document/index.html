@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,11 +52,11 @@
 <meta property="og:url" content="https://howiezhao.github.io/2020/01/22/sphinx-document/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Sphinx 是一个用 Python 编写的文档生成工具，其使用 reStructuredText 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 Python 官方文档就是基于 Sphinx 生成的，此外 Linux 内核文档的生成也于 2016 年从 Doxygen 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其官方列表。">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-28T05:45:25.000Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-22T12:21:54.000Z">
+<meta property="article:modified_time" content="2020-11-28T05:45:25.000Z">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 Sphinx 生成项目文档">
-<meta name="twitter:description" content="Sphinx 是一个用 Python 编写的文档生成工具，其使用 reStructuredText 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 Python 官方文档就是基于 Sphinx 生成的，此外 Linux 内核文档的生成也于 2016 年从 Doxygen 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其官方列表。">
 
 <link rel="canonical" href="https://howiezhao.github.io/2020/01/22/sphinx-document/">
 
@@ -110,6 +110,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -281,8 +282,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="http://www.sphinx-doc.org/en/master/" target="_blank" rel="noopener">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="https://howiezhao.github.io/2018/09/17/restructuredtext/">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/" target="_blank" rel="noopener">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html" target="_blank" rel="noopener">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/" target="_blank" rel="noopener">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html" target="_blank" rel="noopener">官方列表</a>。</p>
+        <p><a target="_blank" rel="noopener" href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="https://howiezhao.github.io/2018/09/17/restructuredtext/">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a target="_blank" rel="noopener" href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a target="_blank" rel="noopener" href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a target="_blank" rel="noopener" href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
 <a id="more"></a>
+
 <p>使用 <code>pip install sphinx</code> 即可安装 Sphinx。</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>按照最佳实践，项目文档一般是在项目的 <code>docs</code> 目录中，所以不妨先创建一个 <code>docs</code> 目录并进入，之后的一切有关 sphinx 的命令都在此目录中运行。</p>
 <p>安装完 Sphinx 并进入 <code>docs</code> 目录后，输入 <code>sphinx-quickstart</code> 即可创建一个文档项目。该引导程序会询问你一些问题，并根据你给出的回答对生成的文档项目进行相关配置，当然，这些配置都可以在生成后的 <code>conf.py</code> 文件中进行重新设置。以下是它可能会问到的一些问题：</p>
@@ -305,9 +307,9 @@
 </ul>
 <p>编写完文档后，使用 <code>make html</code> 命令即可将其构建为 HTML 文件，其中，<code>html</code> 被称为构建器（builder），当然，你也可以使用别的构建器，比如 <code>latex</code>、<code>epub</code> 等。</p>
 <p>输入 <code>make help</code> 可查看 make 支持的相关命令。</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster" target="_blank" rel="noopener">Alabaster</a>（个人觉得挺好看的，<a href="https://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes" target="_blank" rel="noopener">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
-<p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme" target="_blank" rel="noopener">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/" target="_blank" rel="noopener">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>&#39;sphinx_rtd_theme&#39;</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
-<p>要探索更多的第三方主题，可参考 <a href="https://sphinx-themes.org/" target="_blank" rel="noopener">Sphinx Themes</a> 网站上收录的。</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a target="_blank" rel="noopener" href="https://github.com/bitprophet/alabaster">Alabaster</a>（个人觉得挺好看的，<a target="_blank" rel="noopener" href="https://cn.python-requests.org/zh_CN/latest/">Requests</a> 和 <a target="_blank" rel="noopener" href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a target="_blank" rel="noopener" href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
+<p>第三方主题中最常见的非 <a target="_blank" rel="noopener" href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme</a> 莫属，<a target="_blank" rel="noopener" href="https://docs.scrapy.org/en/latest/">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>&#39;sphinx_rtd_theme&#39;</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
+<p>要探索更多的第三方主题，可参考 <a target="_blank" rel="noopener" href="https://sphinx-themes.org/">Sphinx Themes</a> 网站上收录的。</p>
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>Sphinx 支持扩展，安装完 Sphinx 后就已经内置了一些扩展，除此之外，你也可以下载第三方扩展。</p>
 <h3 id="内置扩展"><a href="#内置扩展" class="headerlink" title="内置扩展"></a>内置扩展</h3><h4 id="sphinx-ext-autodoc"><a href="#sphinx-ext-autodoc" class="headerlink" title="sphinx.ext.autodoc"></a>sphinx.ext.autodoc</h4><h4 id="sphinx-ext-coverage"><a href="#sphinx-ext-coverage" class="headerlink" title="sphinx.ext.coverage"></a>sphinx.ext.coverage</h4><h4 id="sphinx-ext-viewcode"><a href="#sphinx-ext-viewcode" class="headerlink" title="sphinx.ext.viewcode"></a>sphinx.ext.viewcode</h4><h4 id="sphinx-ext-napoleon"><a href="#sphinx-ext-napoleon" class="headerlink" title="sphinx.ext.napoleon"></a>sphinx.ext.napoleon</h4><h4 id="sphinx-ext-graphviz"><a href="#sphinx-ext-graphviz" class="headerlink" title="sphinx.ext.graphviz"></a>sphinx.ext.graphviz</h4><h4 id="sphinx-ext-todo"><a href="#sphinx-ext-todo" class="headerlink" title="sphinx.ext.todo"></a>sphinx.ext.todo</h4><h3 id="第三方扩展"><a href="#第三方扩展" class="headerlink" title="第三方扩展"></a>第三方扩展</h3><h4 id="recommonmark"><a href="#recommonmark" class="headerlink" title="recommonmark"></a>recommonmark</h4><h4 id="nbsphinx"><a href="#nbsphinx" class="headerlink" title="nbsphinx"></a>nbsphinx</h4><h4 id="sphinx-autodoc-typehints"><a href="#sphinx-autodoc-typehints" class="headerlink" title="sphinx-autodoc-typehints"></a>sphinx-autodoc-typehints</h4><h4 id="sphinx-gallery"><a href="#sphinx-gallery" class="headerlink" title="sphinx-gallery"></a>sphinx-gallery</h4><h2 id="Read-the-Docs"><a href="#Read-the-Docs" class="headerlink" title="Read the Docs"></a>Read the Docs</h2>
     </div>
@@ -391,7 +393,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">2.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展"><span class="nav-number">3.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置扩展"><span class="nav-number">3.1.</span> <span class="nav-text">内置扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-autodoc"><span class="nav-number">3.1.1.</span> <span class="nav-text">sphinx.ext.autodoc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-coverage"><span class="nav-number">3.1.2.</span> <span class="nav-text">sphinx.ext.coverage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-viewcode"><span class="nav-number">3.1.3.</span> <span class="nav-text">sphinx.ext.viewcode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-napoleon"><span class="nav-number">3.1.4.</span> <span class="nav-text">sphinx.ext.napoleon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-graphviz"><span class="nav-number">3.1.5.</span> <span class="nav-text">sphinx.ext.graphviz</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-todo"><span class="nav-number">3.1.6.</span> <span class="nav-text">sphinx.ext.todo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方扩展"><span class="nav-number">3.2.</span> <span class="nav-text">第三方扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#recommonmark"><span class="nav-number">3.2.1.</span> <span class="nav-text">recommonmark</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nbsphinx"><span class="nav-number">3.2.2.</span> <span class="nav-text">nbsphinx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-autodoc-typehints"><span class="nav-number">3.2.3.</span> <span class="nav-text">sphinx-autodoc-typehints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-gallery"><span class="nav-number">3.2.4.</span> <span class="nav-text">sphinx-gallery</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-the-Docs"><span class="nav-number">4.</span> <span class="nav-text">Read the Docs</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-number">3.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E6%89%A9%E5%B1%95"><span class="nav-number">3.1.</span> <span class="nav-text">内置扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-autodoc"><span class="nav-number">3.1.1.</span> <span class="nav-text">sphinx.ext.autodoc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-coverage"><span class="nav-number">3.1.2.</span> <span class="nav-text">sphinx.ext.coverage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-viewcode"><span class="nav-number">3.1.3.</span> <span class="nav-text">sphinx.ext.viewcode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-napoleon"><span class="nav-number">3.1.4.</span> <span class="nav-text">sphinx.ext.napoleon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-graphviz"><span class="nav-number">3.1.5.</span> <span class="nav-text">sphinx.ext.graphviz</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-ext-todo"><span class="nav-number">3.1.6.</span> <span class="nav-text">sphinx.ext.todo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%89%A9%E5%B1%95"><span class="nav-number">3.2.</span> <span class="nav-text">第三方扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#recommonmark"><span class="nav-number">3.2.1.</span> <span class="nav-text">recommonmark</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nbsphinx"><span class="nav-number">3.2.2.</span> <span class="nav-text">nbsphinx</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-autodoc-typehints"><span class="nav-number">3.2.3.</span> <span class="nav-text">sphinx-autodoc-typehints</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sphinx-gallery"><span class="nav-number">3.2.4.</span> <span class="nav-text">sphinx-gallery</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-the-Docs"><span class="nav-number">4.</span> <span class="nav-text">Read the Docs</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -427,19 +429,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -451,19 +453,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -494,12 +496,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -541,9 +543,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -552,7 +562,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

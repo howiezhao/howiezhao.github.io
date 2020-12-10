@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,11 +52,11 @@
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/16/ipython/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。 名称IPython 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 IPython Notebook，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPyt">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-05T15:49:16.000Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-09-16T05:15:34.000Z">
+<meta property="article:modified_time" content="2020-02-05T15:49:16.000Z">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 IPython 替代原生 Python Shell">
-<meta name="twitter:description" content="我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。 名称IPython 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 IPython Notebook，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPyt">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/16/ipython/">
 
@@ -110,6 +110,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -282,8 +283,9 @@
 
       
         <p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
-<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/" target="_blank" rel="noopener"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/" target="_blank" rel="noopener"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。</p>
-<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。<br><a id="more"></a></p>
+<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a target="_blank" rel="noopener" href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a target="_blank" rel="noopener" href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。</p>
+<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
+<a id="more"></a>
 <h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出 IPython 相比原生 Python Shell 的一些优势：</p>
 <ul>
 <li>Tab 自动补全</li>
@@ -296,11 +298,13 @@
 </ul>
 <h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出 IPython 中使用较多的魔法函数：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%timeit <span class="comment">#测试代码段执行时间</span></span><br><span class="line">%hist   <span class="comment">#查看历史记录</span></span><br><span class="line">%debug  <span class="comment">#激活交互的调试器(ipdb)</span></span><br><span class="line">%load   <span class="comment">#加载外部代码</span></span><br><span class="line">%edit   <span class="comment">#使用编辑器打开</span></span><br></pre></td></tr></table></figure>
-<p>要查看更多的魔法函数，可以访问 <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html" target="_blank" rel="noopener">IPython 的官方文档</a></p>
+
+<p>要查看更多的魔法函数，可以访问 <a target="_blank" rel="noopener" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython 的官方文档</a></p>
 <h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动 Jupyter Notebook 直接在命令行输入 <code>jupyter notebook</code> 即可，它会监听本机的 8888 端口，并自动打开浏览器访问。输入 <code>jupyter notebook --help</code> 可以查看它的更多参数。</p>
 <p>Jupyter Notebook 默认采用 <strong>Token</strong> 的方式进行登录，启动后在命令行中会显示当前的 token 值，若没有自动打开浏览器，则可以复制命令行中带 token 的链接并在浏览器中打开即可。</p>
 <p>使用命令 <code>jupyter notebook --generate-config</code> 可生成 Jupyter Notebook 配置文件，默认为 <code>$HOME/.jupyter/jupyter_notebook_config.py</code> 文件。常用的配置项如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'localhost'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
+
 <p>最后，在 Linux 下，使用 <code>nohup jupyter notebook &gt; jupyter.log &amp;</code> 可使 Jupyter Notebook 在后台运行并记录日志到当前目录下的 <code>jupyter.log</code> 文件中。</p>
 <p>要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：<a href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/">Jupyter Notebook 常用扩展</a>。</p>
 
@@ -385,7 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#名称"><span class="nav-number">1.</span> <span class="nav-text">名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优势"><span class="nav-number">2.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#魔法函数"><span class="nav-number">3.</span> <span class="nav-text">魔法函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Notebook"><span class="nav-number">4.</span> <span class="nav-text">Jupyter Notebook</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0"><span class="nav-number">1.</span> <span class="nav-text">名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">2.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">魔法函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Notebook"><span class="nav-number">4.</span> <span class="nav-text">Jupyter Notebook</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -421,19 +425,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -445,19 +449,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -488,12 +492,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -535,9 +539,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -546,7 +558,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

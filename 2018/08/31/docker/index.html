@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,17 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C/S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker Deskt">
+  <meta name="description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C&#x2F;S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker Deskt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 入坑指南">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/31/docker/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C/S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker Deskt">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-27T15:03:15.000Z">
+<meta property="og:description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C&#x2F;S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker Deskt">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-08-31T08:59:28.000Z">
+<meta property="article:modified_time" content="2020-09-27T15:03:15.000Z">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker 入坑指南">
-<meta name="twitter:description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C/S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker Deskt">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/08/31/docker/">
 
@@ -110,6 +110,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -283,21 +284,25 @@
       
         <p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C/S</strong> 架构，使用 Go 语言开发。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker 分为 2 个版本：<strong>社区版</strong>（Community Edition, CE）和<strong>企业版</strong>（Enterprise Edition, EE），顾名思义，企业版是收费的。</p>
-<p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
-<p>针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
-<p>使用 <code>docker version</code> 可以查看 docker 版本号，使用 <code>docker info</code> 可以查看 docker 详细信息，直接输入 <code>docker</code> 可以查看 docker 相关命令。<br><a id="more"></a></p>
+<p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a target="_blank" rel="noopener" href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
+<p>针对老版本的 Windows 或 macOS，可以使用 <a target="_blank" rel="noopener" href="https://docs.docker.com/toolbox/overview/">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
+<p>使用 <code>docker version</code> 可以查看 docker 版本号，使用 <code>docker info</code> 可以查看 docker 详细信息，直接输入 <code>docker</code> 可以查看 docker 相关命令。</p>
+<a id="more"></a>
 <h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><strong>镜像</strong>（image）文件可以用来生成容器实例，其类似于在虚拟机中安装操作系统时所使用的 ISO 镜像。</p>
 <p>镜像文件可以包含一个标签（tag），即版本号。</p>
 <p>你可以使用远程仓库中别人制作好的镜像文件，也可以自己制作镜像文件。要制作镜像文件就要编写 <strong>Dockerfile</strong> 文件，其类似于 Makefile 文件。</p>
 <p>与 image 相关的常用命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image ls</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image rm &lt;image-name&gt;</span><br><span class="line">docker rmi &lt;image-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull &lt;image-name&gt;[:tag]</span><br><span class="line">docker pull &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure>
+
 <h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>镜像文件生成的容器（container）实例，本身也是一个文件，称为<strong>容器文件</strong>。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。</p>
 <p>类似于在虚拟机中安装的操作系统，其本身会在硬盘中创建一系列文件，当关闭操作系统时，相应的文件并不会删除。</p>
 <p>与 container 相关的常用命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动拉取下来并运行</span></span><br><span class="line"><span class="comment"># 使用参数`-it`返回容器实例的终端</span></span><br><span class="line"><span class="comment"># 使用参数`--rm`在关闭容器后删除容器文件</span></span><br><span class="line"><span class="comment"># 使用参数`-p`将容器内端口映射到主机端口</span></span><br><span class="line"><span class="comment"># 使用参数`-v`将主机目录和容器内目录进行绑定</span></span><br><span class="line">docker container run &lt;image-name&gt;[:tag]</span><br><span class="line">docker run &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container ls</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container rm &lt;container-id&gt;</span><br><span class="line">docker rm &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动指定的容器实例</span></span><br><span class="line">docker container start &lt;container-id&gt;</span><br><span class="line">docker start &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启指定的容器实例</span></span><br><span class="line">docker container restart &lt;container-id&gt;</span><br><span class="line">docker restart &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container stop &lt;container-id&gt;</span><br><span class="line">docker stop &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line">docker cp</span><br><span class="line">docker attach</span><br><span class="line">docker <span class="built_in">exec</span>（重要）</span><br></pre></td></tr></table></figure>
-<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>（repository）是不同标签的镜像的集合，注册处（registry）又是不同仓库的集合，Docker 的官方注册处是 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，类似于 GitHub。使用 <code>docker login</code> 可以登录到自己在 Docker Hub 上注册的帐号。值得注意的是，国内访问 Docker Hub 速度较慢，建议设置代理或使用国内镜像站。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从 Docker Hub 中拉取。</p>
+
+<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>（repository）是不同标签的镜像的集合，注册处（registry）又是不同仓库的集合，Docker 的官方注册处是 <a target="_blank" rel="noopener" href="https://hub.docker.com/">Docker Hub</a>，类似于 GitHub。使用 <code>docker login</code> 可以登录到自己在 Docker Hub 上注册的帐号。值得注意的是，国内访问 Docker Hub 速度较慢，建议设置代理或使用国内镜像站。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从 Docker Hub 中拉取。</p>
 <p>与 repository 相关的命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从Docker Hub中搜索某个 image</span></span><br><span class="line">docker search [image-name]</span><br></pre></td></tr></table></figure>
+
 <h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>阿里云镜像加速</p>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Drive-has-not-been-shared"><a href="#Drive-has-not-been-shared" class="headerlink" title="Drive has not been shared"></a>Drive has not been shared</h3><p>在 Windows 10 上启动 Docker 可能会遇到 <code>Unhandled exception: Drive has not been shared</code> 这样的问题，可以通过勾选 Settings ——&gt; Resources ——&gt; FILE SHARING 中相应的磁盘以解决此问题。若提示 <code>Cannot change shared directories</code>，则你可能需要重启 Docker 后再次进行上述操作。</p>
 
@@ -382,7 +387,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本"><span class="nav-number">1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像"><span class="nav-number">2.</span> <span class="nav-text">镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器"><span class="nav-number">3.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仓库"><span class="nav-number">4.</span> <span class="nav-text">仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-number">5.</span> <span class="nav-text">Dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理"><span class="nav-number">6.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">7.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Drive-has-not-been-shared"><span class="nav-number">7.1.</span> <span class="nav-text">Drive has not been shared</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%9C%E5%83%8F"><span class="nav-number">2.</span> <span class="nav-text">镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%93%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-number">5.</span> <span class="nav-text">Dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%90%86"><span class="nav-number">6.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Drive-has-not-been-shared"><span class="nav-number">7.1.</span> <span class="nav-text">Drive has not been shared</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -418,19 +423,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -442,19 +447,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -485,12 +490,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -532,9 +537,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -543,7 +556,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

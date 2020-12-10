@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,18 +46,19 @@
   };
 </script>
 
-  <meta name="description" content="移动网络/WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
-<meta name="keywords" content="Android,硬件">
+  <meta name="description" content="移动网络&#x2F;WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nexus&#x2F;Pixel 相关问题解决">
 <meta property="og:url" content="https://howiezhao.github.io/2019/07/21/nexus-pixel-problem/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="移动网络/WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-12-04T10:01:11.000Z">
+<meta property="og:description" content="移动网络&#x2F;WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-07-21T02:15:55.000Z">
+<meta property="article:modified_time" content="2020-12-04T10:01:11.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="硬件">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nexus&#x2F;Pixel 相关问题解决">
-<meta name="twitter:description" content="移动网络/WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
 
 <link rel="canonical" href="https://howiezhao.github.io/2019/07/21/nexus-pixel-problem/">
 
@@ -111,6 +112,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -286,11 +288,15 @@
 <p>显然，Google 的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接 ADB，针对不同的系统版本，下方分别给出了相关命令：</p>
 <p>Android 9.0/8.1/8.0/7.1.2/7.1.1：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure>
+
 <p>Android 7.1/7.0：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure>
+
 <p>Android 5.0-6.x：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure>
-<p>执行之后，开启飞行模式，接着关闭飞行模式即可。<br><a id="more"></a></p>
+
+<p>执行之后，开启飞行模式，接着关闭飞行模式即可。</p>
+<a id="more"></a>
 <h2 id="搜索不到-WiFi"><a href="#搜索不到-WiFi" class="headerlink" title="搜索不到 WiFi"></a>搜索不到 WiFi</h2><p>因为美国 2.4GHz 频段的 WiFi 信道为 1-11，而中国 2.4GHz 频段的 WiFi 信道为 1-13，所以当 2.4GHz 频段的 WiFi 信道位于 12 或 13 时，美版的 Nexus/Pixel 会搜索不到 WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为 11 以内任意信道即可。</p>
 <h2 id="4G-信号问题"><a href="#4G-信号问题" class="headerlink" title="4G 信号问题"></a>4G 信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以 Nexus/Pixel 可以完美支持联通 2G/3G/4G。</p>
 <p>移动的 3G 网络制式采用的是自主研发的技术，所以 Nexus/Pixel 并不支持移动 3G，然而移动 4G 网络制式采用的是自主研发和国际通用并行的方式，所以 Nexus/Pixel 只支持部分移动 4G 频段。</p>
@@ -298,9 +304,9 @@
 <h2 id="Google（即负一屏）无法使用"><a href="#Google（即负一屏）无法使用" class="headerlink" title="Google（即负一屏）无法使用"></a>Google（即负一屏）无法使用</h2><h2 id="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"><a href="#接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）" class="headerlink" title="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"></a>接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</h2><p>严格来说，这不算是 Nexus/Pixel 特有的问题，究其原因是距离感应器坏了，可通过设置使用电源键挂断电话，具体方法为在<strong>设置</strong> —&gt; <strong>辅助功能/无障碍</strong>中开启<strong>按电源按钮结束通话</strong>。</p>
 <h2 id="蓝牙传输失败，显示不支持此内容"><a href="#蓝牙传输失败，显示不支持此内容" class="headerlink" title="蓝牙传输失败，显示不支持此内容"></a>蓝牙传输失败，显示不支持此内容</h2><p>由于版权问题，原生 Android 不支持传输以 <code>.apk</code> 结尾的文件，可通过将其改为 <code>.jpg</code> 结尾传输。</p>
 <h2 id="Google-Play-商店更新应用卡住"><a href="#Google-Play-商店更新应用卡住" class="headerlink" title="Google Play 商店更新应用卡住"></a>Google Play 商店更新应用卡住</h2><p>在 Android 9.0 之前，Play 商店是通过<strong>下载管理器</strong>下载应用的，出现这种情况可以直接将<strong>下载管理器</strong>强行停止，然后重新启动 Play 商店即可更新应用。在 Android 9.0 之后，可直接将 Play 商店强行停止再重新启动即可。</p>
-<h2 id="系统无法更新"><a href="#系统无法更新" class="headerlink" title="系统无法更新"></a>系统无法更新</h2><p>具体表现为<strong>系统更新</strong>处永远显示<strong>正在安装系统更新</strong>，一般来说，这是由于网络原因引起的，目前并没有一个稳定的解决办法，建议直接下载新系统镜像并线刷。你可以在<a href="https://developers.google.cn/android/images" target="_blank" rel="noopener">这个官方地址</a>找到有关 Nexus/Pixel 的所有出厂镜像，其中也附带有详细的安装方法。</p>
+<h2 id="系统无法更新"><a href="#系统无法更新" class="headerlink" title="系统无法更新"></a>系统无法更新</h2><p>具体表现为<strong>系统更新</strong>处永远显示<strong>正在安装系统更新</strong>，一般来说，这是由于网络原因引起的，目前并没有一个稳定的解决办法，建议直接下载新系统镜像并线刷。你可以在<a target="_blank" rel="noopener" href="https://developers.google.cn/android/images">这个官方地址</a>找到有关 Nexus/Pixel 的所有出厂镜像，其中也附带有详细的安装方法。</p>
 <p>具体而言，你需要先解锁 Bootloader，然后连接 ADB，紧接着执行 <code>adb reboot bootloader</code> 进入 fastboot 模式，最后执行相应系统的 <code>flash-all</code> 脚本即可。</p>
-<h2 id="Pixel-Pixel-XL-Verizon-版解锁-Bootloader-教程"><a href="#Pixel-Pixel-XL-Verizon-版解锁-Bootloader-教程" class="headerlink" title="Pixel/Pixel XL Verizon 版解锁 Bootloader 教程"></a>Pixel/Pixel XL Verizon 版解锁 Bootloader 教程</h2><p>教程来源自 xda 上的一篇<a href="https://www.xda-developers.com/unlock-bootloader-verizon-google-pixel-xl/" target="_blank" rel="noopener">文章</a>，具体步骤如下：</p>
+<h2 id="Pixel-Pixel-XL-Verizon-版解锁-Bootloader-教程"><a href="#Pixel-Pixel-XL-Verizon-版解锁-Bootloader-教程" class="headerlink" title="Pixel/Pixel XL Verizon 版解锁 Bootloader 教程"></a>Pixel/Pixel XL Verizon 版解锁 Bootloader 教程</h2><p>教程来源自 xda 上的一篇<a target="_blank" rel="noopener" href="https://www.xda-developers.com/unlock-bootloader-verizon-google-pixel-xl/">文章</a>，具体步骤如下：</p>
 <ol>
 <li>从您的设备中删除 Google 帐户和任何类型的屏幕锁定（指纹，PIN，图案等）。</li>
 <li>从您的设备中取出 SIM 卡。</li>
@@ -324,7 +330,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Android/" rel="tag"># Android</a>
-              <a href="/tags/硬件/" rel="tag"># 硬件</a>
+              <a href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag"># 硬件</a>
           </div>
 
         
@@ -400,7 +406,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动网络-WiFi-出现叹号或叉号"><span class="nav-number">1.</span> <span class="nav-text">移动网络/WiFi 出现叹号或叉号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索不到-WiFi"><span class="nav-number">2.</span> <span class="nav-text">搜索不到 WiFi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4G-信号问题"><span class="nav-number">3.</span> <span class="nav-text">4G 信号问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google（即负一屏）无法使用"><span class="nav-number">4.</span> <span class="nav-text">Google（即负一屏）无法使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"><span class="nav-number">5.</span> <span class="nav-text">接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#蓝牙传输失败，显示不支持此内容"><span class="nav-number">6.</span> <span class="nav-text">蓝牙传输失败，显示不支持此内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-Play-商店更新应用卡住"><span class="nav-number">7.</span> <span class="nav-text">Google Play 商店更新应用卡住</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统无法更新"><span class="nav-number">8.</span> <span class="nav-text">系统无法更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pixel-Pixel-XL-Verizon-版解锁-Bootloader-教程"><span class="nav-number">9.</span> <span class="nav-text">Pixel/Pixel XL Verizon 版解锁 Bootloader 教程</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C-WiFi-%E5%87%BA%E7%8E%B0%E5%8F%B9%E5%8F%B7%E6%88%96%E5%8F%89%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">移动网络&#x2F;WiFi 出现叹号或叉号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E4%B8%8D%E5%88%B0-WiFi"><span class="nav-number">2.</span> <span class="nav-text">搜索不到 WiFi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4G-%E4%BF%A1%E5%8F%B7%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">4G 信号问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google%EF%BC%88%E5%8D%B3%E8%B4%9F%E4%B8%80%E5%B1%8F%EF%BC%89%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">Google（即负一屏）无法使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%90%AC%E7%94%B5%E8%AF%9D%E6%97%B6%E9%BB%91%E5%B1%8F%EF%BC%8C%E4%B8%94%E6%97%A0%E6%B3%95%E7%82%B9%E4%BA%AE%E5%B1%8F%E5%B9%95%E4%BB%A5%E6%8C%82%E6%96%AD%E7%94%B5%E8%AF%9D%EF%BC%88%E6%8F%92%E8%80%B3%E6%9C%BA%E6%97%B6%E4%B8%80%E5%88%87%E6%AD%A3%E5%B8%B8%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%94%AF%E6%8C%81%E6%AD%A4%E5%86%85%E5%AE%B9"><span class="nav-number">6.</span> <span class="nav-text">蓝牙传输失败，显示不支持此内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-Play-%E5%95%86%E5%BA%97%E6%9B%B4%E6%96%B0%E5%BA%94%E7%94%A8%E5%8D%A1%E4%BD%8F"><span class="nav-number">7.</span> <span class="nav-text">Google Play 商店更新应用卡住</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0"><span class="nav-number">8.</span> <span class="nav-text">系统无法更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pixel-Pixel-XL-Verizon-%E7%89%88%E8%A7%A3%E9%94%81-Bootloader-%E6%95%99%E7%A8%8B"><span class="nav-number">9.</span> <span class="nav-text">Pixel&#x2F;Pixel XL Verizon 版解锁 Bootloader 教程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -436,19 +442,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -460,19 +466,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -503,12 +509,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -550,9 +556,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -561,7 +575,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

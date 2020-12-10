@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="Run error: &amp;quot;&amp;#39;module&amp;#39; object has no attribute &amp;#39;SSL_ST_INIT&amp;#39;&amp;quot;.&amp;quot;解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#">
-<meta name="keywords" content="Kali">
+  <meta name="description" content="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;解决方法1：修改&#x2F;usr&#x2F;local&#x2F;lib&#x2F;python2.7&#x2F;dist-packages&#x2F;OpenSSL&#x2F;SSL.py文件，将下面四行注释掉 1234#SSL_ST_INIT &#x3D; _lib.SSL_ST_INIT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kali Rolling 2017下安装w3af出错解决方案">
 <meta property="og:url" content="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Run error: &amp;quot;&amp;#39;module&amp;#39; object has no attribute &amp;#39;SSL_ST_INIT&amp;#39;&amp;quot;.&amp;quot;解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:description" content="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;解决方法1：修改&#x2F;usr&#x2F;local&#x2F;lib&#x2F;python2.7&#x2F;dist-packages&#x2F;OpenSSL&#x2F;SSL.py文件，将下面四行注释掉 1234#SSL_ST_INIT &#x3D; _lib.SSL_ST_INIT">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-11-08T03:57:43.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Kali">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kali Rolling 2017下安装w3af出错解决方案">
-<meta name="twitter:description" content="Run error: &amp;quot;&amp;#39;module&amp;#39; object has no attribute &amp;#39;SSL_ST_INIT&amp;#39;&amp;quot;.&amp;quot;解决方法1：修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉1234#SSL_ST_INIT = _lib.SSL_ST_INIT#">
 
 <link rel="canonical" href="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/">
 
@@ -111,6 +111,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -282,26 +283,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure>
 <p><strong>解决方法2：</strong></p>
 <ol>
-<li><p>卸载w3af要求的pyOpenSSL版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装最新版pyOpenSSL</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pyOpenSSL</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PIPDependency(<span class="string">'OpenSSL'</span>, <span class="string">'pyOpenSSL'</span>, <span class="string">'Version of pyOpenSSL you are using'</span>)</span><br></pre></td></tr></table></figure>
+<li>卸载w3af要求的pyOpenSSL版本<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure></li>
+<li>安装最新版pyOpenSSL<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pyOpenSSL</span><br></pre></td></tr></table></figure></li>
+<li>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PIPDependency(<span class="string">&#x27;OpenSSL&#x27;</span>, <span class="string">&#x27;pyOpenSSL&#x27;</span>, <span class="string">&#x27;Version of pyOpenSSL you are using&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <a id="more"></a>
-<h2 id="error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1"><a href="#error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1" class="headerlink" title="error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1"></a>error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get build-dep python-lxml</span><br><span class="line">$ apt-get install libxslt-dev libssl-dev</span><br></pre></td></tr></table></figure></p>
-<h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-webkit python-webkit-dev</span><br></pre></td></tr></table></figure></p>
-<p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</span><br><span class="line">$ dpkg -i python-support_1.0.15_all.deb</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ apt install python-gtk2-dev</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</span><br><span class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</span><br></pre></td></tr></table></figure></p>
-<p>安装过程中可能需要安装相关依赖，可执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt --fix-broken install</span><br></pre></td></tr></table></figure></p>
-<h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-gtksourceview2</span><br></pre></td></tr></table></figure></p>
+<h2 id="error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1"><a href="#error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1" class="headerlink" title="error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1"></a>error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get build-dep python-lxml</span><br><span class="line">$ apt-get install libxslt-dev libssl-dev</span><br></pre></td></tr></table></figure>
 
+<h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-webkit python-webkit-dev</span><br></pre></td></tr></table></figure>
+<p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</span><br><span class="line">$ dpkg -i python-support_1.0.15_all.deb</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ apt install python-gtk2-dev</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</span><br><span class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</span><br></pre></td></tr></table></figure>
+<p>安装过程中可能需要安装相关依赖，可执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt --fix-broken install</span><br></pre></td></tr></table></figure>
+
+<h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-gtksourceview2</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -422,19 +426,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -446,19 +450,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -489,12 +493,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -536,9 +540,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -547,7 +559,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

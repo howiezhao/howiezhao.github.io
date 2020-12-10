@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,19 +47,19 @@
 </script>
 
   <meta name="description" content="toptop是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是top命令的运行界面：top的运行结果可以大致分为7个部分：  第1行显示了系统概况 第2行显示了进程概况 第3行显示了CPU概况 第4行显示了内存概况 第5行显示了Swap分区概况 第6行为空行，用以显示运行命令时输入的参数 剩下部分则为每个进程的详细信息">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="top的增强版：htop">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/19/htop-top/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="toptop是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是top命令的运行界面：top的运行结果可以大致分为7个部分：  第1行显示了系统概况 第2行显示了进程概况 第3行显示了CPU概况 第4行显示了内存概况 第5行显示了Swap分区概况 第6行为空行，用以显示运行命令时输入的参数 剩下部分则为每个进程的详细信息">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/top.PNG">
 <meta property="og:image" content="https://howiezhao.github.io/images/htop.PNG">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:published_time" content="2018-09-19T09:50:14.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="top的增强版：htop">
-<meta name="twitter:description" content="toptop是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是top命令的运行界面：top的运行结果可以大致分为7个部分：  第1行显示了系统概况 第2行显示了进程概况 第3行显示了CPU概况 第4行显示了内存概况 第5行显示了Swap分区概况 第6行为空行，用以显示运行命令时输入的参数 剩下部分则为每个进程的详细信息">
 <meta name="twitter:image" content="https://howiezhao.github.io/images/top.PNG">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/19/htop-top/">
@@ -114,6 +114,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -303,8 +304,7 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>top -</td>
 <td>系统概况</td>
 </tr>
@@ -324,8 +324,7 @@
 <td>load average: 0.02, 0.04, 0.00</td>
 <td>系统平均负载，三个数值分别为1分钟、5分钟、15分钟前到现在的平均值。</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="第2行"><a href="#第2行" class="headerlink" title="第2行"></a>第2行</h3><table>
 <thead>
 <tr>
@@ -333,8 +332,7 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Tasks:</td>
 <td>进程(任务)概况</td>
 </tr>
@@ -358,8 +356,7 @@
 <td>0 zombie</td>
 <td>僵尸进程数</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="第3行"><a href="#第3行" class="headerlink" title="第3行"></a>第3行</h3><table>
 <thead>
 <tr>
@@ -367,8 +364,7 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Cpu(s):</td>
 <td>CPU概况</td>
 </tr>
@@ -404,8 +400,7 @@
 <td>0.0%st</td>
 <td></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="第4行"><a href="#第4行" class="headerlink" title="第4行"></a>第4行</h3><table>
 <thead>
 <tr>
@@ -413,8 +408,7 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Mem:</td>
 <td>内存(memory)概况，数值以kb为单位</td>
 </tr>
@@ -434,8 +428,7 @@
 <td>0k buffers</td>
 <td>缓冲的内存量</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="第5行"><a href="#第5行" class="headerlink" title="第5行"></a>第5行</h3><table>
 <thead>
 <tr>
@@ -443,8 +436,7 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Swap:</td>
 <td>Swap分区概况，数值以kb为单位</td>
 </tr>
@@ -464,8 +456,7 @@
 <td>28800k cached</td>
 <td>缓冲的Swap分区量</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="剩下部分"><a href="#剩下部分" class="headerlink" title="剩下部分"></a>剩下部分</h3><table>
 <thead>
 <tr>
@@ -473,8 +464,7 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>PID</td>
 <td>进程号</td>
 </tr>
@@ -522,8 +512,7 @@
 <td>COMMAND</td>
 <td>运行进程时所使用的命令</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>在<code>top</code>命令运行界面也可以输入相关命令，具体如下：</p>
 <ul>
 <li><code>q</code>：退出<code>top</code>运行界面</li>
@@ -628,7 +617,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#top"><span class="nav-number">1.</span> <span class="nav-text">top</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1行"><span class="nav-number">1.1.</span> <span class="nav-text">第1行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2行"><span class="nav-number">1.2.</span> <span class="nav-text">第2行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3行"><span class="nav-number">1.3.</span> <span class="nav-text">第3行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第4行"><span class="nav-number">1.4.</span> <span class="nav-text">第4行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第5行"><span class="nav-number">1.5.</span> <span class="nav-text">第5行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#剩下部分"><span class="nav-number">1.6.</span> <span class="nav-text">剩下部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">1.7.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htop"><span class="nav-number">2.</span> <span class="nav-text">htop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优势"><span class="nav-number">3.</span> <span class="nav-text">优势</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#top"><span class="nav-number">1.</span> <span class="nav-text">top</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC1%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">第1行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC2%E8%A1%8C"><span class="nav-number">1.2.</span> <span class="nav-text">第2行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC3%E8%A1%8C"><span class="nav-number">1.3.</span> <span class="nav-text">第3行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC4%E8%A1%8C"><span class="nav-number">1.4.</span> <span class="nav-text">第4行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC5%E8%A1%8C"><span class="nav-number">1.5.</span> <span class="nav-text">第5行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%A9%E4%B8%8B%E9%83%A8%E5%88%86"><span class="nav-number">1.6.</span> <span class="nav-text">剩下部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htop"><span class="nav-number">2.</span> <span class="nav-text">htop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">3.</span> <span class="nav-text">优势</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -664,19 +653,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -688,19 +677,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -731,12 +720,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -778,9 +767,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -789,7 +786,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

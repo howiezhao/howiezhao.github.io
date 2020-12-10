@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,20 +47,21 @@
 </script>
 
   <meta name="description" content="密码学（Cryptography）大致可分为古典密码学（Classic cryptography）和现代密码学（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于字符的，而现代密码学是基于二进制位的。古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换">
-<meta name="keywords" content="密码学,CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="古典密码学">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/10/classical-crypto/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="密码学（Cryptography）大致可分为古典密码学（Classic cryptography）和现代密码学（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于字符的，而现代密码学是基于二进制位的。古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/vigenere.png">
 <meta property="og:image" content="https://howiezhao.github.io/images/pigpen.png">
 <meta property="og:image" content="https://howiezhao.github.io/images/pigpen-eg.png">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:published_time" content="2018-08-10T03:17:41.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="密码学">
+<meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="古典密码学">
-<meta name="twitter:description" content="密码学（Cryptography）大致可分为古典密码学（Classic cryptography）和现代密码学（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于字符的，而现代密码学是基于二进制位的。古典密码学主要包括两类，即代换和置换。 代换代换密码是将明文中的字符替代成其他字符，即替代转换，若整个加密过程中每个字符采用同一张表替代，则为单表代换">
 <meta name="twitter:image" content="https://howiezhao.github.io/images/vigenere.png">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/08/10/classical-crypto/">
@@ -115,6 +116,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -301,7 +303,8 @@
 <li>以此类推</li>
 <li>明文为：<code>Hello World</code></li>
 </ol>
-<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。<br><a id="more"></a></p>
+<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。</p>
+<a id="more"></a>
 <h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon&#39;s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p>
 <table>
 <thead>
@@ -316,8 +319,7 @@
 <th>密文</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>a</td>
 <td>AAAAA</td>
 <td>g</td>
@@ -377,9 +379,27 @@
 <td>z</td>
 <td>BABBB</td>
 </tr>
-</tbody>
-</table>
-<p>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。<br>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p>
+<tr>
+<td>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -395,8 +415,7 @@
 <th>密文</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>A</td>
 <td>aaaaa</td>
 <td>G</td>
@@ -429,6 +448,8 @@
 <td>abbba</td>
 <td>U</td>
 <td>babaa</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>D</td>
@@ -439,6 +460,8 @@
 <td>abbbb</td>
 <td>V</td>
 <td>babab</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>E</td>
@@ -449,6 +472,8 @@
 <td>baaaa</td>
 <td>W</td>
 <td>babba</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>F</td>
@@ -459,10 +484,34 @@
 <td>baaab</td>
 <td>X</td>
 <td>babbb</td>
+<td></td>
+<td></td>
 </tr>
-</tbody>
-</table>
-<p>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。<br>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p>
+<tr>
+<td>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：<br><img src="/images/vigenere.png" alt="维吉尼亚表格"><br>这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong><br>明文<code>HELLOWORLD</code>的加密结果如下：</p>
 <ol>
 <li>选择某一关键词作为密钥，如<code>SECRET</code></li>
@@ -508,7 +557,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/密码学/" rel="tag"># 密码学</a>
+              <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag"># 密码学</a>
               <a href="/tags/CTF/" rel="tag"># CTF</a>
           </div>
 
@@ -585,7 +634,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代换"><span class="nav-number">1.</span> <span class="nav-text">代换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凯撒密码"><span class="nav-number">1.1.</span> <span class="nav-text">凯撒密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#培根密码"><span class="nav-number">1.2.</span> <span class="nav-text">培根密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#维吉尼亚密码"><span class="nav-number">1.3.</span> <span class="nav-text">维吉尼亚密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置换"><span class="nav-number">2.</span> <span class="nav-text">置换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栅栏密码"><span class="nav-number">2.1.</span> <span class="nav-text">栅栏密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#当铺密码"><span class="nav-number">3.1.</span> <span class="nav-text">当铺密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#猪圈密码"><span class="nav-number">3.2.</span> <span class="nav-text">猪圈密码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变形"><span class="nav-number">3.2.1.</span> <span class="nav-text">变形</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text">代换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">凯撒密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">培根密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">维吉尼亚密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2"><span class="nav-number">2.</span> <span class="nav-text">置换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">栅栏密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E9%93%BA%E5%AF%86%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">当铺密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8C%AA%E5%9C%88%E5%AF%86%E7%A0%81"><span class="nav-number">3.2.</span> <span class="nav-text">猪圈密码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E5%BD%A2"><span class="nav-number">3.2.1.</span> <span class="nav-text">变形</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -621,19 +670,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -645,19 +694,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -688,12 +737,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -735,9 +784,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -746,7 +803,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

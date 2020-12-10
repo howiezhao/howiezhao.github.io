@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,19 +47,19 @@
 </script>
 
   <meta name="description" content="terminal，常被翻译为终端，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 ConEmu、Cmder 等。 shell，有时也被翻译为壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="terminal 与 shell">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/19/terminal-shell/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="terminal，常被翻译为终端，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 ConEmu、Cmder 等。 shell，有时也被翻译为壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/cmd.jpg">
 <meta property="og:image" content="https://howiezhao.github.io/images/prompt.jpg">
-<meta property="og:updated_time" content="2020-12-10T06:59:45.000Z">
+<meta property="article:published_time" content="2018-09-19T09:00:22.000Z">
+<meta property="article:modified_time" content="2020-12-10T06:59:45.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="terminal 与 shell">
-<meta name="twitter:description" content="terminal，常被翻译为终端，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 ConEmu、Cmder 等。 shell，有时也被翻译为壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命">
 <meta name="twitter:image" content="https://howiezhao.github.io/images/cmd.jpg">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/19/terminal-shell/">
@@ -114,6 +114,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -285,19 +286,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>terminal，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a href="https://conemu.github.io/" target="_blank" rel="noopener">ConEmu</a>、<a href="https://cmder.net/" target="_blank" rel="noopener">Cmder</a> 等。</p>
-<p>shell，有时也被翻译为壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命令行 shell 有 <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noopener">Bash</a>、<a href="https://www.zsh.org/" target="_blank" rel="noopener">Zsh</a> 等。</p>
-<p>通俗点说，terminal 属于外层，shell 属于内层，terminal 包裹着 shell，输入进 terminal 的命令要由 shell 去解释执行。<br><a id="more"></a><br>和 terminal 很像的一个东西叫 console，常被翻译为<strong>控制台</strong>，它也是一个黑色的窗口，用来输入命令，但与 terminal 不同的是，console 与物理相关，且具有<strong>唯一性</strong>。举例来说，没有图形界面的 Linux 开机后，显示在屏幕上的就是 console，它是与这台电脑相关的，且只有一个；而有图形界面的 Linux 开机后，打开的黑色窗口就是 terminal，你可以打开多个。</p>
+        <p>terminal，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a target="_blank" rel="noopener" href="https://conemu.github.io/">ConEmu</a>、<a target="_blank" rel="noopener" href="https://cmder.net/">Cmder</a> 等。</p>
+<p>shell，有时也被翻译为壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命令行 shell 有 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/bash/">Bash</a>、<a target="_blank" rel="noopener" href="https://www.zsh.org/">Zsh</a> 等。</p>
+<p>通俗点说，terminal 属于外层，shell 属于内层，terminal 包裹着 shell，输入进 terminal 的命令要由 shell 去解释执行。</p>
+<a id="more"></a>
+<p>和 terminal 很像的一个东西叫 console，常被翻译为<strong>控制台</strong>，它也是一个黑色的窗口，用来输入命令，但与 terminal 不同的是，console 与物理相关，且具有<strong>唯一性</strong>。举例来说，没有图形界面的 Linux 开机后，显示在屏幕上的就是 console，它是与这台电脑相关的，且只有一个；而有图形界面的 Linux 开机后，打开的黑色窗口就是 terminal，你可以打开多个。</p>
 <p>在 Windows 中，这一切有点混乱，具体就表现在：那个黑色的窗口应该叫<strong>命令提示符</strong>还是<strong>控制台窗口</strong>？就如下图所示：</p>
 <p><img src="/images/cmd.jpg" alt="cmd"></p>
 <p>首先，命令提示符的本意指的是命令行前面的提示符，在 Linux 中常被称为 prompt，如下所示：</p>
 <p><img src="/images/prompt.jpg" alt="prompt"></p>
-<p>显然，在 Windows 中，命令提示符指的是一种解释执行命令的 shell，此外，控制台窗口应该指的是终端。因此，<strong>在 Windows 中有两种 shell，即命令提示符和 PowerShell，它们都共用了同一终端，即控制台窗口。</strong>这么理解的原因可参考微软的<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands" target="_blank" rel="noopener">官方文档</a>，摘录如下：</p>
+<p>显然，在 Windows 中，命令提示符指的是一种解释执行命令的 shell，此外，控制台窗口应该指的是终端。因此，<strong>在 Windows 中有两种 shell，即命令提示符和 PowerShell，它们都共用了同一终端，即控制台窗口。</strong>这么理解的原因可参考微软的<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">官方文档</a>，摘录如下：</p>
 <blockquote>
 <p>Windows has two command shells: The Command shell and PowerShell.</p>
 </blockquote>
 <p>与 Linux 不同的是，Windows 为每个 shell 都做了一个可执行程序，如命令提示符是 <code>cmd.exe</code>，而 PowerShell 是 <code>powershell.exe</code>，所以在 Windows 中我们习惯说“打开命令提示符”或者“打开 PowerShell”；而在 Linux 中，我们更习惯说“打开终端”。</p>
-<p>值得注意的是，在 Windows 10 的最新版本中，微软推出了全新的 <strong><a href="https://github.com/microsoft/terminal" target="_blank" rel="noopener">Windows Terminal</a></strong>，用以取代老旧且功能匮乏的控制台窗口。</p>
+<p>值得注意的是，在 Windows 10 的最新版本中，微软推出了全新的 **<a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal">Windows Terminal</a>**，用以取代老旧且功能匮乏的控制台窗口。</p>
 
     </div>
 
@@ -418,19 +421,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -442,19 +445,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -485,12 +488,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -532,9 +535,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -543,7 +554,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

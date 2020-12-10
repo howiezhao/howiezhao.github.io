@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,17 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="reStructuredText 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 reST，文件后缀名为 .rst，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。 基本语法标题12345678这是一级标题============这是二级标题------------这是三级标题***********">
+  <meta name="description" content="reStructuredText 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 reST，文件后缀名为 .rst，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。 基本语法标题12345678这是一级标题&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&amp;#x3D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="reStructuredText 小记">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/17/restructuredtext/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="reStructuredText 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 reST，文件后缀名为 .rst，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。 基本语法标题12345678这是一级标题============这是二级标题------------这是三级标题***********">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:description" content="reStructuredText 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 reST，文件后缀名为 .rst，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。 基本语法标题12345678这是一级标题&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&amp;#x3D">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-09-17T12:32:11.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="reStructuredText 小记">
-<meta name="twitter:description" content="reStructuredText 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 reST，文件后缀名为 .rst，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。 基本语法标题12345678这是一级标题============这是二级标题------------这是三级标题***********">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/17/restructuredtext/">
 
@@ -110,6 +110,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -282,38 +283,49 @@
 
       
         <p><strong>reStructuredText</strong> 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 <strong>reST</strong>，文件后缀名为 <code>.rst</code>，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
-<p>reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。<br><a id="more"></a></p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
+
+<p>reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。</p>
+<a id="more"></a>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>和 Markdown 一样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`Howie&apos;s Blog &lt;http://howiezhao.com&gt;`_</span><br></pre></td></tr></table></figure>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;Howie&#39;s Blog &lt;http:&#x2F;&#x2F;howiezhao.com&gt;&#96;_</span><br></pre></td></tr></table></figure>
+
 <h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+
 <p>这是一条水平区分线，用 4 个或以上的短横线表示</p>
 <h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，reST 使用 <code>\</code> 转义特殊字符。</p>
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>注释以两个点和一个空格开始。如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..  这是一行注释</span><br></pre></td></tr></table></figure>
-<h2 id="Interpreted-Text-Roles"><a href="#Interpreted-Text-Roles" class="headerlink" title="Interpreted Text Roles"></a>Interpreted Text Roles</h2><p><strong>Interpreted Text Roles</strong>（直译为“<strong>解释文本角色</strong>”）是 reST 中非常重要的一个概念，<strong>Interpreted Text</strong>（解释文本）是指以一对 <code>`</code> 包裹起来的文本，<strong>Role</strong>（角色）是指 interpreted text（解释文本）的显示规则。Interpreted Text（解释文本）的语法为 <code>:role:`text`</code> 或 <code>`text`:role:</code>，功能是根据 <code>role</code>（角色）规则对 <code>text</code>（文本）进行 interprete（解释）。</p>
+
+<h2 id="Interpreted-Text-Roles"><a href="#Interpreted-Text-Roles" class="headerlink" title="Interpreted Text Roles"></a>Interpreted Text Roles</h2><p><strong>Interpreted Text Roles</strong>（直译为“<strong>解释文本角色</strong>”）是 reST 中非常重要的一个概念，<strong>Interpreted Text</strong>（解释文本）是指以一对 <code>`</code> 包裹起来的文本，**Role**（角色）是指 interpreted text（解释文本）的显示规则。Interpreted Text（解释文本）的语法为 <code>:role:`text`</code> 或 <code>`text`:role:</code>，功能是根据 <code>role</code>（角色）规则对 <code>text</code>（文本）进行 interprete（解释）。</p>
 <h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>和 Markdown 一样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*斜体*，等价于 :emphasis:`斜体`</span><br><span class="line">**粗体**，等价于 :strong:`粗体`</span><br></pre></td></tr></table></figure>
-<h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">``这里是单行代码``，等价于:literal:`这里是单行代码`</span><br></pre></td></tr></table></figure>
-<p>要了解更多 reST 中内置的 roles，可参考 <a href="http://docutils.sourceforge.net/docs/ref/rst/roles.html" target="_blank" rel="noopener">Docutils 官方文档</a>。</p>
-<p>当然，你也可以按照自己的需求自定义 roles，具体可参考 <a href="http://docutils.sourceforge.net/docs/howto/rst-roles.html" target="_blank" rel="noopener">Docutils 官方文档</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*斜体*，等价于 :emphasis:&#96;斜体&#96;</span><br><span class="line">**粗体**，等价于 :strong:&#96;粗体&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;这里是单行代码&#96;&#96;，等价于:literal:&#96;这里是单行代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>要了解更多 reST 中内置的 roles，可参考 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/docs/ref/rst/roles.html">Docutils 官方文档</a>。</p>
+<p>当然，你也可以按照自己的需求自定义 roles，具体可参考 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/docs/howto/rst-roles.html">Docutils 官方文档</a>。</p>
 <h2 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h2><p><strong>Directives</strong>（直译为“<strong>指令</strong>”）是 reST 中另一个非常重要的概念，Directive（指令）具有如下语法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+-------+-------------------------------+</span><br><span class="line">| &quot;.. &quot; | directive type &quot;::&quot; directive |</span><br><span class="line">+-------+ block                         |</span><br><span class="line">        |                               |</span><br><span class="line">        +-------------------------------+</span><br></pre></td></tr></table></figure>
+
 <p>Directive（指令）以明确的标记开始（两个句点和一个空格），后跟 directive type（指令类型）和两个冒号，统称为“<strong>directive marker（指令标记）</strong>”。directive block（指令块）在 directive marker（指令标记）之后立即开始，并包括所有后续的缩进行。directive block（指令块）分为 arguments（参数），options（选项，即字段列表）和 content（内容，按此顺序），其中任何一个都可能出现。</p>
 <h3 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.. code:: python</span><br><span class="line"></span><br><span class="line">  def my_function():</span><br><span class="line">      print(&quot;hello&quot;)</span><br></pre></td></tr></table></figure>
+
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.. image:: picture.png</span><br><span class="line">   :alt: 当图片无法显示时，则显示这里的语句。</span><br></pre></td></tr></table></figure>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>要了解更多 reST 中内置的 directives，可参考 <a href="http://docutils.sourceforge.net/docs/ref/rst/directives.html" target="_blank" rel="noopener">Docutils 官方文档</a>。</p>
-<p>当然，你也可以按照自己的需求自定义 directives，具体可参考 <a href="http://docutils.sourceforge.net/docs/howto/rst-directives.html" target="_blank" rel="noopener">Docutils 官方文档</a>。</p>
+
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>要了解更多 reST 中内置的 directives，可参考 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">Docutils 官方文档</a>。</p>
+<p>当然，你也可以按照自己的需求自定义 directives，具体可参考 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/docs/howto/rst-directives.html">Docutils 官方文档</a>。</p>
 <h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
 <li>在特殊字符与要书写的文字之间加上空格，否则可能无法正常显示</li>
 <li>不同段之间加一空行</li>
 </ol>
 <h2 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h2><p>语言只是一种标准，实现该标准就需要相应的解析器，由于 reST 是 Docutils 项目的一部分，所以 reST 最初的解析器正是由 Docutils 提供的，当你使用 <code>pip install docutils</code> 命令安装 Docutils 之后，可以运行 <code>rst2html &lt;rst file&gt; &lt;html file&gt;</code> 命令，将 reST 文件转换为 HTML 文件。</p>
-<p>要了解更多的命令可参考 <a href="http://docutils.sourceforge.net/docs/user/tools.html" target="_blank" rel="noopener">Docutils 官方文档</a>。</p>
+<p>要了解更多的命令可参考 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/docs/user/tools.html">Docutils 官方文档</a>。</p>
 <h2 id="与-Markdown-相比"><a href="#与-Markdown-相比" class="headerlink" title="与 Markdown 相比"></a>与 Markdown 相比</h2><p>与 Markdown 相比，reST 更具扩展性，特别是 directives 的出现，可以按照需求自定义各种各样的 directives 来扩展 reST。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="http://rst.ninjs.org/" target="_blank" rel="noopener">这里</a>有一个在线的 reST 编辑器。</p>
-<p>要了解更多关于 reST 的知识可参考 <a href="http://docutils.sourceforge.net/rst.html" target="_blank" rel="noopener">Docutils 官方文档</a>，或者 <a href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html" target="_blank" rel="noopener">Sphinx 官方文档</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a target="_blank" rel="noopener" href="http://rst.ninjs.org/">这里</a>有一个在线的 reST 编辑器。</p>
+<p>要了解更多关于 reST 的知识可参考 <a target="_blank" rel="noopener" href="http://docutils.sourceforge.net/rst.html">Docutils 官方文档</a>，或者 <a target="_blank" rel="noopener" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">Sphinx 官方文档</a>。</p>
 
     </div>
 
@@ -396,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">1.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">1.2.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.3.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#横线"><span class="nav-number">1.4.</span> <span class="nav-text">横线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义"><span class="nav-number">1.5.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">1.6.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpreted-Text-Roles"><span class="nav-number">2.</span> <span class="nav-text">Interpreted Text Roles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">2.1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单行代码"><span class="nav-number">2.2.</span> <span class="nav-text">单行代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directives"><span class="nav-number">3.</span> <span class="nav-text">Directives</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多行代码"><span class="nav-number">3.1.</span> <span class="nav-text">多行代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">3.2.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">3.3.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">3.4.</span> <span class="nav-text">引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳实践"><span class="nav-number">4.</span> <span class="nav-text">最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析器"><span class="nav-number">5.</span> <span class="nav-text">解析器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与-Markdown-相比"><span class="nav-number">6.</span> <span class="nav-text">与 Markdown 相比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">7.</span> <span class="nav-text">更多</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">1.3.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E7%BA%BF"><span class="nav-number">1.4.</span> <span class="nav-text">横线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89"><span class="nav-number">1.5.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.6.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpreted-Text-Roles"><span class="nav-number">2.</span> <span class="nav-text">Interpreted Text Roles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-number">2.1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">单行代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directives"><span class="nav-number">3.</span> <span class="nav-text">Directives</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">多行代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">3.2.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">3.3.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">3.4.</span> <span class="nav-text">引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">4.</span> <span class="nav-text">最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">解析器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E-Markdown-%E7%9B%B8%E6%AF%94"><span class="nav-number">6.</span> <span class="nav-text">与 Markdown 相比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A"><span class="nav-number">7.</span> <span class="nav-text">更多</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -432,19 +444,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -456,19 +468,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -499,12 +511,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -546,9 +558,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -557,7 +577,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,17 +47,17 @@
 </script>
 
   <meta name="description" content="不同Linux发行版的主要区别是其包管理机制不同，Linux发行版大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat">
-<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux的包管理机制">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/09/linux-package/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="不同Linux发行版的主要区别是其包管理机制不同，Linux发行版大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-05-09T05:43:55.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux的包管理机制">
-<meta name="twitter:description" content="不同Linux发行版的主要区别是其包管理机制不同，Linux发行版大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用rpm为其包格式，yum为其包管理工具；Debian系采用dpkg为其包格式，apt-get为其包管理工具。 rpm与yumrpm全称Red-Hat">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/05/09/linux-package/">
 
@@ -111,6 +111,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -283,14 +284,20 @@
 
       
         <p>不同Linux发行版的主要区别是其包管理机制不同，Linux发行版大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p>
-<h2 id="rpm与yum"><a href="#rpm与yum" class="headerlink" title="rpm与yum"></a>rpm与yum</h2><p><code>rpm</code>全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -i a.rpm  <span class="comment">#安装a</span></span><br><span class="line">rpm -e a      <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>
-<p><code>yum</code>全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum update     <span class="comment">#更新包列表</span></span><br><span class="line">yum upgrade    <span class="comment">#更新包</span></span><br><span class="line">yum install a  <span class="comment">#安装a</span></span><br><span class="line">yum remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="rpm与yum"><a href="#rpm与yum" class="headerlink" title="rpm与yum"></a>rpm与yum</h2><p><code>rpm</code>全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -i a.rpm  <span class="comment">#安装a</span></span><br><span class="line">rpm -e a      <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure>
+<p><code>yum</code>全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum update     <span class="comment">#更新包列表</span></span><br><span class="line">yum upgrade    <span class="comment">#更新包</span></span><br><span class="line">yum install a  <span class="comment">#安装a</span></span><br><span class="line">yum remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></span><br><span class="line">dpkg -r a       <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure></p>
-<p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，apt的程序包来源列表文件位于<code>/etc/apt/sources.list</code>，<code>apt-get</code>的常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update     <span class="comment">#更新包列表</span></span><br><span class="line">sudo apt-get upgrade    <span class="comment">#更新包</span></span><br><span class="line">sudo apt-get install a  <span class="comment">#安装a</span></span><br><span class="line">sudo apt-get purge a    <span class="comment">#卸载a并删除其配置文件（即彻底删除），命令作用等同于apt-get --purge remove a</span></span><br></pre></td></tr></table></figure></p>
-<p>同样的，<code>apt-cache</code>也是apt中的一个子程序，它的常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-cache depends a  <span class="comment">#查看包a的依赖包</span></span><br></pre></td></tr></table></figure></p>
-<p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update     <span class="comment">#更新包列表</span></span><br><span class="line">sudo apt upgrade    <span class="comment">#更新包</span></span><br><span class="line">sudo apt install a  <span class="comment">#安装a</span></span><br><span class="line">sudo apt purge a    <span class="comment">#卸载a并删除其配置文件（即彻底删除），命令作用等同于apt --purge remove a</span></span><br><span class="line">sudo apt list --installed  <span class="comment">#查看已安装的包</span></span><br></pre></td></tr></table></figure></p>
-<p>关于Ubuntu中程序包的搜索可以使用<a href="https://packages.ubuntu.com/" target="_blank" rel="noopener">Ubuntu Packages Search</a>。</p>
+<h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></span><br><span class="line">dpkg -r a       <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure>
+<p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，apt的程序包来源列表文件位于<code>/etc/apt/sources.list</code>，<code>apt-get</code>的常用命令有：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update     <span class="comment">#更新包列表</span></span><br><span class="line">sudo apt-get upgrade    <span class="comment">#更新包</span></span><br><span class="line">sudo apt-get install a  <span class="comment">#安装a</span></span><br><span class="line">sudo apt-get purge a    <span class="comment">#卸载a并删除其配置文件（即彻底删除），命令作用等同于apt-get --purge remove a</span></span><br></pre></td></tr></table></figure>
+<p>同样的，<code>apt-cache</code>也是apt中的一个子程序，它的常用命令有：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-cache depends a  <span class="comment">#查看包a的依赖包</span></span><br></pre></td></tr></table></figure>
+<p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update     <span class="comment">#更新包列表</span></span><br><span class="line">sudo apt upgrade    <span class="comment">#更新包</span></span><br><span class="line">sudo apt install a  <span class="comment">#安装a</span></span><br><span class="line">sudo apt purge a    <span class="comment">#卸载a并删除其配置文件（即彻底删除），命令作用等同于apt --purge remove a</span></span><br><span class="line">sudo apt list --installed  <span class="comment">#查看已安装的包</span></span><br></pre></td></tr></table></figure>
+<p>关于Ubuntu中程序包的搜索可以使用<a target="_blank" rel="noopener" href="https://packages.ubuntu.com/">Ubuntu Packages Search</a>。</p>
 
     </div>
 
@@ -376,7 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rpm与yum"><span class="nav-number">1.</span> <span class="nav-text">rpm与yum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dpkg与apt-get"><span class="nav-number">2.</span> <span class="nav-text">dpkg与apt-get</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rpm%E4%B8%8Eyum"><span class="nav-number">1.</span> <span class="nav-text">rpm与yum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dpkg%E4%B8%8Eapt-get"><span class="nav-number">2.</span> <span class="nav-text">dpkg与apt-get</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,19 +419,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -436,19 +443,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -479,12 +486,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -526,9 +533,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -537,7 +552,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

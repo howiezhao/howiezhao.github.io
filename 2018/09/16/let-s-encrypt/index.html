@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -46,18 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="Let&amp;#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
-<meta name="keywords" content="Web">
+  <meta name="description" content="Let&#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Let&#39;s Encrypt获取免费SSL证书">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/16/let-s-encrypt/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Let&amp;#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-18T11:13:29.000Z">
+<meta property="og:description" content="Let&#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-09-16T14:38:04.000Z">
+<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Let&#39;s Encrypt获取免费SSL证书">
-<meta name="twitter:description" content="Let&amp;#39;s Encrypt是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：Certbot，可以用来获取SSL证书。进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：">
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/09/16/let-s-encrypt/">
 
@@ -111,6 +111,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -282,11 +283,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://letsencrypt.org/zh-cn/" target="_blank" rel="noopener">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：<br><a id="more"></a></p>
+        <p><a target="_blank" rel="noopener" href="https://letsencrypt.org/zh-cn/">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：</p>
+<a id="more"></a>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载certbot-auto脚本</span></span><br><span class="line">wget https://dl.eff.org/certbot-auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置相关权限</span></span><br><span class="line">chmod a+x certbot-auto</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>请注意，获取或更新SSL证书之前需关闭相应的Web服务器，具体而言，需要执行<code>service nginx stop</code>。另外，第一次执行<code>certbot-auto</code>命令时，它会下载并安装相关环境，耐心等待即可。<br>Certbot提供了一个Nginx插件，直接使用<code>./certbot-auto --nginx</code>即可完成所有配置。<br>如果你想手动配置，可执行<code>./certbot-auto certonly --standalone</code>命令，此命令运行过程中会要求用户输入要获取SSl证书的域名，按要求输入即可，命令运行成功后会显示证书相关文件所在的目录。<br>接下来只需在Nginx的配置文件<code>nginx.conf</code>中进行如下配置即可(以howiezhao.com域名为例)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssl on;</span><br><span class="line">ssl_certificate /etc/letsencrypt/live/howiezhao.com/fullchain.pem;</span><br><span class="line">ssl_certificate_key /etc/letsencrypt/live/howiezhao.com/privkey.pem;</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>请注意，获取或更新SSL证书之前需关闭相应的Web服务器，具体而言，需要执行<code>service nginx stop</code>。另外，第一次执行<code>certbot-auto</code>命令时，它会下载并安装相关环境，耐心等待即可。<br>Certbot提供了一个Nginx插件，直接使用<code>./certbot-auto --nginx</code>即可完成所有配置。<br>如果你想手动配置，可执行<code>./certbot-auto certonly --standalone</code>命令，此命令运行过程中会要求用户输入要获取SSl证书的域名，按要求输入即可，命令运行成功后会显示证书相关文件所在的目录。<br>接下来只需在Nginx的配置文件<code>nginx.conf</code>中进行如下配置即可(以howiezhao.com域名为例)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssl on;</span><br><span class="line">ssl_certificate /etc/letsencrypt/live/howiezhao.com/fullchain.pem;</span><br><span class="line">ssl_certificate_key /etc/letsencrypt/live/howiezhao.com/privkey.pem;</span><br></pre></td></tr></table></figure>
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>Let&#39;s Encrypt的证书默认时间为90天，当到期后，需要使用<code>./certbot-auto renew</code>命令进行证书更新。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要查看<code>certbot-auto</code>的更多命令，可以使用<code>certbot-auto --help all</code>命令查看之。要了解SSL的详细知识，可参考我之前写的笔记<a href="http://localhost:4000/2018/05/11/https/" target="_blank" rel="noopener">HTTPS运行机制</a>。要了解Nginx的相关知识，可参考我之前写的笔记<a href>利用Nginx进行反向代理</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要查看<code>certbot-auto</code>的更多命令，可以使用<code>certbot-auto --help all</code>命令查看之。要了解SSL的详细知识，可参考我之前写的笔记<a target="_blank" rel="noopener" href="http://localhost:4000/2018/05/11/https/">HTTPS运行机制</a>。要了解Nginx的相关知识，可参考我之前写的笔记<a href="">利用Nginx进行反向代理</a>。</p>
 
     </div>
 
@@ -372,7 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多"><span class="nav-number">4.</span> <span class="nav-text">更多</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A"><span class="nav-number">4.</span> <span class="nav-text">更多</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -408,19 +411,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -432,19 +435,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -475,12 +478,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -522,9 +525,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -533,7 +544,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

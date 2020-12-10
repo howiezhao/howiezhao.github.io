@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -52,10 +52,9 @@
 <meta property="og:url" content="https://howiezhao.github.io/page/6/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Stay Hungry, Stay Foolish">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Howie&#39;s Notes">
-<meta name="twitter:description" content="Stay Hungry, Stay Foolish">
 
 <link rel="canonical" href="https://howiezhao.github.io/page/6/">
 
@@ -109,6 +108,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -274,8 +274,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在几乎所有的Linux发行版中，都会自带vi文本编辑器，而<a href="https://www.vim.org/" target="_blank" rel="noopener">Vim</a>（Vi IMproved）则是vi的一个增强版，大多数Linux中也都预装了Vim，若没有安装，可使用相应的包管理工具进行安装，具体而言，在Ubuntu中，使用<code>sudo apt install vim</code>即可安装。输入<code>vim --version</code>可以查看所使用的Vim版本，当前最新版本为Vim 8.x。值得注意的是，在有的系统中，<code>vi</code>命令实际是指向<code>vim</code>命令的一个链接，使用<code>which vi</code>即可证实。</p>
-<p>在2015年，开源组织发布了<a href="https://neovim.io/" target="_blank" rel="noopener">Neovim</a>项目，它是Vim的重构版本，需自行安装。另外，GVim是Vim的一个图形客户端。<br>
+          <p>在几乎所有的Linux发行版中，都会自带vi文本编辑器，而<a target="_blank" rel="noopener" href="https://www.vim.org/">Vim</a>（Vi IMproved）则是vi的一个增强版，大多数Linux中也都预装了Vim，若没有安装，可使用相应的包管理工具进行安装，具体而言，在Ubuntu中，使用<code>sudo apt install vim</code>即可安装。输入<code>vim --version</code>可以查看所使用的Vim版本，当前最新版本为Vim 8.x。值得注意的是，在有的系统中，<code>vi</code>命令实际是指向<code>vim</code>命令的一个链接，使用<code>which vi</code>即可证实。</p>
+<p>在2015年，开源组织发布了<a target="_blank" rel="noopener" href="https://neovim.io/">Neovim</a>项目，它是Vim的重构版本，需自行安装。另外，GVim是Vim的一个图形客户端。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/09/18/vim/#more" rel="contents">
@@ -359,10 +359,11 @@
 
       
           <p>众所周知，Bash 几乎是所有 Linux 发行版预装的 Shell，但 Zsh 却能带给你更强大的功能。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先，执行 <code>echo $SHELL</code> 可以查看你当前所使用的 Shell，如果不是 Zsh，则可以接着执行 <code>cat /etc/shells</code> 查看你当前系统所支持的 Shell，如果里面没有 Zsh（在 macOS 中是自带 Zsh 的），则你需要下载安装 Zsh，在 Ubuntu 中，只需要 <code>sudo apt install zsh</code> 一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code> 即可（执行完此命令后通常需要重启一下才能生效），但它的配置却相当复杂，由此诞生了 <a href="https://ohmyz.sh/" target="_blank" rel="noopener">Oh My Zsh</a> 项目，该项目的主要目的是简化 Zsh 的配置。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先，执行 <code>echo $SHELL</code> 可以查看你当前所使用的 Shell，如果不是 Zsh，则可以接着执行 <code>cat /etc/shells</code> 查看你当前系统所支持的 Shell，如果里面没有 Zsh（在 macOS 中是自带 Zsh 的），则你需要下载安装 Zsh，在 Ubuntu 中，只需要 <code>sudo apt install zsh</code> 一条命令即可，启用也很简单，<code>chsh -s $(which zsh)</code> 即可（执行完此命令后通常需要重启一下才能生效），但它的配置却相当复杂，由此诞生了 <a target="_blank" rel="noopener" href="https://ohmyz.sh/">Oh My Zsh</a> 项目，该项目的主要目的是简化 Zsh 的配置。</p>
 <p>Oh My Zsh 的官网给出了利用 <code>curl</code> 或 <code>wget</code> 安装的详细命令，具体如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 Oh My Zsh 前需要安装 git（`sudo apt install git`）</span></span><br><span class="line"><span class="comment"># 通过 curl 安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br><span class="line"><span class="comment"># 通过 wget 安装</span></span><br><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure>
-<p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中 <code>.zshrc</code> 类似于 <code>.bashrc</code>，存放 zsh 的配置信息；<br><code>.zsh_history</code> 类似于 <code>.bash_history</code>，存放 zsh 的命令历史记录；<br><code>.oh-my-zsh</code> 的文件夹则是 Oh My Zsh 项目 GitHub 仓库的克隆版，其中的 <code>themes</code> 文件夹下主要存放自带的主题，<code>plugins</code> 文件夹下主要存放自带的插件，<code>custom</code> 文件夹下主要存放用户自己下载的主题和插件。<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 Oh My Zsh 前需要安装 git（`sudo apt install git`）</span></span><br><span class="line"><span class="comment"># 通过 curl 安装</span></span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>&quot;</span></span><br><span class="line"><span class="comment"># 通过 wget 安装</span></span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中 <code>.zshrc</code> 类似于 <code>.bashrc</code>，存放 zsh 的配置信息；<br><code>.zsh_history</code> 类似于 <code>.bash_history</code>，存放 zsh 的命令历史记录；<br><code>.oh-my-zsh</code> 的文件夹则是 Oh My Zsh 项目 GitHub 仓库的克隆版，其中的 <code>themes</code> 文件夹下主要存放自带的主题，<code>plugins</code> 文件夹下主要存放自带的插件，<code>custom</code> 文件夹下主要存放用户自己下载的主题和插件。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/09/18/zsh/#more" rel="contents">
@@ -446,8 +447,9 @@
 
       
           <p><strong>reStructuredText</strong> 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 <strong>reST</strong>，文件后缀名为 <code>.rst</code>，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
-<p>reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。<br>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
+
+<p>reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/09/17/restructuredtext/#more" rel="contents">
@@ -530,7 +532,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a href="https://letsencrypt.org/zh-cn/" target="_blank" rel="noopener">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：<br>
+          <p><a target="_blank" rel="noopener" href="https://letsencrypt.org/zh-cn/">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/09/16/let-s-encrypt/#more" rel="contents">
@@ -690,8 +692,8 @@
 
       
           <p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
-<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/" target="_blank" rel="noopener"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/" target="_blank" rel="noopener"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。</p>
-<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。<br>
+<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a target="_blank" rel="noopener" href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a target="_blank" rel="noopener" href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。</p>
+<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/09/16/ipython/#more" rel="contents">
@@ -930,8 +932,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="TeX与LaTeX"><a href="#TeX与LaTeX" class="headerlink" title="TeX与LaTeX"></a>TeX与LaTeX</h2><p><a href="https://www.tug.org/begin.html" target="_blank" rel="noopener">TeX</a>是由<a href="https://zh.wikipedia.org/zh-cn/%E9%AB%98%E5%BE%B7%E7%BA%B3" target="_blank" rel="noopener">Donald Knuth</a>开发的一个排版系统，特别适合处理复杂的数学公式等。之后，<a href="https://zh.wikipedia.org/zh-cn/%E8%8E%B1%E6%96%AF%E5%88%A9%C2%B7%E5%85%B0%E6%B3%A2%E7%89%B9" target="_blank" rel="noopener">Leslie Lamport</a>改进了TeX，形成了<a href="https://www.latex-project.org/" target="_blank" rel="noopener">LaTeX</a>(Lamport TeX)。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a>是一个JavaScript引擎，可以用来在网页上显示使用LaTeX语言书写的数学公式。<br><a href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn" target="_blank" rel="noopener">在线LaTeX公式编辑器</a>是一个将公式符号转化为LaTeX语言的网站，对于尚不熟悉的人书写LaTeX公式提供一点便利。<br><a href="https://cn.sharelatex.com/" target="_blank" rel="noopener">ShareLaTeX</a>是一个在线的LaTeX编辑环境，同时也提供了足够多的LaTeX模板。</p>
+          <h2 id="TeX与LaTeX"><a href="#TeX与LaTeX" class="headerlink" title="TeX与LaTeX"></a>TeX与LaTeX</h2><p><a target="_blank" rel="noopener" href="https://www.tug.org/begin.html">TeX</a>是由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E9%AB%98%E5%BE%B7%E7%BA%B3">Donald Knuth</a>开发的一个排版系统，特别适合处理复杂的数学公式等。之后，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E8%8E%B1%E6%96%AF%E5%88%A9%C2%B7%E5%85%B0%E6%B3%A2%E7%89%B9">Leslie Lamport</a>改进了TeX，形成了<a target="_blank" rel="noopener" href="https://www.latex-project.org/">LaTeX</a>(Lamport TeX)。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a target="_blank" rel="noopener" href="https://www.mathjax.org/">MathJax</a>是一个JavaScript引擎，可以用来在网页上显示使用LaTeX语言书写的数学公式。<br><a target="_blank" rel="noopener" href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn">在线LaTeX公式编辑器</a>是一个将公式符号转化为LaTeX语言的网站，对于尚不熟悉的人书写LaTeX公式提供一点便利。<br><a target="_blank" rel="noopener" href="https://cn.sharelatex.com/">ShareLaTeX</a>是一个在线的LaTeX编辑环境，同时也提供了足够多的LaTeX模板。</p>
 
       
     </div>
@@ -1114,19 +1116,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -1138,19 +1140,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -1181,12 +1183,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -1228,9 +1230,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -1239,7 +1249,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 

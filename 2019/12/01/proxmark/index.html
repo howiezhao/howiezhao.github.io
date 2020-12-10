@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -47,22 +47,22 @@
 </script>
 
   <meta name="description" content="Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 proxmark.org，其他的如 proxmark.com、proxmark3.com 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。">
-<meta name="keywords" content="硬件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Proxmark 入坑指南">
 <meta property="og:url" content="https://howiezhao.github.io/2019/12/01/proxmark/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 proxmark.org，其他的如 proxmark.com、proxmark3.com 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://proxmark.com/user/pages/03.proxmark-3-hardware/05.proxmark-3/PM3-Trans.png">
 <meta property="og:image" content="https://proxmark.com/user/pages/03.proxmark-3-hardware/03.proxmark-3-rdv-2/PM3-RDV2-Trans.png">
 <meta property="og:image" content="https://proxmark.com/user/pages/03.proxmark-3-hardware/04.proxmark-3-easy/PM3-Easy-Trans.png">
 <meta property="og:image" content="https://proxmark.com/user/pages/03.proxmark-3-hardware/02.proxmark-3-evo/PM3-Evo-Trans.png">
 <meta property="og:image" content="https://proxmark.com/user/pages/03.proxmark-3-hardware/01.proxmark-3-rdv4/PM3-RDV4-Trans.png">
-<meta property="og:updated_time" content="2020-02-05T12:51:43.000Z">
+<meta property="article:published_time" content="2019-12-01T05:37:30.000Z">
+<meta property="article:modified_time" content="2020-02-05T12:51:43.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="硬件">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Proxmark 入坑指南">
-<meta name="twitter:description" content="Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 proxmark.org，其他的如 proxmark.com、proxmark3.com 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。">
 <meta name="twitter:image" content="https://proxmark.com/user/pages/03.proxmark-3-hardware/05.proxmark-3/PM3-Trans.png">
 
 <link rel="canonical" href="https://howiezhao.github.io/2019/12/01/proxmark/">
@@ -117,6 +117,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -288,8 +289,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 <a href="http://www.proxmark.org/" target="_blank" rel="noopener">proxmark.org</a>，其他的如 <a href="https://proxmark.com/" target="_blank" rel="noopener">proxmark.com</a>、<a href="https://www.proxmark3.com/" target="_blank" rel="noopener">proxmark3.com</a> 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。</p>
+        <p>Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 <a target="_blank" rel="noopener" href="http://www.proxmark.org/">proxmark.org</a>，其他的如 <a target="_blank" rel="noopener" href="https://proxmark.com/">proxmark.com</a>、<a target="_blank" rel="noopener" href="https://www.proxmark3.com/">proxmark3.com</a> 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。</p>
 <a id="more"></a>
+
 <h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><ul>
 <li>Proxmark 3：这是 Proxmark 3 的原始版本，现已过时，不建议购买，产品图如下：</li>
 </ul>
@@ -310,8 +312,8 @@
 <li>Proxmark 3 RDV 4：这是 Proxmark 3 的最新升级版本，产品图如下：</li>
 </ul>
 <p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/01.proxmark-3-rdv4/PM3-RDV4-Trans.png" alt="Proxmark 3 RDV 4"></p>
-<h2 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h2><p>Proxmark 只有 2 个官方分销商：<a href="https://lab401.com/" target="_blank" rel="noopener">Lab401</a> 和 <a href="https://hackerwarehouse.com/" target="_blank" rel="noopener">Hacker Warehouse</a>，当然，你也可以从万能的淘宝上购买。</p>
-<p>请注意，淘宝上的版本号并不规范，据我所知，淘宝上的大部分产品都是基于 Proxmark 3 Easy 的国内再次改造版，比如，它们所谓的<strong>“一体机”</strong>实际上是 Proxmark 3 Easy 和 <a href="https://github.com/iceman1001/ChameleonMini-rebooted" target="_blank" rel="noopener">ChameleonMini（变色龙）</a>的合体版。</p>
+<h2 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h2><p>Proxmark 只有 2 个官方分销商：<a target="_blank" rel="noopener" href="https://lab401.com/">Lab401</a> 和 <a target="_blank" rel="noopener" href="https://hackerwarehouse.com/">Hacker Warehouse</a>，当然，你也可以从万能的淘宝上购买。</p>
+<p>请注意，淘宝上的版本号并不规范，据我所知，淘宝上的大部分产品都是基于 Proxmark 3 Easy 的国内再次改造版，比如，它们所谓的<strong>“一体机”</strong>实际上是 Proxmark 3 Easy 和 <a target="_blank" rel="noopener" href="https://github.com/iceman1001/ChameleonMini-rebooted">ChameleonMini（变色龙）</a>的合体版。</p>
 
     </div>
 
@@ -321,7 +323,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/硬件/" rel="tag"># 硬件</a>
+              <a href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag"># 硬件</a>
           </div>
 
         
@@ -397,7 +399,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#产品"><span class="nav-number">1.</span> <span class="nav-text">产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#购买"><span class="nav-number">2.</span> <span class="nav-text">购买</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A7%E5%93%81"><span class="nav-number">1.</span> <span class="nav-text">产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0"><span class="nav-number">2.</span> <span class="nav-text">购买</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -433,19 +435,19 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https://github.com/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https://stackoverflow.com/users/6312748/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https://www.zhihu.com/people/howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https://space.bilibili.com/23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -457,19 +459,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http://howiezhao.com/" rel="noopener" target="_blank">Howie's Blog</a>
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io" title="https://tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com" title="http://bururen.com" rel="noopener" target="_blank">Twelvelv</a>
+          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io" title="https://wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https://blog.csdn.net/qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
         </li>
     </ul>
   </div>
@@ -500,12 +502,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">138k</span>
+    <span title="Symbols count total">129k</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -547,9 +549,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
@@ -558,7 +568,9 @@
 
 
 
-  <script src="/js/local-search.js"></script>
+  
+<script src="/js/local-search.js"></script>
+
 
 
 
