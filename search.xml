@@ -231,25 +231,6 @@
       </tags>
   </entry>
   <entry>
-    <title>身份认证的几种方式</title>
-    <url>/2018/11/16/authentication/</url>
-    <content><![CDATA[<p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
-<p>身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：</p>
-<a id="more"></a>
-<h2 id="基于生物学特征的身份认证"><a href="#基于生物学特征的身份认证" class="headerlink" title="基于生物学特征的身份认证"></a>基于生物学特征的身份认证</h2><p>基于生物学特征的身份认证是指基于每个人身体上独一无二的特征，如指纹、虹膜等等。</p>
-<p>这种认证方式极具便利性，但同时安全性也最低，此外，生物学特征信息一旦泄露，无法更改。</p>
-<h2 id="基于共享密钥的身份认证"><a href="#基于共享密钥的身份认证" class="headerlink" title="基于共享密钥的身份认证"></a>基于共享密钥的身份认证</h2><p>基于共享密钥的身份认证是指服务器端和用户共同拥有一个或一组密码。用户通过输入或通过保管有密码的设备提交由用户和服务器共同拥有的密码，服务器检查用户所提交的密码是否与服务器端保存的密码一致，如果一致，就判断用户为合法用户，否则判定身份验证失败。</p>
-<p>这种认证方式是目前互联网上所广泛应用的。</p>
-<h2 id="基于公钥加密算法的身份认证"><a href="#基于公钥加密算法的身份认证" class="headerlink" title="基于公钥加密算法的身份认证"></a>基于公钥加密算法的身份认证</h2><p>基于公钥加密算法的身份认证是指通信中的双方分别持有公钥和私钥，由其中的一方采用私钥对特定数据进行加密，而对方采用公钥对数据进行解密，如果解密成功，就认为用户是合法用户，否则就认为是身份验证失败。</p>
-<p>很难说明，<strong>基于共享密钥的身份认证</strong>和<strong>基于公钥加密算法的身份认证</strong>哪个更为安全，<strong>基于共享密钥的身份认证</strong>的不安全处主要在于共享密钥的传播过程中，而<strong>基于公钥加密算法的身份认证</strong>的不安全处则主要在于私钥的存储过程中。</p>
-<hr>
-<p>为了提升身份认证的安全性，有时会结合使用以上三种认证方式，这便是<strong>多因素认证</strong>（Multi-factor authentication），如果只使用了以上三种认证方式中的两种，则又称为<strong>双因素认证</strong>（Two-factor authentication），简称 <strong>2FA</strong>。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>汇编语言小记</title>
     <url>/2019/03/09/assembly/</url>
     <content><![CDATA[<p><strong>汇编语言</strong>（Assembly Language，简称 <strong>ASM</strong>）由<strong>汇编指令</strong>、<strong>伪指令</strong>和<strong>其他符号</strong>组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。</p>
@@ -413,6 +394,25 @@
 <h2 id="内联汇编"><a href="#内联汇编" class="headerlink" title="内联汇编"></a>内联汇编</h2><p>内联汇编（Inline Assembly）是指在 C 代码中嵌入汇编代码，显然，其语法是由具体的 C 编译器所决定的，这里主要以 GNU 中的 gcc 编译器为例简述其语法。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要了解汇编语言更多的知识，可以阅读王爽的<a href="https://book.douban.com/subject/25726019/">《汇编语言》</a>一书，这本书基于 16 位的 8086 CPU 来讲解汇编，虽然处理器已过时，但思想永不褪色。</p>
 <p>其次，<a href="https://www.ibm.com/developerworks/cn/linux/l-assembly/index.html">Linux 汇编语言开发指南</a>，也是一篇不错的介绍文章。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>身份认证的几种方式</title>
+    <url>/2018/11/16/authentication/</url>
+    <content><![CDATA[<p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
+<p>身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：</p>
+<a id="more"></a>
+<h2 id="基于生物学特征的身份认证"><a href="#基于生物学特征的身份认证" class="headerlink" title="基于生物学特征的身份认证"></a>基于生物学特征的身份认证</h2><p>基于生物学特征的身份认证是指基于每个人身体上独一无二的特征，如指纹、虹膜等等。</p>
+<p>这种认证方式极具便利性，但同时安全性也最低，此外，生物学特征信息一旦泄露，无法更改。</p>
+<h2 id="基于共享密钥的身份认证"><a href="#基于共享密钥的身份认证" class="headerlink" title="基于共享密钥的身份认证"></a>基于共享密钥的身份认证</h2><p>基于共享密钥的身份认证是指服务器端和用户共同拥有一个或一组密码。用户通过输入或通过保管有密码的设备提交由用户和服务器共同拥有的密码，服务器检查用户所提交的密码是否与服务器端保存的密码一致，如果一致，就判断用户为合法用户，否则判定身份验证失败。</p>
+<p>这种认证方式是目前互联网上所广泛应用的。</p>
+<h2 id="基于公钥加密算法的身份认证"><a href="#基于公钥加密算法的身份认证" class="headerlink" title="基于公钥加密算法的身份认证"></a>基于公钥加密算法的身份认证</h2><p>基于公钥加密算法的身份认证是指通信中的双方分别持有公钥和私钥，由其中的一方采用私钥对特定数据进行加密，而对方采用公钥对数据进行解密，如果解密成功，就认为用户是合法用户，否则就认为是身份验证失败。</p>
+<p>很难说明，<strong>基于共享密钥的身份认证</strong>和<strong>基于公钥加密算法的身份认证</strong>哪个更为安全，<strong>基于共享密钥的身份认证</strong>的不安全处主要在于共享密钥的传播过程中，而<strong>基于公钥加密算法的身份认证</strong>的不安全处则主要在于私钥的存储过程中。</p>
+<hr>
+<p>为了提升身份认证的安全性，有时会结合使用以上三种认证方式，这便是<strong>多因素认证</strong>（Multi-factor authentication），如果只使用了以上三种认证方式中的两种，则又称为<strong>双因素认证</strong>（Two-factor authentication），简称 <strong>2FA</strong>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2111,6 +2111,19 @@
       </tags>
   </entry>
   <entry>
+    <title>后渗透测试阶段的信息收集</title>
+    <url>/2018/05/09/information-gathering-of-post-exploitation/</url>
+    <content><![CDATA[<p>浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门<br>我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="登录密码"><a href="#登录密码" class="headerlink" title="登录密码"></a>登录密码</h3><p>Windows的登录密码保存在<code>%windir%\System32\config\SAM</code>中，</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IP协议分析</title>
     <url>/2018/05/11/ip/</url>
     <content><![CDATA[<p>IP(Internet Protocol，网际协议)</p>
@@ -2122,19 +2135,6 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>后渗透测试阶段的信息收集</title>
-    <url>/2018/05/09/information-gathering-of-post-exploitation/</url>
-    <content><![CDATA[<p>浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门<br>我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。</p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h3 id="登录密码"><a href="#登录密码" class="headerlink" title="登录密码"></a>登录密码</h3><p>Windows的登录密码保存在<code>%windir%\System32\config\SAM</code>中，</p>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>渗透</tag>
       </tags>
   </entry>
   <entry>
