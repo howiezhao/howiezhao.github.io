@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,40 +15,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://howiezhao.github.io').hostname,
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
-
-  <meta name="description" content="Stay Hungry, Stay Foolish">
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Stay Hungry, Stay Foolish">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Howie&#39;s Notes">
 <meta property="og:url" content="https://howiezhao.github.io/archives/2018/09/page/2/index.html">
@@ -56,19 +33,20 @@
 <meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="https://howiezhao.github.io/archives/2018/09/page/2/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: false
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
   };
 </script>
-
-  <title>Archive | Howie's Notes</title>
+<title>Archive | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -82,89 +60,102 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Howie's Notes</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">Machine Learning and Cyber Security</p>
-  </div>
-
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Howie's Notes</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Machine Learning and Cyber Security</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -172,314 +163,46 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
-    <div class="popup search-popup">
-    <div class="search-header">
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
-           type="text" id="search-input">
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
-    </header>
 
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+    </div>
   </div>
 
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
+</div>
         
-        <span class="collection-header">Good! 117 posts in total. Keep on posting.</span>
-      </div>
-
-      
-    <div class="collection-year">
-      <h1 class="collection-header">2018</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-19T17:50:14+08:00"
-              content="2018-09-19">
-          09-19
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/19/htop-top/" itemprop="url">
-            <span itemprop="name">top的增强版：htop</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-19T17:50:05+08:00"
-              content="2018-09-19">
-          09-19
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/19/curl-wget/" itemprop="url">
-            <span itemprop="name">curl wget</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-19T17:00:22+08:00"
-              content="2018-09-19">
-          09-19
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/19/terminal-shell/" itemprop="url">
-            <span itemprop="name">terminal 与 shell</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-19T16:59:39+08:00"
-              content="2018-09-19">
-          09-19
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/19/autojump/" itemprop="url">
-            <span itemprop="name">强大的autojump</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-18T13:37:05+08:00"
-              content="2018-09-18">
-          09-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/18/so-you-want-to-work-in-security/" itemprop="url">
-            <span itemprop="name">那么，你想在安全行业工作吗？</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-18T12:23:55+08:00"
-              content="2018-09-18">
-          09-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/18/software-used-in-mr-robot/" itemprop="url">
-            <span itemprop="name">《黑客军团》中使用的软件</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-18T12:13:24+08:00"
-              content="2018-09-18">
-          09-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/18/android-root/" itemprop="url">
-            <span itemprop="name">谈谈Android的root</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-18T12:10:07+08:00"
-              content="2018-09-18">
-          09-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/18/tmux/" itemprop="url">
-            <span itemprop="name">tmux小记</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-18T12:09:54+08:00"
-              content="2018-09-18">
-          09-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/18/vim/" itemprop="url">
-            <span itemprop="name">Vim小记</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-09-18T12:09:36+08:00"
-              content="2018-09-18">
-          09-18
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2018/09/18/zsh/" itemprop="url">
-            <span itemprop="name">使用 Zsh 替代 Bash</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-
-    </div>
-  </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/09/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2018/09/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/09/page/3/">3</a><a class="page-number" href="/archives/2018/09/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/09/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
         </li>
@@ -488,19 +211,20 @@
         </li>
       </ul>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Howie Zhao"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Howie Zhao</p>
   <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -523,28 +247,27 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
+  <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>Zhihu</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="bilibili fa-fw"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
   </div>
 
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
@@ -555,9 +278,6 @@
           <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
-        </li>
-        <li class="links-of-blogroll-item">
           <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
         </li>
         <li class="links-of-blogroll-item">
@@ -566,43 +286,300 @@
     </ul>
   </div>
 
+        </section>
       </div>
-
     </div>
   </aside>
-  <div id="sidebar-dimmer"></div>
+  <div class="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
+    </header>
 
-    <footer class="footer">
-      <div class="footer-inner">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner archive posts-collapse">
+
+
+  
+  
+  
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
         
+        <span class="collection-header">Good! 117 posts in total. Keep on posting.</span>
+      </div>
+
+      
+    <div class="collection-year">
+      <span class="collection-header">2018</span>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-19T17:50:14+08:00"
+              content="2018-09-19">
+          09-19
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/19/htop-top/" itemprop="url">
+            <span itemprop="name">top的增强版：htop</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-19T17:50:05+08:00"
+              content="2018-09-19">
+          09-19
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/19/curl-wget/" itemprop="url">
+            <span itemprop="name">curl wget</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-19T17:00:22+08:00"
+              content="2018-09-19">
+          09-19
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/19/terminal-shell/" itemprop="url">
+            <span itemprop="name">terminal 与 shell</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-19T16:59:39+08:00"
+              content="2018-09-19">
+          09-19
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/19/autojump/" itemprop="url">
+            <span itemprop="name">强大的autojump</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-18T13:37:05+08:00"
+              content="2018-09-18">
+          09-18
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/18/so-you-want-to-work-in-security/" itemprop="url">
+            <span itemprop="name">那么，你想在安全行业工作吗？</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-18T12:23:55+08:00"
+              content="2018-09-18">
+          09-18
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/18/software-used-in-mr-robot/" itemprop="url">
+            <span itemprop="name">《黑客军团》中使用的软件</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-18T12:13:24+08:00"
+              content="2018-09-18">
+          09-18
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/18/android-root/" itemprop="url">
+            <span itemprop="name">谈谈Android的root</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-18T12:10:07+08:00"
+              content="2018-09-18">
+          09-18
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/18/tmux/" itemprop="url">
+            <span itemprop="name">tmux小记</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-18T12:09:54+08:00"
+              content="2018-09-18">
+          09-18
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/18/vim/" itemprop="url">
+            <span itemprop="name">Vim小记</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2018-09-18T12:09:36+08:00"
+              content="2018-09-18">
+          09-18
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2018/09/18/zsh/" itemprop="url">
+            <span itemprop="name">使用 Zsh 替代 Bash</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+
+    </div>
+  </div>
+  
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2018/09/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2018/09/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/09/page/3/">3</a><a class="page-number" href="/archives/2018/09/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/09/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
 
 <div class="copyright">
-  
   &copy; 2017 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
-    <span class="post-meta-divider">|</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-line"></i>
     </span>
     <span title="Symbols count total">129k</span>
+  </span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
-  </div>
-
-        
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -611,7 +588,6 @@
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
-    <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
@@ -621,44 +597,18 @@
       </span>
     </span>
 </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@latest/canvas-nest.min.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
-
-
-
-  
 <script src="/js/local-search.js"></script>
 
 
@@ -666,16 +616,13 @@
 
 
 
-
-
-
-
-
-
-
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
+
+
+
+
 
 
 </body>

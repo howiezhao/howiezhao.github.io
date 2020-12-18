@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,40 +15,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://howiezhao.github.io').hostname,
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
-
-  <meta name="description" content="Stay Hungry, Stay Foolish">
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Stay Hungry, Stay Foolish">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Howie&#39;s Notes">
 <meta property="og:url" content="https://howiezhao.github.io/page/8/index.html">
@@ -56,19 +33,20 @@
 <meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="https://howiezhao.github.io/page/8/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
   };
 </script>
-
-  <title>Howie's Notes</title>
+<title>Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -82,89 +60,102 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Howie's Notes</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">Machine Learning and Cyber Security</p>
-  </div>
-
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Howie's Notes</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Machine Learning and Cyber Security</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -172,30 +163,136 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
-    <div class="popup search-popup">
-    <div class="search-header">
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Searching..." spellcheck="false"
-           type="text" id="search-input">
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Howie Zhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Howie Zhao</p>
+  <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">117</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="bilibili fa-fw"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+        </li>
+    </ul>
+  </div>
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
@@ -204,20 +301,21 @@
     <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content">
-            
+    <div class="main-inner index posts-expand">
 
-  <div class="posts-expand">
-        
+    
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/20/hyper-v-problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -230,40 +328,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/20/hyper-v-problem/" class="post-title-link" itemprop="url">Hyper-V 相关问题解决</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/20/hyper-v-problem/" class="post-title-link" itemprop="url">Hyper-V 相关问题解决</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-08-20 20:12:02" itemprop="dateCreated datePublished" datetime="2018-08-20T20:12:02+08:00">2018-08-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-27 23:52:11" itemprop="dateModified" datetime="2020-11-27T23:52:11+08:00">2020-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bug/" itemprop="url" rel="index">
-                    <span itemprop="name">Bug</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-08-20 20:12:02" itemprop="dateCreated datePublished" datetime="2018-08-20T20:12:02+08:00">2018-08-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-27 23:52:11" itemprop="dateModified" datetime="2020-11-27T23:52:11+08:00">2020-11-27</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -272,8 +369,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。</p>
 <p>对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 <code>/etc/default/grub</code> 文件，更改其中 <code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>（注意是 <code>x</code> 不是 <code>*</code>），接着执行 <code>update-grub</code> 并重启即可。</p>
           <!--noindex-->
@@ -290,18 +385,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/10/base/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -314,40 +416,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/10/base/" class="post-title-link" itemprop="url">Base编码家族</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/10/base/" class="post-title-link" itemprop="url">Base编码家族</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-08-10 17:07:56" itemprop="dateCreated datePublished" datetime="2018-08-10T17:07:56+08:00">2018-08-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-08-10 17:07:56" itemprop="dateCreated datePublished" datetime="2018-08-10T17:07:56+08:00">2018-08-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -356,8 +457,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于<strong>64</strong>个可打印字符来表示二进制数据的表示方法，这64个字符分别为<code>A-Z</code>、<code>a-z</code>、<code>0-9</code>以及<code>+</code>与<code>/</code>。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：</p>
 <table>
 <thead>
@@ -547,18 +646,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/10/classical-crypto/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -571,40 +677,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/10/classical-crypto/" class="post-title-link" itemprop="url">古典密码学</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/10/classical-crypto/" class="post-title-link" itemprop="url">古典密码学</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-08-10 11:17:41" itemprop="dateCreated datePublished" datetime="2018-08-10T11:17:41+08:00">2018-08-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-08-10 11:17:41" itemprop="dateCreated datePublished" datetime="2018-08-10T11:17:41+08:00">2018-08-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -613,8 +718,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>密码学（Cryptography）大致可分为<strong>古典密码学</strong>（Classic cryptography）和<strong>现代密码学</strong>（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于<strong>字符</strong>的，而现代密码学是基于<strong>二进制位</strong>的。古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
 <h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p>
 <h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p>
@@ -645,18 +748,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/10/jsfuck/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -669,40 +779,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/10/jsfuck/" class="post-title-link" itemprop="url">JSFuck</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/10/jsfuck/" class="post-title-link" itemprop="url">JSFuck</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-08-10 08:59:58" itemprop="dateCreated datePublished" datetime="2018-08-10T08:59:58+08:00">2018-08-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-08-10 08:59:58" itemprop="dateCreated datePublished" datetime="2018-08-10T08:59:58+08:00">2018-08-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -711,8 +820,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure>
 <p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a target="_blank" rel="noopener" href="http://www.jsfuck.com/">JSFuck</a>。</p>
@@ -723,18 +830,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/09/brainfuck/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -747,40 +861,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/09/brainfuck/" class="post-title-link" itemprop="url">Brainfuck</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/09/brainfuck/" class="post-title-link" itemprop="url">Brainfuck</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-08-09 17:15:44" itemprop="dateCreated datePublished" datetime="2018-08-09T17:15:44+08:00">2018-08-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-08-09 17:15:44" itemprop="dateCreated datePublished" datetime="2018-08-09T17:15:44+08:00">2018-08-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -789,8 +902,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Brainfuck是在1993年创建的一种极小化的计算机语言，由于fuck在英语中是脏话，这种语言有时也被称为Brainf*ck或Brainf***，或被简称为BF。<br>Brainfuck中共有8种字符，它们及其含义如下所示：</p>
 <ul>
 <li><code>&gt;</code>：指针加一</li>
@@ -812,18 +923,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/02/taoup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -836,40 +954,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/08/02/taoup/" class="post-title-link" itemprop="url">《TAOUP》读书笔记</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/02/taoup/" class="post-title-link" itemprop="url">《TAOUP》读书笔记</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-08-02 22:31:46" itemprop="dateCreated datePublished" datetime="2018-08-02T22:31:46+08:00">2018-08-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-08-02 22:31:46" itemprop="dateCreated datePublished" datetime="2018-08-02T22:31:46+08:00">2018-08-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -878,8 +995,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的<strong>TAOUP</strong>，即The Art of UNIX Programming(UNIX编程艺术)。</p>
 <h2 id="哲学"><a href="#哲学" class="headerlink" title="哲学"></a>哲学</h2><p>Unix的设计哲学总体上可以概括为以下几点：</p>
 <ol>
@@ -914,18 +1029,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/26/about-proxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -938,40 +1060,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/07/26/about-proxy/" class="post-title-link" itemprop="url">关于代理那些事</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/26/about-proxy/" class="post-title-link" itemprop="url">关于代理那些事</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-07-26 12:08:41" itemprop="dateCreated datePublished" datetime="2018-07-26T12:08:41+08:00">2018-07-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-07-26 12:08:41" itemprop="dateCreated datePublished" datetime="2018-07-26T12:08:41+08:00">2018-07-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -980,8 +1101,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p>
 <h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。</p>
           <!--noindex-->
@@ -998,18 +1117,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/21/xml-json-yaml/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1022,40 +1148,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/07/21/xml-json-yaml/" class="post-title-link" itemprop="url">XML、JSON与YAML</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/21/xml-json-yaml/" class="post-title-link" itemprop="url">XML、JSON与YAML</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-07-21 19:50:23" itemprop="dateCreated datePublished" datetime="2018-07-21T19:50:23+08:00">2018-07-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-07-21 19:50:23" itemprop="dateCreated datePublished" datetime="2018-07-21T19:50:23+08:00">2018-07-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -1064,8 +1189,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
 <h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;person&gt;</span><br><span class="line">    &lt;firstName&gt;Tian&lt;&#x2F;firstName&gt;</span><br><span class="line">    &lt;lastName&gt;Song&lt;&#x2F;lastName&gt;</span><br><span class="line">    &lt;address&gt;</span><br><span class="line">        &lt;streetAddr&gt;中关村南大街5号&lt;&#x2F;streetAddr&gt;</span><br><span class="line">        &lt;city&gt;北京市&lt;&#x2F;city&gt;</span><br><span class="line">        &lt;zipcode&gt;100081&lt;&#x2F;zipcode&gt;</span><br><span class="line">    &lt;&#x2F;address&gt;</span><br><span class="line">    &lt;prof&gt;Computer System&lt;&#x2F;prof&gt;&lt;prof&gt;Security&lt;&#x2F;prof&gt;</span><br><span class="line">&lt;&#x2F;person&gt;</span><br></pre></td></tr></table></figure>
@@ -1084,18 +1207,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/21/markdown-cheatsheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1108,40 +1238,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/07/21/markdown-cheatsheet/" class="post-title-link" itemprop="url">Markdown小记</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/21/markdown-cheatsheet/" class="post-title-link" itemprop="url">Markdown小记</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-07-21 08:50:42" itemprop="dateCreated datePublished" datetime="2018-07-21T08:50:42+08:00">2018-07-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CheatSheet/" itemprop="url" rel="index">
-                    <span itemprop="name">CheatSheet</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-07-21 08:50:42" itemprop="dateCreated datePublished" datetime="2018-07-21T08:50:42+08:00">2018-07-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -1150,8 +1279,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
 <p>对应HTML，最高6级标题。</p>
@@ -1171,18 +1298,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/21/udacity-apollo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1195,40 +1329,39 @@
       <meta itemprop="name" content="Howie's Notes">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/07/21/udacity-apollo/" class="post-title-link" itemprop="url">Udacity：Apollo起步学习笔记</a>
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/21/udacity-apollo/" class="post-title-link" itemprop="url">Udacity：Apollo起步学习笔记</a>
+        </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-07-21 08:36:36" itemprop="dateCreated datePublished" datetime="2018-07-21T08:36:36+08:00">2018-07-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
-                  </a>
-                </span>
-            </span>
+      <time title="Created: 2018-07-21 08:36:36" itemprop="dateCreated datePublished" datetime="2018-07-21T08:36:36+08:00">2018-07-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -1237,8 +1370,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>本笔记记录自<a target="_blank" rel="noopener" href="https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419">ud0419-无人驾驶第一课：从Apollo起步</a>。</p>
 <h2 id="一、无人驾驶概览"><a href="#一、无人驾驶概览" class="headerlink" title="一、无人驾驶概览"></a>一、无人驾驶概览</h2><p>无人驾驶车的6个等级：</p>
 <ul>
@@ -1263,34 +1394,30 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
-  
-  
+</div>
 
-  </div>
 
-  
+
+
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
-
-          </div>
-          
-
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -1299,148 +1426,35 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Howie Zhao"
-      src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">Howie Zhao</p>
-  <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">117</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">17</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.zhihu.com/people/howiezhao" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>Zhihu</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="http://bururen.com/" title="http:&#x2F;&#x2F;bururen.com" rel="noopener" target="_blank">Twelvelv</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
 
 <div class="copyright">
-  
   &copy; 2017 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
-    <span class="post-meta-divider">|</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-line"></i>
     </span>
     <span title="Symbols count total">129k</span>
+  </span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
-  </div>
-
-        
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -1449,7 +1463,6 @@
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
-    <span class="post-meta-divider">|</span>
     <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
@@ -1459,44 +1472,18 @@
       </span>
     </span>
 </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@latest/canvas-nest.min.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
-
-
-
-  
 <script src="/js/local-search.js"></script>
 
 
@@ -1504,16 +1491,13 @@
 
 
 
-
-
-
-
-
-
-
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
+
+
+
+
 
 
 </body>
