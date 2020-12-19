@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="GCC一般有两层意思，大的意思是指GNU Compiler Collection（即GNU编译器套装），小的意思是指GNU C Compiler（即GNU C语言编译器），在本文中，我默认大写的GCC指大的意思，小写的gcc指小的意思。 使用gcc编译C语言源代码的一般格式如下： 1$ gcc test.c -o test">
+<meta name="description" content="GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。 使用 gcc 编译 C 语言源代码的一般格式如下： 1$ gcc test.c -o test">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GCC小记">
+<meta property="og:title" content="GCC 小记">
 <meta property="og:url" content="https://howiezhao.github.io/2019/04/18/gcc/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="GCC一般有两层意思，大的意思是指GNU Compiler Collection（即GNU编译器套装），小的意思是指GNU C Compiler（即GNU C语言编译器），在本文中，我默认大写的GCC指大的意思，小写的gcc指小的意思。 使用gcc编译C语言源代码的一般格式如下： 1$ gcc test.c -o test">
+<meta property="og:description" content="GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。 使用 gcc 编译 C 语言源代码的一般格式如下： 1$ gcc test.c -o test">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-04-18T09:42:24.000Z">
-<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:modified_time" content="2020-12-19T08:14:44.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
     lang   : 'en'
   };
 </script>
-<title>GCC小记 | Howie's Notes</title>
+<title>GCC 小记 | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -334,7 +334,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          GCC小记
+          GCC 小记
         </h1>
 
         <div class="post-meta-container">
@@ -352,7 +352,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2020-12-19 16:14:44" itemprop="dateModified" datetime="2020-12-19T16:14:44+08:00">2020-12-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -381,30 +381,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>GCC一般有两层意思，大的意思是指GNU Compiler Collection（即GNU编译器套装），小的意思是指GNU C Compiler（即GNU C语言编译器），在本文中，我默认大写的GCC指大的意思，小写的gcc指小的意思。</p>
-<p>使用gcc编译C语言源代码的一般格式如下：</p>
+        <p>GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。</p>
+<p>使用 gcc 编译 C 语言源代码的一般格式如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p>Linux下<code>gcc</code>命令常见的参数及其含义如下所示：</p>
+<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p>Linux下 <code>gcc</code> 命令常用的参数及其含义如下所示：</p>
 <ul>
 <li><code>--help</code>：显示帮助信息</li>
-<li><code>-o</code>：指定生成的文件名，若不指定，则默认生成a.out</li>
-<li><code>-E</code>：生成<code>.i</code>格式的预处理文件</li>
-<li><code>-S</code>：生成<code>.s</code>格式的汇编文件</li>
-<li><code>-c</code>：生成<code>.o</code>格式的二进制文件</li>
+<li><code>-o</code>：指定生成的文件名，若不指定，则默认生成 <code>a.out</code></li>
+<li><code>-E</code>：生成 <code>.i</code> 格式的预处理文件</li>
+<li><code>-S</code>：生成 <code>.s</code> 格式的汇编文件</li>
+<li><code>-c</code>：生成 <code>.o</code> 格式的二进制文件</li>
 <li><code>-save-temps</code>：保留所有生成的中间文件</li>
 <li><code>-g</code>：生成必要的符号信息，为调试而用</li>
-<li><code>-ggdb</code>：生成可特供于gdb使用的调试信息</li>
-<li><code>-gstabs</code>：生成stabs格式的调试信息</li>
-<li><code>-Wall</code>：显示所有常用的警告信息，即Warning all</li>
-<li><code>-m32</code>：指定生成32位程序</li>
-<li><code>-Os</code>：为减小代码大小而进行优化，即Optimizers small</li>
+<li><code>-ggdb</code>：生成可特供于 gdb 使用的调试信息</li>
+<li><code>-gstabs</code>：生成 stabs 格式的调试信息</li>
+<li><code>-Wall</code>：显示所有常用的警告信息，即 Warning all</li>
+<li><code>-m32</code>：指定生成 32 位程序</li>
+<li><code>-Os</code>：为减小代码大小而进行优化，即 Optimizers small</li>
 <li><code>-nostdinc</code>：不使用标准库</li>
 <li><code>-fno-stack-protector</code>：不生成用于检测缓冲区溢出的代码</li>
 <li><code>-I&lt;dir&gt;</code>：添加搜索头文件的路径</li>
-<li><code>-fno-builtin</code>：除非用<code>__builtin_</code>前缀，否则不进行<code>builtin</code>函数的优化</li>
+<li><code>-fno-builtin</code>：除非用 <code>__builtin_</code> 前缀，否则不进行 <code>builtin</code> 函数的优化</li>
 </ul>
-<h2 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h2><p>为了在Windows中使用GCC，诞生了<a target="_blank" rel="noopener" href="http://www.mingw.org/"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a target="_blank" rel="noopener" href="https://mingw-w64.org/doku.php/start"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。</p>
+<h2 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h2><p>为了在 Windows 中使用 GCC，诞生了 <a target="_blank" rel="noopener" href="http://www.mingw.org/"><strong>MinGW</strong></a> 项目，即 Minimalist GNU for Windows（适用于 Windows 的极简 GNU），它是将 GCC 编译器和 GNU Binutils 移植到 Win32 平台下的产物，又被称为 <strong>mingw32</strong>。另有可用于产生 32 位及 64 位 Windows 可执行文件的 <a target="_blank" rel="noopener" href="https://mingw-w64.org/doku.php/start"><strong>MinGW-w64</strong></a> 项目，是从原 MinGW 项目产生的分支。</p>
 
     </div>
 

@@ -50,22 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于代理那些事</title>
-    <url>/2018/07/26/about-proxy/</url>
-    <content><![CDATA[<h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p>
-<h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。</p>
-<a id="more"></a>
-
-<h2 id="端口转发与端口映射"><a href="#端口转发与端口映射" class="headerlink" title="端口转发与端口映射"></a>端口转发与端口映射</h2><p>传统意义上，我们认为<strong>端口转发</strong>(Port Forwarding)与<strong>端口映射</strong>(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>渗透</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于PowerShell</title>
     <url>/2018/07/16/about-powershell/</url>
     <content><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p>
@@ -96,6 +80,22 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于代理那些事</title>
+    <url>/2018/07/26/about-proxy/</url>
+    <content><![CDATA[<h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p>
+<h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。</p>
+<a id="more"></a>
+
+<h2 id="端口转发与端口映射"><a href="#端口转发与端口映射" class="headerlink" title="端口转发与端口映射"></a>端口转发与端口映射</h2><p>传统意义上，我们认为<strong>端口转发</strong>(Port Forwarding)与<strong>端口映射</strong>(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
       </tags>
   </entry>
   <entry>
@@ -225,39 +225,9 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>Windows</tag>
+        <tag>渗透</tag>
         <tag>计算机取证</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>身份认证的几种方式</title>
-    <url>/2018/11/16/authentication/</url>
-    <content><![CDATA[<p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
-<p>身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：</p>
-<a id="more"></a>
-<h2 id="基于生物学特征的身份认证"><a href="#基于生物学特征的身份认证" class="headerlink" title="基于生物学特征的身份认证"></a>基于生物学特征的身份认证</h2><p>基于生物学特征的身份认证是指基于每个人身体上独一无二的特征，如指纹、虹膜等等。</p>
-<p>这种认证方式极具便利性，但同时安全性也最低，此外，生物学特征信息一旦泄露，无法更改。</p>
-<h2 id="基于共享密钥的身份认证"><a href="#基于共享密钥的身份认证" class="headerlink" title="基于共享密钥的身份认证"></a>基于共享密钥的身份认证</h2><p>基于共享密钥的身份认证是指服务器端和用户共同拥有一个或一组密码。用户通过输入或通过保管有密码的设备提交由用户和服务器共同拥有的密码，服务器检查用户所提交的密码是否与服务器端保存的密码一致，如果一致，就判断用户为合法用户，否则判定身份验证失败。</p>
-<p>这种认证方式是目前互联网上所广泛应用的。</p>
-<h2 id="基于公钥加密算法的身份认证"><a href="#基于公钥加密算法的身份认证" class="headerlink" title="基于公钥加密算法的身份认证"></a>基于公钥加密算法的身份认证</h2><p>基于公钥加密算法的身份认证是指通信中的双方分别持有公钥和私钥，由其中的一方采用私钥对特定数据进行加密，而对方采用公钥对数据进行解密，如果解密成功，就认为用户是合法用户，否则就认为是身份验证失败。</p>
-<p>很难说明，<strong>基于共享密钥的身份认证</strong>和<strong>基于公钥加密算法的身份认证</strong>哪个更为安全，<strong>基于共享密钥的身份认证</strong>的不安全处主要在于共享密钥的传播过程中，而<strong>基于公钥加密算法的身份认证</strong>的不安全处则主要在于私钥的存储过程中。</p>
-<hr>
-<p>为了提升身份认证的安全性，有时会结合使用以上三种认证方式，这便是<strong>多因素认证</strong>（Multi-factor authentication），如果只使用了以上三种认证方式中的两种，则又称为<strong>双因素认证</strong>（Two-factor authentication），简称 <strong>2FA</strong>。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>强大的autojump</title>
-    <url>/2018/09/19/autojump/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -428,6 +398,36 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>身份认证的几种方式</title>
+    <url>/2018/11/16/authentication/</url>
+    <content><![CDATA[<p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
+<p>身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：</p>
+<a id="more"></a>
+<h2 id="基于生物学特征的身份认证"><a href="#基于生物学特征的身份认证" class="headerlink" title="基于生物学特征的身份认证"></a>基于生物学特征的身份认证</h2><p>基于生物学特征的身份认证是指基于每个人身体上独一无二的特征，如指纹、虹膜等等。</p>
+<p>这种认证方式极具便利性，但同时安全性也最低，此外，生物学特征信息一旦泄露，无法更改。</p>
+<h2 id="基于共享密钥的身份认证"><a href="#基于共享密钥的身份认证" class="headerlink" title="基于共享密钥的身份认证"></a>基于共享密钥的身份认证</h2><p>基于共享密钥的身份认证是指服务器端和用户共同拥有一个或一组密码。用户通过输入或通过保管有密码的设备提交由用户和服务器共同拥有的密码，服务器检查用户所提交的密码是否与服务器端保存的密码一致，如果一致，就判断用户为合法用户，否则判定身份验证失败。</p>
+<p>这种认证方式是目前互联网上所广泛应用的。</p>
+<h2 id="基于公钥加密算法的身份认证"><a href="#基于公钥加密算法的身份认证" class="headerlink" title="基于公钥加密算法的身份认证"></a>基于公钥加密算法的身份认证</h2><p>基于公钥加密算法的身份认证是指通信中的双方分别持有公钥和私钥，由其中的一方采用私钥对特定数据进行加密，而对方采用公钥对数据进行解密，如果解密成功，就认为用户是合法用户，否则就认为是身份验证失败。</p>
+<p>很难说明，<strong>基于共享密钥的身份认证</strong>和<strong>基于公钥加密算法的身份认证</strong>哪个更为安全，<strong>基于共享密钥的身份认证</strong>的不安全处主要在于共享密钥的传播过程中，而<strong>基于公钥加密算法的身份认证</strong>的不安全处则主要在于私钥的存储过程中。</p>
+<hr>
+<p>为了提升身份认证的安全性，有时会结合使用以上三种认证方式，这便是<strong>多因素认证</strong>（Multi-factor authentication），如果只使用了以上三种认证方式中的两种，则又称为<strong>双因素认证</strong>（Two-factor authentication），简称 <strong>2FA</strong>。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>强大的autojump</title>
+    <url>/2018/09/19/autojump/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Base编码家族</title>
@@ -1007,48 +1007,6 @@
       </tags>
   </entry>
   <entry>
-    <title>写代码应该用哪种字体</title>
-    <url>/2018/09/23/code-font/</url>
-    <content><![CDATA[<h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：</p>
-<p><img src="/images/monospaced.PNG" alt="等宽字体与比例字体"></p>
-<p>在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 <code>i</code>，<code>j</code> 显得两侧余白较多，而字母 <code>w</code>，<code>m</code> 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。</p>
-<a id="more"></a>
-<h2 id="衬线字体与非衬线字体"><a href="#衬线字体与非衬线字体" class="headerlink" title="衬线字体与非衬线字体"></a>衬线字体与非衬线字体</h2><p>顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无<strong>衬线</strong>，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：</p>
-<p><img src="/images/serif.PNG" alt="衬线字体与非衬线字体"></p>
-<p>这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为<strong>宋体</strong>，非衬线字体为<strong>黑体</strong>，如下：</p>
-<p><img src="/images/song-hei.png" alt="宋体与黑体"></p>
-<p>衬线字体常用于印刷业，而且特别适用于长篇文章段落；非衬线字体简洁大方，适用于广告、标志、牌子等短句。另外，系统、程序和网页中的字体也几乎都是非衬线字体，即使是很长的段落，这是因为显示器分辨率低，字体不能减小，如果用衬线字体，那些边边角角就很难用像素显示清楚，结果反而不利于阅读。<br>Google 在 2015 年就将其原本的衬线体 Logo 换成了无衬线体 Logo:</p>
-<p><img src="/images/google.gif" alt="Google Logo 变化"></p>
-<p>我们在写 Word 文档时，常用的英文衬线字体就是 <strong>Times New Roman</strong>；而在做 PPT 时，个人倾向于使用非衬线字体<strong>微软雅黑</strong>。</p>
-<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>写代码应该使用的字体对于衬线或非衬线要求不大，但强烈建议使用等宽字体，这样可以便于代码对齐，因为比例字体的宽度不定，这会对代码对齐造成极大的困难。另外，还应该对特殊字符有较高的辨识度，比如 <code>I</code>（大写 <code>i</code>）、<code>l</code>（小写 <code>L</code>）、<code>1</code>（数字 <code>1</code>），<code>0</code>（数字 <code>0</code>）、<code>O</code>（大写 <code>o</code>） 等。最后，中文字符的宽度应该严格是英文字符宽度的 2 倍，在某些时候，你会发现这很有用。</p>
-<p>基于以上，个人倾向于使用 be5invis 开发的 <a href="https://github.com/be5invis/Sarasa-Gothic">Sarasa-Gothic（更纱黑体）</a> 系列字体，它的前身便是 Inziu Iosevka 系列字体，现在已经迁移至 Sarasa-Gothic，推荐使用其中的 <strong>Sarasa Term SC</strong> 型字体。此外，这一系列字体都是开源免费的。</p>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>在下载某些字体时，可能会遇到相关术语，如下：</p>
-<ul>
-<li>mono：即 Monospaced，等宽字体</li>
-<li>sans：即 Sans-Serif，无衬线体</li>
-<li>gothic：哥特体，即无衬线体</li>
-<li>bold：粗体</li>
-<li>italic：斜体</li>
-<li>bolditalic：加粗斜体</li>
-<li>regular：常规体</li>
-<li>sc：即 Simplified Chinese，简体中文</li>
-<li>tc：即 Traditional Chinese，繁体中文</li>
-<li>cl：即 Classical Literature，《康熙字典》字形</li>
-<li>j：即 Japanese，日文</li>
-<li>ligature：连体字符，举例来说，会把 <code>!=</code> 变成 <code>≠</code></li>
-</ul>
-<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>关于代码配色，就真是个“仁者见仁，智者见智”的问题了，个人要求满足以下两点：</p>
-<ol>
-<li>采用黑色背景</li>
-<li>官网提供多种编辑器的支持</li>
-</ol>
-<p>综上，个人倾向于使用 <a href="https://draculatheme.com/">Dracula</a> 。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>古典密码学</title>
     <url>/2018/08/10/classical-crypto/</url>
     <content><![CDATA[<p>密码学（Cryptography）大致可分为<strong>古典密码学</strong>（Classic cryptography）和<strong>现代密码学</strong>（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于<strong>字符</strong>的，而现代密码学是基于<strong>二进制位</strong>的。古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
@@ -1321,12 +1279,56 @@
       </tags>
   </entry>
   <entry>
+    <title>写代码应该用哪种字体</title>
+    <url>/2018/09/23/code-font/</url>
+    <content><![CDATA[<h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：</p>
+<p><img src="/images/monospaced.PNG" alt="等宽字体与比例字体"></p>
+<p>在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 <code>i</code>，<code>j</code> 显得两侧余白较多，而字母 <code>w</code>，<code>m</code> 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。</p>
+<a id="more"></a>
+<h2 id="衬线字体与非衬线字体"><a href="#衬线字体与非衬线字体" class="headerlink" title="衬线字体与非衬线字体"></a>衬线字体与非衬线字体</h2><p>顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无<strong>衬线</strong>，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：</p>
+<p><img src="/images/serif.PNG" alt="衬线字体与非衬线字体"></p>
+<p>这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为<strong>宋体</strong>，非衬线字体为<strong>黑体</strong>，如下：</p>
+<p><img src="/images/song-hei.png" alt="宋体与黑体"></p>
+<p>衬线字体常用于印刷业，而且特别适用于长篇文章段落；非衬线字体简洁大方，适用于广告、标志、牌子等短句。另外，系统、程序和网页中的字体也几乎都是非衬线字体，即使是很长的段落，这是因为显示器分辨率低，字体不能减小，如果用衬线字体，那些边边角角就很难用像素显示清楚，结果反而不利于阅读。<br>Google 在 2015 年就将其原本的衬线体 Logo 换成了无衬线体 Logo:</p>
+<p><img src="/images/google.gif" alt="Google Logo 变化"></p>
+<p>我们在写 Word 文档时，常用的英文衬线字体就是 <strong>Times New Roman</strong>；而在做 PPT 时，个人倾向于使用非衬线字体<strong>微软雅黑</strong>。</p>
+<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>写代码应该使用的字体对于衬线或非衬线要求不大，但强烈建议使用等宽字体，这样可以便于代码对齐，因为比例字体的宽度不定，这会对代码对齐造成极大的困难。另外，还应该对特殊字符有较高的辨识度，比如 <code>I</code>（大写 <code>i</code>）、<code>l</code>（小写 <code>L</code>）、<code>1</code>（数字 <code>1</code>），<code>0</code>（数字 <code>0</code>）、<code>O</code>（大写 <code>o</code>） 等。最后，中文字符的宽度应该严格是英文字符宽度的 2 倍，在某些时候，你会发现这很有用。</p>
+<p>基于以上，个人倾向于使用 be5invis 开发的 <a href="https://github.com/be5invis/Sarasa-Gothic">Sarasa-Gothic（更纱黑体）</a> 系列字体，它的前身便是 Inziu Iosevka 系列字体，现在已经迁移至 Sarasa-Gothic，推荐使用其中的 <strong>Sarasa Term SC</strong> 型字体。此外，这一系列字体都是开源免费的。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>在下载某些字体时，可能会遇到相关术语，如下：</p>
+<ul>
+<li>mono：即 Monospaced，等宽字体</li>
+<li>sans：即 Sans-Serif，无衬线体</li>
+<li>gothic：哥特体，即无衬线体</li>
+<li>bold：粗体</li>
+<li>italic：斜体</li>
+<li>bolditalic：加粗斜体</li>
+<li>regular：常规体</li>
+<li>sc：即 Simplified Chinese，简体中文</li>
+<li>tc：即 Traditional Chinese，繁体中文</li>
+<li>cl：即 Classical Literature，《康熙字典》字形</li>
+<li>j：即 Japanese，日文</li>
+<li>ligature：连体字符，举例来说，会把 <code>!=</code> 变成 <code>≠</code></li>
+</ul>
+<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>关于代码配色，就真是个“仁者见仁，智者见智”的问题了，个人要求满足以下两点：</p>
+<ol>
+<li>采用黑色背景</li>
+<li>官网提供多种编辑器的支持</li>
+</ol>
+<p>综上，个人倾向于使用 <a href="https://draculatheme.com/">Dracula</a> 。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>编译与构建</title>
     <url>/2018/07/15/compile-build/</url>
-    <content><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译(compile)**，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为</strong>编译器(compiler)<strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓</strong>编译单元<strong>是指单个的源文件。目前在Linux中使用最广的编译器是</strong>GCC**，即GNU Compiler Collection(GNU编译器套装)，GCC的原名为GNU C Compiler(GNU C语言编译器)，因为在后续逐渐支持了C++、Java等更多的语言，所以更改了其缩写的含义。</p>
-<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统(build system)**，构建系统所作的就是</strong>构建(build)<strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。在Linux中使用最广的构建系统是</strong>GNU make<strong>，它会读取</strong>Makefile**文件中的配置信息来完成构建，有关Makefile文件更详细的信息可参考<a href="http://howiezhao.github.io/2019/04/18/makefile/">Makefile小记</a>。</p>
-<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>Java世界中使用最广的构建系统是<strong>Maven</strong>，而在Android Studio中则使用到了后起之秀<strong>Gradle</strong>。</p>
-<p>C语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的GCC是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
+    <content><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译（compile）</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器（compiler）</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。</p>
+<p>目前在 Linux 中使用最广的编译器是 <strong><a href="https://gcc.gnu.org/">GCC</a></strong> ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。</p>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统（build system）</strong>，构建系统所作的就是<strong>构建（build）</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。</p>
+<p>在 Linux 中使用最广的构建系统是 <strong><a href="https://www.gnu.org/software/make/">GNU make</a></strong> ，它会读取 <strong>Makefile</strong> 文件中的配置信息来完成构建，有关 Makefile 文件更详细的信息可参考 <a href="http://howiezhao.github.io/2019/04/18/makefile/">Makefile 小记</a>。</p>
+<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>Java 世界中使用最广的构建系统是 <strong><a href="https://maven.apache.org/">Maven</a></strong> ，而在 Android Studio 中则使用到了后起之秀 <strong><a href="https://gradle.org/">Gradle</a></strong> 。</p>
+<p>C 语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的 GCC 是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
 <p>普通编译是生成当前系统平台下的目标文件，而<strong>交叉编译</strong>是指生成另一个系统平台下的目标文件。</p>
 ]]></content>
       <categories>
@@ -1391,36 +1393,6 @@
       </categories>
   </entry>
   <entry>
-    <title>编码与加密</title>
-    <url>/2018/05/08/encode-encrypt/</url>
-    <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
-<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、Base64 编码等。</p>
-<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>加密（encryption）是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密（decryption）过程，才能将密文还原为正常可读的内容。</p>
-<p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
-<p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
-<p>非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
-<p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
-<p>常见的非对称加密算法有 RSA、DSA、ECDSA、Elgamal 等。</p>
-<p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
-<p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
-<a id="more"></a>
-<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文（即哈希值）反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为<strong>冲突</strong>。一个优秀的哈希算法会尽量的减少这种冲突性。</p>
-<p>常见的哈希算法有 MD5、SHA-1、SHA-256、CRC-32、CRC-64 等。</p>
-<hr>
-<p>注意：</p>
-<ol>
-<li>密码学建议，不要使用任何自己创造的私有加密算法，应该使用广泛使用的公开加密算法，这些都是已被证明安全的。</li>
-<li>编码与加密主要的区别在于，所用的 Key 是否是公共所知的，或者说，编码根本就没有 Key。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker 入坑指南</title>
     <url>/2018/08/31/docker/</url>
     <content><![CDATA[<p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C/S</strong> 架构，使用 Go 语言开发。</p>
@@ -1450,6 +1422,36 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>编码与加密</title>
+    <url>/2018/05/08/encode-encrypt/</url>
+    <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
+<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、Base64 编码等。</p>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>加密（encryption）是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密（decryption）过程，才能将密文还原为正常可读的内容。</p>
+<p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
+<p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
+<p>非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
+<p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
+<p>常见的非对称加密算法有 RSA、DSA、ECDSA、Elgamal 等。</p>
+<p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
+<p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
+<a id="more"></a>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文（即哈希值）反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为<strong>冲突</strong>。一个优秀的哈希算法会尽量的减少这种冲突性。</p>
+<p>常见的哈希算法有 MD5、SHA-1、SHA-256、CRC-32、CRC-64 等。</p>
+<hr>
+<p>注意：</p>
+<ol>
+<li>密码学建议，不要使用任何自己创造的私有加密算法，应该使用广泛使用的公开加密算法，这些都是已被证明安全的。</li>
+<li>编码与加密主要的区别在于，所用的 Key 是否是公共所知的，或者说，编码根本就没有 Key。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
   </entry>
   <entry>
     <title>辗转相除法</title>
@@ -1486,32 +1488,32 @@
       </tags>
   </entry>
   <entry>
-    <title>GCC小记</title>
+    <title>GCC 小记</title>
     <url>/2019/04/18/gcc/</url>
-    <content><![CDATA[<p>GCC一般有两层意思，大的意思是指GNU Compiler Collection（即GNU编译器套装），小的意思是指GNU C Compiler（即GNU C语言编译器），在本文中，我默认大写的GCC指大的意思，小写的gcc指小的意思。</p>
-<p>使用gcc编译C语言源代码的一般格式如下：</p>
+    <content><![CDATA[<p>GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。</p>
+<p>使用 gcc 编译 C 语言源代码的一般格式如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p>Linux下<code>gcc</code>命令常见的参数及其含义如下所示：</p>
+<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p>Linux下 <code>gcc</code> 命令常用的参数及其含义如下所示：</p>
 <ul>
 <li><code>--help</code>：显示帮助信息</li>
-<li><code>-o</code>：指定生成的文件名，若不指定，则默认生成a.out</li>
-<li><code>-E</code>：生成<code>.i</code>格式的预处理文件</li>
-<li><code>-S</code>：生成<code>.s</code>格式的汇编文件</li>
-<li><code>-c</code>：生成<code>.o</code>格式的二进制文件</li>
+<li><code>-o</code>：指定生成的文件名，若不指定，则默认生成 <code>a.out</code></li>
+<li><code>-E</code>：生成 <code>.i</code> 格式的预处理文件</li>
+<li><code>-S</code>：生成 <code>.s</code> 格式的汇编文件</li>
+<li><code>-c</code>：生成 <code>.o</code> 格式的二进制文件</li>
 <li><code>-save-temps</code>：保留所有生成的中间文件</li>
 <li><code>-g</code>：生成必要的符号信息，为调试而用</li>
-<li><code>-ggdb</code>：生成可特供于gdb使用的调试信息</li>
-<li><code>-gstabs</code>：生成stabs格式的调试信息</li>
-<li><code>-Wall</code>：显示所有常用的警告信息，即Warning all</li>
-<li><code>-m32</code>：指定生成32位程序</li>
-<li><code>-Os</code>：为减小代码大小而进行优化，即Optimizers small</li>
+<li><code>-ggdb</code>：生成可特供于 gdb 使用的调试信息</li>
+<li><code>-gstabs</code>：生成 stabs 格式的调试信息</li>
+<li><code>-Wall</code>：显示所有常用的警告信息，即 Warning all</li>
+<li><code>-m32</code>：指定生成 32 位程序</li>
+<li><code>-Os</code>：为减小代码大小而进行优化，即 Optimizers small</li>
 <li><code>-nostdinc</code>：不使用标准库</li>
 <li><code>-fno-stack-protector</code>：不生成用于检测缓冲区溢出的代码</li>
 <li><code>-I&lt;dir&gt;</code>：添加搜索头文件的路径</li>
-<li><code>-fno-builtin</code>：除非用<code>__builtin_</code>前缀，否则不进行<code>builtin</code>函数的优化</li>
+<li><code>-fno-builtin</code>：除非用 <code>__builtin_</code> 前缀，否则不进行 <code>builtin</code> 函数的优化</li>
 </ul>
-<h2 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h2><p>为了在Windows中使用GCC，诞生了<a href="http://www.mingw.org/"><strong>MinGW</strong></a> 项目，即Minimalist GNU for Windows(适用于Windows的极简GNU)，它是将GCC编译器和GNU Binutils移植到Win32平台下的产物，又被称为mingw32。另有可用于产生32位及64位Windows可执行文件的<a href="https://mingw-w64.org/doku.php/start"><strong>MinGW-w64</strong></a>项目，是从原MinGW项目产生的分支。</p>
+<h2 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h2><p>为了在 Windows 中使用 GCC，诞生了 <a href="http://www.mingw.org/"><strong>MinGW</strong></a> 项目，即 Minimalist GNU for Windows（适用于 Windows 的极简 GNU），它是将 GCC 编译器和 GNU Binutils 移植到 Win32 平台下的产物，又被称为 <strong>mingw32</strong>。另有可用于产生 32 位及 64 位 Windows 可执行文件的 <a href="https://mingw-w64.org/doku.php/start"><strong>MinGW-w64</strong></a> 项目，是从原 MinGW 项目产生的分支。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -1584,34 +1586,6 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
-  </entry>
-  <entry>
-    <title>HackRF 初体验</title>
-    <url>/2020/01/22/hackrf/</url>
-    <content><![CDATA[<p><a href="https://greatscottgadgets.com/hackrf/">HackRF</a> 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其<a href="https://greatscottgadgets.com/wheretobuy/">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
-<a id="more"></a>
-
-<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 录制信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -r：将数据存储到文件中</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重放信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -t：从文件中读取数据</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
-
-<p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。<br>Tx Mode：发射模式<br>Rx Mode：接收模式</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>针对哈希算法的攻击</title>
-    <url>/2018/05/09/hash-attack/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
   </entry>
   <entry>
     <title>成为黑客高手的必备技能</title>
@@ -1722,6 +1696,105 @@
       <categories>
         <category>Translation</category>
       </categories>
+  </entry>
+  <entry>
+    <title>HackRF 初体验</title>
+    <url>/2020/01/22/hackrf/</url>
+    <content><![CDATA[<p><a href="https://greatscottgadgets.com/hackrf/">HackRF</a> 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其<a href="https://greatscottgadgets.com/wheretobuy/">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
+<a id="more"></a>
+
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 录制信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -r：将数据存储到文件中</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重放信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -t：从文件中读取数据</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
+
+<p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。<br>Tx Mode：发射模式<br>Rx Mode：接收模式</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>针对哈希算法的攻击</title>
+    <url>/2018/05/09/hash-attack/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo初体验</title>
+    <url>/2017/06/20/hexo-experience/</url>
+    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/index.html">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/">Jekyll</a>，基于Go的<a href="https://gohugo.io/">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/">Node.js</a>和<a href="https://git-scm.com/downloads">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
+<p><strong>本地安装</strong></p>
+<ul>
+<li>将安装包放在 ./node_modules 下（运行npm时所在的目录）</li>
+<li>可以通过 require() 来引入本地安装的包</li>
+</ul>
+<p><strong>全局安装</strong></p>
+<ul>
+<li>将安装包放在 /usr/local下</li>
+<li>可以直接在命令行里使用<a id="more"></a>
+
+</li>
+</ul>
+<p>关于npm更多的内容请参考<a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm模块安装机制简介</a>。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>hexo version</code>即可查看Hexo版本信息，在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
+<p>如果没有设置<code>folder</code>，Hexo 默认在目前的文件夹建立网站。</p>
+<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt;</span><br><span class="line">或 hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>如果没有设置<code>layout</code>的话，默认使用 _config.yml 中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">或 hexo generate</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line">或 hexo server</span><br></pre></td></tr></table></figure>
+<p>默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a> 。</p>
+<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br><span class="line">或 hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>Hexo生成的网站目录结构如下：</p>
+<ul>
+<li><code>public</code>：此目录下保存着已经生成的静态文件</li>
+<li><code>scaffolds</code>：此目录下存放Hexo模板，当您新建文章时，Hexo会根据scaffold来建立文件。</li>
+<li><code>source</code>：此目录下存放用户资源<ul>
+<li><code>_posts</code>：此目录下存放Markdown格式的源文章</li>
+<li><code>images</code>：此目录下存放相关图片文件</li>
+</ul>
+</li>
+<li><code>themes</code>：此目录下保存着主题文件</li>
+<li><code>_config.yml</code>：此文件为<strong>站点配置文件</strong></li>
+</ul>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>站点配置文件（<code>_config.yml</code>）中的<code>url</code>字段务必要填写为自己站点的正确网址，否则分享自己站点内文章时会生成错误链接。<br>新建文章（<code>hexo n &lt;title&gt;</code>）时建议使用小写英文作为文件名，此文件名将作为文章链接的一部分，英文中的空格将自动用<code>-</code>替代，文章标题可以在文件中另行设置。<br>和传统的博客一样，建议开启<strong>分类</strong>（category）和<strong>标签</strong>（tag）功能，在Hexo中，分类具有<strong>顺序性</strong>和<strong>层次性</strong>，也就是说<code>Foo，Bar</code>不等于<code>Bar，Foo</code>，而标签没有顺序和层次。简单来说，分类应该是经过深思熟虑的，而标签则可适文章而决定，分类一般只有几个，而标签可以有一堆。具体而言，可以参考本站点的分类标签设计。</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Hexo支持<a href="https://hexo.io/plugins/">许多插件</a>，个人经常使用的插件如下：</p>
+<ul>
+<li><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：为Hexo打造的Git部署插件，适用于将博客部署到GitHub仓库上。</li>
+<li><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a>：适用于为文章添加字数统计和阅读时长统计，比同类型的<a href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a>插件要更好。</li>
+<li><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a>：适用于为博客添加本地搜索功能。</li>
+<li><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>：适用于为博客添加RSS功能。</li>
+</ul>
+<p>使用如下命令即可安装上面提到的所有插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git hexo-symbols-count-time hexo-generator-searchdb hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装Hexo后，默认使用的主题为landscape，个人不是很喜欢这个主题，所幸的是Hexo提供<a href="https://hexo.io/themes/">更多的第三方主题</a>，个人倾向于使用广为流行的<a href="https://theme-next.org/">NexT主题</a>。<br>值得注意的是，NexT主题在6.0.0版本之前由iissnan个人维护，其官方仓库为<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> ，官网为<a href="https://theme-next.iissnan.com/">https://theme-next.iissnan.com/</a> ，在6.0.0版本之后由theme-next组织维护，其官方仓库更改为<a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> ，官网为<a href="https://theme-next.org/">https://theme-next.org</a> 。这里所介绍的使用方法均以6.0.0版本之后为例。</p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装NexT主题，首先要进入Hexo站点目录下，接着执行<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>命令，即可将NexT仓库克隆到本地。要启用NexT主题，只需在<strong>站点配置文件</strong>中找到<code>theme</code>字段，并将其值更改为<code>next</code>即可。</p>
+<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>要查看正在使用的NexT主题的版本，有如下几种方法：</p>
+<ul>
+<li>可直接打开<strong>主题配置文件</strong>（即站点目录下的<code>/themes/next/_config.yml</code>文件），在其底部<code>version</code>字段即可查看版本号。</li>
+<li>在自己站点的底部一般会有Hexo和NexT的版本号</li>
+</ul>
+<p>和传统的Git仓库更新一样，进入站点目录下的<code>/themes/next</code>文件夹，执行<code>git pull</code>命令即可从官方仓库拉取最新代码进行更新。<br>如果你使用的是6.0.0之前的版本，现在想要升级到6.0.0之后的版本，可参考NexT主题官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">解决方案</a>。</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>关于Hexo的更多问题，请参考<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a>，或YouTube上<a href="https://www.youtube.com/watch?v=bCj0iVVqkSg&feature=youtu.be">Hexo系列教程</a>视频；关于NexT主题的更多问题，请参考<a href="https://theme-next.iissnan.com/">NexT使用文档</a>；关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>top的增强版：htop</title>
@@ -1989,77 +2062,6 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo初体验</title>
-    <url>/2017/06/20/hexo-experience/</url>
-    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/index.html">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/">Jekyll</a>，基于Go的<a href="https://gohugo.io/">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/">Node.js</a>和<a href="https://git-scm.com/downloads">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
-<p><strong>本地安装</strong></p>
-<ul>
-<li>将安装包放在 ./node_modules 下（运行npm时所在的目录）</li>
-<li>可以通过 require() 来引入本地安装的包</li>
-</ul>
-<p><strong>全局安装</strong></p>
-<ul>
-<li>将安装包放在 /usr/local下</li>
-<li>可以直接在命令行里使用<a id="more"></a>
-
-</li>
-</ul>
-<p>关于npm更多的内容请参考<a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm模块安装机制简介</a>。</p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>hexo version</code>即可查看Hexo版本信息，在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
-<p>如果没有设置<code>folder</code>，Hexo 默认在目前的文件夹建立网站。</p>
-<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt;</span><br><span class="line">或 hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<p>如果没有设置<code>layout</code>的话，默认使用 _config.yml 中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">或 hexo generate</span><br></pre></td></tr></table></figure>
-
-<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line">或 hexo server</span><br></pre></td></tr></table></figure>
-<p>默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a> 。</p>
-<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br><span class="line">或 hexo deploy</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>Hexo生成的网站目录结构如下：</p>
-<ul>
-<li><code>public</code>：此目录下保存着已经生成的静态文件</li>
-<li><code>scaffolds</code>：此目录下存放Hexo模板，当您新建文章时，Hexo会根据scaffold来建立文件。</li>
-<li><code>source</code>：此目录下存放用户资源<ul>
-<li><code>_posts</code>：此目录下存放Markdown格式的源文章</li>
-<li><code>images</code>：此目录下存放相关图片文件</li>
-</ul>
-</li>
-<li><code>themes</code>：此目录下保存着主题文件</li>
-<li><code>_config.yml</code>：此文件为<strong>站点配置文件</strong></li>
-</ul>
-<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>站点配置文件（<code>_config.yml</code>）中的<code>url</code>字段务必要填写为自己站点的正确网址，否则分享自己站点内文章时会生成错误链接。<br>新建文章（<code>hexo n &lt;title&gt;</code>）时建议使用小写英文作为文件名，此文件名将作为文章链接的一部分，英文中的空格将自动用<code>-</code>替代，文章标题可以在文件中另行设置。<br>和传统的博客一样，建议开启<strong>分类</strong>（category）和<strong>标签</strong>（tag）功能，在Hexo中，分类具有<strong>顺序性</strong>和<strong>层次性</strong>，也就是说<code>Foo，Bar</code>不等于<code>Bar，Foo</code>，而标签没有顺序和层次。简单来说，分类应该是经过深思熟虑的，而标签则可适文章而决定，分类一般只有几个，而标签可以有一堆。具体而言，可以参考本站点的分类标签设计。</p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Hexo支持<a href="https://hexo.io/plugins/">许多插件</a>，个人经常使用的插件如下：</p>
-<ul>
-<li><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：为Hexo打造的Git部署插件，适用于将博客部署到GitHub仓库上。</li>
-<li><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a>：适用于为文章添加字数统计和阅读时长统计，比同类型的<a href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a>插件要更好。</li>
-<li><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a>：适用于为博客添加本地搜索功能。</li>
-<li><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>：适用于为博客添加RSS功能。</li>
-</ul>
-<p>使用如下命令即可安装上面提到的所有插件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git hexo-symbols-count-time hexo-generator-searchdb hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
-
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装Hexo后，默认使用的主题为landscape，个人不是很喜欢这个主题，所幸的是Hexo提供<a href="https://hexo.io/themes/">更多的第三方主题</a>，个人倾向于使用广为流行的<a href="https://theme-next.org/">NexT主题</a>。<br>值得注意的是，NexT主题在6.0.0版本之前由iissnan个人维护，其官方仓库为<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> ，官网为<a href="https://theme-next.iissnan.com/">https://theme-next.iissnan.com/</a> ，在6.0.0版本之后由theme-next组织维护，其官方仓库更改为<a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> ，官网为<a href="https://theme-next.org/">https://theme-next.org</a> 。这里所介绍的使用方法均以6.0.0版本之后为例。</p>
-<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装NexT主题，首先要进入Hexo站点目录下，接着执行<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>命令，即可将NexT仓库克隆到本地。要启用NexT主题，只需在<strong>站点配置文件</strong>中找到<code>theme</code>字段，并将其值更改为<code>next</code>即可。</p>
-<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>要查看正在使用的NexT主题的版本，有如下几种方法：</p>
-<ul>
-<li>可直接打开<strong>主题配置文件</strong>（即站点目录下的<code>/themes/next/_config.yml</code>文件），在其底部<code>version</code>字段即可查看版本号。</li>
-<li>在自己站点的底部一般会有Hexo和NexT的版本号</li>
-</ul>
-<p>和传统的Git仓库更新一样，进入站点目录下的<code>/themes/next</code>文件夹，执行<code>git pull</code>命令即可从官方仓库拉取最新代码进行更新。<br>如果你使用的是6.0.0之前的版本，现在想要升级到6.0.0之后的版本，可参考NexT主题官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">解决方案</a>。</p>
-<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>关于Hexo的更多问题，请参考<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a>，或YouTube上<a href="https://www.youtube.com/watch?v=bCj0iVVqkSg&feature=youtu.be">Hexo系列教程</a>视频；关于NexT主题的更多问题，请参考<a href="https://theme-next.iissnan.com/">NexT使用文档</a>；关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -2391,29 +2393,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Linux系统加固</title>
-    <url>/2018/05/19/linux-reinforcement/</url>
-    <content><![CDATA[<h2 id="帐户与口令"><a href="#帐户与口令" class="headerlink" title="帐户与口令"></a>帐户与口令</h2><p>此方面的加固主要为了防止针对帐户的暴力破解。</p>
-<p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p>
-<p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p>
-<p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。</p>
-<a id="more"></a>
-<p>设置用户锁定：<br>在CentOS7中，编辑/etc/pam.d/system-auth文件，添加<code>auth required pam_tally2.so onerr=fail deny=6 unlock_time=300</code>此行，表示当密码连续输错6次后锁定，锁定时间300秒。<br>限制能su到root的用户：<br>编辑/etc/pam.d/su文件，添加<code>auth required pam_wheel.so group=test</code>此行，表示只允许test组用户su到root。</p>
-<h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><p>服务越少，系统越安全。</p>
-<p>关闭不必要的服务：<br>在CentOS中，使用命令<code>chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset</code>设置服务在指定init级别下开机是否启动。</p>
-<p>SSH服务安全：<br>编辑/etc/ssh/sshd_config文件，修改默认端口，即<code>Port</code>项；禁止root用户远程登录，即<code>PermitRootLogin</code>项，应使用普通用户登录，特殊权限时使用<code>sudo</code>命令；禁止空密码登录，即<code>PermitEmptyPasswords</code>项；限制登录密码输错次数；最好使用密钥登录而不是密码登录，即<code>PasswordAuthentication</code>项值改为<code>no</code>。修改完后，需要使用<code>service sshd restart</code>重启SSH服务。</p>
-<h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2><p>权限越小，系统越安全</p>
-<p>设置umask值：<br>编辑/etc/profile文件，修改umask值为027。</p>
-<p>设置登录超时：<br>编辑/etc/profile文件，添加<code>TIMEOUT=180</code>，即登录后无操作3分钟将超时断开连接。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux的包管理机制</title>
     <url>/2018/05/09/linux-package/</url>
     <content><![CDATA[<p>不同Linux发行版的主要区别是其包管理机制不同，Linux发行版大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p>
@@ -2440,55 +2419,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown小记</title>
-    <url>/2018/07/21/markdown-cheatsheet/</url>
-    <content><![CDATA[<p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
-<p>对应HTML，最高6级标题。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">    - 这是是嵌套列表项</span><br><span class="line">    - 这里也是嵌套列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
-<p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。</p>
+    <title>Linux系统加固</title>
+    <url>/2018/05/19/linux-reinforcement/</url>
+    <content><![CDATA[<h2 id="帐户与口令"><a href="#帐户与口令" class="headerlink" title="帐户与口令"></a>帐户与口令</h2><p>此方面的加固主要为了防止针对帐户的暴力破解。</p>
+<p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p>
+<p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p>
+<p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。</p>
 <a id="more"></a>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Howie&#39;s Blog](http:&#x2F;&#x2F;howiezhao.com)</span><br></pre></td></tr></table></figure>
-<p>超文本链接必须带http。</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![一张图片](&#x2F;images&#x2F;abc.jpg)</span><br></pre></td></tr></table></figure>
-<p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***粗斜体***</span><br></pre></td></tr></table></figure>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
-<p>`这里是单行代码`</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
-<p>上下应该各空一行</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
-<p>这是一条水平区分线，用3个或以上的短横线表示，个人习惯使用4个短横线。</p>
-<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
-<li>在特殊字符与要书写的文字之间加上空格</li>
-<li>不同段之间加一空行</li>
-<li>链接后加一个空格</li>
-</ol>
-<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为<strong>GFM</strong>，即<strong>GitHub风格的Markdown语法</strong>，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
-<ol>
-<li>链接自动识别：GFM会自动为标准的URL加上链接</li>
-<li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
-<li>删除线：使用<code>~~</code>表示删除线</li>
-<li>任务列表：使用<code>- [ ]</code>或<code>- [x]</code>表示未勾选或已勾选的任务列表</li>
-<li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
-</ol>
-<p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/">GitHub官方的文档</a>。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a>是一个在线的Markdown编辑器。<br>Sublime Text拥有众多的Markdown插件，其中<a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a>可以在浏览器中预览Markdown文件，而<a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a>可以快速的编辑Markdown文件。</p>
+<p>设置用户锁定：<br>在CentOS7中，编辑/etc/pam.d/system-auth文件，添加<code>auth required pam_tally2.so onerr=fail deny=6 unlock_time=300</code>此行，表示当密码连续输错6次后锁定，锁定时间300秒。<br>限制能su到root的用户：<br>编辑/etc/pam.d/su文件，添加<code>auth required pam_wheel.so group=test</code>此行，表示只允许test组用户su到root。</p>
+<h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><p>服务越少，系统越安全。</p>
+<p>关闭不必要的服务：<br>在CentOS中，使用命令<code>chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset</code>设置服务在指定init级别下开机是否启动。</p>
+<p>SSH服务安全：<br>编辑/etc/ssh/sshd_config文件，修改默认端口，即<code>Port</code>项；禁止root用户远程登录，即<code>PermitRootLogin</code>项，应使用普通用户登录，特殊权限时使用<code>sudo</code>命令；禁止空密码登录，即<code>PermitEmptyPasswords</code>项；限制登录密码输错次数；最好使用密钥登录而不是密码登录，即<code>PasswordAuthentication</code>项值改为<code>no</code>。修改完后，需要使用<code>service sshd restart</code>重启SSH服务。</p>
+<h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2><p>权限越小，系统越安全</p>
+<p>设置umask值：<br>编辑/etc/profile文件，修改umask值为027。</p>
+<p>设置登录超时：<br>编辑/etc/profile文件，添加<code>TIMEOUT=180</code>，即登录后无操作3分钟将超时断开连接。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
-  </entry>
-  <entry>
-    <title>形而上与形而下</title>
-    <url>/2018/05/01/metaphysics-physics/</url>
-    <content><![CDATA[<p>形而上者谓之道，形而下者谓之器。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Makefile小记</title>
@@ -2549,6 +2500,57 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdown小记</title>
+    <url>/2018/07/21/markdown-cheatsheet/</url>
+    <content><![CDATA[<p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
+<p>对应HTML，最高6级标题。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">    - 这是是嵌套列表项</span><br><span class="line">    - 这里也是嵌套列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
+<p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。</p>
+<a id="more"></a>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Howie&#39;s Blog](http:&#x2F;&#x2F;howiezhao.com)</span><br></pre></td></tr></table></figure>
+<p>超文本链接必须带http。</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![一张图片](&#x2F;images&#x2F;abc.jpg)</span><br></pre></td></tr></table></figure>
+<p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***粗斜体***</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
+<p>`这里是单行代码`</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
+<p>上下应该各空一行</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+<p>这是一条水平区分线，用3个或以上的短横线表示，个人习惯使用4个短横线。</p>
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li>在特殊字符与要书写的文字之间加上空格</li>
+<li>不同段之间加一空行</li>
+<li>链接后加一个空格</li>
+</ol>
+<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为<strong>GFM</strong>，即<strong>GitHub风格的Markdown语法</strong>，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
+<ol>
+<li>链接自动识别：GFM会自动为标准的URL加上链接</li>
+<li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
+<li>删除线：使用<code>~~</code>表示删除线</li>
+<li>任务列表：使用<code>- [ ]</code>或<code>- [x]</code>表示未勾选或已勾选的任务列表</li>
+<li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
+</ol>
+<p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/">GitHub官方的文档</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a>是一个在线的Markdown编辑器。<br>Sublime Text拥有众多的Markdown插件，其中<a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a>可以在浏览器中预览Markdown文件，而<a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a>可以快速的编辑Markdown文件。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>形而上与形而下</title>
+    <url>/2018/05/01/metaphysics-physics/</url>
+    <content><![CDATA[<p>形而上者谓之道，形而下者谓之器。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Metasploit 中 shell 中文乱码解决方案</title>
     <url>/2017/12/04/metasploit-luanma/</url>
     <content><![CDATA[<p>有时在 Kali Linux 中获得了一个 Windows shell 或者在 meterpreter 中进入 shell 后，执行命令可能会出现中文乱码，其原因是 Windows 和 Linux 的编码不同，导致 Windows 中的中文在 Linux 中无法正常显示。</p>
@@ -2579,41 +2581,6 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
-  </entry>
-  <entry>
-    <title>开源协议漫谈</title>
-    <url>/2018/11/02/open-sourse-license/</url>
-    <content><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p>
-<a id="more"></a>
-<h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p>
-<h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p>
-<h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p>
-<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p>
-<h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
-<h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
-<h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
-<h2 id="作何选择？"><a href="#作何选择？" class="headerlink" title="作何选择？"></a>作何选择？</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Linux中/etc/passwd与/etc/shadow的区别</title>
-    <url>/2018/04/29/passwd-and-shadow/</url>
-    <content><![CDATA[<p>简单来说，<code>/etc/passwd</code>存储一般的用户信息，任何人都可以访问；<code>/etc/shadow</code>存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍：</p>
-<h2 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h2><p>早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将用户密码存储到了<code>/etc/shadow</code>文件中，并将其权限设为仅 root 用户。在渗透过程中，这两个文件最好都检查。<br><code>/etc/passwd</code>的文件格式为：<strong>用户名:密码:用户ID:用户组ID:注释:用户目录:登录shell</strong>，共7项，默认情况下，root的用户ID为0，1-99表示预定义用户，100-999表示其他系统帐户，新建的其他用户ID从1000起，用户组ID代表的详细信息存储在<code>/etc/group</code>文件中，如果密码被存储在了<code>/etc/shadow</code>文件中，则此文件中密码项为x，常见形式如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
-
-<h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h2><p><code>/etc/shadow</code>的文件格式为：<strong>用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，共9项，如果密码项以 ! 或 *  起始，则代表此账号被锁定，不能用于登录，密码项中更为详细的格式为：<strong>$加密方法ID$Salt$加密值</strong>，常见形式如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH<span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>渗透</tag>
-        <tag>Linux</tag>
-      </tags>
   </entry>
   <entry>
     <title>Nexus/Pixel 相关问题解决</title>
@@ -2661,6 +2628,41 @@
       <tags>
         <tag>Android</tag>
         <tag>硬件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源协议漫谈</title>
+    <url>/2018/11/02/open-sourse-license/</url>
+    <content><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p>
+<a id="more"></a>
+<h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p>
+<h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p>
+<h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p>
+<h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
+<h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
+<h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
+<h2 id="作何选择？"><a href="#作何选择？" class="headerlink" title="作何选择？"></a>作何选择？</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Linux中/etc/passwd与/etc/shadow的区别</title>
+    <url>/2018/04/29/passwd-and-shadow/</url>
+    <content><![CDATA[<p>简单来说，<code>/etc/passwd</code>存储一般的用户信息，任何人都可以访问；<code>/etc/shadow</code>存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍：</p>
+<h2 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h2><p>早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将用户密码存储到了<code>/etc/shadow</code>文件中，并将其权限设为仅 root 用户。在渗透过程中，这两个文件最好都检查。<br><code>/etc/passwd</code>的文件格式为：<strong>用户名:密码:用户ID:用户组ID:注释:用户目录:登录shell</strong>，共7项，默认情况下，root的用户ID为0，1-99表示预定义用户，100-999表示其他系统帐户，新建的其他用户ID从1000起，用户组ID代表的详细信息存储在<code>/etc/group</code>文件中，如果密码被存储在了<code>/etc/shadow</code>文件中，则此文件中密码项为x，常见形式如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h2><p><code>/etc/shadow</code>的文件格式为：<strong>用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，共9项，如果密码项以 ! 或 *  起始，则代表此账号被锁定，不能用于登录，密码项中更为详细的格式为：<strong>$加密方法ID$Salt$加密值</strong>，常见形式如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH<span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2835,26 +2837,6 @@
       </categories>
   </entry>
   <entry>
-    <title>RSA加密算法</title>
-    <url>/2018/10/18/rsa/</url>
-    <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
-<a id="more"></a>
-<h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p>
-<ol>
-<li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li>
-<li>计算n的欧拉函数φ(n)<br>φ(3233)=60×52=3120</li>
-<li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n)互质，并计算e对于φ(n)的模反元素d<br>取e=17，d=2753</li>
-<li>将n和e封装成公钥，n和d封装成私钥<br>公钥位(n, e)，私钥为(n, d)</li>
-</ol>
-<h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>reStructuredText 小记</title>
     <url>/2018/09/17/restructuredtext/</url>
     <content><![CDATA[<p><strong>reStructuredText</strong> 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 <strong>reST</strong>，文件后缀名为 <code>.rst</code>，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。</p>
@@ -2905,6 +2887,26 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>RSA加密算法</title>
+    <url>/2018/10/18/rsa/</url>
+    <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
+<a id="more"></a>
+<h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p>
+<ol>
+<li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li>
+<li>计算n的欧拉函数φ(n)<br>φ(3233)=60×52=3120</li>
+<li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n)互质，并计算e对于φ(n)的模反元素d<br>取e=17，d=2753</li>
+<li>将n和e封装成公钥，n和d封装成私钥<br>公钥位(n, e)，私钥为(n, d)</li>
+</ol>
+<h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
   </entry>
   <entry>
     <title>Scheme的五法十诫</title>
@@ -2987,6 +2989,41 @@
       </tags>
   </entry>
   <entry>
+    <title>那么，你想在安全行业工作吗？</title>
+    <url>/2018/09/18/so-you-want-to-work-in-security/</url>
+    <content><![CDATA[<p>本文翻译自<a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p>
+<p>每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。<br><img src="https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif" alt="不像电影"></p>
+<a id="more"></a>
+
+<h2 id="警告：这不像电影。"><a href="#警告：这不像电影。" class="headerlink" title="警告：这不像电影。"></a>警告：这不像电影。</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p>
+<h2 id="没有标准或完美的课程。"><a href="#没有标准或完美的课程。" class="headerlink" title="没有标准或完美的课程。"></a>没有标准或完美的课程。</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
+<h2 id="停止阅读，开始做。"><a href="#停止阅读，开始做。" class="headerlink" title="停止阅读，开始做。"></a>停止阅读，开始做。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p>
+<h2 id="写代码。"><a href="#写代码。" class="headerlink" title="写代码。"></a>写代码。</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p>
+<h2 id="破坏代码。"><a href="#破坏代码。" class="headerlink" title="破坏代码。"></a>破坏代码。</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用<a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在<a href="https://infosec.rocks/">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
+<h2 id="分享知识。"><a href="#分享知识。" class="headerlink" title="分享知识。"></a>分享知识。</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
+<ol>
+<li>分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。</li>
+<li>我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。</li>
+<li>我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。</li>
+<li>把爱传出去。</li>
+</ol>
+<h2 id="练习你的沟通。"><a href="#练习你的沟通。" class="headerlink" title="练习你的沟通。"></a>练习你的沟通。</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p>
+<h2 id="期望努力工作，有时会失败。"><a href="#期望努力工作，有时会失败。" class="headerlink" title="期望努力工作，有时会失败。"></a>期望努力工作，有时会失败。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p>
+<h2 id="（尝试）保持乐观。"><a href="#（尝试）保持乐观。" class="headerlink" title="（尝试）保持乐观。"></a>（尝试）保持乐观。</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p>
+<h2 id="请求帮忙。"><a href="#请求帮忙。" class="headerlink" title="请求帮忙。"></a>请求帮忙。</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
+<h2 id="祝你好运并且快乐Hacking！"><a href="#祝你好运并且快乐Hacking！" class="headerlink" title="祝你好运并且快乐Hacking！"></a>祝你好运并且快乐Hacking！</h2><p>我偶然发现了一些其他安全职业建议的想法：</p>
+<ul>
+<li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法<a href="http://krebsonsecurity.com/tag/security-career-advice/">http://krebsonsecurity.com/tag/security-career-advice/</a></li>
+<li>我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议<a href="https://noncombatant.org/2016/06/20/get-into-security-engineering">https://noncombatant.org/2016/06/20/get-into-security-engineering</a></li>
+<li>Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：<a href="https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html">https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html</a></li>
+</ul>
+<h2 id="译者注"><a href="#译者注" class="headerlink" title="译者注"></a>译者注</h2><p>本文作者为<a href="https://en.wikipedia.org/wiki/Parisa_Tabriz">Parisa Tabriz</a>，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。</p>
+]]></content>
+      <categories>
+        <category>Translation</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《黑客军团》中使用的软件</title>
     <url>/2018/09/18/software-used-in-mr-robot/</url>
     <content><![CDATA[<p>本文翻译自<a href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
@@ -3026,41 +3063,6 @@
 <h2 id="VLC-Media-Player"><a href="#VLC-Media-Player" class="headerlink" title="VLC Media Player"></a><a href="https://www.videolan.org/vlc/">VLC Media Player</a></h2><p>VLC媒体播放器被用于第二季第4集，当时Elliot和Darlene一起观看了虚假恐怖片《Careful Massacre of the Bourgeoisie》的VHS版本。VLC也被用于第二季第8集，当fsociety预览一个他们将上传的关于非法大规模监视的泄露的FBI电话会议视频时。</p>
 <h2 id="Wayback-Machine"><a href="#Wayback-Machine" class="headerlink" title="Wayback Machine"></a><a href="http://web.archive.org/">Wayback Machine</a></h2><p>由Internet Archive运营的Waybach Machine是一个包含超过4,900亿个网页副本的数据库。在第二季第8集中FBI特工Dominique DiPierro向Mobley透露，联邦调查局使用了Wayback Machine，以便将他的黑客把柄与他为DJ Mobley创建的旧的粉丝页面联系起来。</p>
 <h2 id="µTorrent"><a href="#µTorrent" class="headerlink" title="µTorrent"></a><a href="https://www.utorrent.com/intl/zh_cn/utweb-index">µTorrent</a></h2><p>第二季第4集达琳用μTorrent下载了虚假恐怖电影《Careful Massacre of the Bourgeoisie》的VHS版本。</p>
-]]></content>
-      <categories>
-        <category>Translation</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>那么，你想在安全行业工作吗？</title>
-    <url>/2018/09/18/so-you-want-to-work-in-security/</url>
-    <content><![CDATA[<p>本文翻译自<a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p>
-<p>每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。<br><img src="https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif" alt="不像电影"></p>
-<a id="more"></a>
-
-<h2 id="警告：这不像电影。"><a href="#警告：这不像电影。" class="headerlink" title="警告：这不像电影。"></a>警告：这不像电影。</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p>
-<h2 id="没有标准或完美的课程。"><a href="#没有标准或完美的课程。" class="headerlink" title="没有标准或完美的课程。"></a>没有标准或完美的课程。</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
-<h2 id="停止阅读，开始做。"><a href="#停止阅读，开始做。" class="headerlink" title="停止阅读，开始做。"></a>停止阅读，开始做。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p>
-<h2 id="写代码。"><a href="#写代码。" class="headerlink" title="写代码。"></a>写代码。</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p>
-<h2 id="破坏代码。"><a href="#破坏代码。" class="headerlink" title="破坏代码。"></a>破坏代码。</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用<a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在<a href="https://infosec.rocks/">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
-<h2 id="分享知识。"><a href="#分享知识。" class="headerlink" title="分享知识。"></a>分享知识。</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
-<ol>
-<li>分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。</li>
-<li>我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。</li>
-<li>我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。</li>
-<li>把爱传出去。</li>
-</ol>
-<h2 id="练习你的沟通。"><a href="#练习你的沟通。" class="headerlink" title="练习你的沟通。"></a>练习你的沟通。</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p>
-<h2 id="期望努力工作，有时会失败。"><a href="#期望努力工作，有时会失败。" class="headerlink" title="期望努力工作，有时会失败。"></a>期望努力工作，有时会失败。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p>
-<h2 id="（尝试）保持乐观。"><a href="#（尝试）保持乐观。" class="headerlink" title="（尝试）保持乐观。"></a>（尝试）保持乐观。</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p>
-<h2 id="请求帮忙。"><a href="#请求帮忙。" class="headerlink" title="请求帮忙。"></a>请求帮忙。</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
-<h2 id="祝你好运并且快乐Hacking！"><a href="#祝你好运并且快乐Hacking！" class="headerlink" title="祝你好运并且快乐Hacking！"></a>祝你好运并且快乐Hacking！</h2><p>我偶然发现了一些其他安全职业建议的想法：</p>
-<ul>
-<li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法<a href="http://krebsonsecurity.com/tag/security-career-advice/">http://krebsonsecurity.com/tag/security-career-advice/</a></li>
-<li>我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议<a href="https://noncombatant.org/2016/06/20/get-into-security-engineering">https://noncombatant.org/2016/06/20/get-into-security-engineering</a></li>
-<li>Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：<a href="https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html">https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html</a></li>
-</ul>
-<h2 id="译者注"><a href="#译者注" class="headerlink" title="译者注"></a>译者注</h2><p>本文作者为<a href="https://en.wikipedia.org/wiki/Parisa_Tabriz">Parisa Tabriz</a>，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。</p>
 ]]></content>
       <categories>
         <category>Translation</category>
@@ -3177,6 +3179,22 @@
       </tags>
   </entry>
   <entry>
+    <title>说说信用卡</title>
+    <url>/2019/01/08/talk-about-credit-card/</url>
+    <content><![CDATA[<h2 id="年费"><a href="#年费" class="headerlink" title="年费"></a>年费</h2><p>所谓<strong>年费</strong>，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即<strong>刷够指定额度</strong>或<strong>刷够指定笔数</strong>，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“<strong>终身免年费</strong>”的，这里的终身一般指信用卡的<strong>有效期</strong>内。</p>
+<h2 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h2><p>为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的<strong>VALID THRU</strong>字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。</p>
+<a id="more"></a>
+<h2 id="等级"><a href="#等级" class="headerlink" title="等级"></a>等级</h2><p>信用卡的等级从低到高一般分为<strong>普卡</strong>、<strong>金卡</strong>（Gold）、<strong>白金卡</strong>（Platinum）等，等级越高，优惠越多，额度越大，但相应的，年费也会越高。</p>
+<h2 id="溢缴款"><a href="#溢缴款" class="headerlink" title="溢缴款"></a>溢缴款</h2><p>信用卡不同于借记卡（或储蓄卡），信用卡的主要目的是用于消费，而不是存款，因此，存在信用卡里面的钱是没有利息的，这笔钱被叫做<strong>溢缴款</strong>，溢缴款取现是要收取手续费的。但在消费时，会优先扣除溢缴款，随后扣除额度。</p>
+<h2 id="银行卡组织"><a href="#银行卡组织" class="headerlink" title="银行卡组织"></a>银行卡组织</h2><p>不同银行之间要实现互相转账就要靠<strong>银行卡组织</strong>的协调，在中国使用最多的卡组织是<strong>银联</strong>（UnionPay），在美国使用最多的卡组织是<strong>Visa</strong>，在欧洲使用最多的卡组织是<strong>MasterCard</strong>（万事达），在日本使用最多的卡组织是<strong>JCB</strong>。当你准备在海外购物时，就十分有必要办一张支持海外卡组织的信用卡，比如Visa信用卡。</p>
+<h2 id="双标卡"><a href="#双标卡" class="headerlink" title="双标卡"></a>双标卡</h2><p>国内有一些信用卡上面既有银联的标志，也有海外卡组织的标志，这种卡就是<strong>双标卡</strong>。它可以在付款的时候选择指定的卡组织，比如在国内购物使用银联，在国外购物使用Visa。但是，按照国际惯例，一张卡只能归属于一个银行卡组织，这样看来，还是传统的两张单标卡更靠谱一点。</p>
+<h2 id="信用卡安全码"><a href="#信用卡安全码" class="headerlink" title="信用卡安全码"></a>信用卡安全码</h2><p><strong>信用卡安全码</strong>常为3位数字，印在卡片背面卡号后四位处，Visa的安全码叫做<strong>CVV2</strong>（Card Verification Value 2），银联的安全码叫做CVN2（Card Validation Number 2），JCB的安全码叫做CAV2（Card Authentication Value 2）。安全码相当于信用卡的密码，常用于网络交易的过程中，所以，请保护好自己的安全码，不要被泄露。</p>
+<h2 id="主卡副卡"><a href="#主卡副卡" class="headerlink" title="主卡副卡"></a>主卡副卡</h2><h2 id="币种"><a href="#币种" class="headerlink" title="币种"></a>币种</h2><h2 id="PayPal"><a href="#PayPal" class="headerlink" title="PayPal"></a>PayPal</h2><h2 id="借记卡和储蓄卡"><a href="#借记卡和储蓄卡" class="headerlink" title="借记卡和储蓄卡"></a>借记卡和储蓄卡</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>说说MS Office</title>
     <url>/2019/01/08/talk-about-ms-office/</url>
     <content><![CDATA[<p>Office是最常使用的<strong>办公套件</strong>，一般来说，提到Office，最先想到的是微软的Office，即<strong>MS Office</strong>，除此之外，还有<strong>WPS Office</strong>，这是由金山推出的。</p>
@@ -3218,22 +3236,6 @@
       <tags>
         <tag>Web</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>说说信用卡</title>
-    <url>/2019/01/08/talk-about-credit-card/</url>
-    <content><![CDATA[<h2 id="年费"><a href="#年费" class="headerlink" title="年费"></a>年费</h2><p>所谓<strong>年费</strong>，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即<strong>刷够指定额度</strong>或<strong>刷够指定笔数</strong>，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“<strong>终身免年费</strong>”的，这里的终身一般指信用卡的<strong>有效期</strong>内。</p>
-<h2 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h2><p>为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的<strong>VALID THRU</strong>字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。</p>
-<a id="more"></a>
-<h2 id="等级"><a href="#等级" class="headerlink" title="等级"></a>等级</h2><p>信用卡的等级从低到高一般分为<strong>普卡</strong>、<strong>金卡</strong>（Gold）、<strong>白金卡</strong>（Platinum）等，等级越高，优惠越多，额度越大，但相应的，年费也会越高。</p>
-<h2 id="溢缴款"><a href="#溢缴款" class="headerlink" title="溢缴款"></a>溢缴款</h2><p>信用卡不同于借记卡（或储蓄卡），信用卡的主要目的是用于消费，而不是存款，因此，存在信用卡里面的钱是没有利息的，这笔钱被叫做<strong>溢缴款</strong>，溢缴款取现是要收取手续费的。但在消费时，会优先扣除溢缴款，随后扣除额度。</p>
-<h2 id="银行卡组织"><a href="#银行卡组织" class="headerlink" title="银行卡组织"></a>银行卡组织</h2><p>不同银行之间要实现互相转账就要靠<strong>银行卡组织</strong>的协调，在中国使用最多的卡组织是<strong>银联</strong>（UnionPay），在美国使用最多的卡组织是<strong>Visa</strong>，在欧洲使用最多的卡组织是<strong>MasterCard</strong>（万事达），在日本使用最多的卡组织是<strong>JCB</strong>。当你准备在海外购物时，就十分有必要办一张支持海外卡组织的信用卡，比如Visa信用卡。</p>
-<h2 id="双标卡"><a href="#双标卡" class="headerlink" title="双标卡"></a>双标卡</h2><p>国内有一些信用卡上面既有银联的标志，也有海外卡组织的标志，这种卡就是<strong>双标卡</strong>。它可以在付款的时候选择指定的卡组织，比如在国内购物使用银联，在国外购物使用Visa。但是，按照国际惯例，一张卡只能归属于一个银行卡组织，这样看来，还是传统的两张单标卡更靠谱一点。</p>
-<h2 id="信用卡安全码"><a href="#信用卡安全码" class="headerlink" title="信用卡安全码"></a>信用卡安全码</h2><p><strong>信用卡安全码</strong>常为3位数字，印在卡片背面卡号后四位处，Visa的安全码叫做<strong>CVV2</strong>（Card Verification Value 2），银联的安全码叫做CVN2（Card Validation Number 2），JCB的安全码叫做CAV2（Card Authentication Value 2）。安全码相当于信用卡的密码，常用于网络交易的过程中，所以，请保护好自己的安全码，不要被泄露。</p>
-<h2 id="主卡副卡"><a href="#主卡副卡" class="headerlink" title="主卡副卡"></a>主卡副卡</h2><h2 id="币种"><a href="#币种" class="headerlink" title="币种"></a>币种</h2><h2 id="PayPal"><a href="#PayPal" class="headerlink" title="PayPal"></a>PayPal</h2><h2 id="借记卡和储蓄卡"><a href="#借记卡和储蓄卡" class="headerlink" title="借记卡和储蓄卡"></a>借记卡和储蓄卡</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>说说 VPS</title>
@@ -3386,44 +3388,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Udacity：Apollo起步学习笔记</title>
-    <url>/2018/07/21/udacity-apollo/</url>
-    <content><![CDATA[<p>本笔记记录自<a href="https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419">ud0419-无人驾驶第一课：从Apollo起步</a>。</p>
-<h2 id="一、无人驾驶概览"><a href="#一、无人驾驶概览" class="headerlink" title="一、无人驾驶概览"></a>一、无人驾驶概览</h2><p>无人驾驶车的6个等级：</p>
-<ul>
-<li>0级——基本等级：驾驶员是系统的唯一决策者。</li>
-<li>1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。</li>
-<li>2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。</li>
-<li>3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。</li>
-<li>4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。</li>
-<li>5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。</li>
-</ul>
-<a id="more"></a>
-<p>无人驾驶车的5个核心部件：</p>
-<ul>
-<li>计算机视觉(Computer Vision)：通过摄像头图像弄清楚我们周围的世界是怎样的。</li>
-<li>传感器融合(Sensor Fusion)：合并来自其他传感器的数据，如激光和雷达，从而更加深入的了解我们周围的环境。</li>
-<li>定位(Localization)：精确的确定我们在那个世界所处的位置。</li>
-<li>路径规划(Path Planning)：绘制这个世界的路线，帮助我们到达我们想去的地方。</li>
-<li>控制(Control)：为了让汽车沿着我们在路径规划期间建立的轨道。</li>
-</ul>
-<p>Apollo技术框架包含的4个层面：</p>
-<ul>
-<li>参考车辆平台</li>
-<li>参考硬件平台</li>
-<li>开源软件平台</li>
-<li>云服务平台</li>
-</ul>
-<h2 id="二、高精度地图"><a href="#二、高精度地图" class="headerlink" title="二、高精度地图"></a>二、高精度地图</h2>]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
-      <tags>
-        <tag>无人驾驶</tag>
-        <tag>Apollo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>tmux小记</title>
     <url>/2018/09/18/tmux/</url>
     <content><![CDATA[<p><a href="https://github.com/tmux/tmux">tmux</a>是一款优秀的<strong>终端复用</strong>工具，在Ubuntu下，使用<code>sudo apt install tmux</code>即可安装，输入<code>tmux</code>即可开始使用。与tmux相似的软件还有<a href="https://www.gnu.org/software/screen/">Screen</a>等。</p>
@@ -3483,6 +3447,44 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Udacity：Apollo起步学习笔记</title>
+    <url>/2018/07/21/udacity-apollo/</url>
+    <content><![CDATA[<p>本笔记记录自<a href="https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419">ud0419-无人驾驶第一课：从Apollo起步</a>。</p>
+<h2 id="一、无人驾驶概览"><a href="#一、无人驾驶概览" class="headerlink" title="一、无人驾驶概览"></a>一、无人驾驶概览</h2><p>无人驾驶车的6个等级：</p>
+<ul>
+<li>0级——基本等级：驾驶员是系统的唯一决策者。</li>
+<li>1级——驾驶员辅助(Driver Assistance)：车辆为驾驶员提供转向或加速支持，驾驶员必须保持充分参与。</li>
+<li>2级——部分自动化(Partial Automation)：车辆自动控制几项功能，如自动巡航控制和车道保持，但是驾驶员仍然必须执行自治系统处理的任何功能。</li>
+<li>3级——有条件的自动化(Conditional Automation)：车辆自主驾驶，但驾驶员必须准备在必要的时候随时接管。</li>
+<li>4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。</li>
+<li>5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。</li>
+</ul>
+<a id="more"></a>
+<p>无人驾驶车的5个核心部件：</p>
+<ul>
+<li>计算机视觉(Computer Vision)：通过摄像头图像弄清楚我们周围的世界是怎样的。</li>
+<li>传感器融合(Sensor Fusion)：合并来自其他传感器的数据，如激光和雷达，从而更加深入的了解我们周围的环境。</li>
+<li>定位(Localization)：精确的确定我们在那个世界所处的位置。</li>
+<li>路径规划(Path Planning)：绘制这个世界的路线，帮助我们到达我们想去的地方。</li>
+<li>控制(Control)：为了让汽车沿着我们在路径规划期间建立的轨道。</li>
+</ul>
+<p>Apollo技术框架包含的4个层面：</p>
+<ul>
+<li>参考车辆平台</li>
+<li>参考硬件平台</li>
+<li>开源软件平台</li>
+<li>云服务平台</li>
+</ul>
+<h2 id="二、高精度地图"><a href="#二、高精度地图" class="headerlink" title="二、高精度地图"></a>二、高精度地图</h2>]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>无人驾驶</tag>
+        <tag>Apollo</tag>
       </tags>
   </entry>
   <entry>
@@ -3662,14 +3664,6 @@
       </tags>
   </entry>
   <entry>
-    <title>编写Wikipedia的几点注意</title>
-    <url>/2018/12/16/wikipedia/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>白帽子 VPS 选购指南</title>
     <url>/2019/02/25/whitehat-vps/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/">https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/</a> ，正文如下：</p>
@@ -3771,6 +3765,14 @@
 ]]></content>
       <categories>
         <category>Translation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>编写Wikipedia的几点注意</title>
+    <url>/2018/12/16/wikipedia/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
       </categories>
   </entry>
   <entry>
