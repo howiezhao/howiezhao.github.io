@@ -6,7 +6,7 @@
   <link href="https://howiezhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2020-12-26T13:46:01.000Z</updated>
+  <updated>2020-12-30T04:46:33.000Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>POP3、IMAP 和 SMTP</title>
+    <link href="https://howiezhao.github.io/2020/12/29/pop3-imap-smtp/"/>
+    <id>https://howiezhao.github.io/2020/12/29/pop3-imap-smtp/</id>
+    <published>2020-12-29T06:52:46.000Z</published>
+    <updated>2020-12-30T04:46:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>因特网电子邮件系统由 3 个主要部分组成：</p><ul><li>用户代理（user agent）：允许用户阅读、回复、转发、保存和撰写报文，如微软的 Outlook 和 Apple Mail 等</li><li>邮件服务器（mail server）：每个接收方在其中的某个邮件服务器上有一个邮箱（mailbox）</li><li>SMTP</li></ul><p>一个典型的邮件发送过程是：从发送方的用户代理开始，传输到发送方的邮件服务器（通过 SMTP 或 HTTP），再传输到接收方的邮件服务器（通过 SMTP），然后在这里被分发到接收方的邮箱中。如果发送方的邮件服务器不能将邮件交付给接收方的邮件服务器，发送方的邮件服务器在一个<strong>报文队列</strong>（message queue）中保持该报文并在以后尝试再次发送。</p><a id="more"></a><h2 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h2><p><strong>SMTP</strong>（Simple Mail Transfer Protocol，简单邮件传输协议）是因特网电子邮件中主要的应用层协议。它使用 TCP 可靠数据传输服务，从发送方的邮件服务器向接收方的邮件服务器发送邮件。每台邮件服务器既运行 SMTP 的客户端也运行 SMTP 的服务器端。</p><p>SMTP 一般不使用中间邮件服务器发送邮件。</p><p>SMTP 是如何将一个报文从发送邮件服务器传送到接收邮件服务器的呢？首先，客户 SMTP（运行在发送邮件服务器主机上）在 <strong>25</strong> 号端口建立一个到服务器 SMTP（运行在接收邮件服务器主机上）的 TCP 连接。如果服务器没有开机，客户会在稍后继续尝试连接。一旦连接建立，服务器和客户执行某些应用层的握手。在 SMTP 握手的阶段，SMTP 客户指示发送方的邮件地址（产生报文的那个人）和接收方的邮件地址。一旦握手完成，客户发送该报文。该客户如果有另外的报文要发送到该服务器，就在该相同的 TCP 连接上重复这种处理；否则，它指示 TCP 关闭连接。以下是一个例子（S 代表 SMTP 服务器，C 代表 SMTP 客户）：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">S: 220 hamburger.edu</span><br><span class="line">C: HELO crepes.fr</span><br><span class="line">S: 250 Hello crepes.fr, pleased to meet you</span><br><span class="line">C: MAIL FROM: &lt;alice@crepes.fr&gt;</span><br><span class="line">S: 250 alice@crepes.fr ... Sender ok</span><br><span class="line">C: RCPT TO: &lt;bob@hamburger.edu&gt;</span><br><span class="line">S: 250 bob@hamburger.edu ... Recipient ok</span><br><span class="line">C: DATA</span><br><span class="line">S: 354 Enter mail, end with &quot;.&quot; on a line by itself</span><br><span class="line">C: Do you like ketchup?</span><br><span class="line">C: How about pickles?</span><br><span class="line">C: .</span><br><span class="line">S: 250 Message accepted for delivery</span><br><span class="line">C: QUIT</span><br><span class="line">S: 221 hamburger.edu closing connection</span><br></pre></td></tr></table></figure><p>在上例中，该客户发送了 5 条命令：<code>HELO</code>（是 HELLO 的缩写）、<code>MAIL FROM</code>、<code>RCPT TO</code>、<code>DATA</code> 以及 <code>QUIT</code>。</p><p>当然，你也可以使用 Telnet 直接与一个 SMTP 服务器对话，如下：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet smtp.office365.com 25</span><br></pre></td></tr></table></figure><h3 id="与-HTTP-的对比"><a href="#与-HTTP-的对比" class="headerlink" title="与 HTTP 的对比"></a>与 HTTP 的对比</h3><p>SMTP 与 HTTP 有一些共同的特征：</p><ul><li>这两个协议都用于从一台主机向另一台主机传送文件</li><li>当进行文件传送时，持续的 HTTP 和 SMTP 都使用持续连接</li></ul><p>然而，两者之间也有一些重要的区别：</p><p>首先，HTTP 主要是一个<strong>拉协议</strong>（pull protocol），即在方便的时候，某些人在 Web 服务器上装载信息，用户使用 HTTP 从该服务器拉取这些信息。特别是 TCP 连接是由想接收文件的机器发起的。另一方面，SMTP 基本上是一个<strong>推协议</strong>（push protocol），即发送邮件服务器把文件推向接收邮件服务器。特别是，这个 TCP 连接是由发送该文件的机器发起的。</p><p>第二个区别是由于问世较早， SMTP 要求每个报文（包括它们的体）采用 7 比特 ASCII 码格式。如果某报文包含了非 7 比特 ASCII 字符（如具有重音的法文字符）或二进制数据（如图形文件），则该报文必须按照 7 比特 ASCII 码进行编码。HTTP 数据则不受这种限制。</p><p>第三个重要区别是如何处理一个既包含文本又包含图形（也可能是其他媒体类型）的文档。HTTP 把每个对象封装到它自己的 HTTP 响应报文中，而 SMTP 则把所有报文对象放在一个报文之中。</p><h3 id="邮件报文格式"><a href="#邮件报文格式" class="headerlink" title="邮件报文格式"></a>邮件报文格式</h3><p>如同 HTTP 协议，邮件报文也有相应的邮件首部行，每个首部行包含了可读的文本，是由关键词后跟冒号及其值组成的。某些关键词是必须的，另一些则是可选的。每个首部 <em>必须</em> 含有一个 <code>From:</code> 首部行和一个 <code>To:</code> 首部行；一个首部 <em>也许</em> 包含一个 <code>Subject:</code> 首部行以及其他可选的首部行。</p><p>一个典型的报文首部看看起来如下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">From: alice@crepes.fr</span><br><span class="line">To: bob@hamburger.edu</span><br><span class="line">Subject: Searching for the meaning of life.</span><br></pre></td></tr></table></figure><h2 id="POP3"><a href="#POP3" class="headerlink" title="POP3"></a>POP3</h2><p><strong>POP3</strong>（Post Office Protocol——Version 3，第三版的邮局协议）是一个极为简单的邮件访问协议。</p><p>当用户代理（客户）打开了一个到邮件服务器（服务器）端口 <strong>110</strong> 上的 TCP 连接后，POP3 就开始工作了。随着建立 TCP 连接，POP3 按照 3 个阶段进行工作：</p><ol><li>特许（authorization）：用户代理发送（以明文形式）用户名和口令以鉴别用户</li><li>事务处理：用户代理取回报文；同时在这个阶段用户代理还能进行如下操作，对报文做删除标记，取消报文删除标记，以及获取邮件的统计信息</li><li>更新：它出现在客户发出了 quit 命令之后，目的是结束该 POP3 会话；这时，该邮件服务器删除那些被标记为删除的报文</li></ol><p>在 POP3 的事务处理过程中，用户代理发出一些命令，服务器对每个命令做出回答。回答可能有两种：</p><ul><li><code>+OK</code>：（有时后面还跟有服务器到客户的数据），被服务器用来指示前面的命令是正常的</li><li><code>-ERR</code>：被服务器用来指示前面的命令出现了某些差错</li></ul><p>特许阶段有两个主要的命令：<code>user &lt;user name&gt;</code> 和 <code>pass &lt;password&gt;</code>。你可以使用 Telnet 进行测试，如下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">telnet outlook.office365.com 110</span><br><span class="line">+OK The Microsoft Exchange POP3 service is ready.</span><br><span class="line">user bob</span><br><span class="line">+OK</span><br><span class="line">pass hungry</span><br><span class="line">+OK user successfully logged on</span><br></pre></td></tr></table></figure><p>在特许阶段以后，用户代理仅使用 4 个命令 <code>list</code>、<code>retr</code>、<code>dele</code> 和 <code>quit</code>。</p><p>使用 POP3 的用户代理通常被用户配置为“<strong>下载并删除</strong>”或者“<strong>下载并保留</strong>”方式。POP3 用户代理发出的命令序列取决于用户代理程序被配置为这两种工作方式的哪一种。使用下载并删除方式，用户代理发出 <code>list</code> —— <code>retr</code> —— <code>dele</code> 命令，如下（C 代表客户，S 代表服务器）：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">C: list</span><br><span class="line">S: 1 498</span><br><span class="line">S: 2 912</span><br><span class="line">S: .</span><br><span class="line">C: retr 1</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 1</span><br><span class="line">C: retr 2</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 2</span><br><span class="line">C: quit</span><br><span class="line">S: +OK POP3 server signing off</span><br></pre></td></tr></table></figure><p>使用下载并保留方式，用户代理下载某邮件后，该邮件仍保留在邮件服务器上。</p><h2 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h2><p><strong>IMAP</strong>（Internet Mail Access Protocol，因特网邮件访问协议）是一个相比 POP3 更强大的邮件访问协议。</p><p>相比 POP3，IMAP 协议为用户提供了创建文件夹以及将邮件从一个文件夹移动到另一个文件夹的命令；还为用户提供了在远程文件夹中查询邮件的命令，按指定条件去查询匹配的邮件；它还提供了允许用户代理获取报文某些部分的命令。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>相比于 SMTP，POP3 和 IMAP 等邮件访问协议本质上属于拉协议，在基于 Web 的电子邮件中，则可以通过 HTTP 进行邮件的收发，此时，用户代理就是普通的浏览器。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;因特网电子邮件系统由 3 个主要部分组成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户代理（user agent）：允许用户阅读、回复、转发、保存和撰写报文，如微软的 Outlook 和 Apple Mail 等&lt;/li&gt;
+&lt;li&gt;邮件服务器（mail server）：每个接收方在其中的某个邮件服务器上有一个邮箱（mailbox）&lt;/li&gt;
+&lt;li&gt;SMTP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个典型的邮件发送过程是：从发送方的用户代理开始，传输到发送方的邮件服务器（通过 SMTP 或 HTTP），再传输到接收方的邮件服务器（通过 SMTP），然后在这里被分发到接收方的邮箱中。如果发送方的邮件服务器不能将邮件交付给接收方的邮件服务器，发送方的邮件服务器在一个&lt;strong&gt;报文队列&lt;/strong&gt;（message queue）中保持该报文并在以后尝试再次发送。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+    <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>P2P 与 BitTorrent</title>
@@ -437,26 +464,6 @@
     <summary type="html">&lt;p&gt;Office是最常使用的&lt;strong&gt;办公套件&lt;/strong&gt;，一般来说，提到Office，最先想到的是微软的Office，即&lt;strong&gt;MS Office&lt;/strong&gt;，除此之外，还有&lt;strong&gt;WPS Office&lt;/strong&gt;，这是由金山推出的。&lt;/p&gt;
 &lt;p&gt;Office原生支持Windows桌面版，这也是目前功能最全且&lt;strong&gt;收费&lt;/strong&gt;的Office版本，时至今日，Office也可以用于UWP、Android、iOS、macOS以及Web等。一般来说，我们说的Office是指Windows桌面版的Office套件。&lt;/p&gt;
 &lt;p&gt;在本文写作之际，最新的Office版本为&lt;strong&gt;Office 2019&lt;/strong&gt;，但据个人观察，&lt;strong&gt;Office 2010&lt;/strong&gt;仍然被大多数人所使用。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>说说信用卡</title>
-    <link href="https://howiezhao.github.io/2019/01/08/talk-about-credit-card/"/>
-    <id>https://howiezhao.github.io/2019/01/08/talk-about-credit-card/</id>
-    <published>2019-01-08T10:37:43.000Z</published>
-    <updated>2020-01-18T11:13:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="年费"><a href="#年费" class="headerlink" title="年费"></a>年费</h2><p>所谓<strong>年费</strong>，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即<strong>刷够指定额度</strong>或<strong>刷够指定笔数</strong>，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“<strong>终身免年费</strong>”的，这里的终身一般指信用卡的<strong>有效期</strong>内。</p><h2 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h2><p>为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的<strong>VALID THRU</strong>字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。</p><a id="more"></a><h2 id="等级"><a href="#等级" class="headerlink" title="等级"></a>等级</h2><p>信用卡的等级从低到高一般分为<strong>普卡</strong>、<strong>金卡</strong>（Gold）、<strong>白金卡</strong>（Platinum）等，等级越高，优惠越多，额度越大，但相应的，年费也会越高。</p><h2 id="溢缴款"><a href="#溢缴款" class="headerlink" title="溢缴款"></a>溢缴款</h2><p>信用卡不同于借记卡（或储蓄卡），信用卡的主要目的是用于消费，而不是存款，因此，存在信用卡里面的钱是没有利息的，这笔钱被叫做<strong>溢缴款</strong>，溢缴款取现是要收取手续费的。但在消费时，会优先扣除溢缴款，随后扣除额度。</p><h2 id="银行卡组织"><a href="#银行卡组织" class="headerlink" title="银行卡组织"></a>银行卡组织</h2><p>不同银行之间要实现互相转账就要靠<strong>银行卡组织</strong>的协调，在中国使用最多的卡组织是<strong>银联</strong>（UnionPay），在美国使用最多的卡组织是<strong>Visa</strong>，在欧洲使用最多的卡组织是<strong>MasterCard</strong>（万事达），在日本使用最多的卡组织是<strong>JCB</strong>。当你准备在海外购物时，就十分有必要办一张支持海外卡组织的信用卡，比如Visa信用卡。</p><h2 id="双标卡"><a href="#双标卡" class="headerlink" title="双标卡"></a>双标卡</h2><p>国内有一些信用卡上面既有银联的标志，也有海外卡组织的标志，这种卡就是<strong>双标卡</strong>。它可以在付款的时候选择指定的卡组织，比如在国内购物使用银联，在国外购物使用Visa。但是，按照国际惯例，一张卡只能归属于一个银行卡组织，这样看来，还是传统的两张单标卡更靠谱一点。</p><h2 id="信用卡安全码"><a href="#信用卡安全码" class="headerlink" title="信用卡安全码"></a>信用卡安全码</h2><p><strong>信用卡安全码</strong>常为3位数字，印在卡片背面卡号后四位处，Visa的安全码叫做<strong>CVV2</strong>（Card Verification Value 2），银联的安全码叫做CVN2（Card Validation Number 2），JCB的安全码叫做CAV2（Card Authentication Value 2）。安全码相当于信用卡的密码，常用于网络交易的过程中，所以，请保护好自己的安全码，不要被泄露。</p><h2 id="主卡副卡"><a href="#主卡副卡" class="headerlink" title="主卡副卡"></a>主卡副卡</h2><h2 id="币种"><a href="#币种" class="headerlink" title="币种"></a>币种</h2><h2 id="PayPal"><a href="#PayPal" class="headerlink" title="PayPal"></a>PayPal</h2><h2 id="借记卡和储蓄卡"><a href="#借记卡和储蓄卡" class="headerlink" title="借记卡和储蓄卡"></a>借记卡和储蓄卡</h2>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;年费&quot;&gt;&lt;a href=&quot;#年费&quot; class=&quot;headerlink&quot; title=&quot;年费&quot;&gt;&lt;/a&gt;年费&lt;/h2&gt;&lt;p&gt;所谓&lt;strong&gt;年费&lt;/strong&gt;，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即&lt;strong&gt;刷够指定额度&lt;/strong&gt;或&lt;strong&gt;刷够指定笔数&lt;/strong&gt;，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“&lt;strong&gt;终身免年费&lt;/strong&gt;”的，这里的终身一般指信用卡的&lt;strong&gt;有效期&lt;/strong&gt;内。&lt;/p&gt;
-&lt;h2 id=&quot;有效期&quot;&gt;&lt;a href=&quot;#有效期&quot; class=&quot;headerlink&quot; title=&quot;有效期&quot;&gt;&lt;/a&gt;有效期&lt;/h2&gt;&lt;p&gt;为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的&lt;strong&gt;VALID THRU&lt;/strong&gt;字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。&lt;/p&gt;</summary>
     
     
     

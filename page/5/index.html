@@ -234,7 +234,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">118</span>
+          <span class="site-state-item-count">119</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -312,6 +312,97 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/22/steganography/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/09/22/steganography/" class="post-title-link" itemprop="url">隐写术</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-09-22 23:45:31" itemprop="dateCreated datePublished" datetime="2018-09-22T23:45:31+08:00">2018-09-22</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-11-28 13:45:25" itemprop="dateModified" datetime="2020-11-28T13:45:25+08:00">2020-11-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code> 即可检查 a 文件的类型。</p>
+<p>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 <code>CTF</code> 或 <code>FLAG</code> 等关键字，发现是否存在隐藏信息。Windows 下可以使用 Sublime Text 3 的插件 <a target="_blank" rel="noopener" href="http://facelessuser.github.io/HexViewer/">HexViewer</a> 查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
+<h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a target="_blank" rel="noopener" href="https://www.google.com/imghp">谷歌搜图</a>，或许可以发现更多信息。</p>
+<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式（Exchangeable image file format），可以记录 JPEG 格式图片的属性信息和拍摄数据。有的 JPEG 格式图片会具有 Exif 信息，在 Windows 中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备 Exif 信息。如下图片：</p>
+<p><img src="/images/meinv.jpg" alt="exif"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/09/22/steganography/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1081,94 +1172,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/18/android-root/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/09/18/android-root/" class="post-title-link" itemprop="url">谈谈Android的root</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-09-18 12:13:24" itemprop="dateCreated datePublished" datetime="2018-09-18T12:13:24+08:00">2018-09-18</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。</p>
-<h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><p>在Linux中获得root权限有2个命令，<code>su</code>与<code>sudo</code>，<code>sudo</code>只是为了短暂的获得root权限以执行某些操作(superuser do)，而<code>su</code>其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用<code>sudo</code>执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用<code>su</code>切换到root用户时，需要输入root用户的密码。<br>在Linux中，文件的权限有<code>rwx</code>三种，即可读(read)、可写(write)、可执行(execute)，其中<code>r</code>又等于4，<code>w</code>等于2，<code>x</code>等于1。所以，如果一个文件同时具有<code>rwx</code>权限，那么它的权限位就等于7。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/09/18/android-root/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1215,7 +1218,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">131k</span>
+    <span title="Symbols count total">134k</span>
   </span>
 </div>
 <div class="busuanzi-count">
