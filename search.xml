@@ -50,22 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于代理那些事</title>
-    <url>/2018/07/26/about-proxy/</url>
-    <content><![CDATA[<h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p>
-<h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。</p>
-<a id="more"></a>
-
-<h2 id="端口转发与端口映射"><a href="#端口转发与端口映射" class="headerlink" title="端口转发与端口映射"></a>端口转发与端口映射</h2><p>传统意义上，我们认为<strong>端口转发</strong>(Port Forwarding)与<strong>端口映射</strong>(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>渗透</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于PowerShell</title>
     <url>/2018/07/16/about-powershell/</url>
     <content><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p>
@@ -96,6 +80,22 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于代理那些事</title>
+    <url>/2018/07/26/about-proxy/</url>
+    <content><![CDATA[<h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p>
+<h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。</p>
+<a id="more"></a>
+
+<h2 id="端口转发与端口映射"><a href="#端口转发与端口映射" class="headerlink" title="端口转发与端口映射"></a>端口转发与端口映射</h2><p>传统意义上，我们认为<strong>端口转发</strong>(Port Forwarding)与<strong>端口映射</strong>(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>渗透</tag>
       </tags>
   </entry>
   <entry>
@@ -225,8 +225,8 @@
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>渗透</tag>
         <tag>Windows</tag>
+        <tag>渗透</tag>
         <tag>计算机取证</tag>
       </tags>
   </entry>
@@ -248,17 +248,6 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
-  </entry>
-  <entry>
-    <title>强大的autojump</title>
-    <url>/2018/09/19/autojump/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
   </entry>
   <entry>
     <title>汇编语言小记</title>
@@ -428,6 +417,17 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>强大的autojump</title>
+    <url>/2018/09/19/autojump/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Base编码家族</title>
@@ -1007,48 +1007,6 @@
       </tags>
   </entry>
   <entry>
-    <title>写代码应该用哪种字体</title>
-    <url>/2018/09/23/code-font/</url>
-    <content><![CDATA[<h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：</p>
-<p><img src="/images/monospaced.PNG" alt="等宽字体与比例字体"></p>
-<p>在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 <code>i</code>，<code>j</code> 显得两侧余白较多，而字母 <code>w</code>，<code>m</code> 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。</p>
-<a id="more"></a>
-<h2 id="衬线字体与非衬线字体"><a href="#衬线字体与非衬线字体" class="headerlink" title="衬线字体与非衬线字体"></a>衬线字体与非衬线字体</h2><p>顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无<strong>衬线</strong>，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：</p>
-<p><img src="/images/serif.PNG" alt="衬线字体与非衬线字体"></p>
-<p>这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为<strong>宋体</strong>，非衬线字体为<strong>黑体</strong>，如下：</p>
-<p><img src="/images/song-hei.png" alt="宋体与黑体"></p>
-<p>衬线字体常用于印刷业，而且特别适用于长篇文章段落；非衬线字体简洁大方，适用于广告、标志、牌子等短句。另外，系统、程序和网页中的字体也几乎都是非衬线字体，即使是很长的段落，这是因为显示器分辨率低，字体不能减小，如果用衬线字体，那些边边角角就很难用像素显示清楚，结果反而不利于阅读。<br>Google 在 2015 年就将其原本的衬线体 Logo 换成了无衬线体 Logo:</p>
-<p><img src="/images/google.gif" alt="Google Logo 变化"></p>
-<p>我们在写 Word 文档时，常用的英文衬线字体就是 <strong>Times New Roman</strong>；而在做 PPT 时，个人倾向于使用非衬线字体<strong>微软雅黑</strong>。</p>
-<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>写代码应该使用的字体对于衬线或非衬线要求不大，但强烈建议使用等宽字体，这样可以便于代码对齐，因为比例字体的宽度不定，这会对代码对齐造成极大的困难。另外，还应该对特殊字符有较高的辨识度，比如 <code>I</code>（大写 <code>i</code>）、<code>l</code>（小写 <code>L</code>）、<code>1</code>（数字 <code>1</code>），<code>0</code>（数字 <code>0</code>）、<code>O</code>（大写 <code>o</code>） 等。最后，中文字符的宽度应该严格是英文字符宽度的 2 倍，在某些时候，你会发现这很有用。</p>
-<p>基于以上，个人倾向于使用 be5invis 开发的 <a href="https://github.com/be5invis/Sarasa-Gothic">Sarasa-Gothic（更纱黑体）</a> 系列字体，它的前身便是 Inziu Iosevka 系列字体，现在已经迁移至 Sarasa-Gothic，推荐使用其中的 <strong>Sarasa Term SC</strong> 型字体。此外，这一系列字体都是开源免费的。</p>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>在下载某些字体时，可能会遇到相关术语，如下：</p>
-<ul>
-<li>mono：即 Monospaced，等宽字体</li>
-<li>sans：即 Sans-Serif，无衬线体</li>
-<li>gothic：哥特体，即无衬线体</li>
-<li>bold：粗体</li>
-<li>italic：斜体</li>
-<li>bolditalic：加粗斜体</li>
-<li>regular：常规体</li>
-<li>sc：即 Simplified Chinese，简体中文</li>
-<li>tc：即 Traditional Chinese，繁体中文</li>
-<li>cl：即 Classical Literature，《康熙字典》字形</li>
-<li>j：即 Japanese，日文</li>
-<li>ligature：连体字符，举例来说，会把 <code>!=</code> 变成 <code>≠</code></li>
-</ul>
-<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>关于代码配色，就真是个“仁者见仁，智者见智”的问题了，个人要求满足以下两点：</p>
-<ol>
-<li>采用黑色背景</li>
-<li>官网提供多种编辑器的支持</li>
-</ol>
-<p>综上，个人倾向于使用 <a href="https://draculatheme.com/">Dracula</a> 。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>古典密码学</title>
     <url>/2018/08/10/classical-crypto/</url>
     <content><![CDATA[<p>密码学（Cryptography）大致可分为<strong>古典密码学</strong>（Classic cryptography）和<strong>现代密码学</strong>（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于<strong>字符</strong>的，而现代密码学是基于<strong>二进制位</strong>的。古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
@@ -1321,6 +1279,48 @@
       </tags>
   </entry>
   <entry>
+    <title>写代码应该用哪种字体</title>
+    <url>/2018/09/23/code-font/</url>
+    <content><![CDATA[<h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：</p>
+<p><img src="/images/monospaced.PNG" alt="等宽字体与比例字体"></p>
+<p>在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 <code>i</code>，<code>j</code> 显得两侧余白较多，而字母 <code>w</code>，<code>m</code> 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。</p>
+<a id="more"></a>
+<h2 id="衬线字体与非衬线字体"><a href="#衬线字体与非衬线字体" class="headerlink" title="衬线字体与非衬线字体"></a>衬线字体与非衬线字体</h2><p>顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无<strong>衬线</strong>，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：</p>
+<p><img src="/images/serif.PNG" alt="衬线字体与非衬线字体"></p>
+<p>这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为<strong>宋体</strong>，非衬线字体为<strong>黑体</strong>，如下：</p>
+<p><img src="/images/song-hei.png" alt="宋体与黑体"></p>
+<p>衬线字体常用于印刷业，而且特别适用于长篇文章段落；非衬线字体简洁大方，适用于广告、标志、牌子等短句。另外，系统、程序和网页中的字体也几乎都是非衬线字体，即使是很长的段落，这是因为显示器分辨率低，字体不能减小，如果用衬线字体，那些边边角角就很难用像素显示清楚，结果反而不利于阅读。<br>Google 在 2015 年就将其原本的衬线体 Logo 换成了无衬线体 Logo:</p>
+<p><img src="/images/google.gif" alt="Google Logo 变化"></p>
+<p>我们在写 Word 文档时，常用的英文衬线字体就是 <strong>Times New Roman</strong>；而在做 PPT 时，个人倾向于使用非衬线字体<strong>微软雅黑</strong>。</p>
+<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>写代码应该使用的字体对于衬线或非衬线要求不大，但强烈建议使用等宽字体，这样可以便于代码对齐，因为比例字体的宽度不定，这会对代码对齐造成极大的困难。另外，还应该对特殊字符有较高的辨识度，比如 <code>I</code>（大写 <code>i</code>）、<code>l</code>（小写 <code>L</code>）、<code>1</code>（数字 <code>1</code>），<code>0</code>（数字 <code>0</code>）、<code>O</code>（大写 <code>o</code>） 等。最后，中文字符的宽度应该严格是英文字符宽度的 2 倍，在某些时候，你会发现这很有用。</p>
+<p>基于以上，个人倾向于使用 be5invis 开发的 <a href="https://github.com/be5invis/Sarasa-Gothic">Sarasa-Gothic（更纱黑体）</a> 系列字体，它的前身便是 Inziu Iosevka 系列字体，现在已经迁移至 Sarasa-Gothic，推荐使用其中的 <strong>Sarasa Term SC</strong> 型字体。此外，这一系列字体都是开源免费的。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>在下载某些字体时，可能会遇到相关术语，如下：</p>
+<ul>
+<li>mono：即 Monospaced，等宽字体</li>
+<li>sans：即 Sans-Serif，无衬线体</li>
+<li>gothic：哥特体，即无衬线体</li>
+<li>bold：粗体</li>
+<li>italic：斜体</li>
+<li>bolditalic：加粗斜体</li>
+<li>regular：常规体</li>
+<li>sc：即 Simplified Chinese，简体中文</li>
+<li>tc：即 Traditional Chinese，繁体中文</li>
+<li>cl：即 Classical Literature，《康熙字典》字形</li>
+<li>j：即 Japanese，日文</li>
+<li>ligature：连体字符，举例来说，会把 <code>!=</code> 变成 <code>≠</code></li>
+</ul>
+<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>关于代码配色，就真是个“仁者见仁，智者见智”的问题了，个人要求满足以下两点：</p>
+<ol>
+<li>采用黑色背景</li>
+<li>官网提供多种编辑器的支持</li>
+</ol>
+<p>综上，个人倾向于使用 <a href="https://draculatheme.com/">Dracula</a> 。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>编译与构建</title>
     <url>/2018/07/15/compile-build/</url>
     <content><![CDATA[<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译（compile）</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器（compiler）</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。</p>
@@ -1393,36 +1393,6 @@
       </categories>
   </entry>
   <entry>
-    <title>编码与加密</title>
-    <url>/2018/05/08/encode-encrypt/</url>
-    <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
-<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、Base64 编码等。</p>
-<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>加密（encryption）是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密（decryption）过程，才能将密文还原为正常可读的内容。</p>
-<p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
-<p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
-<p>非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
-<p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
-<p>常见的非对称加密算法有 RSA、DSA、ECDSA、Elgamal 等。</p>
-<p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
-<p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
-<a id="more"></a>
-<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文（即哈希值）反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为<strong>冲突</strong>。一个优秀的哈希算法会尽量的减少这种冲突性。</p>
-<p>常见的哈希算法有 MD5、SHA-1、SHA-256、CRC-32、CRC-64 等。</p>
-<hr>
-<p>注意：</p>
-<ol>
-<li>密码学建议，不要使用任何自己创造的私有加密算法，应该使用广泛使用的公开加密算法，这些都是已被证明安全的。</li>
-<li>编码与加密主要的区别在于，所用的 Key 是否是公共所知的，或者说，编码根本就没有 Key。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker 入坑指南</title>
     <url>/2018/08/31/docker/</url>
     <content><![CDATA[<p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C/S</strong> 架构，使用 Go 语言开发。</p>
@@ -1452,6 +1422,36 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>编码与加密</title>
+    <url>/2018/05/08/encode-encrypt/</url>
+    <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
+<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、Base64 编码等。</p>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>加密（encryption）是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密（decryption）过程，才能将密文还原为正常可读的内容。</p>
+<p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
+<p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
+<p>非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
+<p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
+<p>常见的非对称加密算法有 RSA、DSA、ECDSA、Elgamal 等。</p>
+<p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
+<p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
+<a id="more"></a>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文（即哈希值）反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为<strong>冲突</strong>。一个优秀的哈希算法会尽量的减少这种冲突性。</p>
+<p>常见的哈希算法有 MD5、SHA-1、SHA-256、CRC-32、CRC-64 等。</p>
+<hr>
+<p>注意：</p>
+<ol>
+<li>密码学建议，不要使用任何自己创造的私有加密算法，应该使用广泛使用的公开加密算法，这些都是已被证明安全的。</li>
+<li>编码与加密主要的区别在于，所用的 Key 是否是公共所知的，或者说，编码根本就没有 Key。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
   </entry>
   <entry>
     <title>辗转相除法</title>
@@ -1523,14 +1523,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用GitBook编写电子书籍</title>
-    <url>/2018/12/16/gitbook/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git小记</title>
     <url>/2018/08/31/git/</url>
     <content><![CDATA[<p><a href="https://git-scm.com/">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a href="https://www.mercurial-scm.org/">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a href="https://www.nongnu.org/cvs/">CVS</a>、<a href="https://subversion.apache.org/">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
@@ -1588,32 +1580,12 @@
       </categories>
   </entry>
   <entry>
-    <title>HackRF 初体验</title>
-    <url>/2020/01/22/hackrf/</url>
-    <content><![CDATA[<p><a href="https://greatscottgadgets.com/hackrf/">HackRF</a> 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其<a href="https://greatscottgadgets.com/wheretobuy/">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
-<a id="more"></a>
-
-<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 录制信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -r：将数据存储到文件中</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重放信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -t：从文件中读取数据</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
-
-<p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。<br>Tx Mode：发射模式<br>Rx Mode：接收模式</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>针对哈希算法的攻击</title>
-    <url>/2018/05/09/hash-attack/</url>
+    <title>使用GitBook编写电子书籍</title>
+    <url>/2018/12/16/gitbook/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
   </entry>
   <entry>
     <title>成为黑客高手的必备技能</title>
@@ -1724,6 +1696,105 @@
       <categories>
         <category>Translation</category>
       </categories>
+  </entry>
+  <entry>
+    <title>HackRF 初体验</title>
+    <url>/2020/01/22/hackrf/</url>
+    <content><![CDATA[<p><a href="https://greatscottgadgets.com/hackrf/">HackRF</a> 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其<a href="https://greatscottgadgets.com/wheretobuy/">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
+<a id="more"></a>
+
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 录制信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -r：将数据存储到文件中</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重放信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -t：从文件中读取数据</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
+
+<p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。<br>Tx Mode：发射模式<br>Rx Mode：接收模式</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>针对哈希算法的攻击</title>
+    <url>/2018/05/09/hash-attack/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo初体验</title>
+    <url>/2017/06/20/hexo-experience/</url>
+    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/index.html">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/">Jekyll</a>，基于Go的<a href="https://gohugo.io/">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/">Node.js</a>和<a href="https://git-scm.com/downloads">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
+<p><strong>本地安装</strong></p>
+<ul>
+<li>将安装包放在 ./node_modules 下（运行npm时所在的目录）</li>
+<li>可以通过 require() 来引入本地安装的包</li>
+</ul>
+<p><strong>全局安装</strong></p>
+<ul>
+<li>将安装包放在 /usr/local下</li>
+<li>可以直接在命令行里使用<a id="more"></a>
+
+</li>
+</ul>
+<p>关于npm更多的内容请参考<a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm模块安装机制简介</a>。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>hexo version</code>即可查看Hexo版本信息，在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
+<p>如果没有设置<code>folder</code>，Hexo 默认在目前的文件夹建立网站。</p>
+<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt;</span><br><span class="line">或 hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>如果没有设置<code>layout</code>的话，默认使用 _config.yml 中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">或 hexo generate</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line">或 hexo server</span><br></pre></td></tr></table></figure>
+<p>默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a> 。</p>
+<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br><span class="line">或 hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>Hexo生成的网站目录结构如下：</p>
+<ul>
+<li><code>public</code>：此目录下保存着已经生成的静态文件</li>
+<li><code>scaffolds</code>：此目录下存放Hexo模板，当您新建文章时，Hexo会根据scaffold来建立文件。</li>
+<li><code>source</code>：此目录下存放用户资源<ul>
+<li><code>_posts</code>：此目录下存放Markdown格式的源文章</li>
+<li><code>images</code>：此目录下存放相关图片文件</li>
+</ul>
+</li>
+<li><code>themes</code>：此目录下保存着主题文件</li>
+<li><code>_config.yml</code>：此文件为<strong>站点配置文件</strong></li>
+</ul>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>站点配置文件（<code>_config.yml</code>）中的<code>url</code>字段务必要填写为自己站点的正确网址，否则分享自己站点内文章时会生成错误链接。<br>新建文章（<code>hexo n &lt;title&gt;</code>）时建议使用小写英文作为文件名，此文件名将作为文章链接的一部分，英文中的空格将自动用<code>-</code>替代，文章标题可以在文件中另行设置。<br>和传统的博客一样，建议开启<strong>分类</strong>（category）和<strong>标签</strong>（tag）功能，在Hexo中，分类具有<strong>顺序性</strong>和<strong>层次性</strong>，也就是说<code>Foo，Bar</code>不等于<code>Bar，Foo</code>，而标签没有顺序和层次。简单来说，分类应该是经过深思熟虑的，而标签则可适文章而决定，分类一般只有几个，而标签可以有一堆。具体而言，可以参考本站点的分类标签设计。</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Hexo支持<a href="https://hexo.io/plugins/">许多插件</a>，个人经常使用的插件如下：</p>
+<ul>
+<li><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：为Hexo打造的Git部署插件，适用于将博客部署到GitHub仓库上。</li>
+<li><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a>：适用于为文章添加字数统计和阅读时长统计，比同类型的<a href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a>插件要更好。</li>
+<li><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a>：适用于为博客添加本地搜索功能。</li>
+<li><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>：适用于为博客添加RSS功能。</li>
+</ul>
+<p>使用如下命令即可安装上面提到的所有插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git hexo-symbols-count-time hexo-generator-searchdb hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装Hexo后，默认使用的主题为landscape，个人不是很喜欢这个主题，所幸的是Hexo提供<a href="https://hexo.io/themes/">更多的第三方主题</a>，个人倾向于使用广为流行的<a href="https://theme-next.org/">NexT主题</a>。<br>值得注意的是，NexT主题在6.0.0版本之前由iissnan个人维护，其官方仓库为<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> ，官网为<a href="https://theme-next.iissnan.com/">https://theme-next.iissnan.com/</a> ，在6.0.0版本之后由theme-next组织维护，其官方仓库更改为<a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> ，官网为<a href="https://theme-next.org/">https://theme-next.org</a> 。这里所介绍的使用方法均以6.0.0版本之后为例。</p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装NexT主题，首先要进入Hexo站点目录下，接着执行<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>命令，即可将NexT仓库克隆到本地。要启用NexT主题，只需在<strong>站点配置文件</strong>中找到<code>theme</code>字段，并将其值更改为<code>next</code>即可。</p>
+<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>要查看正在使用的NexT主题的版本，有如下几种方法：</p>
+<ul>
+<li>可直接打开<strong>主题配置文件</strong>（即站点目录下的<code>/themes/next/_config.yml</code>文件），在其底部<code>version</code>字段即可查看版本号。</li>
+<li>在自己站点的底部一般会有Hexo和NexT的版本号</li>
+</ul>
+<p>和传统的Git仓库更新一样，进入站点目录下的<code>/themes/next</code>文件夹，执行<code>git pull</code>命令即可从官方仓库拉取最新代码进行更新。<br>如果你使用的是6.0.0之前的版本，现在想要升级到6.0.0之后的版本，可参考NexT主题官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">解决方案</a>。</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>关于Hexo的更多问题，请参考<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a>，或YouTube上<a href="https://www.youtube.com/watch?v=bCj0iVVqkSg&feature=youtu.be">Hexo系列教程</a>视频；关于NexT主题的更多问题，请参考<a href="https://theme-next.iissnan.com/">NexT使用文档</a>；关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>top的增强版：htop</title>
@@ -1983,77 +2054,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo初体验</title>
-    <url>/2017/06/20/hexo-experience/</url>
-    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/index.html">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/">Jekyll</a>，基于Go的<a href="https://gohugo.io/">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/">Node.js</a>和<a href="https://git-scm.com/downloads">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
-<p><strong>本地安装</strong></p>
-<ul>
-<li>将安装包放在 ./node_modules 下（运行npm时所在的目录）</li>
-<li>可以通过 require() 来引入本地安装的包</li>
-</ul>
-<p><strong>全局安装</strong></p>
-<ul>
-<li>将安装包放在 /usr/local下</li>
-<li>可以直接在命令行里使用<a id="more"></a>
-
-</li>
-</ul>
-<p>关于npm更多的内容请参考<a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm模块安装机制简介</a>。</p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>hexo version</code>即可查看Hexo版本信息，在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
-<p>如果没有设置<code>folder</code>，Hexo 默认在目前的文件夹建立网站。</p>
-<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt;</span><br><span class="line">或 hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<p>如果没有设置<code>layout</code>的话，默认使用 _config.yml 中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">或 hexo generate</span><br></pre></td></tr></table></figure>
-
-<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line">或 hexo server</span><br></pre></td></tr></table></figure>
-<p>默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a> 。</p>
-<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br><span class="line">或 hexo deploy</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>Hexo生成的网站目录结构如下：</p>
-<ul>
-<li><code>public</code>：此目录下保存着已经生成的静态文件</li>
-<li><code>scaffolds</code>：此目录下存放Hexo模板，当您新建文章时，Hexo会根据scaffold来建立文件。</li>
-<li><code>source</code>：此目录下存放用户资源<ul>
-<li><code>_posts</code>：此目录下存放Markdown格式的源文章</li>
-<li><code>images</code>：此目录下存放相关图片文件</li>
-</ul>
-</li>
-<li><code>themes</code>：此目录下保存着主题文件</li>
-<li><code>_config.yml</code>：此文件为<strong>站点配置文件</strong></li>
-</ul>
-<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>站点配置文件（<code>_config.yml</code>）中的<code>url</code>字段务必要填写为自己站点的正确网址，否则分享自己站点内文章时会生成错误链接。<br>新建文章（<code>hexo n &lt;title&gt;</code>）时建议使用小写英文作为文件名，此文件名将作为文章链接的一部分，英文中的空格将自动用<code>-</code>替代，文章标题可以在文件中另行设置。<br>和传统的博客一样，建议开启<strong>分类</strong>（category）和<strong>标签</strong>（tag）功能，在Hexo中，分类具有<strong>顺序性</strong>和<strong>层次性</strong>，也就是说<code>Foo，Bar</code>不等于<code>Bar，Foo</code>，而标签没有顺序和层次。简单来说，分类应该是经过深思熟虑的，而标签则可适文章而决定，分类一般只有几个，而标签可以有一堆。具体而言，可以参考本站点的分类标签设计。</p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Hexo支持<a href="https://hexo.io/plugins/">许多插件</a>，个人经常使用的插件如下：</p>
-<ul>
-<li><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：为Hexo打造的Git部署插件，适用于将博客部署到GitHub仓库上。</li>
-<li><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a>：适用于为文章添加字数统计和阅读时长统计，比同类型的<a href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a>插件要更好。</li>
-<li><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a>：适用于为博客添加本地搜索功能。</li>
-<li><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>：适用于为博客添加RSS功能。</li>
-</ul>
-<p>使用如下命令即可安装上面提到的所有插件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git hexo-symbols-count-time hexo-generator-searchdb hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
-
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装Hexo后，默认使用的主题为landscape，个人不是很喜欢这个主题，所幸的是Hexo提供<a href="https://hexo.io/themes/">更多的第三方主题</a>，个人倾向于使用广为流行的<a href="https://theme-next.org/">NexT主题</a>。<br>值得注意的是，NexT主题在6.0.0版本之前由iissnan个人维护，其官方仓库为<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> ，官网为<a href="https://theme-next.iissnan.com/">https://theme-next.iissnan.com/</a> ，在6.0.0版本之后由theme-next组织维护，其官方仓库更改为<a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> ，官网为<a href="https://theme-next.org/">https://theme-next.org</a> 。这里所介绍的使用方法均以6.0.0版本之后为例。</p>
-<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装NexT主题，首先要进入Hexo站点目录下，接着执行<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>命令，即可将NexT仓库克隆到本地。要启用NexT主题，只需在<strong>站点配置文件</strong>中找到<code>theme</code>字段，并将其值更改为<code>next</code>即可。</p>
-<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>要查看正在使用的NexT主题的版本，有如下几种方法：</p>
-<ul>
-<li>可直接打开<strong>主题配置文件</strong>（即站点目录下的<code>/themes/next/_config.yml</code>文件），在其底部<code>version</code>字段即可查看版本号。</li>
-<li>在自己站点的底部一般会有Hexo和NexT的版本号</li>
-</ul>
-<p>和传统的Git仓库更新一样，进入站点目录下的<code>/themes/next</code>文件夹，执行<code>git pull</code>命令即可从官方仓库拉取最新代码进行更新。<br>如果你使用的是6.0.0之前的版本，现在想要升级到6.0.0之后的版本，可参考NexT主题官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">解决方案</a>。</p>
-<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>关于Hexo的更多问题，请参考<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a>，或YouTube上<a href="https://www.youtube.com/watch?v=bCj0iVVqkSg&feature=youtu.be">Hexo系列教程</a>视频；关于NexT主题的更多问题，请参考<a href="https://theme-next.iissnan.com/">NexT使用文档</a>；关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTTPS运行机制</title>
     <url>/2018/05/11/https/</url>
     <content><![CDATA[]]></content>
@@ -2239,6 +2239,17 @@
       </categories>
   </entry>
   <entry>
+    <title>JSFuck</title>
+    <url>/2018/08/10/jsfuck/</url>
+    <content><![CDATA[<p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure>
+<p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a href="http://www.jsfuck.com/">JSFuck</a>。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Jupyter Notebook 常用扩展</title>
     <url>/2018/09/25/jupyter-notebook-extensions/</url>
     <content><![CDATA[<h2 id="扩展机制"><a href="#扩展机制" class="headerlink" title="扩展机制"></a>扩展机制</h2><p>在介绍常用扩展之前，有必要先来介绍一下 Jupyter Notebook 的扩展机制：本质上来说，所有的 Jupyter Notebook 扩展都是一个个的 Python 包，所以大部分可以通过 <code>pip</code> 快速安装，另外，Jupyter Notebook 是一个典型的 <strong>B/S</strong> 架构的应用，用户通过访问浏览器来使用 Jupyter Notebook，因此，Jupyter Notebook 的扩展可以只针对服务器端，也可以针对前端资源页面，而如果一个扩展增强了 Jupyter Notebook 的前端资源页面，则它还必须使用如下命令安装资源：</p>
@@ -2252,17 +2263,6 @@
 <p>等到安装并配置完成后，打开 Jupyter Notebook 网页，会出现 <code>Nbextensions</code> 选项卡，点击进入此选项卡中，可以启用或禁用相应的扩展。</p>
 <h2 id="RISE"><a href="#RISE" class="headerlink" title="RISE"></a><a href="https://github.com/damianavila/RISE">RISE</a></h2><p>该扩展可以将 Jupyter Notebook 中的一个个单元格转换为一张张的幻灯片。</p>
 <p>使用 <code>pip install RISE</code> 命令即可安装，安装完成后使用 <code>jupyter-nbextension install rise --py --sys-prefix</code> 命令安装前端资源，接着使用 <code>jupyter-nbextension enable rise --py --sys-prefix</code> 命令启用前端资源。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JSFuck</title>
-    <url>/2018/08/10/jsfuck/</url>
-    <content><![CDATA[<p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure>
-<p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a href="http://www.jsfuck.com/">JSFuck</a>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2386,7 +2386,12 @@
   <entry>
     <title>库与框架</title>
     <url>/2018/09/16/library-framework/</url>
-    <content><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：<br><strong>库</strong>(library)是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，jQuery、Servlet等是一个个的库。<br>库的优点是自由度高，可定制性强，较适用于小项目。<br><strong>框架</strong>(framework)制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，Angular、Spring等是一个个的框架。<br>框架的优点是流程性高，便于开发，较适用于大项目。<br>通常，我们把库也称为<strong>类库</strong>(class library)，这也从另一个方面反映了库中包含的主要是<strong>类</strong>，类似的，框架中也主要包含类，据此，我们可以把程序员分为<strong>类创建者</strong>和<strong>客户端程序员</strong>，客户端程序员通过调用其类来使用库或框架。</p>
+    <content><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：</p>
+<p><strong>库</strong>（library）是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，<a href="https://jquery.com/">jQuery</a>、Servlet 等是一个个的库。</p>
+<p>库的优点是自由度高，可定制性强，较适用于小项目。</p>
+<p><strong>框架</strong>（framework）制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，<a href="https://angular.io/">Angular</a>、<a href="https://spring.io/">Spring</a> 等是一个个的框架。</p>
+<p>框架的优点是流程性高，便于开发，较适用于大项目。</p>
+<p>通常，我们把库也称为<strong>类库</strong>（class library），这也从另一个方面反映了库中包含的主要是<strong>类</strong>，类似的，框架中也主要包含类，据此，我们可以把程序员分为<strong>类创建者</strong>和<strong>客户端程序员</strong>，客户端程序员通过调用其类来使用库或框架。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2440,48 +2445,6 @@
       <tags>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Markdown小记</title>
-    <url>/2018/07/21/markdown-cheatsheet/</url>
-    <content><![CDATA[<p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
-<p>对应HTML，最高6级标题。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">    - 这是是嵌套列表项</span><br><span class="line">    - 这里也是嵌套列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
-<p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。</p>
-<a id="more"></a>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Howie&#39;s Blog](http:&#x2F;&#x2F;howiezhao.com)</span><br></pre></td></tr></table></figure>
-<p>超文本链接必须带http。</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![一张图片](&#x2F;images&#x2F;abc.jpg)</span><br></pre></td></tr></table></figure>
-<p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***粗斜体***</span><br></pre></td></tr></table></figure>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
-<p>`这里是单行代码`</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
-<p>上下应该各空一行</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
-<p>这是一条水平区分线，用3个或以上的短横线表示，个人习惯使用4个短横线。</p>
-<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
-<li>在特殊字符与要书写的文字之间加上空格</li>
-<li>不同段之间加一空行</li>
-<li>链接后加一个空格</li>
-</ol>
-<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为<strong>GFM</strong>，即<strong>GitHub风格的Markdown语法</strong>，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
-<ol>
-<li>链接自动识别：GFM会自动为标准的URL加上链接</li>
-<li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
-<li>删除线：使用<code>~~</code>表示删除线</li>
-<li>任务列表：使用<code>- [ ]</code>或<code>- [x]</code>表示未勾选或已勾选的任务列表</li>
-<li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
-</ol>
-<p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/">GitHub官方的文档</a>。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a>是一个在线的Markdown编辑器。<br>Sublime Text拥有众多的Markdown插件，其中<a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a>可以在浏览器中预览Markdown文件，而<a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a>可以快速的编辑Markdown文件。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>Makefile小记</title>
@@ -2542,6 +2505,57 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdown小记</title>
+    <url>/2018/07/21/markdown-cheatsheet/</url>
+    <content><![CDATA[<p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
+<p>对应HTML，最高6级标题。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">    - 这是是嵌套列表项</span><br><span class="line">    - 这里也是嵌套列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
+<p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。</p>
+<a id="more"></a>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Howie&#39;s Blog](http:&#x2F;&#x2F;howiezhao.com)</span><br></pre></td></tr></table></figure>
+<p>超文本链接必须带http。</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![一张图片](&#x2F;images&#x2F;abc.jpg)</span><br></pre></td></tr></table></figure>
+<p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***粗斜体***</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
+<p>`这里是单行代码`</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
+<p>上下应该各空一行</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+<p>这是一条水平区分线，用3个或以上的短横线表示，个人习惯使用4个短横线。</p>
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li>在特殊字符与要书写的文字之间加上空格</li>
+<li>不同段之间加一空行</li>
+<li>链接后加一个空格</li>
+</ol>
+<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为<strong>GFM</strong>，即<strong>GitHub风格的Markdown语法</strong>，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
+<ol>
+<li>链接自动识别：GFM会自动为标准的URL加上链接</li>
+<li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
+<li>删除线：使用<code>~~</code>表示删除线</li>
+<li>任务列表：使用<code>- [ ]</code>或<code>- [x]</code>表示未勾选或已勾选的任务列表</li>
+<li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
+</ol>
+<p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/">GitHub官方的文档</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a>是一个在线的Markdown编辑器。<br>Sublime Text拥有众多的Markdown插件，其中<a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a>可以在浏览器中预览Markdown文件，而<a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a>可以快速的编辑Markdown文件。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>形而上与形而下</title>
+    <url>/2018/05/01/metaphysics-physics/</url>
+    <content><![CDATA[<p>形而上者谓之道，形而下者谓之器。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Metasploit 中 shell 中文乱码解决方案</title>
     <url>/2017/12/04/metasploit-luanma/</url>
     <content><![CDATA[<p>有时在 Kali Linux 中获得了一个 Windows shell 或者在 meterpreter 中进入 shell 后，执行命令可能会出现中文乱码，其原因是 Windows 和 Linux 的编码不同，导致 Windows 中的中文在 Linux 中无法正常显示。</p>
@@ -2569,33 +2583,6 @@
     <url>/2018/09/22/microsoft-technology/</url>
     <content><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>微软最初的操作系统的DOS，DOS只是一个命令行形式，后来</p>
 <h2 id="NET"><a href="#NET" class="headerlink" title=".NET"></a>.NET</h2><h2 id="Windows-Phone"><a href="#Windows-Phone" class="headerlink" title="Windows Phone"></a>Windows Phone</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>形而上与形而下</title>
-    <url>/2018/05/01/metaphysics-physics/</url>
-    <content><![CDATA[<p>形而上者谓之道，形而下者谓之器。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>开源协议漫谈</title>
-    <url>/2018/11/02/open-sourse-license/</url>
-    <content><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p>
-<a id="more"></a>
-<h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p>
-<h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p>
-<h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p>
-<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p>
-<h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
-<h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
-<h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
-<h2 id="作何选择？"><a href="#作何选择？" class="headerlink" title="作何选择？"></a>作何选择？</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
-]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -2647,6 +2634,24 @@
         <tag>Android</tag>
         <tag>硬件</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>开源协议漫谈</title>
+    <url>/2018/11/02/open-sourse-license/</url>
+    <content><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p>
+<a id="more"></a>
+<h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p>
+<h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p>
+<h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p>
+<h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
+<h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
+<h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
+<h2 id="作何选择？"><a href="#作何选择？" class="headerlink" title="作何选择？"></a>作何选择？</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>P2P 与 BitTorrent</title>
@@ -2897,25 +2902,6 @@
       </tags>
   </entry>
   <entry>
-    <title>正则表达式小记</title>
-    <url>/2018/11/12/regex/</url>
-    <content><![CDATA[<p><strong>正则表达式</strong>，即<strong>Regular Expression</strong>，直译为<strong>描述某种规则的表达式</strong>，通常被简写为<strong>regex</strong>或<strong>RE</strong>，是指使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
-<li><code>?</code>：匹配前一个字符0次或1次</li>
-<li><code>+</code>：匹配前一个字符1次或多次</li>
-<li><code>*</code>：匹配前一个字符0次、1次或多次</li>
-<li><code>|</code>：代表选择（即或集），具有最低优先级</li>
-<li><code>()</code>：用来定义操作符的范围和优先级</li>
-<li><code>[abc]</code>：匹配任何一个列在方括号中的字符，在这个例子中，要么匹配一个a，要么匹配一个b，要么匹配一个c</li>
-<li><code>[0-9]</code>：如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配，在这个例子中，表示匹配所有0到9的数字</li>
-<li><code>^</code>：匹配行的开头，如<code>^abc</code>表示匹配以abc开始的一行</li>
-</ul>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>编写规范的 README 文档</title>
     <url>/2018/11/02/readme/</url>
     <content><![CDATA[<p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 <strong>README</strong> 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README 这 6 个字母通常都是大写的，这是因为<strong>在 Linux 中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的 README 文档应该是什么样子的。</p>
@@ -2944,24 +2930,23 @@
       </categories>
   </entry>
   <entry>
-    <title>RSA加密算法</title>
-    <url>/2018/10/18/rsa/</url>
-    <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
-<a id="more"></a>
-<h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p>
-<ol>
-<li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li>
-<li>计算n的欧拉函数φ(n)<br>φ(3233)=60×52=3120</li>
-<li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n)互质，并计算e对于φ(n)的模反元素d<br>取e=17，d=2753</li>
-<li>将n和e封装成公钥，n和d封装成私钥<br>公钥位(n, e)，私钥为(n, d)</li>
-</ol>
-<h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
+    <title>正则表达式小记</title>
+    <url>/2018/11/12/regex/</url>
+    <content><![CDATA[<p><strong>正则表达式</strong>，即<strong>Regular Expression</strong>，直译为<strong>描述某种规则的表达式</strong>，通常被简写为<strong>regex</strong>或<strong>RE</strong>，是指使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<li><code>?</code>：匹配前一个字符0次或1次</li>
+<li><code>+</code>：匹配前一个字符1次或多次</li>
+<li><code>*</code>：匹配前一个字符0次、1次或多次</li>
+<li><code>|</code>：代表选择（即或集），具有最低优先级</li>
+<li><code>()</code>：用来定义操作符的范围和优先级</li>
+<li><code>[abc]</code>：匹配任何一个列在方括号中的字符，在这个例子中，要么匹配一个a，要么匹配一个b，要么匹配一个c</li>
+<li><code>[0-9]</code>：如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配，在这个例子中，表示匹配所有0到9的数字</li>
+<li><code>^</code>：匹配行的开头，如<code>^abc</code>表示匹配以abc开始的一行</li>
+</ul>
+]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
-      <tags>
-        <tag>密码学</tag>
-      </tags>
   </entry>
   <entry>
     <title>reStructuredText 小记</title>
@@ -3014,6 +2999,26 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>RSA加密算法</title>
+    <url>/2018/10/18/rsa/</url>
+    <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
+<a id="more"></a>
+<h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p>
+<ol>
+<li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li>
+<li>计算n的欧拉函数φ(n)<br>φ(3233)=60×52=3120</li>
+<li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n)互质，并计算e对于φ(n)的模反元素d<br>取e=17，d=2753</li>
+<li>将n和e封装成公钥，n和d封装成私钥<br>公钥位(n, e)，私钥为(n, d)</li>
+</ol>
+<h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
   </entry>
   <entry>
     <title>Scheme的五法十诫</title>
@@ -3131,20 +3136,6 @@
       </categories>
   </entry>
   <entry>
-    <title>source、sh与 ./</title>
-    <url>/2018/05/09/source-sh/</url>
-    <content><![CDATA[<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code>在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为<code>.</code>，比如<code>. a.sh</code>。</p>
-<h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code>打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，<code>bash</code>与<code>sh</code>同理。</p>
-<h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code>打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里<code>./</code>与<code>a.sh</code>之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加<code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。<br>前面采用了相对路径的方法，当然也可以采用绝对路径，比如<code>/root/a.sh</code>这样，同样可以执行。<br>另外，<code>./</code>运行的文件里通常有<strong>Shebang</strong>一行，也就是以<code>#!</code>开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以<code>./a.sh</code>运行脚本时，会自动使用环境变量中的<code>$SHELL</code>变量所指定的解释器来运行。<br>最后，在以<code>sh a.sh</code>或<code>bash a.sh</code>这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《黑客军团》中使用的软件</title>
     <url>/2018/09/18/software-used-in-mr-robot/</url>
     <content><![CDATA[<p>本文翻译自<a href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
@@ -3188,6 +3179,20 @@
       <categories>
         <category>Translation</category>
       </categories>
+  </entry>
+  <entry>
+    <title>source、sh与 ./</title>
+    <url>/2018/05/09/source-sh/</url>
+    <content><![CDATA[<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code>在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为<code>.</code>，比如<code>. a.sh</code>。</p>
+<h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code>打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，<code>bash</code>与<code>sh</code>同理。</p>
+<h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code>打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里<code>./</code>与<code>a.sh</code>之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加<code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。<br>前面采用了相对路径的方法，当然也可以采用绝对路径，比如<code>/root/a.sh</code>这样，同样可以执行。<br>另外，<code>./</code>运行的文件里通常有<strong>Shebang</strong>一行，也就是以<code>#!</code>开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以<code>./a.sh</code>运行脚本时，会自动使用环境变量中的<code>$SHELL</code>变量所指定的解释器来运行。<br>最后，在以<code>sh a.sh</code>或<code>bash a.sh</code>这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>使用 Sphinx 生成项目文档</title>
@@ -3345,39 +3350,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《TAOUP》读书笔记</title>
-    <url>/2018/08/02/taoup/</url>
-    <content><![CDATA[<p>我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的<strong>TAOUP</strong>，即The Art of UNIX Programming(UNIX编程艺术)。</p>
-<h2 id="哲学"><a href="#哲学" class="headerlink" title="哲学"></a>哲学</h2><p>Unix的设计哲学总体上可以概括为以下几点：</p>
-<ol>
-<li>模块原则：使用简洁的接口拼合简单的部件</li>
-<li>清晰原则：清晰胜于机巧</li>
-<li>组合原则：设计时考虑拼接组合</li>
-<li>分离原则：策略同机制分离，接口同引擎分离</li>
-<li>简洁原则：设计要简洁，复杂度能低则低</li>
-<li>吝啬原则：除非却无它法，不要编写庞大的程序</li>
-<li>透明性原则：设计要可见，以便审查和调试</li>
-<li>健壮原则：健壮源于透明与简洁</li>
-<li>表示原则：把知识叠入数据以求逻辑质朴而健壮</li>
-<li>通俗原则：接口设计避免标新立异</li>
-<li>缄默原则：如果一个程序没什么好说的，就沉默</li>
-<li>补救原则：出现异常时，马上退出并给出足够错误信息</li>
-<li>经济原则：宁花机器一分，不花程序员一秒</li>
-<li>生成原则：避免手工hack，尽量编写程序去生成程序</li>
-<li>优化原则：雕琢前先要有原型，跑之前先学会走</li>
-<li>多样原则：决不相信所谓“不二法门”的断言</li>
-<li>扩展原则：设计着眼未来，未来总比预想来得快<a id="more"></a>
-所有的Unix哲学浓缩为一条铁律就是<strong>KISS</strong>原则，即Keep It Simple, Stupid！</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>说说 VPS</title>
     <url>/2019/01/08/talk-about-vps/</url>
     <content><![CDATA[<p><strong>VPS</strong>（Virtual Private Server）即<strong>虚拟专用服务器</strong>，它不等同于<strong>独立服务器</strong>，独立服务器是指货真价实的物理机器，而 VPS 则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，<strong>虚拟空间</strong>（或虚拟主机）则是指 VPS 上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而 VPS 这一中间选择成为了广大爱好者的首选。</p>
@@ -3418,6 +3390,39 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>《TAOUP》读书笔记</title>
+    <url>/2018/08/02/taoup/</url>
+    <content><![CDATA[<p>我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的<strong>TAOUP</strong>，即The Art of UNIX Programming(UNIX编程艺术)。</p>
+<h2 id="哲学"><a href="#哲学" class="headerlink" title="哲学"></a>哲学</h2><p>Unix的设计哲学总体上可以概括为以下几点：</p>
+<ol>
+<li>模块原则：使用简洁的接口拼合简单的部件</li>
+<li>清晰原则：清晰胜于机巧</li>
+<li>组合原则：设计时考虑拼接组合</li>
+<li>分离原则：策略同机制分离，接口同引擎分离</li>
+<li>简洁原则：设计要简洁，复杂度能低则低</li>
+<li>吝啬原则：除非却无它法，不要编写庞大的程序</li>
+<li>透明性原则：设计要可见，以便审查和调试</li>
+<li>健壮原则：健壮源于透明与简洁</li>
+<li>表示原则：把知识叠入数据以求逻辑质朴而健壮</li>
+<li>通俗原则：接口设计避免标新立异</li>
+<li>缄默原则：如果一个程序没什么好说的，就沉默</li>
+<li>补救原则：出现异常时，马上退出并给出足够错误信息</li>
+<li>经济原则：宁花机器一分，不花程序员一秒</li>
+<li>生成原则：避免手工hack，尽量编写程序去生成程序</li>
+<li>优化原则：雕琢前先要有原型，跑之前先学会走</li>
+<li>多样原则：决不相信所谓“不二法门”的断言</li>
+<li>扩展原则：设计着眼未来，未来总比预想来得快<a id="more"></a>
+所有的Unix哲学浓缩为一条铁律就是<strong>KISS</strong>原则，即Keep It Simple, Stupid！</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>TCP协议分析</title>
@@ -3720,6 +3725,17 @@
       </tags>
   </entry>
   <entry>
+    <title>开发环境代表什么</title>
+    <url>/2018/09/23/what-is-development-environment/</url>
+    <content><![CDATA[<p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。</p>
+<p>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。</p>
+<p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器/解释器、基本类库等于一体。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>editorconfig 是什么</title>
     <url>/2018/09/23/what-is-editorconfig/</url>
     <content><![CDATA[<p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了 <a href="https://editorconfig.org/">EditorConfig</a> ，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。</p>
@@ -3729,17 +3745,6 @@
 <p>此配置文件应该保存为 <code>.editorconfig</code> 并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见 <code>root = true</code> 为止。</p>
 <p>有很多项目在初始化时都会生成相应的 <code>.editorconfig</code> 文件，比如 Angular。</p>
 <p>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>开发环境代表什么</title>
-    <url>/2018/09/23/what-is-development-environment/</url>
-    <content><![CDATA[<p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。</p>
-<p>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。</p>
-<p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器/解释器、基本类库等于一体。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -3768,51 +3773,6 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>编写Wikipedia的几点注意</title>
-    <url>/2018/12/16/wikipedia/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Windows 系统加固</title>
-    <url>/2018/05/19/windows-reinforcement/</url>
-    <content><![CDATA[<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>下面这几项应为每一个使用 Windows 的用户的<strong>最最基本</strong>安全配置：</p>
-<ol>
-<li>开启 Windows 防火墙</li>
-<li>设置用户帐户控制（UAC）为合适级别</li>
-<li>保持 Windows 更新</li>
-</ol>
-<a id="more"></a>
-<h2 id="帐户安全"><a href="#帐户安全" class="headerlink" title="帐户安全"></a>帐户安全</h2><p>此方面的加固主要是为了防止针对帐户的暴力破解，帐户是黑客入侵系统的突破口，帐户越多，危险系数越高。</p>
-<p>停用 Guest 帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中禁用 Guest 帐户，并为 Guest 帐户设置复杂密码，并拒绝远程访问。</p>
-<p>重命名或禁用 Administrator 帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中为 Administrator 帐户重命名，或直接禁用。</p>
-<p>创建陷阱帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中创建一个名为 Administrator 的本地帐户，并将它的权限设置成最低，加上一个超过 10 位的强密码。可通过将其隶属于 Guest 组已达到权限最低。</p>
-<p>限制用户数量：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中删除所有的测试帐户、共享帐户和普通部门帐户，一般情况下，如果系统用户超过 10 个，一般总会存在一两个弱口令帐户。</p>
-<p>开启帐户锁定策略：<br>在<strong>本地安全策略</strong>的<strong>帐户锁定策略</strong>中设置帐户锁定阈值为 3 次，帐户锁定时间为 30 分钟，重置帐户锁定计数器为 30 分钟之后。</p>
-<h2 id="系统安全"><a href="#系统安全" class="headerlink" title="系统安全"></a>系统安全</h2><p>一个安全操作系统的基本原则是：<strong>最小的权限+最少的服务=最大的安全</strong>。</p>
-<p>开启密码策略：<br>在<strong>本地安全策略</strong>的<strong>密码策略</strong>中启用密码复杂性要求，设置密码长度最小值为 7，密码最短使用期限为 1，密码最长使用期限为 42，强制密码历史为 24，禁用以可还原的加密储存密码。</p>
-<p>设置双重加密帐户保护：<br>在运行对话框中输入 <code>syskey</code>，启用 SAM 数据库加密工具，为 Windows 登录设置双重加密，注意此功能在 Windows10 中已被剔除。</p>
-<p>取消默认共享：<br>编辑注册表键 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters</code>，新建项 <code>AutoShareServer</code>，值为 <code>0</code>，即可关闭盘符默认共享，新建项 <code>AutoShareWks</code>，值为 <code>0</code>，即可关闭 ADMIN 默认共享。</p>
-<p>开启审核策略：<br>在<strong>本地安全策略</strong>的<strong>审核策略</strong>中审核所有的成功失败操作，记录的信息可以在<strong>事件查看器</strong>的 <strong>Windows 日志</strong>中查看。</p>
-<p>修改 TTL 值：<br>编辑注册表键 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters</code>，新建项 <code>defaultTTL</code>，随便赋值，以防黑客通过 ping 获取 TTL 以鉴别操作系统类型。</p>
-<p>关闭不必要的服务：<br>Windows 默认会启动多个服务，可以在<strong>计算机管理</strong>的<strong>服务</strong>中禁用相关服务，下面列出了一些可以禁用的服务：</p>
-<ul>
-<li>COM+ Event System</li>
-<li>Computer Browser</li>
-<li>Distributed Link Tracking Client</li>
-<li>Routing and Remote Access</li>
-</ul>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -3920,32 +3880,9 @@
       </categories>
   </entry>
   <entry>
-    <title>云服务的三种模式</title>
-    <url>/2018/07/15/xaas/</url>
-    <content><![CDATA[<p>云服务的模式一般有 IaaS、PaaS、SaaS 三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。</p>
-<h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service（基础设施即服务），云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是 <strong>VPS</strong>，即 Virtual Private Server（虚拟专用服务器），这类服务一般提供必要的 Shell 接口，可使用户连接到操作系统进行相关配置，常见的 VPS 厂商有 <a href="https://aws.amazon.com/cn/ec2/">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs">阿里云 ECS</a> 等。</p>
-<h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service（平台即服务），云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的 Web 服务器、数据库等，用户可以直接在其上部署 Web 应用，常见的 PaaS 厂商有 <a href="https://cloud.google.com/appengine/">Google App Engine(GAE)</a>、<a href="https://www.heroku.com/">Heroku</a> 等。</p>
-<h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p><strong>SaaS</strong>，Software as a Service（软件即服务），云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的 Hexo、WordPress 等。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>XML、JSON与YAML</title>
-    <url>/2018/07/21/xml-json-yaml/</url>
-    <content><![CDATA[<p>XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
-<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;person&gt;</span><br><span class="line">    &lt;firstName&gt;Tian&lt;&#x2F;firstName&gt;</span><br><span class="line">    &lt;lastName&gt;Song&lt;&#x2F;lastName&gt;</span><br><span class="line">    &lt;address&gt;</span><br><span class="line">        &lt;streetAddr&gt;中关村南大街5号&lt;&#x2F;streetAddr&gt;</span><br><span class="line">        &lt;city&gt;北京市&lt;&#x2F;city&gt;</span><br><span class="line">        &lt;zipcode&gt;100081&lt;&#x2F;zipcode&gt;</span><br><span class="line">    &lt;&#x2F;address&gt;</span><br><span class="line">    &lt;prof&gt;Computer System&lt;&#x2F;prof&gt;&lt;prof&gt;Security&lt;&#x2F;prof&gt;</span><br><span class="line">&lt;&#x2F;person&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation(JavaScript对象表示法)，倘若我要表示某个人的简要信息，用JSON可写为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;firstName&quot; : &quot;Tian&quot;,</span><br><span class="line">    &quot;lastName&quot; : &quot;Song&quot;,</span><br><span class="line">    &quot;address&quot; : &#123;</span><br><span class="line">                    &quot;streetAddr&quot; : &quot;中关村南大街5号&quot;,</span><br><span class="line">                    &quot;city&quot; : &quot;北京市&quot;,</span><br><span class="line">                    &quot;zipcode&quot; : &quot;100081&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">    &quot;prof&quot; : [&quot;Computer System&quot;, &quot;Security&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为Yet Another Markup Language(仍是一种标记语言)，之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为YAML Ain&#39;t a Markup Language(YAML不是一种标记语言)，倘若我要表示某个人的简要信息，用YAML可写为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firstName : Tian</span><br><span class="line">lastName : Song</span><br><span class="line">address : </span><br><span class="line">    streetAddr : 中关村南大街5号</span><br><span class="line">    city : 北京市</span><br><span class="line">    zipcode : 100081</span><br><span class="line">prof : </span><br><span class="line">-Computer System</span><br><span class="line">-Security</span><br></pre></td></tr></table></figure>
-
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于Internet上的信息交互与传递，以及用户界面的编写，比如Android；JSON中的信息有类型，适合程序处理(js)，较XML简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>
-]]></content>
+    <title>编写Wikipedia的几点注意</title>
+    <url>/2018/12/16/wikipedia/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -3982,6 +3919,74 @@
         <tag>Windows</tag>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Windows 系统加固</title>
+    <url>/2018/05/19/windows-reinforcement/</url>
+    <content><![CDATA[<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>下面这几项应为每一个使用 Windows 的用户的<strong>最最基本</strong>安全配置：</p>
+<ol>
+<li>开启 Windows 防火墙</li>
+<li>设置用户帐户控制（UAC）为合适级别</li>
+<li>保持 Windows 更新</li>
+</ol>
+<a id="more"></a>
+<h2 id="帐户安全"><a href="#帐户安全" class="headerlink" title="帐户安全"></a>帐户安全</h2><p>此方面的加固主要是为了防止针对帐户的暴力破解，帐户是黑客入侵系统的突破口，帐户越多，危险系数越高。</p>
+<p>停用 Guest 帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中禁用 Guest 帐户，并为 Guest 帐户设置复杂密码，并拒绝远程访问。</p>
+<p>重命名或禁用 Administrator 帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中为 Administrator 帐户重命名，或直接禁用。</p>
+<p>创建陷阱帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中创建一个名为 Administrator 的本地帐户，并将它的权限设置成最低，加上一个超过 10 位的强密码。可通过将其隶属于 Guest 组已达到权限最低。</p>
+<p>限制用户数量：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中删除所有的测试帐户、共享帐户和普通部门帐户，一般情况下，如果系统用户超过 10 个，一般总会存在一两个弱口令帐户。</p>
+<p>开启帐户锁定策略：<br>在<strong>本地安全策略</strong>的<strong>帐户锁定策略</strong>中设置帐户锁定阈值为 3 次，帐户锁定时间为 30 分钟，重置帐户锁定计数器为 30 分钟之后。</p>
+<h2 id="系统安全"><a href="#系统安全" class="headerlink" title="系统安全"></a>系统安全</h2><p>一个安全操作系统的基本原则是：<strong>最小的权限+最少的服务=最大的安全</strong>。</p>
+<p>开启密码策略：<br>在<strong>本地安全策略</strong>的<strong>密码策略</strong>中启用密码复杂性要求，设置密码长度最小值为 7，密码最短使用期限为 1，密码最长使用期限为 42，强制密码历史为 24，禁用以可还原的加密储存密码。</p>
+<p>设置双重加密帐户保护：<br>在运行对话框中输入 <code>syskey</code>，启用 SAM 数据库加密工具，为 Windows 登录设置双重加密，注意此功能在 Windows10 中已被剔除。</p>
+<p>取消默认共享：<br>编辑注册表键 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters</code>，新建项 <code>AutoShareServer</code>，值为 <code>0</code>，即可关闭盘符默认共享，新建项 <code>AutoShareWks</code>，值为 <code>0</code>，即可关闭 ADMIN 默认共享。</p>
+<p>开启审核策略：<br>在<strong>本地安全策略</strong>的<strong>审核策略</strong>中审核所有的成功失败操作，记录的信息可以在<strong>事件查看器</strong>的 <strong>Windows 日志</strong>中查看。</p>
+<p>修改 TTL 值：<br>编辑注册表键 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters</code>，新建项 <code>defaultTTL</code>，随便赋值，以防黑客通过 ping 获取 TTL 以鉴别操作系统类型。</p>
+<p>关闭不必要的服务：<br>Windows 默认会启动多个服务，可以在<strong>计算机管理</strong>的<strong>服务</strong>中禁用相关服务，下面列出了一些可以禁用的服务：</p>
+<ul>
+<li>COM+ Event System</li>
+<li>Computer Browser</li>
+<li>Distributed Link Tracking Client</li>
+<li>Routing and Remote Access</li>
+</ul>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云服务的三种模式</title>
+    <url>/2018/07/15/xaas/</url>
+    <content><![CDATA[<p>云服务的模式一般有 IaaS、PaaS、SaaS 三种，既然是云服务，也即我们不用购买真实的计算设备，所有的模式都是基于此之上的。</p>
+<h2 id="IaaS"><a href="#IaaS" class="headerlink" title="IaaS"></a>IaaS</h2><p><strong>IaaS</strong>，Infrastructure as a Service（基础设施即服务），云服务的最底层，服务商提供操作系统、存储设施、硬件配置等资源，典型的例子是 <strong>VPS</strong>，即 Virtual Private Server（虚拟专用服务器），这类服务一般提供必要的 Shell 接口，可使用户连接到操作系统进行相关配置，常见的 VPS 厂商有 <a href="https://aws.amazon.com/cn/ec2/">Amazon EC2</a>、<a href="https://www.aliyun.com/product/ecs">阿里云 ECS</a> 等。</p>
+<h2 id="PaaS"><a href="#PaaS" class="headerlink" title="PaaS"></a>PaaS</h2><p><strong>PaaS</strong>，Platform as a Service（平台即服务），云服务的中间层，服务商提供必要的应用，用户无权访问操作系统及硬件等资源，典型的例子是<strong>虚拟空间</strong>，这类服务一般会提供必要的 Web 服务器、数据库等，用户可以直接在其上部署 Web 应用，常见的 PaaS 厂商有 <a href="https://cloud.google.com/appengine/">Google App Engine(GAE)</a>、<a href="https://www.heroku.com/">Heroku</a> 等。</p>
+<h2 id="SaaS"><a href="#SaaS" class="headerlink" title="SaaS"></a>SaaS</h2><p><strong>SaaS</strong>，Software as a Service（软件即服务），云服务的最高层，直接提供现成的应用供用户使用，用户所付出的精力最少，例如本站采用的 Hexo、WordPress 等。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>XML、JSON与YAML</title>
+    <url>/2018/07/21/xml-json-yaml/</url>
+    <content><![CDATA[<p>XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;person&gt;</span><br><span class="line">    &lt;firstName&gt;Tian&lt;&#x2F;firstName&gt;</span><br><span class="line">    &lt;lastName&gt;Song&lt;&#x2F;lastName&gt;</span><br><span class="line">    &lt;address&gt;</span><br><span class="line">        &lt;streetAddr&gt;中关村南大街5号&lt;&#x2F;streetAddr&gt;</span><br><span class="line">        &lt;city&gt;北京市&lt;&#x2F;city&gt;</span><br><span class="line">        &lt;zipcode&gt;100081&lt;&#x2F;zipcode&gt;</span><br><span class="line">    &lt;&#x2F;address&gt;</span><br><span class="line">    &lt;prof&gt;Computer System&lt;&#x2F;prof&gt;&lt;prof&gt;Security&lt;&#x2F;prof&gt;</span><br><span class="line">&lt;&#x2F;person&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation(JavaScript对象表示法)，倘若我要表示某个人的简要信息，用JSON可写为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;firstName&quot; : &quot;Tian&quot;,</span><br><span class="line">    &quot;lastName&quot; : &quot;Song&quot;,</span><br><span class="line">    &quot;address&quot; : &#123;</span><br><span class="line">                    &quot;streetAddr&quot; : &quot;中关村南大街5号&quot;,</span><br><span class="line">                    &quot;city&quot; : &quot;北京市&quot;,</span><br><span class="line">                    &quot;zipcode&quot; : &quot;100081&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">    &quot;prof&quot; : [&quot;Computer System&quot;, &quot;Security&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为Yet Another Markup Language(仍是一种标记语言)，之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为YAML Ain&#39;t a Markup Language(YAML不是一种标记语言)，倘若我要表示某个人的简要信息，用YAML可写为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firstName : Tian</span><br><span class="line">lastName : Song</span><br><span class="line">address : </span><br><span class="line">    streetAddr : 中关村南大街5号</span><br><span class="line">    city : 北京市</span><br><span class="line">    zipcode : 100081</span><br><span class="line">prof : </span><br><span class="line">-Computer System</span><br><span class="line">-Security</span><br></pre></td></tr></table></figure>
+
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于Internet上的信息交互与传递，以及用户界面的编写，比如Android；JSON中的信息有类型，适合程序处理(js)，较XML简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>使用 Zsh 替代 Bash</title>
