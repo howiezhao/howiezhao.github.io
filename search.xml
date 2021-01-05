@@ -1354,6 +1354,18 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Windows10的传递优化</title>
+    <url>/2018/07/16/delivery-optimization/</url>
+    <content><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何比较两个文件之间的差异</title>
     <url>/2018/10/19/diff/</url>
     <content><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：</p>
@@ -1370,18 +1382,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows10的传递优化</title>
-    <url>/2018/07/16/delivery-optimization/</url>
-    <content><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -3424,21 +3424,22 @@
   <entry>
     <title>terminal 与 shell</title>
     <url>/2018/09/19/terminal-shell/</url>
-    <content><![CDATA[<p>terminal，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a href="https://conemu.github.io/">ConEmu</a>、<a href="https://cmder.net/">Cmder</a> 等。</p>
-<p>shell，有时也被翻译为壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命令行 shell 有 <a href="https://www.gnu.org/software/bash/">Bash</a>、<a href="https://www.zsh.org/">Zsh</a> 等。</p>
+    <content><![CDATA[<p><strong>terminal</strong>，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a href="https://conemu.github.io/">ConEmu</a>、<a href="https://cmder.net/">Cmder</a> 等。</p>
+<p><strong>shell</strong>，有时也被翻译为外壳或壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命令行 shell 有 <a href="https://www.gnu.org/software/bash/">Bash</a>、<a href="https://www.zsh.org/">Zsh</a> 等。</p>
 <p>通俗点说，terminal 属于外层，shell 属于内层，terminal 包裹着 shell，输入进 terminal 的命令要由 shell 去解释执行。</p>
 <a id="more"></a>
-<p>和 terminal 很像的一个东西叫 console，常被翻译为<strong>控制台</strong>，它也是一个黑色的窗口，用来输入命令，但与 terminal 不同的是，console 与物理相关，且具有<strong>唯一性</strong>。举例来说，没有图形界面的 Linux 开机后，显示在屏幕上的就是 console，它是与这台电脑相关的，且只有一个；而有图形界面的 Linux 开机后，打开的黑色窗口就是 terminal，你可以打开多个。</p>
+
+<p>和 terminal 很像的一个东西叫 <strong>console</strong>，常被翻译为<strong>控制台</strong>，它也是一个黑色的窗口，用来输入命令，但与 terminal 不同的是，console 与物理相关，且具有<strong>唯一性</strong>。举例来说，没有图形界面的 Linux 开机后，显示在屏幕上的就是 console，它是与这台电脑相关的，且只有一个；而有图形界面的 Linux 开机后，打开的黑色窗口就是 terminal，你可以打开多个。</p>
 <p>在 Windows 中，这一切有点混乱，具体就表现在：那个黑色的窗口应该叫<strong>命令提示符</strong>还是<strong>控制台窗口</strong>？就如下图所示：</p>
 <p><img src="/images/cmd.jpg" alt="cmd"></p>
-<p>首先，命令提示符的本意指的是命令行前面的提示符，在 Linux 中常被称为 prompt，如下所示：</p>
+<p>首先，命令提示符的本意指的是命令行前面的提示符，在 Linux 中常被称为 <strong>prompt</strong>，如下所示：</p>
 <p><img src="/images/prompt.jpg" alt="prompt"></p>
 <p>显然，在 Windows 中，命令提示符指的是一种解释执行命令的 shell，此外，控制台窗口应该指的是终端。因此，<strong>在 Windows 中有两种 shell，即命令提示符和 PowerShell，它们都共用了同一终端，即控制台窗口。</strong>这么理解的原因可参考微软的<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">官方文档</a>，摘录如下：</p>
 <blockquote>
 <p>Windows has two command shells: The Command shell and PowerShell.</p>
 </blockquote>
 <p>与 Linux 不同的是，Windows 为每个 shell 都做了一个可执行程序，如命令提示符是 <code>cmd.exe</code>，而 PowerShell 是 <code>powershell.exe</code>，所以在 Windows 中我们习惯说“打开命令提示符”或者“打开 PowerShell”；而在 Linux 中，我们更习惯说“打开终端”。</p>
-<p>值得注意的是，在 Windows 10 的最新版本中，微软推出了全新的 **<a href="https://github.com/microsoft/terminal">Windows Terminal</a>**，用以取代老旧且功能匮乏的控制台窗口。</p>
+<p>值得注意的是，在 Windows 10 的最新版本中，微软推出了全新的 <strong><a href="https://github.com/microsoft/terminal">Windows Terminal</a></strong> ，用以取代老旧且功能匮乏的控制台窗口。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
