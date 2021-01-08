@@ -5,19 +5,29 @@ categories: CheatSheet
 tags:
 ---
 
+在一般意义上而言，本文 **编译与构建** 的内容适用于 **编译型语言** 。
+
 ## 编译
 
 **编译（compile）**，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为**编译器（compiler）**。但要注意，编译器在同一时刻只能转换一个编译单元，所谓**编译单元**是指单个的源文件。
 
-目前在 Linux 中使用最广的编译器是 **[GCC](https://gcc.gnu.org/)** ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。
+编译器一般由相应的编程语言提供。
 
 ## 构建
 
-程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是**构建系统（build system）**，构建系统所作的就是**构建（build）**，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。
+程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标文件，而这个工具就是**构建系统（build system）**，构建系统所作的就是**构建（build）**，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。
 
-在 Linux 中使用最广的构建系统是 **[GNU make](https://www.gnu.org/software/make/)** ，它会读取 **Makefile** 文件中的配置信息来完成构建，有关 Makefile 文件更详细的信息可参考 [Makefile 小记](http://howiezhao.github.io/2019/04/18/makefile/)。
+现在的很多构建系统也包含了**包管理器（package manager）**的功能，用以解决项目依赖的问题。
+
+<!-- more -->
 
 ## 另外的
+
+在 Linux 中 编译 C/C++，使用最广的编译器是 **[GCC](https://gcc.gnu.org/)** ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。有关 GCC 更详细的信息可参考 {% post_link gcc %}。
+
+除此之外，另一个 C/C++ 编译器 **[Clang](http://clang.llvm.org/)** 旨在替代 GCC。
+
+在 Linux 中使用最广的构建系统是 **[GNU make](https://www.gnu.org/software/make/)** ，它会读取 **Makefile** 文件中的配置信息来完成构建，有关 Makefile 文件更详细的信息可参考 {% post_link makefile %}。
 
 Java 世界中使用最广的构建系统是 **[Maven](https://maven.apache.org/)** ，而在 Android Studio 中则使用到了后起之秀 **[Gradle](https://gradle.org/)** 。
 
