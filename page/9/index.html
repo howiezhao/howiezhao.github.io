@@ -880,7 +880,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-12-19 16:14:44" itemprop="dateModified" datetime="2020-12-19T16:14:44+08:00">2020-12-19</time>
+        <time title="Modified: 2021-01-08 18:37:40" itemprop="dateModified" datetime="2021-01-08T18:37:40+08:00">2021-01-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -902,14 +902,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译（compile）</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器（compiler）</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。</p>
-<p>目前在 Linux 中使用最广的编译器是 <strong><a target="_blank" rel="noopener" href="https://gcc.gnu.org/">GCC</a></strong> ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。</p>
-<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标，而这个工具就是<strong>构建系统（build system）</strong>，构建系统所作的就是<strong>构建（build）</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。</p>
-<p>在 Linux 中使用最广的构建系统是 <strong><a target="_blank" rel="noopener" href="https://www.gnu.org/software/make/">GNU make</a></strong> ，它会读取 <strong>Makefile</strong> 文件中的配置信息来完成构建，有关 Makefile 文件更详细的信息可参考 <a href="http://howiezhao.github.io/2019/04/18/makefile/">Makefile 小记</a>。</p>
-<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>Java 世界中使用最广的构建系统是 <strong><a target="_blank" rel="noopener" href="https://maven.apache.org/">Maven</a></strong> ，而在 Android Studio 中则使用到了后起之秀 <strong><a target="_blank" rel="noopener" href="https://gradle.org/">Gradle</a></strong> 。</p>
-<p>C 语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的 GCC 是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
-<p>普通编译是生成当前系统平台下的目标文件，而<strong>交叉编译</strong>是指生成另一个系统平台下的目标文件。</p>
-
+          <p>在一般意义上而言，本文 <strong>编译与构建</strong> 的内容适用于 <strong>编译型语言</strong> 。</p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译（compile）</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器（compiler）</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。</p>
+<p>编译器一般由相应的编程语言提供。</p>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标文件，而这个工具就是<strong>构建系统（build system）</strong>，构建系统所作的就是<strong>构建（build）</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。</p>
+<p>现在的很多构建系统也包含了<strong>包管理器（package manager）</strong>的功能，用以解决项目依赖的问题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/15/compile-build/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1234,7 +1239,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">134k</span>
+    <span title="Symbols count total">135k</span>
   </span>
 </div>
 <div class="busuanzi-count">
