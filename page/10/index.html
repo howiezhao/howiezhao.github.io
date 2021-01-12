@@ -862,7 +862,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/09/source-sh/" class="post-title-link" itemprop="url">source、sh与 ./</a>
+          <a href="/2018/05/09/source-sh/" class="post-title-link" itemprop="url">source、sh 与 ./</a>
         </h2>
 
         <div class="post-meta-container">
@@ -880,7 +880,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-01-12 22:14:40" itemprop="dateModified" datetime="2021-01-12T22:14:40+08:00">2021-01-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -902,9 +902,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code>在当前Shell中执行a.sh，a.sh不需要有执行权限。source也可以简写为<code>.</code>，比如<code>. a.sh</code>。</p>
-<h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code>打开一个子Shell去执行a.sh，a.sh不需要有执行权限。在子Shell里执行的a.sh里设置的变量，不会影响到父Shell。类似的，<code>bash</code>与<code>sh</code>同理。</p>
-<h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code>打开一个子Shell去执行a.sh，a.sh需要有执行权限。注意，这里<code>./</code>与<code>a.sh</code>之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加<code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。<br>前面采用了相对路径的方法，当然也可以采用绝对路径，比如<code>/root/a.sh</code>这样，同样可以执行。<br>另外，<code>./</code>运行的文件里通常有<strong>Shebang</strong>一行，也就是以<code>#!</code>开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有Shebang一行，那么以<code>./a.sh</code>运行脚本时，会自动使用环境变量中的<code>$SHELL</code>变量所指定的解释器来运行。<br>最后，在以<code>sh a.sh</code>或<code>bash a.sh</code>这样的命令运行脚本时，即使文件中指明了Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>
+          <h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code> 在当前 Shell 中执行 <code>a.sh</code>，<code>a.sh</code> 不需要有执行权限。<code>source</code> 也可以简写为 <code>.</code>，比如 <code>. a.sh</code>。</p>
+<h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code> 打开一个子 Shell 去执行 <code>a.sh</code>，<code>a.sh</code> 不需要有执行权限。在子 Shell 里执行的 <code>a.sh</code> 里设置的变量，不会影响到父 Shell。类似的，<code>bash</code> 与 <code>sh</code> 同理。</p>
+<h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code> 打开一个子 Shell 去执行 <code>a.sh</code>，<code>a.sh</code> 需要有执行权限。注意，这里 <code>./</code> 与 <code>a.sh</code> 之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加 <code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。</p>
+<p>前面采用了相对路径的方法，当然也可以采用绝对路径，比如 <code>/root/a.sh</code> 这样，同样可以执行。</p>
+<p>另外，<code>./</code> 运行的文件里通常有 <strong>Shebang</strong> 一行，也就是以 <code>#!</code> 开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有 Shebang 一行，那么以 <code>./a.sh</code> 运行脚本时，会自动使用环境变量中的 <code>$SHELL</code> 变量所指定的解释器来运行。</p>
+<p>最后，在以 <code>sh a.sh</code> 或 <code>bash a.sh</code> 这样的命令运行脚本时，即使文件中指明了 Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>
 
       
     </div>
