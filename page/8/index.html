@@ -876,7 +876,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-01-13 17:12:27" itemprop="dateModified" datetime="2021-01-13T17:12:27+08:00">2021-01-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -900,20 +900,21 @@
     <div class="post-body" itemprop="articleBody">
           <p>密码学（Cryptography）大致可分为<strong>古典密码学</strong>（Classic cryptography）和<strong>现代密码学</strong>（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于<strong>字符</strong>的，而现代密码学是基于<strong>二进制位</strong>的。古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
 <h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p>
-<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p>
+<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码（Caesar cipher）就是将明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为 3 时，所有的字母 A 将被替换成 D，B 变成 E，以此类推。</p>
+<p>明文 <code>Hello World</code> 的加密过程如下：</p>
 <ol>
-<li>取偏移量为3</li>
-<li>计算<code>H</code>的后3位为<code>K</code></li>
+<li>取偏移量为 3</li>
+<li>计算 <code>H</code> 的后 3 位为 <code>K</code></li>
 <li>以此类推</li>
 <li>密文为：<code>Khoor Zruog</code></li>
 </ol>
 <p>类似的，解密过程如下：</p>
 <ol>
-<li>计算<code>K</code>的前3位为<code>H</code></li>
+<li>计算 <code>K</code> 的前 3 位为 <code>H</code></li>
 <li>以此类推</li>
 <li>明文为：<code>Hello World</code></li>
 </ol>
-<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。</p>
+<p>注意：当偏移量为 13 时，这种凯撒密码的特例又被称为 <strong>ROT13</strong>（回转 13 位）加密，ROT13 加密是一种<strong>对等加密</strong>（Reciprocal cipher），对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于 26。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/08/10/classical-crypto/#more" rel="contents">

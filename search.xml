@@ -1011,22 +1011,24 @@
     <url>/2018/08/10/classical-crypto/</url>
     <content><![CDATA[<p>密码学（Cryptography）大致可分为<strong>古典密码学</strong>（Classic cryptography）和<strong>现代密码学</strong>（Modern cryptography），两者的主要差别在于计算机的使用，一般来说，古典密码学是基于<strong>字符</strong>的，而现代密码学是基于<strong>二进制位</strong>的。古典密码学主要包括两类，即<strong>代换</strong>和<strong>置换</strong>。</p>
 <h2 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h2><p>代换密码是将明文中的字符替代成其他字符，即<strong>替代转换</strong>，若整个加密过程中每个字符采用同一张表替代，则为<strong>单表代换密码</strong>，类似的，若整个加密过程中每个字符采用不同的表替代，则为<strong>多表代换密码</strong>，典型的单表代换密码有凯撒密码、培根密码等，多表代换密码有维吉尼亚密码等。</p>
-<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码(Caesar cipher)就是将明文中的所有字母都在字母表上向后(或向前)按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为3时，所有的字母A将被替换成D，B变成E，以此类推。<br>明文<code>Hello World</code>的加密过程如下：</p>
+<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><p>凯撒密码（Caesar cipher）就是将明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例如，当偏移量为 3 时，所有的字母 A 将被替换成 D，B 变成 E，以此类推。</p>
+<p>明文 <code>Hello World</code> 的加密过程如下：</p>
 <ol>
-<li>取偏移量为3</li>
-<li>计算<code>H</code>的后3位为<code>K</code></li>
+<li>取偏移量为 3</li>
+<li>计算 <code>H</code> 的后 3 位为 <code>K</code></li>
 <li>以此类推</li>
 <li>密文为：<code>Khoor Zruog</code></li>
 </ol>
 <p>类似的，解密过程如下：</p>
 <ol>
-<li>计算<code>K</code>的前3位为<code>H</code></li>
+<li>计算 <code>K</code> 的前 3 位为 <code>H</code></li>
 <li>以此类推</li>
 <li>明文为：<code>Hello World</code></li>
 </ol>
-<p>注意：当偏移量为13时，这种凯撒密码的特例又被称为<strong>ROT13</strong>(回转13位)加密，ROT13加密是一种<strong>对等加密</strong>(Reciprocal cipher)，对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于26。</p>
+<p>注意：当偏移量为 13 时，这种凯撒密码的特例又被称为 <strong>ROT13</strong>（回转 13 位）加密，ROT13 加密是一种<strong>对等加密</strong>（Reciprocal cipher），对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于 26。</p>
 <a id="more"></a>
-<h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Bacon&#39;s cipher)加密时，明文中的每个字母都会转换成一组5个英文字母。其转换依靠下表：</p>
+
+<h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码（Bacon&#39;s cipher）加密时，明文中的每个字母都会转换成一组 5 个英文字母。其转换依靠下表：</p>
 <table>
 <thead>
 <tr>
@@ -1100,27 +1102,9 @@
 <td>z</td>
 <td>BABBB</td>
 </tr>
-<tr>
-<td>按照上表，明文<code>hello</code>的密文为<code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的<strong>5</strong>倍。</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
+<p>按照上表，明文 <code>hello</code> 的密文为 <code>AABBBAABAAABABBABABBABBBA</code>，显然，密文的长度是明文长度的 <strong>5</strong> 倍。</p>
+<p>除了上表用来加密小写明文外，还有一张用来加密大写明文的表，如下：</p>
 <table>
 <thead>
 <tr>
@@ -1208,50 +1192,32 @@
 <td></td>
 <td></td>
 </tr>
-<tr>
-<td>同理，明文<code>HELLO</code>的密文为<code>aabbbaabaaababbababbabbba</code>。</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>注意：虽然表中出现了<code>A</code> <code>B</code>两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密<code>hello</code>为<code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表<code>A</code>，小写代表<code>B</code>；类似的，也可以用粗体代表<code>A</code>，正常代表<code>B</code>，以字体的样式加密<code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
-<h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：<br><img src="/images/vigenere.png" alt="维吉尼亚表格"><br>这一表格包括了26行字母表，每一行都由前一行向左偏移1位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong><br>明文<code>HELLOWORLD</code>的加密结果如下：</p>
+<p>同理，明文 <code>HELLO</code> 的密文为 <code>aabbbaabaaababbababbabbba</code>。</p>
+<p>注意：虽然表中出现了 <code>A</code> <code>B</code> 两种字符，但培根密码的本质是二进制，即用两种不同的特征来加密明文，可以是字母的大小写或字体的样式等等。例如采用字母的大小写加密 <code>hello</code> 为 <code>GOod gOOd STUdY, dAY dAy UP, haHa</code>，其中大写代表 <code>A</code>，小写代表 <code>B</code>；类似的，也可以用粗体代表 <code>A</code>，正常代表 <code>B</code>，以字体的样式加密 <code>hello</code>。显然，培根密码所包含的信息可以和用于承载其的文章完全无关。</p>
+<h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，用来加解密的维吉尼亚表格如下所示：</p>
+<p><img src="/images/vigenere.png" alt="维吉尼亚表格"></p>
+<p>这一表格包括了 26 行字母表，每一行都由前一行向左偏移 1 位得到。<strong>行为明文行，列为密钥列，密文位于表格内。</strong></p>
+<p>明文 <code>HELLOWORLD</code> 的加密结果如下：</p>
 <ol>
-<li>选择某一关键词作为密钥，如<code>SECRET</code></li>
-<li>对于明文第1个字母<code>H</code>，对应密钥的第1个字母<code>S</code>，于是使用表格中<code>S</code>行字母表进行加密，得到密文第一个字母<code>Z</code></li>
-<li>以此类推，若密钥长度小于明文长度，则转到密钥第1个字母继续循环，最终得到密文<code>ZINCSPGVNU</code></li>
+<li>选择某一关键词作为密钥，如 <code>SECRET</code></li>
+<li>对于明文第 1 个字母 <code>H</code>，对应密钥的第 1 个字母 <code>S</code>，于是使用表格中 <code>S</code>行字母表进行加密，得到密文第一个字母 <code>Z</code></li>
+<li>以此类推，若密钥长度小于明文长度，则转到密钥第 1 个字母继续循环，最终得到密文 <code>ZINCSPGVNU</code></li>
 </ol>
 <p>类似的，解密过程如下：</p>
 <ol>
-<li>根据密钥第1个字母<code>S</code>所对应的<code>S</code>行字母表，发现密文第1个字母<code>Z</code>位于<code>H</code>列，因而明文第1个字母为<code>H</code></li>
+<li>根据密钥第 1 个字母 <code>S</code> 所对应的 <code>S</code> 行字母表，发现密文第 1 个字母 <code>Z</code> 位于 <code>H</code> 列，因而明文第 1 个字母为 <code>H</code></li>
 <li>依次类推</li>
 </ol>
 <p>显而易见，维吉尼亚密码相对于本文介绍的其他古典密码，很难利用穷举法破解。</p>
 <h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>置换密码是将明文中的字母重新排列，字母本身不变，但其位置改变，即<strong>位置转换</strong>，典型的有栅栏密码等。</p>
-<h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail fence cipher)，又称篱笆密码，就是把要加密的明文分成n个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。<br>明文<code>Hello World</code>的加密过程如下：</p>
+<h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码（Rail fence cipher），又称篱笆密码，就是把要加密的明文分成 n 个一组，然后把每组的第一个字连起来，紧接着把每组的第二个字连起来，以此类推，形成一段无规律的话。</p>
+<p>明文 <code>Hello World</code> 的加密过程如下：</p>
 <ol>
 <li>去掉空格：<code>HelloWorld</code></li>
-<li>5个一组：<code>Hello</code>，<code>World</code></li>
-<li>取出每组第1个字母：<code>HW</code></li>
-<li>取出每组第2个字母：<code>eo</code></li>
+<li>5 个一组：<code>Hello</code>，<code>World</code></li>
+<li>取出每组第 1 个字母：<code>HW</code></li>
+<li>取出每组第 2 个字母：<code>eo</code></li>
 <li>以此类推</li>
 <li>连在一起：<code>HWeolrllod</code></li>
 <li>加上适当空格：<code>HWeol rllod</code></li>
@@ -1259,16 +1225,19 @@
 <p>类似的，解密过程如下：</p>
 <ol>
 <li>去掉空格：<code>HWeolrllod</code></li>
-<li>分成5栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li>
-<li>取出每栏第1个字母：<code>Hello</code></li>
+<li>分成 5 栏：<code>HW</code>、<code>eo</code>、<code>lr</code>、<code>ll</code>、<code>od</code></li>
+<li>取出每栏第 1 个字母：<code>Hello</code></li>
 <li>依次类推</li>
 <li>连在一起：<code>HelloWorld</code></li>
 <li>加上适当空格：<code>Hello World</code></li>
 </ol>
-<p>注意：这里栅栏的栏数取决于n的取值，一般而言，n要整除字母数，n不可能大于或等于字母数，当不知道n为多少时，可采用穷举法一个个试。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如<code>王夫 井工 夫口 由中人</code>即为<code>67 84 70 123</code>。</p>
-<h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码(Pigpen cipher)，又称共济会密码(Masonic cipher)，是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与26个英语字母之间的对应关系：<br><img src="/images/pigpen.png" alt="猪圈密码"><br>明文<code>X MARKS THE SPOT</code>的加密结果如下：<br><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p>
-<h4 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h4><p>猪圈密码还有一种变形，即采用图片中字符位置一一对应的形式加解密，如<code>FLAG</code>可加密为<code>OCJP</code>。</p>
+<p>注意：这里栅栏的栏数取决于 n 的取值，一般而言，n 要整除字母数，n 不可能大于或等于字母数，当不知道 n 为多少时，可采用穷举法一个个试。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>准确来说，当铺密码不是一种加密方式而是一种编码方式，它是将中文和数字进行转化的算法，具体为：当前汉字有多少笔画出头，就转化成数字几。如 <code>王夫 井工 夫口 由中人</code> 即为 <code>67 84 70 123</code>。</p>
+<h3 id="猪圈密码"><a href="#猪圈密码" class="headerlink" title="猪圈密码"></a>猪圈密码</h3><p>猪圈密码（Pigpen cipher），又称共济会密码（Masonic cipher），是一种以格子为基础的简单代换式密码。下图为猪圈密码中所用符号与 26 个英语字母之间的对应关系：</p>
+<p><img src="/images/pigpen.png" alt="猪圈密码"></p>
+<p>明文 <code>X MARKS THE SPOT</code> 的加密结果如下：</p>
+<p><img src="/images/pigpen-eg.png" alt="猪圈密码例子"></p>
+<h4 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h4><p>猪圈密码还有一种变形，即采用图片中字符位置一一对应的形式加解密，如 <code>FLAG</code> 可加密为 <code>OCJP</code>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2108,6 +2077,17 @@
       </tags>
   </entry>
   <entry>
+    <title>ifconfig与ip</title>
+    <url>/2018/09/12/ifconfig-ip/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>后渗透测试阶段的信息收集</title>
     <url>/2018/05/09/information-gathering-of-post-exploitation/</url>
     <content><![CDATA[<p>浏览器密码、历史，电脑密码，邮箱密码，QQ聊天记录，最近打开的文件，环境变量，持久后门<br>我们假设客户端为Windows系统，服务器为Linux系统，下面分别针对客户端与服务器进行信息收集。</p>
@@ -2118,17 +2098,6 @@
       </categories>
       <tags>
         <tag>渗透</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ifconfig与ip</title>
-    <url>/2018/09/12/ifconfig-ip/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2453,48 +2422,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown小记</title>
-    <url>/2018/07/21/markdown-cheatsheet/</url>
-    <content><![CDATA[<p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
-<p>对应HTML，最高6级标题。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">    - 这是是嵌套列表项</span><br><span class="line">    - 这里也是嵌套列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
-<p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。</p>
-<a id="more"></a>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Howie&#39;s Blog](http:&#x2F;&#x2F;howiezhao.com)</span><br></pre></td></tr></table></figure>
-<p>超文本链接必须带http。</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![一张图片](&#x2F;images&#x2F;abc.jpg)</span><br></pre></td></tr></table></figure>
-<p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***粗斜体***</span><br></pre></td></tr></table></figure>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
-<p>`这里是单行代码`</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
-<p>上下应该各空一行</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
-<p>这是一条水平区分线，用3个或以上的短横线表示，个人习惯使用4个短横线。</p>
-<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
-<li>在特殊字符与要书写的文字之间加上空格</li>
-<li>不同段之间加一空行</li>
-<li>链接后加一个空格</li>
-</ol>
-<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为<strong>GFM</strong>，即<strong>GitHub风格的Markdown语法</strong>，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
-<ol>
-<li>链接自动识别：GFM会自动为标准的URL加上链接</li>
-<li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
-<li>删除线：使用<code>~~</code>表示删除线</li>
-<li>任务列表：使用<code>- [ ]</code>或<code>- [x]</code>表示未勾选或已勾选的任务列表</li>
-<li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
-</ol>
-<p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/">GitHub官方的文档</a>。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a>是一个在线的Markdown编辑器。<br>Sublime Text拥有众多的Markdown插件，其中<a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a>可以在浏览器中预览Markdown文件，而<a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a>可以快速的编辑Markdown文件。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Makefile小记</title>
     <url>/2019/04/18/makefile/</url>
     <content><![CDATA[<p>Linux中使用最广的构建工具是<strong>make</strong>，而make会读取<strong>Makefile</strong>文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：</p>
@@ -2551,6 +2478,48 @@
       <tags>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Markdown小记</title>
+    <url>/2018/07/21/markdown-cheatsheet/</url>
+    <content><![CDATA[<p>Markdown是一种轻量标记语言，其文件后缀名为<code>.md</code>，它允许人们采用其规定的语法编写文档，而后Markdown解析器会将其转化为有效的HTML文档，以便在网页中显示，时至今日，有许多Markdown解析器增强了Markdown的基本语法，这就造成了Markdown有多种<strong>风格</strong>（flavor）。因为Markdown要被转化为HTML才能在网页上显示，所以在Markdown中仍然可以使用HTML，如果有Markdown无法完成的工作，完全可以再用回HTML。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">#### 四级标题</span><br></pre></td></tr></table></figure>
+<p>对应HTML，最高6级标题。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">    - 这是是嵌套列表项</span><br><span class="line">    - 这里也是嵌套列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
+<p>无序列表项常以<code>-</code>或<code>*</code>起始，个人习惯使用<code>-</code>。</p>
+<a id="more"></a>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Howie&#39;s Blog](http:&#x2F;&#x2F;howiezhao.com)</span><br></pre></td></tr></table></figure>
+<p>超文本链接必须带http。</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![一张图片](&#x2F;images&#x2F;abc.jpg)</span><br></pre></td></tr></table></figure>
+<p>当图片无法显示时，则显示中括号中的语句。<br>图片的路径为相对路径，即当前Markdown文件所在路径下的<code>images</code>中的<code>abc.jpg</code>。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***粗斜体***</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
+<p>`这里是单行代码`</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
+<p>上下应该各空一行</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 这是引用</span><br></pre></td></tr></table></figure>
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+<p>这是一条水平区分线，用3个或以上的短横线表示，个人习惯使用4个短横线。</p>
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown使用<code>\</code>转义以上特殊字符。</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li>在特殊字符与要书写的文字之间加上空格</li>
+<li>不同段之间加一空行</li>
+<li>链接后加一个空格</li>
+</ol>
+<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为<strong>GFM</strong>，即<strong>GitHub风格的Markdown语法</strong>，是GitHub中编辑器使用的Markdown语法格式，略微区别于标准的Markdown语法，主要如下：</p>
+<ol>
+<li>链接自动识别：GFM会自动为标准的URL加上链接</li>
+<li>语法着色：在<code>```</code>后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
+<li>删除线：使用<code>~~</code>表示删除线</li>
+<li>任务列表：使用<code>- [ ]</code>或<code>- [x]</code>表示未勾选或已勾选的任务列表</li>
+<li>Emoji：使用<code>:EMOJICODE:</code>可以显示Emoji表情，比如<code>:+1:</code>表示一个👍，要查看完整的Emoji编码，可参考<a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
+</ol>
+<p>要了解GFM的更多特性，可以参考<a href="https://help.github.com/categories/writing-on-github/">GitHub官方的文档</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a>是一个在线的Markdown编辑器。<br>Sublime Text拥有众多的Markdown插件，其中<a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a>可以在浏览器中预览Markdown文件，而<a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a>可以快速的编辑Markdown文件。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>形而上与形而下</title>
