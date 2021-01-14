@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Base64Base64，顾名思义是一种基于64个可打印字符来表示二进制数据的表示方法，这64个字符分别为A-Z、a-z、0-9以及+与&#x2F;。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4&#x2F;3。Base64索引表如下所示：    数值 字符 数值 字符 数值 字符 数值 字符    0 A 16 Q 32 g 48 w">
+<meta name="description" content="Base64Base64，顾名思义是一种基于 64 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 A-Z、a-z、0-9 以及 + 与 &#x2F;。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：    数值 字符 数值 字符 数值 字符 数值 字符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Base编码家族">
+<meta property="og:title" content="Base 编码家族">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/10/base/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Base64Base64，顾名思义是一种基于64个可打印字符来表示二进制数据的表示方法，这64个字符分别为A-Z、a-z、0-9以及+与&#x2F;。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4&#x2F;3。Base64索引表如下所示：    数值 字符 数值 字符 数值 字符 数值 字符    0 A 16 Q 32 g 48 w">
+<meta property="og:description" content="Base64Base64，顾名思义是一种基于 64 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 A-Z、a-z、0-9 以及 + 与 &#x2F;。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：    数值 字符 数值 字符 数值 字符 数值 字符">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-10T09:07:56.000Z">
-<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:modified_time" content="2021-01-14T12:54:10.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="密码学">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
     lang   : 'en'
   };
 </script>
-<title>Base编码家族 | Howie's Notes</title>
+<title>Base 编码家族 | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -222,7 +222,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64"><span class="nav-number">1.</span> <span class="nav-text">Base64</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base32"><span class="nav-number">2.</span> <span class="nav-text">Base32</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base16"><span class="nav-number">3.</span> <span class="nav-text">Base16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XXencode"><span class="nav-number">4.</span> <span class="nav-text">XXencode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UUencode"><span class="nav-number">5.</span> <span class="nav-text">UUencode</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64"><span class="nav-number">1.</span> <span class="nav-text">Base64</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base32"><span class="nav-number">2.</span> <span class="nav-text">Base32</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base16"><span class="nav-number">3.</span> <span class="nav-text">Base16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64URL"><span class="nav-number">4.</span> <span class="nav-text">Base64URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XXencode"><span class="nav-number">5.</span> <span class="nav-text">XXencode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UUencode"><span class="nav-number">6.</span> <span class="nav-text">UUencode</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -339,7 +339,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Base编码家族
+          Base 编码家族
         </h1>
 
         <div class="post-meta-container">
@@ -357,7 +357,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-01-14 20:54:10" itemprop="dateModified" datetime="2021-01-14T20:54:10+08:00">2021-01-14</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -386,7 +386,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于<strong>64</strong>个可打印字符来表示二进制数据的表示方法，这64个字符分别为<code>A-Z</code>、<code>a-z</code>、<code>0-9</code>以及<code>+</code>与<code>/</code>。64个字符可用6个比特位表示，3个字节有24个比特位，对应于4个Base64单元，所以编码后的数据要比原始数据略长，为原来的4/3。Base64索引表如下所示：</p>
+        <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于 <strong>64</strong> 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 <code>A-Z</code>、<code>a-z</code>、<code>0-9</code> 以及 <code>+</code> 与 <code>/</code>。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4/3。Base64 索引表如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -562,7 +562,7 @@
 </tr>
 </tbody></table>
 <a id="more"></a>
-<p>编码<code>Hello</code>的过程如下：</p>
+<p>编码 <code>Hello</code> 的过程如下：</p>
 <table>
 <thead>
 <tr>
@@ -576,7 +576,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>ASCII编码</td>
+<td>ASCII 编码</td>
 <td>72</td>
 <td>101</td>
 <td>108</td>
@@ -593,18 +593,47 @@
 <td>‭01101111‬</td>
 <td>00000000</td>
 </tr>
+</tbody></table>
+<p>以6个二进制位进行编码：</p>
+<table>
+<thead>
 <tr>
-<td>以6个二进制位进行编码：</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<th>二进制位</th>
+<th>010010</th>
+<th>000110</th>
+<th>010101</th>
+<th>101100</th>
+<th>011011</th>
+<th>000110</th>
+<th>111100</th>
+<th>000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>索引</td>
+<td>18</td>
+<td>6</td>
+<td>21</td>
+<td>44</td>
+<td>27</td>
+<td>6</td>
+<td>60</td>
 <td></td>
 </tr>
+<tr>
+<td>Base64 编码</td>
+<td>S</td>
+<td>G</td>
+<td>V</td>
+<td>s</td>
+<td>b</td>
+<td>G</td>
+<td>8</td>
+<td>=</td>
+</tr>
 </tbody></table>
-<p>二进制位 | 010010 | 000110 | 010101 | 101100 | 011011 | 000110 | 111100 | 000000<br>--- | --- | --- | --- | --- | --- | --- | --- |<br>索引 | 18 | 6 | 21 | 44 | 27 | 6 | 60 |<br>Base64编码 | S | G | V | s | b | G | 8 | =<br>若原数据不是3的倍数，且多出1个字节，则在编码末尾加2个<code>=</code>，多出2个字节，则在编码末尾加1个<code>=</code>。换言之，若多出1个字节，则最后一个6位的Base64字节块有4位是0值，若多出2个字节，则最后一个6位的Base64字节块有2位是0值。</p>
-<h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32基于32个可打印字符，分别为<code>A-Z</code>以及<code>2-7</code>。32个字符可用5个比特位表示，5个字节有40个比特位，对应于8个Base32单元，编码后的数据比原始数据略长8/5。若原数据不是5的倍数，且多出1个字节，则在编码末尾加4个<code>=</code>，多出2个字节，则在编码末尾加3个<code>=</code>，多出3个字节，则在编码末尾加2个<code>=</code>，多出4个字节，则在编码末尾加1个<code>=</code>。Base32索引表如下所示：</p>
+<p>若原数据不是 3 的倍数，且多出 1 个字节，则在编码末尾加 2 个 <code>=</code>，多出 2 个字节，则在编码末尾加 1 个 <code>=</code>。换言之，若多出 1 个字节，则最后一个 6 位的 Base64 字节块有 4 位是 0 值，若多出 2 个字节，则最后一个 6 位的 Base64 字节块有 2 位是 0 值。</p>
+<h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32 基于 32 个可打印字符，分别为 <code>A-Z</code> 以及 <code>2-7</code>。32 个字符可用 5 个比特位表示，5 个字节有 40 个比特位，对应于 8 个 Base32 单元，编码后的数据比原始数据略长 8/5。若原数据不是 5 的倍数，且多出 1 个字节，则在编码末尾加 4 个 <code>=</code>，多出 2 个字节，则在编码末尾加 3 个 <code>=</code>，多出 3 个字节，则在编码末尾加 2 个 <code>=</code>，多出 4 个字节，则在编码末尾加 1 个 <code>=</code>。Base32 索引表如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -699,7 +728,7 @@
 <td>7</td>
 </tr>
 </tbody></table>
-<h2 id="Base16"><a href="#Base16" class="headerlink" title="Base16"></a>Base16</h2><p>与上类似，Base16基于16个可打印字符，分别为<code>0-9</code>以及<code>A-F</code>。16个字符可用4个比特位表示，1个字节有8个比特位，对应于2个Base16单元，编码后的数据比原始数据略长2。显然，在Base16中不需要在末尾填充<code>=</code>。Base16索引表如下所示：</p>
+<h2 id="Base16"><a href="#Base16" class="headerlink" title="Base16"></a>Base16</h2><p>与上类似，Base16 基于 16 个可打印字符，分别为 <code>0-9</code> 以及 <code>A-F</code>。16 个字符可用 4 个比特位表示，1 个字节有 8 个比特位，对应于 2 个 Base16 单元，编码后的数据比原始数据略长 2。显然，在 Base16 中不需要在末尾填充 <code>=</code>。Base16 索引表如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -754,8 +783,20 @@
 <td>F</td>
 </tr>
 </tbody></table>
-<h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>XXencode不属于Base编码家族，但与Base64编码极为类似，区别仅在于64个可打印字符及其顺序，XXencode使用的为<code>+</code>、<code>-</code>、<code>0-9</code>、<code>A-Z</code>、<code>a-z</code>。</p>
-<h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode也与Base64极为类似，它使用的字符及其顺序为<code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、`。</p>
+<h2 id="Base64URL"><a href="#Base64URL" class="headerlink" title="Base64URL"></a>Base64URL</h2><p>Base64URL 编码是在 Base64 编码的结果的基础上做的一些修改，主要是为了方便编码后的字符串在网络中传输。其做的修改如下：</p>
+<ol>
+<li>去除尾部的 <code>=</code></li>
+<li>将 <code>+</code> 替换成 <code>-</code></li>
+<li>将 <code>/</code> 替换成 <code>_</code></li>
+</ol>
+<p>类似的，解码为原 Base64 编码结果，遵循如下步骤：</p>
+<ol>
+<li>将 <code>-</code> 替换成 <code>+</code></li>
+<li>将 <code>_</code> 替换成 <code>/</code></li>
+<li>计算 <code>Base64URL 编码长度 % 4</code> 的值：<br>a. 结果为 0，不做处理<br>b. 结果为 2，字符串添加 <code>==</code><br>c. 结果为 3，字符串添加 <code>=</code></li>
+</ol>
+<h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>XXencode 不属于 Base 编码家族，但与 Base64 编码极为类似，区别仅在于 64 个可打印字符及其顺序，XXencode 使用的为 <code>+</code>、<code>-</code>、<code>0-9</code>、<code>A-Z</code>、<code>a-z</code>。</p>
+<h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode 也与 Base64 极为类似，它使用的字符及其顺序为 <code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、`。</p>
 
     </div>
 
