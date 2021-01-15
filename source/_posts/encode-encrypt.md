@@ -10,7 +10,7 @@ tags:
 
 编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。
 
-常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、Base64 编码等。
+常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、{% post_link base Base64 编码 %}等。
 
 ## 加密
 
@@ -24,7 +24,7 @@ tags:
 
 常见的对称加密算法有 DES、3DES、AES、RC5 等。
 
-常见的非对称加密算法有 RSA、DSA、ECDSA、Elgamal 等。
+常见的非对称加密算法有 {% post_link rsa RSA %}、DSA、ECDSA、Elgamal 等。
 
 非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。
 
