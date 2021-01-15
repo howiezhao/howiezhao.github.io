@@ -1370,6 +1370,18 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Windows10的传递优化</title>
+    <url>/2018/07/16/delivery-optimization/</url>
+    <content><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何比较两个文件之间的差异</title>
     <url>/2018/10/19/diff/</url>
     <content><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：</p>
@@ -1386,18 +1398,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows10的传递优化</title>
-    <url>/2018/07/16/delivery-optimization/</url>
-    <content><![CDATA[<p>为了方便快速的下载Windows更新，微软在Windows10中启用了一种新的更新机制，即<a href="https://privacy.microsoft.com/zh-CN/windows-10-windows-update-delivery-optimization"><strong>传递优化</strong></a>(Delivery Optimization)，这本质上是一种P2P架构，换句话来说，倘若开启了传递优化功能，更新时将会额外的从别的已更新的且开启传递优化功能的电脑上下载，同时也会上传已更新的文件到需要更新的电脑上。值得注意的是，传递优化对局域网进行了特殊处理，即当局域网内一台电脑完成更新后，传递优化会使得此局域网内的其他电脑依次完成更新。<br>开启或关闭传递优化的设置路径为：设置 ——&gt; 更新和安全 ——&gt; Windows更新 ——&gt; 高级选项 ——&gt; 传递优化。传递优化用于上传的文件路径位于：C:\Windows\Logs\dosvc。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1443,13 +1443,13 @@
     <title>编码与加密</title>
     <url>/2018/05/08/encode-encrypt/</url>
     <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
-<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、Base64 编码等。</p>
+<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、<a href="/2018/08/10/base/" title="Base64 编码">Base64 编码</a>等。</p>
 <h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>加密（encryption）是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密（decryption）过程，才能将密文还原为正常可读的内容。</p>
 <p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
 <p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
 <p>非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
 <p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
-<p>常见的非对称加密算法有 RSA、DSA、ECDSA、Elgamal 等。</p>
+<p>常见的非对称加密算法有 <a href="/2018/10/18/rsa/" title="RSA">RSA</a>、DSA、ECDSA、Elgamal 等。</p>
 <p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
 <p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
 <a id="more"></a>
