@@ -12,23 +12,34 @@
       </tags>
   </entry>
   <entry>
-    <title>HTTP协议分析</title>
+    <title>HTTP 协议分析</title>
     <url>/2018/05/11/HTTP/</url>
-    <content><![CDATA[<p>HTTP(Hypertext Transfer Protocol，超文本传输协议)</p>
-<h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p><img src="/images/http-request.PNG"></p>
+    <content><![CDATA[<p>HTTP，全称 Hypertext Transfer Protocol，即超文本传输协议。</p>
+<h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p><img src="/images/http-request.PNG" alt="http request"></p>
 <a id="more"></a>
-<p>方法字段可以取几种不同的值，包括<strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong>和<strong>DELETE</strong>。绝大部分的HTTP请求报文使用GET方法。</p>
-<p><strong>Host</strong>首部行指明对象所在的主机，该信息是Web代理高速缓存所要求的；<strong>Connection</strong>首部行指明采用非持续连接还是持续连接；<strong>User-Agent</strong>首部行指明用户代理；<strong>Accept-Language</strong>首部行指明用户想得到的语言版本。</p>
-<p>使用GET方法时实体体(entity body)为空，而使用POST方法时才使用该实体体。</p>
-<p>HEAD方法类似于GET方法。当服务器收到使用HEAD方法的请求时，将会用一个HTTP报文进行响应，但是并不返回请求对象。应用程序开发者常用HEAD方法进行调试跟踪。PUT方法常与Web发行工具联合使用，它运行用户上传对象到指定的Web服务器上指定的路径(目录)。PUT方法也被那些需要向Web服务器上传对象的应用程序使用。DELETE方法允许用户或者应用程序删除Web服务器上的对象。</p>
-<h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p><img src="/images/http-response.PNG"><br><strong>Date</strong>首部行指示服务器产生并发送该响应报文的日期和时间；<strong>Last-Modified</strong>首部行指示了对象创建或者最后修改的日期和时间；<strong>Server</strong>首部行指示服务器类型，类似于User-Agent首部行；<strong>Content-Length</strong>首部行指示了被发送对象中的字节数；<strong>Content-Type</strong>首部行指示了实体体中的对象的MIME类型。</p>
-<p>常见的状态码和其对应的短语：<br>200 OK：请求成功，信息在返回的响应报文中。<br>301 Moved Permanently：请求的对象已经被 <strong>永久</strong> 转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。<br>302 Moved Temporarily：请求的对象已经被 <strong>暂时</strong> 转移了，新的URL定义在响应报文的Location首部行中。客户软件将自动获取新的URL。<br>400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。<br>403 Forbidden：客户端没有权限访问此资源。<br>404 Not Found：被请求的文档不在服务器上。<br>505 HTTP Version Not Supported：服务器不支持请求报文使用的HTTP协议版本。</p>
-<p>一般而言，200系列代表正常，300系列代表重定向，400系列代表客户端错误，500系列代表服务端错误。</p>
-<h2 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h2><p><strong>条件GET(conditional GET)方法</strong>：请求报文使用GET方法，并且请求报文中包含一个<strong>If-Modified-Since</strong>首部行。</p>
-<p>Web缓存器为了验证所缓存的对象是否是最新的，会使用条件GET方法向目标服务器发送一个请求报文，If-Modified-Since首部行的值为当初缓存对象时响应报文中Last-Modified首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。</p>
+
+<p>方法字段可以取几种不同的值，包括 <strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong> 和 <strong>DELETE</strong>。绝大部分的 HTTP 请求报文使用 GET 方法。</p>
+<p><strong>Host</strong> 首部行指明对象所在的主机，该信息是 Web 代理高速缓存所要求的；<strong>Connection</strong> 首部行指明采用非持续连接还是持续连接；<strong>User-Agent</strong> 首部行指明用户代理；<strong>Accept-Language</strong> 首部行指明用户想得到的语言版本。</p>
+<p>使用 GET 方法时实体体（entity body）为空，而使用 POST 方法时才使用该实体体。</p>
+<p>HEAD 方法类似于 GET 方法。当服务器收到使用 HEAD 方法的请求时，将会用一个 HTTP 报文进行响应，但是并不返回请求对象。应用程序开发者常用 HEAD 方法进行调试跟踪。PUT 方法常与 Web 发行工具联合使用，它运行用户上传对象到指定的 Web 服务器上指定的路径（目录）。PUT 方法也被那些需要向 Web 服务器上传对象的应用程序使用。DELETE 方法允许用户或者应用程序删除 Web 服务器上的对象。</p>
+<h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><p><img src="/images/http-response.PNG" alt="http response"></p>
+<p><strong>Date</strong> 首部行指示服务器产生并发送该响应报文的日期和时间；<strong>Last-Modified</strong> 首部行指示了对象创建或者最后修改的日期和时间；<strong>Server</strong> 首部行指示服务器类型，类似于 User-Agent 首部行；<strong>Content-Length</strong> 首部行指示了被发送对象中的字节数；<strong>Content-Type</strong> 首部行指示了实体体中的对象的 MIME 类型。</p>
+<p>常见的状态码和其对应的短语：</p>
+<ul>
+<li>200 OK：请求成功，信息在返回的响应报文中。</li>
+<li>301 Moved Permanently：请求的对象已经被 <strong>永久</strong> 转移了，新的 URL 定义在响应报文的 Location 首部行中。客户软件将自动获取新的 URL。</li>
+<li>302 Moved Temporarily：请求的对象已经被 <strong>暂时</strong> 转移了，新的 URL 定义在响应报文的 Location 首部行中。客户软件将自动获取新的 URL。</li>
+<li>400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。</li>
+<li>403 Forbidden：客户端没有权限访问此资源。</li>
+<li>404 Not Found：被请求的文档不在服务器上。</li>
+<li>505 HTTP Version Not Supported：服务器不支持请求报文使用的 HTTP 协议版本。</li>
+</ul>
+<p>一般而言，200 系列代表正常，300 系列代表重定向，400 系列代表客户端错误，500 系列代表服务端错误。</p>
+<h2 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h2><p><strong>条件 GET（conditional GET）方法</strong>：请求报文使用 GET 方法，并且请求报文中包含一个 <strong>If-Modified-Since</strong> 首部行。</p>
+<p>Web 缓存器为了验证所缓存的对象是否是最新的，会使用条件 GET 方法向目标服务器发送一个请求报文，If-Modified-Since 首部行的值为当初缓存对象时响应报文中 Last-Modified 首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“304 Not Modified”响应报文，其中实体体为空。</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>HTTP是一个无状态协议(stateless protocol)。</li>
-<li>HTTP可以采用非持续连接或持续连接，默认采用持续连接。</li>
+<li>HTTP 是一个无状态协议（stateless protocol）。</li>
+<li>HTTP 可以采用非持续连接或持续连接，默认采用持续连接。</li>
 </ol>
 ]]></content>
       <categories>
