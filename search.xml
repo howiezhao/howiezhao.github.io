@@ -126,14 +126,6 @@
       </tags>
   </entry>
   <entry>
-    <title>高级搜索技巧</title>
-    <url>/2018/11/20/advanced-search-tips/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>ADB小记</title>
     <url>/2019/07/29/adb/</url>
     <content><![CDATA[<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="error-device-still-connecting"><a href="#error-device-still-connecting" class="headerlink" title="error: device still connecting"></a>error: device still connecting</h3><p>输入<code>adb shell</code>时显示<code>error: device still connecting</code>，一般可通过：关闭<strong>开发者模式</strong>然后重新打开<strong>开发者模式</strong>，接着开启<strong>USB调试</strong>并重新和电脑配对，即可解决。</p>
@@ -144,6 +136,14 @@
       <tags>
         <tag>Android</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>高级搜索技巧</title>
+    <url>/2018/11/20/advanced-search-tips/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>Android Studio模拟器相关问题解决</title>
@@ -1393,14 +1393,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数字货币中的相关术语</title>
-    <url>/2018/12/16/digital-currency/</url>
-    <content><![CDATA[<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><h2 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h2><h2 id="矿池"><a href="#矿池" class="headerlink" title="矿池"></a>矿池</h2><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>如何比较两个文件之间的差异</title>
     <url>/2018/10/19/diff/</url>
     <content><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：</p>
@@ -1418,6 +1410,14 @@
       <tags>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>数字货币中的相关术语</title>
+    <url>/2018/12/16/digital-currency/</url>
+    <content><![CDATA[<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><h2 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h2><h2 id="矿池"><a href="#矿池" class="headerlink" title="矿池"></a>矿池</h2><h2 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>Docker 入坑指南</title>
@@ -1489,15 +1489,6 @@
       </categories>
   </entry>
   <entry>
-    <title>对比几种文件共享协议</title>
-    <url>/2019/04/17/file-sharing-protocol/</url>
-    <content><![CDATA[<h2 id="SMB"><a href="#SMB" class="headerlink" title="SMB"></a>SMB</h2><p><strong>SMB</strong>全称Server Message Block（即服务器消息块），又称Common Internet File System（即网络文件共享系统），所以也常被缩写为<strong>SMB/CIFS</strong>。</p>
-<h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><h2 id="NFS"><a href="#NFS" class="headerlink" title="NFS"></a>NFS</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>前端相关术语</title>
     <url>/2018/09/14/front-end-terminology/</url>
     <content><![CDATA[<h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><p>轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。</p>
@@ -1513,6 +1504,15 @@
       <tags>
         <tag>Web</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>对比几种文件共享协议</title>
+    <url>/2019/04/17/file-sharing-protocol/</url>
+    <content><![CDATA[<h2 id="SMB"><a href="#SMB" class="headerlink" title="SMB"></a>SMB</h2><p><strong>SMB</strong>全称Server Message Block（即服务器消息块），又称Common Internet File System（即网络文件共享系统），所以也常被缩写为<strong>SMB/CIFS</strong>。</p>
+<h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><h2 id="NFS"><a href="#NFS" class="headerlink" title="NFS"></a>NFS</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>GCC 小记</title>
@@ -1753,85 +1753,90 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo初体验</title>
+    <title>Hexo 初体验</title>
     <url>/2017/06/20/hexo-experience/</url>
-    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/index.html">Hexo</a>是一个基于Node.js的开源静态博客框架，类似的项目还有基于Ruby的<a href="https://jekyllrb.com/">Jekyll</a>，基于Go的<a href="https://gohugo.io/">Hugo</a>，基于Python的<a href="https://blog.getpelican.com/">Pelican</a>等等。之所以选择Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装Hexo前，需要安装<a href="https://nodejs.org/en/download/">Node.js</a>和<a href="https://git-scm.com/downloads">Git</a>，安装Node.js的同时，npm(Node Package Manager)也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入<code>node -v</code>来测试Node.js是否成功安装，输入<code>npm -v</code>来测试npm是否成功安装。<br>npm成功安装后，可使用<code>npm install -g hexo-cli</code>来快速安装Hexo命令行工具。参数<code>-g</code>表示全局安装，npm的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
+    <content><![CDATA[<p><a href="https://hexo.io/zh-cn/index.html">Hexo</a> 是一个基于 Node.js 的开源静态博客框架，类似的项目还有基于 Ruby 的 <a href="https://jekyllrb.com/">Jekyll</a>，基于 Go 的 <a href="https://gohugo.io/">Hugo</a>，基于 Python 的 <a href="https://blog.getpelican.com/">Pelican</a> 等等。之所以选择 Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装 Hexo 前，需要安装 <a href="https://nodejs.org/zh-cn/download/">Node.js</a> 和 <a href="https://git-scm.com/downloads">Git</a>，安装 Node.js 的同时，npm（Node Package Manager）也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入 <code>node -v</code> 来测试 Node.js 是否成功安装，输入 <code>npm -v</code> 来测试 npm 是否成功安装。</p>
+<p>npm 成功安装后，可使用 <code>npm install -g hexo-cli</code> 来快速安装 Hexo 命令行工具。其次你还需要安装 npm-check-updates 包，它用于以后 Hexo 及其插件的更新。参数 <code>-g</code> 表示全局安装，npm 的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
 <p><strong>本地安装</strong></p>
 <ul>
-<li>将安装包放在 ./node_modules 下（运行npm时所在的目录）</li>
-<li>可以通过 require() 来引入本地安装的包</li>
+<li>将安装包放在 <code>./node_modules</code> 下（运行 npm 时所在的目录）</li>
+<li>可以通过 <code>require()</code> 来引入本地安装的包</li>
 </ul>
 <p><strong>全局安装</strong></p>
 <ul>
-<li>将安装包放在 /usr/local下</li>
+<li>将安装包放在 <code>/usr/local</code> 下</li>
 <li>可以直接在命令行里使用<a id="more"></a>
 
 </li>
 </ul>
-<p>关于npm更多的内容请参考<a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm模块安装机制简介</a>。</p>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在博客所在目录执行<code>hexo version</code>即可查看Hexo版本信息，在博客所在目录执行<code>npm update -g</code>即可更新Hexo。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
-<p>如果没有设置<code>folder</code>，Hexo 默认在目前的文件夹建立网站。</p>
-<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt;</span><br><span class="line">或 hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<p>如果没有设置<code>layout</code>的话，默认使用 _config.yml 中的<code>default_layout</code>参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">或 hexo generate</span><br></pre></td></tr></table></figure>
+<p>关于 npm 更多的内容请参考 <a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm 模块安装机制简介</a>。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在 <strong>博客所在目录</strong> 执行 <code>hexo version</code> 即可查看 Hexo 版本信息。</p>
+<p>要更新 Hexo 及其插件到最新 <strong>主</strong> 版本，需要在 <strong>博客所在目录</strong> 执行如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm-check-updates -u</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line">或 hexo server</span><br></pre></td></tr></table></figure>
+<p>若只想更新 Hexo 及其插件到最新 <strong>次</strong> 版本，则只需在 <strong>博客所在目录</strong> 执行 <code>npm update -g</code> 即可。</p>
+<p>要更新 hexo-cli，你只需要再次执行 <code>npm install -g hexo-cli</code> 安装即可。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<p>如果没有设置 <code>folder</code>，Hexo 默认在当前的文件夹建立网站。</p>
+<h3 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo n [layout] &lt;title&gt;</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有设置 <code>layout</code> 的话，默认使用 <code>_config.yml</code> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<h3 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo s</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
 <p>默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a> 。</p>
-<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br><span class="line">或 hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
 
-<h3 id="清除缓存文件-db-json-和已生成的静态文件-public-。"><a href="#清除缓存文件-db-json-和已生成的静态文件-public-。" class="headerlink" title="清除缓存文件(db.json)和已生成的静态文件(public)。"></a>清除缓存文件(db.json)和已生成的静态文件(public)。</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<h3 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo d</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除缓存文件（db-json）和已生成的静态文件（public-）"><a href="#清除缓存文件（db-json）和已生成的静态文件（public-）" class="headerlink" title="清除缓存文件（db.json）和已生成的静态文件（public/）"></a>清除缓存文件（<code>db.json</code>）和已生成的静态文件（<code>public/</code>）</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
 <p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>Hexo生成的网站目录结构如下：</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>Hexo 生成的网站目录结构如下：</p>
 <ul>
-<li><code>public</code>：此目录下保存着已经生成的静态文件</li>
-<li><code>scaffolds</code>：此目录下存放Hexo模板，当您新建文章时，Hexo会根据scaffold来建立文件。</li>
-<li><code>source</code>：此目录下存放用户资源<ul>
-<li><code>_posts</code>：此目录下存放Markdown格式的源文章</li>
-<li><code>images</code>：此目录下存放相关图片文件</li>
+<li><code>public/</code>：此目录下保存着已经生成的静态文件</li>
+<li><code>scaffolds/</code>：此目录下存放 Hexo 模板，当您新建文章时，Hexo 会根据 scaffold 来建立文件。</li>
+<li><code>source/</code>：此目录下存放用户资源<ul>
+<li><code>_posts/</code>：此目录下存放 Markdown 格式的源文章</li>
+<li><code>images/</code>：此目录下存放相关图片文件</li>
 </ul>
 </li>
-<li><code>themes</code>：此目录下保存着主题文件</li>
+<li><code>themes/</code>：此目录下保存着主题文件</li>
 <li><code>_config.yml</code>：此文件为<strong>站点配置文件</strong></li>
 </ul>
-<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>站点配置文件（<code>_config.yml</code>）中的<code>url</code>字段务必要填写为自己站点的正确网址，否则分享自己站点内文章时会生成错误链接。<br>新建文章（<code>hexo n &lt;title&gt;</code>）时建议使用小写英文作为文件名，此文件名将作为文章链接的一部分，英文中的空格将自动用<code>-</code>替代，文章标题可以在文件中另行设置。<br>和传统的博客一样，建议开启<strong>分类</strong>（category）和<strong>标签</strong>（tag）功能，在Hexo中，分类具有<strong>顺序性</strong>和<strong>层次性</strong>，也就是说<code>Foo，Bar</code>不等于<code>Bar，Foo</code>，而标签没有顺序和层次。简单来说，分类应该是经过深思熟虑的，而标签则可适文章而决定，分类一般只有几个，而标签可以有一堆。具体而言，可以参考本站点的分类标签设计。</p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Hexo支持<a href="https://hexo.io/plugins/">许多插件</a>，个人经常使用的插件如下：</p>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><p>站点配置文件（<code>_config.yml</code>）中的 <code>url</code> 字段务必要填写为自己站点的正确网址，否则分享自己站点内文章时会生成错误链接。</p>
+<p>新建文章（<code>hexo n &lt;title&gt;</code>）时建议使用小写英文作为文件名，此文件名将作为文章链接的一部分，英文中的空格将自动用 <code>-</code> 替代，文章标题可以在文件中另行设置。</p>
+<p>和传统的博客一样，建议开启<strong>分类</strong>（category）和<strong>标签</strong>（tag）功能，在 Hexo 中，分类具有<strong>顺序性</strong>和<strong>层次性</strong>，也就是说 <code>Foo，Bar</code> 不等于 <code>Bar，Foo</code>，而标签没有顺序和层次。简单来说，分类应该是经过深思熟虑的，而标签则可适文章而决定，分类一般只有几个，而标签可以有一堆。具体而言，可以参考本站点的分类标签设计。</p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Hexo 支持<a href="https://hexo.io/plugins/">许多插件</a>，个人经常使用的插件如下：</p>
 <ul>
-<li><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：为Hexo打造的Git部署插件，适用于将博客部署到GitHub仓库上。</li>
-<li><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a>：适用于为文章添加字数统计和阅读时长统计，比同类型的<a href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a>插件要更好。</li>
+<li><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：为 Hexo 打造的 Git 部署插件，适用于将博客部署到 GitHub 仓库上。</li>
+<li><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>：适用于为博客添加 RSS 功能。</li>
+<li><a href="https://github.com/hexojs/hexo-generator-sitemap">hexo-generator-sitemap</a>：适用于为博客添加 Sitemap 功能。</li>
+<li><a href="https://github.com/theme-next/hexo-symbols-count-time">hexo-symbols-count-time</a>：适用于为文章添加字数统计和阅读时长统计，比同类型的 <a href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a> 插件要更好。</li>
 <li><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a>：适用于为博客添加本地搜索功能。</li>
-<li><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a>：适用于为博客添加RSS功能。</li>
 </ul>
 <p>使用如下命令即可安装上面提到的所有插件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git hexo-symbols-count-time hexo-generator-searchdb hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git hexo-generator-feed hexo-generator-sitemap hexo-symbols-count-time hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
 
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装Hexo后，默认使用的主题为landscape，个人不是很喜欢这个主题，所幸的是Hexo提供<a href="https://hexo.io/themes/">更多的第三方主题</a>，个人倾向于使用广为流行的<a href="https://theme-next.org/">NexT主题</a>。<br>值得注意的是，NexT主题在6.0.0版本之前由iissnan个人维护，其官方仓库为<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> ，官网为<a href="https://theme-next.iissnan.com/">https://theme-next.iissnan.com/</a> ，在6.0.0版本之后由theme-next组织维护，其官方仓库更改为<a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> ，官网为<a href="https://theme-next.org/">https://theme-next.org</a> 。这里所介绍的使用方法均以6.0.0版本之后为例。</p>
-<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装NexT主题，首先要进入Hexo站点目录下，接着执行<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>命令，即可将NexT仓库克隆到本地。要启用NexT主题，只需在<strong>站点配置文件</strong>中找到<code>theme</code>字段，并将其值更改为<code>next</code>即可。</p>
-<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>要查看正在使用的NexT主题的版本，有如下几种方法：</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装 Hexo 后，默认使用的主题为 <a href="https://github.com/hexojs/hexo-theme-landscape">landscape</a>，个人不是很喜欢这个主题，所幸的是 Hexo 提供<a href="https://hexo.io/themes/">更多的第三方主题</a>，个人倾向于使用广为流行的 <a href="https://theme-next.js.org/">NexT 主题</a>。</p>
+<p>值得注意的是，NexT 主题在 6.0.0 版本之前由 iissnan 个人维护，其官方仓库为 <a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> ，官网为 <a href="https://theme-next.iissnan.com/">https://theme-next.iissnan.com/</a> ；在 6.0.0 版本之后由 theme-next 组织维护，其官方仓库更改为 <a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> ，官网为 <a href="https://theme-next.org/">https://theme-next.org</a> ；在 8.0.0 版本之后由 next-theme 组织维护，其官方仓库更改为 <a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a> ，官网为 <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> ；这里所介绍的使用方法均以 8.0.0 版本之后为例。</p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装 NexT 主题，首先要进入 Hexo 站点目录下，接着执行 <code>https://github.com/next-theme/hexo-theme-next themes/next</code> 命令，即可将 NexT 仓库克隆到本地。要启用 NexT 主题，只需在<strong>站点配置文件</strong>中找到 <code>theme</code> 字段，并将其值更改为 <code>next</code> 即可。</p>
+<h3 id="NexT-主题更新"><a href="#NexT-主题更新" class="headerlink" title="NexT 主题更新"></a>NexT 主题更新</h3><p>要查看正在使用的 NexT 主题的版本，有如下几种方法：</p>
 <ul>
-<li>可直接打开<strong>主题配置文件</strong>（即站点目录下的<code>/themes/next/_config.yml</code>文件），在其底部<code>version</code>字段即可查看版本号。</li>
-<li>在自己站点的底部一般会有Hexo和NexT的版本号</li>
+<li>可直接打开<strong>主题配置文件</strong>（即站点目录下的 <code>/themes/next/_config.yml</code> 文件），在其底部 <code>version</code> 字段即可查看版本号。</li>
+<li>在自己站点的底部一般会有 Hexo 和 NexT 的版本号</li>
 </ul>
-<p>和传统的Git仓库更新一样，进入站点目录下的<code>/themes/next</code>文件夹，执行<code>git pull</code>命令即可从官方仓库拉取最新代码进行更新。<br>如果你使用的是6.0.0之前的版本，现在想要升级到6.0.0之后的版本，可参考NexT主题官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">解决方案</a>。</p>
-<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>关于Hexo的更多问题，请参考<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a>，或YouTube上<a href="https://www.youtube.com/watch?v=bCj0iVVqkSg&feature=youtu.be">Hexo系列教程</a>视频；关于NexT主题的更多问题，请参考<a href="https://theme-next.iissnan.com/">NexT使用文档</a>；关于如何利用Hexo以及GitHub Pages搭建个人博客的更详细内容，请参考<a href="https://zhuanlan.zhihu.com/p/26625249">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
+<p>和传统的 Git 仓库更新一样，进入站点目录下的 <code>/themes/next</code> 文件夹，执行 <code>git pull</code> 命令即可从官方仓库拉取最新代码进行更新。</p>
+<p>如果你使用的是 6.0.0 之前的版本，现在想要升级到 6.0.0 之后的版本，可参考 theme-next 官方给出的<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md">解决方案</a>。</p>
+<p>如果你使用的是 8.0.0 之前的版本，现在想要升级到 8.0.0 之后的版本，可参考 next-theme 官方给出的<a href="https://theme-next.js.org/docs/getting-started/upgrade.html#Upgrade">解决方案</a>。</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>关于 Hexo 的更多问题，请参考 <a href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a>，或 YouTube 上 <a href="https://www.youtube.com/watch?v=B0yVJ46CTR8&list=PLD5dyQmlN6xPqBV0cxO7zAe1C8OmDPqfX">Hexo 系列教程</a>视频；关于 NexT 主题的更多问题，请参考旧版的中文 <a href="https://theme-next.iissnan.com/">NexT 使用文档</a>；关于如何利用 Hexo 以及 GitHub Pages 搭建个人博客的更详细内容，请参考 <a href="https://zhuanlan.zhihu.com/p/26625249">GitHub + Hexo 搭建个人网站详细教程</a>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTTPS运行机制</title>
-    <url>/2018/05/11/https/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -2092,6 +2097,17 @@
       </tags>
   </entry>
   <entry>
+    <title>HTTPS运行机制</title>
+    <url>/2018/05/11/https/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于人的信息收集</title>
     <url>/2018/09/09/human-based-information-gathering/</url>
     <content><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p>
@@ -2178,6 +2194,39 @@
       </tags>
   </entry>
   <entry>
+    <title>使用 IPython 替代原生 Python Shell</title>
+    <url>/2018/09/16/ipython/</url>
+    <content><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
+<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。</p>
+<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
+<a id="more"></a>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出 IPython 相比原生 Python Shell 的一些优势：</p>
+<ul>
+<li>Tab 自动补全</li>
+<li>自动缩进</li>
+<li>语法高亮</li>
+<li>支持命令历史记录</li>
+<li>命令前加 <code>!</code> 可调用系统命令</li>
+<li>命令后加 1 个或 2 个 <code>?</code> 可方便查看对象信息</li>
+<li>有众多的魔法函数（Magic Functions）</li>
+</ul>
+<h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出 IPython 中使用较多的魔法函数：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">%timeit <span class="comment">#测试代码段执行时间</span></span><br><span class="line">%hist   <span class="comment">#查看历史记录</span></span><br><span class="line">%debug  <span class="comment">#激活交互的调试器(ipdb)</span></span><br><span class="line">%load   <span class="comment">#加载外部代码</span></span><br><span class="line">%edit   <span class="comment">#使用编辑器打开</span></span><br></pre></td></tr></table></figure>
+
+<p>要查看更多的魔法函数，可以访问 <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython 的官方文档</a></p>
+<h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动 Jupyter Notebook 直接在命令行输入 <code>jupyter notebook</code> 即可，它会监听本机的 8888 端口，并自动打开浏览器访问。输入 <code>jupyter notebook --help</code> 可以查看它的更多参数。</p>
+<p>Jupyter Notebook 默认采用 <strong>Token</strong> 的方式进行登录，启动后在命令行中会显示当前的 token 值，若没有自动打开浏览器，则可以复制命令行中带 token 的链接并在浏览器中打开即可。</p>
+<p>使用命令 <code>jupyter notebook --generate-config</code> 可生成 Jupyter Notebook 配置文件，默认为 <code>$HOME/.jupyter/jupyter_notebook_config.py</code> 文件。常用的配置项如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
+
+<p>最后，在 Linux 下，使用 <code>nohup jupyter notebook &gt; jupyter.log &amp;</code> 可使 Jupyter Notebook 在后台运行并记录日志到当前目录下的 <code>jupyter.log</code> 文件中。</p>
+<p>要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：<a href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/">Jupyter Notebook 常用扩展</a>。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>盘点那些互联网公司的学生优惠</title>
     <url>/2018/09/26/it-student-discount/</url>
     <content><![CDATA[<h2 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h2><p>JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— <a href="https://www.jetbrains.com/idea/">Intellij IDEA</a>，Python的IDE —— <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>，JavaScript的IDE —— <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>，C/C++的IDE —— <a href="https://www.jetbrains.com/clion/">CLion</a>等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。<br>JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供<a href="https://www.jetbrains.com/zh/student/">免费授权计划</a>，学生只要验证学生身份即可免费使用JetBrains的所有IDE。</p>
@@ -2227,39 +2276,6 @@
 </ul>
 <p>学生只要验证学生身份就可以使用GitHub学生开发者包中提供的工具。</p>
 <h2 id="阿里云云翼计划"><a href="#阿里云云翼计划" class="headerlink" title="阿里云云翼计划"></a><a href="https://promotion.aliyun.com/ntms/act/campus2018.html">阿里云云翼计划</a></h2><p>学生验证学生身份后，每月仅需9.9元即可租用一台阿里云服务器。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>使用 IPython 替代原生 Python Shell</title>
-    <url>/2018/09/16/ipython/</url>
-    <content><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
-<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。</p>
-<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
-<a id="more"></a>
-<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出 IPython 相比原生 Python Shell 的一些优势：</p>
-<ul>
-<li>Tab 自动补全</li>
-<li>自动缩进</li>
-<li>语法高亮</li>
-<li>支持命令历史记录</li>
-<li>命令前加 <code>!</code> 可调用系统命令</li>
-<li>命令后加 1 个或 2 个 <code>?</code> 可方便查看对象信息</li>
-<li>有众多的魔法函数（Magic Functions）</li>
-</ul>
-<h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出 IPython 中使用较多的魔法函数：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">%timeit <span class="comment">#测试代码段执行时间</span></span><br><span class="line">%hist   <span class="comment">#查看历史记录</span></span><br><span class="line">%debug  <span class="comment">#激活交互的调试器(ipdb)</span></span><br><span class="line">%load   <span class="comment">#加载外部代码</span></span><br><span class="line">%edit   <span class="comment">#使用编辑器打开</span></span><br></pre></td></tr></table></figure>
-
-<p>要查看更多的魔法函数，可以访问 <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython 的官方文档</a></p>
-<h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动 Jupyter Notebook 直接在命令行输入 <code>jupyter notebook</code> 即可，它会监听本机的 8888 端口，并自动打开浏览器访问。输入 <code>jupyter notebook --help</code> 可以查看它的更多参数。</p>
-<p>Jupyter Notebook 默认采用 <strong>Token</strong> 的方式进行登录，启动后在命令行中会显示当前的 token 值，若没有自动打开浏览器，则可以复制命令行中带 token 的链接并在浏览器中打开即可。</p>
-<p>使用命令 <code>jupyter notebook --generate-config</code> 可生成 Jupyter Notebook 配置文件，默认为 <code>$HOME/.jupyter/jupyter_notebook_config.py</code> 文件。常用的配置项如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
-
-<p>最后，在 Linux 下，使用 <code>nohup jupyter notebook &gt; jupyter.log &amp;</code> 可使 Jupyter Notebook 在后台运行并记录日志到当前目录下的 <code>jupyter.log</code> 文件中。</p>
-<p>要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：<a href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/">Jupyter Notebook 常用扩展</a>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2961,58 +2977,6 @@
       </categories>
   </entry>
   <entry>
-    <title>reStructuredText 小记</title>
-    <url>/2018/09/17/restructuredtext/</url>
-    <content><![CDATA[<p><strong>reStructuredText</strong> 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 <strong>reST</strong>，文件后缀名为 <code>.rst</code>，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
-
-<p>reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。</p>
-<a id="more"></a>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>和 Markdown 一样：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
-
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;Howie&#39;s Blog &lt;http:&#x2F;&#x2F;howiezhao.com&gt;&#96;_</span><br></pre></td></tr></table></figure>
-
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
-
-<p>这是一条水平区分线，用 4 个或以上的短横线表示</p>
-<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，reST 使用 <code>\</code> 转义特殊字符。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>注释以两个点和一个空格开始。如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">..  这是一行注释</span><br></pre></td></tr></table></figure>
-
-<h2 id="Interpreted-Text-Roles"><a href="#Interpreted-Text-Roles" class="headerlink" title="Interpreted Text Roles"></a>Interpreted Text Roles</h2><p><strong>Interpreted Text Roles</strong>（直译为“<strong>解释文本角色</strong>”）是 reST 中非常重要的一个概念，<strong>Interpreted Text</strong>（解释文本）是指以一对 <code>`</code> 包裹起来的文本，**Role**（角色）是指 interpreted text（解释文本）的显示规则。Interpreted Text（解释文本）的语法为 <code>:role:`text`</code> 或 <code>`text`:role:</code>，功能是根据 <code>role</code>（角色）规则对 <code>text</code>（文本）进行 interprete（解释）。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>和 Markdown 一样：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*，等价于 :emphasis:&#96;斜体&#96;</span><br><span class="line">**粗体**，等价于 :strong:&#96;粗体&#96;</span><br></pre></td></tr></table></figure>
-
-<h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;这里是单行代码&#96;&#96;，等价于:literal:&#96;这里是单行代码&#96;</span><br></pre></td></tr></table></figure>
-
-<p>要了解更多 reST 中内置的 roles，可参考 <a href="http://docutils.sourceforge.net/docs/ref/rst/roles.html">Docutils 官方文档</a>。</p>
-<p>当然，你也可以按照自己的需求自定义 roles，具体可参考 <a href="http://docutils.sourceforge.net/docs/howto/rst-roles.html">Docutils 官方文档</a>。</p>
-<h2 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h2><p><strong>Directives</strong>（直译为“<strong>指令</strong>”）是 reST 中另一个非常重要的概念，Directive（指令）具有如下语法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-------+-------------------------------+</span><br><span class="line">| &quot;.. &quot; | directive type &quot;::&quot; directive |</span><br><span class="line">+-------+ block                         |</span><br><span class="line">        |                               |</span><br><span class="line">        +-------------------------------+</span><br></pre></td></tr></table></figure>
-
-<p>Directive（指令）以明确的标记开始（两个句点和一个空格），后跟 directive type（指令类型）和两个冒号，统称为“<strong>directive marker（指令标记）</strong>”。directive block（指令块）在 directive marker（指令标记）之后立即开始，并包括所有后续的缩进行。directive block（指令块）分为 arguments（参数），options（选项，即字段列表）和 content（内容，按此顺序），其中任何一个都可能出现。</p>
-<h3 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.. code:: python</span><br><span class="line"></span><br><span class="line">  def my_function():</span><br><span class="line">      print(&quot;hello&quot;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.. image:: picture.png</span><br><span class="line">   :alt: 当图片无法显示时，则显示这里的语句。</span><br></pre></td></tr></table></figure>
-
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>要了解更多 reST 中内置的 directives，可参考 <a href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">Docutils 官方文档</a>。</p>
-<p>当然，你也可以按照自己的需求自定义 directives，具体可参考 <a href="http://docutils.sourceforge.net/docs/howto/rst-directives.html">Docutils 官方文档</a>。</p>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
-<li>在特殊字符与要书写的文字之间加上空格，否则可能无法正常显示</li>
-<li>不同段之间加一空行</li>
-</ol>
-<h2 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h2><p>语言只是一种标准，实现该标准就需要相应的解析器，由于 reST 是 Docutils 项目的一部分，所以 reST 最初的解析器正是由 Docutils 提供的，当你使用 <code>pip install docutils</code> 命令安装 Docutils 之后，可以运行 <code>rst2html &lt;rst file&gt; &lt;html file&gt;</code> 命令，将 reST 文件转换为 HTML 文件。</p>
-<p>要了解更多的命令可参考 <a href="http://docutils.sourceforge.net/docs/user/tools.html">Docutils 官方文档</a>。</p>
-<h2 id="与-Markdown-相比"><a href="#与-Markdown-相比" class="headerlink" title="与 Markdown 相比"></a>与 Markdown 相比</h2><p>与 Markdown 相比，reST 更具扩展性，特别是 directives 的出现，可以按照需求自定义各种各样的 directives 来扩展 reST。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="http://rst.ninjs.org/">这里</a>有一个在线的 reST 编辑器。</p>
-<p>要了解更多关于 reST 的知识可参考 <a href="http://docutils.sourceforge.net/rst.html">Docutils 官方文档</a>，或者 <a href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">Sphinx 官方文档</a>。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>RSA加密算法</title>
     <url>/2018/10/18/rsa/</url>
     <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
@@ -3454,6 +3418,69 @@
       </tags>
   </entry>
   <entry>
+    <title>telnet协议分析</title>
+    <url>/2018/08/24/telnet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>reStructuredText 小记</title>
+    <url>/2018/09/17/restructuredtext/</url>
+    <content><![CDATA[<p><strong>reStructuredText</strong> 是一种类似于 Markdown 的轻量标记语言，其含义为“重新构建的文本”，也被简称为 <strong>reST</strong>，文件后缀名为 <code>.rst</code>，是 Python 的 Docutils 项目的一部分，目前 reST 被广泛应用于编写 Python 文档。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
+
+<p>reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。</p>
+<a id="more"></a>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>和 Markdown 一样：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;Howie&#39;s Blog &lt;http:&#x2F;&#x2F;howiezhao.com&gt;&#96;_</span><br></pre></td></tr></table></figure>
+
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+
+<p>这是一条水平区分线，用 4 个或以上的短横线表示</p>
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，reST 使用 <code>\</code> 转义特殊字符。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>注释以两个点和一个空格开始。如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">..  这是一行注释</span><br></pre></td></tr></table></figure>
+
+<h2 id="Interpreted-Text-Roles"><a href="#Interpreted-Text-Roles" class="headerlink" title="Interpreted Text Roles"></a>Interpreted Text Roles</h2><p><strong>Interpreted Text Roles</strong>（直译为“<strong>解释文本角色</strong>”）是 reST 中非常重要的一个概念，<strong>Interpreted Text</strong>（解释文本）是指以一对 <code>`</code> 包裹起来的文本，**Role**（角色）是指 interpreted text（解释文本）的显示规则。Interpreted Text（解释文本）的语法为 <code>:role:`text`</code> 或 <code>`text`:role:</code>，功能是根据 <code>role</code>（角色）规则对 <code>text</code>（文本）进行 interprete（解释）。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>和 Markdown 一样：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*斜体*，等价于 :emphasis:&#96;斜体&#96;</span><br><span class="line">**粗体**，等价于 :strong:&#96;粗体&#96;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单行代码"><a href="#单行代码" class="headerlink" title="单行代码"></a>单行代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;这里是单行代码&#96;&#96;，等价于:literal:&#96;这里是单行代码&#96;</span><br></pre></td></tr></table></figure>
+
+<p>要了解更多 reST 中内置的 roles，可参考 <a href="http://docutils.sourceforge.net/docs/ref/rst/roles.html">Docutils 官方文档</a>。</p>
+<p>当然，你也可以按照自己的需求自定义 roles，具体可参考 <a href="http://docutils.sourceforge.net/docs/howto/rst-roles.html">Docutils 官方文档</a>。</p>
+<h2 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h2><p><strong>Directives</strong>（直译为“<strong>指令</strong>”）是 reST 中另一个非常重要的概念，Directive（指令）具有如下语法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+-------+-------------------------------+</span><br><span class="line">| &quot;.. &quot; | directive type &quot;::&quot; directive |</span><br><span class="line">+-------+ block                         |</span><br><span class="line">        |                               |</span><br><span class="line">        +-------------------------------+</span><br></pre></td></tr></table></figure>
+
+<p>Directive（指令）以明确的标记开始（两个句点和一个空格），后跟 directive type（指令类型）和两个冒号，统称为“<strong>directive marker（指令标记）</strong>”。directive block（指令块）在 directive marker（指令标记）之后立即开始，并包括所有后续的缩进行。directive block（指令块）分为 arguments（参数），options（选项，即字段列表）和 content（内容，按此顺序），其中任何一个都可能出现。</p>
+<h3 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.. code:: python</span><br><span class="line"></span><br><span class="line">  def my_function():</span><br><span class="line">      print(&quot;hello&quot;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.. image:: picture.png</span><br><span class="line">   :alt: 当图片无法显示时，则显示这里的语句。</span><br></pre></td></tr></table></figure>
+
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>要了解更多 reST 中内置的 directives，可参考 <a href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">Docutils 官方文档</a>。</p>
+<p>当然，你也可以按照自己的需求自定义 directives，具体可参考 <a href="http://docutils.sourceforge.net/docs/howto/rst-directives.html">Docutils 官方文档</a>。</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li>在特殊字符与要书写的文字之间加上空格，否则可能无法正常显示</li>
+<li>不同段之间加一空行</li>
+</ol>
+<h2 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h2><p>语言只是一种标准，实现该标准就需要相应的解析器，由于 reST 是 Docutils 项目的一部分，所以 reST 最初的解析器正是由 Docutils 提供的，当你使用 <code>pip install docutils</code> 命令安装 Docutils 之后，可以运行 <code>rst2html &lt;rst file&gt; &lt;html file&gt;</code> 命令，将 reST 文件转换为 HTML 文件。</p>
+<p>要了解更多的命令可参考 <a href="http://docutils.sourceforge.net/docs/user/tools.html">Docutils 官方文档</a>。</p>
+<h2 id="与-Markdown-相比"><a href="#与-Markdown-相比" class="headerlink" title="与 Markdown 相比"></a>与 Markdown 相比</h2><p>与 Markdown 相比，reST 更具扩展性，特别是 directives 的出现，可以按照需求自定义各种各样的 directives 来扩展 reST。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="http://rst.ninjs.org/">这里</a>有一个在线的 reST 编辑器。</p>
+<p>要了解更多关于 reST 的知识可参考 <a href="http://docutils.sourceforge.net/rst.html">Docutils 官方文档</a>，或者 <a href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">Sphinx 官方文档</a>。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>terminal 与 shell</title>
     <url>/2018/09/19/terminal-shell/</url>
     <content><![CDATA[<p><strong>terminal</strong>，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a href="https://conemu.github.io/">ConEmu</a>、<a href="https://cmder.net/">Cmder</a> 等。</p>
@@ -3478,41 +3505,6 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>telnet协议分析</title>
-    <url>/2018/08/24/telnet/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《欺骗的艺术》读书笔记</title>
-    <url>/2017/12/05/the-art-of-deception/</url>
-    <content><![CDATA[<ol>
-<li>人的因素是安全过程中最薄弱的环节。</li>
-<li>你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。</li>
-<li>把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。</li>
-<li>不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。</li>
-<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。<a id="more"></a></li>
-<li>安全培训需要强调一点：当你有疑虑时，必须确认，确认，再确认。</li>
-<li>执法部门的人跟军队里的人一样，从接受训练的第一天起就形成了一个根深蒂固的等级观念。只要社交工程师扮作警官或中尉 —— 级别比跟他谈话的人高 —— 受害者就会拘于一条长时间得来的教训，即“不要质问比你职别高的人”。级别，换个说法，就是特权，尤其是不被级别低的人质问的特权。</li>
-<li>每个人都应该明白社交工程师的伎俩：获得尽可能多的与目标有关的信息，再利用这些信息使人相信自己是内部人员。然后一剑封喉。</li>
-<li>逆向社交工程学：一种社交工程攻击方式。攻击者建立起这样一个场景：让受害者遇到问题，并向攻击者寻求帮助。逆向社交工程学的另一种表现形式是以其人之道还治其人之身。攻击目标识别出自己受到了攻击，从而利用心理学原理来牵制攻击者，并且从他那里引诱出尽可能多的信息，进而有效的保护目标资产。</li>
-<li>新员工最容易成为攻击者的目标。他们认识的人还不多，也不太清楚公司的办事程序，以及什么该做什么不该做。而且，为给人留下良好的第一印象，他们急于表现自己是多么乐于合作与反应迅捷。</li>
-<li>第一条原则：除非万不得已，否则不要造访他们的办公室。仅凭着电话中的声音，他们是很难认出你来的，而如果他们不能人称认出你，那就不能逮捕你。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
-      <tags>
-        <tag>社会工程学</tag>
       </tags>
   </entry>
   <entry>
@@ -3578,6 +3570,30 @@
       </tags>
   </entry>
   <entry>
+    <title>《欺骗的艺术》读书笔记</title>
+    <url>/2017/12/05/the-art-of-deception/</url>
+    <content><![CDATA[<ol>
+<li>人的因素是安全过程中最薄弱的环节。</li>
+<li>你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。</li>
+<li>把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。</li>
+<li>不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。</li>
+<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。<a id="more"></a></li>
+<li>安全培训需要强调一点：当你有疑虑时，必须确认，确认，再确认。</li>
+<li>执法部门的人跟军队里的人一样，从接受训练的第一天起就形成了一个根深蒂固的等级观念。只要社交工程师扮作警官或中尉 —— 级别比跟他谈话的人高 —— 受害者就会拘于一条长时间得来的教训，即“不要质问比你职别高的人”。级别，换个说法，就是特权，尤其是不被级别低的人质问的特权。</li>
+<li>每个人都应该明白社交工程师的伎俩：获得尽可能多的与目标有关的信息，再利用这些信息使人相信自己是内部人员。然后一剑封喉。</li>
+<li>逆向社交工程学：一种社交工程攻击方式。攻击者建立起这样一个场景：让受害者遇到问题，并向攻击者寻求帮助。逆向社交工程学的另一种表现形式是以其人之道还治其人之身。攻击目标识别出自己受到了攻击，从而利用心理学原理来牵制攻击者，并且从他那里引诱出尽可能多的信息，进而有效的保护目标资产。</li>
+<li>新员工最容易成为攻击者的目标。他们认识的人还不多，也不太清楚公司的办事程序，以及什么该做什么不该做。而且，为给人留下良好的第一印象，他们急于表现自己是多么乐于合作与反应迅捷。</li>
+<li>第一条原则：除非万不得已，否则不要造访他们的办公室。仅凭着电话中的声音，他们是很难认出你来的，而如果他们不能人称认出你，那就不能逮捕你。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>社会工程学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Udacity：Apollo起步学习笔记</title>
     <url>/2018/07/21/udacity-apollo/</url>
     <content><![CDATA[<p>本笔记记录自<a href="https://cn.udacity.com/course/self-driving-car-fundamentals-featuring-apollo--ud0419">ud0419-无人驾驶第一课：从Apollo起步</a>。</p>
@@ -3616,6 +3632,21 @@
       </tags>
   </entry>
   <entry>
+    <title>useradd与adduser</title>
+    <url>/2018/07/16/useradd-adduser/</url>
+    <content><![CDATA[<p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p>
+<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
+<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
+<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用<code>-r</code>参数。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>URI与URL的区别</title>
     <url>/2018/04/29/url-uri/</url>
     <content><![CDATA[<p>URI，全称&quot;Uniform Resource Identifier&quot;，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。</p>
@@ -3631,19 +3662,27 @@
       </tags>
   </entry>
   <entry>
-    <title>useradd与adduser</title>
-    <url>/2018/07/16/useradd-adduser/</url>
-    <content><![CDATA[<p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p>
-<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
-<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
-<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用<code>-r</code>参数。</p>
+    <title>版本号的意义</title>
+    <url>/2018/09/21/version-number/</url>
+    <content><![CDATA[<p>软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即<code>X.Y.Z</code>格式，其中：</p>
+<ul>
+<li>X代表<strong>主版本号</strong>，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段；</li>
+<li>Y代表<strong>次版本号</strong>，增删功能时增加Y，同时重置Z为0；</li>
+<li>Z代表<strong>修订号</strong>，修复Bug时增加Z。</li>
+</ul>
+<p>除此之外，还会有一些修饰词，比如：</p>
+<ul>
+<li><code>alpha</code>表示内部测试版；</li>
+<li><code>beta</code>表示公开测试版；</li>
+<li><code>rc</code>即Release Candidate，表示候选版本，即将作为正式版发布；</li>
+<li><code>release</code>表示正式发行版；</li>
+<li><code>lts</code>即Long Term Support，表示长期支持版。</li>
+</ul>
+<p>有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。<br>随着版本号定义的越来越混乱，GitHub起草了一个<a href="https://semver.org/lang/zh-CN/">语义化版本(Semantic Versioning)</a>规范，为开源项目做出了一定指导意义。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
   </entry>
   <entry>
     <title>Vim小记</title>
@@ -3690,29 +3729,6 @@
       </tags>
   </entry>
   <entry>
-    <title>版本号的意义</title>
-    <url>/2018/09/21/version-number/</url>
-    <content><![CDATA[<p>软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即<code>X.Y.Z</code>格式，其中：</p>
-<ul>
-<li>X代表<strong>主版本号</strong>，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段；</li>
-<li>Y代表<strong>次版本号</strong>，增删功能时增加Y，同时重置Z为0；</li>
-<li>Z代表<strong>修订号</strong>，修复Bug时增加Z。</li>
-</ul>
-<p>除此之外，还会有一些修饰词，比如：</p>
-<ul>
-<li><code>alpha</code>表示内部测试版；</li>
-<li><code>beta</code>表示公开测试版；</li>
-<li><code>rc</code>即Release Candidate，表示候选版本，即将作为正式版发布；</li>
-<li><code>release</code>表示正式发行版；</li>
-<li><code>lts</code>即Long Term Support，表示长期支持版。</li>
-</ul>
-<p>有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。<br>随着版本号定义的越来越混乱，GitHub起草了一个<a href="https://semver.org/lang/zh-CN/">语义化版本(Semantic Versioning)</a>规范，为开源项目做出了一定指导意义。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>网站统计与分析</title>
     <url>/2018/09/22/web-analytics/</url>
     <content><![CDATA[<h2 id="几个术语"><a href="#几个术语" class="headerlink" title="几个术语"></a>几个术语</h2><ul>
@@ -3752,6 +3768,21 @@
       </categories>
   </entry>
   <entry>
+    <title>editorconfig 是什么</title>
+    <url>/2018/09/23/what-is-editorconfig/</url>
+    <content><![CDATA[<p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了 <a href="https://editorconfig.org/">EditorConfig</a> ，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。</p>
+<p>一个典型的 EditorConfig 配置文件如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 这是一行注释，以#开头</span><br><span class="line"></span><br><span class="line"># 表示此文件为最顶级</span><br><span class="line">root &#x3D; true</span><br><span class="line"></span><br><span class="line"># 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行</span><br><span class="line">[*]</span><br><span class="line">end_of_line &#x3D; lf</span><br><span class="line">insert_final_newline &#x3D; true</span><br><span class="line"></span><br><span class="line"># 匹配所有以 js 和 py 为后缀名的文件</span><br><span class="line"># 设定其编码为 UTF-8</span><br><span class="line">[*.&#123;js,py&#125;]</span><br><span class="line">charset &#x3D; utf-8</span><br><span class="line"></span><br><span class="line"># 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格</span><br><span class="line">[*.py]</span><br><span class="line">indent_style &#x3D; space</span><br><span class="line">indent_size &#x3D; 4</span><br><span class="line"></span><br><span class="line"># 设定 Makefile 文件的缩进为 Tab</span><br><span class="line">[Makefile]</span><br><span class="line">indent_style &#x3D; tab</span><br><span class="line"></span><br><span class="line"># 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格</span><br><span class="line">[lib&#x2F;**.js]</span><br><span class="line">indent_style &#x3D; space</span><br><span class="line">indent_size &#x3D; 2</span><br><span class="line"></span><br><span class="line"># 设定 package.json 和 .travis.yml 的缩进为 2 个空格</span><br><span class="line">[&#123;package.json,.travis.yml&#125;]</span><br><span class="line">indent_style &#x3D; space</span><br><span class="line">indent_size &#x3D; 2</span><br></pre></td></tr></table></figure>
+
+<p>此配置文件应该保存为 <code>.editorconfig</code> 并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见 <code>root = true</code> 为止。</p>
+<p>有很多项目在初始化时都会生成相应的 <code>.editorconfig</code> 文件，比如 Angular。</p>
+<p>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>IRC 是什么</title>
     <url>/2018/09/12/what-is-irc/</url>
     <content><![CDATA[<p><strong>IRC</strong>，全称 Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。</p>
@@ -3775,21 +3806,6 @@
       <tags>
         <tag>计算机网络</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>editorconfig 是什么</title>
-    <url>/2018/09/23/what-is-editorconfig/</url>
-    <content><![CDATA[<p>开发同一项目的不同的人，可能会使用不同的编辑器，又会有不同的设置，这就会造成不同的代码格式，为了统一同一项目的代码格式，由此诞生了 <a href="https://editorconfig.org/">EditorConfig</a> ，它包含了<strong>一个用于定义代码格式的文件</strong>和<strong>一批编辑器插件</strong>，这些插件可以让编辑器读取配置文件并依此格式化代码。</p>
-<p>一个典型的 EditorConfig 配置文件如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 这是一行注释，以#开头</span><br><span class="line"></span><br><span class="line"># 表示此文件为最顶级</span><br><span class="line">root &#x3D; true</span><br><span class="line"></span><br><span class="line"># 设定每个文件每行以换行（LF）结束，文件末尾添加一个新行</span><br><span class="line">[*]</span><br><span class="line">end_of_line &#x3D; lf</span><br><span class="line">insert_final_newline &#x3D; true</span><br><span class="line"></span><br><span class="line"># 匹配所有以 js 和 py 为后缀名的文件</span><br><span class="line"># 设定其编码为 UTF-8</span><br><span class="line">[*.&#123;js,py&#125;]</span><br><span class="line">charset &#x3D; utf-8</span><br><span class="line"></span><br><span class="line"># 匹配所有以 py 为后缀名的文件，设定其缩进为 4 个空格</span><br><span class="line">[*.py]</span><br><span class="line">indent_style &#x3D; space</span><br><span class="line">indent_size &#x3D; 4</span><br><span class="line"></span><br><span class="line"># 设定 Makefile 文件的缩进为 Tab</span><br><span class="line">[Makefile]</span><br><span class="line">indent_style &#x3D; tab</span><br><span class="line"></span><br><span class="line"># 匹配lib目录下所有以 js 为后缀名的文件，设定其缩进为 2 个空格</span><br><span class="line">[lib&#x2F;**.js]</span><br><span class="line">indent_style &#x3D; space</span><br><span class="line">indent_size &#x3D; 2</span><br><span class="line"></span><br><span class="line"># 设定 package.json 和 .travis.yml 的缩进为 2 个空格</span><br><span class="line">[&#123;package.json,.travis.yml&#125;]</span><br><span class="line">indent_style &#x3D; space</span><br><span class="line">indent_size &#x3D; 2</span><br></pre></td></tr></table></figure>
-
-<p>此配置文件应该保存为 <code>.editorconfig</code> 并放置在项目目录中，编辑器的 EditorConfig 插件会从文件打开目录开始依次向其父级目录查找并读取配置文件，直到遇见 <code>root = true</code> 为止。</p>
-<p>有很多项目在初始化时都会生成相应的 <code>.editorconfig</code> 文件，比如 Angular。</p>
-<p>另外，Visual Studio 和 JetBrains 家的大部分 IDE 都已经原生支持了 EditorConfig，因此不用再安装插件；对于 Sublime Text 和 Vim 等未原生支持的编辑器，EditorConfig 官网提供了相应的插件下载地址。要了解详细的支持列表，请访问 EditorConfig 官网。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>白帽子 VPS 选购指南</title>
