@@ -234,7 +234,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">119</span>
+          <span class="site-state-item-count">122</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -312,6 +312,274 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/31/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/31/git/" class="post-title-link" itemprop="url">Git小记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-31 16:59:18" itemprop="dateCreated datePublished" datetime="2018-08-31T16:59:18+08:00">2018-08-31</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a target="_blank" rel="noopener" href="https://www.mercurial-scm.org/">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a target="_blank" rel="noopener" href="https://www.nongnu.org/cvs/">CVS</a>、<a target="_blank" rel="noopener" href="https://subversion.apache.org/">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git共有3个配置文件，分别是：</p>
+<ul>
+<li><code>/etc/gitconfig</code>文件用于配置所有用户的配置信息，使用<code>git config --system</code>命令配置</li>
+<li>某个用户家目录下的<code>.gitconfig</code>文件只适用于该用户，使用<code>git config --global</code>命令配置</li>
+<li>当前Git仓库的<code>.git/config</code>仅针对当前项目，直接使用<code>git config</code>命令进行配置</li>
+</ul>
+<p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>按照个人偏好，针对新安装的Git环境，会配置如下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg2 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#x27;&#x27;          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg <span class="string">&#x27;!&quot;git lg1&quot;&#x27;</span></span><br><span class="line">git config --global alias.adog <span class="string">&quot;log --all --decorate --oneline --graph&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/31/git/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/telnet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/24/telnet/" class="post-title-link" itemprop="url">telnet协议分析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-24 19:44:44" itemprop="dateCreated datePublished" datetime="2018-08-24T19:44:44+08:00">2018-08-24</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/24/ssh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/24/ssh/" class="post-title-link" itemprop="url">SSH协议分析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-24 19:44:35" itemprop="dateCreated datePublished" datetime="2018-08-24T19:44:35+08:00">2018-08-24</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>SSH(Secure Shell)即<strong>安全外壳协议</strong>，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。</p>
+<h2 id="OpenSSH的运行机制"><a href="#OpenSSH的运行机制" class="headerlink" title="OpenSSH的运行机制"></a>OpenSSH的运行机制</h2><p>SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用<code>ssh user@host</code>命令进行登录时，所完成的整个过程如下：</p>
+<ol>
+<li>远程主机收到用户的登录请求，把自己的公钥发给用户</li>
+<li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li>
+<li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li>
+<li>后续过程中，用户发送的信息都采用此方式进行加密发送
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/24/ssh/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1115,292 +1383,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/02/taoup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/02/taoup/" class="post-title-link" itemprop="url">《TAOUP》读书笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-08-02 22:31:46" itemprop="dateCreated datePublished" datetime="2018-08-02T22:31:46+08:00">2018-08-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的<strong>TAOUP</strong>，即The Art of UNIX Programming(UNIX编程艺术)。</p>
-<h2 id="哲学"><a href="#哲学" class="headerlink" title="哲学"></a>哲学</h2><p>Unix的设计哲学总体上可以概括为以下几点：</p>
-<ol>
-<li>模块原则：使用简洁的接口拼合简单的部件</li>
-<li>清晰原则：清晰胜于机巧</li>
-<li>组合原则：设计时考虑拼接组合</li>
-<li>分离原则：策略同机制分离，接口同引擎分离</li>
-<li>简洁原则：设计要简洁，复杂度能低则低</li>
-<li>吝啬原则：除非却无它法，不要编写庞大的程序</li>
-<li>透明性原则：设计要可见，以便审查和调试</li>
-<li>健壮原则：健壮源于透明与简洁</li>
-<li>表示原则：把知识叠入数据以求逻辑质朴而健壮</li>
-<li>通俗原则：接口设计避免标新立异</li>
-<li>缄默原则：如果一个程序没什么好说的，就沉默</li>
-<li>补救原则：出现异常时，马上退出并给出足够错误信息</li>
-<li>经济原则：宁花机器一分，不花程序员一秒</li>
-<li>生成原则：避免手工hack，尽量编写程序去生成程序</li>
-<li>优化原则：雕琢前先要有原型，跑之前先学会走</li>
-<li>多样原则：决不相信所谓“不二法门”的断言</li>
-<li>扩展原则：设计着眼未来，未来总比预想来得快
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/02/taoup/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/26/about-proxy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/26/about-proxy/" class="post-title-link" itemprop="url">关于代理那些事</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-07-26 12:08:41" itemprop="dateCreated datePublished" datetime="2018-07-26T12:08:41+08:00">2018-07-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p>
-<h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/26/about-proxy/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/21/xml-json-yaml/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/21/xml-json-yaml/" class="post-title-link" itemprop="url">XML、JSON与YAML</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-07-21 19:50:23" itemprop="dateCreated datePublished" datetime="2018-07-21T19:50:23+08:00">2018-07-21</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
-<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;person&gt;</span><br><span class="line">    &lt;firstName&gt;Tian&lt;&#x2F;firstName&gt;</span><br><span class="line">    &lt;lastName&gt;Song&lt;&#x2F;lastName&gt;</span><br><span class="line">    &lt;address&gt;</span><br><span class="line">        &lt;streetAddr&gt;中关村南大街5号&lt;&#x2F;streetAddr&gt;</span><br><span class="line">        &lt;city&gt;北京市&lt;&#x2F;city&gt;</span><br><span class="line">        &lt;zipcode&gt;100081&lt;&#x2F;zipcode&gt;</span><br><span class="line">    &lt;&#x2F;address&gt;</span><br><span class="line">    &lt;prof&gt;Computer System&lt;&#x2F;prof&gt;&lt;prof&gt;Security&lt;&#x2F;prof&gt;</span><br><span class="line">&lt;&#x2F;person&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation(JavaScript对象表示法)，倘若我要表示某个人的简要信息，用JSON可写为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;firstName&quot; : &quot;Tian&quot;,</span><br><span class="line">    &quot;lastName&quot; : &quot;Song&quot;,</span><br><span class="line">    &quot;address&quot; : &#123;</span><br><span class="line">                    &quot;streetAddr&quot; : &quot;中关村南大街5号&quot;,</span><br><span class="line">                    &quot;city&quot; : &quot;北京市&quot;,</span><br><span class="line">                    &quot;zipcode&quot; : &quot;100081&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">    &quot;prof&quot; : [&quot;Computer System&quot;, &quot;Security&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为Yet Another Markup Language(仍是一种标记语言)，之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为YAML Ain&#39;t a Markup Language(YAML不是一种标记语言)，倘若我要表示某个人的简要信息，用YAML可写为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">firstName : Tian</span><br><span class="line">lastName : Song</span><br><span class="line">address : </span><br><span class="line">    streetAddr : 中关村南大街5号</span><br><span class="line">    city : 北京市</span><br><span class="line">    zipcode : 100081</span><br><span class="line">prof : </span><br><span class="line">-Computer System</span><br><span class="line">-Security</span><br></pre></td></tr></table></figure>
-
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于Internet上的信息交互与传递，以及用户界面的编写，比如Android；JSON中的信息有类型，适合程序处理(js)，较XML简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1445,7 +1429,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">135k</span>
+    <span title="Symbols count total">141k</span>
   </span>
 </div>
 <div class="busuanzi-count">
