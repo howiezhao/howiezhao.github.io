@@ -30,11 +30,13 @@
 <meta property="og:site_name" content="Howie&#39;s Notes">
 <meta property="og:description" content="DNS（Domain Name System，域名系统）的主要任务是进行主机名（hostname，也称域名）到 IP 地址转换的目录服务，它由两部分组成：  一个由分层的 DNS 服务器（DNS server）实现的分布式数据库 一个使得主机能够查询分布式数据库的应用层协议  DNS 服务器通常是运行 BIND（Berkeley Internet Name Domain）软件的 UNIX 机器。D">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://howiezhao.github.io/images/dns-message.jpg">
 <meta property="article:published_time" content="2020-12-29T11:25:33.000Z">
-<meta property="article:modified_time" content="2021-01-21T15:21:53.000Z">
+<meta property="article:modified_time" content="2021-01-22T14:05:47.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://howiezhao.github.io/images/dns-message.jpg">
 
 
 <link rel="canonical" href="https://howiezhao.github.io/2020/12/29/dns/">
@@ -357,7 +359,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-21 23:21:53" itemprop="dateModified" datetime="2021-01-21T23:21:53+08:00">2021-01-21</time>
+        <time title="Modified: 2021-01-22 22:05:47" itemprop="dateModified" datetime="2021-01-22T22:05:47+08:00">2021-01-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -417,7 +419,36 @@
 </ol>
 <p>注意到在本例中，为了获得一台主机名的映射，共发送了 8 份 DNS 报文：4 份查询报文和 4 份回答报文！下文将介绍利用 <strong>DNS 缓存</strong>（DNS caching）减少这种查询流量的方法。</p>
 <p>上述例子利用了<strong>递归查询</strong>（recursive query）和<strong>迭代查询</strong>（iterative query）。从请求主机到本地 DNS 服务器的查询是递归的，其余的查询是迭代的。从理论上讲，任何 DNS 查询既可以是迭代的也能是递归的。</p>
-<h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><h2 id="DNS-缓存"><a href="#DNS-缓存" class="headerlink" title="DNS 缓存"></a>DNS 缓存</h2><p>实际上，为了改善时延性能并减少在因特网上到处传输的 DNS 报文数量，DNS 广泛使用了缓存技术。</p>
+<h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><p>共同实现 DNS 分布式数据库的所有 DNS 服务器存储了<strong>资源记录</strong>（Resource Record，RR），RR 提供了主机名到 IP 地址的映射。每个 DNS 回答报文包含了一条或多条资源记录。</p>
+<p>资源记录是一个包含了下列字段的 4 元组：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
+
+<p>TTL 是该记录的生存时间，它决定了资源记录应当从缓存中删除的时间。Name 和 Value 的值取决于 Type：</p>
+<ul>
+<li>若 Type = A，则 Name 是主机名，Value 是该主机名对应的 IP 地址。因此，一条类型为 A 的资源记录提供了标准的主机名到 IP 地址的映射。例如 <code>(relay1.bar.foo.com, 145.37.93.126, A)</code> 就是一条类型 A 记录。</li>
+<li>若 Type = NS，则 Name 是个域（如 <code>foo.com</code>），而 Value 是个知道如何获得该域中主机 IP 地址的权威 DNS 服务器的主机名。这个记录用于沿着查询链来路要 DNS 查询。例如 <code>(foo.com, dns.foo.com, NS)</code> 就是一条类型为 NS 的记录。</li>
+<li>若 Type = CNAME，则 Value 是别名为 Name 的主机对应的规范主机名。该记录能够向查询的主机提供一个主机名对应的规范主机名，例如 <code>(foo.com, relay1.bar.foo.com, CNAME)</code> 就是一条 CNAME 类型的记录。</li>
+<li>若 Type = MX，则 Value 是个别名为 Name 的邮件服务器的规范主机名。举例来说，<code>(foo.com, mail.bar.foo.com, MX)</code> 就是一条 MX 记录。MX 记录允许邮件服务器主机名具有简单的别名。值得注意的是，通过使用 MX 记录，一个公司的邮件服务器和其他服务器（如它的 Web 服务器）可以使用相同的别名。为了获得邮件服务器的规范主机名，DNS 客户应当请求一条 MX 记录；而为了获得其他服务器的规范主机名，DNS 客户应当请求 CNAME 记录。</li>
+</ul>
+<p>如果一台 DNS 服务器是用于某特定主机名的权威 DNS 服务器，那么该 DNS 服务器会有一条包含用于该主机名的类型 A 记录（即使该 DNS 服务器不是其权威 DNS 服务器，它也可能在缓存中包含有一条类型 A 记录）。如果服务器不是用于某主机名的权威服务器，那么该服务器将包含一条类型 NS 记录，该记录对应于包含主机名的域；它还将包括一条类型 A 记录，该记录提供了在 NS 记录的 Value 字段中的 DNS 服务器的 IP 地址。</p>
+<p>DNS 只有查询和回答这两种报文，并且，查询和回答报文有着相同的格式，如下图所示：</p>
+<p><img src="/images/dns-message.jpg" alt="dns message"></p>
+<p>前 12 个字节是<strong>首部区域</strong>，其中有如下几个字段：</p>
+<ul>
+<li>标识符：是一个 16 比特的数，用于标识该查询。这个标识符会被复制到对查询的回答报文中，以便让客户用它来匹配发送的请求和接收到的回答。</li>
+<li>标志：含有若干标志。1 比特的“<strong>查询/回答</strong>”标志位指出报文是查询报文（0）还是回答报文（1）。当某 DNS 服务器是所请求名字的权威 DNS 服务器时，1 比特的“<strong>权威的</strong>”标志位被置在回答报文中。如果客户在该 DNS 服务器没有某记录时希望它执行递归查询，将设置 1 比特的“<strong>希望递归</strong>”标志位。如果该 DNS 服务器支持递归查询，在它的回答报文中会对 1 比特的“<strong>递归可用</strong>”标志位置位。</li>
+<li>剩余 4 个有关数量的字段，这些字段指出了在首部后的 4 类数据区域出现的数量。</li>
+</ul>
+<p><strong>问题区域</strong>包含着正在进行的查询信息。该区域包括：</p>
+<ol>
+<li>名字字段，包含正在被查询的主机名字；</li>
+<li>类型字段，指出有关该名字的正被询问的问题类型，例如主机地址是与一个名字相关联（类型 A）还是与某个名字的邮件服务器相关联（类型 MX）。</li>
+</ol>
+<p>在来自 DNS 服务器的回答中，<strong>回答区域</strong>包含了对最初请求的名字的资源记录。在回答报文的回答区域中可以包含多条 RR，因此一个主机名能够有多个 IP 地址。</p>
+<p><strong>权威区域</strong>包含了其他权威服务器的记录。</p>
+<p><strong>附加区域</strong>包含了其他有帮助的记录。例如，对于一个 MX 请求的回答报文的回答区域包含了一条资源记录，该记录提供了邮件服务器的规范主机名。该附加区域包含一个类型 A 记录，该记录提供了用于该邮件服务器的规范主机名的 IP 地址。</p>
+<p>上面的讨论只是关注如何从 DNS 数据库中取数据，这些数据最初是怎么进入数据库中的呢？<strong>注册登记机构</strong>（registrar）是一个商业实体，它验证域名的唯一性，并将域名输入 DNS 数据库，对提供的服务收取少量费用。<strong>因特网名字和地址分配机构</strong>（Internet Corporation for Assigned Names and Numbers，<strong>ICANN</strong>）向各种注册登记机构授权。</p>
+<h2 id="DNS-缓存"><a href="#DNS-缓存" class="headerlink" title="DNS 缓存"></a>DNS 缓存</h2><p>实际上，为了改善时延性能并减少在因特网上到处传输的 DNS 报文数量，DNS 广泛使用了缓存技术。</p>
 <p>DNS 缓存的原理非常简单。在一个请求链中，当某 DNS 服务器接收一个 DNS 回答（例如，包含某主机名到 IP 地址的映射）时，它能将映射缓存到本地存储器中。如果在 DNS 服务器中缓存了一台主机名/IP 地址对，另一个对相同主机名的查询到达该 DNS 服务器时，该 DNS 服务器就能够提供所要求的 IP 地址，即使它不是该主机名的权威服务器。由于主机和主机名与 IP 地址间的映射并不是永久的，DNS 服务器在一段时间后（通常设置为两天）将丢弃缓存的信息。</p>
 <p>本地 DNS 服务器也能够缓存 TLD 服务器的 IP 地址，因而允许本地 DNS 绕过查询链中的根 DNS 服务器。事实上，因为缓存，除了少数 DNS 查询以外，根服务器被绕过了。</p>
 <h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><p>第一种针对 DNS 服务的攻击是分布式拒绝服务（DDoS）带宽洪泛攻击，对 DNS 的潜在更为有效的 DDoS 攻击将是向顶级域名服务器（例如向所有处理 <code>.com</code> 域的顶级域名服务器）发送大量的 DNS 请求，以上两种 DDoS 攻击的严重性都可以通过本地 DNS 服务器中的缓存技术可将部分地被缓解。</p>
@@ -500,7 +531,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">141k</span>
+    <span title="Symbols count total">149k</span>
   </span>
 </div>
 <div class="busuanzi-count">
