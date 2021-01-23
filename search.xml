@@ -12,17 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MIME Type</title>
-    <url>/2018/05/09/MIME-Type/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于PowerShell</title>
     <url>/2018/07/16/about-powershell/</url>
     <content><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p>
@@ -2788,6 +2777,17 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>MIME Type</title>
+    <url>/2018/05/09/mime-type/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
   </entry>
   <entry>
     <title>Nexus/Pixel 相关问题解决</title>

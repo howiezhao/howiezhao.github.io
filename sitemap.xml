@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://howiezhao.github.io/2018/05/09/mime-type/</loc>
+    
+    <lastmod>2021-01-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://howiezhao.github.io/2018/05/11/http/</loc>
     
     <lastmod>2021-01-23</lastmod>
@@ -332,13 +339,6 @@
   
   <url>
     <loc>https://howiezhao.github.io/2018/05/11/80211/</loc>
-    
-    <lastmod>2020-01-18</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://howiezhao.github.io/2018/05/09/MIME-Type/</loc>
     
     <lastmod>2020-01-18</lastmod>
     
@@ -893,13 +893,6 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/tags/Web/</loc>
-    <lastmod>2021-01-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://howiezhao.github.io/tags/Windows/</loc>
     <lastmod>2021-01-23</lastmod>
     <changefreq>daily</changefreq>
@@ -957,6 +950,13 @@
   
   <url>
     <loc>https://howiezhao.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/</loc>
+    <lastmod>2021-01-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://howiezhao.github.io/tags/Web/</loc>
     <lastmod>2021-01-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
