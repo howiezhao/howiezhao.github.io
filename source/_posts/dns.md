@@ -19,7 +19,7 @@ DNS 服务器通常是运行 [BIND](https://www.isc.org/bind/)（Berkeley Intern
 
 - 主机别名（host aliasing）：有着复杂主机名的主机能拥有一个或着多个别名
 - 邮件服务器别名（mail server aliasing）
-- 负载分配（load distribution）：DNS 也用于在冗余的服务器（如冗余的 Web 服务器等）之间进行负载分配
+- 负载分配（load distribution）：DNS 也用于在冗余的服务器（如冗余的 Web 服务器等）之间进行负载分配。这种负载均衡的缺点为由于 DNS 缓存（如 LDNS 中缓存）的存在，其实际作用很有限。
 
 ## DNS 服务器
 
