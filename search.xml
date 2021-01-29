@@ -170,18 +170,20 @@
       </tags>
   </entry>
   <entry>
-    <title>反取证之Windows</title>
+    <title>反取证之 Windows</title>
     <url>/2018/05/02/anti-forensics-windows/</url>
-    <content><![CDATA[<h2 id="MACE时间"><a href="#MACE时间" class="headerlink" title="MACE时间"></a>MACE时间</h2><p>和<a href="https://howiezhao.github.io/2018/05/02/anti-forensics-linux/">反取证之Linux</a>中的一样，Windows也有MAC时间，不过在Windows中，C指的是Created，即创建时间，Windows中默认显示的是修改时间，另外，在Windows的NTFS文件系统中还有E时间，即MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除E时间，同样，meterpreter中的<code>timestomp</code>命令可以方便的修改MACE时间。</p>
+    <content><![CDATA[<h2 id="MACE-时间"><a href="#MACE-时间" class="headerlink" title="MACE 时间"></a>MACE 时间</h2><p>和 <a href="/2018/05/02/anti-forensics-linux/" title="反取证之Linux">反取证之Linux</a> 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，meterpreter 中的 <code>timestomp</code> 命令可以方便的修改 MACE 时间。</p>
 <h2 id="隐藏新建账号"><a href="#隐藏新建账号" class="headerlink" title="隐藏新建账号"></a>隐藏新建账号</h2><p>当在目标系统上新建了用户账号后，通常会在登录界面上显示出来，要实现隐藏，可以修改注册表项，采用如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v uname /t REG_DWORD /d 0</span><br></pre></td></tr></table></figure>
-<p>注意：这种隐藏只是在登录界面的隐藏，用户使用<code>net user</code>或“本地用户和组”仍然可以查到新建的账户。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v uname /t REG_DWORD /d 0</span><br></pre></td></tr></table></figure>
+
+<p>注意：这种隐藏只是在登录界面的隐藏，用户使用 <code>net user</code> 或“本地用户和组”仍然可以查到新建的账户。</p>
 <h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>清除相关日志文件</p>
-<h3 id="系统日志"><a href="#系统日志" class="headerlink" title="系统日志"></a>系统日志</h3><p>Windows系统日志文件一般存放在Windows文件夹下，可以使用如下命令删除之：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">del %windir%\*.<span class="built_in">log</span> /a/s/q/f</span><br></pre></td></tr></table></figure>
-<p>另外，meterpreter中的<code>clearev</code>命令可以删除事件查看器中的日志信息。</p>
-<h3 id="Web日志"><a href="#Web日志" class="headerlink" title="Web日志"></a>Web日志</h3><p>IIS的日志文件位于%windir%\System32\LogFiles目录下。</p>
-<p><strong>最后，请不要忘记HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。</strong></p>
+<h3 id="系统日志"><a href="#系统日志" class="headerlink" title="系统日志"></a>系统日志</h3><p>Windows 系统日志文件一般存放在 Windows 文件夹下，可以使用如下命令删除之：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">del %windir%\*.<span class="built_in">log</span> /a/s/q/f</span><br></pre></td></tr></table></figure>
+
+<p>另外，meterpreter 中的 <code>clearev</code> 命令可以删除事件查看器中的日志信息。</p>
+<h3 id="Web-日志"><a href="#Web-日志" class="headerlink" title="Web 日志"></a>Web 日志</h3><p>IIS 的日志文件位于 <code>%windir%\System32\LogFiles</code> 目录下。</p>
+<p><strong>最后，请不要忘记 HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。</strong></p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2332,7 +2334,7 @@
     <title>使用 IPython 替代原生 Python Shell</title>
     <url>/2018/09/16/ipython/</url>
     <content><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
-<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。</p>
+<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.12.0。</p>
 <p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
 <a id="more"></a>
 <h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出 IPython 相比原生 Python Shell 的一些优势：</p>
@@ -2346,16 +2348,16 @@
 <li>有众多的魔法函数（Magic Functions）</li>
 </ul>
 <h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出 IPython 中使用较多的魔法函数：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">%timeit <span class="comment">#测试代码段执行时间</span></span><br><span class="line">%hist   <span class="comment">#查看历史记录</span></span><br><span class="line">%debug  <span class="comment">#激活交互的调试器(ipdb)</span></span><br><span class="line">%load   <span class="comment">#加载外部代码</span></span><br><span class="line">%edit   <span class="comment">#使用编辑器打开</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">%timeit  <span class="comment"># 测试代码段执行时间</span></span><br><span class="line">%hist    <span class="comment"># 查看历史记录</span></span><br><span class="line">%debug   <span class="comment"># 激活交互的调试器(ipdb)</span></span><br><span class="line">%load    <span class="comment"># 加载外部代码</span></span><br><span class="line">%edit    <span class="comment"># 使用编辑器打开</span></span><br></pre></td></tr></table></figure>
 
 <p>要查看更多的魔法函数，可以访问 <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython 的官方文档</a></p>
 <h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动 Jupyter Notebook 直接在命令行输入 <code>jupyter notebook</code> 即可，它会监听本机的 8888 端口，并自动打开浏览器访问。输入 <code>jupyter notebook --help</code> 可以查看它的更多参数。</p>
 <p>Jupyter Notebook 默认采用 <strong>Token</strong> 的方式进行登录，启动后在命令行中会显示当前的 token 值，若没有自动打开浏览器，则可以复制命令行中带 token 的链接并在浏览器中打开即可。</p>
 <p>使用命令 <code>jupyter notebook --generate-config</code> 可生成 Jupyter Notebook 配置文件，默认为 <code>$HOME/.jupyter/jupyter_notebook_config.py</code> 文件。常用的配置项如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
 
 <p>最后，在 Linux 下，使用 <code>nohup jupyter notebook &gt; jupyter.log &amp;</code> 可使 Jupyter Notebook 在后台运行并记录日志到当前目录下的 <code>jupyter.log</code> 文件中。</p>
-<p>要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：<a href="https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/">Jupyter Notebook 常用扩展</a>。</p>
+<p>要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：<a href="/2018/09/25/jupyter-notebook-extensions/" title="Jupyter Notebook 常用扩展">Jupyter Notebook 常用扩展</a>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2562,6 +2564,20 @@
       </tags>
   </entry>
   <entry>
+    <title>库与框架</title>
+    <url>/2018/09/16/library-framework/</url>
+    <content><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：</p>
+<p><strong>库</strong>（library）是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，<a href="https://jquery.com/">jQuery</a>、Servlet 等是一个个的库。</p>
+<p>库的优点是自由度高，可定制性强，较适用于小项目。</p>
+<p><strong>框架</strong>（framework）制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，<a href="https://angular.io/">Angular</a>、<a href="https://spring.io/">Spring</a> 等是一个个的框架。</p>
+<p>框架的优点是流程性高，便于开发，较适用于大项目。</p>
+<p>通常，我们把库也称为<strong>类库</strong>（class library），这也从另一个方面反映了库中包含的主要是<strong>类</strong>，类似的，框架中也主要包含类，据此，我们可以把程序员分为<strong>类创建者</strong>和<strong>客户端程序员</strong>，客户端程序员通过调用其类来使用库或框架。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Linux的包管理机制</title>
     <url>/2018/05/09/linux-package/</url>
     <content><![CDATA[<p>不同Linux发行版的主要区别是其包管理机制不同，Linux发行版大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p>
@@ -2586,20 +2602,6 @@
       <tags>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>库与框架</title>
-    <url>/2018/09/16/library-framework/</url>
-    <content><![CDATA[<p>软件开发中经常会有人混淆库与框架的含义，下面简单介绍之：</p>
-<p><strong>库</strong>（library）是一个工具集，它不告诉你应该怎么做事，它只告诉你它能干什么事，具体干什么事，取决于使用者，比如，<a href="https://jquery.com/">jQuery</a>、Servlet 等是一个个的库。</p>
-<p>库的优点是自由度高，可定制性强，较适用于小项目。</p>
-<p><strong>框架</strong>（framework）制定了一系列的规则，限定了你的行动，你必须遵循它制定的规则行事，但它却可以极大方便你的开发，比如，<a href="https://angular.io/">Angular</a>、<a href="https://spring.io/">Spring</a> 等是一个个的框架。</p>
-<p>框架的优点是流程性高，便于开发，较适用于大项目。</p>
-<p>通常，我们把库也称为<strong>类库</strong>（class library），这也从另一个方面反映了库中包含的主要是<strong>类</strong>，类似的，框架中也主要包含类，据此，我们可以把程序员分为<strong>类创建者</strong>和<strong>客户端程序员</strong>，客户端程序员通过调用其类来使用库或框架。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>Linux系统加固</title>
@@ -3175,6 +3177,26 @@
       </categories>
   </entry>
   <entry>
+    <title>RSA加密算法</title>
+    <url>/2018/10/18/rsa/</url>
+    <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
+<a id="more"></a>
+<h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p>
+<ol>
+<li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li>
+<li>计算n的欧拉函数φ(n)<br>φ(3233)=60×52=3120</li>
+<li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n)互质，并计算e对于φ(n)的模反元素d<br>取e=17，d=2753</li>
+<li>将n和e封装成公钥，n和d封装成私钥<br>公钥位(n, e)，私钥为(n, d)</li>
+</ol>
+<h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Scheme的五法十诫</title>
     <url>/2019/08/07/scheme-commandments-and-laws/</url>
     <content><![CDATA[<p>节选自《The Little Schemer》</p>
@@ -3209,26 +3231,6 @@
       </categories>
       <tags>
         <tag>函数式编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>RSA加密算法</title>
-    <url>/2018/10/18/rsa/</url>
-    <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
-<a id="more"></a>
-<h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p>
-<ol>
-<li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li>
-<li>计算n的欧拉函数φ(n)<br>φ(3233)=60×52=3120</li>
-<li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n)互质，并计算e对于φ(n)的模反元素d<br>取e=17，d=2753</li>
-<li>将n和e封装成公钥，n和d封装成私钥<br>公钥位(n, e)，私钥为(n, d)</li>
-</ol>
-<h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
       </tags>
   </entry>
   <entry>
@@ -3374,7 +3376,7 @@
   <entry>
     <title>使用 Sphinx 生成项目文档</title>
     <url>/2020/01/22/sphinx-document/</url>
-    <content><![CDATA[<p><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="https://howiezhao.github.io/2018/09/17/restructuredtext/">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
+    <content><![CDATA[<p><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="/2018/09/17/restructuredtext/" title="reStructuredText">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
 <a id="more"></a>
 
 <p>使用 <code>pip install sphinx</code> 即可安装 Sphinx。</p>
@@ -4204,34 +4206,6 @@
       </categories>
   </entry>
   <entry>
-    <title>编写规范的 README 文档</title>
-    <url>/2018/11/02/write-standard-readme/</url>
-    <content><![CDATA[<p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 <strong>README</strong> 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README 这 6 个字母通常都是大写的，这是因为<strong>在 Linux 中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的 README 文档应该是什么样子的。</p>
-<a id="more"></a>
-<p>README 文档通常是用 <strong>Markdown</strong> 编写的，但有时你也会看到其他格式的 README 文档，比如：有关 Python 的项目喜欢用 <strong>reStructuredText</strong> 编写 README 文档，这也是一种类似于 Markdown 的标记语言。一个优秀的 README 文档中应包含：<strong>简短的项目说明</strong>、<strong>安装说明</strong>、<strong>使用说明</strong>、<strong>如何参与贡献</strong>、<strong>许可协议</strong>等。此外，随着代码量的增加，<strong>已知 BUG</strong>、<strong>常见问题</strong>等也可以加入到 README 文档中。</p>
-<p>一个规范的 README 文档模板应该像下面这样的：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Project Name</span></span><br><span class="line">填写简短的项目说明</span><br><span class="line"><span class="section"># Installation</span></span><br><span class="line">填写安装说明</span><br><span class="line"><span class="section"># Usage</span></span><br><span class="line">填写使用说明</span><br><span class="line"><span class="section"># Contributing</span></span><br><span class="line">填写如何参与此项目的贡献方法</span><br><span class="line"><span class="section"># License</span></span><br><span class="line">填写许可协议</span><br></pre></td></tr></table></figure>
-
-<p>有趣的是，在日常使用中，经常会见到各种各样的徽章或进度条，比如：</p>
-<p><img src="https://img.shields.io/travis/rust-lang/rust.svg" alt="Travis (.org)"></p>
-<p><img src="https://img.shields.io/github/release/qubyte/rubidium.svg" alt="GitHub release"></p>
-<p><img src="https://img.shields.io/github/stars/git/git.svg" alt="GitHub stars"></p>
-<p>它们的本质就是一个个的图片而已，要想自定义这些图片可以访问 <a href="https://shields.io/#/">Shields.io</a>。</p>
-<p>最后，我将给出几个 GitHub 中项目的文档，它们的 README 文档都写得不错：</p>
-<ul>
-<li><a href="https://github.com/rails/rails">Rails</a></li>
-<li><a href="https://github.com/thoughtbot/factory_bot">factory_bot</a></li>
-<li><a href="https://github.com/meolu/walle-web">Walle</a></li>
-<li><a href="https://github.com/github/ledbetter">Ledbetter</a></li>
-<li><a href="https://github.com/udacity/create-your-own-adventure">Create-Your-Own-Adventure</a></li>
-<li><a href="https://github.com/zkat/can.viewify">can.viewify</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Windows 系统加固</title>
     <url>/2018/05/19/windows-reinforcement/</url>
     <content><![CDATA[<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>下面这几项应为每一个使用 Windows 的用户的<strong>最最基本</strong>安全配置：</p>
@@ -4267,6 +4241,34 @@
       <tags>
         <tag>Windows</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>编写规范的 README 文档</title>
+    <url>/2018/11/02/write-standard-readme/</url>
+    <content><![CDATA[<p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 <strong>README</strong> 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README 这 6 个字母通常都是大写的，这是因为<strong>在 Linux 中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的 README 文档应该是什么样子的。</p>
+<a id="more"></a>
+<p>README 文档通常是用 <strong>Markdown</strong> 编写的，但有时你也会看到其他格式的 README 文档，比如：有关 Python 的项目喜欢用 <strong>reStructuredText</strong> 编写 README 文档，这也是一种类似于 Markdown 的标记语言。一个优秀的 README 文档中应包含：<strong>简短的项目说明</strong>、<strong>安装说明</strong>、<strong>使用说明</strong>、<strong>如何参与贡献</strong>、<strong>许可协议</strong>等。此外，随着代码量的增加，<strong>已知 BUG</strong>、<strong>常见问题</strong>等也可以加入到 README 文档中。</p>
+<p>一个规范的 README 文档模板应该像下面这样的：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Project Name</span></span><br><span class="line">填写简短的项目说明</span><br><span class="line"><span class="section"># Installation</span></span><br><span class="line">填写安装说明</span><br><span class="line"><span class="section"># Usage</span></span><br><span class="line">填写使用说明</span><br><span class="line"><span class="section"># Contributing</span></span><br><span class="line">填写如何参与此项目的贡献方法</span><br><span class="line"><span class="section"># License</span></span><br><span class="line">填写许可协议</span><br></pre></td></tr></table></figure>
+
+<p>有趣的是，在日常使用中，经常会见到各种各样的徽章或进度条，比如：</p>
+<p><img src="https://img.shields.io/travis/rust-lang/rust.svg" alt="Travis (.org)"></p>
+<p><img src="https://img.shields.io/github/release/qubyte/rubidium.svg" alt="GitHub release"></p>
+<p><img src="https://img.shields.io/github/stars/git/git.svg" alt="GitHub stars"></p>
+<p>它们的本质就是一个个的图片而已，要想自定义这些图片可以访问 <a href="https://shields.io/#/">Shields.io</a>。</p>
+<p>最后，我将给出几个 GitHub 中项目的文档，它们的 README 文档都写得不错：</p>
+<ul>
+<li><a href="https://github.com/rails/rails">Rails</a></li>
+<li><a href="https://github.com/thoughtbot/factory_bot">factory_bot</a></li>
+<li><a href="https://github.com/meolu/walle-web">Walle</a></li>
+<li><a href="https://github.com/github/ledbetter">Ledbetter</a></li>
+<li><a href="https://github.com/udacity/create-your-own-adventure">Create-Your-Own-Adventure</a></li>
+<li><a href="https://github.com/zkat/can.viewify">can.viewify</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>WSL相关问题解决</title>
