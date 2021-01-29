@@ -9,7 +9,7 @@ tags:
 
 ## 名称
 
-[**IPython**](https://ipython.org/) 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 **IPython Notebook**，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 [**Jupyter**](http://jupyter.org/)，从此，IPython Notebook 升级为 **Jupyter Notebook**，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.8.0。
+[**IPython**](https://ipython.org/) 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 **IPython Notebook**，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 [**Jupyter**](http://jupyter.org/)，从此，IPython Notebook 升级为 **Jupyter Notebook**，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.12.0。
 
 如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 `pip install jupyter` 即可下载，安装完成后直接输入 `ipython` 即可进入 IPython 交互式环境。
 <!--more-->
@@ -29,12 +29,12 @@ tags:
 
 以下仅列出 IPython 中使用较多的魔法函数：
 
-```bash
-%timeit #测试代码段执行时间
-%hist   #查看历史记录
-%debug  #激活交互的调试器(ipdb)
-%load   #加载外部代码
-%edit   #使用编辑器打开
+```sh
+%timeit  # 测试代码段执行时间
+%hist    # 查看历史记录
+%debug   # 激活交互的调试器(ipdb)
+%load    # 加载外部代码
+%edit    # 使用编辑器打开
 ```
 
 要查看更多的魔法函数，可以访问 [IPython 的官方文档](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
@@ -47,7 +47,7 @@ Jupyter Notebook 默认采用 **Token** 的方式进行登录，启动后在命�
 
 使用命令 `jupyter notebook --generate-config` 可生成 Jupyter Notebook 配置文件，默认为 `$HOME/.jupyter/jupyter_notebook_config.py` 文件。常用的配置项如下：
 
-```bash
+```sh
 # 配置是否允许root用户运行，改为`True`则允许
 c.NotebookApp.allow_root = False
 
@@ -71,4 +71,4 @@ c.NotebookApp.port = 8888
 
 最后，在 Linux 下，使用 `nohup jupyter notebook > jupyter.log &` 可使 Jupyter Notebook 在后台运行并记录日志到当前目录下的 `jupyter.log` 文件中。
 
-要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：[Jupyter Notebook 常用扩展](https://howiezhao.github.io/2018/09/25/jupyter-notebook-extensions/)。
+要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：{% post_link jupyter-notebook-extensions %}。

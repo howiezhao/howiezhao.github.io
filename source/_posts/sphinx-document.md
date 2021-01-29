@@ -5,7 +5,7 @@ date: 2020-01-22 20:21:54
 tags:
 ---
 
-[Sphinx](http://www.sphinx-doc.org/en/master/) 是一个用 Python 编写的文档生成工具，其使用 [reStructuredText](https://howiezhao.github.io/2018/09/17/restructuredtext/) 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 [Python 官方文档](https://docs.python.org/zh-cn/3/)就是基于 Sphinx 生成的，此外 [Linux 内核文档](https://www.kernel.org/doc/html/latest/index.html)的生成也于 2016 年从 [Doxygen](http://www.doxygen.nl/) 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其[官方列表](https://www.sphinx-doc.org/en/master/examples.html)。
+[Sphinx](http://www.sphinx-doc.org/en/master/) 是一个用 Python 编写的文档生成工具，其使用 {% post_link restructuredtext reStructuredText %} 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 [Python 官方文档](https://docs.python.org/zh-cn/3/)就是基于 Sphinx 生成的，此外 [Linux 内核文档](https://www.kernel.org/doc/html/latest/index.html)的生成也于 2016 年从 [Doxygen](http://www.doxygen.nl/) 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其[官方列表](https://www.sphinx-doc.org/en/master/examples.html)。
 
 <!-- more -->
 
