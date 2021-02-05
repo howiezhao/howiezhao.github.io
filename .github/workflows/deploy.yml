@@ -19,7 +19,7 @@ jobs:
         submodules: 'recursive'
 
     - name: Lint Code Base
-      uses: github/super-linter:v3
+      uses: github/super-linter@v3
 
     - name: Setup node
       uses: actions/setup-node@v2-beta
