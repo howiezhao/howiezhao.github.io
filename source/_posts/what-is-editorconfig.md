@@ -9,7 +9,7 @@ tags:
 
 一个典型的 EditorConfig 配置文件如下所示：
 
-```
+```EditorConfig
 # 这是一行注释，以#开头
 
 # 表示此文件为最顶级

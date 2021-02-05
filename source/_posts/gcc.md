@@ -11,7 +11,7 @@ GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编�
 使用 gcc 编译 C 语言源代码的一般格式如下：
 
 ```bash
-$ gcc test.c -o test
+gcc test.c -o test
 ```
 <!-- more -->
 ## 常用参数

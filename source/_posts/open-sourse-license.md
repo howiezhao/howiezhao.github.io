@@ -22,4 +22,4 @@ MIT License是由麻省理工学院发起的
 ## CC BY-NC-SA
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)全称Creative Commons-Attribution-Noncommercial-ShareAlike，即**创作共享-署名-非商业性-相同方式共享**，这是由**创作共享**组织发起的，目前最新版是4.0。
 ## 作何选择？
-如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客[如何选择开源许可证？](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)）：![license](/images/license.png)此外，https://choosealicense.com/ 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。
+如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客[如何选择开源许可证？](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)）：![license](/images/license.png)此外，<https://choosealicense.com/> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。

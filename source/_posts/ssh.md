@@ -37,7 +37,7 @@ ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 实际上，`ssh-copy-id`还会对创建的文件及文件夹进行相关的权限设置，这里不过多介绍。
 
 最后还要对远程主机的SSH服务端配置文件，即`/etc/ssh/sshd_config`文件进行相关配置，并重启SSH服务即可生效。具体而言，涉及到的配置项如下：
-```
+```text
 RSAAuthentication yes
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
@@ -46,7 +46,7 @@ AuthorizedKeysFile .ssh/authorized_keys
 
 ## 快速登录
 `$HOME/.ssh`目录下的`config`文件可配置快速登录选项，若没有，可以新建一个，具体而言，如下：
-```
+```text
 host aliyun
     user howie
     hostname 192.168.0.41

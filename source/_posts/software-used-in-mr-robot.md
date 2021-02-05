@@ -5,7 +5,7 @@ categories: Translation
 tags:
 ---
 
-本文翻译自https://alternativeto.net/list/66/software-used-in-mr-robot ，正文如下：
+本文翻译自 <https://alternativeto.net/list/66/software-used-in-mr-robot> ，正文如下：
 
 ![首页图片](https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg)
 本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。
@@ -34,7 +34,7 @@ Pwnix是一个为渗透测试人员定制的用于网络黑客和安全的Androi
 在第一季第8集中，Elliot使用DeepSound将文件隐藏在CD的常规音乐曲目中，以便隐藏文件只能使用DeepSound软件查看。这是一种被称为隐写术的技术。
 
 ## [ProtonMail](https://protonmail.com/)
-ProtonMail是一个安全的端到端加密电子邮件服务，基于瑞士，Elliot在第一季第8集中使用过。《黑客军团》背后的团队研究安全电子邮件服务的程度很深，以至于他们实际上联系了ProtonMail开发者，询问用户是否有可能在ProtonMail中监控他们自己的电子邮件活动。ProtonMail开发者非常喜欢帐户访问日志的想法，他们最终在ProtonMail的v2.0版本中实现了这个功能。想要了解更多请访问：https://protonmail.com/blog/protonmail-mr-robot-secure-email/
+ProtonMail是一个安全的端到端加密电子邮件服务，基于瑞士，Elliot在第一季第8集中使用过。《黑客军团》背后的团队研究安全电子邮件服务的程度很深，以至于他们实际上联系了ProtonMail开发者，询问用户是否有可能在ProtonMail中监控他们自己的电子邮件活动。ProtonMail开发者非常喜欢帐户访问日志的想法，他们最终在ProtonMail的v2.0版本中实现了这个功能。想要了解更多请访问：<https://protonmail.com/blog/protonmail-mr-robot-secure-email/>
 
 ## [HDShredder](https://www.miray-software.com/products/applications/hdshredder.html#)
 HDShredder 4企业版在第一季第10集中用于在E公司被黑之后安全地擦除所有fsociety的硬盘信息，然后他们在狗狗火葬场焚烧所有的硬盘。

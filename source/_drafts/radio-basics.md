@@ -7,7 +7,7 @@ tags:
 
 ## 频率、频段和频谱
 
-https://www.zhihu.com/question/20883383
+<https://www.zhihu.com/question/20883383>
 
 ## 采样率
 

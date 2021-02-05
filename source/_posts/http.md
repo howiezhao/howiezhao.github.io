@@ -82,6 +82,7 @@ Content-Type: text/html
 - 400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。
 - 403 Forbidden：客户端没有权限访问此资源。
 - 404 Not Found：被请求的文档不在服务器上。
+- 503 Service Unavailable：服务器尚未处于可以接受请求的状态。
 - 505 HTTP Version Not Supported：服务器不支持请求报文使用的 HTTP 协议版本。
 
 一般而言，200 系列代表正常，300 系列代表重定向，400 系列代表客户端错误，500 系列代表服务端错误。

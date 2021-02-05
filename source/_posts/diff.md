@@ -8,7 +8,7 @@ tags:
 
 ## Windows
 在Windows下，可以使用系统自带的`fc`命令（即file compare的缩写），比如`fc game_old.js game_new.js`，结果如下：
-```
+```text
 正在比较文件 game_old.js 和 GAME_NEW.JS
 ***** game_old.js
 KEY_CODES = {
@@ -42,7 +42,7 @@ KEY_CODES = {
 <!--more-->
 ## Linux
 在Linux下，可以使用系统自带的`diff`命令（即difference的缩写），它要比Windows中的`fc`命令更为强大，比如`diff -u game_old.js game_new.js`，其中`-u`参数表示使用标准区别格式，这将使输出内容更容易阅读，结果如下：
-```
+```diff
 --- game_old.js 2018-10-19 11:31:58.054834600 +0800
 +++ game_new.js 2018-10-19 11:32:19.667759500 +0800
 @@ -4,9 +4,9 @@

@@ -50,7 +50,7 @@ Cpu(s): | CPU概况
 0.0%wa, | 等待(wait)IO的CPU时间百分比
 0.0%hi, | 硬中断(hardware interrupt)占用CPU的百分比
 0.0%si, | 软中断(software interrupt)占用CPU的百分比
-0.0%st | 
+0.0%st | todo
 
 ### 第4行
 

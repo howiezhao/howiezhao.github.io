@@ -46,7 +46,7 @@ ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
 
 ## 图形界面问题
 在你当前所使用的shell的配置文件里（比如`.bashrc`或`.zshrc`），添加如下命令：
-```
+```sh
 export DISPLAY=localhost:0
 ```
 随后打开X Server客户端（比如[Xming](https://sourceforge.net/projects/xming/)或[VcXsrv](https://sourceforge.net/projects/vcxsrv/)）并将Display项设为0即可运行图形化应用。笔者所使用的是[MobaXterm](https://mobaxterm.mobatek.net/)，其设置路径为**Settings** —> **Configuration** —> **X11** —> **Display offset**。
