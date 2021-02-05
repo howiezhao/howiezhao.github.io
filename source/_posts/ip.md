@@ -7,6 +7,8 @@ tags:
 ---
 
 IP(Internet Protocol，网际协议)
+
 ## 数据报格式
+
 ![ip datagram](/images/ip.PNG)
 <!-- more -->

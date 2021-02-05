@@ -1,5 +1,5 @@
 ---
-title: 关于PowerShell
+title: 关于 PowerShell
 date: 2018-07-16 14:56:07
 categories: CheatSheet
 tags:
@@ -11,6 +11,7 @@ PowerShell是微软用来取代CMD的一个强大的Shell。
 ## 版本
 
 在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：
+
 - Windows XP SP2 / Server 2003 SP1：PowerShell 1.0
 - Windows 7 / Server 2008：PowerShell 2.0，此版本包含了PowerShell ISE，即Integrated Scripting Environment(集成的脚本环境)，用来方便的编写PowerShell脚本。
 - Windows 8 / Server 2012：PowerShell 3.0，从此版本开始，PowerShell被集成进了WMF中，即Windows Management Framework(Windows管理框架)。
@@ -30,6 +31,7 @@ Cmdlets与pipeline是PowerShell中的两个核心概念，
 ## 常用命令
 
 PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如`ls`、`mv`、`ps`、`cat`、`kill`、`wget`、`clear`等，下面介绍的命令为PowerShell所不同于Linux中的命令。
+
 ```bash
 # 查看PowerShell版本信息
 Get-Host
@@ -70,4 +72,5 @@ Update-Help
 - [windows-screenfetch](https://github.com/JulianChow94/Windows-screenFetch)：Windows下的screenfetch模块
 
 ## Microsoft.PowerShell_profile.ps1
+
 和一般的Linux中的Shell一样，PowerShell也有一个配置文件，即`Microsoft.PowerShell_profile.ps1`，当PowerShell运行时会默认加载此配置文件中的设置。一般而言，用户级别的配置文件位于`%HOMEPATH%\Documents\WindowsPowerShell`下，当然，你也可以使用`echo $profile`命令查看具体的位置。
