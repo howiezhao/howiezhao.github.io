@@ -265,7 +265,7 @@ command session (debian) 1> listen 127.0.0.1:8080 10.0.0.20:80
 
 HTTP 代理组织的地方为他们的员工访问外部网络应用程序提供了一个良好的渗出机会，因为你有正确的凭据;）
 
-#### Rpivot
+#### 使用 Rpivot
 
 我已经在 NAT 穿越部分提到了这个工具。它还支持通过 NTLM HTTP 代理连接到外部世界。服务器端命令保持不变，使用客户端命令如下：
 
@@ -339,7 +339,7 @@ proxychains program_name
 
 与 proxychains 一起使用的 impacket's psexec.py：
 
-![](/images/pivoting1.png)
+![proxychains psexec](/images/pivoting1.png)
 
 ## DNS 与 proxychains
 
@@ -453,7 +453,7 @@ short int server_port = SERVER_PORT;
 
 更改 `secret`，指定 `SERVER_PORT`。如果你想反向连接，取消注释并编辑 `CONNECT_BACK_HOST` 和 `CONNECT_BACK_DELAY` 指令。运行 make：
 
-```sh
+```makefile
 $ make linux_x64
 make								\
 	LDFLAGS=" -Xlinker --no-as-needed -lutil"	\

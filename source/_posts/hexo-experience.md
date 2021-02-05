@@ -140,7 +140,7 @@ npm install hexo-deployer-git hexo-generator-feed hexo-generator-sitemap hexo-sy
 
 值得注意的是，NexT 主题在 6.0.0 版本之前由 iissnan 个人维护，其官方仓库为 <https://github.com/iissnan/hexo-theme-next> ，官网为 <https://theme-next.iissnan.com/> ；在 6.0.0 版本之后由 theme-next 组织维护，其官方仓库更改为 <https://github.com/theme-next/hexo-theme-next> ，官网为 <https://theme-next.org> ；在 8.0.0 版本之后由 next-theme 组织维护，其官方仓库更改为 <https://github.com/next-theme/hexo-theme-next> ，官网为 <https://theme-next.js.org/> ；这里所介绍的使用方法均以 8.0.0 版本之后为例。
 
-### 安装
+### NexT 主题安装
 
 要安装 NexT 主题，首先要进入 Hexo 站点目录下，接着执行 `https://github.com/next-theme/hexo-theme-next themes/next` 命令，即可将 NexT 仓库克隆到本地。要启用 NexT 主题，只需在**站点配置文件**中找到 `theme` 字段，并将其值更改为 `next` 即可。
 

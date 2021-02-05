@@ -34,20 +34,20 @@ Pane是tmux中的最小单位，每个Pane相当于一个终端。
 ## 快捷键
 tmux中的绝大部分操作都需要一个**快捷键前缀**加上相应的指令，tmux中默认的快捷键前缀是`Ctrl + b`，举例来说，使用`prefix + %`可以将当前Window分为左右两个Pane，这实际上是说，先按下`Ctrl + b`，再按下`%`，即可完成操作。值得注意的是，tmux默认的快捷键前缀是很糟糕的，因为很多程序都会使用到`Ctrl + b`，但同时，快捷键前缀也是可以自定义的。常用的快捷键如下：
 - Session
-    - `prefix + d`：离开（datach）当前Session，即退出tmux
+  - `prefix + d`：离开（datach）当前Session，即退出tmux
 - Window
-    - `prefix + c`：创建（create）一个新的Window
-    - `prefix + n`：切换到下一个（next）Window
-    - `prefix + p`：切换到上一个（previous）Window
-    - `prefix + &`：关闭当前Window
+  - `prefix + c`：创建（create）一个新的Window
+  - `prefix + n`：切换到下一个（next）Window
+  - `prefix + p`：切换到上一个（previous）Window
+  - `prefix + &`：关闭当前Window
 - Pane
-    - `prefix + %`：将当前光标所在Pane分为左右两个Pane
-    - `prefix + "`：将当前光标所在Pane分为上下两个Pane
-    - `prefix + o`：在多个Pane之间切换光标，或按上下左右键
-    - `prefix + x`：关闭当前光标所在Pane
-    - `prefix + ?`：查看快捷键列表
-    - `prefix + :`：进入命令行模式（类似Vim）
-    - `prefix + 空格键`：依次轮回使用tmux预定义的Pane布局
+  - `prefix + %`：将当前光标所在Pane分为左右两个Pane
+  - `prefix + "`：将当前光标所在Pane分为上下两个Pane
+  - `prefix + o`：在多个Pane之间切换光标，或按上下左右键
+  - `prefix + x`：关闭当前光标所在Pane
+  - `prefix + ?`：查看快捷键列表
+  - `prefix + :`：进入命令行模式（类似Vim）
+  - `prefix + 空格键`：依次轮回使用tmux预定义的Pane布局
 
 值得注意的是，当创建Session后，默认会创建一个Window，当创建Window后，默认会创建一个Pane。
 
