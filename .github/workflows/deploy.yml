@@ -21,6 +21,7 @@ jobs:
     - name: Lint Code Base
       uses: github/super-linter@v3
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MARKDOWN_CONFIG_FILE: .markdown-lint.json
 
     - name: Setup node
