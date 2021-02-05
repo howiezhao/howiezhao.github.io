@@ -31,7 +31,7 @@
 <meta property="og:description" content="名称问题最早这个项目命名为Bash on Ubuntu on Windows，随后改名为Windows Subsystem for Linux，即WSL，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。 安装及运行在安装前，需要在启动或关闭Windows功能中勾选适用于Linux的Windows子系统，或者直接在管理员权限的PowerShell中输入Enable-WindowsOp">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-21T11:23:05.000Z">
-<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:modified_time" content="2021-02-05T11:43:26.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="Linux">
@@ -239,7 +239,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -358,7 +358,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -392,15 +392,20 @@
 <a id="more"></a>
 <h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure>
+
 <p>修改完成后用<code>sudo service ssh start</code>启动SSH服务，可能会报如下错误：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+
 <p>并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure>
+
 <p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+
 <p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p>
 <h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><p>在你当前所使用的shell的配置文件里（比如<code>.bashrc</code>或<code>.zshrc</code>），添加如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export DISPLAY&#x3D;localhost:0</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DISPLAY=localhost:0</span><br></pre></td></tr></table></figure>
+
 <p>随后打开X Server客户端（比如<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/xming/">Xming</a>或<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>）并将Display项设为0即可运行图形化应用。笔者所使用的是<a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">MobaXterm</a>，其设置路径为<strong>Settings</strong> —&gt; <strong>Configuration</strong> —&gt; <strong>X11</strong> —&gt; <strong>Display offset</strong>。</p>
 <h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2><h2 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h2><h2 id="无法使用的软件"><a href="#无法使用的软件" class="headerlink" title="无法使用的软件"></a>无法使用的软件</h2><p>以下软件在 WSL 中暂时无法正常使用：</p>
 <ul>

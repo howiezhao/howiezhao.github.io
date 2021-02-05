@@ -31,7 +31,7 @@
 <meta property="og:description" content="Linux中使用最广的构建工具是make，而make会读取Makefile文件中的配置信息来完成构建，一个简单的Makefile文件如下所示： 12345678editor : main.o text.o    gcc -o editor main.o text.omain.o : main.c def.h    gcc -c main.c  #-c参数指定生成.o文件text.o : text.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-04-18T04:40:39.000Z">
-<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:modified_time" content="2021-02-05T11:43:26.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -357,7 +357,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -388,6 +388,7 @@
     <div class="post-body" itemprop="articleBody">
         <p>Linux中使用最广的构建工具是<strong>make</strong>，而make会读取<strong>Makefile</strong>文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+
 <p>具体而言，冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个<strong>target:dependencies对</strong>的下一行为要执行的<strong>命令</strong>（注意要以Tab键起首）。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>phony target</strong>（即伪target），如第7行所示。dependencies也可以为空，如常用的target为<code>clean</code>时，就没有依赖，只有命令，一般用于清理工作。</p>
 <p>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若<code>editor</code>这个target文件不存在，或者<code>main.o</code>、<code>text.o</code>这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到<code>main.o</code>和<code>text.o</code>，make会检查<code>main.o</code>的依赖<code>main.c</code>、<code>def.h</code>有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于<code>text.o</code>。当输入<code>make install</code>，make会检查install的依赖<code>editor</code>是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。</p>
 <a id="more"></a>
@@ -402,9 +403,11 @@
 <p>更多的内置目标名可以参考<a target="_blank" rel="noopener" href="https://www.gnu.org/software/make/manual/html_node/Special-Targets.html#Special-Targets">make官方手册</a>。</p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Makefile中也可以使用变量，如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TXT = Hello World</span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    <span class="built_in">echo</span> $(TXT)</span><br></pre></td></tr></table></figure>
+
 <p>这类似于C语言中的宏，按照传统，变量名一般大写，使用变量时要放在<code>$()</code>之中。</p>
 <p>有时，变量的值可能指向另一个变量，比如：<code>V1 = $(V2)</code>，这时会出现一个问题，V1的值到底在定义时扩展（静态扩展），还是在运行时扩展（动态扩展）？如果V2的值是动态变化的，这两种扩展方式的结果可能会差异很大。为了解决类似问题，Makefile一共提供了四个赋值运算符，如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">VARIABLE = value</span><br><span class="line"><span class="comment"># 在运行时扩展，允许递归扩展。</span></span><br><span class="line"></span><br><span class="line">VARIABLE := value</span><br><span class="line"><span class="comment"># 在定义时扩展。</span></span><br><span class="line"></span><br><span class="line">VARIABLE ?= value</span><br><span class="line"><span class="comment"># 只有在该变量为空时才设置值。</span></span><br><span class="line"></span><br><span class="line">VARIABLE += value</span><br><span class="line"><span class="comment"># 将值追加到变量的尾端。</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h2><p>Makefile提供了一系列的内置变量，常见的如下所示：</p>
 <ul>
 <li><code>$(CC)</code>：指向当前使用的编译器</li>
@@ -412,10 +415,12 @@
 <p>更多的内置变量可以参考<a target="_blank" rel="noopener" href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html">make官方手册</a>。</p>
 <h2 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h2><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><p>使用条件判断，可以让make根据运行时的不同情况选择不同的执行分支。如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ifeq ($(CC),gcc)</span><br><span class="line">  libs=$(libs_for_gcc)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  libs=$(normal_libs)</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+
 <p>上面代码判断当前编译器是否为gcc，然后指定不同的库文件。其中<code>ifeq</code>比较参数<code>arg1</code>和<code>arg2</code>是否相同，类似的，<code>ifneq</code>比较参数<code>arg1</code>和<code>arg2</code>是否不相同。</p>
 <p>除此之外，还有<code>ifdef</code>判断变量是否被定义，<code>ifndef</code>判断变量是否没有被定义。</p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Makefile中还内置了许多函数，可供调用，格式如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">function</span> arguments)</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="variable">$&#123;function arguments&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>常用的函数有：</p>
 <ul>
 <li><code>$(shell)</code>：用来执行shell命令</li>

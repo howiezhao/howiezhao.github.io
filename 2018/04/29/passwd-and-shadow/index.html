@@ -31,7 +31,7 @@
 <meta property="og:description" content="简单来说，&#x2F;etc&#x2F;passwd存储一般的用户信息，任何人都可以访问；&#x2F;etc&#x2F;shadow存储用户的密码信息，只有 root 用户可以访问。下面来详细介绍： &#x2F;etc&#x2F;passwd早期的Linux中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来Linux将">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-04-29T07:32:14.000Z">
-<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:modified_time" content="2021-02-05T11:43:26.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="渗透">
 <meta property="article:tag" content="Linux">
@@ -239,7 +239,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -358,7 +358,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -393,6 +393,7 @@
 
 <h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h2><p><code>/etc/shadow</code>的文件格式为：<strong>用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，共9项，如果密码项以 ! 或 *  起始，则代表此账号被锁定，不能用于登录，密码项中更为详细的格式为：<strong>$加密方法ID$Salt$加密值</strong>，常见形式如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH<span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -409,8 +410,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2018/02/08/kali-beef-bug/" rel="prev" title="Kali Rolling 2017中无法登录BeEF的解决方案">
-                  <i class="fa fa-chevron-left"></i> Kali Rolling 2017中无法登录BeEF的解决方案
+                <a href="/2018/02/08/kali-beef-bug/" rel="prev" title="Kali Rolling 2017 中无法登录 BeEF 的解决方案">
+                  <i class="fa fa-chevron-left"></i> Kali Rolling 2017 中无法登录 BeEF 的解决方案
                 </a>
             </div>
             <div class="post-nav-item">

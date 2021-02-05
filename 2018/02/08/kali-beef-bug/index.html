@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：将&#x2F;usr&#x2F;share&#x2F;beef-xss&#x2F;extensions&#x2F;admin_ui&#x2F;api&#x2F;handler.rb文件中第22行的 1minified &#x3D; Uglifier.compile(evaluated) 改为">
+<meta name="description" content="在 Kali Rolling 2017 中打开 BeEF 然后自动跳转到登录页面，会发现只有 BeEF 的图标而没有登录框，无法进行登录，经查是因为和 Metasploit 的集成有关的，解决方案如下： 将 &#x2F;usr&#x2F;share&#x2F;beef-xss&#x2F;extensions&#x2F;admin_ui&#x2F;api&#x2F;handler.rb 文件中第 22 行的 1minified &#x3D; Uglifier.compile(e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kali Rolling 2017中无法登录BeEF的解决方案">
+<meta property="og:title" content="Kali Rolling 2017 中无法登录 BeEF 的解决方案">
 <meta property="og:url" content="https://howiezhao.github.io/2018/02/08/kali-beef-bug/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：将&#x2F;usr&#x2F;share&#x2F;beef-xss&#x2F;extensions&#x2F;admin_ui&#x2F;api&#x2F;handler.rb文件中第22行的 1minified &#x3D; Uglifier.compile(evaluated) 改为">
+<meta property="og:description" content="在 Kali Rolling 2017 中打开 BeEF 然后自动跳转到登录页面，会发现只有 BeEF 的图标而没有登录框，无法进行登录，经查是因为和 Metasploit 的集成有关的，解决方案如下： 将 &#x2F;usr&#x2F;share&#x2F;beef-xss&#x2F;extensions&#x2F;admin_ui&#x2F;api&#x2F;handler.rb 文件中第 22 行的 1minified &#x3D; Uglifier.compile(e">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-02-08T11:18:51.000Z">
-<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:modified_time" content="2021-02-05T11:43:26.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Kali">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
     lang   : 'en'
   };
 </script>
-<title>Kali Rolling 2017中无法登录BeEF的解决方案 | Howie's Notes</title>
+<title>Kali Rolling 2017 中无法登录 BeEF 的解决方案 | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -237,7 +237,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -338,7 +338,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Kali Rolling 2017中无法登录BeEF的解决方案
+          Kali Rolling 2017 中无法登录 BeEF 的解决方案
         </h1>
 
         <div class="post-meta-container">
@@ -356,7 +356,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -385,11 +385,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：<br>将/usr/share/beef-xss/extensions/admin_ui/api/handler.rb文件中第22行的</p>
+        <p>在 Kali Rolling 2017 中打开 BeEF 然后自动跳转到登录页面，会发现只有 BeEF 的图标而没有登录框，无法进行登录，经查是因为和 Metasploit 的集成有关的，解决方案如下：</p>
+<p>将 <code>/usr/share/beef-xss/extensions/admin_ui/api/handler.rb</code> 文件中第 22 行的</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minified = Uglifier.compile(evaluated)</span><br></pre></td></tr></table></figure>
+
 <p>改为</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minified = evaluated</span><br></pre></td></tr></table></figure>
-<p>保存并重启BeEF即可。</p>
+
+<p>保存并重启 BeEF 即可。</p>
 
     </div>
 

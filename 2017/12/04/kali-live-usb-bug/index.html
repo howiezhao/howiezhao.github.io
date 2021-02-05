@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="Writing superblocks and filesystem accounting information今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用mkfs.ext4格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用dmesg命令诊断故障时发现如下错误">
+<meta name="description" content="Writing superblocks and filesystem accounting information今天在将 Kali 安装到 U 盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用 mkfs.ext4 格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生 U 盘挂掉又重连上的情况，使用 dmesg 命令诊">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kali持久加密USB安装所遇问题总结">
+<meta property="og:title" content="Kali 持久加密 USB 安装所遇问题总结">
 <meta property="og:url" content="https://howiezhao.github.io/2017/12/04/kali-live-usb-bug/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Writing superblocks and filesystem accounting information今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用mkfs.ext4格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用dmesg命令诊断故障时发现如下错误">
+<meta property="og:description" content="Writing superblocks and filesystem accounting information今天在将 Kali 安装到 U 盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用 mkfs.ext4 格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生 U 盘挂掉又重连上的情况，使用 dmesg 命令诊">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-12-04T15:54:56.000Z">
-<meta property="article:modified_time" content="2020-01-18T11:13:29.000Z">
+<meta property="article:modified_time" content="2021-02-05T11:43:26.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Kali">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
     lang   : 'en'
   };
 </script>
-<title>Kali持久加密USB安装所遇问题总结 | Howie's Notes</title>
+<title>Kali 持久加密 USB 安装所遇问题总结 | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -238,7 +238,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -339,7 +339,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Kali持久加密USB安装所遇问题总结
+          Kali 持久加密 USB 安装所遇问题总结
         </h1>
 
         <div class="post-meta-container">
@@ -357,7 +357,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -386,15 +386,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以将U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
-<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好Kali并启动之后，会发现Kali的系统时间始终无法和Windows的系统时间保持一致，具体表现如下：</p>
+        <h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将 Kali 安装到 U 盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用 <code>mkfs.ext4</code> 格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生 U 盘挂掉又重连上的情况，使用 <code>dmesg</code> 命令诊断故障时发现如下错误：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>经判断是因为主板无法提供给 U 盘足够的电量所导致的，因为我的 U 盘和虚拟机之间是 3.0 连接的，3.0 连接要比 2.0 连接耗电，所以将 U 盘和虚拟机之间的连接改为 2.0 即可解决这个问题。</p>
+<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好 Kali 并启动之后，会发现 Kali 的系统时间始终无法和 Windows 的系统时间保持一致，具体表现如下：</p>
 <blockquote>
-<p>开始时，Windows系统时间准确，启动Kali之后，Kali系统时间错误，将其更新正确之后，关闭Kali，进入Windows，发现Windows系统时间又错误。</p>
+<p>开始时，Windows 系统时间准确，启动 Kali 之后，Kali 系统时间错误，将其更新正确之后，关闭 Kali，进入 Windows，发现 Windows 系统时间又错误。</p>
 </blockquote>
-<p>出现这种情况的原因是Windows和Linux的时间机制不一样，具体而言，Windows的时间就是硬件BIOS的时间，而Linux的时间则是硬件BIOS加上所在时区的时间。解决方法是，在Kali中执行如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+<p>出现这种情况的原因是 Windows 和 Linux 的时间机制不一样，具体而言，Windows 的时间就是硬件 BIOS 的时间，而 Linux 的时间则是硬件 BIOS 加上所在时区的时间。解决方法是，在 Kali 中执行如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+
     </div>
 
     

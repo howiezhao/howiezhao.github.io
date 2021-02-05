@@ -234,7 +234,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">123</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -321,6 +321,206 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/05/01/burpsuite-intruder-attack-type/" class="post-title-link" itemprop="url">Sniper、Battering ram、Pitchfork、Cluster bomb 的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-05-01 22:45:55" itemprop="dateCreated datePublished" datetime="2018-05-01T22:45:55+08:00">2018-05-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Burp Suite 中的 Intruder 模块里有 4 种攻击模式，分别为 Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设 Payload set1=[1, 2]，Payload set2=[a, b, c, d]：</p>
+<h2 id="Sniper"><a href="#Sniper" class="headerlink" title="Sniper"></a>Sniper</h2><p>Sniper，中文“狙击手”，每次只针对 1 个 Payload Position，使用 1 个 Payload set，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1(default:x)</th>
+<th>Position2(default:y)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>y</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>y</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>x</td>
+<td>1</td>
+</tr>
+<tr>
+<td>#4</td>
+<td>x</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<h2 id="Battering-ram"><a href="#Battering-ram" class="headerlink" title="Battering ram"></a>Battering ram</h2><p>Battering ram，中文“攻城槌”，每次针对多个 Payload Position，使用 1 个 Payload set，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<h2 id="Pitchfork"><a href="#Pitchfork" class="headerlink" title="Pitchfork"></a>Pitchfork</h2><p>Pitchfork，中文“杈子”，每次针对多个 Payload Position，使用多个 Payload set，最多支持 5 个列表，也即 5 个位置，采用平行模式，请求次数以最小列表项为准，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>b</td>
+</tr>
+</tbody></table>
+<h2 id="Cluster-bomb"><a href="#Cluster-bomb" class="headerlink" title="Cluster bomb"></a>Cluster bomb</h2><p>Cluster bomb，中文“集束炸弹”，每次针对多个 Payload Position，使用多个 Payload set，最多支持 5 个列表，也即 5 个位置，采用交叉模式，请求次数为各列表项之积，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>1</td>
+<td>b</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>1</td>
+<td>c</td>
+</tr>
+<tr>
+<td>#4</td>
+<td>1</td>
+<td>d</td>
+</tr>
+<tr>
+<td>#5</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#6</td>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr>
+<td>#7</td>
+<td>2</td>
+<td>c</td>
+</tr>
+<tr>
+<td>#8</td>
+<td>2</td>
+<td>d</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/04/29/url-uri/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,7 +552,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -529,7 +729,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -557,6 +757,7 @@
 
 <h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h2><p><code>/etc/shadow</code>的文件格式为：<strong>用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，共9项，如果密码项以 ! 或 *  起始，则代表此账号被锁定，不能用于登录，密码项中更为详细的格式为：<strong>$加密方法ID$Salt$加密值</strong>，常见形式如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH<span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -595,7 +796,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/02/08/kali-beef-bug/" class="post-title-link" itemprop="url">Kali Rolling 2017中无法登录BeEF的解决方案</a>
+          <a href="/2018/02/08/kali-beef-bug/" class="post-title-link" itemprop="url">Kali Rolling 2017 中无法登录 BeEF 的解决方案</a>
         </h2>
 
         <div class="post-meta-container">
@@ -613,7 +814,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -635,11 +836,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：<br>将/usr/share/beef-xss/extensions/admin_ui/api/handler.rb文件中第22行的</p>
+          <p>在 Kali Rolling 2017 中打开 BeEF 然后自动跳转到登录页面，会发现只有 BeEF 的图标而没有登录框，无法进行登录，经查是因为和 Metasploit 的集成有关的，解决方案如下：</p>
+<p>将 <code>/usr/share/beef-xss/extensions/admin_ui/api/handler.rb</code> 文件中第 22 行的</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minified = Uglifier.compile(evaluated)</span><br></pre></td></tr></table></figure>
+
 <p>改为</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minified = evaluated</span><br></pre></td></tr></table></figure>
-<p>保存并重启BeEF即可。</p>
+
+<p>保存并重启 BeEF 即可。</p>
 
       
     </div>
@@ -697,7 +901,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -721,6 +925,7 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="一：定位"><a href="#一：定位" class="headerlink" title="一：定位"></a>一：定位</h2><p>蒙特卡罗定位是感知和运动的循环，每次感知都会获得信息，每次运动都会丢失信息，感知函数利用了贝叶斯规则，运动函数利用了全概率定理。<br>基于一维的蒙特卡罗定位程序如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">p = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">world = [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">measurements = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">motions = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">pHit = <span class="number">0.6</span></span><br><span class="line">pMiss = <span class="number">0.2</span></span><br><span class="line">pExact = <span class="number">0.8</span></span><br><span class="line">pOvershoot = <span class="number">0.1</span></span><br><span class="line">pUndershoot = <span class="number">0.1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sense</span>(<span class="params">p, Z</span>):</span></span><br><span class="line">    q = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        hit = (Z == world[i])</span><br><span class="line">        q.append(p[i] * (hit * pHit + (<span class="number">1</span>-hit) * pMiss))</span><br><span class="line">    s = <span class="built_in">sum</span>(q)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(p)):</span><br><span class="line">        q[i] = q[i]/s</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span>(<span class="params">p, U</span>):</span></span><br><span class="line">    q= []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        s = pExact * p[(i-U) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pOvershoot * p[(i-U-<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pUndershoot * p[(i-U+<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        q.append(s)</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(measurements)):</span><br><span class="line">    p = sense(p, measurements[k])</span><br><span class="line">    p = move(p, motions[k])</span><br><span class="line">    <span class="built_in">print</span> p</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -777,7 +982,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-06 20:25:40" itemprop="dateModified" datetime="2021-01-06T20:25:40+08:00">2021-01-06</time>
+        <time title="Modified: 2021-02-05 18:38:20" itemprop="dateModified" datetime="2021-02-05T18:38:20+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -866,7 +1071,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:58:56" itemprop="dateModified" datetime="2021-02-05T19:58:56+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -893,15 +1098,15 @@
 <li>你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。</li>
 <li>把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。</li>
 <li>不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。</li>
-<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/12/05/the-art-of-deception/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。</li>
+<li>安全培训需要强调一点：当你有疑虑时，必须确认，确认，再确认。</li>
+<li>执法部门的人跟军队里的人一样，从接受训练的第一天起就形成了一个根深蒂固的等级观念。只要社交工程师扮作警官或中尉 —— 级别比跟他谈话的人高 —— 受害者就会拘于一条长时间得来的教训，即“不要质问比你职别高的人”。级别，换个说法，就是特权，尤其是不被级别低的人质问的特权。</li>
+<li>每个人都应该明白社交工程师的伎俩：获得尽可能多的与目标有关的信息，再利用这些信息使人相信自己是内部人员。然后一剑封喉。</li>
+<li>逆向社交工程学：一种社交工程攻击方式。攻击者建立起这样一个场景：让受害者遇到问题，并向攻击者寻求帮助。逆向社交工程学的另一种表现形式是以其人之道还治其人之身。攻击目标识别出自己受到了攻击，从而利用心理学原理来牵制攻击者，并且从他那里引诱出尽可能多的信息，进而有效的保护目标资产。</li>
+<li>新员工最容易成为攻击者的目标。他们认识的人还不多，也不太清楚公司的办事程序，以及什么该做什么不该做。而且，为给人留下良好的第一印象，他们急于表现自己是多么乐于合作与反应迅捷。</li>
+<li>第一条原则：除非万不得已，否则不要造访他们的办公室。仅凭着电话中的声音，他们是很难认出你来的，而如果他们不能人称认出你，那就不能逮捕你。</li>
+</ol>
+
       
     </div>
 
@@ -940,7 +1145,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/12/04/kali-live-usb-bug/" class="post-title-link" itemprop="url">Kali持久加密USB安装所遇问题总结</a>
+          <a href="/2017/12/04/kali-live-usb-bug/" class="post-title-link" itemprop="url">Kali 持久加密 USB 安装所遇问题总结</a>
         </h2>
 
         <div class="post-meta-container">
@@ -958,7 +1163,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -980,15 +1185,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以将U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
-<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好Kali并启动之后，会发现Kali的系统时间始终无法和Windows的系统时间保持一致，具体表现如下：</p>
+          <h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将 Kali 安装到 U 盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用 <code>mkfs.ext4</code> 格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生 U 盘挂掉又重连上的情况，使用 <code>dmesg</code> 命令诊断故障时发现如下错误：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>经判断是因为主板无法提供给 U 盘足够的电量所导致的，因为我的 U 盘和虚拟机之间是 3.0 连接的，3.0 连接要比 2.0 连接耗电，所以将 U 盘和虚拟机之间的连接改为 2.0 即可解决这个问题。</p>
+<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好 Kali 并启动之后，会发现 Kali 的系统时间始终无法和 Windows 的系统时间保持一致，具体表现如下：</p>
 <blockquote>
-<p>开始时，Windows系统时间准确，启动Kali之后，Kali系统时间错误，将其更新正确之后，关闭Kali，进入Windows，发现Windows系统时间又错误。</p>
+<p>开始时，Windows 系统时间准确，启动 Kali 之后，Kali 系统时间错误，将其更新正确之后，关闭 Kali，进入 Windows，发现 Windows 系统时间又错误。</p>
 </blockquote>
-<p>出现这种情况的原因是Windows和Linux的时间机制不一样，具体而言，Windows的时间就是硬件BIOS的时间，而Linux的时间则是硬件BIOS加上所在时区的时间。解决方法是，在Kali中执行如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+<p>出现这种情况的原因是 Windows 和 Linux 的时间机制不一样，具体而言，Windows 的时间就是硬件 BIOS 的时间，而 Linux 的时间则是硬件 BIOS 加上所在时区的时间。解决方法是，在 Kali 中执行如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -1078,93 +1285,6 @@
 <li>这个设置会随着操作系统的重启而失效</li>
 <li>设定简体中文编码之后，Linux 中的中文字符就会乱码，因为 Linux 使用 UTF-8 编码</li>
 <li>建议只在需要的时候设定简体中文编码</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/25/kali-update-bug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/11/25/kali-update-bug/" class="post-title-link" itemprop="url">Kali Rolling 2017更新后无法启动解决方案</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-11-25 19:04:29" itemprop="dateCreated datePublished" datetime="2017-11-25T19:04:29+08:00">2017-11-25</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新Kali后重新启动会出现如下显示，并无法进入系统界面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter <span class="string">&#x27;help&#x27;</span> <span class="keyword">for</span> a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
-<p><strong>解决方法：</strong></p>
-<ol>
-<li>在此界面输入<code>blkid</code>命令，查看自己的分区号</li>
-<li>依据自己的分区号输入<code>fsck -y /dev/sda1</code>，我的分区号是sda1。</li>
-<li>输入<code>exit</code>命令退出重启电脑</li>
 </ol>
 
       

@@ -12,7 +12,7 @@
       </tags>
   </entry>
   <entry>
-    <title>关于PowerShell</title>
+    <title>关于 PowerShell</title>
     <url>/2018/07/16/about-powershell/</url>
     <content><![CDATA[<p>PowerShell是微软用来取代CMD的一个强大的Shell。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>在不同版本的Windows中已经内置了不同版本的PowerShell，常见情况如下：</p>
@@ -65,8 +65,9 @@
     <url>/2019/07/29/about-the-proxy-settings-for-windows/</url>
     <content><![CDATA[<p>Windows 的<strong>系统代理</strong>使用的其实是 <strong>IE 的代理设置</strong>，此外，对于<strong>绝大多数</strong>的应用程序而言，它们默认使用的也是 IE 的代理设置，比如，Chrome、Firefox、Microsoft Store 等。因此，如果想让绝大多数的应用程序使用代理，一个简单的方法是直接设置 IE 的代理（即系统代理）。不过，对于一小部分没有使用 IE 代理设置的应用程序，比如 Android Studio 等，你可能需要单独设置它们的代理（一般在软件的设置项中）。</p>
 <p>值得注意的是，同为应用程序的 <strong>Shell</strong>（包括<strong>命令提示符</strong>和 <strong>PowerShell</strong>）就没有使用 IE 的代理设置，它们各自有自己的代理设置。具体而言，要为命令提示符设置代理，可使用如下两条命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set HTTP_PROXY&#x3D;http:&#x2F;&#x2F;user:password@proxy.domain.com:port</span><br><span class="line">set HTTPS_PROXY&#x3D;https:&#x2F;&#x2F;user:password@proxy.domain.com:port</span><br></pre></td></tr></table></figure>
-<p>而要为 PowerShell 设置代理则要使用<a href="">这个脚本</a>。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> HTTP_PROXY=http://user:password@proxy.domain.com:port</span><br><span class="line"><span class="built_in">set</span> HTTPS_PROXY=https://user:password@proxy.domain.com:port</span><br></pre></td></tr></table></figure>
+
+<p>而要为 PowerShell 设置代理则要使用<a href="todo">这个脚本</a>。</p>
 <p>最后，对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 <code>pip</code>、<code>git</code>、<code>npm</code> 等，另一部分则使用的是 Shell 的代理设置，比如 <code>curl</code>、<code>gem</code> 等。</p>
 ]]></content>
       <categories>
@@ -115,6 +116,7 @@
 <a id="more"></a>
 <h2 id="Android相关"><a href="#Android相关" class="headerlink" title="Android相关"></a>Android相关</h2><p>Android本身是不愿意让用户获得root权限的，所以Android中没有<code>su</code>或<code>sudo</code>这些命令。所以，获得root权限的第一步就是要把<code>su</code>命令拷贝到Android的<code>/system/bin</code>或<code>/system/xbin</code>目录下。但是拷贝之后并不能直接使用<code>su</code>命令，因为Android中<code>su</code>的运行机制和Linux中不同。在Android中只有root用户才能使用<code>su</code>命令，非root用户无权使用<code>su</code>命令。这其实是一个逻辑闭环：使用<code>su</code>命令可以切换到root，但只有root用户才可以使用<code>su</code>命令。好在Linux中文件的权限除了<code>rwx</code>三种之外，还有<code>s</code>权限，<code>s</code>代表当任何一个用户执行该文件时都拥有文件所有者的权限，换句话来说，如果一个文件的所有者是root，且它的执行权限标志位是<code>s</code>，那么不管谁执行这个文件，他执行的时候都是以root身份执行的。<br>基于以上，Android获取root权限大致可以分为如下3步：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拷贝su到指定目录下</span></span><br><span class="line">cp /data/tmp/su /system/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su所有者设为root</span></span><br><span class="line">chown root:root su</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su标志位设为-rwsr-xr-x</span></span><br><span class="line">chmod 4775 /system/bin/su</span><br></pre></td></tr></table></figure>
+
 <p>但是，除了上面第一步以外，剩下两步都需要root权限才能成功执行，这就又造成了一个逻辑闭环：即通过上面的代码可以获得root权限，但必须有root权限才能执行上面的代码。这时的解决办法就是寻找Android系统的漏洞，系统中有些进程是以root权限运行的，只有找出那些有漏洞的进程，然后利用缓冲区溢出让其执行我们上面的命令，即可完成root。<br>所以，总的来说，Android获取root权限最重要的一步，就是寻找系统的漏洞，然后利用之。</p>
 <h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>了解了Android root的基本原理后，需要理清一些常用术语：</p>
 <h3 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h3><h3 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h3><h3 id="线刷"><a href="#线刷" class="headerlink" title="线刷"></a>线刷</h3><h3 id="卡刷"><a href="#卡刷" class="headerlink" title="卡刷"></a>卡刷</h3><h2 id="Nexus的root"><a href="#Nexus的root" class="headerlink" title="Nexus的root"></a>Nexus的root</h2><p>Nexus系列作为Google的亲儿子，自然少不了root解决方案，目前root Nexus设备使用最多的软件是<a href="http://www.wugfresh.com/nrt/">Nexus Root Toolkit(NRT)</a>。请注意，此软件运行前会先进行更新，这会花费较长的时间，需要耐心等待。</p>
@@ -129,17 +131,17 @@
   <entry>
     <title>Android刷机指南</title>
     <url>/2019/03/23/android-shuaji-guide/</url>
-    <content><![CDATA[<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="软重启与硬重启"><a href="#软重启与硬重启" class="headerlink" title="软重启与硬重启"></a>软重启与硬重启</h3><p><strong>软重启</strong>（又称<strong>热重启</strong>）是指从操作系统层面上关机再开机，而<strong>硬重启</strong>（又称<strong>冷重启</strong>）是指直接关掉电源再开机。类似的，也有<strong>软（热）关机</strong>和<strong>硬（冷）关机</strong>，其区别类似于在Windows“开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。</p>
+    <content><![CDATA[<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="软重启与硬重启"><a href="#软重启与硬重启" class="headerlink" title="软重启与硬重启"></a>软重启与硬重启</h3><p><strong>软重启</strong>（又称<strong>热重启</strong>）是指从操作系统层面上关机再开机，而<strong>硬重启</strong>（又称<strong>冷重启</strong>）是指直接关掉电源再开机。类似的，也有<strong>软（热）关机</strong>和<strong>硬（冷）关机</strong>，其区别类似于在 Windows “开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。</p>
 <a id="more"></a>
-<h3 id="Bootloader-fastboot-Recovery"><a href="#Bootloader-fastboot-Recovery" class="headerlink" title="Bootloader/fastboot/Recovery"></a>Bootloader/fastboot/Recovery</h3><h3 id="Full-OTA-Image与Factory-Image"><a href="#Full-OTA-Image与Factory-Image" class="headerlink" title="Full OTA Image与Factory Image"></a>Full OTA Image与Factory Image</h3><h2 id="刷机流程"><a href="#刷机流程" class="headerlink" title="刷机流程"></a>刷机流程</h2><ol start="0">
+<h3 id="Bootloader-fastboot-Recovery"><a href="#Bootloader-fastboot-Recovery" class="headerlink" title="Bootloader/fastboot/Recovery"></a>Bootloader/fastboot/Recovery</h3><h3 id="Full-OTA-Image-与-Factory-Image"><a href="#Full-OTA-Image-与-Factory-Image" class="headerlink" title="Full OTA Image 与 Factory Image"></a>Full OTA Image 与 Factory Image</h3><h2 id="刷机流程"><a href="#刷机流程" class="headerlink" title="刷机流程"></a>刷机流程</h2><ol>
 <li>提前备份必要的数据（下载的音乐、视频，QQ、微信的聊天记录，通话记录、短信、通讯录，相册等），尽量保持电量满。</li>
-<li>恢复出厂设置（亦或，取消所有安全机制，如屏幕锁定等，并退出Google账号。）。</li>
-<li>在开发者选项中开启USB调试。</li>
-<li>解锁Bootloader（需要的话）。</li>
-<li>刷入第三方Recovery，如TWRP。<a href="https://twrp.me/">https://twrp.me/</a></li>
-<li>从TWRP中安装第三方ROM，顺便root。</li>
+<li>恢复出厂设置（亦或，取消所有安全机制，如屏幕锁定等，并退出 Google 账号。）。</li>
+<li>在开发者选项中开启 USB 调试。</li>
+<li>解锁 Bootloader（需要的话）。</li>
+<li>刷入第三方 Recovery，如 <a href="https://twrp.me/">TWRP</a>。</li>
+<li>从 TWRP 中安装第三方 ROM，顺便 root。</li>
 </ol>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="开机无限进入TWRP"><a href="#开机无限进入TWRP" class="headerlink" title="开机无限进入TWRP"></a>开机无限进入TWRP</h3><p>碰到这种情况，你可能需要格式化Data分区。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="开机无限进入-TWRP"><a href="#开机无限进入-TWRP" class="headerlink" title="开机无限进入 TWRP"></a>开机无限进入 TWRP</h3><p>碰到这种情况，你可能需要格式化 Data 分区。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -860,30 +862,32 @@
   <entry>
     <title>Brainfuck</title>
     <url>/2018/08/09/brainfuck/</url>
-    <content><![CDATA[<p>Brainfuck是在1993年创建的一种极小化的计算机语言，由于fuck在英语中是脏话，这种语言有时也被称为Brainf*ck或Brainf***，或被简称为BF。<br>Brainfuck中共有8种字符，它们及其含义如下所示：</p>
+    <content><![CDATA[<p>Brainfuck 是在 1993 年创建的一种极小化的计算机语言，由于 fuck 在英语中是脏话，这种语言有时也被称为 Brainf*ck 或 Brainf***，或被简称为 BF。</p>
+<p>Brainfuck 中共有 8 种字符，它们及其含义如下所示：</p>
 <ul>
 <li><code>&gt;</code>：指针加一</li>
 <li><code>&lt;</code>：指针减一</li>
 <li><code>+</code>：指针指向的字节的值加一</li>
 <li><code>-</code>：指针指向的字节的值减一</li>
-<li><code>.</code>：输出指针指向的单元内容(ASCII码)</li>
-<li><code>,</code>：输入内容到指针指向的单元(ASCII码)</li>
-<li><code>[</code>：如果指针指向的单元值为零，向后跳转到对应的<code>]</code>指令的次一指令处</li>
-<li><code>]</code>：如果指针指向的单元值不为零，向前跳转到对应的<code>[</code>指令的次一指令处</li>
+<li><code>.</code>：输出指针指向的单元内容（ASCII 码）</li>
+<li><code>,</code>：输入内容到指针指向的单元（ASCII 码）</li>
+<li><code>[</code>：如果指针指向的单元值为零，向后跳转到对应的 <code>]</code> 指令的次一指令处</li>
+<li><code>]</code>：如果指针指向的单元值不为零，向前跳转到对应的 <code>[</code> 指令的次一指令处</li>
 </ul>
-<p>下面是一个用Brainfuck在屏幕上打印<code>Hello World</code>的程序例子：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]</span><br><span class="line">&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.</span><br><span class="line">&gt;.+++.------.--------.&gt;+.&gt;.</span><br></pre></td></tr></table></figure>
-<p>程序的运行结果如<a href="https://fatiherikli.github.io/brainfuck-visualizer/">Brainfuck Visualizer</a>所示。</p>
+<p>下面是一个用 Brainfuck 在屏幕上打印 <code>Hello World</code> 的程序例子：</p>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="title">[</span>&gt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span>&gt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span>&gt;++<span class="literal">+</span>&gt;<span class="literal">+</span>&lt;&lt;&lt;&lt;<span class="literal">-</span><span class="title">]</span></span><br><span class="line">&gt;++<span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="string">.</span><span class="string">.</span>++<span class="literal">+</span><span class="string">.</span>&gt;++<span class="string">.</span>&lt;&lt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="string">.</span></span><br><span class="line">&gt;<span class="string">.</span>++<span class="literal">+</span><span class="string">.</span>--<span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="string">.</span>--<span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>&gt;<span class="string">.</span></span><br></pre></td></tr></table></figure>
+
+<p>程序的运行结果如 <a href="https://fatiherikli.github.io/brainfuck-visualizer/">Brainfuck Visualizer</a> 所示。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
   </entry>
   <entry>
-    <title>Sniper、Battering ram、Pitchfork、Cluster bomb的区别</title>
+    <title>Sniper、Battering ram、Pitchfork、Cluster bomb 的区别</title>
     <url>/2018/05/01/burpsuite-intruder-attack-type/</url>
-    <content><![CDATA[<p>Burp Suite中的Intruder模块里有4种攻击模式，分别为Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设Payload set1=[1, 2]，Payload set2=[a, b, c, d]：</p>
-<h2 id="Sniper"><a href="#Sniper" class="headerlink" title="Sniper"></a>Sniper</h2><p>Sniper，中文“狙击手”，每次只针对1个Payload Position，使用1个Payload set，示例如下：</p>
+    <content><![CDATA[<p>Burp Suite 中的 Intruder 模块里有 4 种攻击模式，分别为 Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设 Payload set1=[1, 2]，Payload set2=[a, b, c, d]：</p>
+<h2 id="Sniper"><a href="#Sniper" class="headerlink" title="Sniper"></a>Sniper</h2><p>Sniper，中文“狙击手”，每次只针对 1 个 Payload Position，使用 1 个 Payload set，示例如下：</p>
 <table>
 <thead>
 <tr>
@@ -913,7 +917,7 @@
 <td>2</td>
 </tr>
 </tbody></table>
-<h2 id="Battering-ram"><a href="#Battering-ram" class="headerlink" title="Battering ram"></a>Battering ram</h2><p>Battering ram，中文“攻城槌”，每次针对多个Payload Position，使用1个Payload set，示例如下：</p>
+<h2 id="Battering-ram"><a href="#Battering-ram" class="headerlink" title="Battering ram"></a>Battering ram</h2><p>Battering ram，中文“攻城槌”，每次针对多个 Payload Position，使用 1 个 Payload set，示例如下：</p>
 <table>
 <thead>
 <tr>
@@ -933,7 +937,7 @@
 <td>2</td>
 </tr>
 </tbody></table>
-<h2 id="Pitchfork"><a href="#Pitchfork" class="headerlink" title="Pitchfork"></a>Pitchfork</h2><p>Pitchfork，中文“杈子”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用平行模式，请求次数以最小列表项为准，示例如下：</p>
+<h2 id="Pitchfork"><a href="#Pitchfork" class="headerlink" title="Pitchfork"></a>Pitchfork</h2><p>Pitchfork，中文“杈子”，每次针对多个 Payload Position，使用多个 Payload set，最多支持 5 个列表，也即 5 个位置，采用平行模式，请求次数以最小列表项为准，示例如下：</p>
 <table>
 <thead>
 <tr>
@@ -953,7 +957,7 @@
 <td>b</td>
 </tr>
 </tbody></table>
-<h2 id="Cluster-bomb"><a href="#Cluster-bomb" class="headerlink" title="Cluster bomb"></a>Cluster bomb</h2><p>Cluster bomb，中文“集束炸弹”，每次针对多个Payload Position，使用多个Payload set，最多支持5个列表，也即5个位置，采用交叉模式，请求次数为各列表项之积，示例如下：</p>
+<h2 id="Cluster-bomb"><a href="#Cluster-bomb" class="headerlink" title="Cluster bomb"></a>Cluster bomb</h2><p>Cluster bomb，中文“集束炸弹”，每次针对多个 Payload Position，使用多个 Payload set，最多支持 5 个列表，也即 5 个位置，采用交叉模式，请求次数为各列表项之积，示例如下：</p>
 <table>
 <thead>
 <tr>
@@ -1015,7 +1019,7 @@
     <title>CDN</title>
     <url>/2021/01/21/cdn/</url>
     <content><![CDATA[<p><strong>CDN</strong> 全称 Content Distribution Network，即<strong>内容分发网络</strong>。CDN 管理分布在多个地理位置上的服务器，在它的服务器中存储各种类型的 Web 内容（包括文档、图片、音频和视频等）的副本，并且所有试图将每个用户请求定向到一个将提供最好的用户体验的 CDN 位置。</p>
-<p>CDN 可以是<strong>专用 CDN</strong>（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 YouTube 视频和其他类型的内容。也可以是<strong>第三方 CDN</strong>（third-party CDN），它代表多个内容提供商分发内容；Akamai、Limelight 和 Level-3 都运行第三方 CDN。</p>
+<p>CDN 可以是<strong>专用 CDN</strong>（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 YouTube 视频和其他类型的内容。也可以是<strong>第三方 CDN</strong>（third-party CDN），它代表多个内容提供商分发内容；<a href="https://www.akamai.com/cn/zh/">Akamai</a>、<a href="https://www.limelight.com/">Limelight</a> 和 <a href="https://www.cloudflare.com/zh-cn/cdn">Cloudflare CDN</a> 都运行第三方 CDN。</p>
 <a id="more"></a>
 
 <p>相比于使用 CDN，建立单一的大规模数据中心存在以下三个问题：</p>
@@ -1045,7 +1049,7 @@
 <li>一旦客户收到 <em>第三方 CDN 节点</em> 的 IP 地址，它与具有该 IP 地址的服务器创建了一条直接的 TCP 连接，并且发出对该网页的 HTTP GET 请求。</li>
 </ol>
 <p>任何 CDN 部署，其核心是<strong>集群选择策略</strong>（cluster selection strategy），即动态地将客户定向到 CDN 中的某个服务器集群或数据中心的机制。如上所述，经过客户的 DNS 查找，CDN 得知了该客户的 LDNS 服务器的 IP 地址。在得知该 IP 地址之后，CDN 需要基于该 IP 地址选择一个适当的集群。CDN 一般采用专用的集群选择策略。</p>
-<p>一种简单的策略是指派客户到<strong>地理上最为临近</strong>（geographically closest）的集群。使用商用地理位置数据库，每个 LDNS IP 地址都映射到一个地理位置。当从一个特殊的 LDNS 接收到一个 DNS 请求时，CDN 选择地理上最为接近的集群，即离 LDNS 最少几千米远的集群。这样的解决方案对于众多用户来说能够工作得相当好。但对于某些客户，该解决方案可能执行的效果差，因为就网络路径的长度或跳数而言，地理最临近的集群可能并不是最近的集群。此外，一种所有基于 DNS 的方法都内在具有的问题时，某些端用户配置使用位于远地的 LDNS，在这种情况下，LDNS 位置可能远离客户的位置。此外，这种简单的策略忽略了时延和可用带宽随因特网路径时间而变化，总是为特定的客户指派相同的集群。</p>
+<p>一种简单的策略是指派客户到<strong>地理上最为临近</strong>（geographically closest）的集群。使用商用地理位置数据库，每个 LDNS IP 地址都映射到一个地理位置。当从一个特殊的 LDNS 接收到一个 DNS 请求时，CDN 选择地理上最为接近的集群，即离 LDNS 最少几千米远的集群。这样的解决方案对于众多用户来说能够工作得相当好。但对于某些客户，该解决方案可能执行的效果差，因为就网络路径的长度或跳数而言，地理最临近的集群可能并不是最近的集群。此外，一种所有基于 DNS 的方法都内在具有的问题是，某些端用户配置使用位于远地的 LDNS，在这种情况下，LDNS 位置可能远离客户的位置。此外，这种简单的策略忽略了时延和可用带宽随因特网路径时间而变化，总是为特定的客户指派相同的集群。</p>
 <p>为了基于 <em>当前</em> 流量条件为客户决定最好的集群，CDN 能够对其集群和客户之间的时延和丢包性能执行周期性的<strong>实时测量</strong>（real-time measurement）。例如，CDN 能够让它的每个集群周期性地向位于全世界的所有 LDNS 发送探测分组（例如，ping 报文或 DNS 请求）。这种方法的一个缺点是许多 LDNS 被配置为不会响应这些探测。</p>
 ]]></content>
       <categories>
@@ -1363,7 +1367,8 @@
     <title>Udacity CS373:无人驾驶汽车编程学习笔记一</title>
     <url>/2017/12/14/cs373-1/</url>
     <content><![CDATA[<h2 id="一：定位"><a href="#一：定位" class="headerlink" title="一：定位"></a>一：定位</h2><p>蒙特卡罗定位是感知和运动的循环，每次感知都会获得信息，每次运动都会丢失信息，感知函数利用了贝叶斯规则，运动函数利用了全概率定理。<br>基于一维的蒙特卡罗定位程序如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">p = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">world = [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">measurements = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">motions = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">pHit = <span class="number">0.6</span></span><br><span class="line">pMiss = <span class="number">0.2</span></span><br><span class="line">pExact = <span class="number">0.8</span></span><br><span class="line">pOvershoot = <span class="number">0.1</span></span><br><span class="line">pUndershoot = <span class="number">0.1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sense</span>(<span class="params">p, Z</span>):</span></span><br><span class="line">    q = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        hit = (Z == world[i])</span><br><span class="line">        q.append(p[i] * (hit * pHit + (<span class="number">1</span>-hit) * pMiss))</span><br><span class="line">    s = <span class="built_in">sum</span>(q)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(p)):</span><br><span class="line">        q[i] = q[i]/s</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span>(<span class="params">p, U</span>):</span></span><br><span class="line">    q= []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        s = pExact * p[(i-U) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pOvershoot * p[(i-U-<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pUndershoot * p[(i-U+<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        q.append(s)</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(measurements)):</span><br><span class="line">    p = sense(p, measurements[k])</span><br><span class="line">    p = move(p, motions[k])</span><br><span class="line">    <span class="built_in">print</span> p</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">p = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">world = [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">measurements = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">motions = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">pHit = <span class="number">0.6</span></span><br><span class="line">pMiss = <span class="number">0.2</span></span><br><span class="line">pExact = <span class="number">0.8</span></span><br><span class="line">pOvershoot = <span class="number">0.1</span></span><br><span class="line">pUndershoot = <span class="number">0.1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sense</span>(<span class="params">p, Z</span>):</span></span><br><span class="line">    q = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        hit = (Z == world[i])</span><br><span class="line">        q.append(p[i] * (hit * pHit + (<span class="number">1</span>-hit) * pMiss))</span><br><span class="line">    s = <span class="built_in">sum</span>(q)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="built_in">len</span>(p)):</span><br><span class="line">        q[i] = q[i]/s</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span>(<span class="params">p, U</span>):</span></span><br><span class="line">    q= []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        s = pExact * p[(i-U) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pOvershoot * p[(i-U-<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pUndershoot * p[(i-U+<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        q.append(s)</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(measurements)):</span><br><span class="line">    p = sense(p, measurements[k])</span><br><span class="line">    p = move(p, motions[k])</span><br><span class="line">    <span class="built_in">print</span> p</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>Notes</category>
       </categories>
@@ -1393,11 +1398,13 @@
     <title>如何比较两个文件之间的差异</title>
     <url>/2018/10/19/diff/</url>
     <content><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES &#x3D; &#123;</span><br><span class="line">  32: &#39;space&#39;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES &#x3D; &#123;</span><br><span class="line">  13: &#39;enter&#39;,</span><br><span class="line">  32: &#39;space&#39;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &#39;left&#39;,</span><br><span class="line">  38: &#39;up&#39;,</span><br><span class="line">  39: &#39;right&#39;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &#39;left&#39;,</span><br><span class="line">  39: &#39;right&#39;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad &#x3D; ((this.rot-90) * Math.PI)&#x2F;180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad &#x3D; ((this.rot-90) * Math.PI)&#x2F;180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  13: &#x27;enter&#x27;,</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  38: &#x27;up&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+
 <p>可见，<code>fc</code>命令会把两个文件中不同的片段显示出来，并分别标注属于哪个文件。输入<code>fc /?</code>可以查看<code>fc</code>命令的更多参数。</p>
 <a id="more"></a>
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在Linux下，可以使用系统自带的<code>diff</code>命令（即difference的缩写），它要比Windows中的<code>fc</code>命令更为强大，比如<code>diff -u game_old.js game_new.js</code>，其中<code>-u</code>参数表示使用标准区别格式，这将使输出内容更容易阅读，结果如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--- game_old.js 2018-10-19 11:31:58.054834600 +0800</span><br><span class="line">+++ game_new.js 2018-10-19 11:32:19.667759500 +0800</span><br><span class="line">@@ -4,9 +4,9 @@</span><br><span class="line"> &#x2F;&#x2F;</span><br><span class="line"></span><br><span class="line"> KEY_CODES &#x3D; &#123;</span><br><span class="line">+  13: &#39;enter&#39;,</span><br><span class="line">   32: &#39;space&#39;,</span><br><span class="line">   37: &#39;left&#39;,</span><br><span class="line">-  38: &#39;up&#39;,</span><br><span class="line">   39: &#39;right&#39;,</span><br><span class="line">   40: &#39;down&#39;,</span><br><span class="line">   70: &#39;f&#39;,</span><br><span class="line">@@ -392,7 +392,7 @@</span><br><span class="line">       this.vel.rot &#x3D; 0;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">-    if (KEY_STATUS.up) &#123;</span><br><span class="line">+    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">       var rad &#x3D; ((this.rot-90) * Math.PI)&#x2F;180;</span><br><span class="line">       this.acc.x &#x3D; 0.5 * Math.cos(rad);</span><br><span class="line">       this.acc.y &#x3D; 0.5 * Math.sin(rad);</span><br></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="comment">--- game_old.js 2018-10-19 11:31:58.054834600 +0800</span></span><br><span class="line"><span class="comment">+++ game_new.js 2018-10-19 11:32:19.667759500 +0800</span></span><br><span class="line"><span class="meta">@@ -4,9 +4,9 @@</span></span><br><span class="line"> //</span><br><span class="line"></span><br><span class="line"> KEY_CODES = &#123;</span><br><span class="line"><span class="addition">+  13: &#x27;enter&#x27;,</span></span><br><span class="line">   32: &#x27;space&#x27;,</span><br><span class="line">   37: &#x27;left&#x27;,</span><br><span class="line"><span class="deletion">-  38: &#x27;up&#x27;,</span></span><br><span class="line">   39: &#x27;right&#x27;,</span><br><span class="line">   40: &#x27;down&#x27;,</span><br><span class="line">   70: &#x27;f&#x27;,</span><br><span class="line"><span class="meta">@@ -392,7 +392,7 @@</span></span><br><span class="line">       this.vel.rot = 0;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"><span class="deletion">-    if (KEY_STATUS.up) &#123;</span></span><br><span class="line"><span class="addition">+    if (KEY_STATUS.spacr) &#123;</span></span><br><span class="line">       var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">       this.acc.x = 0.5 * Math.cos(rad);</span><br><span class="line">       this.acc.y = 0.5 * Math.sin(rad);</span><br></pre></td></tr></table></figure>
+
 <p>可见，<code>diff</code>命令的输出结果更加丰富，开始它展示了正在比较的2个文件，紧接着它显示了不同之处，其中<code>-</code>开始的段落代表只存在于前一个文件中，不存在于后一个文件中，同理，<code>+</code>开始的段落代表只存在于后一个文件中，不存在于前一个文件中，除此之外的所有段落代表共同存在于2个文件中。一般而言，我们将前一个文件表示为旧文件，后一个文件表示为新文件。输入<code>diff --help</code>可以查看<code>diff</code>命令的更多参数。</p>
 <h2 id="图形化程序"><a href="#图形化程序" class="headerlink" title="图形化程序"></a>图形化程序</h2><p>或许使用像前面所述的命令行程序观察结果不是很方便，因此有些人可能会倾向于使用图形化程序，而<a href="http://meldmerge.org/">Meld</a>就是个不错的选择，它开源且跨平台，可用来可视化的观察文件之间的差异。使用Meld比较两文件差异的结果如下：<img src="/images/meld.PNG" alt="Meld结果">可见，Meld用高亮显示文件之间的差异，同时它还提供了前往上一个/下一个差异的按钮，方便用户快速跳转。</p>
 ]]></content>
@@ -1454,7 +1461,7 @@
 <p>资源记录是一个包含了下列字段的 4 元组：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
 
-<p>TTL 是该记录的生存时间，它决定了资源记录应当从缓存中删除的时间。Name 和 Value 的值取决于 Type：</p>
+<p>TTL（Time To Live）是该记录的生存时间，它决定了资源记录应当从缓存中删除的时间。Name 和 Value 的值取决于 Type：</p>
 <ul>
 <li>若 Type = A，则 Name 是主机名，Value 是该主机名对应的 IP 地址。因此，一条类型为 A 的资源记录提供了标准的主机名到 IP 地址的映射。例如 <code>(relay1.bar.foo.com, 145.37.93.126, A)</code> 就是一条类型 A 记录。</li>
 <li>若 Type = NS，则 Name 是个域（如 <code>foo.com</code>），而 Value 是个知道如何获得该域中主机 IP 地址的权威 DNS 服务器的主机名。这个记录用于沿着查询链来路要 DNS 查询。例如 <code>(foo.com, dns.foo.com, NS)</code> 就是一条类型为 NS 的记录。</li>
@@ -1483,7 +1490,7 @@
 <p>DNS 缓存的原理非常简单。在一个请求链中，当某 DNS 服务器接收一个 DNS 回答（例如，包含某主机名到 IP 地址的映射）时，它能将映射缓存到本地存储器中。如果在 DNS 服务器中缓存了一台主机名/IP 地址对，另一个对相同主机名的查询到达该 DNS 服务器时，该 DNS 服务器就能够提供所要求的 IP 地址，即使它不是该主机名的权威服务器。由于主机和主机名与 IP 地址间的映射并不是永久的，DNS 服务器在一段时间后（通常设置为两天）将丢弃缓存的信息。</p>
 <p>本地 DNS 服务器也能够缓存 TLD 服务器的 IP 地址，因而允许本地 DNS 绕过查询链中的根 DNS 服务器。事实上，因为缓存，除了少数 DNS 查询以外，根服务器被绕过了。</p>
 <h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><p>第一种针对 DNS 服务的攻击是分布式拒绝服务（DDoS）带宽洪泛攻击，对 DNS 的潜在更为有效的 DDoS 攻击将是向顶级域名服务器（例如向所有处理 <code>.com</code> 域的顶级域名服务器）发送大量的 DNS 请求，以上两种 DDoS 攻击的严重性都可以通过本地 DNS 服务器中的缓存技术可将部分地被缓解。</p>
-<p>DNS 能够潜在地以其他方式被攻击。在中间人攻击中，攻击者截获来自主机的请求并返回伪造的回答。在 DNS 毒害攻击中，攻击者向一台 DNS 服务器发送伪造的回答，诱使服务器在它的缓存中接收伪造的记录。这些攻击中的任一种，都能够将毫无疑虑的 Web 用户重定向到攻击者的 Web 站点。然而，这些攻击难以实现，因为它们要求截获分组或扼制住服务器。</p>
+<p>DNS 能够潜在地以其他方式被攻击。在中间人攻击中，攻击者截获来自主机的请求并返回伪造的回答，这被称为 <strong>DNS 劫持</strong>。在 <strong>DNS 毒害</strong>（DNS 投毒、DNS 污染）攻击中，攻击者向一台 DNS 服务器发送伪造的回答，诱使服务器在它的缓存中接收伪造的记录。这些攻击中的任一种，都能够将毫无疑虑的 Web 用户重定向到攻击者的 Web 站点。然而，这些攻击难以实现，因为它们要求截获分组或扼制住服务器。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -1592,7 +1599,7 @@
     <url>/2019/04/18/gcc/</url>
     <content><![CDATA[<p>GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。</p>
 <p>使用 gcc 编译 C 语言源代码的一般格式如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p>Linux下 <code>gcc</code> 命令常用的参数及其含义如下所示：</p>
 <ul>
@@ -1634,6 +1641,7 @@
 </ul>
 <p>注意：每一个级别会覆盖上一级别的配置，所以<code>.git/config</code>的配置变量会覆盖<code>/etc/gitconfig</code>中的配置变量。<br>按照个人偏好，针对新安装的Git环境，会配置如下信息：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg2 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#x27;&#x27;          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg <span class="string">&#x27;!&quot;git lg1&quot;&#x27;</span></span><br><span class="line">git config --global alias.adog <span class="string">&quot;log --all --decorate --oneline --graph&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 <p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。</p>
 <a id="more"></a>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>要开始对某个项目进行版本控制，需要先在其所在路径下执行<code>git init</code>进行初始化，此命令会在当前路径下创建一个<code>.git</code>的隐藏文件夹，这就是Git仓库目录。<br>Git分为3个区域，Git仓库、工作目录、暂存区域：</p>
@@ -1831,12 +1839,12 @@
     <content><![CDATA[<p><a href="https://hexo.io/zh-cn/index.html">Hexo</a> 是一个基于 Node.js 的开源静态博客框架，类似的项目还有基于 Ruby 的 <a href="https://jekyllrb.com/">Jekyll</a>，基于 Go 的 <a href="https://gohugo.io/">Hugo</a>，基于 Python 的 <a href="https://blog.getpelican.com/">Pelican</a> 等等。之所以选择 Hexo，主要是因为它不仅使用人数多，而且有中文文档。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装 Hexo 前，需要安装 <a href="https://nodejs.org/zh-cn/download/">Node.js</a> 和 <a href="https://git-scm.com/downloads">Git</a>，安装 Node.js 的同时，npm（Node Package Manager）也已经被自动安装了，同时安装程序也自动配置了环境变量。确定安装完成后，可以输入 <code>node -v</code> 来测试 Node.js 是否成功安装，输入 <code>npm -v</code> 来测试 npm 是否成功安装。</p>
 <p>npm 成功安装后，可使用 <code>npm install -g hexo-cli</code> 来快速安装 Hexo 命令行工具。其次你还需要安装 npm-check-updates 包，它用于以后 Hexo 及其插件的更新。参数 <code>-g</code> 表示全局安装，npm 的包安装分为本地安装（local）和全局安装（global）两种，区别在于：</p>
-<p><strong>本地安装</strong></p>
+<p>本地安装：</p>
 <ul>
 <li>将安装包放在 <code>./node_modules</code> 下（运行 npm 时所在的目录）</li>
 <li>可以通过 <code>require()</code> 来引入本地安装的包</li>
 </ul>
-<p><strong>全局安装</strong></p>
+<p>全局安装：</p>
 <ul>
 <li>将安装包放在 <code>/usr/local</code> 下</li>
 <li>可以直接在命令行里使用<a id="more"></a>
@@ -1894,7 +1902,7 @@
 
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>安装 Hexo 后，默认使用的主题为 <a href="https://github.com/hexojs/hexo-theme-landscape">landscape</a>，个人不是很喜欢这个主题，所幸的是 Hexo 提供<a href="https://hexo.io/themes/">更多的第三方主题</a>，个人倾向于使用广为流行的 <a href="https://theme-next.js.org/">NexT 主题</a>。</p>
 <p>值得注意的是，NexT 主题在 6.0.0 版本之前由 iissnan 个人维护，其官方仓库为 <a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a> ，官网为 <a href="https://theme-next.iissnan.com/">https://theme-next.iissnan.com/</a> ；在 6.0.0 版本之后由 theme-next 组织维护，其官方仓库更改为 <a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a> ，官网为 <a href="https://theme-next.org/">https://theme-next.org</a> ；在 8.0.0 版本之后由 next-theme 组织维护，其官方仓库更改为 <a href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a> ，官网为 <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> ；这里所介绍的使用方法均以 8.0.0 版本之后为例。</p>
-<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>要安装 NexT 主题，首先要进入 Hexo 站点目录下，接着执行 <code>https://github.com/next-theme/hexo-theme-next themes/next</code> 命令，即可将 NexT 仓库克隆到本地。要启用 NexT 主题，只需在<strong>站点配置文件</strong>中找到 <code>theme</code> 字段，并将其值更改为 <code>next</code> 即可。</p>
+<h3 id="NexT-主题安装"><a href="#NexT-主题安装" class="headerlink" title="NexT 主题安装"></a>NexT 主题安装</h3><p>要安装 NexT 主题，首先要进入 Hexo 站点目录下，接着执行 <code>https://github.com/next-theme/hexo-theme-next themes/next</code> 命令，即可将 NexT 仓库克隆到本地。要启用 NexT 主题，只需在<strong>站点配置文件</strong>中找到 <code>theme</code> 字段，并将其值更改为 <code>next</code> 即可。</p>
 <h3 id="NexT-主题更新"><a href="#NexT-主题更新" class="headerlink" title="NexT 主题更新"></a>NexT 主题更新</h3><p>要查看正在使用的 NexT 主题的版本，有如下几种方法：</p>
 <ul>
 <li>可直接打开<strong>主题配置文件</strong>（即站点目录下的 <code>/themes/next/_config.yml</code> 文件），在其底部 <code>version</code> 字段即可查看版本号。</li>
@@ -2027,7 +2035,7 @@
 </tr>
 <tr>
 <td>0.0%st</td>
-<td></td>
+<td>todo</td>
 </tr>
 </tbody></table>
 <h3 id="第4行"><a href="#第4行" class="headerlink" title="第4行"></a>第4行</h3><table>
@@ -2205,6 +2213,7 @@
 <li>400 Bad Request：一个通用差错代码，指示该请求不能被服务器理解。</li>
 <li>403 Forbidden：客户端没有权限访问此资源。</li>
 <li>404 Not Found：被请求的文档不在服务器上。</li>
+<li>503 Service Unavailable：服务器尚未处于可以接受请求的状态。</li>
 <li>505 HTTP Version Not Supported：服务器不支持请求报文使用的 HTTP 协议版本。</li>
 </ul>
 <p>一般而言，200 系列代表正常，300 系列代表重定向，400 系列代表客户端错误，500 系列代表服务端错误。</p>
@@ -2309,7 +2318,7 @@
     <title>IP协议分析</title>
     <url>/2018/05/11/ip/</url>
     <content><![CDATA[<p>IP(Internet Protocol，网际协议)</p>
-<h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG"></p>
+<h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt="ip datagram"></p>
 <a id="more"></a>
 ]]></content>
       <categories>
@@ -2422,7 +2431,8 @@
     <title>JSFuck</title>
     <url>/2018/08/10/jsfuck/</url>
     <content><![CDATA[<p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure>
+
 <p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a href="http://www.jsfuck.com/">JSFuck</a>。</p>
 ]]></content>
       <categories>
@@ -2449,13 +2459,16 @@
       </categories>
   </entry>
   <entry>
-    <title>Kali Rolling 2017中无法登录BeEF的解决方案</title>
+    <title>Kali Rolling 2017 中无法登录 BeEF 的解决方案</title>
     <url>/2018/02/08/kali-beef-bug/</url>
-    <content><![CDATA[<p>在Kali Rolling 2017中打开BeEF然后自动跳转到登录页面，会发现只有BeEF的图标而没有登录框，无法进行登录，经查是因为和Metasploit的集成有关的，解决方案如下：<br>将/usr/share/beef-xss/extensions/admin_ui/api/handler.rb文件中第22行的</p>
+    <content><![CDATA[<p>在 Kali Rolling 2017 中打开 BeEF 然后自动跳转到登录页面，会发现只有 BeEF 的图标而没有登录框，无法进行登录，经查是因为和 Metasploit 的集成有关的，解决方案如下：</p>
+<p>将 <code>/usr/share/beef-xss/extensions/admin_ui/api/handler.rb</code> 文件中第 22 行的</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">minified = Uglifier.compile(evaluated)</span><br></pre></td></tr></table></figure>
+
 <p>改为</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">minified = evaluated</span><br></pre></td></tr></table></figure>
-<p>保存并重启BeEF即可。</p>
+
+<p>保存并重启 BeEF 即可。</p>
 ]]></content>
       <categories>
         <category>Bug</category>
@@ -2465,17 +2478,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Kali持久加密USB安装所遇问题总结</title>
+    <title>Kali 持久加密 USB 安装所遇问题总结</title>
     <url>/2017/12/04/kali-live-usb-bug/</url>
-    <content><![CDATA[<h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将Kali安装到U盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用<code>mkfs.ext4</code>格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生U盘挂掉又重连上的情况，使用<code>dmesg</code>命令诊断故障时发现如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>经判断是因为主板无法提供给U盘足够的电量所导致的，因为我的U盘和虚拟机之间是3.0连接的，3.0连接要比2.0连接耗电，所以将U盘和虚拟机之间的连接改为2.0即可解决这个问题。</p>
-<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好Kali并启动之后，会发现Kali的系统时间始终无法和Windows的系统时间保持一致，具体表现如下：</p>
+    <content><![CDATA[<h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将 Kali 安装到 U 盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用 <code>mkfs.ext4</code> 格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生 U 盘挂掉又重连上的情况，使用 <code>dmesg</code> 命令诊断故障时发现如下错误：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor <span class="built_in">read</span>/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>经判断是因为主板无法提供给 U 盘足够的电量所导致的，因为我的 U 盘和虚拟机之间是 3.0 连接的，3.0 连接要比 2.0 连接耗电，所以将 U 盘和虚拟机之间的连接改为 2.0 即可解决这个问题。</p>
+<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好 Kali 并启动之后，会发现 Kali 的系统时间始终无法和 Windows 的系统时间保持一致，具体表现如下：</p>
 <blockquote>
-<p>开始时，Windows系统时间准确，启动Kali之后，Kali系统时间错误，将其更新正确之后，关闭Kali，进入Windows，发现Windows系统时间又错误。</p>
+<p>开始时，Windows 系统时间准确，启动 Kali 之后，Kali 系统时间错误，将其更新正确之后，关闭 Kali，进入 Windows，发现 Windows 系统时间又错误。</p>
 </blockquote>
-<p>出现这种情况的原因是Windows和Linux的时间机制不一样，具体而言，Windows的时间就是硬件BIOS的时间，而Linux的时间则是硬件BIOS加上所在时区的时间。解决方法是，在Kali中执行如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>]]></content>
+<p>出现这种情况的原因是 Windows 和 Linux 的时间机制不一样，具体而言，Windows 的时间就是硬件 BIOS 的时间，而 Linux 的时间则是硬件 BIOS 加上所在时区的时间。解决方法是，在 Kali 中执行如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>Bug</category>
       </categories>
@@ -2484,15 +2499,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Kali Rolling 2017更新后无法启动解决方案</title>
+    <title>Kali Rolling 2017 更新后无法启动解决方案</title>
     <url>/2017/11/25/kali-update-bug/</url>
-    <content><![CDATA[<h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新Kali后重新启动会出现如下显示，并无法进入系统界面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter <span class="string">&#x27;help&#x27;</span> <span class="keyword">for</span> a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新 Kali 后重新启动会出现如下显示，并无法进入系统界面</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter <span class="string">&#x27;help&#x27;</span> <span class="keyword">for</span> a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
+
 <p><strong>解决方法：</strong></p>
 <ol>
-<li>在此界面输入<code>blkid</code>命令，查看自己的分区号</li>
-<li>依据自己的分区号输入<code>fsck -y /dev/sda1</code>，我的分区号是sda1。</li>
-<li>输入<code>exit</code>命令退出重启电脑</li>
+<li>在此界面输入 <code>blkid</code> 命令，查看自己的分区号</li>
+<li>依据自己的分区号输入 <code>fsck -y /dev/sda1</code>，我的分区号是 sda1。</li>
+<li>输入 <code>exit</code> 命令退出重启电脑</li>
 </ol>
 ]]></content>
       <categories>
@@ -2503,31 +2519,41 @@
       </tags>
   </entry>
   <entry>
-    <title>Kali Rolling 2017下安装w3af出错解决方案</title>
+    <title>Kali Rolling 2017 下安装 w3af 出错解决方案</title>
     <url>/2017/11/08/kali-w3af-bug/</url>
-    <content><![CDATA[<h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法1：</strong><br>修改/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py文件，将下面四行注释掉</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment">#SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment">#SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment">#SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法1：</strong><br>修改 <code>/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py</code> 文件，将下面四行注释掉</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment"># SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment"># SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment"># SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>解决方法2：</strong></p>
 <ol>
-<li>卸载w3af要求的pyOpenSSL版本<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure></li>
-<li>安装最新版pyOpenSSL<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pip install pyOpenSSL</span><br></pre></td></tr></table></figure></li>
-<li>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">PIPDependency(<span class="string">&#x27;OpenSSL&#x27;</span>, <span class="string">&#x27;pyOpenSSL&#x27;</span>, <span class="string">&#x27;Version of pyOpenSSL you are using&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<li><p>卸载w3af要求的pyOpenSSL版本</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装最新版pyOpenSSL</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip install pyOpenSSL</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">PIPDependency(<span class="string">&#x27;OpenSSL&#x27;</span>, <span class="string">&#x27;pyOpenSSL&#x27;</span>, <span class="string">&#x27;Version of pyOpenSSL you are using&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
 <a id="more"></a>
+
 <h2 id="error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1"><a href="#error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1" class="headerlink" title="error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1"></a>error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1</h2><p><strong>解决方法：</strong><br>使用如下命令安装相关依赖</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get build-dep python-lxml</span><br><span class="line">$ apt-get install libxslt-dev libssl-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get build-dep python-lxml</span><br><span class="line">apt-get install libxslt-dev libssl-dev</span><br></pre></td></tr></table></figure>
 
 <h2 id="ImportError-No-module-named-webkit"><a href="#ImportError-No-module-named-webkit" class="headerlink" title="ImportError: No module named webkit"></a>ImportError: No module named webkit</h2><p>启动GUI界面时可能会报此错误，原因是未安装相关模块<br><strong>解决方法：</strong><br>执行如下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install python-webkit python-webkit-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get install python-webkit python-webkit-dev</span><br></pre></td></tr></table></figure>
+
 <p>在Kali下，因为python-webkit，python-webkit-dev不在Kali默认的源中，所以需要执行下面的命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</span><br><span class="line">$ dpkg -i python-support_1.0.15_all.deb</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ dpkg -i python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">$ apt install python-gtk2-dev</span><br><span class="line">$ wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</span><br><span class="line">$ dpkg -i python-webkit-dev_1.1.8-3_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb</span><br><span class="line">dpkg -i python-support_1.0.15_all.deb</span><br><span class="line">wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">dpkg -i python-webkit_1.1.8-3_amd64.deb</span><br><span class="line">apt install python-gtk2-dev</span><br><span class="line">wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit-dev_1.1.8-3_all.deb</span><br><span class="line">dpkg -i python-webkit-dev_1.1.8-3_all.deb</span><br></pre></td></tr></table></figure>
+
 <p>安装过程中可能需要安装相关依赖，可执行如下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt --fix-broken install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt --fix-broken install</span><br></pre></td></tr></table></figure>
 
 <h2 id="ImportError-No-module-named-gtksourceview2"><a href="#ImportError-No-module-named-gtksourceview2" class="headerlink" title="ImportError: No module named gtksourceview2"></a>ImportError: No module named gtksourceview2</h2><p>同样，启动GUI时也可能报此错误<br><strong>解决方法：</strong><br>执行如下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install python-gtksourceview2</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get install python-gtksourceview2</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>Bug</category>
       </categories>
@@ -2551,10 +2577,12 @@
     <content><![CDATA[<p><a href="https://letsencrypt.org/zh-cn/">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：</p>
 <a id="more"></a>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载certbot-auto脚本</span></span><br><span class="line">wget https://dl.eff.org/certbot-auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置相关权限</span></span><br><span class="line">chmod a+x certbot-auto</span><br></pre></td></tr></table></figure>
+
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>请注意，获取或更新SSL证书之前需关闭相应的Web服务器，具体而言，需要执行<code>service nginx stop</code>。另外，第一次执行<code>certbot-auto</code>命令时，它会下载并安装相关环境，耐心等待即可。<br>Certbot提供了一个Nginx插件，直接使用<code>./certbot-auto --nginx</code>即可完成所有配置。<br>如果你想手动配置，可执行<code>./certbot-auto certonly --standalone</code>命令，此命令运行过程中会要求用户输入要获取SSl证书的域名，按要求输入即可，命令运行成功后会显示证书相关文件所在的目录。<br>接下来只需在Nginx的配置文件<code>nginx.conf</code>中进行如下配置即可(以howiezhao.com域名为例)：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssl on;</span><br><span class="line">ssl_certificate /etc/letsencrypt/live/howiezhao.com/fullchain.pem;</span><br><span class="line">ssl_certificate_key /etc/letsencrypt/live/howiezhao.com/privkey.pem;</span><br></pre></td></tr></table></figure>
+
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>Let&#39;s Encrypt的证书默认时间为90天，当到期后，需要使用<code>./certbot-auto renew</code>命令进行证书更新。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要查看<code>certbot-auto</code>的更多命令，可以使用<code>certbot-auto --help all</code>命令查看之。要了解SSL的详细知识，可参考我之前写的笔记<a href="http://localhost:4000/2018/05/11/https/">HTTPS运行机制</a>。要了解Nginx的相关知识，可参考我之前写的笔记<a href="">利用Nginx进行反向代理</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要查看<code>certbot-auto</code>的更多命令，可以使用<code>certbot-auto --help all</code>命令查看之。要了解SSL的详细知识，可参考我之前写的笔记<a href="http://localhost:4000/2018/05/11/https/">HTTPS运行机制</a>。要了解Nginx的相关知识，可参考我之前写的笔记<a href="todo">利用Nginx进行反向代理</a>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2583,17 +2611,22 @@
     <content><![CDATA[<p>不同Linux发行版的主要区别是其包管理机制不同，Linux发行版大致可以分为2个派别：一派以Red Hat为首，主要包括CentOS(社区版)、Fedora(桌面版)等；另一派以Debian为首，主要包括Ubuntu、Kali等。Red Hat系采用<code>rpm</code>为其包格式，<code>yum</code>为其包管理工具；Debian系采用<code>dpkg</code>为其包格式，<code>apt-get</code>为其包管理工具。</p>
 <h2 id="rpm与yum"><a href="#rpm与yum" class="headerlink" title="rpm与yum"></a>rpm与yum</h2><p><code>rpm</code>全称Red-Hat Package Manager(RPM软件包管理器)，是Red Hat系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -i a.rpm  <span class="comment">#安装a</span></span><br><span class="line">rpm -e a      <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure>
+
 <p><code>yum</code>全称Yellow dog Updater, Modified(修改后的黄色狗更新器)，是Red Hat系中的包管理工具，常用命令有：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum update     <span class="comment">#更新包列表</span></span><br><span class="line">yum upgrade    <span class="comment">#更新包</span></span><br><span class="line">yum install a  <span class="comment">#安装a</span></span><br><span class="line">yum remove a   <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="dpkg与apt-get"><a href="#dpkg与apt-get" class="headerlink" title="dpkg与apt-get"></a>dpkg与apt-get</h2><p><code>dpkg</code>全称Debian Packager(Debian包工具)，是Debian系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment">#安装a</span></span><br><span class="line">dpkg -r a       <span class="comment">#卸载a</span></span><br></pre></td></tr></table></figure>
+
 <p><code>apt-get</code>是apt中的一个子程序，apt全称Advanced Packaging Tool(先进的包工具)，是Debian系中的包管理工具，apt的程序包来源列表文件位于<code>/etc/apt/sources.list</code>，<code>apt-get</code>的常用命令有：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update     <span class="comment">#更新包列表</span></span><br><span class="line">sudo apt-get upgrade    <span class="comment">#更新包</span></span><br><span class="line">sudo apt-get install a  <span class="comment">#安装a</span></span><br><span class="line">sudo apt-get purge a    <span class="comment">#卸载a并删除其配置文件（即彻底删除），命令作用等同于apt-get --purge remove a</span></span><br></pre></td></tr></table></figure>
+
 <p>同样的，<code>apt-cache</code>也是apt中的一个子程序，它的常用命令有：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-cache depends a  <span class="comment">#查看包a的依赖包</span></span><br></pre></td></tr></table></figure>
+
 <p>值得注意的是，随着新版系统的到来，出现了更为强大的<code>apt</code>命令，可以简单认为<code>apt</code>集合了<code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code>中的最常用命令选项。例如，<code>apt install</code>相比<code>apt-get install</code>增加了色彩显示以及进度条显示等功能。因此，更建议使用<code>apt</code>命令，常用命令有：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update     <span class="comment">#更新包列表</span></span><br><span class="line">sudo apt upgrade    <span class="comment">#更新包</span></span><br><span class="line">sudo apt install a  <span class="comment">#安装a</span></span><br><span class="line">sudo apt purge a    <span class="comment">#卸载a并删除其配置文件（即彻底删除），命令作用等同于apt --purge remove a</span></span><br><span class="line">sudo apt list --installed  <span class="comment">#查看已安装的包</span></span><br></pre></td></tr></table></figure>
+
 <p>关于Ubuntu中程序包的搜索可以使用<a href="https://packages.ubuntu.com/">Ubuntu Packages Search</a>。</p>
 ]]></content>
       <categories>
@@ -2631,6 +2664,7 @@
     <url>/2019/04/18/makefile/</url>
     <content><![CDATA[<p>Linux中使用最广的构建工具是<strong>make</strong>，而make会读取<strong>Makefile</strong>文件中的配置信息来完成构建，一个简单的Makefile文件如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+
 <p>具体而言，冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个<strong>target:dependencies对</strong>的下一行为要执行的<strong>命令</strong>（注意要以Tab键起首）。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>phony target</strong>（即伪target），如第7行所示。dependencies也可以为空，如常用的target为<code>clean</code>时，就没有依赖，只有命令，一般用于清理工作。</p>
 <p>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若<code>editor</code>这个target文件不存在，或者<code>main.o</code>、<code>text.o</code>这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到<code>main.o</code>和<code>text.o</code>，make会检查<code>main.o</code>的依赖<code>main.c</code>、<code>def.h</code>有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于<code>text.o</code>。当输入<code>make install</code>，make会检查install的依赖<code>editor</code>是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。</p>
 <a id="more"></a>
@@ -2645,9 +2679,11 @@
 <p>更多的内置目标名可以参考<a href="https://www.gnu.org/software/make/manual/html_node/Special-Targets.html#Special-Targets">make官方手册</a>。</p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Makefile中也可以使用变量，如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">TXT = Hello World</span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    <span class="built_in">echo</span> $(TXT)</span><br></pre></td></tr></table></figure>
+
 <p>这类似于C语言中的宏，按照传统，变量名一般大写，使用变量时要放在<code>$()</code>之中。</p>
 <p>有时，变量的值可能指向另一个变量，比如：<code>V1 = $(V2)</code>，这时会出现一个问题，V1的值到底在定义时扩展（静态扩展），还是在运行时扩展（动态扩展）？如果V2的值是动态变化的，这两种扩展方式的结果可能会差异很大。为了解决类似问题，Makefile一共提供了四个赋值运算符，如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VARIABLE = value</span><br><span class="line"><span class="comment"># 在运行时扩展，允许递归扩展。</span></span><br><span class="line"></span><br><span class="line">VARIABLE := value</span><br><span class="line"><span class="comment"># 在定义时扩展。</span></span><br><span class="line"></span><br><span class="line">VARIABLE ?= value</span><br><span class="line"><span class="comment"># 只有在该变量为空时才设置值。</span></span><br><span class="line"></span><br><span class="line">VARIABLE += value</span><br><span class="line"><span class="comment"># 将值追加到变量的尾端。</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h2><p>Makefile提供了一系列的内置变量，常见的如下所示：</p>
 <ul>
 <li><code>$(CC)</code>：指向当前使用的编译器</li>
@@ -2655,10 +2691,12 @@
 <p>更多的内置变量可以参考<a href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html">make官方手册</a>。</p>
 <h2 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h2><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><p>使用条件判断，可以让make根据运行时的不同情况选择不同的执行分支。如下所示：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ifeq ($(CC),gcc)</span><br><span class="line">  libs=$(libs_for_gcc)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  libs=$(normal_libs)</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+
 <p>上面代码判断当前编译器是否为gcc，然后指定不同的库文件。其中<code>ifeq</code>比较参数<code>arg1</code>和<code>arg2</code>是否相同，类似的，<code>ifneq</code>比较参数<code>arg1</code>和<code>arg2</code>是否不相同。</p>
 <p>除此之外，还有<code>ifdef</code>判断变量是否被定义，<code>ifndef</code>判断变量是否没有被定义。</p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Makefile中还内置了许多函数，可供调用，格式如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$(<span class="keyword">function</span> arguments)</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="variable">$&#123;function arguments&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>常用的函数有：</p>
 <ul>
 <li><code>$(shell)</code>：用来执行shell命令</li>
@@ -2851,7 +2889,7 @@
 <h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
 <h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
 <h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
-<h2 id="作何选择？"><a href="#作何选择？" class="headerlink" title="作何选择？"></a>作何选择？</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
+<h2 id="作何选择"><a href="#作何选择" class="headerlink" title="作何选择"></a>作何选择</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2907,7 +2945,8 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
 
 <h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h2><p><code>/etc/shadow</code>的文件格式为：<strong>用户名:密码:上次修改密码日期(从1970年1月1日起的天数):密码在两次修改期间的最小天数(0表示可在任何时间修改):密码需要被变更的天数(99999表示不需要变更):密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，共9项，如果密码项以 ! 或 *  起始，则代表此账号被锁定，不能用于登录，密码项中更为详细的格式为：<strong>$加密方法ID$Salt$加密值</strong>，常见形式如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH<span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH<span class="variable">$MlagWih0lcGFxtAo7</span>/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -3077,6 +3116,7 @@
     <content><![CDATA[<p><a href="https://www.qemu.org/">QEMU</a>是Linux中使用最广的虚拟机，其便于调试的特性也适合于系统开发者。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用<code>sudo apt install qemu</code>即可在Ubuntu中安装QEMU，安装完成后直接输入<code>qemu</code>来验证是否成功安装，如果出错，可再输入<code>qemu-system-i386</code>来验证其是否成功安装，若成功，可建立如下所示的软链接，以方便日后使用。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu</span><br></pre></td></tr></table></figure>
+
 <p>值得注意的是，QEMU的启动需要有图形界面，若未安装图形界面，则会报错：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not initialize SDL(No available video device) - exiting</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -3240,8 +3280,10 @@
 <p>在Linux中，环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与Zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。</p>
 <p>在Linux中可以使用<code>declare</code>命令直接定义<strong>Shell环境变量</strong>，如：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义Shell环境变量A，值为hello，注意等号两边不能有空格</span></span><br><span class="line"><span class="comment"># 按照传统，环境变量一般为全大写</span></span><br><span class="line"><span class="built_in">declare</span> A=hello</span><br></pre></td></tr></table></figure>
+
 <p>同样的，在Linux中使用<code>echo</code>命令即可打印环境变量的值，如：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打印A的值，环境变量前需加“$”符号，</span></span><br><span class="line"><span class="comment"># 表示要打印的是环境变量而不是一般字符串</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span></span><br></pre></td></tr></table></figure>
+
 <p>值得注意的是，这种定义只对当前终端有效，关闭终端后失效。</p>
 <p>常见的Shell环境变量有：</p>
 <ul>
@@ -3260,6 +3302,7 @@
 
 <h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code>命令用来显示或设置<strong>Shell环境变量</strong>，当不带参数运行时默认显示所有已定义的Shell环境变量，若要设置环境变量可采用：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> A=hello</span><br></pre></td></tr></table></figure>
+
 <p>值得注意的是，当<code>declare</code>命令不带任何参数运行时，也会显示所有的Shell环境变量，但它比<code>set</code>显示的结果要更加清晰。</p>
 <p>关于set命令更多的参数使用说明可参考阮一峰的博文：<a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html">Bash脚本set命令教程</a></p>
 <h2 id="env（仅限于Linux）"><a href="#env（仅限于Linux）" class="headerlink" title="env（仅限于Linux）"></a>env（仅限于Linux）</h2><p><code>env</code>命令用来显示或设置<strong>用户环境变量</strong>，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：</p>
@@ -3267,8 +3310,10 @@
 
 <h2 id="export（仅限于Linux）"><a href="#export（仅限于Linux）" class="headerlink" title="export（仅限于Linux）"></a>export（仅限于Linux）</h2><p><code>export</code>命令用来显示或设置当前导出至用户环境变量的Shell环境变量，当不带参数运行时默认显示所有已导出至用户环境变量的Shell环境变量，若要导出某Shell环境变量到用户环境变量可采用：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> a=hello</span><br></pre></td></tr></table></figure>
+
 <p>这一步操作实际上完成了两步操作，即：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">declare</span> a=hello  <span class="comment">#定义一个Shell环境变量$a</span></span><br><span class="line"><span class="built_in">export</span> <span class="variable">$a</span>  <span class="comment">#导出至用户环境变量</span></span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">declare</span> a=hello  <span class="comment">#定义一个Shell环境变量$a</span></span><br><span class="line"><span class="built_in">export</span> <span class="variable">$a</span>  <span class="comment">#导出至用户环境变量</span></span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -3279,30 +3324,30 @@
   <entry>
     <title>那么，你想在安全行业工作吗？</title>
     <url>/2018/09/18/so-you-want-to-work-in-security/</url>
-    <content><![CDATA[<p>本文翻译自<a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p>
+    <content><![CDATA[<p>本文翻译自 <a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p>
 <p>每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。<br><img src="https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif" alt="不像电影"></p>
 <a id="more"></a>
 
-<h2 id="警告：这不像电影。"><a href="#警告：这不像电影。" class="headerlink" title="警告：这不像电影。"></a>警告：这不像电影。</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p>
-<h2 id="没有标准或完美的课程。"><a href="#没有标准或完美的课程。" class="headerlink" title="没有标准或完美的课程。"></a>没有标准或完美的课程。</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
-<h2 id="停止阅读，开始做。"><a href="#停止阅读，开始做。" class="headerlink" title="停止阅读，开始做。"></a>停止阅读，开始做。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p>
-<h2 id="写代码。"><a href="#写代码。" class="headerlink" title="写代码。"></a>写代码。</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p>
-<h2 id="破坏代码。"><a href="#破坏代码。" class="headerlink" title="破坏代码。"></a>破坏代码。</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用<a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在<a href="https://infosec.rocks/">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
-<h2 id="分享知识。"><a href="#分享知识。" class="headerlink" title="分享知识。"></a>分享知识。</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
+<h2 id="警告：这不像电影"><a href="#警告：这不像电影" class="headerlink" title="警告：这不像电影"></a>警告：这不像电影</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p>
+<h2 id="没有标准或完美的课程"><a href="#没有标准或完美的课程" class="headerlink" title="没有标准或完美的课程"></a>没有标准或完美的课程</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
+<h2 id="停止阅读，开始做"><a href="#停止阅读，开始做" class="headerlink" title="停止阅读，开始做"></a>停止阅读，开始做</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p>
+<h2 id="写代码"><a href="#写代码" class="headerlink" title="写代码"></a>写代码</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p>
+<h2 id="破坏代码"><a href="#破坏代码" class="headerlink" title="破坏代码"></a>破坏代码</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在 <a href="https://infosec.rocks/">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
+<h2 id="分享知识"><a href="#分享知识" class="headerlink" title="分享知识"></a>分享知识</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
 <ol>
 <li>分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。</li>
 <li>我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。</li>
 <li>我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。</li>
 <li>把爱传出去。</li>
 </ol>
-<h2 id="练习你的沟通。"><a href="#练习你的沟通。" class="headerlink" title="练习你的沟通。"></a>练习你的沟通。</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p>
-<h2 id="期望努力工作，有时会失败。"><a href="#期望努力工作，有时会失败。" class="headerlink" title="期望努力工作，有时会失败。"></a>期望努力工作，有时会失败。</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p>
-<h2 id="（尝试）保持乐观。"><a href="#（尝试）保持乐观。" class="headerlink" title="（尝试）保持乐观。"></a>（尝试）保持乐观。</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p>
-<h2 id="请求帮忙。"><a href="#请求帮忙。" class="headerlink" title="请求帮忙。"></a>请求帮忙。</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
-<h2 id="祝你好运并且快乐Hacking！"><a href="#祝你好运并且快乐Hacking！" class="headerlink" title="祝你好运并且快乐Hacking！"></a>祝你好运并且快乐Hacking！</h2><p>我偶然发现了一些其他安全职业建议的想法：</p>
+<h2 id="练习你的沟通"><a href="#练习你的沟通" class="headerlink" title="练习你的沟通"></a>练习你的沟通</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p>
+<h2 id="期望努力工作，有时会失败"><a href="#期望努力工作，有时会失败" class="headerlink" title="期望努力工作，有时会失败"></a>期望努力工作，有时会失败</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p>
+<h2 id="（尝试）保持乐观"><a href="#（尝试）保持乐观" class="headerlink" title="（尝试）保持乐观"></a>（尝试）保持乐观</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p>
+<h2 id="请求帮忙"><a href="#请求帮忙" class="headerlink" title="请求帮忙"></a>请求帮忙</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
+<h2 id="祝你好运并且快乐Hacking"><a href="#祝你好运并且快乐Hacking" class="headerlink" title="祝你好运并且快乐Hacking"></a>祝你好运并且快乐Hacking</h2><p>我偶然发现了一些其他安全职业建议的想法：</p>
 <ul>
-<li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法<a href="http://krebsonsecurity.com/tag/security-career-advice/">http://krebsonsecurity.com/tag/security-career-advice/</a></li>
-<li>我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议<a href="https://noncombatant.org/2016/06/20/get-into-security-engineering">https://noncombatant.org/2016/06/20/get-into-security-engineering</a></li>
+<li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法 <a href="http://krebsonsecurity.com/tag/security-career-advice/">http://krebsonsecurity.com/tag/security-career-advice/</a></li>
+<li>我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议 <a href="https://noncombatant.org/2016/06/20/get-into-security-engineering">https://noncombatant.org/2016/06/20/get-into-security-engineering</a></li>
 <li>Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：<a href="https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html">https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html</a></li>
 </ul>
 <h2 id="译者注"><a href="#译者注" class="headerlink" title="译者注"></a>译者注</h2><p>本文作者为<a href="https://en.wikipedia.org/wiki/Parisa_Tabriz">Parisa Tabriz</a>，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。</p>
@@ -3314,7 +3359,7 @@
   <entry>
     <title>《黑客军团》中使用的软件</title>
     <url>/2018/09/18/software-used-in-mr-robot/</url>
-    <content><![CDATA[<p>本文翻译自<a href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
+    <content><![CDATA[<p>本文翻译自 <a href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
 <p><img src="https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg" alt="首页图片"><br>本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。<br><strong>下面的列表包含到了第二季第11集！</strong></p>
 <a id="more"></a>
 
@@ -3420,21 +3465,26 @@
 <li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li>
 <li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li>
 <li>后续过程中，用户发送的信息都采用此方式进行加密发送<a id="more"></a>
-因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;host (12.18.429.21)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
-即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。</li>
+因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：</li>
 </ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;host (12.18.429.21)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+
+<p>即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。</p>
 <p>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在<code>$HOME/.ssh/known_hosts</code>文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。</p>
 <p>除了采用口令登录外，还可使用<strong>公钥登录</strong>，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。</p>
 <p>OpenSSH提供了一个工具 —— <code>ssh-keygen</code>，使用它可以方便的生成一对公私钥，生成的公钥为<code>id_rsa.pub</code>，私钥为<code>id_rsa</code>，保存在<code>$HOME/.ssh</code>目录下，当然你可以使用<code>-t</code>（type）参数指定密钥的类型（默认生成类型为RSA），使用<code>-f</code>（file）参数指定生成的目录文件名，使用<code>-C</code>（Comment）参数指定注释，更多的参数可以使用<code>--help</code>参数查看。</p>
 <p>生成的公钥格式为<code>&lt;protocol&gt; &lt;key-blob&gt; &lt;comment&gt;</code>，其中注释项通常用来指代要登录的用户名。</p>
 <p>有了密钥对后，可以使用<code>ssh-copy-id user@host</code>命令将自己的公钥上传至远程主机，远程主机会将用户的公钥，保存在登录后的用户主目录的<code>$HOME/.ssh/authorized_keys</code>文件中。实际上，<code>ssh-copy-id</code>命令的整个过程就如下命令一样：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh user@host <span class="string">&#x27;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&#x27;</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
 <p>实际上，<code>ssh-copy-id</code>还会对创建的文件及文件夹进行相关的权限设置，这里不过多介绍。</p>
 <p>最后还要对远程主机的SSH服务端配置文件，即<code>/etc/ssh/sshd_config</code>文件进行相关配置，并重启SSH服务即可生效。具体而言，涉及到的配置项如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh&#x2F;authorized_keys</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
 <p>紧接着使用<code>service sshd restart</code>重启SSH服务。</p>
 <h2 id="快速登录"><a href="#快速登录" class="headerlink" title="快速登录"></a>快速登录</h2><p><code>$HOME/.ssh</code>目录下的<code>config</code>文件可配置快速登录选项，若没有，可以新建一个，具体而言，如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">host aliyun</span><br><span class="line">    user howie</span><br><span class="line">    hostname 192.168.0.41</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~&#x2F;.ssh&#x2F;id_rsa</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">host aliyun</span><br><span class="line">    user howie</span><br><span class="line">    hostname 192.168.0.41</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+
 <p>这代表当输入<code>ssh aliyun</code>时，其默认执行<code>ssh howie@192.168.0.41 -p 22 -i ~/.ssh/id_rsa</code>。当有多个别名需要设置时，其中间要空上一行。</p>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>使用密钥连接后仍然需要输入登录密码：<br>这种情况一般是由于密钥登录失败所导致的，请检查<code>$HOME/.ssh</code>目录是否为700权限，<code>$HOME/.ssh/authorized_keys</code>文件是否为600权限，除此之外的其他权限均不能成功。</p>
 ]]></content>
@@ -3513,12 +3563,11 @@
       </categories>
   </entry>
   <entry>
-    <title>谈谈SEO</title>
+    <title>谈谈 SEO</title>
     <url>/2018/09/23/talk-about-seo/</url>
-    <content><![CDATA[<p>SEO，即搜索引擎优化(Search Engine Optimization)，下面列出几点SEO方面的建议：</p>
+    <content><![CDATA[<p>SEO，即搜索引擎优化（Search Engine Optimization），下面列出几点 SEO 方面的建议：</p>
 <ul>
 <li>页面的URL应该足够反映页面的内容</li>
-<li></li>
 </ul>
 ]]></content>
       <categories>
@@ -3766,7 +3815,7 @@
 <li>你只要说你是一个写书的或者写电影剧本的，每个人都会对你开绿灯。</li>
 <li>把重要的问题掺杂在琐碎的、不合逻辑的问题中间，这样可以给人一种可信的感觉。</li>
 <li>不要在得到关键信息后马上结束谈话。再问两三个问题，闲聊几句，然后才说再见。以后，如果受害者记起你曾经问过什么，则极有可能是最后几个问题，其他的通常都忘掉了。</li>
-<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。<a id="more"></a></li>
+<li>两三样信息可能就足以支撑起一次成功的假冒行为 —— 社交工程师冒用别人的身份。取得职员的名字、他的电话，以及他的职员编号 —— 或许，最好也能得到其经理的名字和电话 —— 这样，即使一个半瓶子醋的社交工程师，也有了足够的信息，使自己在给下一个目标打电话时听起来非常可信。</li>
 <li>安全培训需要强调一点：当你有疑虑时，必须确认，确认，再确认。</li>
 <li>执法部门的人跟军队里的人一样，从接受训练的第一天起就形成了一个根深蒂固的等级观念。只要社交工程师扮作警官或中尉 —— 级别比跟他谈话的人高 —— 受害者就会拘于一条长时间得来的教训，即“不要质问比你职别高的人”。级别，换个说法，就是特权，尤其是不被级别低的人质问的特权。</li>
 <li>每个人都应该明白社交工程师的伎俩：获得尽可能多的与目标有关的信息，再利用这些信息使人相信自己是内部人员。然后一剑封喉。</li>
@@ -3783,9 +3832,9 @@
       </tags>
   </entry>
   <entry>
-    <title>tmux小记</title>
+    <title>tmux 小记</title>
     <url>/2018/09/18/tmux/</url>
-    <content><![CDATA[<p><a href="https://github.com/tmux/tmux">tmux</a>是一款优秀的<strong>终端复用</strong>工具，在Ubuntu下，使用<code>sudo apt install tmux</code>即可安装，输入<code>tmux</code>即可开始使用。与tmux相似的软件还有<a href="https://www.gnu.org/software/screen/">Screen</a>等。</p>
+    <content><![CDATA[<p><a href="https://github.com/tmux/tmux">tmux</a> 是一款优秀的<strong>终端复用</strong>工具，在 Ubuntu 下，使用 <code>sudo apt install tmux</code> 即可安装，输入 <code>tmux</code> 即可开始使用。与 tmux 相似的软件还有 <a href="https://www.gnu.org/software/screen/">Screen</a> 等。</p>
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Session（会话）"><a href="#Session（会话）" class="headerlink" title="Session（会话）"></a>Session（会话）</h3><p>当输入<code>tmux</code>后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。</p>
 <h3 id="Window（窗口）"><a href="#Window（窗口）" class="headerlink" title="Window（窗口）"></a>Window（窗口）</h3><p>Window是显示给你的一整片窗口，你可以创建多个Window，在一个Window里面你又可以创建多个Pane，以此来执行多个任务。</p>
 <h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格/面板）"></a>Pane（窗格/面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。</p>
@@ -3828,12 +3877,14 @@
 </ul>
 <p>值得注意的是，当创建Session后，默认会创建一个Window，当创建Window后，默认会创建一个Pane。</p>
 <h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><p><code>$HOME/.tmux.conf</code>文件是tmux的配置文件，tmux在启动时会按照此文件中的命令进行相关配置，个人常用的配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 设定快捷键前缀</span><br><span class="line">unbind-key C-b</span><br><span class="line">set-option -g prefix C-x</span><br><span class="line">bind-key C-x send-prefix</span><br><span class="line">set-option -g escape-time 0</span><br><span class="line"></span><br><span class="line"># 开启鼠标模式</span><br><span class="line">set -g mouse on</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 设定快捷键前缀</span><br><span class="line">unbind-key C-b</span><br><span class="line">set-option -g prefix C-x</span><br><span class="line">bind-key C-x send-prefix</span><br><span class="line">set-option -g escape-time 0</span><br><span class="line"></span><br><span class="line"># 开启鼠标模式</span><br><span class="line">set -g mouse on</span><br></pre></td></tr></table></figure>
 
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>tmux支持许多插件，在安装插件之前最好先安装插件管理器<a href="https://github.com/tmux-plugins/tpm">TPM</a>，使用如下命令即可下载TPM：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;tmux-plugins&#x2F;tpm ~&#x2F;.tmux&#x2F;plugins&#x2F;tpm</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span><br></pre></td></tr></table></figure>
+
 <p>下载完之后，只需在<code>.tmux.conf</code>文件底部添加相关配置，然后进入tmux输入<code>prefix + I</code>，即可自动下载并安装相应的插件，升级插件可使用<code>prefix + U</code>。个人常用的插件如下：<br>相应的，<code>.tmux.conf</code>文件中插件相关的配置项如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 插件</span><br><span class="line"># List of plugins</span><br><span class="line">set -g @plugin &#39;tmux-plugins&#x2F;tpm&#39;</span><br><span class="line">set -g @plugin &#39;tmux-plugins&#x2F;tmux-sensible&#39;</span><br><span class="line"></span><br><span class="line"># Other examples:</span><br><span class="line"># set -g @plugin &#39;github_username&#x2F;plugin_name&#39;</span><br><span class="line"># set -g @plugin &#39;git@github.com&#x2F;user&#x2F;plugin&#39;</span><br><span class="line"># set -g @plugin &#39;git@bitbucket.com&#x2F;user&#x2F;plugin&#39;</span><br><span class="line"></span><br><span class="line"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span><br><span class="line">run -b &#39;~&#x2F;.tmux&#x2F;plugins&#x2F;tpm&#x2F;tpm&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 插件</span><br><span class="line"># List of plugins</span><br><span class="line">set -g @plugin &#x27;tmux-plugins/tpm&#x27;</span><br><span class="line">set -g @plugin &#x27;tmux-plugins/tmux-sensible&#x27;</span><br><span class="line"></span><br><span class="line"># Other examples:</span><br><span class="line"># set -g @plugin &#x27;github_username/plugin_name&#x27;</span><br><span class="line"># set -g @plugin &#x27;git@github.com/user/plugin&#x27;</span><br><span class="line"># set -g @plugin &#x27;git@bitbucket.com/user/plugin&#x27;</span><br><span class="line"></span><br><span class="line"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span><br><span class="line">run -b &#x27;~/.tmux/plugins/tpm/tpm&#x27;</span><br></pre></td></tr></table></figure>
+
 <p>值得注意的是，在更改<code>.tmux.conf</code>文件后，应该重启tmux，或者重载配置文件。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关tmux的更多使用技巧可以参考<a href="https://www.kancloud.cn/kancloud/tmux">《tmux: Productive Mouse-Free Development》</a>一书。</p>
 ]]></content>
@@ -3994,11 +4045,13 @@
 <li><code>:set ff=unix</code>：设置文件为unix格式</li>
 </ul>
 <h2 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h2><p>Vim有多个配置文件，当前用户的配置文件为用户家目录下的<code>.vimrc</code>隐藏文件，Vim启动时会按照该文件中的配置开启相应的功能。个人常做的基本配置项如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 这是一行注释</span><br><span class="line">&quot; 显示行号</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot; 语法高亮</span><br><span class="line">syntax enable</span><br><span class="line"></span><br><span class="line">&quot; tab缩进</span><br><span class="line">set tabstop&#x3D;4</span><br><span class="line">set shiftwidth&#x3D;4</span><br><span class="line">set expandtab</span><br><span class="line">set smarttab</span><br><span class="line"></span><br><span class="line">&quot; 鼠标可用</span><br><span class="line">&quot;set mouse&#x3D;a</span><br><span class="line"></span><br><span class="line">&quot; 配色方案</span><br><span class="line">set t_Co&#x3D;256</span><br><span class="line">set background&#x3D;dark</span><br><span class="line">colorscheme desert</span><br><span class="line"></span><br><span class="line">&quot; 匹配模式</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">&quot; 自动缩进</span><br><span class="line">set autoindent</span><br><span class="line">set smartindent</span><br><span class="line"></span><br><span class="line">&quot; 显示命令</span><br><span class="line">set showcmd</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&quot; 这是一行注释</span><br><span class="line">&quot; 显示行号</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot; 语法高亮</span><br><span class="line">syntax enable</span><br><span class="line"></span><br><span class="line">&quot; tab缩进</span><br><span class="line">set tabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set smarttab</span><br><span class="line"></span><br><span class="line">&quot; 鼠标可用</span><br><span class="line">&quot;set mouse=a</span><br><span class="line"></span><br><span class="line">&quot; 配色方案</span><br><span class="line">set t_Co=256</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme desert</span><br><span class="line"></span><br><span class="line">&quot; 匹配模式</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">&quot; 自动缩进</span><br><span class="line">set autoindent</span><br><span class="line">set smartindent</span><br><span class="line"></span><br><span class="line">&quot; 显示命令</span><br><span class="line">set showcmd</span><br></pre></td></tr></table></figure>
+
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Vim自带了多种主题，即配色方案，默认存放在Vim安装目录下的colors文件夹下，在Vim中输入命令<code>:echo $VIMRUNTIME</code>即可显示Vim的安装目录，以我的为例，其安装目录为<code>/usr/share/vim/vim80</code>。</p>
 <p>如果你想更改默认的主题，可以按照上面的配置，在<code>vimrc</code>文件中使用<code>colorscheme &lt;主题名&gt;</code>进行配置。Vim默认使用的是<code>default</code>主题。如果你想使用第三方或自定义的主题，则需要将下载的主题文件存放到colors文件夹下（<code>~/.vim/colors</code>下也行），然后再进行相关配置。</p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Vim支持很多插件，为了简化插件的安装，由此诞生了许多的插件管理器，<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>是使用最多的Vim插件管理器，但个人倾向于使用<a href="https://github.com/junegunn/vim-plug">vim-plug</a>插件管理器，vim-plug相比Vundle最大的优势是支持异步安装，该特性可以极大的加速多个插件的安装速度。<br>使用如下命令即可安装vim-plug：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+
 <p>安装完vim-plug插件管理器后，只需在<code>.vimrc</code>文件中做相关配置，然后进入Vim的命令行模式，输入<code>:PlugInstall</code>命令，即可自动下载并安装相应的插件，升级插件可使用<code>:PlugUpdate</code>命令，升级vim-plug本身，可使用<code>:PlugUpgrade</code>命令。个人常用的插件如下：</p>
 <ul>
 <li><a href="https://github.com/scrooloose/nerdtree">NERDTree</a>：显示文件树形目录</li>
@@ -4006,7 +4059,8 @@
 <li><a href="https://github.com/mhinz/vim-startify">startify</a>：自定义起始页</li>
 </ul>
 <p>相应的，<code>.vimrc</code>文件中插件相关的配置项如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; vim-plug</span><br><span class="line">call plug#begin(&#39;~&#x2F;.vim&#x2F;plugged&#39;)</span><br><span class="line"></span><br><span class="line">function! BuildYCM(info)</span><br><span class="line">  &quot; info is a dictionary with 3 fields</span><br><span class="line">  &quot; - name:   name of the plugin</span><br><span class="line">  &quot; - status: &#39;installed&#39;, &#39;updated&#39;, or &#39;unchanged&#39;</span><br><span class="line">  &quot; - force:  set on PlugInstall! or PlugUpdate!</span><br><span class="line">  if a:info.status &#x3D;&#x3D; &#39;installed&#39; || a:info.force</span><br><span class="line">    !.&#x2F;install.py</span><br><span class="line">  endif</span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">Plug &#39;Valloric&#x2F;YouCompleteMe&#39;, &#123; &#39;do&#39;: function(&#39;BuildYCM&#39;) &#125;</span><br><span class="line">Plug &#39;scrooloose&#x2F;nerdtree&#39;, &#123; &#39;on&#39;:  &#39;NERDTreeToggle&#39; &#125;</span><br><span class="line">Plug &#39;mhinz&#x2F;vim-startify&#39;</span><br><span class="line"></span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&quot; vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;)</span><br><span class="line"></span><br><span class="line">function! BuildYCM(info)</span><br><span class="line">  &quot; info is a dictionary with 3 fields</span><br><span class="line">  &quot; - name:   name of the plugin</span><br><span class="line">  &quot; - status: &#x27;installed&#x27;, &#x27;updated&#x27;, or &#x27;unchanged&#x27;</span><br><span class="line">  &quot; - force:  set on PlugInstall! or PlugUpdate!</span><br><span class="line">  if a:info.status == &#x27;installed&#x27; || a:info.force</span><br><span class="line">    !./install.py</span><br><span class="line">  endif</span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">Plug &#x27;Valloric/YouCompleteMe&#x27;, &#123; &#x27;do&#x27;: function(&#x27;BuildYCM&#x27;) &#125;</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123; &#x27;on&#x27;:  &#x27;NERDTreeToggle&#x27; &#125;</span><br><span class="line">Plug &#x27;mhinz/vim-startify&#x27;</span><br><span class="line"></span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -4092,6 +4146,20 @@
       <tags>
         <tag>计算机网络</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>vCard 是什么</title>
+    <url>/2021/02/04/what-is-vcard/</url>
+    <content><![CDATA[<p>vCard 是广为使用的电子名片的文件格式标准，常用于手机通讯录文件中，其后缀名常为 <code>.vcf</code>。</p>
+<p>一个典型的 vCard 文件内容如下所示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">BEGIN:VCARD</span><br><span class="line">VERSION:2.1</span><br><span class="line">N;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testa</span><br><span class="line">FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testa</span><br><span class="line">TEL;CELL:12345678910</span><br><span class="line">END:VCARD</span><br><span class="line">BEGIN:VCARD</span><br><span class="line">VERSION:2.1</span><br><span class="line">N;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testb</span><br><span class="line">FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testb</span><br><span class="line">TEL;CELL:12345678910</span><br><span class="line">END:VCARD</span><br></pre></td></tr></table></figure>
+
+<p>每个 vCard 条目通过 <code>BEGIN:VCARD</code> 与 <code>END:VCARD</code> 包裹，其中 <code>VERSION</code> 字段表示 vCard 版本号，<code>N</code> 和 <code>FN</code> 字段分别表示 <em>姓名</em> 和 <em>名</em>，<code>TEL</code> 字段表示电话号码。</p>
+<p>GitHub 上的 <a href="https://github.com/metowolf/vCards">vCards</a> 项目提供了类似中国黄页的功能。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>白帽子 VPS 选购指南</title>
@@ -4278,15 +4346,20 @@
 <a id="more"></a>
 <h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure>
+
 <p>修改完成后用<code>sudo service ssh start</code>启动SSH服务，可能会报如下错误：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+
 <p>并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure>
+
 <p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+
 <p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p>
 <h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><p>在你当前所使用的shell的配置文件里（比如<code>.bashrc</code>或<code>.zshrc</code>），添加如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export DISPLAY&#x3D;localhost:0</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> DISPLAY=localhost:0</span><br></pre></td></tr></table></figure>
+
 <p>随后打开X Server客户端（比如<a href="https://sourceforge.net/projects/xming/">Xming</a>或<a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>）并将Display项设为0即可运行图形化应用。笔者所使用的是<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>，其设置路径为<strong>Settings</strong> —&gt; <strong>Configuration</strong> —&gt; <strong>X11</strong> —&gt; <strong>Display offset</strong>。</p>
 <h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2><h2 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h2><h2 id="无法使用的软件"><a href="#无法使用的软件" class="headerlink" title="无法使用的软件"></a>无法使用的软件</h2><p>以下软件在 WSL 中暂时无法正常使用：</p>
 <ul>
@@ -4316,19 +4389,19 @@
       </categories>
   </entry>
   <entry>
-    <title>XML、JSON与YAML</title>
+    <title>XML、JSON 与 YAML</title>
     <url>/2018/07/21/xml-json-yaml/</url>
-    <content><![CDATA[<p>XML、JSON与YAML是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
-<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language(可扩展标记语言)，倘若我要表示某个人的简要信息，用XML可写为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;person&gt;</span><br><span class="line">    &lt;firstName&gt;Tian&lt;&#x2F;firstName&gt;</span><br><span class="line">    &lt;lastName&gt;Song&lt;&#x2F;lastName&gt;</span><br><span class="line">    &lt;address&gt;</span><br><span class="line">        &lt;streetAddr&gt;中关村南大街5号&lt;&#x2F;streetAddr&gt;</span><br><span class="line">        &lt;city&gt;北京市&lt;&#x2F;city&gt;</span><br><span class="line">        &lt;zipcode&gt;100081&lt;&#x2F;zipcode&gt;</span><br><span class="line">    &lt;&#x2F;address&gt;</span><br><span class="line">    &lt;prof&gt;Computer System&lt;&#x2F;prof&gt;&lt;prof&gt;Security&lt;&#x2F;prof&gt;</span><br><span class="line">&lt;&#x2F;person&gt;</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>XML、JSON 与 YAML 是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language（可扩展标记语言），倘若我要表示某个人的简要信息，用 XML 可写为：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">firstName</span>&gt;</span>Tian<span class="tag">&lt;/<span class="name">firstName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">lastName</span>&gt;</span>Song<span class="tag">&lt;/<span class="name">lastName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">streetAddr</span>&gt;</span>中关村南大街5号<span class="tag">&lt;/<span class="name">streetAddr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">city</span>&gt;</span>北京市<span class="tag">&lt;/<span class="name">city</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipcode</span>&gt;</span>100081<span class="tag">&lt;/<span class="name">zipcode</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">prof</span>&gt;</span>Computer System<span class="tag">&lt;/<span class="name">prof</span>&gt;</span><span class="tag">&lt;<span class="name">prof</span>&gt;</span>Security<span class="tag">&lt;/<span class="name">prof</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation(JavaScript对象表示法)，倘若我要表示某个人的简要信息，用JSON可写为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;firstName&quot; : &quot;Tian&quot;,</span><br><span class="line">    &quot;lastName&quot; : &quot;Song&quot;,</span><br><span class="line">    &quot;address&quot; : &#123;</span><br><span class="line">                    &quot;streetAddr&quot; : &quot;中关村南大街5号&quot;,</span><br><span class="line">                    &quot;city&quot; : &quot;北京市&quot;,</span><br><span class="line">                    &quot;zipcode&quot; : &quot;100081&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">    &quot;prof&quot; : [&quot;Computer System&quot;, &quot;Security&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation（JavaScript 对象表示法），倘若我要表示某个人的简要信息，用 JSON 可写为：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;firstName&quot;</span> : <span class="string">&quot;Tian&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;lastName&quot;</span> : <span class="string">&quot;Song&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;address&quot;</span> : &#123;</span><br><span class="line">                    <span class="attr">&quot;streetAddr&quot;</span> : <span class="string">&quot;中关村南大街5号&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;city&quot;</span> : <span class="string">&quot;北京市&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;zipcode&quot;</span> : <span class="string">&quot;100081&quot;</span></span><br><span class="line">                &#125;,</span><br><span class="line">    <span class="attr">&quot;prof&quot;</span> : [<span class="string">&quot;Computer System&quot;</span>, <span class="string">&quot;Security&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为Yet Another Markup Language(仍是一种标记语言)，之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为YAML Ain&#39;t a Markup Language(YAML不是一种标记语言)，倘若我要表示某个人的简要信息，用YAML可写为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firstName : Tian</span><br><span class="line">lastName : Song</span><br><span class="line">address : </span><br><span class="line">    streetAddr : 中关村南大街5号</span><br><span class="line">    city : 北京市</span><br><span class="line">    zipcode : 100081</span><br><span class="line">prof : </span><br><span class="line">-Computer System</span><br><span class="line">-Security</span><br></pre></td></tr></table></figure>
+<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为 Yet Another Markup Language（仍是一种标记语言），之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为 YAML Ain&#39;t a Markup Language（YAML 不是一种标记语言），倘若我要表示某个人的简要信息，用 YAML 可写为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">firstName :</span> <span class="string">Tian</span></span><br><span class="line"><span class="attr">lastName :</span> <span class="string">Song</span></span><br><span class="line"><span class="attr">address :</span></span><br><span class="line">    <span class="attr">streetAddr :</span> <span class="string">中关村南大街5号</span></span><br><span class="line">    <span class="attr">city :</span> <span class="string">北京市</span></span><br><span class="line">    <span class="attr">zipcode :</span> <span class="number">100081</span></span><br><span class="line"><span class="attr">prof :</span></span><br><span class="line"><span class="string">-Computer</span> <span class="string">System</span></span><br><span class="line"><span class="string">-Security</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于Internet上的信息交互与传递，以及用户界面的编写，比如Android；JSON中的信息有类型，适合程序处理(js)，较XML简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML 是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于 Internet 上的信息交互与传递，以及用户界面的编写，比如 Android；JSON 中的信息有类型，适合程序处理（js），较 XML 简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML 信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -4584,7 +4657,7 @@
 
 <p>这将绑定攻击者机器上的 8080 端口，并将所有连接转发到 10.0.0.20:80。</p>
 <h3 id="公司的-HTTP-代理作为一种出路"><a href="#公司的-HTTP-代理作为一种出路" class="headerlink" title="公司的 HTTP 代理作为一种出路"></a>公司的 HTTP 代理作为一种出路</h3><p>HTTP 代理组织的地方为他们的员工访问外部网络应用程序提供了一个良好的渗出机会，因为你有正确的凭据;）</p>
-<h4 id="Rpivot-1"><a href="#Rpivot-1" class="headerlink" title="Rpivot"></a>Rpivot</h4><p>我已经在 NAT 穿越部分提到了这个工具。它还支持通过 NTLM HTTP 代理连接到外部世界。服务器端命令保持不变，使用客户端命令如下：</p>
+<h4 id="使用-Rpivot"><a href="#使用-Rpivot" class="headerlink" title="使用 Rpivot"></a>使用 Rpivot</h4><p>我已经在 NAT 穿越部分提到了这个工具。它还支持通过 NTLM HTTP 代理连接到外部世界。服务器端命令保持不变，使用客户端命令如下：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">python client.py --server-ip &lt;rpivot_server_ip&gt; --server-port 9999\</span><br><span class="line">--ntlm-proxy-ip &lt;proxy_ip&gt; --ntlm-proxy-port 8080 --domain CONTOSO.COM\</span><br><span class="line">--username Alice --password P@ssw0rd</span><br></pre></td></tr></table></figure>
 
 <p>或者如果你有 LM:NT 哈希而不是密码：</p>
@@ -4611,7 +4684,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">proxychains program_name</span><br></pre></td></tr></table></figure>
 
 <p>与 proxychains 一起使用的 impacket&#39;s psexec.py：</p>
-<p><img src="/images/pivoting1.png"></p>
+<p><img src="/images/pivoting1.png" alt="proxychains psexec"></p>
 <h2 id="DNS-与-proxychains"><a href="#DNS-与-proxychains" class="headerlink" title="DNS 与 proxychains"></a>DNS 与 proxychains</h2><p>Proxychains 在解析主机名时不遵循 socks RFC。它拦截 <code>gethostbyname</code> libc 调用并通过 socks 代理隧道化 tcp DNS 请求。事情是，DNS 服务器硬编码到 <code>4.2.2.2</code>。你可能需要更改名称服务器以解析内部网络上的名称。一个典型的情况是如果你正在测试 Windows 环境，将名称服务器更改为域控制器。该设置位于 <code>/usr/lib/proxychains3/proxyresolv</code>：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># This script is called by proxychains to resolve DNS names</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># DNS server used to resolve names</span></span><br><span class="line">DNS_SERVER=<span class="variable">$&#123;PROXYRESOLV_DNS:-4.2.2.2&#125;</span>    <span class="comment">#change nameserver here</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> = 0 ] ; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;  usage:&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;      proxyresolv &lt;hostname&gt; &quot;</span></span><br><span class="line">    <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
