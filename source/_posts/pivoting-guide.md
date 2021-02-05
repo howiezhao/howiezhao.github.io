@@ -453,7 +453,7 @@ short int server_port = SERVER_PORT;
 
 更改 `secret`，指定 `SERVER_PORT`。如果你想反向连接，取消注释并编辑 `CONNECT_BACK_HOST` 和 `CONNECT_BACK_DELAY` 指令。运行 make：
 
-```makefile
+```sh
 $ make linux_x64
 make								\
 	LDFLAGS=" -Xlinker --no-as-needed -lutil"	\
