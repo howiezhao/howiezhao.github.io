@@ -14,12 +14,12 @@ tags:
 
 npm 成功安装后，可使用 `npm install -g hexo-cli` 来快速安装 Hexo 命令行工具。其次你还需要安装 npm-check-updates 包，它用于以后 Hexo 及其插件的更新。参数 `-g` 表示全局安装，npm 的包安装分为本地安装（local）和全局安装（global）两种，区别在于：
 
-**本地安装**
+本地安装：
 
 - 将安装包放在 `./node_modules` 下（运行 npm 时所在的目录）
 - 可以通过 `require()` 来引入本地安装的包
 
-**全局安装**
+全局安装：
 
 - 将安装包放在 `/usr/local` 下
 - 可以直接在命令行里使用

@@ -22,21 +22,21 @@ tags:
 
 1. 卸载w3af要求的pyOpenSSL版本
 
-```bash
-pip uninstall pyOpenSSL
-```
+   ```sh
+   pip uninstall pyOpenSSL
+   ```
 
 2. 安装最新版pyOpenSSL
 
-```bash
-pip install pyOpenSSL
-```
+   ```sh
+   pip install pyOpenSSL
+   ```
 
 3. 编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码
 
-```python
-PIPDependency('OpenSSL', 'pyOpenSSL', 'Version of pyOpenSSL you are using')
-```
+   ```python
+   PIPDependency('OpenSSL', 'pyOpenSSL', 'Version of pyOpenSSL you are using')
+   ```
 
 <!-- more -->
 
