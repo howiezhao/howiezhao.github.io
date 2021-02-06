@@ -28,7 +28,7 @@ REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
 
 ### 系统日志
 
-Windows 系统日志文件一般存放在 Windows 文件夹下，可以使用如下命令删除之：
+Windows 系统日志文件一般存放在 `Windows` 文件夹下，可以使用如下命令删除之：
 
 ```sh
 del %windir%\*.log /a/s/q/f
