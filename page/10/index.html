@@ -607,7 +607,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/11/80211/" class="post-title-link" itemprop="url">802.11协议分析</a>
+          <a href="/2018/05/11/80211/" class="post-title-link" itemprop="url">802.11 协议分析</a>
         </h2>
 
         <div class="post-meta-container">
@@ -625,7 +625,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -686,7 +686,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/11/ipsec/" class="post-title-link" itemprop="url">IPSec运行机制</a>
+          <a href="/2018/05/11/ipsec/" class="post-title-link" itemprop="url">IPSec 运行机制</a>
         </h2>
 
         <div class="post-meta-container">
@@ -704,7 +704,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -765,7 +765,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/11/ip/" class="post-title-link" itemprop="url">IP协议分析</a>
+          <a href="/2018/05/11/ip/" class="post-title-link" itemprop="url">IP 协议分析</a>
         </h2>
 
         <div class="post-meta-container">
@@ -783,7 +783,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -805,7 +805,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>IP(Internet Protocol，网际协议)</p>
+          <p>IP（Internet Protocol，网际协议）</p>
 <h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt="ip datagram"></p>
           <!--noindex-->
             <div class="post-button">
@@ -1208,7 +1208,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/09/set-env-export/" class="post-title-link" itemprop="url">set、env与export</a>
+          <a href="/2018/05/09/set-env-export/" class="post-title-link" itemprop="url">set、env 与 export</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1226,7 +1226,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1248,16 +1248,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell也是如此，同样的，通过Shell所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。</p>
-<p>在Linux中，环境变量可以大致分为<strong>Shell环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的Shell有不同的Shell环境变量，例如bash与Zsh的Shell环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell环境变量包含了用户环境变量。</p>
-<p>在Linux中可以使用<code>declare</code>命令直接定义<strong>Shell环境变量</strong>，如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义Shell环境变量A，值为hello，注意等号两边不能有空格</span></span><br><span class="line"><span class="comment"># 按照传统，环境变量一般为全大写</span></span><br><span class="line"><span class="built_in">declare</span> A=hello</span><br></pre></td></tr></table></figure>
+          <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell 也是如此，同样的，通过 Shell 所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。</p>
+<p>在 Linux 中，环境变量可以大致分为 <strong>Shell 环境变量</strong>和<strong>用户环境变量</strong>两大类，不同的 Shell 有不同的 Shell 环境变量，例如 bash 与 Zsh 的 Shell 环境变量就不相同，而用户环境变量通常是由用户自定义的，Shell 环境变量包含了用户环境变量。</p>
+<p>在 Linux 中可以使用 <code>declare</code> 命令直接定义 <strong>Shell 环境变量</strong>，如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义Shell环境变量A，值为hello，注意等号两边不能有空格</span></span><br><span class="line"><span class="comment"># 按照传统，环境变量一般为全大写</span></span><br><span class="line"><span class="built_in">declare</span> A=hello</span><br></pre></td></tr></table></figure>
 
-<p>同样的，在Linux中使用<code>echo</code>命令即可打印环境变量的值，如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印A的值，环境变量前需加“$”符号，</span></span><br><span class="line"><span class="comment"># 表示要打印的是环境变量而不是一般字符串</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span></span><br></pre></td></tr></table></figure>
+<p>同样的，在 Linux 中使用 <code>echo</code> 命令即可打印环境变量的值，如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打印A的值，环境变量前需加“$”符号，</span></span><br><span class="line"><span class="comment"># 表示要打印的是环境变量而不是一般字符串</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$A</span></span><br></pre></td></tr></table></figure>
 
 <p>值得注意的是，这种定义只对当前终端有效，关闭终端后失效。</p>
-<p>常见的Shell环境变量有：</p>
+<p>常见的 Shell 环境变量有：</p>
 <ul>
 <li>COLUMNS：当前终端的宽度</li>
 <li>LINES：当前终端的高度</li>
@@ -1266,9 +1266,9 @@
 <ul>
 <li>PATH：用以指定命令的搜索目录</li>
 <li>HOME：用以指定用户的家目录</li>
-<li>SHELL：用以指定用户的登录Shell</li>
-<li>HTTP_PROXY：用以指定终端的HTTP代理信息，与下一个变量要同时设置</li>
-<li>HTTPS_PROXY：用以指定终端的HTTPS代理信息</li>
+<li>SHELL：用以指定用户的登录 Shell</li>
+<li>HTTP_PROXY：用以指定终端的 HTTP 代理信息，与下一个变量要同时设置</li>
+<li>HTTPS_PROXY：用以指定终端的 HTTPS 代理信息</li>
 </ul>
           <!--noindex-->
             <div class="post-button">

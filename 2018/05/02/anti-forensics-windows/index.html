@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="MACE 时间和 反取证之Linux 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，met">
+<meta name="description" content="MACE 时间和 反取证之 Linux 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，me">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反取证之 Windows">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/02/anti-forensics-windows/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="MACE 时间和 反取证之Linux 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，met">
+<meta property="og:description" content="MACE 时间和 反取证之 Linux 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，me">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-05-02T06:02:03.000Z">
-<meta property="article:modified_time" content="2021-01-29T12:14:15.000Z">
+<meta property="article:modified_time" content="2021-02-06T14:41:45.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="渗透">
@@ -359,7 +359,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-29 20:14:15" itemprop="dateModified" datetime="2021-01-29T20:14:15+08:00">2021-01-29</time>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -388,13 +388,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="MACE-时间"><a href="#MACE-时间" class="headerlink" title="MACE 时间"></a>MACE 时间</h2><p>和 <a href="/2018/05/02/anti-forensics-linux/" title="反取证之Linux">反取证之Linux</a> 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，meterpreter 中的 <code>timestomp</code> 命令可以方便的修改 MACE 时间。</p>
+        <h2 id="MACE-时间"><a href="#MACE-时间" class="headerlink" title="MACE 时间"></a>MACE 时间</h2><p>和 <a href="/2018/05/02/anti-forensics-linux/" title="反取证之 Linux">反取证之 Linux</a> 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，meterpreter 中的 <code>timestomp</code> 命令可以方便的修改 MACE 时间。</p>
 <h2 id="隐藏新建账号"><a href="#隐藏新建账号" class="headerlink" title="隐藏新建账号"></a>隐藏新建账号</h2><p>当在目标系统上新建了用户账号后，通常会在登录界面上显示出来，要实现隐藏，可以修改注册表项，采用如下命令：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v uname /t REG_DWORD /d 0</span><br></pre></td></tr></table></figure>
 
 <p>注意：这种隐藏只是在登录界面的隐藏，用户使用 <code>net user</code> 或“本地用户和组”仍然可以查到新建的账户。</p>
 <h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>清除相关日志文件</p>
-<h3 id="系统日志"><a href="#系统日志" class="headerlink" title="系统日志"></a>系统日志</h3><p>Windows 系统日志文件一般存放在 Windows 文件夹下，可以使用如下命令删除之：</p>
+<h3 id="系统日志"><a href="#系统日志" class="headerlink" title="系统日志"></a>系统日志</h3><p>Windows 系统日志文件一般存放在 <code>Windows</code> 文件夹下，可以使用如下命令删除之：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del %windir%\*.<span class="built_in">log</span> /a/s/q/f</span><br></pre></td></tr></table></figure>
 
 <p>另外，meterpreter 中的 <code>clearev</code> 命令可以删除事件查看器中的日志信息。</p>
@@ -418,8 +418,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2018/05/02/anti-forensics-linux/" rel="prev" title="反取证之Linux">
-                  <i class="fa fa-chevron-left"></i> 反取证之Linux
+                <a href="/2018/05/02/anti-forensics-linux/" rel="prev" title="反取证之 Linux">
+                  <i class="fa fa-chevron-left"></i> 反取证之 Linux
                 </a>
             </div>
             <div class="post-nav-item">

@@ -352,7 +352,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -375,12 +375,12 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新 Kali 后重新启动会出现如下显示，并无法进入系统界面</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter <span class="string">&#x27;help&#x27;</span> <span class="keyword">for</span> a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter &#x27;help&#x27; for a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
 
 <p><strong>解决方法：</strong></p>
 <ol>
 <li>在此界面输入 <code>blkid</code> 命令，查看自己的分区号</li>
-<li>依据自己的分区号输入 <code>fsck -y /dev/sda1</code>，我的分区号是 sda1。</li>
+<li>依据自己的分区号输入 <code>fsck -y /dev/sda1</code>，我的分区号是 <code>sda1</code>。</li>
 <li>输入 <code>exit</code> 命令退出重启电脑</li>
 </ol>
 
@@ -440,7 +440,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-05 19:58:56" itemprop="dateModified" datetime="2021-02-05T19:58:56+08:00">2021-02-05</time>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -462,18 +462,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法1：</strong><br>修改 <code>/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py</code> 文件，将下面四行注释掉</p>
+          <h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法 1：</strong></p>
+<p>修改 <code>/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py</code> 文件，将下面四行注释掉</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment"># SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment"># SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment"># SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>解决方法2：</strong></p>
+<p><strong>解决方法 2：</strong></p>
 <ol>
-<li><p>卸载w3af要求的pyOpenSSL版本</p>
+<li><p>卸载 w3af 要求的 pyOpenSSL 版本</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>安装最新版pyOpenSSL</p>
+<li><p>安装最新版 pyOpenSSL</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyOpenSSL</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>编辑w3af安装目录中的/w3af/core/controllers/dependency_check/requirements.py文件，将要求的pyOpenSSl版本号改为你安装的最新版，即修改下面这一行代码</p>
+<li><p>编辑 w3af 安装目录中的 <code>/w3af/core/controllers/dependency_check/requirements.py</code> 文件，将要求的 pyOpenSSl 版本号改为你安装的最新版，即修改下面这一行代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PIPDependency(<span class="string">&#x27;OpenSSL&#x27;</span>, <span class="string">&#x27;pyOpenSSL&#x27;</span>, <span class="string">&#x27;Version of pyOpenSSL you are using&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 </li>
