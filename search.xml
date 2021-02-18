@@ -1539,10 +1539,10 @@
     <url>/2018/05/08/encode-encrypt/</url>
     <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
 <p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、<a href="/2018/08/10/base/" title="Base64 编码">Base64 编码</a>等。</p>
-<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>加密（encryption）是将明文信息改变为难以读取的密文内容，使之不可读。只有拥有解密方法的对象，经由解密（decryption）过程，才能将密文还原为正常可读的内容。</p>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p><strong>加密</strong>（encryption）是将<strong>明文</strong>（plaintext，cleartext）信息改变为难以读取的<strong>密文</strong>（ciphertext）内容，使之不可读。只有拥有解密方法的对象，经由<strong>解密</strong>（decryption）过程，才能将密文还原为正常可读的内容。</p>
 <p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
 <p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
-<p>非对称加密，又称公开密钥加密，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
+<p>非对称加密，又称<strong>公开密钥加密</strong>，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
 <p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
 <p>常见的非对称加密算法有 <a href="/2018/10/18/rsa/" title="RSA">RSA</a>、DSA、ECDSA、Elgamal 等。</p>
 <p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
@@ -2248,8 +2248,38 @@
   <entry>
     <title>HTTPS 运行机制</title>
     <url>/2018/05/11/https/</url>
-    <content><![CDATA[<h2 id="信息安全三要素"><a href="#信息安全三要素" class="headerlink" title="信息安全三要素"></a>信息安全三要素</h2><p>信息安全三要素即机密性（Confidentiality）、完整性（Integrit）和可用性（Availability），简称 CIA。</p>
-<h2 id="公钥认证"><a href="#公钥认证" class="headerlink" title="公钥认证"></a>公钥认证</h2><h2 id="SSL-与-TLS"><a href="#SSL-与-TLS" class="headerlink" title="SSL 与 TLS"></a>SSL 与 TLS</h2>]]></content>
+    <content><![CDATA[<h2 id="信息安全三要素"><a href="#信息安全三要素" class="headerlink" title="信息安全三要素"></a>信息安全三要素</h2><p>信息安全三要素即<strong>机密性</strong>（Confidentiality）、<strong>完整性</strong>（Integrity）和<strong>可用性</strong>（Availability），简称 <strong>CIA</strong>。</p>
+<ul>
+<li>机密性：仅有发送方和希望的接收方能够理解传输报文的内容。因为窃听者可以截获报文，这必须要求报文在一定程度上进行加密，使截取的报文无法被截获者所理解。机密性的这个方面大概就是通常意义上对于术语 <em>信息安全</em> 的理解。</li>
+<li>完整性：或称 <em>报文完整性</em> 或 <em>报文鉴别</em>，即通信双方希望确保其通信的内容在传输过程中未被改变 —— 或者恶意篡改或者意外改动。我们在可靠数据传输和数据链路协议中遇到的 <em>检验和</em> 技术在扩展后能够用于提供这种报文完整性。</li>
+</ul>
+<h2 id="公钥认证"><a href="#公钥认证" class="headerlink" title="公钥认证"></a>公钥认证</h2><p>公钥认证（public key certification）即证实一个公钥属于某个特定的实体。将公钥与特定实体绑定通常是由<strong>认证中心</strong>（Certification Authority，<strong>CA</strong>）完成的，CA 的职责就是使识别和发行证书合法化。CA 具有下列作用：</p>
+<ul>
+<li>CA 证实一个实体（一个人、一台路由器等）的真实身份。</li>
+<li>一旦 CA 验证了某个实体的身份，这个 CA 会生成一个将其身份和实体的公钥绑定起来的<strong>证书</strong>（certificate）。这个证书包含这个公钥和公钥所有者全局唯一的身份标识信息（例如，一个人的名字或一个 IP 地址）。由 CA 对这个证书进行数字签名。</li>
+</ul>
+<h2 id="SSL-与-TLS"><a href="#SSL-与-TLS" class="headerlink" title="SSL 与 TLS"></a>SSL 与 TLS</h2><p>SSL（Secure Socket Layer，<strong>安全套接字层</strong>）最初由 Netscape 设计，其发展到现在存在一些设计上的漏洞，SSL 版本 3 的一个稍加修改的版本被称为 TLS（Transport Layer Security，<strong>传输层安全性</strong>）。</p>
+<p>现在为了安全性基本都采用 TLS，本文以下内容采用 SSL 来指代最新的 TLS。</p>
+<p>SSL 经常用来为发生在 HTTP 之上的事务提供安全性。然而，因为 SSL 使 TCP 安全了，因此它能被应用于运行在 TCP 之上的任何应用程序。</p>
+<h2 id="SSL-工作过程"><a href="#SSL-工作过程" class="headerlink" title="SSL 工作过程"></a>SSL 工作过程</h2><p>SSL 具有三个阶段：<strong>握手</strong>、<strong>密钥导出</strong>和<strong>数据传输</strong>：</p>
+<h3 id="握手"><a href="#握手" class="headerlink" title="握手"></a>握手</h3><p>SSL 握手步骤如下：</p>
+<ol>
+<li>客户发送它支持的密码算法的列表，连同一个客户的<strong>不重数</strong>（nonce）。</li>
+<li>从该列表中，服务器选择一种对称算法（例如 AES）、一种公钥算法（例如具有特定密钥长度的 RSA）和一种 MAC 算法。它把它的选择以及证书和一个服务器不重数返回给客户。</li>
+<li>客户验证该证书，提取服务器的公钥，生成一个<strong>前主密钥</strong>（Pre-Master Secret，PMS），用服务器的公钥加密该 PMS，并将加密的 PMS 发送给服务器。</li>
+<li>使用相同的密钥导出函数（就像 SSL 标准定义的那样），客户和服务器独立地从 PMS 和不重数中计算出<strong>主密钥</strong>（Master Secret，MS）。</li>
+<li>客户发送所有握手报文的一个 MAC。</li>
+<li>服务器发送所有握手报文的一个 MAC。</li>
+</ol>
+<h3 id="密钥导出"><a href="#密钥导出" class="headerlink" title="密钥导出"></a>密钥导出</h3><p>客户和服务器都使用 MS 生成 4 个密钥：</p>
+<ul>
+<li>E_C：用于从客户发送到服务器的数据的会话加密密钥</li>
+<li>M_C：用于从客户发送到服务器的数据的会话 MAC 密钥</li>
+<li>E_S：用于从服务器发送到客户的数据的会话加密密钥</li>
+<li>M_S：用于从服务器发送到客户的数据的会话 MAC 密钥</li>
+</ul>
+<h3 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h3><p>由于 TCP 是一种字节流协议，SSL 将数据流分割成 <em>记录</em>，对每个记录附加一个 MAC 用于完整性检查，然后加密该“记录+MAC”。为了产生这个 MAC，客户将数据连同密钥 M_C 放入一个散列函数中；为了加密“记录+MAC”这个包，客户使用它的会话加密密钥 E_C。然后这个加密的包将传递给 TCP 经因特网传输。</p>
+]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
