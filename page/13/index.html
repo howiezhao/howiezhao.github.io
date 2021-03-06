@@ -234,7 +234,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-count">124</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -312,6 +312,97 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/04/metasploit-luanma/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/12/04/metasploit-luanma/" class="post-title-link" itemprop="url">Metasploit 中 shell 中文乱码解决方案</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-12-04 23:46:32" itemprop="dateCreated datePublished" datetime="2017-12-04T23:46:32+08:00">2017-12-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>有时在 Kali Linux 中获得了一个 Windows shell 或者在 meterpreter 中进入 shell 后，执行命令可能会出现中文乱码，其原因是 Windows 和 Linux 的编码不同，导致 Windows 中的中文在 Linux 中无法正常显示。</p>
+<p><strong>解决方法：</strong></p>
+<ol>
+<li>在 shell 窗口的工具栏选择“编辑” ——&gt; “首选项” ——&gt; “编码”，选中简体中文的三个编码：GB18030、GB2312、GBK，打勾并退出</li>
+<li>接着在“终端” ——&gt; “设定字符编码”中选择添加的三个简体中文编码之一即可</li>
+</ol>
+<p><strong>注意：</strong></p>
+<ul>
+<li>这个设置会随着操作系统的重启而失效</li>
+<li>设定简体中文编码之后，Linux 中的中文字符就会乱码，因为 Linux 使用 UTF-8 编码</li>
+<li>建议只在需要的时候设定简体中文编码</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -648,7 +739,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">153k</span>
+    <span title="Symbols count total">155k</span>
   </span>
 </div>
 <div class="busuanzi-count">
