@@ -512,7 +512,7 @@ math:
   every_page: false
 
   mathjax:
-    enable: false
+    enable: true
 
   katex:
     enable: false
