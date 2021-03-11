@@ -23,7 +23,7 @@
 <li>Windows 8.1 / Server 2012 R2：PowerShell 4.0</li>
 <li>Windows 10：PowerShell 5.0，此版本的WMF包含了PowerShellGet，可用于在线下载、安装模块。</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="优势及劣势"><a href="#优势及劣势" class="headerlink" title="优势及劣势"></a>优势及劣势</h2><p>PowerShell相较于CMD的优势是不言而喻的，相较于Unix中的Shell，它的优势主要体现在2方面：面向对象特性以及与.NET的深度结合。<br>劣势当然也有，相较于CMD，至今为止它的启动速度仍然较慢，相较于Unix中的Shell，它的生态环境还欠火候，可以期待未来有更多的人关注到PowerShell。</p>
 <h2 id="Cmdlets与pipeline"><a href="#Cmdlets与pipeline" class="headerlink" title="Cmdlets与pipeline"></a>Cmdlets与pipeline</h2><p>Cmdlets与pipeline是PowerShell中的两个核心概念，</p>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>PowerShell中的大多数常用命令都有对应于Linux中相关命令的别名，比如<code>ls</code>、<code>mv</code>、<code>ps</code>、<code>cat</code>、<code>kill</code>、<code>wget</code>、<code>clear</code>等，下面介绍的命令为PowerShell所不同于Linux中的命令。</p>
@@ -49,7 +49,7 @@
     <url>/2018/07/26/about-proxy/</url>
     <content><![CDATA[<h2 id="正向连接与反向连接"><a href="#正向连接与反向连接" class="headerlink" title="正向连接与反向连接"></a>正向连接与反向连接</h2><p><strong>正向连接</strong>即黑客主动连接受害者，这种情况下要求受害者有公网IP，常用于对服务器的渗透；<strong>反向连接</strong>即受害者主动连接黑客，这种情况下要求黑客有公网IP，常用于对个人的渗透。</p>
 <h2 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h2><p>在英语中，<strong>Proxy</strong>表示<strong>服务器代理</strong>这种动作，而<strong>Agent</strong>表示<strong>代理服务器</strong>这种物质，显然，我们这里讨论的是Proxy这种动作，而非代理服务器本身。<br>不论正向还是反向，代理都是基于这样一个事实：即A与B的通信要经过C的转发，这里的C就是Agent，为了方便讨论，我们将A视为客户端，将B视为服务器端。<br><strong>正向代理</strong>(Forward Proxy)：也就是常说的代理，代理服务器偏向于客户端，服务器端只能得到代理服务器的IP地址，隐藏了客户端的IP地址。常用于科学上网工具。<br><strong>反向代理</strong>(Reverse Proxy)：代理服务器偏向于服务器端，客户端只能得到代理服务器的IP地址，隐藏了服务器端的IP地址。常用于网站镜像等。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="端口转发与端口映射"><a href="#端口转发与端口映射" class="headerlink" title="端口转发与端口映射"></a>端口转发与端口映射</h2><p>传统意义上，我们认为<strong>端口转发</strong>(Port Forwarding)与<strong>端口映射</strong>(Port Mapping)表达同样的内容。顾名思义，端口转发指的是将某个IP的某个端口转发到另一个IP的另一个端口，这样，可以通过访问后者以达到访问前者的目的。</p>
 ]]></content>
@@ -100,7 +100,7 @@
   <entry>
     <title>Android Studio模拟器相关问题解决</title>
     <url>/2018/08/21/android-emulator-problem/</url>
-    <content><![CDATA[<h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2><a id="more"></a>
+    <content><![CDATA[<h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2><span id="more"></span>
 <h2 id="命令行启动"><a href="#命令行启动" class="headerlink" title="命令行启动"></a>命令行启动</h2><p>Android SDK工具包中包含着一个模拟器的命令行程序 —— <code>emulator</code>，它可以在不启动Android Studio的情况下开启Android模拟器，在Windows系统中，<code>emulator</code>位于<code>%LOCALAPPDATA%\Android\Sdk\tools</code>文件夹下，<code>emulator -list-avds</code>命令可以列出所有已创建的AVD，<code>emulator -avd &lt;avd-name&gt;</code>命令即可启动相应的AVD，要查看<code>emulator</code>更多的参数，可以使用<code>emulator -help</code>。</p>
 <h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>建议创建的AVD为Pixel，版本为Android 7.1.1。</p>
 ]]></content>
@@ -113,7 +113,7 @@
     <url>/2018/09/18/android-root/</url>
     <content><![CDATA[<p>Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。</p>
 <h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><p>在Linux中获得root权限有2个命令，<code>su</code>与<code>sudo</code>，<code>sudo</code>只是为了短暂的获得root权限以执行某些操作(superuser do)，而<code>su</code>其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用<code>sudo</code>执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用<code>su</code>切换到root用户时，需要输入root用户的密码。<br>在Linux中，文件的权限有<code>rwx</code>三种，即可读(read)、可写(write)、可执行(execute)，其中<code>r</code>又等于4，<code>w</code>等于2，<code>x</code>等于1。所以，如果一个文件同时具有<code>rwx</code>权限，那么它的权限位就等于7。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Android相关"><a href="#Android相关" class="headerlink" title="Android相关"></a>Android相关</h2><p>Android本身是不愿意让用户获得root权限的，所以Android中没有<code>su</code>或<code>sudo</code>这些命令。所以，获得root权限的第一步就是要把<code>su</code>命令拷贝到Android的<code>/system/bin</code>或<code>/system/xbin</code>目录下。但是拷贝之后并不能直接使用<code>su</code>命令，因为Android中<code>su</code>的运行机制和Linux中不同。在Android中只有root用户才能使用<code>su</code>命令，非root用户无权使用<code>su</code>命令。这其实是一个逻辑闭环：使用<code>su</code>命令可以切换到root，但只有root用户才可以使用<code>su</code>命令。好在Linux中文件的权限除了<code>rwx</code>三种之外，还有<code>s</code>权限，<code>s</code>代表当任何一个用户执行该文件时都拥有文件所有者的权限，换句话来说，如果一个文件的所有者是root，且它的执行权限标志位是<code>s</code>，那么不管谁执行这个文件，他执行的时候都是以root身份执行的。<br>基于以上，Android获取root权限大致可以分为如下3步：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拷贝su到指定目录下</span></span><br><span class="line">cp /data/tmp/su /system/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su所有者设为root</span></span><br><span class="line">chown root:root su</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su标志位设为-rwsr-xr-x</span></span><br><span class="line">chmod 4775 /system/bin/su</span><br></pre></td></tr></table></figure>
 
@@ -132,7 +132,7 @@
     <title>Android刷机指南</title>
     <url>/2019/03/23/android-shuaji-guide/</url>
     <content><![CDATA[<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="软重启与硬重启"><a href="#软重启与硬重启" class="headerlink" title="软重启与硬重启"></a>软重启与硬重启</h3><p><strong>软重启</strong>（又称<strong>热重启</strong>）是指从操作系统层面上关机再开机，而<strong>硬重启</strong>（又称<strong>冷重启</strong>）是指直接关掉电源再开机。类似的，也有<strong>软（热）关机</strong>和<strong>硬（冷）关机</strong>，其区别类似于在 Windows “开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h3 id="Bootloader-fastboot-Recovery"><a href="#Bootloader-fastboot-Recovery" class="headerlink" title="Bootloader/fastboot/Recovery"></a>Bootloader/fastboot/Recovery</h3><h3 id="Full-OTA-Image-与-Factory-Image"><a href="#Full-OTA-Image-与-Factory-Image" class="headerlink" title="Full OTA Image 与 Factory Image"></a>Full OTA Image 与 Factory Image</h3><h2 id="刷机流程"><a href="#刷机流程" class="headerlink" title="刷机流程"></a>刷机流程</h2><ol>
 <li>提前备份必要的数据（下载的音乐、视频，QQ、微信的聊天记录，通话记录、短信、通讯录，相册等），尽量保持电量满。</li>
 <li>恢复出厂设置（亦或，取消所有安全机制，如屏幕锁定等，并退出 Google 账号。）。</li>
@@ -157,7 +157,7 @@
 <h2 id="MAC-时间"><a href="#MAC-时间" class="headerlink" title="MAC 时间"></a>MAC 时间</h2><p>MAC 即 Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间（例如通过 <code>cat</code> 查看时），更改时间指对文件属性、权限更改时的时间。</p>
 <p>使用 <code>ls -l</code> 默认查看的是修改时间，要查看其余 2 个时间，可以加参数 <code>ls -l --time=atime/ctime</code>，另一个查看 MAC 时间的命令是 <code>stat</code>。</p>
 <p>使用 <code>touch -d &quot;5 days ago&quot;</code> 或 <code>touch -t 1805021030</code> 可以修改 MAC 中的 MA 时间。meterpreter 中的 <code>timestomp</code> 命令可以方便的修改 MAC 时间。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>清除相关日志文件</p>
 <h3 id="系统日志"><a href="#系统日志" class="headerlink" title="系统日志"></a>系统日志</h3><p>Linux 中的日志文件主要有 <code>/var/log/auth.log</code>、<code>/var/log/secure</code>、<code>/var/log/wtmp</code>、<code>/var/log/btmp</code>、<code>/var/log/lastlog</code>、<code>/var/log/faillog</code>。</p>
 <p>Debian 系的 auth.log 文件与 RedHat 系的 secure 文件都记录了系统的登录日志，<code>last</code> 命令用于查看登录日志以及重启日志，文件位于 <code>/var/log/wtmp</code>；<code>lastb</code> 命令用于查看登录失败日志，文件位于 <code>/var/log/btmp</code>；<code>lastlog</code> 命令用于查看所有用户最近一次登录日志，文件位于 <code>/var/log/lastlog</code>；<code>faillog</code> 命令与 <code>lastlog</code> 命令一样，用于查看用户登录失败日志，文件位于 <code>/var/log/faillog</code>，此命令仅限于 Debian 系。</p>
@@ -203,7 +203,7 @@
     <title>ARP 运行机制</title>
     <url>/2021/03/06/arp/</url>
     <content><![CDATA[<p>与 DNS 类似，<strong>ARP</strong>（Address Resolution Protocol，地址解析协议）提供了将 <strong>IP 地址</strong>转换为<strong>链路层地址</strong>的机制。这两种解析器之间的一个重要区别是，DNS 为在因特网中任何地方的主机解析主机名，而 ARP 只为在同一个子网上的主机和路由器接口解析 IP 地址。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="MAC-地址"><a href="#MAC-地址" class="headerlink" title="MAC 地址"></a>MAC 地址</h2><p>事实上，并不是主机或路由器具有链路层地址，而是它们的适配器（即网络接口）具有链路层地址。因此，具有多个网络接口的主机或路由器将具有与之相关联的多个链路层地址，就像它也具有与之相关联的多个 IP 地址一样。</p>
 <p>链路层地址有各种不同的称呼：<strong>LAN 地址</strong>（LAN address）、<strong>物理地址</strong>（physical address）或 <strong>MAC 地址</strong>（MAC address）。我们一般将链路层地址称为 MAC 地址。</p>
@@ -249,7 +249,7 @@
     <url>/2019/03/09/assembly/</url>
     <content><![CDATA[<p><strong>汇编语言</strong>（Assembly Language，简称 <strong>ASM</strong>）由<strong>汇编指令</strong>、<strong>伪指令</strong>和<strong>其他符号</strong>组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。</p>
 <h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的<strong>x86 汇编</strong>和常用于嵌入式设备的<strong>ARM 汇编</strong>。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也有稍许不同。本文主要以 32 位 x86 汇编为例做简要介绍。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>汇编语言的大部分指令都是直接操作 CPU 中的寄存器的，所以有必要了解以下 x86 架构的 CPU 中常见的寄存器。</p>
 <p>16 位 x86 CPU 中常见的寄存器有：</p>
 <ul>
@@ -418,7 +418,7 @@
     <url>/2018/11/16/authentication/</url>
     <content><![CDATA[<p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
 <p>身份认证大致可分为三种：基于生物学特征的身份认证、基于共享密钥的身份认证以及基于公钥加密算法的身份认证，以下分别说明：</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="基于生物学特征的身份认证"><a href="#基于生物学特征的身份认证" class="headerlink" title="基于生物学特征的身份认证"></a>基于生物学特征的身份认证</h2><p>基于生物学特征的身份认证是指基于每个人身体上独一无二的特征，如指纹、虹膜等等。</p>
 <p>这种认证方式极具便利性，但同时安全性也最低，此外，生物学特征信息一旦泄露，无法更改。</p>
 <h2 id="基于共享密钥的身份认证"><a href="#基于共享密钥的身份认证" class="headerlink" title="基于共享密钥的身份认证"></a>基于共享密钥的身份认证</h2><p>基于共享密钥的身份认证是指服务器端和用户共同拥有一个或一组密码。用户通过输入或通过保管有密码的设备提交由用户和服务器共同拥有的密码，服务器检查用户所提交的密码是否与服务器端保存的密码一致，如果一致，就判断用户为合法用户，否则判定身份验证失败。</p>
@@ -621,7 +621,7 @@
 <td>/</td>
 </tr>
 </tbody></table>
-<a id="more"></a>
+<span id="more"></span>
 <p>编码 <code>Hello</code> 的过程如下：</p>
 <table>
 <thead>
@@ -886,7 +886,7 @@
 </ul>
 </li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在 Ubuntu 中，执行如下命令即可安装：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install boinc-client boinc-manager</span><br></pre></td></tr></table></figure>
@@ -1068,7 +1068,7 @@
     <url>/2021/01/21/cdn/</url>
     <content><![CDATA[<p><strong>CDN</strong> 全称 Content Distribution Network，即<strong>内容分发网络</strong>。CDN 管理分布在多个地理位置上的服务器，在它的服务器中存储各种类型的 Web 内容（包括文档、图片、音频和视频等）的副本，并且所有试图将每个用户请求定向到一个将提供最好的用户体验的 CDN 位置。</p>
 <p>CDN 可以是<strong>专用 CDN</strong>（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 YouTube 视频和其他类型的内容。也可以是<strong>第三方 CDN</strong>（third-party CDN），它代表多个内容提供商分发内容；<a href="https://www.akamai.com/cn/zh/">Akamai</a>、<a href="https://www.limelight.com/">Limelight</a> 和 <a href="https://www.cloudflare.com/zh-cn/cdn">Cloudflare CDN</a> 都运行第三方 CDN。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>相比于使用 CDN，建立单一的大规模数据中心存在以下三个问题：</p>
 <ul>
@@ -1127,7 +1127,7 @@
 <li>明文为：<code>Hello World</code></li>
 </ol>
 <p>注意：当偏移量为 13 时，这种凯撒密码的特例又被称为 <strong>ROT13</strong>（回转 13 位）加密，ROT13 加密是一种<strong>对等加密</strong>（Reciprocal cipher），对等加密是对称加密的一个特例，即该类密码的加密算法是它自己本身的逆反函数，换言之，要对其解密，只需对其密文再次套用加密算法即可。当偏移量未知时，可采用穷举法一个个试，偏移量必定小于 26。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码（Bacon&#39;s cipher）加密时，明文中的每个字母都会转换成一组 5 个英文字母。其转换依靠下表：</p>
 <table>
@@ -1354,7 +1354,7 @@
     <content><![CDATA[<h2 id="等宽字体与比例字体"><a href="#等宽字体与比例字体" class="headerlink" title="等宽字体与比例字体"></a>等宽字体与比例字体</h2><p>等宽字体（Monospaced）是指字符宽度相同的电脑字体，与此相对，字符宽度不尽相同的电脑字体称为比例字体（Proportional）。一图胜千言，如下：</p>
 <p><img src="/images/monospaced.PNG" alt="等宽字体与比例字体"></p>
 <p>在早期的电脑中，由于技术的局限，无法进行字母宽度的比例调整，因此只能将每个字符都制作成一样的宽度，从而形成了等宽字体。在等宽字体中，字母 <code>i</code>，<code>j</code> 显得两侧余白较多，而字母 <code>w</code>，<code>m</code> 等的笔画显得相当拥挤。但是随着图形用户界面主流的更新和计算机技术的提高，处理比例字体的局限性得到了突破，因此现在排版上显得比较自然的比例字体的使用已经相当普及。这里所讨论的都是英文字体，对于中文字体而言，一般认为它们都是等宽的。<br>Windows 中常用的等宽字体为 <strong>Consolas</strong>；macOS 中常用的等宽字体为 <strong>Menlo</strong>；Linux 中常用的等宽字体为 <strong>Mono</strong>。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="衬线字体与非衬线字体"><a href="#衬线字体与非衬线字体" class="headerlink" title="衬线字体与非衬线字体"></a>衬线字体与非衬线字体</h2><p>顾名思义，衬线体（Serif）和无衬线体（Sans-Serif）的区别就在于有无<strong>衬线</strong>，而衬线则指的是字形笔画末端的装饰细节部分。一图胜千言，如下：</p>
 <p><img src="/images/serif.PNG" alt="衬线字体与非衬线字体"></p>
 <p>这里所讨论的都是英文字体，对于简体中文字体而言，习惯性称衬线字体为<strong>宋体</strong>，非衬线字体为<strong>黑体</strong>，如下：</p>
@@ -1398,7 +1398,7 @@
 <p>编译器一般由相应的编程语言提供。</p>
 <h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标文件，而这个工具就是<strong>构建系统（build system）</strong>，构建系统所作的就是<strong>构建（build）</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。</p>
 <p>现在的很多构建系统也包含了<strong>包管理器（package manager）</strong>的功能，用以解决项目依赖的问题。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>在 Linux 中 编译 C/C++，使用最广的编译器是 <strong><a href="https://gcc.gnu.org/">GCC</a></strong> ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。有关 GCC 更详细的信息可参考 <a href="/2019/04/18/gcc/" title="GCC 小记">GCC 小记</a>。</p>
 <p>除此之外，另一个 C/C++ 编译器 <strong><a href="http://clang.llvm.org/">Clang</a></strong> 旨在替代 GCC。</p>
@@ -1448,7 +1448,7 @@
     <url>/2021/03/07/dhcp/</url>
     <content><![CDATA[<p><strong>DHCP</strong>（Dynamic Host Configuration，<strong>动态主机配置协议</strong>）允许主机自动获取（被分配）一个 IP 地址。网络管理员能够配置 DHCP，以使某给定主机每次与网络连接时能得到一个相同的 IP 地址，或者某主机将被分配一个<strong>临时的 IP 地址</strong>（temporary IP address），每次与网络连接时该地址也许是不同的。除了主机 IP 地址分配外，DHCP 还允许一台主机得知其他信息，例如它的子网掩码、它的第一跳路由器地址（常称为<strong>默认网关</strong>）与它的本地 DNS 服务器的地址。</p>
 <p>由于 DHCP 具有将主机连接进一个网络的网络相关方面的自动能力，故它又常被称为<strong>即插即用协议</strong>（plug-and-play protocol）或<strong>零配置（zeroconf）协议</strong>。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>DHCP 是一个客户-服务器协议。客户通常是新到达的主机，它要获得包括自身使用的 IP 地址在内的网络配置信息。在最简单场合下，每个子网将具有一台 DHCP 服务器。如果在某子网中没有服务器，则需要一个 DHCP 中继代理（通常是一台路由器），这个代理知道用于该网络的 DHCP 服务器的地址。</p>
 <h2 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h2><p>对于一台新到达的主机而言，DHCP 协议是一个 4 个步骤的过程：</p>
@@ -1475,7 +1475,7 @@
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  13: &#x27;enter&#x27;,</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  38: &#x27;up&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
 
 <p>可见，<code>fc</code>命令会把两个文件中不同的片段显示出来，并分别标注属于哪个文件。输入<code>fc /?</code>可以查看<code>fc</code>命令的更多参数。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在Linux下，可以使用系统自带的<code>diff</code>命令（即difference的缩写），它要比Windows中的<code>fc</code>命令更为强大，比如<code>diff -u game_old.js game_new.js</code>，其中<code>-u</code>参数表示使用标准区别格式，这将使输出内容更容易阅读，结果如下：</p>
 <figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="comment">--- game_old.js 2018-10-19 11:31:58.054834600 +0800</span></span><br><span class="line"><span class="comment">+++ game_new.js 2018-10-19 11:32:19.667759500 +0800</span></span><br><span class="line"><span class="meta">@@ -4,9 +4,9 @@</span></span><br><span class="line"> //</span><br><span class="line"></span><br><span class="line"> KEY_CODES = &#123;</span><br><span class="line"><span class="addition">+  13: &#x27;enter&#x27;,</span></span><br><span class="line">   32: &#x27;space&#x27;,</span><br><span class="line">   37: &#x27;left&#x27;,</span><br><span class="line"><span class="deletion">-  38: &#x27;up&#x27;,</span></span><br><span class="line">   39: &#x27;right&#x27;,</span><br><span class="line">   40: &#x27;down&#x27;,</span><br><span class="line">   70: &#x27;f&#x27;,</span><br><span class="line"><span class="meta">@@ -392,7 +392,7 @@</span></span><br><span class="line">       this.vel.rot = 0;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"><span class="deletion">-    if (KEY_STATUS.up) &#123;</span></span><br><span class="line"><span class="addition">+    if (KEY_STATUS.spacr) &#123;</span></span><br><span class="line">       var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">       this.acc.x = 0.5 * Math.cos(rad);</span><br><span class="line">       this.acc.y = 0.5 * Math.sin(rad);</span><br></pre></td></tr></table></figure>
 
@@ -1506,7 +1506,7 @@
 <li>一个使得主机能够查询分布式数据库的<strong>应用层协议</strong></li>
 </ul>
 <p>DNS 服务器通常是运行 <a href="https://www.isc.org/bind/">BIND</a>（Berkeley Internet Name Domain）软件的 UNIX 机器。DNS 协议运行在 UDP 之上，使用 <strong>53</strong> 号端口。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>除了进行主机名到 IP 地址的转换外，DNS 还提供了一些重要的服务：</p>
 <ul>
@@ -1581,7 +1581,7 @@
 <p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
 <p>针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
 <p>使用 <code>docker version</code> 可以查看 docker 版本号，使用 <code>docker info</code> 可以查看 docker 详细信息，直接输入 <code>docker</code> 可以查看 docker 相关命令。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><strong>镜像</strong>（image）文件可以用来生成容器实例，其类似于在虚拟机中安装操作系统时所使用的 ISO 镜像。</p>
 <p>镜像文件可以包含一个标签（tag），即版本号。</p>
 <p>你可以使用远程仓库中别人制作好的镜像文件，也可以自己制作镜像文件。要制作镜像文件就要编写 <strong>Dockerfile</strong> 文件，其类似于 Makefile 文件。</p>
@@ -1617,7 +1617,7 @@
 <p>常见的非对称加密算法有 <a href="/2018/10/18/rsa/" title="RSA">RSA</a>、DSA、ECDSA、Elgamal 等。</p>
 <p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
 <p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><p>哈希算法，又称为散列算法，就是把任意长度的输入变换成固定长度的输出，是一种不可逆的算法，也就是说不能通过密文（即哈希值）反算出明文，这是一种单向加密的算法。另外，多个不同的明文可能会得到同一个密文，因为值域是有限的，这种情况称为<strong>冲突</strong>。一个优秀的哈希算法会尽量的减少这种冲突性。</p>
 <p>常见的哈希算法有 MD5、SHA-1、SHA-256、CRC-32、CRC-64 等。</p>
 <hr>
@@ -1674,7 +1674,7 @@
     <content><![CDATA[<p>GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。</p>
 <p>使用 gcc 编译 C 语言源代码的一般格式如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p>Linux下 <code>gcc</code> 命令常用的参数及其含义如下所示：</p>
 <ul>
 <li><code>--help</code>：显示帮助信息</li>
@@ -1717,7 +1717,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置提交时使用的用户名和邮箱，必须配置</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启颜色显示</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置别名</span></span><br><span class="line">git config --global alias.lg1 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg2 <span class="string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#x27;&#x27;          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)&#x27; --all&quot;</span></span><br><span class="line">git config --global alias.lg <span class="string">&#x27;!&quot;git lg1&quot;&#x27;</span></span><br><span class="line">git config --global alias.adog <span class="string">&quot;log --all --decorate --oneline --graph&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置difftool为Meld（Windows）</span></span><br><span class="line">git config --global diff.tool meld</span><br><span class="line">git config --global difftool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global difftool.prompt <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置mergetool为Meld（Windows）</span></span><br><span class="line">git config --global merge.tool meld</span><br><span class="line">git config --global mergetool.meld.path <span class="string">&quot;C:\Program Files (x86)\Meld\Meld.exe&quot;</span></span><br><span class="line">git config --global mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 <p>另外，Git默认使用的编辑器是Vim，若要配置成自己喜欢的编辑器(如Emacs)，可使用命令：<code>git config --global core.editor emacs</code>。<br>最后，你可以使用<code>git config --list</code>来查看所有配置信息。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>要开始对某个项目进行版本控制，需要先在其所在路径下执行<code>git init</code>进行初始化，此命令会在当前路径下创建一个<code>.git</code>的隐藏文件夹，这就是Git仓库目录。<br>Git分为3个区域，Git仓库、工作目录、暂存区域：</p>
 <ul>
 <li><strong>Git仓库目录</strong>（Repository）是Git用来保存项目的元数据和对象数据库的地方。这是Git中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</li>
@@ -1775,7 +1775,7 @@
     <content><![CDATA[<p>本文翻译自 <a href="https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/">https://null-byte.wonderhowto.com/how-to/essential-skills-becoming-master-hacker-0154509/</a> ，正文如下：</p>
 <p>我的许多有抱负的黑客写信给我，都问同样的问题。“我需要什么技能才能成为一个好的黑客？”</p>
 <p>由于黑客是最熟练的信息技术学科之一，因此需要广泛的 IT 技术和技术知识。要真正成为一名优秀的黑客，必须掌握许多技能。如果你没有我在此列出的所有技能，请不要气馁，可以将此列表作为你在不久的将来学习和掌握所需内容的起点。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p><img src="https://img.wonderhowto.com/img/original/78/70/63533756748235/0/635337567482357870.jpg" alt="image"><br>这是我进入这个精英 IT 行业的万神殿所需技能的概述列表。我将这些技能分为三类，以帮助你从一个级别转到另一个级别，更容易掌握基本技能、中级技能和无形技能，并提供了指向 Null Byte 相关文章的链接，供你了解。</p>
 <h2 id="基本技能"><a href="#基本技能" class="headerlink" title="基本技能"></a>基本技能</h2><p>这些是每个黑客在尝试破解之前应该知道的基础知识。一旦掌握了本节中的所有内容，就可以进入中间层。</p>
 <h3 id="基本的计算机技能"><a href="#基本的计算机技能" class="headerlink" title="基本的计算机技能"></a>基本的计算机技能</h3><p>不用说，要成为一名黑客，你需要一些基本的计算机技能。这些技能超出了创建 Word 文档或浏览 Internet 的能力。你需要能够在 Windows 中使用命令行，编辑注册表以及设置网络参数。</p>
@@ -1883,7 +1883,7 @@
     <title>HackRF 初体验</title>
     <url>/2020/01/22/hackrf/</url>
     <content><![CDATA[<p><a href="https://greatscottgadgets.com/hackrf/">HackRF</a> 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其<a href="https://greatscottgadgets.com/wheretobuy/">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
@@ -1921,7 +1921,7 @@
 <p>全局安装：</p>
 <ul>
 <li>将安装包放在 <code>/usr/local</code> 下</li>
-<li>可以直接在命令行里使用<a id="more"></a>
+<li>可以直接在命令行里使用<span id="more"></span>
 
 </li>
 </ul>
@@ -2005,7 +2005,7 @@
 <li>第4行显示了<strong>内存</strong>概况</li>
 <li>第5行显示了<strong>Swap分区</strong>概况</li>
 <li>第6行为空行，用以显示运行命令时输入的<strong>参数</strong></li>
-<li>剩下部分则为<strong>每个进程的详细信息</strong><a id="more"></a>
+<li>剩下部分则为<strong>每个进程的详细信息</strong><span id="more"></span>
 <h3 id="第1行"><a href="#第1行" class="headerlink" title="第1行"></a>第1行</h3></li>
 </ul>
 <table>
@@ -2258,7 +2258,7 @@
 <h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>在详细解释 HTTP 之前，应当回顾某些 Web 术语。</p>
 <p><strong>Web 页面</strong>（Web page）（也叫文档）是由对象组成的。一个<strong>对象</strong>（object）只是一个文件，诸如一个 HTML 文件、一个 JPEG 图形、一个 Java 小程序或一个视频片段这样的文件，且它们可通过一个 URL 地址寻址。多数 Web 页面含有一个 <strong>HTML 基本文件</strong>（base HTML file）以及几个引用对象。HTML 基本文件通过对象的 URL 地址引用页面中的其他对象。每个 URL 地址由两部分组成：存放对象的服务器主机名和对象的路径名。</p>
 <p>因为 <strong>Web 浏览器</strong>（Web browser）（例如 Chrome 和 Firefox）实现了 HTTP 的客户端，所以在 Web 环境中我们经常交替使用“浏览器”和“客户”这两个术语。<strong>Web 服务器</strong>（Web server）实现了 HTTP 的服务器端，它用于存储 Web 对象，每个对象由 URL 寻址。流行的 Web 服务器有 Apache 和 Nginx。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><p>HTTP 规范包含了对 HTTP 报文格式的定义。HTTP 报文有两种：请求报文和响应报文。</p>
 <h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><p>一个典型的示例如下：</p>
@@ -2375,7 +2375,7 @@
     <url>/2018/08/20/hyper-v-problem/</url>
     <content><![CDATA[<h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。</p>
 <p>对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 <code>/etc/default/grub</code> 文件，更改其中 <code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>（注意是 <code>x</code> 不是 <code>*</code>），接着执行 <code>update-grub</code> 并重启即可。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="显卡问题"><a href="#显卡问题" class="headerlink" title="显卡问题"></a>显卡问题</h2><p>开启 Hyper-V 功能后，原主机的显卡可能会出现问题，对于我当时的 1803 版 Win10 来说，电脑中原来的 <strong>Intel(R) HD Graphics 4600</strong> 核芯显卡（针对我的电脑而言）不能正常工作，具体表现在工具栏中<strong>英特尔核芯显卡</strong>控制面板图标消失，以及系统设置中莫名出现多个显示器，最直观的感受是每当点亮屏幕，图像显示会变慢，并且有一个逐渐适配屏幕大小的过程。</p>
 <p>究其原因是系统中原本的 4624 版驱动程序与 Hyper-V 不兼容，解决办法是去<a href="https://downloadcenter.intel.com/zh-cn">官网</a>下载最新版驱动程序并升级即可。</p>
@@ -2399,7 +2399,7 @@
     <url>/2021/03/06/icmp/</url>
     <content><![CDATA[<p><strong>ICMP</strong>（Internet Control Message Protocol，因特网控制报文协议）被主机和路由器用来彼此沟通网络层的信息。ICMP 最典型的用途是差错报告。</p>
 <p>ICMP 报文有一个类型字段和一个编码字段，并且包含引起该 ICMP 首次生成的 IP 数据报的首部和前 8 个字节（以便发送方能确定引发该差错的数据报）。下表是相关的 ICMP 报文类型：</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <table>
 <thead>
@@ -2532,7 +2532,7 @@
     <url>/2018/05/11/ip/</url>
     <content><![CDATA[<p>IP（Internet Protocol，网际协议）</p>
 <h2 id="数据报格式"><a href="#数据报格式" class="headerlink" title="数据报格式"></a>数据报格式</h2><p><img src="/images/ip.PNG" alt="ip datagram"></p>
-<a id="more"></a>
+<span id="more"></span>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2558,7 +2558,7 @@
     <content><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
 <h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.12.0。</p>
 <p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出 IPython 相比原生 Python Shell 的一些优势：</p>
 <ul>
 <li>Tab 自动补全</li>
@@ -2589,7 +2589,7 @@
     <title>盘点那些互联网公司的学生优惠</title>
     <url>/2018/09/26/it-student-discount/</url>
     <content><![CDATA[<h2 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h2><p>JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— <a href="https://www.jetbrains.com/idea/">Intellij IDEA</a>，Python的IDE —— <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>，JavaScript的IDE —— <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>，C/C++的IDE —— <a href="https://www.jetbrains.com/clion/">CLion</a>等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。<br>JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供<a href="https://www.jetbrains.com/zh/student/">免费授权计划</a>，学生只要验证学生身份即可免费使用JetBrains的所有IDE。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Microsoft-Imagine"><a href="#Microsoft-Imagine" class="headerlink" title="Microsoft Imagine"></a><a href="https://imagine.microsoft.com/zh-CN">Microsoft Imagine</a></h2><p>Microsoft Imagine原名为DreamSpark，是微软为学生提供的一个资源集合，它包括了一些<a href="https://imagine.microsoft.com/zh-cn/catalog">软件和服务</a>，学生只要验证学生身份即可使用其中的工具。<br>个人认为，Imagine相比之前的DreamSpark，为学生提供的免费资源少了许多。具体而言，它提供如下资源：</p>
 <ul>
 <li>Parallels Desktop for Mac Pro Edition：macOS上最好的虚拟机产品，提供免费试用3个月</li>
@@ -2749,7 +2749,7 @@
 
 </li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1"><a href="#error-command-39-x86-64-linux-gnu-g-39-failed-with-exit-status-1" class="headerlink" title="error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1"></a>error: command &#39;x86_64-linux-gnu-g++&#39; failed with exit status 1</h2><p><strong>解决方法：</strong></p>
 <p>使用如下命令安装相关依赖</p>
@@ -2792,7 +2792,7 @@
     <title>使用Let&#39;s Encrypt获取免费SSL证书</title>
     <url>/2018/09/16/let-s-encrypt/</url>
     <content><![CDATA[<p><a href="https://letsencrypt.org/zh-cn/">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载certbot-auto脚本</span></span><br><span class="line">wget https://dl.eff.org/certbot-auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置相关权限</span></span><br><span class="line">chmod a+x certbot-auto</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>请注意，获取或更新SSL证书之前需关闭相应的Web服务器，具体而言，需要执行<code>service nginx stop</code>。另外，第一次执行<code>certbot-auto</code>命令时，它会下载并安装相关环境，耐心等待即可。<br>Certbot提供了一个Nginx插件，直接使用<code>./certbot-auto --nginx</code>即可完成所有配置。<br>如果你想手动配置，可执行<code>./certbot-auto certonly --standalone</code>命令，此命令运行过程中会要求用户输入要获取SSl证书的域名，按要求输入即可，命令运行成功后会显示证书相关文件所在的目录。<br>接下来只需在Nginx的配置文件<code>nginx.conf</code>中进行如下配置即可(以howiezhao.com域名为例)：</p>
@@ -2831,7 +2831,7 @@
 
 <p><code>yum</code> 全称 Yellow dog Updater, Modified（修改后的黄色狗更新器），是 Red Hat 系中的包管理工具，常用命令有：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum update     <span class="comment"># 更新包列表</span></span><br><span class="line">yum upgrade    <span class="comment"># 更新包</span></span><br><span class="line">yum install a  <span class="comment"># 安装a</span></span><br><span class="line">yum remove a   <span class="comment"># 卸载a</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="dpkg-与-apt-get"><a href="#dpkg-与-apt-get" class="headerlink" title="dpkg 与 apt-get"></a>dpkg 与 apt-get</h2><p><code>dpkg</code> 全称 Debian Packager（Debian 包工具），是 Debian 系中的包格式，同时也是其<strong>本地</strong>包管理工具，常用命令有：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment"># 安装a</span></span><br><span class="line">dpkg -r a       <span class="comment"># 卸载a</span></span><br></pre></td></tr></table></figure>
 
@@ -2860,7 +2860,7 @@
 <p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p>
 <p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p>
 <p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>设置用户锁定：<br>在CentOS7中，编辑/etc/pam.d/system-auth文件，添加<code>auth required pam_tally2.so onerr=fail deny=6 unlock_time=300</code>此行，表示当密码连续输错6次后锁定，锁定时间300秒。<br>限制能su到root的用户：<br>编辑/etc/pam.d/su文件，添加<code>auth required pam_wheel.so group=test</code>此行，表示只允许test组用户su到root。</p>
 <h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><p>服务越少，系统越安全。</p>
 <p>关闭不必要的服务：<br>在CentOS中，使用命令<code>chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset</code>设置服务在指定init级别下开机是否启动。</p>
@@ -2884,7 +2884,7 @@
 
 <p>具体而言，冒号前面为<strong>target</strong>，即要生成的文件；冒号后面为<strong>dependencies</strong>，即被依赖的文件；每一个<strong>target:dependencies对</strong>的下一行为要执行的<strong>命令</strong>（注意要以Tab键起首）。当make不带参数时，默认执行第一个target。target也可以是要求make要完成的动作，执行这种target后并不能得到和target同名的文件，因此，也称做<strong>phony target</strong>（即伪target），如第7行所示。dependencies也可以为空，如常用的target为<code>clean</code>时，就没有依赖，只有命令，一般用于清理工作。</p>
 <p>当输入<code>make</code>或<code>make editor</code>，即可开始构建。若<code>editor</code>这个target文件不存在，或者<code>main.o</code>、<code>text.o</code>这两个依赖文件被修改，都会导致make调用其下的命令<code>gcc -o editor main.o text.o</code>；接下来，由于引用到<code>main.o</code>和<code>text.o</code>，make会检查<code>main.o</code>的依赖<code>main.c</code>、<code>def.h</code>有无更新，如果有，则执行其下的命令<code>gcc -c main.c</code>；同理，也适用于<code>text.o</code>。当输入<code>make install</code>，make会检查install的依赖<code>editor</code>是否是最新，如果是，则执行其下的命令<code>mv editor /usr/local</code>。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Makefile中以<code>#</code>开头的均为注释。</p>
 <h2 id="回声"><a href="#回声" class="headerlink" title="回声"></a>回声</h2><p>正常情况下，make会打印每条命令，然后再执行，这就叫做<strong>回声</strong>。在命令的前面加上<code>@</code>，就可以关闭回声。由于在构建过程中，需要了解当前在执行哪条命令，所以通常只在注释和纯显示的echo命令前面加上<code>@</code>。</p>
 <h2 id="内置目标名"><a href="#内置目标名" class="headerlink" title="内置目标名"></a>内置目标名</h2><p><strong>内置目标名</strong>指示了如果某些名称作为target（目标名）出现，则具有特殊含义，常用的如下所示：</p>
@@ -2950,7 +2950,7 @@
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"><span class="bullet">  -</span> 这是是嵌套列表项</span><br><span class="line"><span class="bullet">  -</span> 这里也是嵌套列表项</span><br><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 有序列表项</span><br><span class="line"><span class="bullet">2.</span> 有序列表项</span><br><span class="line"><span class="bullet">3.</span> 有序列表项</span><br></pre></td></tr></table></figure>
 
 <p>无序列表项常以 <code>-</code> 或 <code>*</code> 起始，个人习惯使用 <code>-</code>。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">Howie&#x27;s Blog</span>](<span class="link">https://howiezhao.com</span>)</span><br></pre></td></tr></table></figure>
 
 <p>超文本链接必须带 http/https。</p>
@@ -3061,7 +3061,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure>
 
 <p>执行之后，开启飞行模式，接着关闭飞行模式即可。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="搜索不到-WiFi"><a href="#搜索不到-WiFi" class="headerlink" title="搜索不到 WiFi"></a>搜索不到 WiFi</h2><p>因为美国 2.4GHz 频段的 WiFi 信道为 1-11，而中国 2.4GHz 频段的 WiFi 信道为 1-13，所以当 2.4GHz 频段的 WiFi 信道位于 12 或 13 时，美版的 Nexus/Pixel 会搜索不到 WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为 11 以内任意信道即可。</p>
 <h2 id="4G-信号问题"><a href="#4G-信号问题" class="headerlink" title="4G 信号问题"></a>4G 信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以 Nexus/Pixel 可以完美支持联通 2G/3G/4G。</p>
 <p>移动的 3G 网络制式采用的是自主研发的技术，所以 Nexus/Pixel 并不支持移动 3G，然而移动 4G 网络制式采用的是自主研发和国际通用并行的方式，所以 Nexus/Pixel 只支持部分移动 4G 频段。</p>
@@ -3098,7 +3098,7 @@
     <title>开源协议漫谈</title>
     <url>/2018/11/02/open-sourse-license/</url>
     <content><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p>
 <h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p>
 <h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p>
@@ -3118,7 +3118,7 @@
     <content><![CDATA[<p>P2P 是一种<strong>体系结构</strong>，就好像 C/S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为<strong>对等方</strong>）彼此直接通信。</p>
 <p>基于 P2P 这种体系结构产生了许多应用，譬如<strong>文件分发应用</strong>和<strong>分布式散列表</strong>（DHT），而文件分发应用中一个典型的例子就是 BitTorrent 协议。</p>
 <p>如果要类比 P2P 与 BitTorrent 之间的关系，就好像 C/S 体系结构与 FTP 协议之间的关系。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="P2P-与-C-S"><a href="#P2P-与-C-S" class="headerlink" title="P2P 与 C/S"></a>P2P 与 C/S</h2><p>以文件分发应用为例，在 C/S 文件分发中，该服务器必须向每个对等方发送该文件的一个副本，即服务器承受了极大的负担，并且消耗了大量的服务器带宽。在 P2P 文件分发中，每个对等方能够向任何其他对等方重新分发它已经收到的该文件的任何部分，从而在分发过程中协助该服务器。</p>
 <p>对于 C/S 体系结构，随着对等方数量的增加，分发时间呈线性增长并且没有界。然而，对于 P2P 体系结构，最小分发时间不仅总是小于 C/S 体系结构的分发时间，并且对于任意的对等方数量，总是小于一对一的 C/S 体系结构的分发时间。因此，具有 P2P 体系结构的应用程序能够是自扩展的。这种扩展性的直接成因是：<strong>对等方除了是比特的消费者外还是它们的重新分发者</strong>。</p>
@@ -3181,7 +3181,7 @@
 <p>Exp，全称“Exploit”，中文“利用”，指利用系统漏洞进行攻击的动作。</p>
 <p>Payload，中文“有效载荷”，指成功 exploit 之后，真正在目标系统执行的代码或指令。</p>
 <p>Shellcode，简单翻译“shell 代码”，是 Payload 的一种，由于其建立正向/反向 shell 而得名。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="几点注意"><a href="#几点注意" class="headerlink" title="几点注意"></a>几点注意</h2><p>PoC 是用来证明漏洞存在的，Exp 是用来利用漏洞的，两者通常不是一类，或者说，PoC 通常是无害的，Exp 通常是有害的，有了 PoC，才有 Exp。</p>
 <p>Payload 有很多种，它可以是 Shellcode，也可以直接是一段系统命令。同一个 Payload 可以用于多个漏洞，但每个漏洞都有其自己的 Exp，也就是说不存在通用的 Exp。</p>
@@ -3220,7 +3220,7 @@
 <li>SMTP</li>
 </ul>
 <p>一个典型的邮件发送过程是：从发送方的用户代理开始，传输到发送方的邮件服务器（通过 SMTP 或 HTTP），再传输到接收方的邮件服务器（通过 SMTP），然后在这里被分发到接收方的邮箱中。如果发送方的邮件服务器不能将邮件交付给接收方的邮件服务器，发送方的邮件服务器在一个<strong>报文队列</strong>（message queue）中保持该报文并在以后尝试再次发送。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h2><p><strong>SMTP</strong>（Simple Mail Transfer Protocol，简单邮件传输协议）是因特网电子邮件中主要的应用层协议。它使用 TCP 可靠数据传输服务，从发送方的邮件服务器向接收方的邮件服务器发送邮件。每台邮件服务器既运行 SMTP 的客户端也运行 SMTP 的服务器端。</p>
 <p>SMTP 一般不使用中间邮件服务器发送邮件。</p>
@@ -3279,7 +3279,7 @@
     <title>Proxmark 入坑指南</title>
     <url>/2019/12/01/proxmark/</url>
     <content><![CDATA[<p>Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 <a href="http://www.proxmark.org/">proxmark.org</a>，其他的如 <a href="https://proxmark.com/">proxmark.com</a>、<a href="https://www.proxmark3.com/">proxmark3.com</a> 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><ul>
 <li>Proxmark 3：这是 Proxmark 3 的原始版本，现已过时，不建议购买，产品图如下：</li>
@@ -3315,7 +3315,7 @@
     <title>代理链工具：proxychains</title>
     <url>/2018/10/18/proxychains/</url>
     <content><![CDATA[<p><a href="https://github.com/haad/proxychains">proxychains</a> ，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="安装及使用"><a href="#安装及使用" class="headerlink" title="安装及使用"></a>安装及使用</h2><p>在 Ubuntu 下可以使用 <code>sudo apt install proxychains</code> 直接安装，安装完成后会在 <code>/etc</code> 文件夹下生成 <code>proxychains.conf</code> 配置文件，在这个配置文件中可以配置代理链的工作模式和代理地址等。</p>
 <p>proxychains 提供了 3 种代理模式，分别是<strong>动态链</strong>（dynamic_chain）、<strong>严格链</strong>（strict_chain）、<strong>随机链</strong>（random_chain），建议选择动态链。此外，proxychains 默认设置的代理地址为 Tor 的地址，但其实最新版的 Tor 已经更改端口为 9150，用户可以根据自己的需求按照示例格式配置地址。</p>
 <p>配置完成后，要使用 proxychains，只需在相应命令前加上 <code>proxychains</code> 即可，例如 <code>proxychains nmap -sS 192.168.1.1</code>，即可强制 nmap 使用 proxychains 中设置的代理进行扫描。</p>
@@ -3339,7 +3339,7 @@
 
 <p>值得注意的是，QEMU的启动需要有图形界面，若未安装图形界面，则会报错：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not initialize SDL(No available video device) - exiting</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>使用QEMU运行一个虚拟机的命令格式为<code>qemu [options] [disk_image]</code>，其中disk_image即硬盘镜像文件。其常用的参数如下：</p>
 <ul>
 <li><code>-hda file</code>：使用file作为硬盘0的镜像文件。</li>
@@ -3391,7 +3391,7 @@
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">这是二级标题</span><br><span class="line">------------</span><br><span class="line"></span><br><span class="line">这是三级标题</span><br><span class="line">************</span><br></pre></td></tr></table></figure>
 
 <p>reST 使用这种不同的下标表示标题的大小，你可以按照自己的喜好使用不同的下标表示不同的标题，总之，一片文档中从上往下依次出现的第一种下标就表示一级标题，第二种不同于之前出现过的下标就表示二级标题，依次类推，个人喜欢用上面这种形式。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>和 Markdown 一样：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line">- 无序列表项</span><br><span class="line"></span><br><span class="line">1. 有序列表项</span><br><span class="line">2. 有序列表项</span><br><span class="line">3. 有序列表项</span><br></pre></td></tr></table></figure>
 
@@ -3440,7 +3440,7 @@
     <title>RSA加密算法</title>
     <url>/2018/10/18/rsa/</url>
     <content><![CDATA[<p>RSA加密算法中的3个字母分别是由此算法的3位发明者：Ron Rivest，Adi Shamir，Leonard Adleman的姓氏首字母组成的，RSA加密算法可以说是<strong>现代密码学</strong>中<strong>非对称加密</strong>的一个典型，所谓非对称加密其实就是<strong>公钥用于加密，私钥用于解密</strong>而已。在介绍RSA之前，先要理解一个基本常识，就是几乎所有的现代密码学算法背后都是基于<strong>因数分解难题</strong>发明的，所谓因数分解难题就是指目前没有一个<strong>快速</strong>的计算机算法可以对极大整数做因数分解。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA加密算法通过如下步骤生成公钥和私钥：</p>
 <ol>
 <li>随机选择2个不相等的质数p和q，计算p和q的乘积n<br>取p=61，q=53，则n=3233</li>
@@ -3465,7 +3465,7 @@
 <h3 id="Scheme-五法之第三法-——-cons-之法则"><a href="#Scheme-五法之第三法-——-cons-之法则" class="headerlink" title="Scheme 五法之第三法 —— cons 之法则"></a>Scheme 五法之第三法 —— cons 之法则</h3><p>基本元件 <em>cons</em> 需要两个参数。第二个参数必须是一个列表。结果是一个列表。</p>
 <h3 id="Scheme-五法之第四法-——-Null-之法则"><a href="#Scheme-五法之第四法-——-Null-之法则" class="headerlink" title="Scheme 五法之第四法 —— Null? 之法则"></a>Scheme 五法之第四法 —— Null? 之法则</h3><p>基本元件 <em>null?</em> 仅定义为针对列表。</p>
 <h3 id="Scheme-五法之第五法-——-eq-之法则"><a href="#Scheme-五法之第五法-——-eq-之法则" class="headerlink" title="Scheme 五法之第五法 —— eq? 之法则"></a>Scheme 五法之第五法 —— eq? 之法则</h3><p>基本元件 <em>eq?</em> 需要两个参数。每个参数都必须是一个非数字的原子。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Scheme十诫"><a href="#Scheme十诫" class="headerlink" title="Scheme十诫"></a>Scheme十诫</h2><h3 id="第一诫"><a href="#第一诫" class="headerlink" title="第一诫"></a>第一诫</h3><p>当对一个原子列表 <em>lat</em> 进行递归调用时，询问两个有关 <em>lat</em> 的问题：*(null? lat)* 和 <strong>else</strong>。</p>
 <p>当对一个数字 <em>n</em> 进行递归调用时，询问两个有关 <em>n</em> 的问题：*(zero? n)* 和 <strong>else</strong>。</p>
 <p>当对一个S-表达式列表 <em>l</em> 进行递归调用时，询问三个有关 <em>l</em> 的问题：*(null? lat)<em>、</em>(atom? (car l))* 和 <strong>else</strong>。</p>
@@ -3518,7 +3518,7 @@
 <li>HTTP_PROXY：用以指定终端的 HTTP 代理信息，与下一个变量要同时设置</li>
 <li>HTTPS_PROXY：用以指定终端的 HTTPS 代理信息</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><code>set</code> 命令用来显示或设置 <strong>Shell 环境变量</strong>，当不带参数运行时默认显示所有已定义的 Shell 环境变量，若要设置环境变量可采用：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> A=hello</span><br></pre></td></tr></table></figure>
@@ -3546,7 +3546,7 @@
     <url>/2018/09/18/so-you-want-to-work-in-security/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p>
 <p>每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。<br><img src="https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif" alt="不像电影"></p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="警告：这不像电影"><a href="#警告：这不像电影" class="headerlink" title="警告：这不像电影"></a>警告：这不像电影</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p>
 <h2 id="没有标准或完美的课程"><a href="#没有标准或完美的课程" class="headerlink" title="没有标准或完美的课程"></a>没有标准或完美的课程</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
@@ -3581,7 +3581,7 @@
     <url>/2018/09/18/software-used-in-mr-robot/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
 <p><img src="https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg" alt="首页图片"><br>本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。<br><strong>下面的列表包含到了第二季第11集！</strong></p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="Kali-Linux"><a href="#Kali-Linux" class="headerlink" title="Kali Linux"></a><a href="https://www.kali.org/">Kali Linux</a></h2><p>Kali Linux是针对安全研究人员进行渗透测试的Linux发行版，但同时也被黑客使用，因为它集成了很多黑客工具。由于它是黑客的首选操作系统，所以它在《黑客军团》中经常有过出现。</p>
 <h2 id="Wickr"><a href="#Wickr" class="headerlink" title="Wickr"></a><a href="https://wickr.com/">Wickr</a></h2><p>Wickr是一个端到端的加密聊天应用程序，具有诸如消息可调到期时间等功能。在第二季中，fsociety组织使用它来保密通信。</p>
@@ -3642,7 +3642,7 @@
     <title>使用 Sphinx 生成项目文档</title>
     <url>/2020/01/22/sphinx-document/</url>
     <content><![CDATA[<p><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="/2018/09/17/restructuredtext/" title="reStructuredText">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>使用 <code>pip install sphinx</code> 即可安装 Sphinx。</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>按照最佳实践，项目文档一般是在项目的 <code>docs</code> 目录中，所以不妨先创建一个 <code>docs</code> 目录并进入，之后的一切有关 sphinx 的命令都在此目录中运行。</p>
@@ -3684,7 +3684,7 @@
 <li>远程主机收到用户的登录请求，把自己的公钥发给用户</li>
 <li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li>
 <li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li>
-<li>后续过程中，用户发送的信息都采用此方式进行加密发送<a id="more"></a>
+<li>后续过程中，用户发送的信息都采用此方式进行加密发送<span id="more"></span>
 因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;host (12.18.429.21)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
@@ -3723,7 +3723,7 @@
 <h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp">谷歌搜图</a>，或许可以发现更多信息。</p>
 <h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式（Exchangeable image file format），可以记录 JPEG 格式图片的属性信息和拍摄数据。有的 JPEG 格式图片会具有 Exif 信息，在 Windows 中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备 Exif 信息。如下图片：</p>
 <p><img src="/images/meinv.jpg" alt="exif"></p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到 <a href="http://www.petitcolas.net/steganography/mp3stego/">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。</p>
 <p>下载该软件后在其 <code>MP3Stego</code> 文件夹下会有 2 个命令：<code>Encode</code> 和 <code>Decode</code>，<code>Encode</code> 命令用于隐写信息，<code>Decode</code> 命令用于解密被隐写的信息，使用 <code>decode -X -P pass svega_stego.mp3</code> 即可从 <code>svega_stego.mp3</code> 文件中解码所需信息，<code>-P</code> 指定解密密码。</p>
@@ -3744,7 +3744,7 @@
     <url>/2019/01/08/talk-about-credit-card/</url>
     <content><![CDATA[<h2 id="年费"><a href="#年费" class="headerlink" title="年费"></a>年费</h2><p>所谓<strong>年费</strong>，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即<strong>刷够指定额度</strong>或<strong>刷够指定笔数</strong>，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“<strong>终身免年费</strong>”的，这里的终身一般指信用卡的<strong>有效期</strong>内。</p>
 <h2 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h2><p>为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的<strong>VALID THRU</strong>字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="等级"><a href="#等级" class="headerlink" title="等级"></a>等级</h2><p>信用卡的等级从低到高一般分为<strong>普卡</strong>、<strong>金卡</strong>（Gold）、<strong>白金卡</strong>（Platinum）等，等级越高，优惠越多，额度越大，但相应的，年费也会越高。</p>
 <h2 id="溢缴款"><a href="#溢缴款" class="headerlink" title="溢缴款"></a>溢缴款</h2><p>信用卡不同于借记卡（或储蓄卡），信用卡的主要目的是用于消费，而不是存款，因此，存在信用卡里面的钱是没有利息的，这笔钱被叫做<strong>溢缴款</strong>，溢缴款取现是要收取手续费的。但在消费时，会优先扣除溢缴款，随后扣除额度。</p>
 <h2 id="银行卡组织"><a href="#银行卡组织" class="headerlink" title="银行卡组织"></a>银行卡组织</h2><p>不同银行之间要实现互相转账就要靠<strong>银行卡组织</strong>的协调，在中国使用最多的卡组织是<strong>银联</strong>（UnionPay），在美国使用最多的卡组织是<strong>Visa</strong>，在欧洲使用最多的卡组织是<strong>MasterCard</strong>（万事达），在日本使用最多的卡组织是<strong>JCB</strong>。当你准备在海外购物时，就十分有必要办一张支持海外卡组织的信用卡，比如Visa信用卡。</p>
@@ -3761,7 +3761,7 @@
     <content><![CDATA[<p>Office是最常使用的<strong>办公套件</strong>，一般来说，提到Office，最先想到的是微软的Office，即<strong>MS Office</strong>，除此之外，还有<strong>WPS Office</strong>，这是由金山推出的。</p>
 <p>Office原生支持Windows桌面版，这也是目前功能最全且<strong>收费</strong>的Office版本，时至今日，Office也可以用于UWP、Android、iOS、macOS以及Web等。一般来说，我们说的Office是指Windows桌面版的Office套件。</p>
 <p>在本文写作之际，最新的Office版本为<strong>Office 2019</strong>，但据个人观察，<strong>Office 2010</strong>仍然被大多数人所使用。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>Office套件一般包括以下软件：</p>
 <ul>
 <li><strong>Word</strong>：文档编辑工具</li>
@@ -3801,7 +3801,7 @@
     <title>说说 VPS</title>
     <url>/2019/01/08/talk-about-vps/</url>
     <content><![CDATA[<p><strong>VPS</strong>（Virtual Private Server）即<strong>虚拟专用服务器</strong>，它不等同于<strong>独立服务器</strong>，独立服务器是指货真价实的物理机器，而 VPS 则是在独立服务器上虚拟化的多个虚拟机器。与此类似的，<strong>虚拟空间</strong>（或虚拟主机）则是指 VPS 上某个特定的应用环境，它没有访问系统底层的权限。显然，独立服务器偏贵，虚拟空间限制又多，而 VPS 这一中间选择成为了广大爱好者的首选。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="虚拟化技术"><a href="#虚拟化技术" class="headerlink" title="虚拟化技术"></a>虚拟化技术</h2><p>VPS 所使用的虚拟化技术主要有 <strong>KVM</strong> 和 <strong>OpenVZ</strong> （简称 OVZ），以下是两者的优缺点对比：</p>
 <p>KVM：</p>
 <ul>
@@ -3861,7 +3861,7 @@
 <li>生成原则：避免手工hack，尽量编写程序去生成程序</li>
 <li>优化原则：雕琢前先要有原型，跑之前先学会走</li>
 <li>多样原则：决不相信所谓“不二法门”的断言</li>
-<li>扩展原则：设计着眼未来，未来总比预想来得快<a id="more"></a>
+<li>扩展原则：设计着眼未来，未来总比预想来得快<span id="more"></span>
 所有的Unix哲学浓缩为一条铁律就是<strong>KISS</strong>原则，即Keep It Simple, Stupid！</li>
 </ol>
 ]]></content>
@@ -3889,7 +3889,7 @@
     <content><![CDATA[<p><strong>terminal</strong>，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a href="https://conemu.github.io/">ConEmu</a>、<a href="https://cmder.net/">Cmder</a> 等。</p>
 <p><strong>shell</strong>，有时也被翻译为外壳或壳层，通常指操作系统中位于用户与内核之间的一层，主要用于和用户交互，因此，shell 分为两类：命令行界面（CLI）和图形用户界面（GUI）。现在所指的 shell 通常指命令行 shell，Linux 中常见的命令行 shell 有 <a href="https://www.gnu.org/software/bash/">Bash</a>、<a href="https://www.zsh.org/">Zsh</a> 等。</p>
 <p>通俗点说，terminal 属于外层，shell 属于内层，terminal 包裹着 shell，输入进 terminal 的命令要由 shell 去解释执行。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>和 terminal 很像的一个东西叫 <strong>console</strong>，常被翻译为<strong>控制台</strong>，它也是一个黑色的窗口，用来输入命令，但与 terminal 不同的是，console 与物理相关，且具有<strong>唯一性</strong>。举例来说，没有图形界面的 Linux 开机后，显示在屏幕上的就是 console，它是与这台电脑相关的，且只有一个；而有图形界面的 Linux 开机后，打开的黑色窗口就是 terminal，你可以打开多个。</p>
 <p>在 Windows 中，这一切有点混乱，具体就表现在：那个黑色的窗口应该叫<strong>命令提示符</strong>还是<strong>控制台窗口</strong>？就如下图所示：</p>
@@ -3941,7 +3941,7 @@
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Session（会话）"><a href="#Session（会话）" class="headerlink" title="Session（会话）"></a>Session（会话）</h3><p>当输入<code>tmux</code>后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。</p>
 <h3 id="Window（窗口）"><a href="#Window（窗口）" class="headerlink" title="Window（窗口）"></a>Window（窗口）</h3><p>Window是显示给你的一整片窗口，你可以创建多个Window，在一个Window里面你又可以创建多个Pane，以此来执行多个任务。</p>
 <h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格/面板）"></a>Pane（窗格/面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>一个常见的tmux运行效果可能如下图所示：<br><img src="/images/tmux.jpg" alt="tmux"><br>其中，Window被分成了3个Pane，每个Pane之间通过<strong>Pane Border</strong>（面板分隔符）加以区分。Window底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了Session的名称，窗口列表则显示了当前Window的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><code>tmux</code>命令拥有众多参数，如下所示：</p>
 <ul>
@@ -4011,7 +4011,7 @@
 <li>4级——高度自动化(No Human Interference)：车辆控制驾驶体验的所有面面，并且不期望驾驶员的介入，车辆可能根本没有方向盘或任何驾驶员控制装置，但是车辆可能被限制在某些区域，通常这被称为“地理围栏”，车辆可以在特定的地理围栏内完全自主的运行，但是在地理围栏之外，车辆不能自主操作，或者根本无法操作。</li>
 <li>5级——完全自动化(Full Automation)：车辆可以在人类可以驾驶的任何地方完全自主地运行，在所有情况下应与人类驾驶员的水平一样高或比其更高。</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 <p>无人驾驶车的5个核心部件：</p>
 <ul>
 <li>计算机视觉(Computer Vision)：通过摄像头图像弄清楚我们周围的世界是怎样的。</li>
@@ -4054,7 +4054,7 @@
 <li>分组首部开销小。每个 TCP 报文段都有 20 字节的首部开销，而 UDP 仅有 8 字节的开销。</li>
 </ul>
 <p>使用 UDP 的应用是可能实现可靠数据传输的，这可通过在应用程序自身中建立可靠性机制来完成。<br>可参考 <a href="https://github.com/skywind3000/kcp">KCP</a>、<a href="https://www.chromium.org/quic">QUIC</a>。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="UDP-报文段结构"><a href="#UDP-报文段结构" class="headerlink" title="UDP 报文段结构"></a>UDP 报文段结构</h2><p>UDP 报文段结构如图所示：</p>
 <p><img src="/images/udp-segment-structure.jpg" alt="UDP 报文段结构"></p>
@@ -4129,7 +4129,7 @@
     <url>/2018/09/18/vim/</url>
     <content><![CDATA[<p>在几乎所有的Linux发行版中，都会自带vi文本编辑器，而<a href="https://www.vim.org/">Vim</a>（Vi IMproved）则是vi的一个增强版，大多数Linux中也都预装了Vim，若没有安装，可使用相应的包管理工具进行安装，具体而言，在Ubuntu中，使用<code>sudo apt install vim</code>即可安装。输入<code>vim --version</code>可以查看所使用的Vim版本，当前最新版本为Vim 8.x。值得注意的是，在有的系统中，<code>vi</code>命令实际是指向<code>vim</code>命令的一个链接，使用<code>which vi</code>即可证实。</p>
 <p>在2015年，开源组织发布了<a href="https://neovim.io/">Neovim</a>项目，它是Vim的重构版本，需自行安装。另外，GVim是Vim的一个图形客户端。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h2><p>Vim有许多模式，但常用的其实是普通模式、插入模式、命令行模式这三种。</p>
 <h3 id="普通模式（Normal）"><a href="#普通模式（Normal）" class="headerlink" title="普通模式（Normal）"></a>普通模式（Normal）</h3><p>Vim启动后默认为普通模式，此时Vim编辑器左下角将依次显示文件名、行数、字符数，右下角将依次显示当前光标所在的行与列、当前屏幕显示的字数占文件总字数的百分比。在普通模式下可以使用相当多的快捷键来完成相应的操作，常用的命令如下：</p>
 <ul>
@@ -4269,7 +4269,7 @@
     <url>/2019/02/25/whitehat-vps/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/">https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/</a> ，正文如下：</p>
 <p>从受信任的 VPS 进行网络钓鱼活动和托管 Metasploit 会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的 VPS 非常有限，因为大多数提供商对任何类型的黑客都有零容忍政策，无论好坏。在研究了数十种产品之后，我们选出了 5 个理想的产品，非常适合 Null Byte 读者。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>首先要理解的事情是......什么是 VPS？嗯，它代表虚拟专用服务器，是许多用户认为的专用或私有服务器的虚拟化形式，即使它安装在同时运行多个操作系统的物理计算机上。VPS 最常用于在线托管网站。</p>
 <p>当我们从提供商处购买 VPS 时，我们实际上是在一个有着许多虚拟服务器的功能强大的高性能物理机器上“租用”一个分区。每个 VPS 都连接到互联网，使个人客户能够使用不同的操作系统，并提供对操作系统的完全 root 访问权限。每个客户（或服务器管理员）独立于共享 VPS 公司提供的物理计算机上的其他客户运营。</p>
 <ul>
@@ -4385,7 +4385,7 @@
 <li>设置用户帐户控制（UAC）为合适级别</li>
 <li>保持 Windows 更新</li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="帐户安全"><a href="#帐户安全" class="headerlink" title="帐户安全"></a>帐户安全</h2><p>此方面的加固主要是为了防止针对帐户的暴力破解，帐户是黑客入侵系统的突破口，帐户越多，危险系数越高。</p>
 <p>停用 Guest 帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中禁用 Guest 帐户，并为 Guest 帐户设置复杂密码，并拒绝远程访问。</p>
 <p>重命名或禁用 Administrator 帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中为 Administrator 帐户重命名，或直接禁用。</p>
@@ -4417,7 +4417,7 @@
     <title>编写规范的 README 文档</title>
     <url>/2018/11/02/write-standard-readme/</url>
     <content><![CDATA[<p>代码不仅是写给计算机的，也是写给人的，一篇文档的好坏直接影响着使用此代码的人的心情，针对小的项目，一般使用 <strong>README</strong> 文件来做整体描述，README 这个名字也极好的反映了此文件的目的，即“<strong>读我</strong>”。有趣的是，README 这 6 个字母通常都是大写的，这是因为<strong>在 Linux 中大写的文件名往往意味着醒目和值得注意</strong>。实际上，并没有任何人规定 README 文档应该写成什么样子，但在本文中，我将介绍一些被公认的所谓优秀的 README 文档应该是什么样子的。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p>README 文档通常是用 <strong>Markdown</strong> 编写的，但有时你也会看到其他格式的 README 文档，比如：有关 Python 的项目喜欢用 <strong>reStructuredText</strong> 编写 README 文档，这也是一种类似于 Markdown 的标记语言。一个优秀的 README 文档中应包含：<strong>简短的项目说明</strong>、<strong>安装说明</strong>、<strong>使用说明</strong>、<strong>如何参与贡献</strong>、<strong>许可协议</strong>等。此外，随着代码量的增加，<strong>已知 BUG</strong>、<strong>常见问题</strong>等也可以加入到 README 文档中。</p>
 <p>一个规范的 README 文档模板应该像下面这样的：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Project Name</span></span><br><span class="line">填写简短的项目说明</span><br><span class="line"><span class="section"># Installation</span></span><br><span class="line">填写安装说明</span><br><span class="line"><span class="section"># Usage</span></span><br><span class="line">填写使用说明</span><br><span class="line"><span class="section"># Contributing</span></span><br><span class="line">填写如何参与此项目的贡献方法</span><br><span class="line"><span class="section"># License</span></span><br><span class="line">填写许可协议</span><br></pre></td></tr></table></figure>
@@ -4446,7 +4446,7 @@
     <url>/2018/08/21/wsl-problem/</url>
     <content><![CDATA[<h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。</p>
 <h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在<strong>启动或关闭Windows功能</strong>中勾选<strong>适用于Linux的Windows子系统</strong>，或者直接在管理员权限的PowerShell中输入<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>此条命令，也能达到同样的效果。<br>完成上述操作后，可直接在<strong>Microsoft Store</strong>中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。<br>到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行<code>do-release-upgrade</code>命令升级到最新版。<br>下载完成后，要启动Ubuntu有多种方式，可以在<strong>PowerShell</strong>或<strong>cmd</strong>中输入<code>wsl</code>或<code>bash</code>或<code>ubuntu</code>都可启动，也可以直接在<strong>开始菜单</strong>中点击Ubuntu图标启动。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure>
 
@@ -4519,7 +4519,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 Oh My Zsh 前需要安装 git（`sudo apt install git`）</span></span><br><span class="line"><span class="comment"># 通过 curl 安装</span></span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>&quot;</span></span><br><span class="line"><span class="comment"># 通过 wget 安装</span></span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>安装完成后，会在当前用户的家目录下生成多个隐藏文件：<br>其中 <code>.zshrc</code> 类似于 <code>.bashrc</code>，存放 zsh 的配置信息；<br><code>.zsh_history</code> 类似于 <code>.bash_history</code>，存放 zsh 的命令历史记录；<br><code>.oh-my-zsh</code> 的文件夹则是 Oh My Zsh 项目 GitHub 仓库的克隆版，其中的 <code>themes</code> 文件夹下主要存放自带的主题，<code>plugins</code> 文件夹下主要存放自带的插件，<code>custom</code> 文件夹下主要存放用户自己下载的主题和插件。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Oh My Zsh 的主要配置都位于 <code>$HOME/.zshrc</code> 文件中，主要配置如下：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置主题，默认为自带的 robbyrussell 主题，</span></span><br><span class="line"><span class="comment"># 个人喜欢自带的 ys 主题</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;ys&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动错误命令自动更正，默认是注释的</span></span><br><span class="line">ENABLE_CORRECTION=<span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在命令执行的过程中，使用小红点进行提示</span></span><br><span class="line"><span class="comment"># 默认是注释的</span></span><br><span class="line">COMPLETION_WAITING_DOTS=<span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置插件，默认只启用了自带的 git 插件,</span></span><br><span class="line"><span class="comment"># 要启用更多的插件可直接在括号中写入，</span></span><br><span class="line"><span class="comment"># 必须是自带的插件或已下载到指定位置的插件</span></span><br><span class="line">plugins=(</span><br><span class="line">  git</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
@@ -4553,7 +4553,7 @@
     <content><![CDATA[<p>本文翻译自 <a href="https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/">https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/</a> ，正文如下：</p>
 <p>默认情况下，对于完成日常的渗透测试，<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-getting-started-with-kali-your-new-hacking-system-0151631/">Kali Linux</a> 可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用 Kali。</p>
 <p>大多数 Linux 发行版都是高度可定制的。这使得个性化你的渗透测试发行版有点令人生畏。只需几个命令，我们就可以自动执行任务，安装我们喜欢的软件，创建其他用户帐户，正确配置匿名软件，以及优化我们与终端的互动。我们可以采取一些措施来改善与操作系统的交互。</p>
-<a id="more"></a>
+<span id="more"></span>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/8VL0K0rFgxw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 
 <h2 id="1、安装-Git"><a href="#1、安装-Git" class="headerlink" title="1、安装 Git"></a>1、安装 Git</h2><p><a href="https://git-scm.com/">Git</a> 是一个开源软件版本控制应用程序。它可以用于协作共享和编辑代码，但在 Null Byte 中通常被引用作为复制（或“<a href="https://www.git-scm.com/docs/git-clone">克隆</a>”）GitHub 上的代码存储库的主要工具。Git 是渗透测试人员必备的工具，他们希望将自己的工具集扩展到默认 Kali 存储库中可用的工具集之外。</p>
@@ -4657,7 +4657,7 @@
     <content><![CDATA[<p>本文翻译自 <a href="https://artkond.com/2017/03/23/pivoting-guide/">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
 <hr>
 <p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是 red team/pentest 参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="以公有-IP-为目标"><a href="#以公有-IP-为目标" class="headerlink" title="以公有 IP 为目标"></a>以公有 IP 为目标</h2><p>一个普遍的情况。比方说，你可以从互联网上找到一个网络应用程序中的 RCE 漏洞。你上传了一个 shell，并想把你的攻击发展到内部网络。请注意，在这种特定情况下，你应该能够绑定受感染主机上的端口，并且应该可以从外部网络访问这些端口。</p>
 <h3 id="SSH-端口转发"><a href="#SSH-端口转发" class="headerlink" title="SSH 端口转发"></a>SSH 端口转发</h3><p>设法找到在主机上运行的 SSH 服务的凭据？很好！连接到主机，如下所示：</p>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,12 +16,12 @@
 
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 <meta name="description" content="移动网络&#x2F;WiFi 出现叹号或叉号Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号">
 <meta property="og:type" content="article">
@@ -61,6 +61,7 @@
         gtag('config', 'UA-104250838-2');
       }
     </script>
+
 
 
 
@@ -109,7 +110,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -137,36 +138,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
-
-  </li>
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -186,7 +163,7 @@
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
@@ -202,7 +179,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -222,12 +199,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C-WiFi-%E5%87%BA%E7%8E%B0%E5%8F%B9%E5%8F%B7%E6%88%96%E5%8F%89%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">移动网络&#x2F;WiFi 出现叹号或叉号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E4%B8%8D%E5%88%B0-WiFi"><span class="nav-number">2.</span> <span class="nav-text">搜索不到 WiFi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4G-%E4%BF%A1%E5%8F%B7%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">4G 信号问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google%EF%BC%88%E5%8D%B3%E8%B4%9F%E4%B8%80%E5%B1%8F%EF%BC%89%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">Google（即负一屏）无法使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%90%AC%E7%94%B5%E8%AF%9D%E6%97%B6%E9%BB%91%E5%B1%8F%EF%BC%8C%E4%B8%94%E6%97%A0%E6%B3%95%E7%82%B9%E4%BA%AE%E5%B1%8F%E5%B9%95%E4%BB%A5%E6%8C%82%E6%96%AD%E7%94%B5%E8%AF%9D%EF%BC%88%E6%8F%92%E8%80%B3%E6%9C%BA%E6%97%B6%E4%B8%80%E5%88%87%E6%AD%A3%E5%B8%B8%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%93%9D%E7%89%99%E4%BC%A0%E8%BE%93%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%94%AF%E6%8C%81%E6%AD%A4%E5%86%85%E5%AE%B9"><span class="nav-number">6.</span> <span class="nav-text">蓝牙传输失败，显示不支持此内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-Play-%E5%95%86%E5%BA%97%E6%9B%B4%E6%96%B0%E5%BA%94%E7%94%A8%E5%8D%A1%E4%BD%8F"><span class="nav-number">7.</span> <span class="nav-text">Google Play 商店更新应用卡住</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0"><span class="nav-number">8.</span> <span class="nav-text">系统无法更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pixel-Pixel-XL-Verizon-%E7%89%88%E8%A7%A3%E9%94%81-Bootloader-%E6%95%99%E7%A8%8B"><span class="nav-number">9.</span> <span class="nav-text">Pixel&#x2F;Pixel XL Verizon 版解锁 Bootloader 教程</span></a></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Howie Zhao"
       src="/images/avatar.jpg">
@@ -296,7 +273,7 @@
     </ul>
   </div>
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -306,7 +283,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -399,7 +376,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global captive_portal_server www.google.cn</span><br></pre></td></tr></table></figure>
 
 <p>执行之后，开启飞行模式，接着关闭飞行模式即可。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="搜索不到-WiFi"><a href="#搜索不到-WiFi" class="headerlink" title="搜索不到 WiFi"></a>搜索不到 WiFi</h2><p>因为美国 2.4GHz 频段的 WiFi 信道为 1-11，而中国 2.4GHz 频段的 WiFi 信道为 1-13，所以当 2.4GHz 频段的 WiFi 信道位于 12 或 13 时，美版的 Nexus/Pixel 会搜索不到 WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为 11 以内任意信道即可。</p>
 <h2 id="4G-信号问题"><a href="#4G-信号问题" class="headerlink" title="4G 信号问题"></a>4G 信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以 Nexus/Pixel 可以完美支持联通 2G/3G/4G。</p>
 <p>移动的 3G 网络制式采用的是自主研发的技术，所以 Nexus/Pixel 并不支持移动 3G，然而移动 4G 网络制式采用的是自主研发和国际通用并行的方式，所以 Nexus/Pixel 只支持部分移动 4G 频段。</p>
@@ -459,7 +436,7 @@
 
 
 
-    <div class="comments" id="gitalk-container"></div>
+    <div class="comments gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -530,11 +507,10 @@
   </footer>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
-
 <script src="/js/local-search.js"></script>
 
 
@@ -548,15 +524,14 @@
 
 
 
-
   
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
 
 <script>
-NexT.utils.loadComments('#gitalk-container', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       clientID    : 'c30c41e7faf23130a909',
       clientSecret: 'fd907b70c0c5c31bb85d9ef679c47c6887799f0f',
@@ -564,10 +539,11 @@ NexT.utils.loadComments('#gitalk-container', () => {
       owner       : 'howiezhao',
       admin       : ['howiezhao'],
       id          : '5c8d776ab3bb888dab801b5ea553c792',
+      proxy       : 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
         language: '',
       distractionFreeMode: true
     });
-    gitalk.render('gitalk-container');
+    gitalk.render(document.querySelector('.gitalk-container'));
   }, window.Gitalk);
 });
 </script>

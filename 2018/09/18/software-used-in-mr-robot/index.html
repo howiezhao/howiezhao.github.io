@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.4.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -16,12 +16,12 @@
 
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 <meta name="description" content="本文翻译自 https:&#x2F;&#x2F;alternativeto.net&#x2F;list&#x2F;66&#x2F;software-used-in-mr-robot ，正文如下： 本文盘点了获得艾美奖和金球奖剧情&#x2F;惊悚系列电视剧——《黑客军团》中黑客使用的软件。下面的列表包含到了第二季第11集！">
 <meta property="og:type" content="article">
@@ -61,6 +61,7 @@
         gtag('config', 'UA-104250838-2');
       }
     </script>
+
 
 
 
@@ -109,7 +110,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -137,36 +138,12 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
-
-  </li>
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -186,7 +163,7 @@
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
@@ -202,7 +179,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -222,12 +199,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kali-Linux"><span class="nav-number">1.</span> <span class="nav-text">Kali Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wickr"><span class="nav-number">2.</span> <span class="nav-text">Wickr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tor-Browser"><span class="nav-number">3.</span> <span class="nav-text">Tor Browser</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Raspberry-Pi"><span class="nav-number">4.</span> <span class="nav-text">Raspberry Pi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileZilla"><span class="nav-number">5.</span> <span class="nav-text">FileZilla</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pwnix"><span class="nav-number">6.</span> <span class="nav-text">Pwnix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepSound"><span class="nav-number">7.</span> <span class="nav-text">DeepSound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ProtonMail"><span class="nav-number">8.</span> <span class="nav-text">ProtonMail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDShredder"><span class="nav-number">9.</span> <span class="nav-text">HDShredder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#John-the-Ripper"><span class="nav-number">10.</span> <span class="nav-text">John the Ripper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wegt"><span class="nav-number">11.</span> <span class="nav-text">Wegt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Social-Engineer-Toolkit"><span class="nav-number">12.</span> <span class="nav-text">Social-Engineer Toolkit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenWrt"><span class="nav-number">13.</span> <span class="nav-text">OpenWrt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mimikatz"><span class="nav-number">14.</span> <span class="nav-text">mimikatz</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#btscanner"><span class="nav-number">15.</span> <span class="nav-text">btscanner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bluesniff"><span class="nav-number">16.</span> <span class="nav-text">Bluesniff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KVM-Kernel-base-Virtual-Machine"><span class="nav-number">17.</span> <span class="nav-text">KVM(Kernel-base Virtual Machine)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metasploit"><span class="nav-number">18.</span> <span class="nav-text">Metasploit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Framaroot"><span class="nav-number">19.</span> <span class="nav-text">Framaroot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kingo-Root"><span class="nav-number">20.</span> <span class="nav-text">Kingo Root</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FlexiSPY"><span class="nav-number">21.</span> <span class="nav-text">FlexiSPY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SuperSU"><span class="nav-number">22.</span> <span class="nav-text">SuperSU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#can-utils"><span class="nav-number">23.</span> <span class="nav-text">can-utils</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#radare"><span class="nav-number">24.</span> <span class="nav-text">radare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PyCharm"><span class="nav-number">25.</span> <span class="nav-text">PyCharm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tor"><span class="nav-number">26.</span> <span class="nav-text">Tor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PuTTY"><span class="nav-number">27.</span> <span class="nav-text">PuTTY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mozilla-Firefox"><span class="nav-number">28.</span> <span class="nav-text">Mozilla Firefox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFmpeg"><span class="nav-number">29.</span> <span class="nav-text">FFmpeg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Slackware"><span class="nav-number">30.</span> <span class="nav-text">Slackware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLC-Media-Player"><span class="nav-number">31.</span> <span class="nav-text">VLC Media Player</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wayback-Machine"><span class="nav-number">32.</span> <span class="nav-text">Wayback Machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B5Torrent"><span class="nav-number">33.</span> <span class="nav-text">µTorrent</span></a></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Howie Zhao"
       src="/images/avatar.jpg">
@@ -296,7 +273,7 @@
     </ul>
   </div>
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -306,7 +283,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -389,7 +366,7 @@
     <div class="post-body" itemprop="articleBody">
         <p>本文翻译自 <a target="_blank" rel="noopener" href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
 <p><img src="https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg" alt="首页图片"><br>本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。<br><strong>下面的列表包含到了第二季第11集！</strong></p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="Kali-Linux"><a href="#Kali-Linux" class="headerlink" title="Kali Linux"></a><a target="_blank" rel="noopener" href="https://www.kali.org/">Kali Linux</a></h2><p>Kali Linux是针对安全研究人员进行渗透测试的Linux发行版，但同时也被黑客使用，因为它集成了很多黑客工具。由于它是黑客的首选操作系统，所以它在《黑客军团》中经常有过出现。</p>
 <h2 id="Wickr"><a href="#Wickr" class="headerlink" title="Wickr"></a><a target="_blank" rel="noopener" href="https://wickr.com/">Wickr</a></h2><p>Wickr是一个端到端的加密聊天应用程序，具有诸如消息可调到期时间等功能。在第二季中，fsociety组织使用它来保密通信。</p>
@@ -456,7 +433,7 @@
 
 
 
-    <div class="comments" id="gitalk-container"></div>
+    <div class="comments gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -527,11 +504,10 @@
   </footer>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
-
 <script src="/js/local-search.js"></script>
 
 
@@ -545,15 +521,14 @@
 
 
 
-
   
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
 
 <script>
-NexT.utils.loadComments('#gitalk-container', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       clientID    : 'c30c41e7faf23130a909',
       clientSecret: 'fd907b70c0c5c31bb85d9ef679c47c6887799f0f',
@@ -561,10 +536,11 @@ NexT.utils.loadComments('#gitalk-container', () => {
       owner       : 'howiezhao',
       admin       : ['howiezhao'],
       id          : '868b1c76a4f8359ddbfbc969e270b52a',
+      proxy       : 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
         language: '',
       distractionFreeMode: true
     });
-    gitalk.render('gitalk-container');
+    gitalk.render(document.querySelector('.gitalk-container'));
   }, window.Gitalk);
 });
 </script>
