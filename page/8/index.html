@@ -211,7 +211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">126</span>
+          <span class="site-state-item-count">127</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -289,6 +289,99 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/09/12/what-is-irc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/09/12/what-is-irc/" class="post-title-link" itemprop="url">IRC 是什么</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-09-12 21:59:18" itemprop="dateCreated datePublished" datetime="2018-09-12T21:59:18+08:00">2018-09-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-06-21 19:18:56" itemprop="dateModified" datetime="2020-06-21T19:18:56+08:00">2020-06-21</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>IRC</strong>，全称 Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。</p>
+<p>IRC 协议属于应用层协议，使用的传输层协议为 TCP，使用的端口为 <strong>6667</strong>（明文传输，如 irc://chat.freenode.net）或 <strong>6697</strong>（SSL 加密传输，如 ircs://chat.freenode.net:6697）。</p>
+<p>IRC 是一个<strong>分布式</strong>的 <strong>C/S</strong> 架构，一个 IRC 服务器可以连接其他的 IRC 服务器以扩展为一个<strong>IRC 网络</strong>，通过连接到一个 IRC 服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个 IRC 服务器上，一个频道类似于一个聊天室，频道名称必须以 <code>#</code> 符号开始，例如 <code>#irchelp</code>。</p>
+<p>大多数的 IRC 服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。</p>
+<p>目前使用最广的 IRC 服务器为 <a target="_blank" rel="noopener" href="https://freenode.net/">freenode</a> ，而 IRC 客户端软件有多种，比如基于 Firefox 浏览器的 IRC 插件<a target="_blank" rel="noopener" href="http://chatzilla.hacksrus.com/">ChatZilla</a> ，基于网页的 <a target="_blank" rel="noopener" href="https://webchat.freenode.net/">Webchat</a> ，基于命令行的 <a target="_blank" rel="noopener" href="https://irssi.org/">Irssi</a> 、<a target="_blank" rel="noopener" href="https://weechat.org/">WeeChat</a> 等等。</p>
+<p>个人经常使用的 IRC 客户端为 Irssi，在 Ubuntu 中可以使用 <code>apt install irssi</code> 安装，之后直接输入 <code>irssi</code> 即可启动，输入 <code>irssi --help</code> 可查看更多命令参数。<br>启动 irssi 后可输入更多的命令，输入 <code>/help</code> 可查看所有可用命令，输入 <code>/connect Freenode</code> 即可连接到freenode服务器，之后再输入 <code>/join #linuxba</code> 即可加入 <code>#linuxba</code> 频道。<br>这里需要注意，freenode 服务器由于种种原因，在国内无法访问，而 irssi 又不支持代理，所以推荐使用 <a target="_blank" rel="noopener" href="https://github.com/rofl0r/proxychains-ng">proxychains-ng</a> 代理 irssi。</p>
+<p>最后，值得推荐的 IRC 频道有下（基于 freenode）：</p>
+<ul>
+<li><code>#ubuntu-cn</code>：Ubuntu 中文社区频道</li>
+<li><code>#archlinux-cn</code>：Arch Linux 中文社区频道</li>
+<li><code>#linuxba</code>：Linux 贴吧频道</li>
+<li><code>#haskell</code>：Haskell 语言频道</li>
+<li><code>#vim</code>：Vim 社区频道</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1064,94 +1157,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/20/hyper-v-problem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/20/hyper-v-problem/" class="post-title-link" itemprop="url">Hyper-V 相关问题解决</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-08-20 20:12:02" itemprop="dateCreated datePublished" datetime="2018-08-20T20:12:02+08:00">2018-08-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-11-27 23:52:11" itemprop="dateModified" datetime="2020-11-27T23:52:11+08:00">2020-11-27</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。</p>
-<p>对于 Windows 虚拟机的全屏操作，目前较为理想的解决方案是使用<strong>远程桌面连接</strong>，记得要在虚拟机中开启远程桌面连接功能；而对于 Linux 虚拟机的全屏操作，可以通过修改 <code>/etc/default/grub</code> 文件，更改其中 <code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash video=hyperv_fb:1920x1080&quot;</code>（注意是 <code>x</code> 不是 <code>*</code>），接着执行 <code>update-grub</code> 并重启即可。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/20/hyper-v-problem/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1198,7 +1203,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">158k</span>
+    <span title="Symbols count total">161k</span>
   </span>
 </div>
 <div class="busuanzi-count">

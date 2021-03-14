@@ -211,7 +211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">126</span>
+          <span class="site-state-item-count">127</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -289,6 +289,102 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/08/encode-encrypt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/05/08/encode-encrypt/" class="post-title-link" itemprop="url">编码与加密</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-05-08 19:36:13" itemprop="dateCreated datePublished" datetime="2018-05-08T19:36:13+08:00">2018-05-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-02-18 21:43:16" itemprop="dateModified" datetime="2021-02-18T21:43:16+08:00">2021-02-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
+<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、<a href="/2018/08/10/base/" title="Base64 编码">Base64 编码</a>等。</p>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p><strong>加密</strong>（encryption）是将<strong>明文</strong>（plaintext，cleartext）信息改变为难以读取的<strong>密文</strong>（ciphertext）内容，使之不可读。只有拥有解密方法的对象，经由<strong>解密</strong>（decryption）过程，才能将密文还原为正常可读的内容。</p>
+<p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
+<p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
+<p>非对称加密，又称<strong>公开密钥加密</strong>，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
+<p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
+<p>常见的非对称加密算法有 <a href="/2018/10/18/rsa/" title="RSA">RSA</a>、DSA、ECDSA、Elgamal 等。</p>
+<p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
+<p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/05/08/encode-encrypt/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1180,95 +1276,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/12/10/pivoting-guide/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/12/10/pivoting-guide/" class="post-title-link" itemprop="url">一个红队成员的跳板（pivoting）指南</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-12-10 22:51:35" itemprop="dateCreated datePublished" datetime="2017-12-10T22:51:35+08:00">2017-12-10</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-05 18:38:20" itemprop="dateModified" datetime="2021-02-05T18:38:20+08:00">2021-02-05</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Translation/" itemprop="url" rel="index"><span itemprop="name">Translation</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本文翻译自 <a target="_blank" rel="noopener" href="https://artkond.com/2017/03/23/pivoting-guide/">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
-<hr>
-<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是 red team/pentest 参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/12/10/pivoting-guide/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1315,7 +1322,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">158k</span>
+    <span title="Symbols count total">161k</span>
   </span>
 </div>
 <div class="busuanzi-count">
