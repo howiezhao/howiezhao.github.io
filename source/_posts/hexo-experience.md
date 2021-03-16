@@ -38,7 +38,7 @@ npm-check-updates -u
 npm install
 ```
 
-若只想更新 Hexo 及其插件到最新 **次** 版本，则只需在 **博客所在目录** 执行 `npm update -g` 即可。
+若只想更新 Hexo 及其插件到最新 **次** 版本，则只需在 **博客所在目录** 执行 `npm update` 即可。
 
 要更新 hexo-cli，你只需要再次执行 `npm install -g hexo-cli` 安装即可。
 
