@@ -23,18 +23,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="信息安全三要素信息安全三要素即机密性（Confidentiality）、完整性（Integrity）和可用性（Availability），简称 CIA。  机密性：仅有发送方和希望的接收方能够理解传输报文的内容。因为窃听者可以截获报文，这必须要求报文在一定程度上进行加密，使截取的报文无法被截获者所理解。机密性的这个方面大概就是通常意义上对于术语 信息安全 的理解。 完整性：或称 报文完整性 或 报">
+<meta name="description" content="HTTPS 确保了客户和服务器之间通信的安全性，具体来说，这种安全性主要包括机密性、完整性和端点鉴别。 信息安全三要素信息安全三要素即机密性（Confidentiality）、完整性（Integrity）和可用性（Availability），简称 CIA。  机密性：仅有发送方和希望的接收方能够理解传输报文的内容。因为窃听者可以截获报文，这必须要求报文在一定程度上进行 加密（encrypted），">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTPS 运行机制">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/11/https/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="信息安全三要素信息安全三要素即机密性（Confidentiality）、完整性（Integrity）和可用性（Availability），简称 CIA。  机密性：仅有发送方和希望的接收方能够理解传输报文的内容。因为窃听者可以截获报文，这必须要求报文在一定程度上进行加密，使截取的报文无法被截获者所理解。机密性的这个方面大概就是通常意义上对于术语 信息安全 的理解。 完整性：或称 报文完整性 或 报">
+<meta property="og:description" content="HTTPS 确保了客户和服务器之间通信的安全性，具体来说，这种安全性主要包括机密性、完整性和端点鉴别。 信息安全三要素信息安全三要素即机密性（Confidentiality）、完整性（Integrity）和可用性（Availability），简称 CIA。  机密性：仅有发送方和希望的接收方能够理解传输报文的内容。因为窃听者可以截获报文，这必须要求报文在一定程度上进行 加密（encrypted），">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://howiezhao.github.io/images/ssl.jpg">
 <meta property="article:published_time" content="2018-05-11T10:45:45.000Z">
-<meta property="article:modified_time" content="2021-02-18T13:43:16.000Z">
+<meta property="article:modified_time" content="2021-03-16T14:18:54.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://howiezhao.github.io/images/ssl.jpg">
 
 
 <link rel="canonical" href="https://howiezhao.github.io/2018/05/11/https/">
@@ -199,7 +201,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text">信息安全三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E8%AE%A4%E8%AF%81"><span class="nav-number">2.</span> <span class="nav-text">公钥认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-%E4%B8%8E-TLS"><span class="nav-number">3.</span> <span class="nav-text">SSL 与 TLS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">SSL 工作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%A1%E6%89%8B"><span class="nav-number">4.1.</span> <span class="nav-text">握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E5%AF%BC%E5%87%BA"><span class="nav-number">4.2.</span> <span class="nav-text">密钥导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="nav-number">4.3.</span> <span class="nav-text">数据传输</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text">信息安全三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%A5%E6%96%87%E9%89%B4%E5%88%AB%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">报文鉴别码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E8%AE%A4%E8%AF%81"><span class="nav-number">3.</span> <span class="nav-text">公钥认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E7%82%B9%E9%89%B4%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">端点鉴别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-%E4%B8%8E-TLS"><span class="nav-number">5.</span> <span class="nav-text">SSL 与 TLS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">SSL 工作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%A1%E6%89%8B"><span class="nav-number">6.1.</span> <span class="nav-text">握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E5%AF%BC%E5%87%BA"><span class="nav-number">6.2.</span> <span class="nav-text">密钥导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93"><span class="nav-number">6.3.</span> <span class="nav-text">数据传输</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -334,7 +336,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-18 21:43:16" itemprop="dateModified" datetime="2021-02-18T21:43:16+08:00">2021-02-18</time>
+        <time title="Modified: 2021-03-16 22:18:54" itemprop="dateModified" datetime="2021-03-16T22:18:54+08:00">2021-03-16</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -363,37 +365,71 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="信息安全三要素"><a href="#信息安全三要素" class="headerlink" title="信息安全三要素"></a>信息安全三要素</h2><p>信息安全三要素即<strong>机密性</strong>（Confidentiality）、<strong>完整性</strong>（Integrity）和<strong>可用性</strong>（Availability），简称 <strong>CIA</strong>。</p>
+        <p>HTTPS 确保了客户和服务器之间通信的安全性，具体来说，这种安全性主要包括机密性、完整性和端点鉴别。</p>
+<h2 id="信息安全三要素"><a href="#信息安全三要素" class="headerlink" title="信息安全三要素"></a>信息安全三要素</h2><p>信息安全三要素即<strong>机密性</strong>（Confidentiality）、<strong>完整性</strong>（Integrity）和<strong>可用性</strong>（Availability），简称 <strong>CIA</strong>。</p>
 <ul>
-<li>机密性：仅有发送方和希望的接收方能够理解传输报文的内容。因为窃听者可以截获报文，这必须要求报文在一定程度上进行加密，使截取的报文无法被截获者所理解。机密性的这个方面大概就是通常意义上对于术语 <em>信息安全</em> 的理解。</li>
+<li>机密性：仅有发送方和希望的接收方能够理解传输报文的内容。因为窃听者可以截获报文，这必须要求报文在一定程度上进行 <strong>加密</strong>（encrypted），使截取的报文无法被截获者所理解。机密性的这个方面大概就是通常意义上对于术语 <em>信息安全</em> 的理解。</li>
 <li>完整性：或称 <em>报文完整性</em> 或 <em>报文鉴别</em>，即通信双方希望确保其通信的内容在传输过程中未被改变 —— 或者恶意篡改或者意外改动。我们在可靠数据传输和数据链路协议中遇到的 <em>检验和</em> 技术在扩展后能够用于提供这种报文完整性。</li>
+<li>可用性：指保证信息确实能为授权使用者所用，即保证合法用户在需要时可以使用所需信息。</li>
 </ul>
-<h2 id="公钥认证"><a href="#公钥认证" class="headerlink" title="公钥认证"></a>公钥认证</h2><p>公钥认证（public key certification）即证实一个公钥属于某个特定的实体。将公钥与特定实体绑定通常是由<strong>认证中心</strong>（Certification Authority，<strong>CA</strong>）完成的，CA 的职责就是使识别和发行证书合法化。CA 具有下列作用：</p>
+<p>除了 CIA 之外，还有一点需要注意，即<strong>端点鉴别</strong>（end-point authentication），这是指发送方和接收方都应该能证实通信过程所涉及的另一方，以确信通信的另一方确实具有其所声称的身份。</p>
+<span id="more"></span>
+
+<h2 id="报文鉴别码"><a href="#报文鉴别码" class="headerlink" title="报文鉴别码"></a>报文鉴别码</h2><p>通过报文鉴别码可以实现完整性，具体而言，A 和 B 需要共享秘密比特串 $s$，它被称为<strong>鉴别密钥</strong>（authentication key）。使用这个共享秘密，报文完整性能够执行如下：</p>
+<ol>
+<li>A 生成报文 $m$，用 $s$ 级联 $m$ 以生成 $m+s$，并计算哈希 $H(m+s)$（例如使用 SHA-1）。$H(m+s)$ 被称为<strong>报文鉴别码</strong>（Message Authentication Code，<strong>MAC</strong>）。</li>
+<li>然后 A 将 MAC 附加到报文 $m$ 上，生成扩展报文 $(m, H(m+s))$，并将该扩展报文发送给 B。</li>
+<li>B 接收到一个扩展报文 $(m, h)$，由于知道 $s$，计算出报文鉴别码 $H(m+s)$。若 $H(m+s)=h$，则一切正常。</li>
+</ol>
+<p>MAC 的一个优良特点是它不要求一种加密算法，多年来已经提出了若干种对 MAC 的不同标准，目前最为流行的标准是 HMAC，它能够与 MD5 或 SHA-1 一道使用。</p>
+<p>其实使用数字签名也可以实现完整性，同时也验证了该报文的源（注意 MAC 并不能做到这一点）。具体使用 MAC 还是数字签名实现完整性，在不同的协议里有不同的选择，如 PGP 使用数字签名，而 OSPF 和 SSL 使用 MAC。</p>
+<p>在生成 MAC 过程中既不涉及公开密钥加密，也不涉及对称密钥加密。而在生成数字签名的过程中涉及到了公开密钥加密，因此，数字签名是一种“技术含量更高”的技术，因为它需要一个如后面描述的、具有认证中心支撑的公钥基础设施（PKI）。</p>
+<h2 id="公钥认证"><a href="#公钥认证" class="headerlink" title="公钥认证"></a>公钥认证</h2><p><strong>公钥认证</strong>（public key certification）即证实一个公钥属于某个特定的实体。将公钥与特定实体绑定通常是由<strong>认证中心</strong>（Certification Authority，<strong>CA</strong>）完成的，CA 的职责就是使识别和发行证书合法化。CA 具有下列作用：</p>
 <ul>
 <li>CA 证实一个实体（一个人、一台路由器等）的真实身份。</li>
 <li>一旦 CA 验证了某个实体的身份，这个 CA 会生成一个将其身份和实体的公钥绑定起来的<strong>证书</strong>（certificate）。这个证书包含这个公钥和公钥所有者全局唯一的身份标识信息（例如，一个人的名字或一个 IP 地址）。由 CA 对这个证书进行数字签名。</li>
 </ul>
+<h2 id="端点鉴别"><a href="#端点鉴别" class="headerlink" title="端点鉴别"></a>端点鉴别</h2><p>鉴别应当在报文和数据交换的基础上，作为某 <strong>鉴别协议</strong>（authentication protocol）的一部分独立完成。鉴别协议通常在两个通信实体运行其他协议 <em>之前</em> 运行。鉴别协议首先建立相互满意的各方标识；仅当鉴别完成之后，各方才继续下面的工作。</p>
+<p>一个实际可行的鉴别协议会使用到 <em>对称密钥</em> 和 <em>不重数</em>，<strong>不重数</strong>（nonce）是在一个协议的生存期中只使用一次的数，也就是说，一旦某协议使用了一个不重数，就永远不会再使用那个数字了。具体过程如下所示：</p>
+<ol>
+<li>A 向 B 发送报文“我是 A”</li>
+<li>B 选择一个不重数 $R$，然后把这个值发送给 A</li>
+<li>A 使用它与 B 共享的对称密钥 $K_{A-B}$ 来加密这个不重数，然后把加密的不重数 $K_{A-B}(R)$ 发回给 B。</li>
+<li>B 解密接收到的报文。若解密得到的不重数等于它发送给 A 的那个不重数，则可鉴别 A 的身份。</li>
+</ol>
+<p>使用对称密钥确保了鉴别的双方，而使用不重数则预防了<strong>回放攻击</strong>（playback attack）。</p>
+<p>对于 HTTPS 而言，端点鉴别具体分为：<em>服务器鉴别</em> 和 <em>客户鉴别</em>。服务器鉴别是为了防止站点假冒（这可以通过 CA 证书来验证），客户鉴别是为了防御连接重放。</p>
 <h2 id="SSL-与-TLS"><a href="#SSL-与-TLS" class="headerlink" title="SSL 与 TLS"></a>SSL 与 TLS</h2><p>SSL（Secure Socket Layer，<strong>安全套接字层</strong>）最初由 Netscape 设计，其发展到现在存在一些设计上的漏洞，SSL 版本 3 的一个稍加修改的版本被称为 TLS（Transport Layer Security，<strong>传输层安全性</strong>）。</p>
 <p>现在为了安全性基本都采用 TLS，本文以下内容采用 SSL 来指代最新的 TLS。</p>
 <p>SSL 经常用来为发生在 HTTP 之上的事务提供安全性。然而，因为 SSL 使 TCP 安全了，因此它能被应用于运行在 TCP 之上的任何应用程序。</p>
 <h2 id="SSL-工作过程"><a href="#SSL-工作过程" class="headerlink" title="SSL 工作过程"></a>SSL 工作过程</h2><p>SSL 具有三个阶段：<strong>握手</strong>、<strong>密钥导出</strong>和<strong>数据传输</strong>：</p>
 <h3 id="握手"><a href="#握手" class="headerlink" title="握手"></a>握手</h3><p>SSL 握手步骤如下：</p>
 <ol>
-<li>客户发送它支持的密码算法的列表，连同一个客户的<strong>不重数</strong>（nonce）。</li>
-<li>从该列表中，服务器选择一种对称算法（例如 AES）、一种公钥算法（例如具有特定密钥长度的 RSA）和一种 MAC 算法。它把它的选择以及证书和一个服务器不重数返回给客户。</li>
-<li>客户验证该证书，提取服务器的公钥，生成一个<strong>前主密钥</strong>（Pre-Master Secret，PMS），用服务器的公钥加密该 PMS，并将加密的 PMS 发送给服务器。</li>
-<li>使用相同的密钥导出函数（就像 SSL 标准定义的那样），客户和服务器独立地从 PMS 和不重数中计算出<strong>主密钥</strong>（Master Secret，MS）。</li>
+<li>客户发送它支持的密码算法的列表（cipher suit），连同一个客户的不重数。</li>
+<li>从该列表中，服务器选择一种对称算法（例如 AES）、一种公钥算法（例如具有特定密钥长度的 RSA）和一种 MAC 算法（即哈希算法）。它把它的选择以及证书和一个服务器不重数返回给客户。</li>
+<li>客户验证该证书，提取服务器的公钥，生成一个<strong>前主密钥</strong>（Pre-Master Secret，<strong>PMS</strong>），用服务器的公钥加密该 PMS，并将加密的 PMS 发送给服务器。</li>
+<li>使用相同的密钥导出函数（就像 SSL 标准定义的那样），客户和服务器独立地从 PMS 和不重数中计算出<strong>主密钥</strong>（Master Secret，<strong>MS</strong>）。然后该 MS 被切片以生成两个密码和两个 MAC 密钥。此外，当选择的对称密码应用于 CBC（例如 3DES 或 AES），则两个初始向量（IV）也从该 MS 获得，这两个 IV 分别用于该连接的两端。自此以后，客户和服务器之间发送的所有报文均被加密和鉴别（使用 MAC）。具体可见下节密钥导出。</li>
 <li>客户发送所有握手报文的一个 MAC。</li>
 <li>服务器发送所有握手报文的一个 MAC。</li>
 </ol>
+<p>最后两个步骤使握手免受篡改危害。</p>
 <h3 id="密钥导出"><a href="#密钥导出" class="headerlink" title="密钥导出"></a>密钥导出</h3><p>客户和服务器都使用 MS 生成 4 个密钥：</p>
 <ul>
-<li>E_C：用于从客户发送到服务器的数据的会话加密密钥</li>
-<li>M_C：用于从客户发送到服务器的数据的会话 MAC 密钥</li>
-<li>E_S：用于从服务器发送到客户的数据的会话加密密钥</li>
-<li>M_S：用于从服务器发送到客户的数据的会话 MAC 密钥</li>
+<li>$E_C$：用于从客户（C）发送到服务器（S）的数据的会话加密密钥（用于机密性）</li>
+<li>$M_C$：用于从客户（C）发送到服务器（S）的数据的会话 MAC 密钥（用于完整性）</li>
+<li>$E_S$：用于从服务器（S）发送到客户（C）的数据的会话加密密钥（用于机密性）</li>
+<li>$M_S$：用于从服务器（S）发送到客户（C）的数据的会话 MAC 密钥（用于完整性）</li>
 </ul>
-<h3 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h3><p>由于 TCP 是一种字节流协议，SSL 将数据流分割成 <em>记录</em>，对每个记录附加一个 MAC 用于完整性检查，然后加密该“记录+MAC”。为了产生这个 MAC，客户将数据连同密钥 M_C 放入一个散列函数中；为了加密“记录+MAC”这个包，客户使用它的会话加密密钥 E_C。然后这个加密的包将传递给 TCP 经因特网传输。</p>
+<h3 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h3><p>由于 TCP 是一种字节流协议，SSL 将数据流分割成 <em>记录</em>，对每个记录附加一个 MAC 用于完整性检查，然后加密该“记录+MAC”。为了产生这个 MAC，客户将数据连同密钥 $M_C$ 放入一个散列函数中；为了加密“记录+MAC”这个包，客户使用它的会话加密密钥 $E_C$。然后这个加密的包将传递给 TCP 经因特网传输。</p>
+<p>为了防止诸如重排序或重放报文段等中间人攻击，SSL 使用序号，具体而言，客户维护一个序号计数器，计数器开始为 0，客户每发送的一个 SSL 记录它都增加 1。客户并不实际在记录中包括一个序号，但当它计算 MAC 时，它把该序号包括在 MAC 的计算中。所以，该 MAC 现在是数据加 MAC 密钥 $M_C$ 加 <em>当前序号</em> 的哈希值。服务器跟踪客户的序号，通过在 MAC 的计算中包括适当的序号，使它验证一条记录的数据完整性。</p>
+<p>总而言之，在 SSL 中，不重数用于防御“连接重复”，而序号用于防御在一个进行中的会话中重放个别分组。</p>
+<p>一个 SSL 记录如下图所示：</p>
+<p><img src="/images/ssl.jpg" alt="ssl"></p>
+<p>该记录由类型字段、版本字段、长度字段、数据字段和 MAC 字段组成。注意到前 3 个字段是不加密的。类型字段指出了该字段是握手报文还是包含应用数据的报文。它也用于关闭 SSL 连接，如下面所讨论。在接收端的 SSL 使用长度字段以从到达的 TCP 字节流中提取 SSL 记录。版本字段是自解释的。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/30280001/">James F. Kurose,Keith W. Ross.计算机网络：自顶向下方法[M].北京:机械工业出版社,2018:385-414.</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.aqniukt.com/goods/show/79">苑房弘 —— Kali Linux 安全测试：课时 103 —— 105</a></li>
+</ol>
 
     </div>
 
@@ -472,7 +508,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">161k</span>
+    <span title="Symbols count total">163k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -517,7 +553,38 @@
 
 
 
-  
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">

@@ -31,7 +31,7 @@
 <meta property="og:description" content="与 DNS 类似，ARP（Address Resolution Protocol，地址解析协议）提供了将 IP 地址转换为链路层地址的机制。这两种解析器之间的一个重要区别是，DNS 为在因特网中任何地方的主机解析主机名，而 ARP 只为在同一个子网上的主机和路由器接口解析 IP 地址。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-06T09:03:40.000Z">
-<meta property="article:modified_time" content="2021-03-06T10:29:46.000Z">
+<meta property="article:modified_time" content="2021-03-16T14:18:54.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -199,7 +199,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC-%E5%9C%B0%E5%9D%80"><span class="nav-number">1.</span> <span class="nav-text">MAC 地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP-%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">ARP 工作过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC-%E5%9C%B0%E5%9D%80"><span class="nav-number">1.</span> <span class="nav-text">MAC 地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP-%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">ARP 工作过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -326,10 +326,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-03-06 17:03:40 / Modified: 18:29:46" itemprop="dateCreated datePublished" datetime="2021-03-06T17:03:40+08:00">2021-03-06</time>
+      <time title="Created: 2021-03-06 17:03:40" itemprop="dateCreated datePublished" datetime="2021-03-06T17:03:40+08:00">2021-03-06</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-16 22:18:54" itemprop="dateModified" datetime="2021-03-16T22:18:54+08:00">2021-03-16</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -362,8 +368,8 @@
 
 <h2 id="MAC-地址"><a href="#MAC-地址" class="headerlink" title="MAC 地址"></a>MAC 地址</h2><p>事实上，并不是主机或路由器具有链路层地址，而是它们的适配器（即网络接口）具有链路层地址。因此，具有多个网络接口的主机或路由器将具有与之相关联的多个链路层地址，就像它也具有与之相关联的多个 IP 地址一样。</p>
 <p>链路层地址有各种不同的称呼：<strong>LAN 地址</strong>（LAN address）、<strong>物理地址</strong>（physical address）或 <strong>MAC 地址</strong>（MAC address）。我们一般将链路层地址称为 MAC 地址。</p>
-<p>对于大多数局域网（包括以太网和 802.11 无线局域网）而言，MAC 地址长度为 6 字节，共有 2^48 个可能的 MAC 地址。这些 6 个字节地址通常用十六进制表示法，地址的每个字节被表示为一对十六进制数。如 <code>1A-23-F9-CD-06-9B</code>。尽管 MAC 地址被设计为永久的，但用软件改变一块适配器的 MAC 地址现在是可能的。</p>
-<p>没有两块适配器具有相同的 MAC 地址。IEEE 在管理着 MAC 地址空间。特别是，当一个公司要生产适配器时，它支付象征性的费用购买组成 2^24 个地址的一块地址空间。IEEE 分配这块 2^24 个地址的方式是：固定一个 MAC 地址的前 24 比特，让公司自己为每个适配器生成后 24 比特的唯一组合。具体的分配列表可参考<a target="_blank" rel="noopener" href="http://standards-oui.ieee.org/oui/oui.txt">其官网</a>。</p>
+<p>对于大多数局域网（包括以太网和 802.11 无线局域网）而言，MAC 地址长度为 6 字节，共有 $2^{48}$ 个可能的 MAC 地址。这些 6 个字节地址通常用十六进制表示法，地址的每个字节被表示为一对十六进制数。如 <code>1A-23-F9-CD-06-9B</code>。尽管 MAC 地址被设计为永久的，但用软件改变一块适配器的 MAC 地址现在是可能的。</p>
+<p>没有两块适配器具有相同的 MAC 地址。IEEE 在管理着 MAC 地址空间。特别是，当一个公司要生产适配器时，它支付象征性的费用购买组成 $2^{24}$ 个地址的一块地址空间。IEEE 分配这块 $2^{24}$ 个地址的方式是：固定一个 MAC 地址的前 24 比特，让公司自己为每个适配器生成后 24 比特的唯一组合。具体的分配列表可参考<a target="_blank" rel="noopener" href="http://standards-oui.ieee.org/oui/oui.txt">其官网</a>。</p>
 <p>适配器的 MAC 地址具有扁平结构（这与层次结构相反），而且不论适配器到哪里用都不会变化。与之形成对照的是，IP 地址具有层次结构（即一个网络部分和一个主机部分），而且当主机移动时，主机的 IP 地址需要改变，即改变它所连接到的网络。可以将适配器的 MAC 地址比喻成一个人的身份证号，而将 IP 地址比喻成一个人的住址。</p>
 <p>当某适配器要向某些目的适配器发送一个帧时，发送适配器将目的适配器的 MAC 地址插入到该帧中，并将该帧发送到局域网上。对于使用 6 字节地址的局域网（例如以太网和 802.11）来说，<strong>MAC 广播地址</strong>（broadcast address）是 48 个连续的 1 组成的字符串（即以十六进制表示法表示的 <code>FF-FF-FF-FF-FF-FF</code>）。</p>
 <h2 id="ARP-工作过程"><a href="#ARP-工作过程" class="headerlink" title="ARP 工作过程"></a>ARP 工作过程</h2><p>每台主机或路由器在其内存中具有一个 <strong>ARP 表</strong>（ARP table），这张表包含 IP 地址到 MAC 地址的映射关系。例如：</p>
@@ -391,6 +397,9 @@
 <p>查询 ARP 报文是在广播帧中发送的，而响应 ARP 报文在一个标准帧中发送。</p>
 <p>ARP 表是即插即用的，这就是说，一个 ARP 表是自动建立的，即它不需要系统管理员来配置。并且如果某主机与子网断开连接，它的表项最终会从留在子网中的节点的表中删除。</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>ARP 是一个链路层协议还是一个网络层协议？一个 ARP 分组封装在链路层帧中，因而在体系结构上位于链路层之上。然而，一个 ARP 分组具有包含链路层地址的字段，因而可认为是链路层协议，但它也包含网络层地址，因而也可认为是为网络层协议。所以，可能最好把 ARP 看成是跨越链路层和网络层边界两边的协议，即不完全符合简单的分层协议栈。现实世界协议就是这样复杂！</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/30280001/">James F. Kurose,Keith W. Ross.计算机网络：自顶向下方法[M].北京:机械工业出版社,2018:303-308.</a></li>
+</ol>
 
     </div>
 
@@ -469,7 +478,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">161k</span>
+    <span title="Symbols count total">163k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -514,7 +523,38 @@
 
 
 
-  
+  <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'none'
+      },
+      options: {
+        renderActions: {
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              const target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.typesetClear();
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
