@@ -16,4 +16,6 @@ set HTTPS_PROXY=https://user:password@proxy.domain.com:port
 
 而要为 PowerShell 设置代理则要使用[这个脚本](todo)。
 
-最后，对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 `pip`、`git`、`npm` 等，另一部分则使用的是 Shell 的代理设置，比如 `curl`、`gem` 等。
+对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 `pip`、`npm` 等，另一部分则使用的是 Shell 的代理设置，比如 `curl`、`gem` 等。
+
+此外，有一些程序的代理设置相对比较复杂，比如 {% post_link git git %}、{% post_link docker docker %} 等，详见它们各自的介绍文章。

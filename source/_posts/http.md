@@ -106,8 +106,28 @@ Web 缓存器为了验证所缓存的对象是否是最新的，会使用条件 
 
 通过使用 CDN（Content Distribution Network，内容分发网络），Web 缓存器正在因特网中发挥着越来越重要的作用。CDN 公司在因特网上安装了许多地理上分散的缓存器，因而使大量流量实现了本地化。
 
+## 非持续连接和持续连接
+
+HTTP 可以采用非持续连接或持续连接，默认采用持续连接。
+
+## 版本
+
+目前多数大网站已经采用了 HTTP/2，还有一部分老旧网站仍然在使用 HTTP/1.1。
+
+HTTP/2 相比 HTTP/1.1 做的最大的改动是使用了多路复用，即同一个域名、同一个 IP 下的多个文件会共用一个 TCP 连接进行合并传输。
+
+HTTP/3 是未来的一个 HTTP 版本，它相比前两个版本，做的最大的改动是将弃用 TCP 协议，改为使用基于 UDP 协议的 QUIC 协议实现。
+
 ## 注意
 
-- HTTP 是一个**无状态协议**（stateless protocol），即 HTTP 服务器并不保存关于客户的任何信息。但我们可以通过 cookie 机制实现有状态的访问。
-- HTTP 可以采用非持续连接或持续连接，默认采用持续连接。
-- 有些地方还将 HTTP 描述为无连接，纵观上述，找不到这样描述的原因。
+HTTP 是一个**无状态协议**（stateless protocol），即 HTTP 服务器并不保存关于客户的任何信息。但我们可以通过 cookie 机制实现有状态的访问。
+
+有些文章将非持续连接翻译为 *短连接*，将持续连接翻译为 *长连接*，纵观 RFC 相关文档，找不到类似短连接或长连接这样的描述，因此，为保证严谨，个人推荐使用非持续连接或持续连接这样的描述。
+
+有的文章还将 HTTP 描述为 *无连接*，它们可能本意指的是无状态或非持续连接？纵观上述，找不到这样描述的原因，不应该使用无连接描述 HTTP。
+
+## 参考
+
+1. [James F. Kurose,Keith W. Ross.计算机网络：自顶向下方法[M].北京:机械工业出版社,2018:64-75.](https://book.douban.com/subject/30280001/)
+2. [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://tools.ietf.org/html/rfc2616)
+3. [RFC 7540 - Hypertext Transfer Protocol Version 2 (HTTP/2)](https://tools.ietf.org/html/rfc7540)
