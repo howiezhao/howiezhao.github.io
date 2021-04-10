@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="本文翻译自 https:&#x2F;&#x2F;uberpython.wordpress.com&#x2F;2012&#x2F;09&#x2F;23&#x2F;why-im-not-leaving-python-for-go&#x2F; ，原文标题为 Why I’m not leaving Python for Go，译文如下：  首先，Go 似乎是一门很棒的语言。它有一个很棒的教程，我乐此不疲地去看，发现：  Go 很快。 在设计上支持并发。 类型化（对 JIT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么我不会放弃 Python 投向 Go">
+<meta property="og:url" content="https://howiezhao.github.io/2021/04/10/why-im-not-leaving-python-for-go-zh/index.html">
+<meta property="og:site_name" content="Howie&#39;s Notes">
+<meta property="og:description" content="本文翻译自 https:&#x2F;&#x2F;uberpython.wordpress.com&#x2F;2012&#x2F;09&#x2F;23&#x2F;why-im-not-leaving-python-for-go&#x2F; ，原文标题为 Why I’m not leaving Python for Go，译文如下：  首先，Go 似乎是一门很棒的语言。它有一个很棒的教程，我乐此不疲地去看，发现：  Go 很快。 在设计上支持并发。 类型化（对 JIT">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-10T07:22:25.000Z">
+<meta property="article:modified_time" content="2021-04-10T12:26:15.000Z">
+<meta property="article:author" content="Howie Zhao">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://howiezhao.github.io/2021/04/10/why-im-not-leaving-python-for-go-zh/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>为什么我不会放弃 Python 投向 Go | Howie's Notes</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-104250838-2');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Howie's Notes" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Howie's Notes</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Machine Learning and Cyber Security</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%97%E9%95%BF%E8%80%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">冗长而重复的错误处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%82%84%E6%82%84%E5%BF%BD%E7%95%A5-%E2%80%94%E2%80%94-%E6%BB%B4%E7%AD%94%E4%BD%9C%E5%93%8D%E7%9A%84%E5%AE%9A%E6%97%B6%E7%82%B8%E5%BC%B9"><span class="nav-number">2.</span> <span class="nav-text">错误悄悄忽略 —— 滴答作响的定时炸弹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#panic-recover"><span class="nav-number">3.</span> <span class="nav-text">panic&#x2F;recover</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%96%E8%AE%B8%E4%B8%8B%E6%AC%A1%E5%90%A7"><span class="nav-number">4.</span> <span class="nav-text">或许下次吧</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Howie Zhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Howie Zhao</p>
+  <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">128</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://zh.wikipedia.org/wiki/User:Howiezhao" title="Wikipedia → https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;User:Howiezhao" rel="noopener" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wikipedia</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="bilibili fa-fw"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://howiezhao.com/" title="http:&#x2F;&#x2F;howiezhao.com&#x2F;" rel="noopener" target="_blank">Howie's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2021/04/10/why-im-not-leaving-python-for-go-zh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          为什么我不会放弃 Python 投向 Go
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-10 15:22:25 / Modified: 20:26:15" itemprop="dateCreated datePublished" datetime="2021-04-10T15:22:25+08:00">2021-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Translation/" itemprop="url" rel="index"><span itemprop="name">Translation</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本文翻译自 <a target="_blank" rel="noopener" href="https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/">https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/</a> ，原文标题为 <em>Why I’m not leaving Python for Go</em>，译文如下：</p>
+<hr>
+<p>首先，Go 似乎是一门很棒的语言。它有一个<a target="_blank" rel="noopener" href="https://tour.golang.org/welcome/1">很棒的教程</a>，我乐此不疲地去看，发现：</p>
+<ul>
+<li>Go 很快。</li>
+<li>在设计上支持并发。</li>
+<li>类型化（对 JIT 和 IDE 来说很重要），但不像 C 或 C++ 的<a target="_blank" rel="noopener" href="http://c-faq.com/decl/spiral.anderson.html">螺旋形</a>那样繁琐和丑陋。</li>
+<li>鸭子类型的接口。</li>
+<li><a target="_blank" rel="noopener" href="http://golang.org/doc/effective_go.html#defer">延迟（defer）</a>机制真的很精巧。</li>
+</ul>
+<p>但是有一个问题我不能接受。这是个遗憾，因为我很想以并发的名义进行信仰的飞跃。这个问题就是<strong>用返回值来进行错误处理</strong>。这简直像 70 年代的风格。</p>
+<span id="more"></span>
+
+<h3 id="冗长而重复的错误处理"><a href="#冗长而重复的错误处理" class="headerlink" title="冗长而重复的错误处理"></a>冗长而重复的错误处理</h3><p><a target="_blank" rel="noopener" href="https://blog.golang.org/error-handling-and-go">go 的设计师认为这是一种优点。</a></p>
+<blockquote>
+<p>在 Go 语言中，错误处理非常重要。语言的设计和规范鼓励开发人员显式地检查错误（与其他语言抛出异常然后 catch 住是不同的）。在某些情况下，这会使 Go 代码变得<strong>冗长</strong>，但是幸运的是，可以使用一些技术来减少<strong>重复性</strong>错误处理。</p>
+</blockquote>
+<p>这是我在 C 语言中无法忍受的事情之一。<strong>每一行都需要一个 if 语句</strong>来防止程序做疯狂的事情。这是上述链接中的一个官方的规范示例，或许是“最小的重复性错误处理”：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> err := datastore.Get(c, key, record); err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;appError&#123;err, <span class="string">&quot;Record not found&quot;</span>, <span class="number">404</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> err := viewTemplate.Execute(w, record); err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;appError&#123;err, <span class="string">&quot;Can&#x27;t display record&quot;</span>, <span class="number">500</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 Go 中调用函数的正确方法是将其包装在 if 语句中。即使 <a target="_blank" rel="noopener" href="http://golang.org/pkg/fmt/#Println">Println</a> 也会返回一个错误值，我敢肯定，这个星球上的大多数人都不会检查。这让我想到了...</p>
+<h3 id="错误悄悄忽略-——-滴答作响的定时炸弹"><a href="#错误悄悄忽略-——-滴答作响的定时炸弹" class="headerlink" title="错误悄悄忽略 —— 滴答作响的定时炸弹"></a>错误悄悄忽略 —— 滴答作响的定时炸弹</h3><p>引用 Tim Peters 的话：</p>
+<blockquote>
+<p>错误绝不能悄悄忽略，<br>除非它明确需要如此。</p>
+</blockquote>
+<p>Go 不仅停留在冗长而重复的错误处理上。它还使忽略错误变得容易和诱人。在以下程序中，即使我们未能保护总统（presidential）工作人员，我们也会触发世界末日的装置（trigger the doomsday device）。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    http.Get(<span class="string">&quot;http://www.nuke.gov/seal_presidential_bunker&quot;</span>)</span><br><span class="line">    http.Get(<span class="string">&quot;http://www.nuke.gov/trigger_doomsday_device&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多可惜。哎呀。</p>
+<p>从理论上讲，我们可以要求程序员不要忽略返回的错误。通过静态分析或约定。在实践中，仅在最关键的错误编程任务中才能忍受这一痛苦。也许这就是 Go 的目的。</p>
+<h3 id="panic-recover"><a href="#panic-recover" class="headerlink" title="panic/recover"></a>panic/recover</h3><p>只要标准库很少使用它们，panic 和 recover 就不够好。为什么一个数组越界比格式字符串损坏或连接中断更容易引起 panic？Go 想完全避免异常，但意识到它们不能 —— 这里和那里都加了几个异常，让我很困惑，不知道哪个错误什么时候发生。</p>
+<h3 id="或许下次吧"><a href="#或许下次吧" class="headerlink" title="或许下次吧"></a>或许下次吧</h3><p>所以我说这句话的时候非常遗憾，因为 Go 有很多惊人的想法和功能，但是如果没有现代的错误处理 —— 我是不会<strong>去</strong>的。</p>
+<p>我还在等待那个开源、并发、<a target="_blank" rel="noopener" href="https://web.archive.org/web/20120922025809/http://shootout.alioth.debian.org/u64q/code-used-time-used-shapes.php">左下角的语言</a>出现。有什么建议，欢迎大家多多指教。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/11/symmetric-encryption/" rel="prev" title="对称加密">
+                  <i class="fa fa-chevron-left"></i> 对称加密
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">166k</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'c30c41e7faf23130a909',
+      clientSecret: 'fd907b70c0c5c31bb85d9ef679c47c6887799f0f',
+      repo        : 'howiezhao.github.io',
+      owner       : 'howiezhao',
+      admin       : ['howiezhao'],
+      id          : 'f941f737a2c3cb651275dfba6c013212',
+      proxy       : 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render(document.querySelector('.gitalk-container'));
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

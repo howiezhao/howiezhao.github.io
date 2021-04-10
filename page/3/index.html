@@ -211,7 +211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">128</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -289,6 +289,97 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2019/04/18/makefile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/04/18/makefile/" class="post-title-link" itemprop="url">Makefile 小记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-04-18 12:40:39" itemprop="dateCreated datePublished" datetime="2019-04-18T12:40:39+08:00">2019-04-18</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-19 20:30:21" itemprop="dateModified" datetime="2021-03-19T20:30:21+08:00">2021-03-19</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Linux 中使用最广的构建工具是 <strong>make</strong>，而 make 会读取 <strong>Makefile</strong> 文件中的配置信息来完成构建，一个简单的 Makefile 文件如下所示：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/local</span><br></pre></td></tr></table></figure>
+
+<p>具体而言，冒号前面为 <strong>target</strong>，即要生成的文件；冒号后面为 <strong>dependencies</strong>，即被依赖的文件；每一个 <strong>target:dependencies 对</strong>的下一行为要执行的<strong>命令</strong>（注意要以 Tab 键起首）。当 make 不带参数时，默认执行第一个 target。target 也可以是要求 make 要完成的动作，执行这种 target 后并不能得到和 target 同名的文件，因此，也称做 <strong>phony target</strong>（即伪 target），如第 7 行所示。dependencies 也可以为空，如常用的 target 为 <code>clean</code> 时，就没有依赖，只有命令，一般用于清理工作。</p>
+<p>当输入 <code>make</code> 或 <code>make editor</code>，即可开始构建。若 <code>editor</code> 这个 target 文件不存在，或者 <code>main.o</code>、<code>text.o</code> 这两个依赖文件被修改，都会导致 make 调用其下的命令 <code>gcc -o editor main.o text.o</code>；接下来，由于引用到 <code>main.o</code> 和 <code>text.o</code>，make 会检查 <code>main.o</code> 的依赖 <code>main.c</code>、<code>def.h</code> 有无更新，如果有，则执行其下的命令 <code>gcc -c main.c</code>；同理，也适用于 <code>text.o</code>。当输入 <code>make install</code>，make 会检查 <code>install</code> 的依赖 <code>editor</code> 是否是最新，如果是，则执行其下的命令 <code>mv editor /usr/local</code>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/04/18/makefile/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1075,85 +1166,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/12/24/raspberry-pi-experience/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/12/24/raspberry-pi-experience/" class="post-title-link" itemprop="url">树莓派初体验</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-12-24 13:43:49" itemprop="dateCreated datePublished" datetime="2018-12-24T13:43:49+08:00">2018-12-24</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-01-18 19:13:29" itemprop="dateModified" datetime="2020-01-18T19:13:29+08:00">2020-01-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Raspbian"><a href="#Raspbian" class="headerlink" title="Raspbian"></a>Raspbian</h2>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1200,7 +1212,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">165k</span>
+    <span title="Symbols count total">166k</span>
   </span>
 </div>
 <div class="busuanzi-count">
