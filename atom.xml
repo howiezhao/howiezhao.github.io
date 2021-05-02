@@ -6,7 +6,7 @@
   <link href="https://howiezhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://howiezhao.github.io/"/>
-  <updated>2021-04-10T12:26:15.000Z</updated>
+  <updated>2021-05-02T12:27:51.000Z</updated>
   <id>https://howiezhao.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IntelliJ 平台 IDE 中 Ctrl+Shift+F 快捷键无效问题解决</title>
+    <link href="https://howiezhao.github.io/2021/05/02/intellij-platform-ctrl-shift-f-not-working/"/>
+    <id>https://howiezhao.github.io/2021/05/02/intellij-platform-ctrl-shift-f-not-working/</id>
+    <published>2021-05-02T11:49:22.000Z</published>
+    <updated>2021-05-02T12:27:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 IntelliJ 平台 IDE 中（如 PyCharm、IntelliJ IDEA 等），Ctrl+Shift+F 快捷键通常指在项目所有文件中搜索对应的关键词，这是一个常用的功能，然而近期笔者发现此快捷键莫名其妙的失效了（其他快捷键都工作良好），这很可能是与别的程序的快捷键相冲突导致的，经排查，是与 Windows 10 中微软拼音的简繁转换快捷键冲突。</p><p>解决步骤依次为：<strong>设置</strong> ——&gt; <strong>时间和语言</strong> ——&gt; <strong>语言</strong> ——&gt; <strong>中文（简体，中国）</strong>——&gt; <strong>选项</strong> ——&gt; <strong>微软拼音</strong> ——&gt; <strong>选项</strong> ——&gt; <strong>按键</strong> ——&gt; <strong>简体/繁体中文输入切换</strong>，可以将其改为另一个键或者直接将其关闭。</p><p>此解决方案可能并不适应于每个人，具体还是要找到那个冲突的快捷键。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在 IntelliJ 平台 IDE 中（如 PyCharm、IntelliJ IDEA 等），Ctrl+Shift+F 快捷键通常指在项目所有文件中搜索对应的关键词，这是一个常用的功能，然而近期笔者发现此快捷键莫名其妙的失效了（其他快捷键都工作良好），这很可能是与别的程序的</summary>
+      
+    
+    
+    
+    <category term="Bug" scheme="https://howiezhao.github.io/categories/Bug/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>升级到 WSL 2</title>
+    <link href="https://howiezhao.github.io/2021/05/02/update-to-wsl-2/"/>
+    <id>https://howiezhao.github.io/2021/05/02/update-to-wsl-2/</id>
+    <published>2021-05-02T09:31:15.000Z</published>
+    <updated>2021-05-02T12:27:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>从 2020 年末开始，微软逐步向 Windows 10 用户推送了 WSL 2 更新，WSL 2 相比 WSL 1 是一个巨大的变化，最显著的改变在于 WSL 2 开始采用 Hyper-V 虚拟机来运行 Linux，这会解决之前 WSL 的很多问题，但也可以看作是 WSL 项目的失败，本文所描述的主体为 WSL 2，有关 WSL 1 的相关内容请参考 <a href="/2018/08/21/wsl-problem/" title="WSL 相关问题解决">WSL 相关问题解决</a>。</p><span id="more"></span><h2 id="升级到-WSL-2"><a href="#升级到-WSL-2" class="headerlink" title="升级到 WSL 2"></a>升级到 WSL 2</h2><p>要查看当前安装的 WSL 版本，可通过 <code>wsl --list --verbose</code> 命令查看，其输出如下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  NAME                   STATE           VERSION</span><br><span class="line">* Ubuntu                 Running         1</span><br></pre></td></tr></table></figure><p>VERSION 下面的结果为其版本号，上述为 WSL 1。</p><p>截至目前为止，无法直接安装 WSL 2，需要先安装 WSL 1，然后将其升级为 WSL 2。升级步骤如下：</p><ol><li>在 <strong>启用或关闭 Windows 功能</strong> 中勾选 <strong>虚拟机平台</strong>，或直接在管理员权限的 PowerShell 中输入 <code>Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform</code>；</li><li>下载并安装 <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Linux 内核更新包</a> ；</li><li>输入 <code>wsl --set-version Ubuntu 2</code> 将已安装发行版设置为 WSL 2。</li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;从 2020 年末开始，微软逐步向 Windows 10 用户推送了 WSL 2 更新，WSL 2 相比 WSL 1 是一个巨大的变化，最显著的改变在于 WSL 2 开始采用 Hyper-V 虚拟机来运行 Linux，这会解决之前 WSL 的很多问题，但也可以看作是 WSL 项目的失败，本文所描述的主体为 WSL 2，有关 WSL 1 的相关内容请参考 &lt;a href=&quot;/2018/08/21/wsl-problem/&quot; title=&quot;WSL 相关问题解决&quot;&gt;WSL 相关问题解决&lt;/a&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+    <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
+    
+    <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
+    
+    <category term="WSL" scheme="https://howiezhao.github.io/tags/WSL/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么我不会放弃 Python 投向 Go</title>
@@ -453,55 +500,6 @@
     <category term="Android" scheme="https://howiezhao.github.io/tags/Android/"/>
     
     <category term="硬件" scheme="https://howiezhao.github.io/tags/%E7%A1%AC%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GCC 小记</title>
-    <link href="https://howiezhao.github.io/2019/04/18/gcc/"/>
-    <id>https://howiezhao.github.io/2019/04/18/gcc/</id>
-    <published>2019-04-18T09:42:24.000Z</published>
-    <updated>2021-02-05T09:43:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。</p><p>使用 gcc 编译 C 语言源代码的一般格式如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test.c -o <span class="built_in">test</span></span><br></pre></td></tr></table></figure><span id="more"></span><h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p>Linux下 <code>gcc</code> 命令常用的参数及其含义如下所示：</p><ul><li><code>--help</code>：显示帮助信息</li><li><code>-o</code>：指定生成的文件名，若不指定，则默认生成 <code>a.out</code></li><li><code>-E</code>：生成 <code>.i</code> 格式的预处理文件</li><li><code>-S</code>：生成 <code>.s</code> 格式的汇编文件</li><li><code>-c</code>：生成 <code>.o</code> 格式的二进制文件</li><li><code>-save-temps</code>：保留所有生成的中间文件</li><li><code>-g</code>：生成必要的符号信息，为调试而用</li><li><code>-ggdb</code>：生成可特供于 gdb 使用的调试信息</li><li><code>-gstabs</code>：生成 stabs 格式的调试信息</li><li><code>-Wall</code>：显示所有常用的警告信息，即 Warning all</li><li><code>-m32</code>：指定生成 32 位程序</li><li><code>-Os</code>：为减小代码大小而进行优化，即 Optimizers small</li><li><code>-nostdinc</code>：不使用标准库</li><li><code>-fno-stack-protector</code>：不生成用于检测缓冲区溢出的代码</li><li><code>-I&lt;dir&gt;</code>：添加搜索头文件的路径</li><li><code>-fno-builtin</code>：除非用 <code>__builtin_</code> 前缀，否则不进行 <code>builtin</code> 函数的优化</li></ul><h2 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h2><p>为了在 Windows 中使用 GCC，诞生了 <a href="http://www.mingw.org/"><strong>MinGW</strong></a> 项目，即 Minimalist GNU for Windows（适用于 Windows 的极简 GNU），它是将 GCC 编译器和 GNU Binutils 移植到 Win32 平台下的产物，又被称为 <strong>mingw32</strong>。另有可用于产生 32 位及 64 位 Windows 可执行文件的 <a href="https://mingw-w64.org/doku.php/start"><strong>MinGW-w64</strong></a> 项目，是从原 MinGW 项目产生的分支。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。&lt;/p&gt;
-&lt;p&gt;使用 gcc 编译 C 语言源代码的一般格式如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gcc test.c -o &lt;span class=&quot;built_in&quot;&gt;test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-    <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QEMU小记</title>
-    <link href="https://howiezhao.github.io/2019/04/18/qemu/"/>
-    <id>https://howiezhao.github.io/2019/04/18/qemu/</id>
-    <published>2019-04-18T09:17:11.000Z</published>
-    <updated>2021-02-05T11:43:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.qemu.org/">QEMU</a>是Linux中使用最广的虚拟机，其便于调试的特性也适合于系统开发者。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用<code>sudo apt install qemu</code>即可在Ubuntu中安装QEMU，安装完成后直接输入<code>qemu</code>来验证是否成功安装，如果出错，可再输入<code>qemu-system-i386</code>来验证其是否成功安装，若成功，可建立如下所示的软链接，以方便日后使用。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu</span><br></pre></td></tr></table></figure><p>值得注意的是，QEMU的启动需要有图形界面，若未安装图形界面，则会报错：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could not initialize SDL(No available video device) - exiting</span><br></pre></td></tr></table></figure><span id="more"></span><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>使用QEMU运行一个虚拟机的命令格式为<code>qemu [options] [disk_image]</code>，其中disk_image即硬盘镜像文件。其常用的参数如下：</p><ul><li><code>-hda file</code>：使用file作为硬盘0的镜像文件。</li><li><code>-m megs</code>：设定虚拟内存为megs M字节，默认为128M字节。</li><li><code>-smp n</code>：设置为有n个CPU的SMP系统。</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.qemu.org/&quot;&gt;QEMU&lt;/a&gt;是Linux中使用最广的虚拟机，其便于调试的特性也适合于系统开发者。&lt;/p&gt;
-&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;使用&lt;code&gt;sudo apt install qemu&lt;/code&gt;即可在Ubuntu中安装QEMU，安装完成后直接输入&lt;code&gt;qemu&lt;/code&gt;来验证是否成功安装，如果出错，可再输入&lt;code&gt;qemu-system-i386&lt;/code&gt;来验证其是否成功安装，若成功，可建立如下所示的软链接，以方便日后使用。&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;值得注意的是，QEMU的启动需要有图形界面，若未安装图形界面，则会报错：&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Could not initialize SDL(No available video device) - exiting&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-    <category term="Linux" scheme="https://howiezhao.github.io/tags/Linux/"/>
     
   </entry>
   

@@ -2579,6 +2579,17 @@
       </tags>
   </entry>
   <entry>
+    <title>IntelliJ 平台 IDE 中 Ctrl+Shift+F 快捷键无效问题解决</title>
+    <url>/2021/05/02/intellij-platform-ctrl-shift-f-not-working/</url>
+    <content><![CDATA[<p>在 IntelliJ 平台 IDE 中（如 PyCharm、IntelliJ IDEA 等），Ctrl+Shift+F 快捷键通常指在项目所有文件中搜索对应的关键词，这是一个常用的功能，然而近期笔者发现此快捷键莫名其妙的失效了（其他快捷键都工作良好），这很可能是与别的程序的快捷键相冲突导致的，经排查，是与 Windows 10 中微软拼音的简繁转换快捷键冲突。</p>
+<p>解决步骤依次为：<strong>设置</strong> ——&gt; <strong>时间和语言</strong> ——&gt; <strong>语言</strong> ——&gt; <strong>中文（简体，中国）</strong>——&gt; <strong>选项</strong> ——&gt; <strong>微软拼音</strong> ——&gt; <strong>选项</strong> ——&gt; <strong>按键</strong> ——&gt; <strong>简体/繁体中文输入切换</strong>，可以将其改为另一个键或者直接将其关闭。</p>
+<p>此解决方案可能并不适应于每个人，具体还是要找到那个冲突的快捷键。</p>
+]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+  </entry>
+  <entry>
     <title>IP 协议分析</title>
     <url>/2018/05/11/ip/</url>
     <content><![CDATA[<p>IP（Internet Protocol，网际协议）</p>
@@ -4202,6 +4213,32 @@
       </tags>
   </entry>
   <entry>
+    <title>升级到 WSL 2</title>
+    <url>/2021/05/02/update-to-wsl-2/</url>
+    <content><![CDATA[<p>从 2020 年末开始，微软逐步向 Windows 10 用户推送了 WSL 2 更新，WSL 2 相比 WSL 1 是一个巨大的变化，最显著的改变在于 WSL 2 开始采用 Hyper-V 虚拟机来运行 Linux，这会解决之前 WSL 的很多问题，但也可以看作是 WSL 项目的失败，本文所描述的主体为 WSL 2，有关 WSL 1 的相关内容请参考 <a href="/2018/08/21/wsl-problem/" title="WSL 相关问题解决">WSL 相关问题解决</a>。</p>
+<span id="more"></span>
+
+<h2 id="升级到-WSL-2"><a href="#升级到-WSL-2" class="headerlink" title="升级到 WSL 2"></a>升级到 WSL 2</h2><p>要查看当前安装的 WSL 版本，可通过 <code>wsl --list --verbose</code> 命令查看，其输出如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">  NAME                   STATE           VERSION</span><br><span class="line">* Ubuntu                 Running         1</span><br></pre></td></tr></table></figure>
+
+<p>VERSION 下面的结果为其版本号，上述为 WSL 1。</p>
+<p>截至目前为止，无法直接安装 WSL 2，需要先安装 WSL 1，然后将其升级为 WSL 2。升级步骤如下：</p>
+<ol>
+<li>在 <strong>启用或关闭 Windows 功能</strong> 中勾选 <strong>虚拟机平台</strong>，或直接在管理员权限的 PowerShell 中输入 <code>Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform</code>；</li>
+<li>下载并安装 <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Linux 内核更新包</a> ；</li>
+<li>输入 <code>wsl --set-version Ubuntu 2</code> 将已安装发行版设置为 WSL 2。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Linux</tag>
+        <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>URI 与 URL 的区别</title>
     <url>/2018/04/29/url-uri/</url>
     <content><![CDATA[<p>URI，全称&quot;Uniform Resource Identifier&quot;，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI 的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。</p>
@@ -4613,34 +4650,43 @@
       </categories>
   </entry>
   <entry>
-    <title>WSL相关问题解决</title>
+    <title>WSL 相关问题解决</title>
     <url>/2018/08/21/wsl-problem/</url>
-    <content><![CDATA[<h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为<strong>Bash on Ubuntu on Windows</strong>，随后改名为<strong>Windows Subsystem for Linux</strong>，即<strong>WSL</strong>，值得肯定的是，随着Windows 10逐渐更新，慢慢统一了命名。</p>
-<h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在<strong>启动或关闭Windows功能</strong>中勾选<strong>适用于Linux的Windows子系统</strong>，或者直接在管理员权限的PowerShell中输入<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>此条命令，也能达到同样的效果。<br>完成上述操作后，可直接在<strong>Microsoft Store</strong>中搜索Linux，到本文书写为止，商店中已经有Ubuntu、SUSE、Debian、Kali等Linux发行版，个人建议下载Ubuntu。<br>到Ubuntu的下载页，可以看到发布者为Canonical公司，这也正是Ubuntu的维护公司，值得注意的是，Canonical公司还发布了特定版本的Ubuntu系统，例如Ubuntu 16.04 LTS、Ubuntu 18.04 LTS等，个人建议直接下载无版本号的Ubuntu，而不要下载特定版本的Ubuntu，因为无版本号的Ubuntu会在新版本Ubuntu发布之后切换到最新版，所以它始终指向最新的Ubuntu。同时请注意，应用商店里Ubuntu软件的更新并不会升级Ubuntu版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在WSL中运行<code>do-release-upgrade</code>命令升级到最新版。<br>下载完成后，要启动Ubuntu有多种方式，可以在<strong>PowerShell</strong>或<strong>cmd</strong>中输入<code>wsl</code>或<code>bash</code>或<code>ubuntu</code>都可启动，也可以直接在<strong>开始菜单</strong>中点击Ubuntu图标启动。</p>
+    <content><![CDATA[<p>随着时间的发展，WSL 变化了很多，本文所描述的主体为 WSL 1，有关 WSL 2 的相关内容请参考 <a href="/2021/05/02/update-to-wsl-2/" title="升级到 WSL 2">升级到 WSL 2</a>。</p>
+<h2 id="名称问题"><a href="#名称问题" class="headerlink" title="名称问题"></a>名称问题</h2><p>最早这个项目命名为 <strong>Bash on Ubuntu on Windows</strong>，随后改名为 <strong>Windows Subsystem for Linux</strong>（适用于 Linux 的 Windows 子系统），即 <strong>WSL</strong>，值得肯定的是，随着 Windows 10 逐渐更新，慢慢统一了命名。</p>
 <span id="more"></span>
-<h2 id="SSH问题"><a href="#SSH问题" class="headerlink" title="SSH问题"></a>SSH问题</h2><p>要想在WSL中开启SSH服务，需要在配置文件(/etc/ssh/sshd_config)中作如下修改：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Port 2222  <span class="comment">#将22改为2222，因Win10中自带的SSH服务也在监听22端口</span></span><br><span class="line">ListenAddress 0.0.0.0  <span class="comment">#取消注释，监听所有端口</span></span><br><span class="line">UsePrivilegeSeparation no  <span class="comment">#将yes修改为no</span></span><br><span class="line">PermitRootLogin yes  <span class="comment">#将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span></span><br><span class="line">PasswordAuthentication yes  <span class="comment">#将no修改为yes，允许密码登录</span></span><br></pre></td></tr></table></figure>
 
-<p>修改完成后用<code>sudo service ssh start</code>启动SSH服务，可能会报如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+<h2 id="安装及运行"><a href="#安装及运行" class="headerlink" title="安装及运行"></a>安装及运行</h2><p>在安装前，需要在 <strong>启用或关闭 Windows 功能</strong> 中勾选 <strong>适用于 Linux 的 Windows 子系统</strong>，或者直接在管理员权限的 PowerShell 中输入 <code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code> 此条命令，也能达到同样的效果。</p>
+<p>完成上述操作后，可直接在 <strong>Microsoft Store</strong> 中搜索 Linux，到本文书写为止，商店中已经有 Ubuntu、SUSE、Debian、Kali 等 Linux 发行版，个人建议下载 Ubuntu。</p>
+<p>到 Ubuntu 的下载页，可以看到发布者为 Canonical 公司，这也正是 Ubuntu 的维护公司，值得注意的是，Canonical 公司还发布了特定版本的 Ubuntu 系统，例如 Ubuntu 16.04 LTS、Ubuntu 18.04 LTS 等，个人建议直接下载无版本号的 Ubuntu，而不要下载特定版本的 Ubuntu，因为无版本号的 Ubuntu 会在新版本 Ubuntu 发布之后切换到最新版，所以它始终指向最新的 Ubuntu。同时请注意，应用商店里 Ubuntu 软件的更新并不会升级 Ubuntu 版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在 WSL 中运行 <code>do-release-upgrade</code> 命令升级到最新版。</p>
+<p>下载完成后，要启动 Ubuntu 有多种方式，可以在 <strong>PowerShell</strong> 或 <strong>cmd</strong> 中输入 <code>wsl</code> 或 <code>bash</code> 或 <code>ubuntu</code> 都可启动，也可以直接在 <strong>开始菜单</strong> 中点击 Ubuntu 图标启动。</p>
+<h2 id="SSH-问题"><a href="#SSH-问题" class="headerlink" title="SSH 问题"></a>SSH 问题</h2><p>要想在 WSL 中开启 SSH 服务，需要在配置文件（<code>/etc/ssh/sshd_config</code>）中作如下修改：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Port 2222  #将22改为2222，因Win10中自带的SSH服务也在监听22端口</span><br><span class="line">ListenAddress 0.0.0.0  #取消注释，监听所有IP</span><br><span class="line">UsePrivilegeSeparation no  #将yes修改为no</span><br><span class="line">PermitRootLogin yes  #将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span><br><span class="line">PasswordAuthentication yes  #将no修改为yes，允许密码登录</span><br></pre></td></tr></table></figure>
 
-<p>并且此时无法使用SSH客户端连接到服务器端，客户端会报如下错误：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure>
+<p>修改完成后用 <code>sudo service ssh start</code> 启动 SSH 服务，可能会报如下错误：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
 
-<p>造成这种情况的原因是服务端在启动SSH服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+<p>并且此时无法使用 SSH 客户端连接到服务器端，客户端会报如下错误：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure>
 
-<p>其中<code>-t</code>参数表示加密类型，<code>-f</code>参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动SSH服务即可正常工作。</p>
-<h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><p>在你当前所使用的shell的配置文件里（比如<code>.bashrc</code>或<code>.zshrc</code>），添加如下命令：</p>
+<p>造成这种情况的原因是服务端在启动 SSH 服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>-t</code> 参数表示加密类型，<code>-f</code> 参数表示生成的密钥文件名，错误信息中缺少什么密钥按需生成即可。之后再重新启动 SSH 服务即可正常工作。</p>
+<h2 id="图形界面问题"><a href="#图形界面问题" class="headerlink" title="图形界面问题"></a>图形界面问题</h2><p>在你当前所使用的 shell 的配置文件里（比如 <code>.bashrc</code> 或 <code>.zshrc</code>），添加如下命令：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> DISPLAY=localhost:0</span><br></pre></td></tr></table></figure>
 
-<p>随后打开X Server客户端（比如<a href="https://sourceforge.net/projects/xming/">Xming</a>或<a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>）并将Display项设为0即可运行图形化应用。笔者所使用的是<a href="https://mobaxterm.mobatek.net/">MobaXterm</a>，其设置路径为<strong>Settings</strong> —&gt; <strong>Configuration</strong> —&gt; <strong>X11</strong> —&gt; <strong>Display offset</strong>。</p>
-<h2 id="EXE程序问题"><a href="#EXE程序问题" class="headerlink" title="EXE程序问题"></a>EXE程序问题</h2><h2 id="netstat和ps"><a href="#netstat和ps" class="headerlink" title="netstat和ps"></a>netstat和ps</h2><h2 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h2><h2 id="无法使用的软件"><a href="#无法使用的软件" class="headerlink" title="无法使用的软件"></a>无法使用的软件</h2><p>以下软件在 WSL 中暂时无法正常使用：</p>
+<p>随后打开 X Server 客户端（比如 <a href="https://sourceforge.net/projects/xming/">Xming</a> 或 <a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>）并将 Display 项设为 0 即可运行图形化应用。笔者所使用的是 <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>，其设置路径为 <strong>Settings</strong> —&gt; <strong>Configuration</strong> —&gt; <strong>X11</strong> —&gt; <strong>Display offset</strong>。</p>
+<h2 id="EXE-程序问题"><a href="#EXE-程序问题" class="headerlink" title="EXE 程序问题"></a>EXE 程序问题</h2><h2 id="netstat-和-ps"><a href="#netstat-和-ps" class="headerlink" title="netstat 和 ps"></a>netstat 和 ps</h2><h2 id="systemd"><a href="#systemd" class="headerlink" title="systemd"></a>systemd</h2><p>WSL 中至今还没有使用 systemd，因此执行类似 <code>sudo systemctl start nginx</code> 这样的命令，会报如下这样的错误：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">System has not been booted with systemd as init system (PID 1). Can&#x27;t operate.</span><br></pre></td></tr></table></figure>
+
+<p>一个替代方法是使用 service，如 <code>sudo service nginx start</code>。</p>
+<h2 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h2><h2 id="无法使用的软件"><a href="#无法使用的软件" class="headerlink" title="无法使用的软件"></a>无法使用的软件</h2><p>以下软件在 WSL 中暂时无法正常使用：</p>
 <ul>
 <li><code>nmap</code>，详情请参见 <a href="https://github.com/microsoft/WSL/issues/1349">nmap not working</a>。</li>
 <li><code>proxychains</code></li>
 </ul>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关WSL的更多内容，可以查看<a href="https://docs.microsoft.com/zh-cn/windows/wsl/about">WSL官方文档</a>，或者<a href="https://blogs.msdn.microsoft.com/wsl/">WSL官方博客</a>，在使用WSL的过程中遇到任何问题，可以去<a href="https://github.com/Microsoft/WSL">WSL的GitHub地址</a>提Issues。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关 WSL 的更多内容，可以查看 <a href="https://docs.microsoft.com/zh-cn/windows/wsl">WSL 官方文档</a>，在使用 WSL 的过程中遇到任何问题，可以去 <a href="https://github.com/microsoft/WSL">WSL 的 GitHub 地址</a>提 Issues。</p>
 ]]></content>
       <categories>
         <category>Bug</category>
@@ -4648,6 +4694,7 @@
       <tags>
         <tag>Windows</tag>
         <tag>Linux</tag>
+        <tag>WSL</tag>
       </tags>
   </entry>
   <entry>
