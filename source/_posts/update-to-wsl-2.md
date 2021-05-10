@@ -25,6 +25,6 @@ VERSION 下面的结果为其版本号，上述为 WSL 1。
 
 截至目前为止，无法直接安装 WSL 2，需要先安装 WSL 1，然后将其升级为 WSL 2。升级步骤如下：
 
-1. 在 **启用或关闭 Windows 功能** 中勾选 **虚拟机平台**，或直接在管理员权限的 PowerShell 中输入 `Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform`；
+1. 在 **启用或关闭 Windows 功能** 中勾选 **虚拟机平台**，或直接在管理员权限的 PowerShell 中输入 `Enable-WindowsOptionalFeature -Online -FeatureName "VirtualMachinePlatform"`；
 2. 下载并安装 [Linux 内核更新包](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) ；
 3. 输入 `wsl --set-version Ubuntu 2` 将已安装发行版设置为 WSL 2。

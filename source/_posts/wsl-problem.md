@@ -18,7 +18,7 @@ tags:
 
 ## 安装及运行
 
-在安装前，需要在 **启用或关闭 Windows 功能** 中勾选 **适用于 Linux 的 Windows 子系统**，或者直接在管理员权限的 PowerShell 中输入 `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux` 此条命令，也能达到同样的效果。
+在安装前，需要在 **启用或关闭 Windows 功能** 中勾选 **适用于 Linux 的 Windows 子系统**，或者直接在管理员权限的 PowerShell 中输入 `Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"` 此条命令，也能达到同样的效果。
 
 完成上述操作后，可直接在 **Microsoft Store** 中搜索 Linux，到本文书写为止，商店中已经有 Ubuntu、SUSE、Debian、Kali 等 Linux 发行版，个人建议下载 Ubuntu。
 
