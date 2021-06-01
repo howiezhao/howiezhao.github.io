@@ -4586,6 +4586,45 @@
       </categories>
   </entry>
   <entry>
+    <title>Windows 10 中莫名其妙的“端口被占用”问题解决</title>
+    <url>/2021/06/01/win10-port-is-already-in-use-problem/</url>
+    <content><![CDATA[<p>大约是自 Windows 10 1709 更新之后（或许是 1809？2004？），莫名其妙的存在类似“端口被占用”这样的问题，比如像下面这样的报错信息：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Error: listen EACCES: permission denied 0.0.0.0:3000</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>或者启动 SS 时提示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Shadowsocks Error: Port already in use</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>又或者启动 Docker 时提示：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Error starting userland proxy: Bind for 0.0.0.0:50051: unexpected error Permission denied.</span><br></pre></td></tr></table></figure>
+
+<p>电脑重启几次之后，以上报错可能会消失，一切又恢复正常。</p>
+<span id="more"></span>
+
+<p>这表面上像是端口 <code>3000</code> 被占用，实则不然，因为当你在 PowerShell 中输入 <code>netstat -ano | findstr &quot;3000&quot;</code> 查看端口占用信息时，它却无任何输出。实际上这个错误对应的 Windows 错误码是 <a href="https://docs.microsoft.com/zh-cn/windows/win32/winsock/windows-sockets-error-codes-2">10013（WSAEACCES）</a> ：权限被拒绝。</p>
+<p>出现这个错误的原因是 Windows 10 的补丁 <a href="https://support.microsoft.com/zh-cn/topic/2018-%E5%B9%B4-2-%E6%9C%88-13-%E6%97%A5-kb4074588-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%86%85%E9%83%A8%E7%89%88%E6%9C%AC-16299-248-b4e2ca66-dd7a-6fd5-a8f3-dc6683d4922b">KB4074588</a> 中存在一个已知问题：</p>
+<blockquote>
+<p>安装此更新后，应用程序可能无法保留或绑定到以前工作的端口。</p>
+</blockquote>
+<p>这些端口会被 Hyper-V 拿来保留备用，处于备用的端口无法被其他程序使用，用户登录后，系统会随机保留一些端口。使用 <code>netsh interface ipv4 show excludedportrange protocol=tcp</code> 可以查看被保留的端口段，每次重启都有可能是不同的端口。</p>
+<p>因此，当你的系统启用 Hyper-V 或安装 Docker（安装 Docker Desktop 会启用 Hyper-V）之后，这个问题可能就会出现。</p>
+<p>这个问题的解决方法（<a href="https://en.wikipedia.org/wiki/Workaround">workaround</a>）有两种，最粗暴的方法就是如上所述多重启几次，让它的随机端口改变，但以后仍有可能会遇到同样的问题。另一种方法是排除掉需要使用的端口，具体来说：</p>
+<ol>
+<li>禁用 Hyper-V</li>
+<li>添加需要排除的端口范围，如：<code>netsh int ipv4 add excludedportrange protocol=tcp startport=50051 numberofports=1</code></li>
+<li>重新启用 Hyper-V</li>
+</ol>
+<hr>
+<p>参考：</p>
+<ol>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows/issues/1835">https://github.com/shadowsocks/shadowsocks-windows/issues/1835</a></li>
+<li><a href="https://github.com/docker/for-win/issues/3171">https://github.com/docker/for-win/issues/3171</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Windows 系统加固</title>
     <url>/2018/05/19/windows-reinforcement/</url>
     <content><![CDATA[<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><p>下面这几项应为每一个使用 Windows 的用户的<strong>最最基本</strong>安全配置：</p>

@@ -211,7 +211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-count">131</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -289,6 +289,96 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2021/06/01/win10-port-is-already-in-use-problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/06/01/win10-port-is-already-in-use-problem/" class="post-title-link" itemprop="url">Windows 10 中莫名其妙的“端口被占用”问题解决</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-06-01 21:22:03 / Modified: 22:32:40" itemprop="dateCreated datePublished" datetime="2021-06-01T21:22:03+08:00">2021-06-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>大约是自 Windows 10 1709 更新之后（或许是 1809？2004？），莫名其妙的存在类似“端口被占用”这样的问题，比如像下面这样的报错信息：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Error: listen EACCES: permission denied 0.0.0.0:3000</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>或者启动 SS 时提示：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Shadowsocks Error: Port already in use</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>又或者启动 Docker 时提示：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error starting userland proxy: Bind for 0.0.0.0:50051: unexpected error Permission denied.</span><br></pre></td></tr></table></figure>
+
+<p>电脑重启几次之后，以上报错可能会消失，一切又恢复正常。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/01/win10-port-is-already-in-use-problem/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1068,109 +1158,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2021/01/12/udp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/12/udp/" class="post-title-link" itemprop="url">UDP 协议分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-12 15:25:26" itemprop="dateCreated datePublished" datetime="2021-01-12T15:25:26+08:00">2021-01-12</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-21 23:21:53" itemprop="dateModified" datetime="2021-01-21T23:21:53+08:00">2021-01-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>UDP 全称 User Datagram Protocol，即<strong>用户数据报协议</strong>，它为调用它的应用程序提供了一种不可靠、无连接的服务。</p>
-<p>UDP 无非就是对网络层协议增加了一点（多路）复用/（多路）分解服务而已。</p>
-<p>使用 UDP 的上层协议有：</p>
-<ul>
-<li><a href="/2020/12/29/dns/" title="DNS">DNS</a></li>
-<li>SNMP</li>
-</ul>
-<p>选择使用 UDP 的原因：</p>
-<ul>
-<li>关于发送什么数据以及何时发送的应用层控制更为精细。</li>
-<li>无须连接建立。</li>
-<li>无连接状态。</li>
-<li>分组首部开销小。每个 TCP 报文段都有 20 字节的首部开销，而 UDP 仅有 8 字节的开销。</li>
-</ul>
-<p>使用 UDP 的应用是可能实现可靠数据传输的，这可通过在应用程序自身中建立可靠性机制来完成。<br>可参考 <a target="_blank" rel="noopener" href="https://github.com/skywind3000/kcp">KCP</a>、<a target="_blank" rel="noopener" href="https://www.chromium.org/quic">QUIC</a>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/12/udp/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1215,7 +1204,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">167k</span>
+    <span title="Symbols count total">168k</span>
   </span>
 </div>
 <div class="busuanzi-count">
