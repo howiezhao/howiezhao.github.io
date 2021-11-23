@@ -838,7 +838,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
+        <time title="Modified: 2021-11-23 23:24:26" itemprop="dateModified" datetime="2021-11-23T23:24:26+08:00">2021-11-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -860,7 +860,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是 meterpreter 的先天优势，它完全基于内存，Linux 中的反取证主要涉及 MAC 时间、日志文件、history：</p>
+          <p>后渗透测试阶段的重要工作便是擦除痕迹，也即<strong>反取证</strong>，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是 meterpreter 的先天优势，它完全基于内存，Linux 中的反取证主要涉及 MAC 时间、日志文件、history：</p>
 <h2 id="MAC-时间"><a href="#MAC-时间" class="headerlink" title="MAC 时间"></a>MAC 时间</h2><p>MAC 即 Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间（例如通过 <code>cat</code> 查看时），更改时间指对文件属性、权限更改时的时间。</p>
 <p>使用 <code>ls -l</code> 默认查看的是修改时间，要查看其余 2 个时间，可以加参数 <code>ls -l --time=atime/ctime</code>，另一个查看 MAC 时间的命令是 <code>stat</code>。</p>
 <p>使用 <code>touch -d &quot;5 days ago&quot;</code> 或 <code>touch -t 1805021030</code> 可以修改 MAC 中的 MA 时间。meterpreter 中的 <code>timestomp</code> 命令可以方便的修改 MAC 时间。</p>
@@ -1298,7 +1298,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">168k</span>
+    <span title="Symbols count total">169k</span>
   </span>
 </div>
 <div class="busuanzi-count">

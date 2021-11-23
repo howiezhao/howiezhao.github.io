@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="在Linux中创建用户可以用useradd或者adduser，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。 adduser当使用adduser howie命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。 usera">
+<meta name="description" content="在 Linux 中创建用户可以用 useradd 或者 adduser，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录 Shell 等相关配置，而这两个命令之间的差异就在于此。 adduser当使用 adduser howie 命令时，系统除了创建 howie 用户，还会自动创建用户主目录、同名用户组、登录 Shell 等，并提示输入用户密码，这一切操作都将以一个对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="useradd与adduser">
+<meta property="og:title" content="useradd 与 adduser">
 <meta property="og:url" content="https://howiezhao.github.io/2018/07/16/useradd-adduser/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="在Linux中创建用户可以用useradd或者adduser，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。 adduser当使用adduser howie命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。 usera">
+<meta property="og:description" content="在 Linux 中创建用户可以用 useradd 或者 adduser，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录 Shell 等相关配置，而这两个命令之间的差异就在于此。 adduser当使用 adduser howie 命令时，系统除了创建 howie 用户，还会自动创建用户主目录、同名用户组、登录 Shell 等，并提示输入用户密码，这一切操作都将以一个对">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-07-16T02:44:41.000Z">
-<meta property="article:modified_time" content="2021-02-05T11:43:26.000Z">
+<meta property="article:modified_time" content="2021-11-23T15:24:26.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
     lang   : 'en'
   };
 </script>
-<title>useradd与adduser | Howie's Notes</title>
+<title>useradd 与 adduser | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
     <script>
@@ -316,7 +316,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          useradd与adduser
+          useradd 与 adduser
         </h1>
 
         <div class="post-meta-container">
@@ -334,7 +334,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
+        <time title="Modified: 2021-11-23 23:24:26" itemprop="dateModified" datetime="2021-11-23T23:24:26+08:00">2021-11-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -363,10 +363,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>在Linux中创建用户可以用<code>useradd</code>或者<code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录Shell等相关配置，而这两个命令之间的差异就在于此。</p>
-<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用<code>adduser howie</code>命令时，系统除了创建howie用户，还会自动创建用户主目录、同名用户组、登录Shell等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
-<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用<code>useradd howie</code>命令时，系统只会创建howie用户，而不会创建用户密码、用户主目录、同名用户组、登录shell等，若要指定密码，可以接着采用<code>passwd howie</code>命令。其次，<code>useradd</code>有众多参数，我们可以通过使用这些参数来达到和<code>adduser</code>一样的效果，如<code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用<code>passwd</code>命令创建密码，当然也可以使用<code>-p</code>参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
-<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用<code>userdel howie</code>命令时，系统只会删除howie用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用<code>-r</code>参数。</p>
+        <p>在 Linux 中创建用户可以用 <code>useradd</code> 或者 <code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录 Shell 等相关配置，而这两个命令之间的差异就在于此。</p>
+<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用 <code>adduser howie</code> 命令时，系统除了创建 howie 用户，还会自动创建用户主目录、同名用户组、登录 Shell 等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
+<p>在某些新版本的 RedHat 系 Linux 中，<code>adduser</code> 是 <code>useradd</code> 的一个软链接，即别名。</p>
+<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用 <code>useradd howie</code> 命令时，系统只会创建 howie 用户，而不会创建用户密码、用户主目录、同名用户组、登录 Shell 等，若要指定密码，可以接着采用 <code>passwd howie</code> 命令。其次，<code>useradd</code> 有众多参数，我们可以通过使用这些参数来达到和 <code>adduser</code> 一样的效果，如 <code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用 <code>passwd</code> 命令创建密码，当然也可以使用 <code>-p</code> 参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
+<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用 <code>userdel howie</code> 命令时，系统只会删除 howie 用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用 <code>-r</code> 参数。</p>
 
     </div>
 
@@ -445,7 +446,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">168k</span>
+    <span title="Symbols count total">169k</span>
   </span>
 </div>
 <div class="busuanzi-count">
