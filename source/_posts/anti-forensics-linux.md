@@ -8,7 +8,7 @@ tags:
   - Linux
 ---
 
-后渗透测试阶段的重要工作便是擦除痕迹，也即反取证，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是 meterpreter 的先天优势，它完全基于内存，Linux 中的反取证主要涉及 MAC 时间、日志文件、history：
+后渗透测试阶段的重要工作便是擦除痕迹，也即**反取证**，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是 meterpreter 的先天优势，它完全基于内存，Linux 中的反取证主要涉及 MAC 时间、日志文件、history：
 
 ## MAC 时间
 
@@ -26,7 +26,7 @@ MAC 即 Modified/Accessed/Changed，也就是修改/访问/更改时间，修改
 
 Linux 中的日志文件主要有 `/var/log/auth.log`、`/var/log/secure`、`/var/log/wtmp`、`/var/log/btmp`、`/var/log/lastlog`、`/var/log/faillog`。
 
-Debian 系的 auth.log 文件与 RedHat 系的 secure 文件都记录了系统的登录日志，`last` 命令用于查看登录日志以及重启日志，文件位于 `/var/log/wtmp`；`lastb` 命令用于查看登录失败日志，文件位于 `/var/log/btmp`；`lastlog` 命令用于查看所有用户最近一次登录日志，文件位于 `/var/log/lastlog`；`faillog` 命令与 `lastlog` 命令一样，用于查看用户登录失败日志，文件位于 `/var/log/faillog`，此命令仅限于 Debian 系。
+Debian 系的 `auth.log` 文件与 RedHat 系的 `secure` 文件都记录了系统的登录日志，`last` 命令用于查看登录日志以及重启日志，文件位于 `/var/log/wtmp`；`lastb` 命令用于查看登录失败日志，文件位于 `/var/log/btmp`；`lastlog` 命令用于查看所有用户最近一次登录日志，文件位于 `/var/log/lastlog`；`faillog` 命令与 `lastlog` 命令一样，用于查看用户登录失败日志，文件位于 `/var/log/faillog`，此命令仅限于 Debian 系。
 
 ### Web 日志
 
