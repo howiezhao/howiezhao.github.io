@@ -23,6 +23,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MARKDOWN_CONFIG_FILE: .markdown-lint.json
+        VALIDATE_NATURAL_LANGUAGE: false
 
     - name: Setup node
       uses: actions/setup-node@v2-beta
