@@ -24,6 +24,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MARKDOWN_CONFIG_FILE: .markdown-lint.json
         VALIDATE_NATURAL_LANGUAGE: false
+        VALIDATE_GITHUB_ACTIONS: false
 
     - name: Setup node
       uses: actions/setup-node@v2-beta
@@ -33,7 +34,6 @@ jobs:
     - name: Setup Hexo
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
-      # shellcheck disable=SC2086
       run: |
         git config --global user.name "howiezhao"
         git config --global user.email "howiezhaohr@hotmail.com"
