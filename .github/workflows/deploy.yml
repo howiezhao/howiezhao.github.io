@@ -34,8 +34,8 @@ jobs:
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
       run: |
-        git config --global user.name 'howiezhao'
-        git config --global user.email 'howiezhaohr@hotmail.com'
+        git config --global user.name "howiezhao"
+        git config --global user.email "howiezhaohr@hotmail.com"
         mkdir -p ~/.ssh/
         echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
