@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -241,6 +241,289 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/01/burpsuite-intruder-attack-type/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/05/01/burpsuite-intruder-attack-type/" class="post-title-link" itemprop="url">Sniper、Battering ram、Pitchfork、Cluster bomb 的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-05-01 22:45:55" itemprop="dateCreated datePublished" datetime="2018-05-01T22:45:55+08:00">2018-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-01-17 22:46:22" itemprop="dateModified" datetime="2022-01-17T22:46:22+08:00">2022-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Burp Suite 中的 Intruder 模块里有 4 种攻击模式，分别为 Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设 Payload set1=[1, 2]，Payload set2=[a, b, c, d]：</p>
+<h2 id="Sniper"><a href="#Sniper" class="headerlink" title="Sniper"></a>Sniper</h2><p>Sniper，中文“狙击手”，每次只针对 1 个 Payload Position，使用 1 个 Payload set，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1(default:x)</th>
+<th>Position2(default:y)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>y</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>y</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>x</td>
+<td>1</td>
+</tr>
+<tr>
+<td>#4</td>
+<td>x</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<h2 id="Battering-ram"><a href="#Battering-ram" class="headerlink" title="Battering ram"></a>Battering ram</h2><p>Battering ram，中文“攻城槌”，每次针对多个 Payload Position，使用 1 个 Payload set，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<h2 id="Pitchfork"><a href="#Pitchfork" class="headerlink" title="Pitchfork"></a>Pitchfork</h2><p>Pitchfork，中文“杈子”，每次针对多个 Payload Position，使用多个 Payload set，最多支持 5 个列表，也即 5 个位置，采用平行模式，请求次数以最小列表项为准，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>2</td>
+<td>b</td>
+</tr>
+</tbody></table>
+<h2 id="Cluster-bomb"><a href="#Cluster-bomb" class="headerlink" title="Cluster bomb"></a>Cluster bomb</h2><p>Cluster bomb，中文“集束炸弹”，每次针对多个 Payload Position，使用多个 Payload set，最多支持 5 个列表，也即 5 个位置，采用交叉模式，请求次数为各列表项之积，示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Position1</th>
+<th>Position2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#1</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>1</td>
+<td>b</td>
+</tr>
+<tr>
+<td>#3</td>
+<td>1</td>
+<td>c</td>
+</tr>
+<tr>
+<td>#4</td>
+<td>1</td>
+<td>d</td>
+</tr>
+<tr>
+<td>#5</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr>
+<td>#6</td>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr>
+<td>#7</td>
+<td>2</td>
+<td>c</td>
+</tr>
+<tr>
+<td>#8</td>
+<td>2</td>
+<td>d</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/04/29/url-uri/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/04/29/url-uri/" class="post-title-link" itemprop="url">URI 与 URL 的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-04-29 16:40:08" itemprop="dateCreated datePublished" datetime="2018-04-29T16:40:08+08:00">2018-04-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>URI，全称&quot;Uniform Resource Identifier&quot;，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI 的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。</p>
+<p>URL，全称&quot;Uniform Resource Locator&quot;，中文“统一资源定位符”，URL 是 URI 的子集。例如 <code>https://howiezhao.github.io/2018/04/29/url-uri/</code><br>这个 URL 唯一标识了互联网中一台服务器上的一篇文章（即本篇文章）。URL 的格式一般为 <code>scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]</code></p>
+<p>URN，全称&quot;Uniform Resource Name&quot;，中文“统一资源名称”，是另一种形式的 URI，它通过特定命名空间中的唯一名称来标识资源。例如 <code>urn:isbn:9780141036144</code> 这个 URN 唯一标识了乔治·奥威尔所著的《1984》。</p>
+<p>简单说，URL 代表一个人的位置，URN 代表一个人的身份证号，通过 URL 和 URN 都可以唯一的找到这个人，所以它们都属于 URI。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -947,193 +1230,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/25/kali-update-bug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/11/25/kali-update-bug/" class="post-title-link" itemprop="url">Kali Rolling 2017 更新后无法启动解决方案</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-11-25 19:04:29" itemprop="dateCreated datePublished" datetime="2017-11-25T19:04:29+08:00">2017-11-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新 Kali 后重新启动会出现如下显示，并无法进入系统界面</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter &#x27;help&#x27; for a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
-
-<p><strong>解决方法：</strong></p>
-<ol>
-<li>在此界面输入 <code>blkid</code> 命令，查看自己的分区号</li>
-<li>依据自己的分区号输入 <code>fsck -y /dev/sda1</code>，我的分区号是 <code>sda1</code>。</li>
-<li>输入 <code>exit</code> 命令退出重启电脑</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2017/11/08/kali-w3af-bug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/11/08/kali-w3af-bug/" class="post-title-link" itemprop="url">Kali Rolling 2017 下安装 w3af 出错解决方案</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-11-08 11:57:43" itemprop="dateCreated datePublished" datetime="2017-11-08T11:57:43+08:00">2017-11-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-02-06 22:41:45" itemprop="dateModified" datetime="2021-02-06T22:41:45+08:00">2021-02-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot"><a href="#Run-error-quot-39-module-39-object-has-no-attribute-39-SSL-ST-INIT-39-quot-quot" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法 1：</strong></p>
-<p>修改 <code>/usr/local/lib/python2.7/dist-packages/OpenSSL/SSL.py</code> 文件，将下面四行注释掉</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SSL_ST_INIT = _lib.SSL_ST_INIT</span></span><br><span class="line"><span class="comment"># SSL_ST_BEFORE = _lib.SSL_ST_BEFORE</span></span><br><span class="line"><span class="comment"># SSL_ST_OK = _lib.SSL_ST_OK</span></span><br><span class="line"><span class="comment"># SSL_ST_RENEGOTIATE = _lib.SSL_ST_RENEGOTIATE</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>解决方法 2：</strong></p>
-<ol>
-<li><p>卸载 w3af 要求的 pyOpenSSL 版本</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure></li>
-<li><p>安装最新版 pyOpenSSL</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyOpenSSL</span><br></pre></td></tr></table></figure></li>
-<li><p>编辑 w3af 安装目录中的 <code>/w3af/core/controllers/dependency_check/requirements.py</code> 文件，将要求的 pyOpenSSl 版本号改为你安装的最新版，即修改下面这一行代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PIPDependency(<span class="string">&#x27;OpenSSL&#x27;</span>, <span class="string">&#x27;pyOpenSSL&#x27;</span>, <span class="string">&#x27;Version of pyOpenSSL you are using&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/11/08/kali-w3af-bug/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1158,7 +1254,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">168k</span>
+    <span title="Symbols count total">169k</span>
   </span>
 </div>
 <div class="busuanzi-count">

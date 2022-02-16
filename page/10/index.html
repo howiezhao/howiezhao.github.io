@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-count">133</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -241,6 +241,207 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/09/brainfuck/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/09/brainfuck/" class="post-title-link" itemprop="url">Brainfuck</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-09 17:15:44" itemprop="dateCreated datePublished" datetime="2018-08-09T17:15:44+08:00">2018-08-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-02-05 17:43:14" itemprop="dateModified" datetime="2021-02-05T17:43:14+08:00">2021-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Brainfuck 是在 1993 年创建的一种极小化的计算机语言，由于 fuck 在英语中是脏话，这种语言有时也被称为 Brainf*ck 或 Brainf***，或被简称为 BF。</p>
+<p>Brainfuck 中共有 8 种字符，它们及其含义如下所示：</p>
+<ul>
+<li><code>&gt;</code>：指针加一</li>
+<li><code>&lt;</code>：指针减一</li>
+<li><code>+</code>：指针指向的字节的值加一</li>
+<li><code>-</code>：指针指向的字节的值减一</li>
+<li><code>.</code>：输出指针指向的单元内容（ASCII 码）</li>
+<li><code>,</code>：输入内容到指针指向的单元（ASCII 码）</li>
+<li><code>[</code>：如果指针指向的单元值为零，向后跳转到对应的 <code>]</code> 指令的次一指令处</li>
+<li><code>]</code>：如果指针指向的单元值不为零，向前跳转到对应的 <code>[</code> 指令的次一指令处</li>
+</ul>
+<p>下面是一个用 Brainfuck 在屏幕上打印 <code>Hello World</code> 的程序例子：</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="title">[</span>&gt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span>&gt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span>&gt;++<span class="literal">+</span>&gt;<span class="literal">+</span>&lt;&lt;&lt;&lt;<span class="literal">-</span><span class="title">]</span></span><br><span class="line">&gt;++<span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="string">.</span><span class="string">.</span>++<span class="literal">+</span><span class="string">.</span>&gt;++<span class="string">.</span>&lt;&lt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="string">.</span></span><br><span class="line">&gt;<span class="string">.</span>++<span class="literal">+</span><span class="string">.</span>--<span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="string">.</span>--<span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>&gt;<span class="string">.</span></span><br></pre></td></tr></table></figure>
+
+<p>程序的运行结果如 <a target="_blank" rel="noopener" href="https://fatiherikli.github.io/brainfuck-visualizer/">Brainfuck Visualizer</a> 所示。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/08/02/taoup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Howie Zhao">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Howie's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/02/taoup/" class="post-title-link" itemprop="url">《TAOUP》读书笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-02 22:31:46" itemprop="dateCreated datePublished" datetime="2018-08-02T22:31:46+08:00">2018-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的<strong>TAOUP</strong>，即The Art of UNIX Programming(UNIX编程艺术)。</p>
+<h2 id="哲学"><a href="#哲学" class="headerlink" title="哲学"></a>哲学</h2><p>Unix的设计哲学总体上可以概括为以下几点：</p>
+<ol>
+<li>模块原则：使用简洁的接口拼合简单的部件</li>
+<li>清晰原则：清晰胜于机巧</li>
+<li>组合原则：设计时考虑拼接组合</li>
+<li>分离原则：策略同机制分离，接口同引擎分离</li>
+<li>简洁原则：设计要简洁，复杂度能低则低</li>
+<li>吝啬原则：除非却无它法，不要编写庞大的程序</li>
+<li>透明性原则：设计要可见，以便审查和调试</li>
+<li>健壮原则：健壮源于透明与简洁</li>
+<li>表示原则：把知识叠入数据以求逻辑质朴而健壮</li>
+<li>通俗原则：接口设计避免标新立异</li>
+<li>缄默原则：如果一个程序没什么好说的，就沉默</li>
+<li>补救原则：出现异常时，马上退出并给出足够错误信息</li>
+<li>经济原则：宁花机器一分，不花程序员一秒</li>
+<li>生成原则：避免手工hack，尽量编写程序去生成程序</li>
+<li>优化原则：雕琢前先要有原型，跑之前先学会走</li>
+<li>多样原则：决不相信所谓“不二法门”的断言</li>
+<li>扩展原则：设计着眼未来，未来总比预想来得快
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/02/taoup/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -952,187 +1153,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/07/15/compile-build/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/15/compile-build/" class="post-title-link" itemprop="url">编译与构建</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-07-15 14:29:13" itemprop="dateCreated datePublished" datetime="2018-07-15T14:29:13+08:00">2018-07-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-01-08 18:37:40" itemprop="dateModified" datetime="2021-01-08T18:37:40+08:00">2021-01-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在一般意义上而言，本文 <strong>编译与构建</strong> 的内容适用于 <strong>编译型语言</strong> 。</p>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译（compile）</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器（compiler）</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。</p>
-<p>编译器一般由相应的编程语言提供。</p>
-<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标文件，而这个工具就是<strong>构建系统（build system）</strong>，构建系统所作的就是<strong>构建（build）</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。</p>
-<p>现在的很多构建系统也包含了<strong>包管理器（package manager）</strong>的功能，用以解决项目依赖的问题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/15/compile-build/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://howiezhao.github.io/2018/05/19/linux-reinforcement/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Howie's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/05/19/linux-reinforcement/" class="post-title-link" itemprop="url">Linux系统加固</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-05-19 13:59:05" itemprop="dateCreated datePublished" datetime="2018-05-19T13:59:05+08:00">2018-05-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CheatSheet/" itemprop="url" rel="index"><span itemprop="name">CheatSheet</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="帐户与口令"><a href="#帐户与口令" class="headerlink" title="帐户与口令"></a>帐户与口令</h2><p>此方面的加固主要为了防止针对帐户的暴力破解。</p>
-<p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p>
-<p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p>
-<p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/05/19/linux-reinforcement/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
@@ -1157,7 +1177,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">168k</span>
+    <span title="Symbols count total">169k</span>
   </span>
 </div>
 <div class="busuanzi-count">

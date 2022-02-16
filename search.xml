@@ -1662,23 +1662,6 @@
       </categories>
   </entry>
   <entry>
-    <title>前端相关术语</title>
-    <url>/2018/09/14/front-end-terminology/</url>
-    <content><![CDATA[<h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><p>轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。</p>
-<h2 id="视差滚动"><a href="#视差滚动" class="headerlink" title="视差滚动"></a>视差滚动</h2><p>视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。</p>
-<h2 id="ToolTip"><a href="#ToolTip" class="headerlink" title="ToolTip"></a>ToolTip</h2><p>ToolTip，在Bootstrap 4 中又被称为提示冒泡。</p>
-<h2 id="手风琴效果"><a href="#手风琴效果" class="headerlink" title="手风琴效果"></a>手风琴效果</h2><p>手风琴效果，又被称为Accordion。</p>
-<h2 id="哈林摇"><a href="#哈林摇" class="headerlink" title="哈林摇"></a>哈林摇</h2><p>哈林摇，又称Harlem Shake。</p>
-<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><p>响应式布局，又称Responsive Layout，即一个布局可以适应多个不同终端。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GCC 小记</title>
     <url>/2019/04/18/gcc/</url>
     <content><![CDATA[<p>GCC 一般有两层意思，广义是指 GNU Compiler Collection（即 GNU 编译器套装），狭义是指 GNU C Compiler（即 GNU C 语言编译器），在本文中，我默认大写的 GCC 指广义，小写的 gcc 指狭义。</p>
@@ -1711,6 +1694,23 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端相关术语</title>
+    <url>/2018/09/14/front-end-terminology/</url>
+    <content><![CDATA[<h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><p>轮播图，在Bootstrap中又被称为Carousel，是当今网站主页非常常用的一种动态效果。</p>
+<h2 id="视差滚动"><a href="#视差滚动" class="headerlink" title="视差滚动"></a>视差滚动</h2><p>视差滚动，又称Parallax Scrolling，指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。</p>
+<h2 id="ToolTip"><a href="#ToolTip" class="headerlink" title="ToolTip"></a>ToolTip</h2><p>ToolTip，在Bootstrap 4 中又被称为提示冒泡。</p>
+<h2 id="手风琴效果"><a href="#手风琴效果" class="headerlink" title="手风琴效果"></a>手风琴效果</h2><p>手风琴效果，又被称为Accordion。</p>
+<h2 id="哈林摇"><a href="#哈林摇" class="headerlink" title="哈林摇"></a>哈林摇</h2><p>哈林摇，又称Harlem Shake。</p>
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><p>响应式布局，又称Responsive Layout，即一个布局可以适应多个不同终端。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
@@ -2407,19 +2407,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于人的信息收集</title>
-    <url>/2018/09/09/human-based-information-gathering/</url>
-    <content><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p>
-<h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>社会工程学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hyper-V 相关问题解决</title>
     <url>/2018/08/20/hyper-v-problem/</url>
     <content><![CDATA[<h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。</p>
@@ -2441,6 +2428,19 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于人的信息收集</title>
+    <url>/2018/09/09/human-based-information-gathering/</url>
+    <content><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p>
+<h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>社会工程学</tag>
       </tags>
   </entry>
   <entry>
@@ -2602,17 +2602,6 @@
       </tags>
   </entry>
   <entry>
-    <title>IPSec 运行机制</title>
-    <url>/2018/05/11/ipsec/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用 IPython 替代原生 Python Shell</title>
     <url>/2018/09/16/ipython/</url>
     <content><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
@@ -2644,6 +2633,17 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>IPSec 运行机制</title>
+    <url>/2018/05/11/ipsec/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
   </entry>
   <entry>
     <title>盘点那些互联网公司的学生优惠</title>
@@ -2933,6 +2933,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdown 小记</title>
+    <url>/2018/07/21/markdown-cheatsheet/</url>
+    <content><![CDATA[<p>Markdown 是一种轻量<strong>标记语言</strong>，其文件后缀名为 <code>.md</code>，它允许人们采用其规定的语法编写文档，而后 Markdown 解析器会将其转化为有效的 HTML 文档，以便在网页中显示，时至今日，有许多 Markdown 解析器增强了 Markdown 的基本语法，这就造成了 Markdown 有多种<strong>风格</strong>（flavor）。</p>
+<p>因为 Markdown 要被转化为 HTML 才能在网页上显示，所以在 Markdown 中仍然可以使用 HTML，如果有 Markdown 无法完成的工作，完全可以再用回 HTML。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br></pre></td></tr></table></figure>
+
+<p>对应 HTML，最高 6 级标题。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"><span class="bullet">  -</span> 这是是嵌套列表项</span><br><span class="line"><span class="bullet">  -</span> 这里也是嵌套列表项</span><br><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 有序列表项</span><br><span class="line"><span class="bullet">2.</span> 有序列表项</span><br><span class="line"><span class="bullet">3.</span> 有序列表项</span><br></pre></td></tr></table></figure>
+
+<p>无序列表项常以 <code>-</code> 或 <code>*</code> 起始，个人习惯使用 <code>-</code>。</p>
+<span id="more"></span>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">Howie&#x27;s Blog</span>](<span class="link">https://howiezhao.com</span>)</span><br></pre></td></tr></table></figure>
+
+<p>超文本链接必须带 http/https。</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">一张图片</span>](<span class="link">/images/abc.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<p>当图片无法显示时，则显示中括号中的语句。</p>
+<p>图片的路径为相对路径，即当前 Markdown 文件所在路径下的 <code>images</code> 中的 <code>abc.jpg</code>。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*斜体*</span></span><br><span class="line"><span class="strong">**粗体**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*粗斜体<span class="strong">**<span class="emphasis">*</span></span></span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
+<p>`这里是单行代码`</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
+
+<p>上下应该各空一行</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 这是引用</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
+
+<p>这是一条水平区分线，用 3 个或以上的短横线表示，个人习惯使用 4 个短横线。</p>
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown 使用 <code>\</code> 转义以上特殊字符。</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
+<li>在特殊字符与要书写的文字之间加上空格</li>
+<li>不同段之间加一空行</li>
+<li>链接后加一个空格</li>
+</ol>
+<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为 <strong>GFM</strong>，即 <strong>GitHub 风格的 Markdown 语法</strong>，是 GitHub 中编辑器使用的 Markdown 语法格式，略微区别于标准的 Markdown 语法，主要如下：</p>
+<ol>
+<li>链接自动识别：GFM 会自动为标准的 URL 加上链接</li>
+<li>语法着色：在 <code>```</code> 后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
+<li>删除线：使用 <code>~~</code> 表示删除线</li>
+<li>任务列表：使用 <code>- [ ]</code> 或 <code>- [x]</code> 表示未勾选或已勾选的任务列表</li>
+<li>Emoji：使用 <code>:EMOJICODE:</code> 可以显示 Emoji 表情，比如 <code>:+1:</code> 表示一个👍，要查看完整的 Emoji 编码，可参考 <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
+</ol>
+<p>要了解 GFM 的更多特性，可以参考 <a href="https://docs.github.com/cn/github/writing-on-github">GitHub 官方的文档</a>。</p>
+<h2 id="CommonMark"><a href="#CommonMark" class="headerlink" title="CommonMark"></a>CommonMark</h2><p>为了解决 Markdown 风格太多的问题，诞生了 <a href="https://commonmark.org/">CommonMark</a> 项目，其制定了一系列的语法规范，按照此语法规范书写的 Markdown 文档可以得到更好的兼容性。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a> 是一个开源在线的 Markdown 编辑器。</p>
+<p>Sublime Text 拥有众多的 Markdown 插件，其中 <a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a> 可以在浏览器中预览 Markdown 文件，而 <a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a> 可以快速的编辑 Markdown 文件。</p>
+<p>为了检查你书写的 Markdown 是否符合规范，可以使用相应的 linter <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> 命令行工具。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Makefile 小记</title>
     <url>/2019/04/18/makefile/</url>
     <content><![CDATA[<p>Linux 中使用最广的构建工具是 <strong>make</strong>，而 make 会读取 <strong>Makefile</strong> 文件中的配置信息来完成构建，一个简单的 Makefile 文件如下所示：</p>
@@ -2994,61 +3049,6 @@
       <tags>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Markdown 小记</title>
-    <url>/2018/07/21/markdown-cheatsheet/</url>
-    <content><![CDATA[<p>Markdown 是一种轻量<strong>标记语言</strong>，其文件后缀名为 <code>.md</code>，它允许人们采用其规定的语法编写文档，而后 Markdown 解析器会将其转化为有效的 HTML 文档，以便在网页中显示，时至今日，有许多 Markdown 解析器增强了 Markdown 的基本语法，这就造成了 Markdown 有多种<strong>风格</strong>（flavor）。</p>
-<p>因为 Markdown 要被转化为 HTML 才能在网页上显示，所以在 Markdown 中仍然可以使用 HTML，如果有 Markdown 无法完成的工作，完全可以再用回 HTML。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br></pre></td></tr></table></figure>
-
-<p>对应 HTML，最高 6 级标题。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"><span class="bullet">  -</span> 这是是嵌套列表项</span><br><span class="line"><span class="bullet">  -</span> 这里也是嵌套列表项</span><br><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"><span class="bullet">-</span> 无序列表项</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 有序列表项</span><br><span class="line"><span class="bullet">2.</span> 有序列表项</span><br><span class="line"><span class="bullet">3.</span> 有序列表项</span><br></pre></td></tr></table></figure>
-
-<p>无序列表项常以 <code>-</code> 或 <code>*</code> 起始，个人习惯使用 <code>-</code>。</p>
-<span id="more"></span>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">Howie&#x27;s Blog</span>](<span class="link">https://howiezhao.com</span>)</span><br></pre></td></tr></table></figure>
-
-<p>超文本链接必须带 http/https。</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">一张图片</span>](<span class="link">/images/abc.jpg</span>)</span><br></pre></td></tr></table></figure>
-
-<p>当图片无法显示时，则显示中括号中的语句。</p>
-<p>图片的路径为相对路径，即当前 Markdown 文件所在路径下的 <code>images</code> 中的 <code>abc.jpg</code>。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*斜体*</span></span><br><span class="line"><span class="strong">**粗体**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*粗斜体<span class="strong">**<span class="emphasis">*</span></span></span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
-<p>`这里是单行代码`</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
-
-<p>上下应该各空一行</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 这是引用</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">----</span><br></pre></td></tr></table></figure>
-
-<p>这是一条水平区分线，用 3 个或以上的短横线表示，个人习惯使用 4 个短横线。</p>
-<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><p>和传统编程语言一样，Markdown 使用 <code>\</code> 转义以上特殊字符。</p>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><ol>
-<li>在特殊字符与要书写的文字之间加上空格</li>
-<li>不同段之间加一空行</li>
-<li>链接后加一个空格</li>
-</ol>
-<h2 id="GitHub-Flavored-Markdown"><a href="#GitHub-Flavored-Markdown" class="headerlink" title="GitHub Flavored Markdown"></a>GitHub Flavored Markdown</h2><p>GitHub Flavored Markdown，简记为 <strong>GFM</strong>，即 <strong>GitHub 风格的 Markdown 语法</strong>，是 GitHub 中编辑器使用的 Markdown 语法格式，略微区别于标准的 Markdown 语法，主要如下：</p>
-<ol>
-<li>链接自动识别：GFM 会自动为标准的 URL 加上链接</li>
-<li>语法着色：在 <code>```</code> 后输入语言名称，即可着色，要查看支持的语言列表，请参考<a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">官方文档</a></li>
-<li>删除线：使用 <code>~~</code> 表示删除线</li>
-<li>任务列表：使用 <code>- [ ]</code> 或 <code>- [x]</code> 表示未勾选或已勾选的任务列表</li>
-<li>Emoji：使用 <code>:EMOJICODE:</code> 可以显示 Emoji 表情，比如 <code>:+1:</code> 表示一个👍，要查看完整的 Emoji 编码，可参考 <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
-</ol>
-<p>要了解 GFM 的更多特性，可以参考 <a href="https://docs.github.com/cn/github/writing-on-github">GitHub 官方的文档</a>。</p>
-<h2 id="CommonMark"><a href="#CommonMark" class="headerlink" title="CommonMark"></a>CommonMark</h2><p>为了解决 Markdown 风格太多的问题，诞生了 <a href="https://commonmark.org/">CommonMark</a> 项目，其制定了一系列的语法规范，按照此语法规范书写的 Markdown 文档可以得到更好的兼容性。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a> 是一个开源在线的 Markdown 编辑器。</p>
-<p>Sublime Text 拥有众多的 Markdown 插件，其中 <a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a> 可以在浏览器中预览 Markdown 文件，而 <a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a> 可以快速的编辑 Markdown 文件。</p>
-<p>为了检查你书写的 Markdown 是否符合规范，可以使用相应的 linter <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> 命令行工具。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>形而上与形而下</title>
@@ -3551,6 +3551,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Session、Cookie 和 Token</title>
+    <url>/2021/02/25/session-cookie-token/</url>
+    <content><![CDATA[<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>Session 是一种抽象的概念，它不止存在于 HTTP 中，在计算机的众多领域都有它的身影，比如在 SSH、tmux 中都有 Session 的出现。</p>
+<p>Session 被直译为<strong>会话</strong>，顾名思义，它指客户端和服务器之间的连接会话。</p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 是一种具体的技术，它常被用在 HTTP 中，在其他领域很少见到 Cookie 的身影。</p>
+<p>Cookie 可以理解为是 Session 这种概念的一种实现，通过 Cookie 可以确定客户端和服务器之间的连接会话，从而使无状态的 HTTP 协议有状态。</p>
+<p>除 Cookie 之外，还可以使用带参数的 URL 来实现 Session 这种概念。</p>
+<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>Token 直译为<strong>令牌</strong>，顾名思义，它常被用以客户端和服务器之间的身份认证。</p>
+<p>Cookie 不仅可以用来实现上述的这种身份认证，也可以用来实现类似购物车这种场景。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>set、env 与 export</title>
     <url>/2018/05/09/set-env-export/</url>
     <content><![CDATA[<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p><strong>环境变量</strong>，顾名思义由<strong>环境</strong>和<strong>变量</strong>两部分组成，本质上就是一些变量，每个进程都有一个自己的运行环境，而在这些环境中又有一些定义的变量，Shell 也是如此，同样的，通过 Shell 所运行的命令，相当于从父进程创建了一个子进程，它们共享同样的环境变量。</p>
@@ -3599,41 +3614,6 @@
       </tags>
   </entry>
   <entry>
-    <title>那么，你想在安全行业工作吗？</title>
-    <url>/2018/09/18/so-you-want-to-work-in-security/</url>
-    <content><![CDATA[<p>本文翻译自 <a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p>
-<p>每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。<br><img src="https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif" alt="不像电影"></p>
-<span id="more"></span>
-
-<h2 id="警告：这不像电影"><a href="#警告：这不像电影" class="headerlink" title="警告：这不像电影"></a>警告：这不像电影</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p>
-<h2 id="没有标准或完美的课程"><a href="#没有标准或完美的课程" class="headerlink" title="没有标准或完美的课程"></a>没有标准或完美的课程</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
-<h2 id="停止阅读，开始做"><a href="#停止阅读，开始做" class="headerlink" title="停止阅读，开始做"></a>停止阅读，开始做</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p>
-<h2 id="写代码"><a href="#写代码" class="headerlink" title="写代码"></a>写代码</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p>
-<h2 id="破坏代码"><a href="#破坏代码" class="headerlink" title="破坏代码"></a>破坏代码</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在 <a href="https://infosec.rocks/">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
-<h2 id="分享知识"><a href="#分享知识" class="headerlink" title="分享知识"></a>分享知识</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
-<ol>
-<li>分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。</li>
-<li>我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。</li>
-<li>我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。</li>
-<li>把爱传出去。</li>
-</ol>
-<h2 id="练习你的沟通"><a href="#练习你的沟通" class="headerlink" title="练习你的沟通"></a>练习你的沟通</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p>
-<h2 id="期望努力工作，有时会失败"><a href="#期望努力工作，有时会失败" class="headerlink" title="期望努力工作，有时会失败"></a>期望努力工作，有时会失败</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p>
-<h2 id="（尝试）保持乐观"><a href="#（尝试）保持乐观" class="headerlink" title="（尝试）保持乐观"></a>（尝试）保持乐观</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p>
-<h2 id="请求帮忙"><a href="#请求帮忙" class="headerlink" title="请求帮忙"></a>请求帮忙</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
-<h2 id="祝你好运并且快乐Hacking"><a href="#祝你好运并且快乐Hacking" class="headerlink" title="祝你好运并且快乐Hacking"></a>祝你好运并且快乐Hacking</h2><p>我偶然发现了一些其他安全职业建议的想法：</p>
-<ul>
-<li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法 <a href="http://krebsonsecurity.com/tag/security-career-advice/">http://krebsonsecurity.com/tag/security-career-advice/</a></li>
-<li>我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议 <a href="https://noncombatant.org/2016/06/20/get-into-security-engineering">https://noncombatant.org/2016/06/20/get-into-security-engineering</a></li>
-<li>Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：<a href="https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html">https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html</a></li>
-</ul>
-<h2 id="译者注"><a href="#译者注" class="headerlink" title="译者注"></a>译者注</h2><p>本文作者为<a href="https://en.wikipedia.org/wiki/Parisa_Tabriz">Parisa Tabriz</a>，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。</p>
-]]></content>
-      <categories>
-        <category>Translation</category>
-      </categories>
-  </entry>
-  <entry>
     <title>《黑客军团》中使用的软件</title>
     <url>/2018/09/18/software-used-in-mr-robot/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
@@ -3673,6 +3653,41 @@
 <h2 id="VLC-Media-Player"><a href="#VLC-Media-Player" class="headerlink" title="VLC Media Player"></a><a href="https://www.videolan.org/vlc/">VLC Media Player</a></h2><p>VLC媒体播放器被用于第二季第4集，当时Elliot和Darlene一起观看了虚假恐怖片《Careful Massacre of the Bourgeoisie》的VHS版本。VLC也被用于第二季第8集，当fsociety预览一个他们将上传的关于非法大规模监视的泄露的FBI电话会议视频时。</p>
 <h2 id="Wayback-Machine"><a href="#Wayback-Machine" class="headerlink" title="Wayback Machine"></a><a href="http://web.archive.org/">Wayback Machine</a></h2><p>由Internet Archive运营的Waybach Machine是一个包含超过4,900亿个网页副本的数据库。在第二季第8集中FBI特工Dominique DiPierro向Mobley透露，联邦调查局使用了Wayback Machine，以便将他的黑客把柄与他为DJ Mobley创建的旧的粉丝页面联系起来。</p>
 <h2 id="µTorrent"><a href="#µTorrent" class="headerlink" title="µTorrent"></a><a href="https://www.utorrent.com/intl/zh_cn/utweb-index">µTorrent</a></h2><p>第二季第4集达琳用μTorrent下载了虚假恐怖电影《Careful Massacre of the Bourgeoisie》的VHS版本。</p>
+]]></content>
+      <categories>
+        <category>Translation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>那么，你想在安全行业工作吗？</title>
+    <url>/2018/09/18/so-you-want-to-work-in-security/</url>
+    <content><![CDATA[<p>本文翻译自 <a href="https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23">https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23</a> ，正文如下：</p>
+<p>每隔一段时间，我就会收到一封来自陌生人的电子邮件，询问有关如何从事安全行业（计算机，信息，网络等等）的建议。这很棒！我们需要更多充满激情，富有创造力和勤奋工作的人，他们希望努力使技术更安全。它也是一种非常经济稳定的谋生方式。关于这个确切的话题还有很多其他帖子，但我会根据自己的经验提出一些高层次的想法。<br><img src="https://cdn-images-1.medium.com/max/1000/1*Z7BjkasC8Kx5JtZ7N5Pe2A.gif" alt="不像电影"></p>
+<span id="more"></span>
+
+<h2 id="警告：这不像电影"><a href="#警告：这不像电影" class="headerlink" title="警告：这不像电影"></a>警告：这不像电影</h2><p>在安全方面工作并不像好莱坞所描绘的那样。我喜欢观看黑客风格的电影和节目，以获得幻想和逃避，但日常工作并不像在屏幕上看起来那样快速和性感（就我的经验来说）。<br>现在，对于大多数职业来说都是如此，即使我从未花费一天时间在地下巢穴中解读流媒体代码，我仍然认为这是一个令人兴奋，重要，具有挑战性和有益的领域。</p>
+<h2 id="没有标准或完美的课程"><a href="#没有标准或完美的课程" class="headerlink" title="没有标准或完美的课程"></a>没有标准或完美的课程</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
+<h2 id="停止阅读，开始做"><a href="#停止阅读，开始做" class="headerlink" title="停止阅读，开始做"></a>停止阅读，开始做</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p>
+<h2 id="写代码"><a href="#写代码" class="headerlink" title="写代码"></a>写代码</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p>
+<h2 id="破坏代码"><a href="#破坏代码" class="headerlink" title="破坏代码"></a>破坏代码</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在 <a href="https://infosec.rocks/">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
+<h2 id="分享知识"><a href="#分享知识" class="headerlink" title="分享知识"></a>分享知识</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
+<ol>
+<li>分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。</li>
+<li>我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。</li>
+<li>我几乎总是从读者那里学到一些东西，无论是问题，评论还是后续讨论。</li>
+<li>把爱传出去。</li>
+</ol>
+<h2 id="练习你的沟通"><a href="#练习你的沟通" class="headerlink" title="练习你的沟通"></a>练习你的沟通</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p>
+<h2 id="期望努力工作，有时会失败"><a href="#期望努力工作，有时会失败" class="headerlink" title="期望努力工作，有时会失败"></a>期望努力工作，有时会失败</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p>
+<h2 id="（尝试）保持乐观"><a href="#（尝试）保持乐观" class="headerlink" title="（尝试）保持乐观"></a>（尝试）保持乐观</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p>
+<h2 id="请求帮忙"><a href="#请求帮忙" class="headerlink" title="请求帮忙"></a>请求帮忙</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
+<h2 id="祝你好运并且快乐Hacking"><a href="#祝你好运并且快乐Hacking" class="headerlink" title="祝你好运并且快乐Hacking"></a>祝你好运并且快乐Hacking</h2><p>我偶然发现了一些其他安全职业建议的想法：</p>
+<ul>
+<li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法 <a href="http://krebsonsecurity.com/tag/security-career-advice/">http://krebsonsecurity.com/tag/security-career-advice/</a></li>
+<li>我的朋友并且是Chrome同事Chris Palmer分享了可靠的建议 <a href="https://noncombatant.org/2016/06/20/get-into-security-engineering">https://noncombatant.org/2016/06/20/get-into-security-engineering</a></li>
+<li>Michal Zalewski（又叫做lcamt​​uf）根据他在安全方面20年（令人敬畏的，经常是开创性的）的工作分享了4个简单的经验：<a href="https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html">https://lcamtuf.blogspot.com/2016/08/so-you-want-to-work-in-security-but-are.html</a></li>
+</ul>
+<h2 id="译者注"><a href="#译者注" class="headerlink" title="译者注"></a>译者注</h2><p>本文作者为<a href="https://en.wikipedia.org/wiki/Parisa_Tabriz">Parisa Tabriz</a>，她是计算机安全专家，曾在谷歌担任工程总监。由于她在黑客和互联网安全方面的经验，她被称为谷歌的“安全公主”。2012年，“福布斯”杂志将她列入“30位30岁以下技术行业观察人员”名单。</p>
 ]]></content>
       <categories>
         <category>Translation</category>
@@ -3874,6 +3889,20 @@
       <tags>
         <tag>密码学</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>聊聊并发编程</title>
+    <url>/2021/04/13/talk-about-concurrent-programming/</url>
+    <content><![CDATA[<h2 id="并发与并行"><a href="#并发与并行" class="headerlink" title="并发与并行"></a>并发与并行</h2><p>并发与并行，这是一个老生常谈的问题，简单来说，<strong>并发</strong>（concurrent）指的是在某个<strong>时间段</strong>内有多个程序在执行，而<strong>并行</strong>（parallel）指的是在某个<strong>时间点</strong>有多个程序在执行。</p>
+<p>这也就是说，在某种程度上而言，<strong>并发是伪并行</strong>，真正的并行需要多个核心。由于现代计算机的核心往往是有限的，但通常运行的程序远大于核心数，所以在计算机科学中，<strong>并发</strong>往往是我们探讨的重点。</p>
+<p>Go 语言的创造者之一 Rob Pike 就曾经指出：</p>
+<blockquote>
+<p>并发用于制定方案，用来解决可能（但未必）并行的问题。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>说说信用卡</title>

@@ -92,6 +92,28 @@
   </entry>
   
   <entry>
+    <title>聊聊并发编程</title>
+    <link href="https://howiezhao.github.io/2021/04/13/talk-about-concurrent-programming/"/>
+    <id>https://howiezhao.github.io/2021/04/13/talk-about-concurrent-programming/</id>
+    <published>2021-04-13T02:43:43.000Z</published>
+    <updated>2022-02-16T15:54:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="并发与并行"><a href="#并发与并行" class="headerlink" title="并发与并行"></a>并发与并行</h2><p>并发与并行，这是一个老生常谈的问题，简单来说，<strong>并发</strong>（concurrent）指的是在某个<strong>时间段</strong>内有多个程序在执行，而<strong>并行</strong>（parallel）指的是在某个<strong>时间点</strong>有多个程序在执行。</p><p>这也就是说，在某种程度上而言，<strong>并发是伪并行</strong>，真正的并行需要多个核心。由于现代计算机的核心往往是有限的，但通常运行的程序远大于核心数，所以在计算机科学中，<strong>并发</strong>往往是我们探讨的重点。</p><p>Go 语言的创造者之一 Rob Pike 就曾经指出：</p><blockquote><p>并发用于制定方案，用来解决可能（但未必）并行的问题。</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;并发与并行&quot;&gt;&lt;a href=&quot;#并发与并行&quot; class=&quot;headerlink&quot; title=&quot;并发与并行&quot;&gt;&lt;/a&gt;并发与并行&lt;/h2&gt;&lt;p&gt;并发与并行，这是一个老生常谈的问题，简单来说，&lt;strong&gt;并发&lt;/strong&gt;（concurrent）指的是在</summary>
+      
+    
+    
+    
+    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>为什么我不会放弃 Python 投向 Go</title>
     <link href="https://howiezhao.github.io/2021/04/10/why-im-not-leaving-python-for-go-zh/"/>
     <id>https://howiezhao.github.io/2021/04/10/why-im-not-leaving-python-for-go-zh/</id>
@@ -204,6 +226,28 @@
     
     
     <category term="计算机网络" scheme="https://howiezhao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Session、Cookie 和 Token</title>
+    <link href="https://howiezhao.github.io/2021/02/25/session-cookie-token/"/>
+    <id>https://howiezhao.github.io/2021/02/25/session-cookie-token/</id>
+    <published>2021-02-25T08:01:02.000Z</published>
+    <updated>2022-02-16T15:54:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>Session 是一种抽象的概念，它不止存在于 HTTP 中，在计算机的众多领域都有它的身影，比如在 SSH、tmux 中都有 Session 的出现。</p><p>Session 被直译为<strong>会话</strong>，顾名思义，它指客户端和服务器之间的连接会话。</p><h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 是一种具体的技术，它常被用在 HTTP 中，在其他领域很少见到 Cookie 的身影。</p><p>Cookie 可以理解为是 Session 这种概念的一种实现，通过 Cookie 可以确定客户端和服务器之间的连接会话，从而使无状态的 HTTP 协议有状态。</p><p>除 Cookie 之外，还可以使用带参数的 URL 来实现 Session 这种概念。</p><h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>Token 直译为<strong>令牌</strong>，顾名思义，它常被用以客户端和服务器之间的身份认证。</p><p>Cookie 不仅可以用来实现上述的这种身份认证，也可以用来实现类似购物车这种场景。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Session&quot;&gt;&lt;a href=&quot;#Session&quot; class=&quot;headerlink&quot; title=&quot;Session&quot;&gt;&lt;/a&gt;Session&lt;/h2&gt;&lt;p&gt;Session 是一种抽象的概念，它不止存在于 HTTP 中，在计算机的众多领域都有它的身影，比如在</summary>
+      
+    
+    
+    
+    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
+    
     
   </entry>
   
@@ -446,54 +490,6 @@
     
     
     <category term="函数式编程" scheme="https://howiezhao.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ADB小记</title>
-    <link href="https://howiezhao.github.io/2019/07/29/adb/"/>
-    <id>https://howiezhao.github.io/2019/07/29/adb/</id>
-    <published>2019-07-29T04:56:04.000Z</published>
-    <updated>2021-02-05T11:43:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="error-device-still-connecting"><a href="#error-device-still-connecting" class="headerlink" title="error: device still connecting"></a>error: device still connecting</h3><p>输入<code>adb shell</code>时显示<code>error: device still connecting</code>，一般可通过：关闭<strong>开发者模式</strong>然后重新打开<strong>开发者模式</strong>，接着开启<strong>USB调试</strong>并重新和电脑配对，即可解决。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;相关问题&quot;&gt;&lt;a href=&quot;#相关问题&quot; class=&quot;headerlink&quot; title=&quot;相关问题&quot;&gt;&lt;/a&gt;相关问题&lt;/h2&gt;&lt;h3 id=&quot;error-device-still-connecting&quot;&gt;&lt;a href=&quot;#error-device-sti</summary>
-      
-    
-    
-    
-    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-    <category term="Android" scheme="https://howiezhao.github.io/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于 Windows 的代理设置</title>
-    <link href="https://howiezhao.github.io/2019/07/29/about-the-proxy-settings-for-windows/"/>
-    <id>https://howiezhao.github.io/2019/07/29/about-the-proxy-settings-for-windows/</id>
-    <published>2019-07-29T04:21:18.000Z</published>
-    <updated>2021-03-29T02:50:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Windows 的<strong>系统代理</strong>使用的其实是 <strong>IE 的代理设置</strong>，此外，对于<strong>绝大多数</strong>的应用程序而言，它们默认使用的也是 IE 的代理设置，比如，Chrome、Firefox、Microsoft Store 等。因此，如果想让绝大多数的应用程序使用代理，一个简单的方法是直接设置 IE 的代理（即系统代理）。不过，对于一小部分没有使用 IE 代理设置的应用程序，比如 Android Studio 等，你可能需要单独设置它们的代理（一般在软件的设置项中）。</p><p>值得注意的是，同为应用程序的 <strong>Shell</strong>（包括<strong>命令提示符</strong>和 <strong>PowerShell</strong>）就没有使用 IE 的代理设置，它们各自有自己的代理设置。具体而言，要为命令提示符设置代理，可使用如下两条命令：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> HTTP_PROXY=http://user:password@proxy.domain.com:port</span><br><span class="line"><span class="built_in">set</span> HTTPS_PROXY=https://user:password@proxy.domain.com:port</span><br></pre></td></tr></table></figure><p>而要为 PowerShell 设置代理则要使用<a href="todo">这个脚本</a>。</p><p>对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 <code>pip</code>、<code>npm</code> 等，另一部分则使用的是 Shell 的代理设置，比如 <code>curl</code>、<code>gem</code> 等。</p><p>此外，有一些程序的代理设置相对比较复杂，比如 <a href="/2018/08/31/git/" title="git">git</a>、<a href="/2018/08/31/docker/" title="docker">docker</a> 等，详见它们各自的介绍文章。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Windows 的&lt;strong&gt;系统代理&lt;/strong&gt;使用的其实是 &lt;strong&gt;IE 的代理设置&lt;/strong&gt;，此外，对于&lt;strong&gt;绝大多数&lt;/strong&gt;的应用程序而言，它们默认使用的也是 IE 的代理设置，比如，Chrome、Firefox、Mic</summary>
-      
-    
-    
-    
-    <category term="CheatSheet" scheme="https://howiezhao.github.io/categories/CheatSheet/"/>
-    
-    
-    <category term="Windows" scheme="https://howiezhao.github.io/tags/Windows/"/>
     
   </entry>
   
