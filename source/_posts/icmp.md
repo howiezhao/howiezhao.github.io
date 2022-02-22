@@ -6,7 +6,7 @@ tags:
   - 计算机网络
 ---
 
-**ICMP**（Internet Control Message Protocol，因特网控制报文协议）被主机和路由器用来彼此沟通网络层的信息。ICMP 最典型的用途是差错报告。
+**ICMP**（Internet Control Message Protocol，**因特网控制报文协议**）被主机和路由器用来彼此沟通网络层的信息。ICMP 最典型的用途是差错报告。
 
 ICMP 报文有一个类型字段和一个编码字段，并且包含引起该 ICMP 首次生成的 IP 数据报的首部和前 8 个字节（以便发送方能确定引发该差错的数据报）。下表是相关的 ICMP 报文类型：
 
