@@ -29,7 +29,7 @@
 <meta property="og:description" content="DHCP（Dynamic Host Configuration Protocol，动态主机配置协议）允许主机自动获取（被分配）一个 IP 地址。网络管理员能够配置 DHCP，以使某给定主机每次与网络连接时能得到一个相同的 IP 地址，或者某主机将被分配一个临时的 IP 地址（temporary IP address），每次与网络连接时该地址也许是不同的。除了主机 IP 地址分配外，DHCP 还允许">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-07T08:46:17.000Z">
-<meta property="article:modified_time" content="2021-03-16T14:18:54.000Z">
+<meta property="article:modified_time" content="2022-02-22T15:44:31.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -286,7 +286,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-03-16 22:18:54" itemprop="dateModified" datetime="2021-03-16T22:18:54+08:00">2021-03-16</time>
+      <time title="Modified: 2022-02-22 23:44:31" itemprop="dateModified" datetime="2022-02-22T23:44:31+08:00">2022-02-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -319,7 +319,7 @@
 <p>由于 DHCP 具有将主机连接进一个网络的网络相关方面的自动能力，故它又常被称为<strong>即插即用协议</strong>（plug-and-play protocol）或<strong>零配置（zeroconf）协议</strong>。</p>
 <span id="more"></span>
 
-<p>DHCP 是一个客户-服务器协议。客户通常是新到达的主机，它要获得包括自身使用的 IP 地址在内的网络配置信息。在最简单场合下，每个子网将具有一台 DHCP 服务器。如果在某子网中没有服务器，则需要一个 DHCP 中继代理（通常是一台路由器），这个代理知道用于该网络的 DHCP 服务器的地址。</p>
+<p>DHCP 是一个客户 — 服务器协议。客户通常是新到达的主机，它要获得包括自身使用的 IP 地址在内的网络配置信息。在最简单场合下，每个子网将具有一台 DHCP 服务器。如果在某子网中没有服务器，则需要一个 DHCP 中继代理（通常是一台路由器），这个代理知道用于该网络的 DHCP 服务器的地址。</p>
 <h2 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h2><p>对于一台新到达的主机而言，DHCP 协议是一个 4 个步骤的过程：</p>
 <ol>
 <li><strong>DHCP 服务器发现</strong>：客户在 UDP 分组中向端口 67 发送 <strong>DHCP 发现报文</strong>（DHCP discover message），该 UDP 分组封装在一个 IP 数据报中，其中使用广播目的地址 <code>255.255.255.255</code> 并且使用“本主机”源 IP 地址 <code>0.0.0.0</code>。DHCP 客户将该 IP 数据报传递给链路层，链路层然后将该帧广播到所有与该子网连接的节点。</li>
