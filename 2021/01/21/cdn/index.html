@@ -29,7 +29,7 @@
 <meta property="og:description" content="CDN 全称 Content Distribution Network，即内容分发网络。CDN 管理分布在多个地理位置上的服务器，在它的服务器中存储各种类型的 Web 内容（包括文档、图片、音频和视频等）的副本，并且所有试图将每个用户请求定向到一个将提供最好的用户体验的 CDN 位置。 CDN 可以是专用 CDN（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 Y">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-21T04:26:07.000Z">
-<meta property="article:modified_time" content="2021-02-05T09:43:14.000Z">
+<meta property="article:modified_time" content="2022-02-24T15:49:51.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -285,7 +285,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-02-05 17:43:14" itemprop="dateModified" datetime="2021-02-05T17:43:14+08:00">2021-02-05</time>
+      <time title="Modified: 2022-02-24 23:49:51" itemprop="dateModified" datetime="2022-02-24T23:49:51+08:00">2022-02-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -329,7 +329,7 @@
 <li><strong>深入</strong>：该原则是通过在遍及全球的接入 ISP 中部署服务器集群来深入到 ISP 的接入网中。由 Akamai 首创。其目标是靠近端用户，通过减少端用户和 CDN 集群之间（内容从这里收到）链路和路由器的数量，从而改善了用户感受的时延和吞吐量。因为这种高度分布式设计，维护和管理集群的任务成为挑战。</li>
 <li><strong>邀请做客</strong>：该原则是通过在少量（例如 10 个）关键位置建造大集群来 <em>邀请到 ISP 做客</em>。该原则由 Limelight 和许多其他 CDN 公司所采用。不是将集群放在接入 ISP 中，这些 CDN 通常将它们的集群放置在因特网交换点（IXP）。与深入设计原则相比，邀请做客设计通常产生较低的维护和管理开销，可能以对端用户的较高时延和较低吞吐量为代价。</li>
 </ul>
-<p>一旦 CDN 的集群准备就绪，它就可以跨集群复制内容。CDN 可能不希望将每个内容的副本放置在每个集群中，因为某些内容很少访问或仅在某些国家中流行。事实上，许多 CDN 没有将内容推入它们的集群，而是使用一种简单的拉策略：如果客户向一个未存储该内容的集群请求某内容，则该集群检索该内容（从某中心仓库或者从另一个集群），向客户传输内容时的同时在本地存储一个副本。类似于 Web 缓存器，当某集群存储器变满时，它删除不经常请求的内容。</p>
+<p>一旦 CDN 的集群准备就绪，它就可以跨集群复制内容。CDN 可能不希望将每个内容的副本放置在每个集群中，因为某些内容很少访问或仅在某些国家中流行。事实上，许多 CDN 没有将内容推入它们的集群，而是使用一种简单的<strong>拉策略</strong>：如果客户向一个未存储该内容的集群请求某内容，则该集群检索该内容（从某中心仓库或者从另一个集群），向客户传输内容时的同时在本地存储一个副本。类似于 Web 缓存器，当某集群存储器变满时，它删除不经常请求的内容。</p>
 <p>当用户主机中的一个浏览器指令检索一个特定的视频（由 URL 标识）时，CDN 必须截获该请求，以便能够：</p>
 <ol>
 <li>确定此时适合用于该客户的 CDN 服务器集群；</li>

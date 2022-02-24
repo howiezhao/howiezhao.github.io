@@ -1085,7 +1085,7 @@
 <li><strong>深入</strong>：该原则是通过在遍及全球的接入 ISP 中部署服务器集群来深入到 ISP 的接入网中。由 Akamai 首创。其目标是靠近端用户，通过减少端用户和 CDN 集群之间（内容从这里收到）链路和路由器的数量，从而改善了用户感受的时延和吞吐量。因为这种高度分布式设计，维护和管理集群的任务成为挑战。</li>
 <li><strong>邀请做客</strong>：该原则是通过在少量（例如 10 个）关键位置建造大集群来 <em>邀请到 ISP 做客</em>。该原则由 Limelight 和许多其他 CDN 公司所采用。不是将集群放在接入 ISP 中，这些 CDN 通常将它们的集群放置在因特网交换点（IXP）。与深入设计原则相比，邀请做客设计通常产生较低的维护和管理开销，可能以对端用户的较高时延和较低吞吐量为代价。</li>
 </ul>
-<p>一旦 CDN 的集群准备就绪，它就可以跨集群复制内容。CDN 可能不希望将每个内容的副本放置在每个集群中，因为某些内容很少访问或仅在某些国家中流行。事实上，许多 CDN 没有将内容推入它们的集群，而是使用一种简单的拉策略：如果客户向一个未存储该内容的集群请求某内容，则该集群检索该内容（从某中心仓库或者从另一个集群），向客户传输内容时的同时在本地存储一个副本。类似于 Web 缓存器，当某集群存储器变满时，它删除不经常请求的内容。</p>
+<p>一旦 CDN 的集群准备就绪，它就可以跨集群复制内容。CDN 可能不希望将每个内容的副本放置在每个集群中，因为某些内容很少访问或仅在某些国家中流行。事实上，许多 CDN 没有将内容推入它们的集群，而是使用一种简单的<strong>拉策略</strong>：如果客户向一个未存储该内容的集群请求某内容，则该集群检索该内容（从某中心仓库或者从另一个集群），向客户传输内容时的同时在本地存储一个副本。类似于 Web 缓存器，当某集群存储器变满时，它删除不经常请求的内容。</p>
 <p>当用户主机中的一个浏览器指令检索一个特定的视频（由 URL 标识）时，CDN 必须截获该请求，以便能够：</p>
 <ol>
 <li>确定此时适合用于该客户的 CDN 服务器集群；</li>
@@ -1509,7 +1509,7 @@
   <entry>
     <title>DNS 运行机制</title>
     <url>/2020/12/29/dns/</url>
-    <content><![CDATA[<p><strong>DNS</strong>（Domain Name System，域名系统）的主要任务是进行<strong>主机名</strong>（hostname，也称域名）到 <strong>IP 地址</strong>转换的目录服务，它由两部分组成：</p>
+    <content><![CDATA[<p><strong>DNS</strong>（Domain Name System，<strong>域名系统</strong>）的主要任务是进行<strong>主机名</strong>（hostname，也称<strong>域名</strong>）到 <strong>IP 地址</strong>转换的目录服务，它由两部分组成：</p>
 <ul>
 <li>一个由<strong>分层</strong>的 <strong>DNS 服务器</strong>（DNS server）实现的<strong>分布式数据库</strong></li>
 <li>一个使得主机能够查询分布式数据库的<strong>应用层协议</strong></li>
@@ -1529,7 +1529,7 @@
 <li><strong>顶级域（Top-Level Domain，TLD）DNS 服务器</strong>：TLD 服务器提供了权威 DNS 服务器的 IP 地址。对于每个顶级域（如 <code>com</code>、<code>org</code>、<code>net</code>、<code>edu</code> 和 <code>gov</code>）和所有国家的顶级域（如 <code>uk</code>、<code>fr</code>、<code>ca</code> 和 <code>jp</code>），都有 TLD 服务器（或服务器集群）。所有顶级域的列表可参见<a href="https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B6%E7%BA%A7%E5%9F%9F%E5%88%97%E8%A1%A8">维基百科</a>。</li>
 <li><strong>权威 DNS 服务器</strong>：在因特网上具有公共可访问主机（如 Web 服务器和邮件服务器）的每个组织机构必须提供公共可访问的 DNS 记录，这些记录将这些主机的名字映射为 IP 地址。一个组织机构的权威 DNS 服务器收藏了这些 DNS 记录。一个组织机构能够选择实现它自己的权威 DNS 服务器以保存这些记录；另一种方法是，该组织能够支付费用，让这些记录存储在某个服务提供商的一个权威 DNS 服务器中。</li>
 </ul>
-<p>还有另一类重要的 DNS 服务器，称为<strong>本地 DNS 服务器</strong>（Local DNS server，LDNS）。严格来说，一个本地 DNS 服务器并不属于该服务器的层次结构，但它对 DNS 层次结构是至关重要的。每个 ISP（如一个居民区的 ISP 或一个机构的 ISP）都有一台本地 DNS 服务器（也叫默认名字服务器）。当主机与某个 ISP 连接时，该 ISP 提供一台主机的 IP 地址，该主机具有一台或多台其本地 DNS 服务器的 IP 地址（通常通过 DHCP）。主机的本地 DNS 服务器通常“临近”本主机。当主机发出 DNS 请求时，该请求被发往本地 DNS 服务器，它起着代理的作用，并将该请求转发到 DNS 服务器层次结构中，大致过程如下所述：</p>
+<p>还有另一类重要的 DNS 服务器，称为<strong>本地 DNS 服务器</strong>（Local DNS server，<strong>LDNS</strong>）。严格来说，一个本地 DNS 服务器并不属于该服务器的层次结构，但它对 DNS 层次结构是至关重要的。每个 ISP（如一个居民区的 ISP 或一个机构的 ISP）都有一台本地 DNS 服务器（也叫默认名字服务器）。当主机与某个 ISP 连接时，该 ISP 提供一台主机的 IP 地址，该主机具有一台或多台其本地 DNS 服务器的 IP 地址（通常通过 DHCP）。主机的本地 DNS 服务器通常“临近”本主机。当主机发出 DNS 请求时，该请求被发往本地 DNS 服务器，它起着代理的作用，并将该请求转发到 DNS 服务器层次结构中，大致过程如下所述：</p>
 <ol>
 <li>客户端向它的本地 DNS 服务器发送一个关于 <code>tieba.baidu.com</code> 的 DNS 查询报文</li>
 <li>本地 DNS 服务器将该报文转发到根 DNS 服务器</li>
@@ -1540,7 +1540,7 @@
 </ol>
 <p>注意到在本例中，为了获得一台主机名的映射，共发送了 8 份 DNS 报文：4 份查询报文和 4 份回答报文！下文将介绍利用 <strong>DNS 缓存</strong>（DNS caching）减少这种查询流量的方法。</p>
 <p>上述例子利用了<strong>递归查询</strong>（recursive query）和<strong>迭代查询</strong>（iterative query）。从请求主机到本地 DNS 服务器的查询是递归的，其余的查询是迭代的。从理论上讲，任何 DNS 查询既可以是迭代的也能是递归的。</p>
-<h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><p>共同实现 DNS 分布式数据库的所有 DNS 服务器存储了<strong>资源记录</strong>（Resource Record，RR），RR 提供了主机名到 IP 地址的映射。每个 DNS 回答报文包含了一条或多条资源记录。</p>
+<h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><p>共同实现 DNS 分布式数据库的所有 DNS 服务器存储了<strong>资源记录</strong>（Resource Record，<strong>RR</strong>），RR 提供了主机名到 IP 地址的映射。每个 DNS 回答报文包含了一条或多条资源记录。</p>
 <p>资源记录是一个包含了下列字段的 4 元组：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
 
@@ -3179,7 +3179,7 @@
 <h2 id="P2P-与-C-S"><a href="#P2P-与-C-S" class="headerlink" title="P2P 与 C/S"></a>P2P 与 C/S</h2><p>以文件分发应用为例，在 C/S 文件分发中，该服务器必须向每个对等方发送该文件的一个副本，即服务器承受了极大的负担，并且消耗了大量的服务器带宽。在 P2P 文件分发中，每个对等方能够向任何其他对等方重新分发它已经收到的该文件的任何部分，从而在分发过程中协助该服务器。</p>
 <p>对于 C/S 体系结构，随着对等方数量的增加，分发时间呈线性增长并且没有界。然而，对于 P2P 体系结构，最小分发时间不仅总是小于 C/S 体系结构的分发时间，并且对于任意的对等方数量，总是小于一对一的 C/S 体系结构的分发时间。因此，具有 P2P 体系结构的应用程序能够是自扩展的。这种扩展性的直接成因是：<strong>对等方除了是比特的消费者外还是它们的重新分发者</strong>。</p>
 <h2 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h2><p>如前所述，BitTorrent 是最为流行的 P2P 文件分发协议，通常也简称为 BT，最初由 Bram Cohen 所研发。</p>
-<p>用 BitTorrent 的术语来讲，参与一个特定文件分发的所有对等方的集合被称为一个<strong>洪流（torrent）</strong>。在一个洪流中的对等方彼此下载等长度的文件块（chunk），典型的块长度为 256 KB。当一个对等方首次加入一个洪流时，它没有块。随着时间的流逝，它累积了越来越多的块。当它下载块时，也为其他对等方上载了多个块。一旦某对等方获得了整个文件，它也许（自私地）离开洪流，或（大公无私地）留在该洪流中并继续向其他对等方上载块。同时，任何对等方可能在任何时候仅具有块的子集就离开该洪流，并在以后重新加入该洪流中。</p>
+<p>用 BitTorrent 的术语来讲，参与一个特定文件分发的所有对等方的集合被称为一个<strong>洪流（torrent）</strong>。在一个洪流中的对等方彼此下载等长度的<strong>文件块</strong>（chunk），典型的块长度为 256 KB。当一个对等方首次加入一个洪流时，它没有块。随着时间的流逝，它累积了越来越多的块。当它下载块时，也为其他对等方上载了多个块。一旦某对等方获得了整个文件，它也许（自私地）离开洪流，或（大公无私地）留在该洪流中并继续向其他对等方上载块。同时，任何对等方可能在任何时候仅具有块的子集就离开该洪流，并在以后重新加入该洪流中。</p>
 <p>每个洪流具有一个基础设施节点，称为 <strong>tracker</strong>（追踪器）。当一个对等方加入某洪流时，它向 tracker 注册自己，并周期性地通知 tracker 它仍在该洪流中。以这种方式，tracker 跟踪参与在洪流中的对等方。</p>
 <p>当一个新的对等方 A 加入该洪流时，tracker 随机地从参与对等方的集合中选择对等方的一个子集，将这个子集中每个对等方的 IP 地址发送给 A。A 持有对等方的这张列表，试图与该列表上的所有对等方创建并行的 TCP 连接。我们称所有这样与 A 成功地创建一个 TCP 连接的对等方为<strong>邻近对等方</strong>。一个对等方的临近对等方将随时间而波动。</p>
 <p>在任何给定的时刻，A 将具有块的子集并知道它的邻居具有哪些块。利用这些信息，A 将做出两个重要决定：</p>
@@ -3748,37 +3748,39 @@
       </categories>
   </entry>
   <entry>
-    <title>SSH协议分析</title>
+    <title>SSH 协议分析</title>
     <url>/2018/08/24/ssh/</url>
-    <content><![CDATA[<p>SSH(Secure Shell)即<strong>安全外壳协议</strong>，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过SSH实现安全传输，但其最常见的用途还是远程登录，是Telnet等非安全Shell的替代品。</p>
-<h2 id="OpenSSH的运行机制"><a href="#OpenSSH的运行机制" class="headerlink" title="OpenSSH的运行机制"></a>OpenSSH的运行机制</h2><p>SSH是一种协议，其实现多种多样，目前使用最广泛的实现是OpenSSH项目。当使用<code>ssh user@host</code>命令进行登录时，所完成的整个过程如下：</p>
+    <content><![CDATA[<p>SSH（Secure Shell）即<strong>安全外壳协议</strong>，是一种位于应用层的加密的网络传输协议，虽然任何网络服务都可以通过 SSH 实现安全传输，但其最常见的用途还是远程登录，是 Telnet 等非安全 Shell 的替代品。</p>
+<h2 id="OpenSSH-的运行机制"><a href="#OpenSSH-的运行机制" class="headerlink" title="OpenSSH 的运行机制"></a>OpenSSH 的运行机制</h2><p>SSH 是一种协议，其实现多种多样，目前使用最广泛的实现是 OpenSSH 项目。当使用 <code>ssh user@host</code> 命令进行登录时，所完成的整个过程如下：</p>
 <ol>
 <li>远程主机收到用户的登录请求，把自己的公钥发给用户</li>
 <li>用户使用这个公钥，将登录密码加密后，发送给远程主机</li>
 <li>远程主机用自己的私钥，解密登录密码，若密码正确，则同意用户登录</li>
-<li>后续过程中，用户发送的信息都采用此方式进行加密发送<span id="more"></span>
-因为不像HTTPS协议，SSH协议的公钥是没有证书中心(CA)公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：</li>
+<li>后续过程中，用户发送的信息都采用此方式进行加密发送</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;host (12.18.429.21)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
-<p>即系统无法确认远程主机的真实性(远程主机有可能是中间人)，只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。</p>
-<p>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在<code>$HOME/.ssh/known_hosts</code>文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。</p>
-<p>除了采用口令登录外，还可使用<strong>公钥登录</strong>，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。</p>
-<p>OpenSSH提供了一个工具 —— <code>ssh-keygen</code>，使用它可以方便的生成一对公私钥，生成的公钥为<code>id_rsa.pub</code>，私钥为<code>id_rsa</code>，保存在<code>$HOME/.ssh</code>目录下，当然你可以使用<code>-t</code>（type）参数指定密钥的类型（默认生成类型为RSA），使用<code>-f</code>（file）参数指定生成的目录文件名，使用<code>-C</code>（Comment）参数指定注释，更多的参数可以使用<code>--help</code>参数查看。</p>
-<p>生成的公钥格式为<code>&lt;protocol&gt; &lt;key-blob&gt; &lt;comment&gt;</code>，其中注释项通常用来指代要登录的用户名。</p>
-<p>有了密钥对后，可以使用<code>ssh-copy-id user@host</code>命令将自己的公钥上传至远程主机，远程主机会将用户的公钥，保存在登录后的用户主目录的<code>$HOME/.ssh/authorized_keys</code>文件中。实际上，<code>ssh-copy-id</code>命令的整个过程就如下命令一样：</p>
+<p>因为不像 HTTPS 协议，SSH 协议的公钥是没有证书中心（CA）公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">The authenticity of host &#x27;host (12.18.429.21)&#x27; can&#x27;t be established.</span><br><span class="line">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+
+<p>即系统无法确认远程主机的真实性（远程主机有可能是中间人），只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。</p>
+<p>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在 <code>$HOME/.ssh/known_hosts</code> 文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。</p>
+<p>除了采用口令登录外，还可使用<strong>公钥登录</strong>，原理为：用户将自己的公钥储存在远程主机上，登录时，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来，远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录 shell，不再要求密码。</p>
+<p>OpenSSH 提供了一个工具 — <code>ssh-keygen</code>，使用它可以方便的生成一对公私钥，生成的公钥为 <code>id_rsa.pub</code>，私钥为 <code>id_rsa</code>，保存在 <code>$HOME/.ssh</code> 目录下，当然你可以使用 <code>-t</code>（type）参数指定密钥的类型（默认生成类型为 RSA），使用 <code>-f</code>（file）参数指定生成的目录文件名，使用 <code>-C</code>（Comment）参数指定注释，更多的参数可以使用 <code>--help</code> 参数查看。</p>
+<p>生成的公钥格式为 <code>&lt;protocol&gt; &lt;key-blob&gt; &lt;comment&gt;</code>，其中注释项通常用来指代要登录的用户名。</p>
+<p>有了密钥对后，可以使用 <code>ssh-copy-id user@host</code> 命令将自己的公钥上传至远程主机，远程主机会将用户的公钥，保存在登录后的用户主目录的 <code>$HOME/.ssh/authorized_keys</code> 文件中。实际上，<code>ssh-copy-id</code> 命令的整个过程就如下命令一样：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh user@host <span class="string">&#x27;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&#x27;</span> &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 
-<p>实际上，<code>ssh-copy-id</code>还会对创建的文件及文件夹进行相关的权限设置，这里不过多介绍。</p>
-<p>最后还要对远程主机的SSH服务端配置文件，即<code>/etc/ssh/sshd_config</code>文件进行相关配置，并重启SSH服务即可生效。具体而言，涉及到的配置项如下：</p>
+<p>实际上，<code>ssh-copy-id</code> 还会对创建的文件及文件夹进行相关的权限设置，这里不过多介绍。</p>
+<p>最后还要对远程主机的 SSH 服务端配置文件，即 <code>/etc/ssh/sshd_config</code> 文件进行相关配置，并重启 SSH 服务即可生效。具体而言，涉及到的配置项如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
-<p>紧接着使用<code>service sshd restart</code>重启SSH服务。</p>
-<h2 id="快速登录"><a href="#快速登录" class="headerlink" title="快速登录"></a>快速登录</h2><p><code>$HOME/.ssh</code>目录下的<code>config</code>文件可配置快速登录选项，若没有，可以新建一个，具体而言，如下：</p>
+<p>紧接着使用 <code>service sshd restart</code> 重启 SSH 服务。</p>
+<h2 id="快速登录"><a href="#快速登录" class="headerlink" title="快速登录"></a>快速登录</h2><p><code>$HOME/.ssh</code> 目录下的 <code>config</code> 文件可配置快速登录选项，若没有，可以新建一个，具体而言，如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">host aliyun</span><br><span class="line">    user howie</span><br><span class="line">    hostname 192.168.0.41</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 
-<p>这代表当输入<code>ssh aliyun</code>时，其默认执行<code>ssh howie@192.168.0.41 -p 22 -i ~/.ssh/id_rsa</code>。当有多个别名需要设置时，其中间要空上一行。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>使用密钥连接后仍然需要输入登录密码：<br>这种情况一般是由于密钥登录失败所导致的，请检查<code>$HOME/.ssh</code>目录是否为700权限，<code>$HOME/.ssh/authorized_keys</code>文件是否为600权限，除此之外的其他权限均不能成功。</p>
+<p>这代表当输入 <code>ssh aliyun</code> 时，其默认执行 <code>ssh howie@192.168.0.41 -p 22 -i ~/.ssh/id_rsa</code>。当有多个别名需要设置时，其中间要空上一行。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>使用密钥连接后仍然需要输入登录密码：<br>这种情况一般是由于密钥登录失败所导致的，请检查 <code>$HOME/.ssh</code> 目录是否为 700 权限，<code>$HOME/.ssh/authorized_keys</code> 文件是否为 600 权限，除此之外的其他权限均不能成功。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -4421,11 +4423,11 @@
     <title>IRC 是什么</title>
     <url>/2018/09/12/what-is-irc/</url>
     <content><![CDATA[<p><strong>IRC</strong>，全称 Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。</p>
-<p>IRC 协议属于应用层协议，使用的传输层协议为 TCP，使用的端口为 <strong>6667</strong>（明文传输，如 irc://chat.freenode.net）或 <strong>6697</strong>（SSL 加密传输，如 ircs://chat.freenode.net:6697）。</p>
+<p>IRC 协议属于应用层协议，使用的传输层协议为 TCP，使用的端口为 <strong>6667</strong>（明文传输，如 <code>irc://chat.freenode.net</code>）或 <strong>6697</strong>（SSL 加密传输，如 <code>ircs://chat.freenode.net:6697</code>）。</p>
 <p>IRC 是一个<strong>分布式</strong>的 <strong>C/S</strong> 架构，一个 IRC 服务器可以连接其他的 IRC 服务器以扩展为一个<strong>IRC 网络</strong>，通过连接到一个 IRC 服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个 IRC 服务器上，一个频道类似于一个聊天室，频道名称必须以 <code>#</code> 符号开始，例如 <code>#irchelp</code>。</p>
 <p>大多数的 IRC 服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。</p>
-<p>目前使用最广的 IRC 服务器为 <a href="https://freenode.net/">freenode</a> ，而 IRC 客户端软件有多种，比如基于 Firefox 浏览器的 IRC 插件<a href="http://chatzilla.hacksrus.com/">ChatZilla</a> ，基于网页的 <a href="https://webchat.freenode.net/">Webchat</a> ，基于命令行的 <a href="https://irssi.org/">Irssi</a> 、<a href="https://weechat.org/">WeeChat</a> 等等。</p>
-<p>个人经常使用的 IRC 客户端为 Irssi，在 Ubuntu 中可以使用 <code>apt install irssi</code> 安装，之后直接输入 <code>irssi</code> 即可启动，输入 <code>irssi --help</code> 可查看更多命令参数。<br>启动 irssi 后可输入更多的命令，输入 <code>/help</code> 可查看所有可用命令，输入 <code>/connect Freenode</code> 即可连接到freenode服务器，之后再输入 <code>/join #linuxba</code> 即可加入 <code>#linuxba</code> 频道。<br>这里需要注意，freenode 服务器由于种种原因，在国内无法访问，而 irssi 又不支持代理，所以推荐使用 <a href="https://github.com/rofl0r/proxychains-ng">proxychains-ng</a> 代理 irssi。</p>
+<p>目前使用最广的 IRC 服务器为 <a href="https://freenode.net/">freenode</a> ，而 IRC 客户端软件有多种，比如基于 Firefox 浏览器的 IRC 插件 <a href="http://chatzilla.hacksrus.com/">ChatZilla</a> ，基于网页的 <a href="https://webchat.freenode.net/">Webchat</a> ，基于命令行的 <a href="https://irssi.org/">Irssi</a> 、<a href="https://weechat.org/">WeeChat</a> 等等。</p>
+<p>个人经常使用的 IRC 客户端为 Irssi，在 Ubuntu 中可以使用 <code>apt install irssi</code> 安装，之后直接输入 <code>irssi</code> 即可启动，输入 <code>irssi --help</code> 可查看更多命令参数。<br>启动 irssi 后可输入更多的命令，输入 <code>/help</code> 可查看所有可用命令，输入 <code>/connect Freenode</code> 即可连接到 freenode 服务器，之后再输入 <code>/join #linuxba</code> 即可加入 <code>#linuxba</code> 频道。<br>这里需要注意，freenode 服务器由于种种原因，在国内无法访问，而 irssi 又不支持代理，所以推荐使用 <a href="https://github.com/rofl0r/proxychains-ng">proxychains-ng</a> 代理 irssi。</p>
 <p>最后，值得推荐的 IRC 频道有下（基于 freenode）：</p>
 <ul>
 <li><code>#ubuntu-cn</code>：Ubuntu 中文社区频道</li>

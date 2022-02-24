@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/dns-message.jpg">
 <meta property="article:published_time" content="2020-12-29T11:25:33.000Z">
-<meta property="article:modified_time" content="2021-02-05T09:43:14.000Z">
+<meta property="article:modified_time" content="2022-02-24T15:49:51.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -288,7 +288,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-02-05 17:43:14" itemprop="dateModified" datetime="2021-02-05T17:43:14+08:00">2021-02-05</time>
+      <time title="Modified: 2022-02-24 23:49:51" itemprop="dateModified" datetime="2022-02-24T23:49:51+08:00">2022-02-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -317,7 +317,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><strong>DNS</strong>（Domain Name System，域名系统）的主要任务是进行<strong>主机名</strong>（hostname，也称域名）到 <strong>IP 地址</strong>转换的目录服务，它由两部分组成：</p>
+        <p><strong>DNS</strong>（Domain Name System，<strong>域名系统</strong>）的主要任务是进行<strong>主机名</strong>（hostname，也称<strong>域名</strong>）到 <strong>IP 地址</strong>转换的目录服务，它由两部分组成：</p>
 <ul>
 <li>一个由<strong>分层</strong>的 <strong>DNS 服务器</strong>（DNS server）实现的<strong>分布式数据库</strong></li>
 <li>一个使得主机能够查询分布式数据库的<strong>应用层协议</strong></li>
@@ -337,7 +337,7 @@
 <li><strong>顶级域（Top-Level Domain，TLD）DNS 服务器</strong>：TLD 服务器提供了权威 DNS 服务器的 IP 地址。对于每个顶级域（如 <code>com</code>、<code>org</code>、<code>net</code>、<code>edu</code> 和 <code>gov</code>）和所有国家的顶级域（如 <code>uk</code>、<code>fr</code>、<code>ca</code> 和 <code>jp</code>），都有 TLD 服务器（或服务器集群）。所有顶级域的列表可参见<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E9%A1%B6%E7%BA%A7%E5%9F%9F%E5%88%97%E8%A1%A8">维基百科</a>。</li>
 <li><strong>权威 DNS 服务器</strong>：在因特网上具有公共可访问主机（如 Web 服务器和邮件服务器）的每个组织机构必须提供公共可访问的 DNS 记录，这些记录将这些主机的名字映射为 IP 地址。一个组织机构的权威 DNS 服务器收藏了这些 DNS 记录。一个组织机构能够选择实现它自己的权威 DNS 服务器以保存这些记录；另一种方法是，该组织能够支付费用，让这些记录存储在某个服务提供商的一个权威 DNS 服务器中。</li>
 </ul>
-<p>还有另一类重要的 DNS 服务器，称为<strong>本地 DNS 服务器</strong>（Local DNS server，LDNS）。严格来说，一个本地 DNS 服务器并不属于该服务器的层次结构，但它对 DNS 层次结构是至关重要的。每个 ISP（如一个居民区的 ISP 或一个机构的 ISP）都有一台本地 DNS 服务器（也叫默认名字服务器）。当主机与某个 ISP 连接时，该 ISP 提供一台主机的 IP 地址，该主机具有一台或多台其本地 DNS 服务器的 IP 地址（通常通过 DHCP）。主机的本地 DNS 服务器通常“临近”本主机。当主机发出 DNS 请求时，该请求被发往本地 DNS 服务器，它起着代理的作用，并将该请求转发到 DNS 服务器层次结构中，大致过程如下所述：</p>
+<p>还有另一类重要的 DNS 服务器，称为<strong>本地 DNS 服务器</strong>（Local DNS server，<strong>LDNS</strong>）。严格来说，一个本地 DNS 服务器并不属于该服务器的层次结构，但它对 DNS 层次结构是至关重要的。每个 ISP（如一个居民区的 ISP 或一个机构的 ISP）都有一台本地 DNS 服务器（也叫默认名字服务器）。当主机与某个 ISP 连接时，该 ISP 提供一台主机的 IP 地址，该主机具有一台或多台其本地 DNS 服务器的 IP 地址（通常通过 DHCP）。主机的本地 DNS 服务器通常“临近”本主机。当主机发出 DNS 请求时，该请求被发往本地 DNS 服务器，它起着代理的作用，并将该请求转发到 DNS 服务器层次结构中，大致过程如下所述：</p>
 <ol>
 <li>客户端向它的本地 DNS 服务器发送一个关于 <code>tieba.baidu.com</code> 的 DNS 查询报文</li>
 <li>本地 DNS 服务器将该报文转发到根 DNS 服务器</li>
@@ -348,7 +348,7 @@
 </ol>
 <p>注意到在本例中，为了获得一台主机名的映射，共发送了 8 份 DNS 报文：4 份查询报文和 4 份回答报文！下文将介绍利用 <strong>DNS 缓存</strong>（DNS caching）减少这种查询流量的方法。</p>
 <p>上述例子利用了<strong>递归查询</strong>（recursive query）和<strong>迭代查询</strong>（iterative query）。从请求主机到本地 DNS 服务器的查询是递归的，其余的查询是迭代的。从理论上讲，任何 DNS 查询既可以是迭代的也能是递归的。</p>
-<h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><p>共同实现 DNS 分布式数据库的所有 DNS 服务器存储了<strong>资源记录</strong>（Resource Record，RR），RR 提供了主机名到 IP 地址的映射。每个 DNS 回答报文包含了一条或多条资源记录。</p>
+<h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><p>共同实现 DNS 分布式数据库的所有 DNS 服务器存储了<strong>资源记录</strong>（Resource Record，<strong>RR</strong>），RR 提供了主机名到 IP 地址的映射。每个 DNS 回答报文包含了一条或多条资源记录。</p>
 <p>资源记录是一个包含了下列字段的 4 元组：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
 
