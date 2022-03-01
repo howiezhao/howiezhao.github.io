@@ -21,17 +21,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="toptop是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是top命令的运行界面：top的运行结果可以大致分为7个部分：  第1行显示了系统概况 第2行显示了进程概况 第3行显示了CPU概况 第4行显示了内存概况 第5行显示了Swap分区概况 第6行为空行，用以显示运行命令时输入的参数 剩下部分则为每个进程的详细信息">
+<meta name="description" content="toptop 是 Linux 下一个常用命令，用来监视系统的运行状况，类似于 Windows 的任务管理器，下图是 top 命令的运行界面：  top 的运行结果可以大致分为 7 个部分：  第 1 行显示了系统概况 第 2 行显示了进程概况 第 3 行显示了 CPU 概况 第 4 行显示了内存概况 第 5 行显示了 Swap 分区概况 第 6 行为空行，用以显示运行命令时输入的参数 剩下部分则为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="top的增强版：htop">
+<meta property="og:title" content="top 的增强版：htop">
 <meta property="og:url" content="https://howiezhao.github.io/2018/09/19/htop-top/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="toptop是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是top命令的运行界面：top的运行结果可以大致分为7个部分：  第1行显示了系统概况 第2行显示了进程概况 第3行显示了CPU概况 第4行显示了内存概况 第5行显示了Swap分区概况 第6行为空行，用以显示运行命令时输入的参数 剩下部分则为每个进程的详细信息">
+<meta property="og:description" content="toptop 是 Linux 下一个常用命令，用来监视系统的运行状况，类似于 Windows 的任务管理器，下图是 top 命令的运行界面：  top 的运行结果可以大致分为 7 个部分：  第 1 行显示了系统概况 第 2 行显示了进程概况 第 3 行显示了 CPU 概况 第 4 行显示了内存概况 第 5 行显示了 Swap 分区概况 第 6 行为空行，用以显示运行命令时输入的参数 剩下部分则为">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/top.PNG">
 <meta property="og:image" content="https://howiezhao.github.io/images/htop.PNG">
 <meta property="article:published_time" content="2018-09-19T09:50:14.000Z">
-<meta property="article:modified_time" content="2021-02-05T11:43:26.000Z">
+<meta property="article:modified_time" content="2022-03-01T15:11:21.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -42,10 +42,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://howiezhao.github.io/2018/09/19/htop-top/","path":"2018/09/19/htop-top/","title":"top的增强版：htop"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://howiezhao.github.io/2018/09/19/htop-top/","path":"2018/09/19/htop-top/","title":"top 的增强版：htop"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>top的增强版：htop | Howie's Notes</title>
+<title>top 的增强版：htop | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
@@ -157,7 +157,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#top"><span class="nav-number">1.</span> <span class="nav-text">top</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC1%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">第1行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC2%E8%A1%8C"><span class="nav-number">1.2.</span> <span class="nav-text">第2行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC3%E8%A1%8C"><span class="nav-number">1.3.</span> <span class="nav-text">第3行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC4%E8%A1%8C"><span class="nav-number">1.4.</span> <span class="nav-text">第4行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC5%E8%A1%8C"><span class="nav-number">1.5.</span> <span class="nav-text">第5行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%A9%E4%B8%8B%E9%83%A8%E5%88%86"><span class="nav-number">1.6.</span> <span class="nav-text">剩下部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htop"><span class="nav-number">2.</span> <span class="nav-text">htop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">3.</span> <span class="nav-text">优势</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#top"><span class="nav-number">1.</span> <span class="nav-text">top</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC-1-%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">第 1 行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC-2-%E8%A1%8C"><span class="nav-number">1.2.</span> <span class="nav-text">第 2 行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC-3-%E8%A1%8C"><span class="nav-number">1.3.</span> <span class="nav-text">第 3 行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC-4-%E8%A1%8C"><span class="nav-number">1.4.</span> <span class="nav-text">第 4 行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC-5-%E8%A1%8C"><span class="nav-number">1.5.</span> <span class="nav-text">第 5 行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%A9%E4%B8%8B%E9%83%A8%E5%88%86"><span class="nav-number">1.6.</span> <span class="nav-text">剩下部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htop"><span class="nav-number">2.</span> <span class="nav-text">htop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">3.</span> <span class="nav-text">优势</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -271,7 +271,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          top的增强版：htop
+          top 的增强版：htop
         </h1>
 
         <div class="post-meta-container">
@@ -289,7 +289,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-02-05 19:43:26" itemprop="dateModified" datetime="2021-02-05T19:43:26+08:00">2021-02-05</time>
+      <time title="Modified: 2022-03-01 23:11:21" itemprop="dateModified" datetime="2022-03-01T23:11:21+08:00">2022-03-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -318,18 +318,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>top是Linux下一个常用命令，用来监视系统的运行状况，类似于Windows的任务管理器，下图是<code>top</code>命令的运行界面：<br><img src="/images/top.PNG" alt="top">top的运行结果可以大致分为7个部分：</p>
+        <h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><p>top 是 Linux 下一个常用命令，用来监视系统的运行状况，类似于 Windows 的任务管理器，下图是 <code>top</code> 命令的运行界面：</p>
+<p><img src="/images/top.PNG" alt="top"></p>
+<p>top 的运行结果可以大致分为 7 个部分：</p>
 <ul>
-<li>第1行显示了<strong>系统</strong>概况</li>
-<li>第2行显示了<strong>进程</strong>概况</li>
-<li>第3行显示了<strong>CPU</strong>概况</li>
-<li>第4行显示了<strong>内存</strong>概况</li>
-<li>第5行显示了<strong>Swap分区</strong>概况</li>
-<li>第6行为空行，用以显示运行命令时输入的<strong>参数</strong></li>
-<li>剩下部分则为<strong>每个进程的详细信息</strong><span id="more"></span>
-<h3 id="第1行"><a href="#第1行" class="headerlink" title="第1行"></a>第1行</h3></li>
+<li>第 1 行显示了<strong>系统</strong>概况</li>
+<li>第 2 行显示了<strong>进程</strong>概况</li>
+<li>第 3 行显示了 <strong>CPU</strong> 概况</li>
+<li>第 4 行显示了<strong>内存</strong>概况</li>
+<li>第 5 行显示了 <strong>Swap 分区</strong>概况</li>
+<li>第 6 行为空行，用以显示运行命令时输入的<strong>参数</strong></li>
+<li>剩下部分则为<strong>每个进程的详细信息</strong></li>
 </ul>
-<table>
+<span id="more"></span>
+
+<h3 id="第-1-行"><a href="#第-1-行" class="headerlink" title="第 1 行"></a>第 1 行</h3><table>
 <thead>
 <tr>
 <th>字符</th>
@@ -354,10 +357,10 @@
 </tr>
 <tr>
 <td>load average: 0.02, 0.04, 0.00</td>
-<td>系统平均负载，三个数值分别为1分钟、5分钟、15分钟前到现在的平均值。</td>
+<td>系统平均负载，三个数值分别为 1 分钟、5 分钟、15 分钟前到现在的平均值。</td>
 </tr>
 </tbody></table>
-<h3 id="第2行"><a href="#第2行" class="headerlink" title="第2行"></a>第2行</h3><table>
+<h3 id="第-2-行"><a href="#第-2-行" class="headerlink" title="第 2 行"></a>第 2 行</h3><table>
 <thead>
 <tr>
 <th>字符</th>
@@ -366,7 +369,7 @@
 </thead>
 <tbody><tr>
 <td>Tasks:</td>
-<td>进程(任务)概况</td>
+<td>进程（任务）概况</td>
 </tr>
 <tr>
 <td>23 total,</td>
@@ -389,7 +392,7 @@
 <td>僵尸进程数</td>
 </tr>
 </tbody></table>
-<h3 id="第3行"><a href="#第3行" class="headerlink" title="第3行"></a>第3行</h3><table>
+<h3 id="第-3-行"><a href="#第-3-行" class="headerlink" title="第 3 行"></a>第 3 行</h3><table>
 <thead>
 <tr>
 <th>字符</th>
@@ -398,42 +401,42 @@
 </thead>
 <tbody><tr>
 <td>Cpu(s):</td>
-<td>CPU概况</td>
+<td>CPU 概况</td>
 </tr>
 <tr>
 <td>3.7%us,</td>
-<td>用户(user)进程占用CPU百分率</td>
+<td>用户（user）进程占用 CPU 百分率</td>
 </tr>
 <tr>
 <td>0.7%sy,</td>
-<td>系统(system)进程占用CPU百分率</td>
+<td>系统（system）进程占用 CPU 百分率</td>
 </tr>
 <tr>
 <td>0.0%ni,</td>
-<td>用户进程空间内改变过优先级(niced)的进程占用CPU百分比</td>
+<td>用户进程空间内改变过优先级（niced）的进程占用 CPU 百分比</td>
 </tr>
 <tr>
 <td>95.7%id,</td>
-<td>CPU空闲(idle)率</td>
+<td>CPU 空闲（idle）率</td>
 </tr>
 <tr>
 <td>0.0%wa,</td>
-<td>等待(wait)IO的CPU时间百分比</td>
+<td>等待（wait）IO 的 CPU 时间百分比</td>
 </tr>
 <tr>
 <td>0.0%hi,</td>
-<td>硬中断(hardware interrupt)占用CPU的百分比</td>
+<td>硬中断（hardware interrupt）占用 CPU 的百分比</td>
 </tr>
 <tr>
 <td>0.0%si,</td>
-<td>软中断(software interrupt)占用CPU的百分比</td>
+<td>软中断（software interrupt）占用 CPU 的百分比</td>
 </tr>
 <tr>
 <td>0.0%st</td>
 <td>todo</td>
 </tr>
 </tbody></table>
-<h3 id="第4行"><a href="#第4行" class="headerlink" title="第4行"></a>第4行</h3><table>
+<h3 id="第-4-行"><a href="#第-4-行" class="headerlink" title="第 4 行"></a>第 4 行</h3><table>
 <thead>
 <tr>
 <th>字符</th>
@@ -442,7 +445,7 @@
 </thead>
 <tbody><tr>
 <td>Mem:</td>
-<td>内存(memory)概况，数值以kb为单位</td>
+<td>内存（memory）概况，数值以 kb 为单位</td>
 </tr>
 <tr>
 <td>524288k total,</td>
@@ -461,7 +464,7 @@
 <td>缓冲的内存量</td>
 </tr>
 </tbody></table>
-<h3 id="第5行"><a href="#第5行" class="headerlink" title="第5行"></a>第5行</h3><table>
+<h3 id="第-5-行"><a href="#第-5-行" class="headerlink" title="第 5 行"></a>第 5 行</h3><table>
 <thead>
 <tr>
 <th>字符</th>
@@ -470,23 +473,23 @@
 </thead>
 <tbody><tr>
 <td>Swap:</td>
-<td>Swap分区概况，数值以kb为单位</td>
+<td>Swap 分区概况，数值以 kb 为单位</td>
 </tr>
 <tr>
 <td>65536k total,</td>
-<td>Swap分区总量</td>
+<td>Swap 分区总量</td>
 </tr>
 <tr>
 <td>65536k used,</td>
-<td>Swap分区使用量</td>
+<td>Swap 分区使用量</td>
 </tr>
 <tr>
 <td>0k free,</td>
-<td>Swap分区空闲量</td>
+<td>Swap 分区空闲量</td>
 </tr>
 <tr>
 <td>28800k cached</td>
-<td>缓冲的Swap分区量</td>
+<td>缓冲的 Swap 分区量</td>
 </tr>
 </tbody></table>
 <h3 id="剩下部分"><a href="#剩下部分" class="headerlink" title="剩下部分"></a>剩下部分</h3><table>
@@ -510,19 +513,19 @@
 </tr>
 <tr>
 <td>NI</td>
-<td>nice值。越小优先级越高，最小-20，最大20（用户设置最大19）</td>
+<td>nice 值。越小优先级越高，最小 -20，最大 20（用户设置最大 19）</td>
 </tr>
 <tr>
 <td>VIRT</td>
-<td>进程使用的虚拟(virtual)内存总量，单位kb。VIRT=SWAP+RES</td>
+<td>进程使用的虚拟（virtual）内存总量，单位 kb。VIRT=SWAP+RES</td>
 </tr>
 <tr>
 <td>RES</td>
-<td>进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA</td>
+<td>进程使用的、未被换出的物理内存大小，单位 kb。RES=CODE+DATA</td>
 </tr>
 <tr>
 <td>SHR</td>
-<td>共享(share)内存大小，单位kb</td>
+<td>共享（share）内存大小，单位 kb</td>
 </tr>
 <tr>
 <td>S</td>
@@ -530,7 +533,7 @@
 </tr>
 <tr>
 <td>%CPU</td>
-<td>进程占用CPU百分比</td>
+<td>进程占用 CPU 百分比</td>
 </tr>
 <tr>
 <td>%MEM</td>
@@ -545,22 +548,24 @@
 <td>运行进程时所使用的命令</td>
 </tr>
 </tbody></table>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>在<code>top</code>命令运行界面也可以输入相关命令，具体如下：</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>在 <code>top</code> 命令运行界面也可以输入相关命令，具体如下：</p>
 <ul>
-<li><code>q</code>：退出<code>top</code>运行界面</li>
-<li><code>P</code>：以占据CPU百分比排序</li>
+<li><code>q</code>：退出 <code>top</code> 运行界面</li>
+<li><code>P</code>：以占据 CPU 百分比排序</li>
 <li><code>M</code>：以占据内存百分比排序</li>
-<li><code>T</code>：以累积占用CPU时间排序</li>
-<li><code>s</code>：修改刷新时间间隔，默认每隔3秒刷新信息。按下s键，然后按下数字，即可修改刷新时间间隔为你输入的数字，单位为秒。例如：按下s键，在按数字1键，即可实现每秒刷新一次</li>
+<li><code>T</code>：以累积占用 CPU 时间排序</li>
+<li><code>s</code>：修改刷新时间间隔，默认每隔 3 秒刷新信息。按下 s 键，然后按下数字，即可修改刷新时间间隔为你输入的数字，单位为秒。例如：按下 s 键，在按数字 1 键，即可实现每秒刷新一次</li>
 <li>回车或空格：手动立即刷新</li>
-<li><code>k</code>：终止指定的进程。按下k键，再输入要杀死的进程的pid，再按回车键，选择信号类型，以数字标示，默认15为杀死，本步可省略直接按回车键（常用为-9）</li>
+<li><code>k</code>：终止指定的进程。按下 k 键，再输入要杀死的进程的 pid，再按回车键，选择信号类型，以数字标示，默认 15 为杀死，本步可省略直接按回车键（常用为 -9）</li>
 <li><code>h</code>：显示可输入的命令帮助菜单</li>
 </ul>
-<h2 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h2><p>htop是一款第三方的命令行工具，它可以被视为是top的增强版，在Ubuntu下可使用<code>apt install htop</code>命令安装，下图是<code>htop</code>命令的运行界面：<br><img src="/images/htop.PNG" alt="htop">当了解了<code>top</code>运行界面的各种参数的含义后，<code>htop</code>运行界面就变得不言而喻了，下面简要介绍一下可以在htop运行界面执行的相关命令：</p>
-<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>综上所述，htop相比top有以下优势：</p>
+<h2 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h2><p>htop 是一款第三方的命令行工具，它可以被视为是 top 的增强版，在 Ubuntu 下可使用 <code>apt install htop</code> 命令安装，下图是 <code>htop</code> 命令的运行界面：</p>
+<p><img src="/images/htop.PNG" alt="htop"></p>
+<p>当了解了 <code>top</code> 运行界面的各种参数的含义后，<code>htop</code> 运行界面就变得不言而喻了，下面简要介绍一下可以在 htop 运行界面执行的相关命令：</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>综上所述，htop 相比 top 有以下优势：</p>
 <ul>
-<li>彩色标识CPU、内存、Swap分区</li>
-<li>CPU、内存、Swap分区使用情况直观易懂</li>
+<li>彩色标识 CPU、内存、Swap 分区</li>
+<li>CPU、内存、Swap 分区使用情况直观易懂</li>
 <li>底部有命令提示</li>
 <li>支持方向键选择进程</li>
 </ul>
