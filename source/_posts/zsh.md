@@ -59,9 +59,21 @@ Zsh 的强大之处就在于它有相当多的插件，只需安装相关插件�
 
 Oh My Zsh 自带的插件，用于显示 Git 仓库的分支等信息。
 
-### autojump
+### z
 
-Oh My Zsh 自带的插件，实现快速跳转到指定文件夹，前提是要安装 autojump 命令行工具，`sudo apt install autojump` 即可。
+Oh My Zsh 自带的插件，实现快速跳转到指定文件夹。
+
+### docker
+
+Oh My Zsh 自带的插件，提供 docker 相关命令补全。
+
+### docker-compose
+
+Oh My Zsh 自带的插件，提供 docker-compose 相关命令补全。
+
+### kubectl
+
+Oh My Zsh 自带的插件，提供 kubectl 相关命令补全。
 
 ### [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
@@ -92,7 +104,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```bash
 plugins=(
   git
-  autojump
+  z
+  docker
+  docker-compose
+  kubectl
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
