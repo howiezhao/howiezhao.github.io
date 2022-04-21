@@ -3394,21 +3394,28 @@
       </tags>
   </entry>
   <entry>
-    <title>QEMU小记</title>
+    <title>QEMU 小记</title>
     <url>/2019/04/18/qemu/</url>
-    <content><![CDATA[<p><a href="https://www.qemu.org/">QEMU</a>是Linux中使用最广的虚拟机，其便于调试的特性也适合于系统开发者。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用<code>sudo apt install qemu</code>即可在Ubuntu中安装QEMU，安装完成后直接输入<code>qemu</code>来验证是否成功安装，如果出错，可再输入<code>qemu-system-i386</code>来验证其是否成功安装，若成功，可建立如下所示的软链接，以方便日后使用。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu</span><br></pre></td></tr></table></figure>
-
-<p>值得注意的是，QEMU的启动需要有图形界面，若未安装图形界面，则会报错：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not initialize SDL(No available video device) - exiting</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>使用QEMU运行一个虚拟机的命令格式为<code>qemu [options] [disk_image]</code>，其中disk_image即硬盘镜像文件。其常用的参数如下：</p>
+    <content><![CDATA[<p><a href="https://www.qemu.org/">QEMU</a> 是 Linux 中使用最广的模拟器，可以模拟出各种硬件环境，其便于调试的特性也适合于系统开发者。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用 <code>sudo apt install qemu</code> 即可在 Ubuntu 中安装 QEMU，安装完成后会有很多以 <code>qemu-</code> 开头的命令，如：</p>
 <ul>
-<li><code>-hda file</code>：使用file作为硬盘0的镜像文件。</li>
-<li><code>-m megs</code>：设定虚拟内存为megs M字节，默认为128M字节。</li>
-<li><code>-smp n</code>：设置为有n个CPU的SMP系统。</li>
+<li><code>qemu-system-i386</code>：用于模拟 32 位的 80386 硬件环境</li>
+<li><code>qemu-system-x86_64</code>：用于模拟 64 位的 x86 硬件环境</li>
+<li><code>qemu-system-arm</code>：用于模拟 ARM 硬件环境</li>
 </ul>
+<p>再进一步，这些命令又可以分为以 <code>qemu-system-</code> 开头和以 <code>qemu-</code> 开头，以 <code>qemu-system-</code> 开头的用于在模拟的硬件环境上运行整个系统，以 <code>qemu-</code> 开头的用于在模拟的硬件环境上运行某个程序，而非整个系统。</p>
+<span id="more"></span>
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>使用 QEMU 模拟一个硬件环境并运行整个系统的命令格式为 <code>qemu [options] [disk_image]</code>，其中 disk_image 即硬盘镜像文件。其常用的参数如下：</p>
+<ul>
+<li><code>-hda file</code>：使用 file 作为硬盘 0 的镜像文件。</li>
+<li><code>-m megs</code>：设定虚拟内存为 megs M 字节，默认为 128 M 字节。</li>
+<li><code>-smp n</code>：设置为有 n 个 CPU 的 SMP 系统。</li>
+</ul>
+<p>值得注意的是，QEMU 的启动需要有图形界面，若未安装图形界面，则会报错：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not initialize SDL(No available video device) - exiting</span><br></pre></td></tr></table></figure>
+
+<p>若要无图形界面启动需要加参数 <code>-nographic</code>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
