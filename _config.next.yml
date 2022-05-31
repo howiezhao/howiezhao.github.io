@@ -169,10 +169,11 @@ links_settings:
 
 links:
   #Title: https://example.com
-  Howie's Blog: http://howiezhao.com/
+  Howie's Blog: http://howiezhao.com
   TomorrowLi's Blog: https://tomorrowli.github.io
   Wenc: https://wenc1997.github.io
   songshaoのblog: https://blog.csdn.net/qq_35490191
+  Zeki's Blog: https://zeki-zl.github.io
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
