@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,16 +16,17 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="P2P 是一种体系结构，就好像 C&#x2F;S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为对等方）彼此直接通信。 基于 P2P 这种体系结构产生了许多应用，譬如文件分发应用和分布式散列表（DHT），而文件分发应用中一个典型的例子就是 BitTorrent 协议。 如果要类比 P2P 与 BitTorrent 之间的关系，就好像 C&#x2F;S 体">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="P2P 是一种体系结构，就好像 C&#x2F;S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为对等方）彼此直接通信。 基于 P2P 这种体系结构产生了许多应用，譬如文件分发应用和分布式散列表（DHT），而文件分发应用中一个典型的例子就是 BitTorrent 协议。 如果要类比 P2P 与 BitTorrent 之间的关系，就好像">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P2P 与 BitTorrent">
 <meta property="og:url" content="https://howiezhao.github.io/2020/12/15/p2p-bittorrent/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="P2P 是一种体系结构，就好像 C&#x2F;S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为对等方）彼此直接通信。 基于 P2P 这种体系结构产生了许多应用，譬如文件分发应用和分布式散列表（DHT），而文件分发应用中一个典型的例子就是 BitTorrent 协议。 如果要类比 P2P 与 BitTorrent 之间的关系，就好像 C&#x2F;S 体">
+<meta property="og:description" content="P2P 是一种体系结构，就好像 C&#x2F;S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为对等方）彼此直接通信。 基于 P2P 这种体系结构产生了许多应用，譬如文件分发应用和分布式散列表（DHT），而文件分发应用中一个典型的例子就是 BitTorrent 协议。 如果要类比 P2P 与 BitTorrent 之间的关系，就好像">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-15T08:18:58.000Z">
 <meta property="article:modified_time" content="2022-02-24T15:49:51.000Z">
@@ -47,6 +47,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -91,13 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -154,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P-%E4%B8%8E-C-S"><span class="nav-number">1.</span> <span class="nav-text">P2P 与 C&#x2F;S</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BitTorrent"><span class="nav-number">2.</span> <span class="nav-text">BitTorrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BitTorrent-%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">3.</span> <span class="nav-text">BitTorrent 客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#P2P-%E4%B8%8E-C-x2F-S"><span class="nav-number">1.</span> <span class="nav-text">P2P 与 C&#x2F;S</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BitTorrent"><span class="nav-number">2.</span> <span class="nav-text">BitTorrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BitTorrent-%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">3.</span> <span class="nav-text">BitTorrent 客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -260,11 +255,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="P2P 与 BitTorrent | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -315,13 +315,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>P2P 是一种<strong>体系结构</strong>，就好像 C/S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为<strong>对等方</strong>）彼此直接通信。</p>
+        <p>P2P 是一种<strong>体系结构</strong>，就好像 C&#x2F;S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为<strong>对等方</strong>）彼此直接通信。</p>
 <p>基于 P2P 这种体系结构产生了许多应用，譬如<strong>文件分发应用</strong>和<strong>分布式散列表</strong>（DHT），而文件分发应用中一个典型的例子就是 BitTorrent 协议。</p>
-<p>如果要类比 P2P 与 BitTorrent 之间的关系，就好像 C/S 体系结构与 FTP 协议之间的关系。</p>
+<p>如果要类比 P2P 与 BitTorrent 之间的关系，就好像 C&#x2F;S 体系结构与 FTP 协议之间的关系。</p>
 <span id="more"></span>
 
-<h2 id="P2P-与-C-S"><a href="#P2P-与-C-S" class="headerlink" title="P2P 与 C/S"></a>P2P 与 C/S</h2><p>以文件分发应用为例，在 C/S 文件分发中，该服务器必须向每个对等方发送该文件的一个副本，即服务器承受了极大的负担，并且消耗了大量的服务器带宽。在 P2P 文件分发中，每个对等方能够向任何其他对等方重新分发它已经收到的该文件的任何部分，从而在分发过程中协助该服务器。</p>
-<p>对于 C/S 体系结构，随着对等方数量的增加，分发时间呈线性增长并且没有界。然而，对于 P2P 体系结构，最小分发时间不仅总是小于 C/S 体系结构的分发时间，并且对于任意的对等方数量，总是小于一对一的 C/S 体系结构的分发时间。因此，具有 P2P 体系结构的应用程序能够是自扩展的。这种扩展性的直接成因是：<strong>对等方除了是比特的消费者外还是它们的重新分发者</strong>。</p>
+<h2 id="P2P-与-C-x2F-S"><a href="#P2P-与-C-x2F-S" class="headerlink" title="P2P 与 C&#x2F;S"></a>P2P 与 C&#x2F;S</h2><p>以文件分发应用为例，在 C&#x2F;S 文件分发中，该服务器必须向每个对等方发送该文件的一个副本，即服务器承受了极大的负担，并且消耗了大量的服务器带宽。在 P2P 文件分发中，每个对等方能够向任何其他对等方重新分发它已经收到的该文件的任何部分，从而在分发过程中协助该服务器。</p>
+<p>对于 C&#x2F;S 体系结构，随着对等方数量的增加，分发时间呈线性增长并且没有界。然而，对于 P2P 体系结构，最小分发时间不仅总是小于 C&#x2F;S 体系结构的分发时间，并且对于任意的对等方数量，总是小于一对一的 C&#x2F;S 体系结构的分发时间。因此，具有 P2P 体系结构的应用程序能够是自扩展的。这种扩展性的直接成因是：<strong>对等方除了是比特的消费者外还是它们的重新分发者</strong>。</p>
 <h2 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h2><p>如前所述，BitTorrent 是最为流行的 P2P 文件分发协议，通常也简称为 BT，最初由 Bram Cohen 所研发。</p>
 <p>用 BitTorrent 的术语来讲，参与一个特定文件分发的所有对等方的集合被称为一个<strong>洪流（torrent）</strong>。在一个洪流中的对等方彼此下载等长度的<strong>文件块</strong>（chunk），典型的块长度为 256 KB。当一个对等方首次加入一个洪流时，它没有块。随着时间的流逝，它累积了越来越多的块。当它下载块时，也为其他对等方上载了多个块。一旦某对等方获得了整个文件，它也许（自私地）离开洪流，或（大公无私地）留在该洪流中并继续向其他对等方上载块。同时，任何对等方可能在任何时候仅具有块的子集就离开该洪流，并在以后重新加入该洪流中。</p>
 <p>每个洪流具有一个基础设施节点，称为 <strong>tracker</strong>（追踪器）。当一个对等方加入某洪流时，它向 tracker 注册自己，并周期性地通知 tracker 它仍在该洪流中。以这种方式，tracker 跟踪参与在洪流中的对等方。</p>
@@ -402,7 +402,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">

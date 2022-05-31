@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,11 +16,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="HackRF 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其官网上列出的购买网址购买它，也可以在万能的淘宝上购买。">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="HackRF 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其官网上列出的购买网址购买它，也可以在万能的淘宝上购买。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HackRF 初体验">
 <meta property="og:url" content="https://howiezhao.github.io/2020/01/22/hackrf/index.html">
@@ -48,6 +48,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -92,13 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -261,11 +256,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="HackRF 初体验 | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -322,7 +322,7 @@
 <h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
 
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 录制信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -r：将数据存储到文件中</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重放信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -t：从文件中读取数据</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">录制信号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-r：将数据存储到文件中</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重放信号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-t：从文件中读取数据</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
 
 <p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。<br>Tx Mode：发射模式<br>Rx Mode：接收模式</p>
 
@@ -378,7 +378,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">

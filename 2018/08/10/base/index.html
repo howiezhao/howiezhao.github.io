@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,16 +16,17 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Base64Base64，顾名思义是一种基于 64 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 A-Z、a-z、0-9 以及 + 与 &#x2F;。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：    数值 字符 数值 字符 数值 字符 数值 字符">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Base64Base64，顾名思义是一种基于 64 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 A-Z、a-z、0-9 以及 + 与 &#x2F;。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：    数值 字符 数值 字符 数值 字符 数值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Base 编码家族">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/10/base/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Base64Base64，顾名思义是一种基于 64 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 A-Z、a-z、0-9 以及 + 与 &#x2F;。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：    数值 字符 数值 字符 数值 字符 数值 字符">
+<meta property="og:description" content="Base64Base64，顾名思义是一种基于 64 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 A-Z、a-z、0-9 以及 + 与 &#x2F;。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：    数值 字符 数值 字符 数值 字符 数值">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-10T09:07:56.000Z">
 <meta property="article:modified_time" content="2021-01-14T12:54:10.000Z">
@@ -47,6 +47,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -91,13 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -260,11 +255,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Base 编码家族 | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -315,7 +315,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于 <strong>64</strong> 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 <code>A-Z</code>、<code>a-z</code>、<code>0-9</code> 以及 <code>+</code> 与 <code>/</code>。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4/3。Base64 索引表如下所示：</p>
+        <h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于 <strong>64</strong> 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 <code>A-Z</code>、<code>a-z</code>、<code>0-9</code> 以及 <code>+</code> 与 <code>/</code>。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -487,7 +487,7 @@
 <td>47</td>
 <td>v</td>
 <td>63</td>
-<td>/</td>
+<td>&#x2F;</td>
 </tr>
 </tbody></table>
 <span id="more"></span>
@@ -558,11 +558,11 @@
 <td>b</td>
 <td>G</td>
 <td>8</td>
-<td>=</td>
+<td>&#x3D;</td>
 </tr>
 </tbody></table>
 <p>若原数据不是 3 的倍数，且多出 1 个字节，则在编码末尾加 2 个 <code>=</code>，多出 2 个字节，则在编码末尾加 1 个 <code>=</code>。换言之，若多出 1 个字节，则最后一个 6 位的 Base64 字节块有 4 位是 0 值，若多出 2 个字节，则最后一个 6 位的 Base64 字节块有 2 位是 0 值。</p>
-<h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32 基于 32 个可打印字符，分别为 <code>A-Z</code> 以及 <code>2-7</code>。32 个字符可用 5 个比特位表示，5 个字节有 40 个比特位，对应于 8 个 Base32 单元，编码后的数据比原始数据略长 8/5。若原数据不是 5 的倍数，且多出 1 个字节，则在编码末尾加 4 个 <code>=</code>，多出 2 个字节，则在编码末尾加 3 个 <code>=</code>，多出 3 个字节，则在编码末尾加 2 个 <code>=</code>，多出 4 个字节，则在编码末尾加 1 个 <code>=</code>。Base32 索引表如下所示：</p>
+<h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32 基于 32 个可打印字符，分别为 <code>A-Z</code> 以及 <code>2-7</code>。32 个字符可用 5 个比特位表示，5 个字节有 40 个比特位，对应于 8 个 Base32 单元，编码后的数据比原始数据略长 8&#x2F;5。若原数据不是 5 的倍数，且多出 1 个字节，则在编码末尾加 4 个 <code>=</code>，多出 2 个字节，则在编码末尾加 3 个 <code>=</code>，多出 3 个字节，则在编码末尾加 2 个 <code>=</code>，多出 4 个字节，则在编码末尾加 1 个 <code>=</code>。Base32 索引表如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -725,7 +725,7 @@
 <li>计算 <code>Base64URL 编码长度 % 4</code> 的值：<br>a. 结果为 0，不做处理<br>b. 结果为 2，字符串添加 <code>==</code><br>c. 结果为 3，字符串添加 <code>=</code></li>
 </ol>
 <h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>XXencode 不属于 Base 编码家族，但与 Base64 编码极为类似，区别仅在于 64 个可打印字符及其顺序，XXencode 使用的为 <code>+</code>、<code>-</code>、<code>0-9</code>、<code>A-Z</code>、<code>a-z</code>。</p>
-<h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode 也与 Base64 极为类似，它使用的字符及其顺序为 <code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、`。</p>
+<h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode 也与 Base64 极为类似，它使用的字符及其顺序为 <code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、&#96;。</p>
 
     </div>
 
@@ -782,7 +782,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">

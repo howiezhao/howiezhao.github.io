@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,11 +16,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="汇编语言（Assembly Language，简称 ASM）由汇编指令、伪指令和其他符号组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。 架构汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的x86 汇编和常用于嵌入式设备的ARM 汇编。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="汇编语言（Assembly Language，简称 ASM）由汇编指令、伪指令和其他符号组成，其中汇编指令有对应的机器码，而伪指令和其他符号没有对应的机器码，仅由汇编器识别执行。 架构汇编语言是依赖底层 CPU 架构的，不同的 CPU 架构拥有不同的汇编语言，比如，常用于 PC 的x86 汇编和常用于嵌入式设备的ARM 汇编。由于 x86 架构又分为 16 位、32 位、64 位等，其相应的汇编也">
 <meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言小记">
 <meta property="og:url" content="https://howiezhao.github.io/2019/03/09/assembly/index.html">
@@ -46,6 +46,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -90,13 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -259,11 +254,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="汇编语言小记 | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -381,8 +381,8 @@
 <li><code>jmp</code>：跳转指令，属于转移指令，如 <code>jmp 2AE3:3</code>，表示将 CS 设为 <code>2AE3H</code>，将 IP 设为 <code>0003H</code>，CPU 将从 CS:IP（即 <code>2AE33H</code>）处读取指令；<code>jmp eax</code> 表示将 EAX 的值赋给 IP，CS 保持不变。</li>
 <li><code>jnz</code>：条件跳转指令，检查 EFLAGS 标志寄存器中的 ZF 位（零标志位）是否为 0，若不为 0，则跳转。</li>
 <li><code>jz</code>：条件跳转指令，检查 EFLAGS 标志寄存器中的 ZF 位（零标志位）是否为 0，若为 0，则跳转。</li>
-<li><code>in</code>：从 I/O 端口读取内容，如 <code>in al,21H</code>，表示从 21H 端口读取内容到 AL 中。</li>
-<li><code>out</code>：向 I/O 端口写入内容，如 <code>out 21H,al</code>，表示将 AL 的值写入到 21H 端口中。</li>
+<li><code>in</code>：从 I&#x2F;O 端口读取内容，如 <code>in al,21H</code>，表示从 21H 端口读取内容到 AL 中。</li>
+<li><code>out</code>：向 I&#x2F;O 端口写入内容，如 <code>out 21H,al</code>，表示将 AL 的值写入到 21H 端口中。</li>
 <li><code>xor</code>：按位异或运算，即相同为 0，不同为 1，如 <code>xor eax,ebx</code>，表示将 EAX 和 EBX 按位异或，其值赋给 EAX。对同一个值进行异或，会使其得 0，汇编中常用这种方法得到 0，如 <code>xor eax,eax</code>。</li>
 <li><code>or</code>：按位或运算，如 <code>or eax,ebx</code>，表示将 EAX 和 EBX 按位或，其值赋给 EAX。</li>
 </ul>
@@ -528,7 +528,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">

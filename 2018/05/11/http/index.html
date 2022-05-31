@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,11 +16,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="HTTP，全称 Hypertext Transfer Protocol，即超文本传输协议。HTTP 定义了 Web 客户向 Web 服务请求 Web 页面的方式，以及服务器向客户传送 Web 页面的方式。HTTP 使用 TCP 作为它的支撑运输协议。 术语在详细解释 HTTP 之前，应当回顾某些 Web 术语。 Web 页面（Web page）（也叫文档）是由对象组成的。一个对象（object）只">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="HTTP，全称 Hypertext Transfer Protocol，即超文本传输协议。HTTP 定义了 Web 客户向 Web 服务请求 Web 页面的方式，以及服务器向客户传送 Web 页面的方式。HTTP 使用 TCP 作为它的支撑运输协议。 术语在详细解释 HTTP 之前，应当回顾某些 Web 术语。 Web 页面（Web page）（也叫文档）是由对象组成的。一个对象（object）只">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP 协议分析">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/11/http/index.html">
@@ -50,6 +50,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -94,13 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -263,11 +258,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="HTTP 协议分析 | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -326,7 +326,7 @@
 
 <h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><p>HTTP 规范包含了对 HTTP 报文格式的定义。HTTP 报文有两种：请求报文和响应报文。</p>
 <h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><p>一个典型的示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET /somedir/page.html HTTP/1.1</span><br><span class="line">Host: www.someschool.edu</span><br><span class="line">Connection: close</span><br><span class="line">User-Agent: Mozilla/5.0</span><br><span class="line">Accept-Language: fr</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET /somedir/page.html HTTP/1.1</span><br><span class="line">Host: www.someschool.edu</span><br><span class="line">Connection: close</span><br><span class="line">User-Agent: Mozilla/5.0</span><br><span class="line">Accept-Language: fr</span><br></pre></td></tr></table></figure>
 
 <p>HTTP 请求报文的第一行叫做<strong>请求行</strong>（request line），其后继的行叫做<strong>首部行</strong>（header line）。</p>
 <p>请求行有 3 个字段：方法字段、URL 字段和 HTTP 版本字段。方法字段可以取几种不同的值，包括 <strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong> 和 <strong>DELETE</strong>。绝大部分的 HTTP 请求报文使用 GET 方法。</p>
@@ -336,7 +336,7 @@
 <p>使用 GET 方法时实体体（entity body）为空，而使用 POST 方法时才使用该实体体。</p>
 <p>HEAD 方法类似于 GET 方法。当服务器收到使用 HEAD 方法的请求时，将会用一个 HTTP 报文进行响应，但是并不返回请求对象。应用程序开发者常用 HEAD 方法进行调试跟踪。PUT 方法常与 Web 发行工具联合使用，它运行用户上传对象到指定的 Web 服务器上指定的路径（目录）。PUT 方法也被那些需要向 Web 服务器上传对象的应用程序使用。DELETE 方法允许用户或者应用程序删除 Web 服务器上的对象。</p>
 <h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><p>一个典型的示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Connection: close</span><br><span class="line">Date: Tue, 18 Aug 2015 15:44:04 GMT</span><br><span class="line">Server: Apache/2.2.3 (CentOS)</span><br><span class="line">Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT</span><br><span class="line">Content-Length: 6821</span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">(data data data data data ...)</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Connection: close</span><br><span class="line">Date: Tue, 18 Aug 2015 15:44:04 GMT</span><br><span class="line">Server: Apache/2.2.3 (CentOS)</span><br><span class="line">Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT</span><br><span class="line">Content-Length: 6821</span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">(data data data data data ...)</span><br></pre></td></tr></table></figure>
 
 <p>上述响应报文有三个部分：一个初始<strong>状态行</strong>（status line），6 个<strong>首部行</strong>（header line），然后是<strong>实体体</strong>（entity body）。</p>
 <p>实体体部分是报文的主要部分，即它包含了所请求的对象本身。状态行有 3 个字段：协议版本字段、状态码和相应状态信息。</p>
@@ -367,16 +367,16 @@
 <p>Web 缓存器为了验证所缓存的对象是否是最新的，会使用条件 GET 方法向目标服务器发送一个请求报文，If-Modified-Since 首部行的值为当初缓存对象时响应报文中 Last-Modified 首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“<strong>304 Not Modified</strong>”响应报文，其中实体体为空。</p>
 <p>通过使用 CDN（Content Distribution Network，内容分发网络），Web 缓存器正在因特网中发挥着越来越重要的作用。CDN 公司在因特网上安装了许多地理上分散的缓存器，因而使大量流量实现了本地化。</p>
 <h2 id="非持续连接和持续连接"><a href="#非持续连接和持续连接" class="headerlink" title="非持续连接和持续连接"></a>非持续连接和持续连接</h2><p>HTTP 可以采用非持续连接或持续连接，默认采用持续连接。</p>
-<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>目前多数大网站已经采用了 HTTP/2，还有一部分老旧网站仍然在使用 HTTP/1.1。</p>
-<p>HTTP/2 相比 HTTP/1.1 做的最大的改动是使用了多路复用，即同一个域名、同一个 IP 下的多个文件会共用一个 TCP 连接进行合并传输。</p>
-<p>HTTP/3 是未来的一个 HTTP 版本，它相比前两个版本，做的最大的改动是将弃用 TCP 协议，改为使用基于 UDP 协议的 QUIC 协议实现。</p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>目前多数大网站已经采用了 HTTP&#x2F;2，还有一部分老旧网站仍然在使用 HTTP&#x2F;1.1。</p>
+<p>HTTP&#x2F;2 相比 HTTP&#x2F;1.1 做的最大的改动是使用了多路复用，即同一个域名、同一个 IP 下的多个文件会共用一个 TCP 连接进行合并传输。</p>
+<p>HTTP&#x2F;3 是未来的一个 HTTP 版本，它相比前两个版本，做的最大的改动是将弃用 TCP 协议，改为使用基于 UDP 协议的 QUIC 协议实现。</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>HTTP 是一个<strong>无状态协议</strong>（stateless protocol），即 HTTP 服务器并不保存关于客户的任何信息。但我们可以通过 cookie 机制实现有状态的访问。</p>
 <p>有些文章将非持续连接翻译为 <em>短连接</em>，将持续连接翻译为 <em>长连接</em>，纵观 RFC 相关文档，找不到类似短连接或长连接这样的描述，因此，为保证严谨，个人推荐使用非持续连接或持续连接这样的描述。</p>
 <p>有的文章还将 HTTP 描述为 <em>无连接</em>，它们可能本意指的是无状态或非持续连接？纵观上述，找不到这样描述的原因，不应该使用无连接描述 HTTP。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/30280001/">James F. Kurose,Keith W. Ross.计算机网络：自顶向下方法[M].北京:机械工业出版社,2018:64-75.</a></li>
-<li><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2616">RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1</a></li>
-<li><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc7540">RFC 7540 - Hypertext Transfer Protocol Version 2 (HTTP/2)</a></li>
+<li><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2616">RFC 2616 - Hypertext Transfer Protocol -- HTTP&#x2F;1.1</a></li>
+<li><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc7540">RFC 7540 - Hypertext Transfer Protocol Version 2 (HTTP&#x2F;2)</a></li>
 </ol>
 
     </div>
@@ -434,7 +434,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">

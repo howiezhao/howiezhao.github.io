@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,11 +16,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="TCP 全称 Transmission Control Protocol，即传输控制协议，它为调用它的应用程序提供了一种可靠的、面向连接（connection-oriented）的服务。 TCP 连接提供的是全双工服务（full-duplex service），TCP 连接也总是点对点（point-to-point）的。 相比 UDP，TCP 主要多了 2 种服务：可靠数据传输（reliable">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="TCP 全称 Transmission Control Protocol，即传输控制协议，它为调用它的应用程序提供了一种可靠的、面向连接（connection-oriented）的服务。 TCP 连接提供的是全双工服务（full-duplex service），TCP 连接也总是点对点（point-to-point）的。 相比 UDP，TCP 主要多了 2 种服务：可靠数据传输（reliable">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP 协议分析">
 <meta property="og:url" content="https://howiezhao.github.io/2018/05/11/tcp/index.html">
@@ -51,6 +51,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -95,13 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -264,11 +259,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="TCP 协议分析 | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -431,7 +431,7 @@
 <p>例如，TCP 向网络发送第一个报文段并等待一个确认；当该确认到达时，TCP 发送方将拥塞窗口增加 1 个 MSS，并发送出两个最大长度的报文段；这两个报文段被确认，则发送方对每个确认报文段将拥塞窗口增加 1 个 MSS，使得拥塞窗口变为 4 个 MSS，并这样下去。这一过程每过一个 RTT，发送速度就翻番。因此，TCP 发送速率起始慢，但在慢启动阶段以指数增长。</p>
 <p>这种指数增长不是无限的，慢启动在遇到以下 3 种情况之一时将结束：</p>
 <ul>
-<li>若存在一个由超时指示的丢包事件（即拥塞），TCP 发送方将另一个状态变量 ssthresh（“慢启动阈值”的速记）设为 cwnd/2，再将 cwnd 设为 1 并重新开始慢启动过程。</li>
+<li>若存在一个由超时指示的丢包事件（即拥塞），TCP 发送方将另一个状态变量 ssthresh（“慢启动阈值”的速记）设为 cwnd&#x2F;2，再将 cwnd 设为 1 并重新开始慢启动过程。</li>
 <li>当 cwnd 的值等于 ssthresh 时，结束慢启动并且 TCP 转移到拥塞避免模式。</li>
 <li>若检测到 3 个冗余 ACK，这时 TCP 执行一种快速重传并进入快速恢复状态。</li>
 </ul>
@@ -447,7 +447,7 @@
 <li>可选与变长的<strong>选项字段</strong>（options field）：该字段用于发送方与接收方协商最大报文段长度（MSS）时，或在高速网络环境下用作窗口调节因子时使用。首部字段中还定义了一个时间戳选项。</li>
 <li>6 比特的<strong>标志字段</strong>（flag field）：<strong>ACK</strong> 比特用于指示确认字段中的值是有效的，即该报文段包括一个对已被成功接收报文段的确认。<strong>RST</strong>、<strong>SYN</strong> 和 <strong>FIN</strong> 比特用于连接建立和拆除。在明确拥塞通告中使用了 <strong>CWR</strong> 和 <strong>ECE</strong> 比特。当 <strong>PSH</strong> 比特被置位时，就指示接收方应立即将数据交给上层。最后，<strong>URG</strong> 比特用来指示报文段里存在着被发送端的上层实体置为“紧急”的数据。紧急数据的最后一个字节由 16 比特的<strong>紧急数据指针字段</strong>（urgent data pointer field）指出。</li>
 </ul>
-<p>MSS 全称 Maximum Segment Size，即<strong>最大报文段长度</strong>，指 TCP 可从缓存中取出并放入报文段中的数据的最大数量。MSS 通常根据最初确定的由本地发送主机发送的最大链路层帧长度（即所谓的<strong>最大传输单元</strong>（Maximum Transmission Unit，MTU））来设置。设置该 MSS 要保证一个 TCP 报文段（当封装在一个 IP 数据报中）加上 TCP/IP 首部长度（通常 40 字节）将适合单个链路层帧。以太网和 PPP 链路层协议都具有 1500 字节的 MTU，因此 MSS 的典型值为 1460 字节。</p>
+<p>MSS 全称 Maximum Segment Size，即<strong>最大报文段长度</strong>，指 TCP 可从缓存中取出并放入报文段中的数据的最大数量。MSS 通常根据最初确定的由本地发送主机发送的最大链路层帧长度（即所谓的<strong>最大传输单元</strong>（Maximum Transmission Unit，MTU））来设置。设置该 MSS 要保证一个 TCP 报文段（当封装在一个 IP 数据报中）加上 TCP&#x2F;IP 首部长度（通常 40 字节）将适合单个链路层帧。以太网和 PPP 链路层协议都具有 1500 字节的 MTU，因此 MSS 的典型值为 1460 字节。</p>
 <h2 id="TCP-连接与状态"><a href="#TCP-连接与状态" class="headerlink" title="TCP 连接与状态"></a>TCP 连接与状态</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>客户端 TCP 会用以下方式与服务器端 TCP 建立一条 TCP 连接：</p>
 <ol>
 <li>客户端 TCP 首先向服务器端 TCP 发送一个 <strong>SYN 报文段</strong>。<br>该报文段不包含应用层数据，但是报文段的首部中的 SYN 标志位被置为 1，序号字段为一个随机的初始序号（不妨设为 <code>client_isn</code>）。<br>客户端 TCP 初始为 <strong>CLOSED</strong>（关闭）状态，发送此 SYN 报文段后，将进入 <strong>SYN_SENT</strong> 状态。</li>
@@ -475,9 +475,9 @@
 <p>由于 TCP 不允许已分配的缓存溢出，下式必须成立：</p>
 <p>$$LastByteRcvd-LastByteRead\leq RcvBuffer$$</p>
 <p>接收窗口用 rwnd 表示，根据缓存可用空间的数量来设置：</p>
-<p>$$rwnd = RcvBuffer-(LastByteRcvd-LastByteRead)$$</p>
+<p>$$rwnd &#x3D; RcvBuffer-(LastByteRcvd-LastByteRead)$$</p>
 <p>由于该空间是随着时间变化的，所以 rwnd 是动态的。</p>
-<p>主机 B 通过把当前的 rwnd 值放入它发给主机 A 的报文段接收窗口字段中，通知主机 A 它在该连接的缓存中还有多少可用空间。开始时，主机 B 设定 $rwnd = RcvBuffer$。注意到为了实现这一点，主机 B 必须跟踪几个与连接有关的变量。</p>
+<p>主机 B 通过把当前的 rwnd 值放入它发给主机 A 的报文段接收窗口字段中，通知主机 A 它在该连接的缓存中还有多少可用空间。开始时，主机 B 设定 $rwnd &#x3D; RcvBuffer$。注意到为了实现这一点，主机 B 必须跟踪几个与连接有关的变量。</p>
 <p>主机 A 轮流跟踪两个变量，LastByteSent 和 LastByteAcked，注意到这两个变量之间的差 $LastByteSent-LastByteAcked$，就是主机 A 发送到连接中但未被确认的数据量。通过将未被确认的数据量控制在值 rwnd 以内，就可以保证主机 A 不会使主机 B 的接收缓存溢出。因此，主机 A 在该连接的整个生命周期须保证：</p>
 <p>$$LastByteSent-LastByteAcked\leq rwnd$$</p>
 <p>特别的，TCP 规范中要求：当主机 B 的接收窗口为 0 时，主机 A 继续发送只有一个字节数据的报文段。</p>
@@ -540,7 +540,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">

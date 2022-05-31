@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,11 +16,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="DNS（Domain Name System，域名系统）的主要任务是进行主机名（hostname，也称域名）到 IP 地址转换的目录服务，它由两部分组成：  一个由分层的 DNS 服务器（DNS server）实现的分布式数据库 一个使得主机能够查询分布式数据库的应用层协议  DNS 服务器通常是运行 BIND（Berkeley Internet Name Domain）软件的 UNIX 机器。D">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="DNS（Domain Name System，域名系统）的主要任务是进行主机名（hostname，也称域名）到 IP 地址转换的目录服务，它由两部分组成：  一个由分层的 DNS 服务器（DNS server）实现的分布式数据库 一个使得主机能够查询分布式数据库的应用层协议  DNS 服务器通常是运行 BIND（Berkeley Internet Name Domain）软件的 UNIX 机器。D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DNS 运行机制">
 <meta property="og:url" content="https://howiezhao.github.io/2020/12/29/dns/index.html">
@@ -49,6 +49,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -93,13 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -262,11 +257,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="DNS 运行机制 | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -350,14 +350,14 @@
 <p>上述例子利用了<strong>递归查询</strong>（recursive query）和<strong>迭代查询</strong>（iterative query）。从请求主机到本地 DNS 服务器的查询是递归的，其余的查询是迭代的。从理论上讲，任何 DNS 查询既可以是迭代的也能是递归的。</p>
 <h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><p>共同实现 DNS 分布式数据库的所有 DNS 服务器存储了<strong>资源记录</strong>（Resource Record，<strong>RR</strong>），RR 提供了主机名到 IP 地址的映射。每个 DNS 回答报文包含了一条或多条资源记录。</p>
 <p>资源记录是一个包含了下列字段的 4 元组：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
 
 <p>TTL（Time To Live）是该记录的生存时间，它决定了资源记录应当从缓存中删除的时间。Name 和 Value 的值取决于 Type：</p>
 <ul>
-<li>若 Type = A，则 Name 是主机名，Value 是该主机名对应的 IP 地址。因此，一条类型为 A 的资源记录提供了标准的主机名到 IP 地址的映射。例如 <code>(relay1.bar.foo.com, 145.37.93.126, A)</code> 就是一条类型 A 记录。</li>
-<li>若 Type = NS，则 Name 是个域（如 <code>foo.com</code>），而 Value 是个知道如何获得该域中主机 IP 地址的权威 DNS 服务器的主机名。这个记录用于沿着查询链来路要 DNS 查询。例如 <code>(foo.com, dns.foo.com, NS)</code> 就是一条类型为 NS 的记录。</li>
-<li>若 Type = CNAME，则 Value 是别名为 Name 的主机对应的规范主机名。该记录能够向查询的主机提供一个主机名对应的规范主机名，例如 <code>(foo.com, relay1.bar.foo.com, CNAME)</code> 就是一条 CNAME 类型的记录。</li>
-<li>若 Type = MX，则 Value 是个别名为 Name 的邮件服务器的规范主机名。举例来说，<code>(foo.com, mail.bar.foo.com, MX)</code> 就是一条 MX 记录。MX 记录允许邮件服务器主机名具有简单的别名。值得注意的是，通过使用 MX 记录，一个公司的邮件服务器和其他服务器（如它的 Web 服务器）可以使用相同的别名。为了获得邮件服务器的规范主机名，DNS 客户应当请求一条 MX 记录；而为了获得其他服务器的规范主机名，DNS 客户应当请求 CNAME 记录。</li>
+<li>若 Type &#x3D; A，则 Name 是主机名，Value 是该主机名对应的 IP 地址。因此，一条类型为 A 的资源记录提供了标准的主机名到 IP 地址的映射。例如 <code>(relay1.bar.foo.com, 145.37.93.126, A)</code> 就是一条类型 A 记录。</li>
+<li>若 Type &#x3D; NS，则 Name 是个域（如 <code>foo.com</code>），而 Value 是个知道如何获得该域中主机 IP 地址的权威 DNS 服务器的主机名。这个记录用于沿着查询链来路要 DNS 查询。例如 <code>(foo.com, dns.foo.com, NS)</code> 就是一条类型为 NS 的记录。</li>
+<li>若 Type &#x3D; CNAME，则 Value 是别名为 Name 的主机对应的规范主机名。该记录能够向查询的主机提供一个主机名对应的规范主机名，例如 <code>(foo.com, relay1.bar.foo.com, CNAME)</code> 就是一条 CNAME 类型的记录。</li>
+<li>若 Type &#x3D; MX，则 Value 是个别名为 Name 的邮件服务器的规范主机名。举例来说，<code>(foo.com, mail.bar.foo.com, MX)</code> 就是一条 MX 记录。MX 记录允许邮件服务器主机名具有简单的别名。值得注意的是，通过使用 MX 记录，一个公司的邮件服务器和其他服务器（如它的 Web 服务器）可以使用相同的别名。为了获得邮件服务器的规范主机名，DNS 客户应当请求一条 MX 记录；而为了获得其他服务器的规范主机名，DNS 客户应当请求 CNAME 记录。</li>
 </ul>
 <p>如果一台 DNS 服务器是用于某特定主机名的权威 DNS 服务器，那么该 DNS 服务器会有一条包含用于该主机名的类型 A 记录（即使该 DNS 服务器不是其权威 DNS 服务器，它也可能在缓存中包含有一条类型 A 记录）。如果服务器不是用于某主机名的权威服务器，那么该服务器将包含一条类型 NS 记录，该记录对应于包含主机名的域；它还将包括一条类型 A 记录，该记录提供了在 NS 记录的 Value 字段中的 DNS 服务器的 IP 地址。</p>
 <p>DNS 只有查询和回答这两种报文，并且，查询和回答报文有着相同的格式，如下图所示：</p>
@@ -365,7 +365,7 @@
 <p>前 12 个字节是<strong>首部区域</strong>，其中有如下几个字段：</p>
 <ul>
 <li>标识符：是一个 16 比特的数，用于标识该查询。这个标识符会被复制到对查询的回答报文中，以便让客户用它来匹配发送的请求和接收到的回答。</li>
-<li>标志：含有若干标志。1 比特的“<strong>查询/回答</strong>”标志位指出报文是查询报文（0）还是回答报文（1）。当某 DNS 服务器是所请求名字的权威 DNS 服务器时，1 比特的“<strong>权威的</strong>”标志位被置在回答报文中。如果客户在该 DNS 服务器没有某记录时希望它执行递归查询，将设置 1 比特的“<strong>希望递归</strong>”标志位。如果该 DNS 服务器支持递归查询，在它的回答报文中会对 1 比特的“<strong>递归可用</strong>”标志位置位。</li>
+<li>标志：含有若干标志。1 比特的“<strong>查询&#x2F;回答</strong>”标志位指出报文是查询报文（0）还是回答报文（1）。当某 DNS 服务器是所请求名字的权威 DNS 服务器时，1 比特的“<strong>权威的</strong>”标志位被置在回答报文中。如果客户在该 DNS 服务器没有某记录时希望它执行递归查询，将设置 1 比特的“<strong>希望递归</strong>”标志位。如果该 DNS 服务器支持递归查询，在它的回答报文中会对 1 比特的“<strong>递归可用</strong>”标志位置位。</li>
 <li>剩余 4 个有关数量的字段，这些字段指出了在首部后的 4 类数据区域出现的数量。</li>
 </ul>
 <p><strong>问题区域</strong>包含着正在进行的查询信息。该区域包括：</p>
@@ -378,7 +378,7 @@
 <p><strong>附加区域</strong>包含了其他有帮助的记录。例如，对于一个 MX 请求的回答报文的回答区域包含了一条资源记录，该记录提供了邮件服务器的规范主机名。该附加区域包含一个类型 A 记录，该记录提供了用于该邮件服务器的规范主机名的 IP 地址。</p>
 <p>上面的讨论只是关注如何从 DNS 数据库中取数据，这些数据最初是怎么进入数据库中的呢？<strong>注册登记机构</strong>（registrar）是一个商业实体，它验证域名的唯一性，并将域名输入 DNS 数据库，对提供的服务收取少量费用。<strong>因特网名字和地址分配机构</strong>（Internet Corporation for Assigned Names and Numbers，<strong>ICANN</strong>）向各种注册登记机构授权。</p>
 <h2 id="DNS-缓存"><a href="#DNS-缓存" class="headerlink" title="DNS 缓存"></a>DNS 缓存</h2><p>实际上，为了改善时延性能并减少在因特网上到处传输的 DNS 报文数量，DNS 广泛使用了缓存技术。</p>
-<p>DNS 缓存的原理非常简单。在一个请求链中，当某 DNS 服务器接收一个 DNS 回答（例如，包含某主机名到 IP 地址的映射）时，它能将映射缓存到本地存储器中。如果在 DNS 服务器中缓存了一台主机名/IP 地址对，另一个对相同主机名的查询到达该 DNS 服务器时，该 DNS 服务器就能够提供所要求的 IP 地址，即使它不是该主机名的权威服务器。由于主机和主机名与 IP 地址间的映射并不是永久的，DNS 服务器在一段时间后（通常设置为两天）将丢弃缓存的信息。</p>
+<p>DNS 缓存的原理非常简单。在一个请求链中，当某 DNS 服务器接收一个 DNS 回答（例如，包含某主机名到 IP 地址的映射）时，它能将映射缓存到本地存储器中。如果在 DNS 服务器中缓存了一台主机名&#x2F;IP 地址对，另一个对相同主机名的查询到达该 DNS 服务器时，该 DNS 服务器就能够提供所要求的 IP 地址，即使它不是该主机名的权威服务器。由于主机和主机名与 IP 地址间的映射并不是永久的，DNS 服务器在一段时间后（通常设置为两天）将丢弃缓存的信息。</p>
 <p>本地 DNS 服务器也能够缓存 TLD 服务器的 IP 地址，因而允许本地 DNS 绕过查询链中的根 DNS 服务器。事实上，因为缓存，除了少数 DNS 查询以外，根服务器被绕过了。</p>
 <h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><p>第一种针对 DNS 服务的攻击是分布式拒绝服务（DDoS）带宽洪泛攻击，对 DNS 的潜在更为有效的 DDoS 攻击将是向顶级域名服务器（例如向所有处理 <code>.com</code> 域的顶级域名服务器）发送大量的 DNS 请求，以上两种 DDoS 攻击的严重性都可以通过本地 DNS 服务器中的缓存技术可将部分地被缓解。</p>
 <p>DNS 能够潜在地以其他方式被攻击。在中间人攻击中，攻击者截获来自主机的请求并返回伪造的回答，这被称为 <strong>DNS 劫持</strong>。在 <strong>DNS 毒害</strong>（DNS 投毒、DNS 污染）攻击中，攻击者向一台 DNS 服务器发送伪造的回答，诱使服务器在它的缓存中接收伪造的记录。这些攻击中的任一种，都能够将毫无疑虑的 Web 用户重定向到攻击者的 Web 站点。然而，这些攻击难以实现，因为它们要求截获分组或扼制住服务器。</p>
@@ -438,7 +438,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">

