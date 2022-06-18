@@ -4264,12 +4264,14 @@
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">  NAME                   STATE           VERSION</span><br><span class="line">* Ubuntu                 Running         1</span><br></pre></td></tr></table></figure>
 
 <p>VERSION 下面的结果为其版本号，上述为 WSL 1。</p>
-<p>截至目前为止，无法直接安装 WSL 2，需要先安装 WSL 1，然后将其升级为 WSL 2。升级步骤如下：</p>
+<p>具体升级步骤如下：</p>
 <ol>
 <li>在 <strong>启用或关闭 Windows 功能</strong> 中勾选 <strong>虚拟机平台</strong>，或直接在管理员权限的 PowerShell 中输入 <code>Enable-WindowsOptionalFeature -Online -FeatureName &quot;VirtualMachinePlatform&quot;</code>；</li>
 <li>下载并安装 <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">Linux 内核更新包</a> ；</li>
 <li>输入 <code>wsl --set-version Ubuntu 2</code> 将已安装发行版设置为 WSL 2。</li>
 </ol>
+<h2 id="直接安装-WSL-2"><a href="#直接安装-WSL-2" class="headerlink" title="直接安装 WSL 2"></a>直接安装 WSL 2</h2><p>如果你之前没有安装过 WSL 1，可以通过在管理员权限的 PowerShell 中输入以下命令来直接安装 WSL 2：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--update</span></span><br><span class="line">wsl <span class="literal">--shutdown</span></span><br><span class="line">wsl <span class="literal">--install</span> <span class="literal">--distribution</span> Ubuntu</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
