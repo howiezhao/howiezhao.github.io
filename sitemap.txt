@@ -1,3 +1,4 @@
+https://howiezhao.github.io/2018/09/18/tmux/
 https://howiezhao.github.io/2021/05/02/update-to-wsl-2/
 https://howiezhao.github.io/2019/04/18/qemu/
 https://howiezhao.github.io/2018/09/18/zsh/
@@ -79,7 +80,6 @@ https://howiezhao.github.io/2018/07/21/udacity-apollo/
 https://howiezhao.github.io/2018/09/21/version-number/
 https://howiezhao.github.io/2018/09/18/vim/
 https://howiezhao.github.io/2018/09/22/web-analytics/
-https://howiezhao.github.io/2018/09/18/tmux/
 https://howiezhao.github.io/2017/12/10/pivoting-guide/
 https://howiezhao.github.io/2019/03/23/android-shuaji-guide/
 https://howiezhao.github.io/2018/08/09/brainfuck/
