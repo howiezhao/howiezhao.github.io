@@ -68,7 +68,7 @@ Update-Help
 ## 常用模块
 
 - [posh-git](https://github.com/dahlbyk/posh-git)：PowerShell 中的 Git 增强模块
-- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)：类似于 oh-my-zsh
+- [DockerCompletion](https://github.com/matt9ucci/DockerCompletion)：PowerShell 中的 Docker 命令补全
 - [Carbon](https://github.com/webmd-health-services/Carbon)：一系列有用的工具集
 - [PSReadline](https://github.com/lzybkr/PSReadLine)：一个增强的命令行编辑模块
 - [windows-screenfetch](https://github.com/JulianChow94/Windows-screenFetch)：Windows 下的 screenfetch 模块
