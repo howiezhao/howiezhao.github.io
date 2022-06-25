@@ -32,7 +32,7 @@
 
 <h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><ul>
 <li><a href="https://github.com/dahlbyk/posh-git">posh-git</a>：PowerShell 中的 Git 增强模块</li>
-<li><a href="https://github.com/JanDeDobbeleer/oh-my-posh">oh-my-posh</a>：类似于 oh-my-zsh</li>
+<li><a href="https://github.com/matt9ucci/DockerCompletion">DockerCompletion</a>：PowerShell 中的 Docker 命令补全</li>
 <li><a href="https://github.com/webmd-health-services/Carbon">Carbon</a>：一系列有用的工具集</li>
 <li><a href="https://github.com/lzybkr/PSReadLine">PSReadline</a>：一个增强的命令行编辑模块</li>
 <li><a href="https://github.com/JulianChow94/Windows-screenFetch">windows-screenfetch</a>：Windows 下的 screenfetch 模块</li>

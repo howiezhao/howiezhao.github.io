@@ -1,8 +1,8 @@
+https://howiezhao.github.io/2018/07/16/about-powershell/
 https://howiezhao.github.io/2018/09/18/tmux/
 https://howiezhao.github.io/2021/05/02/update-to-wsl-2/
 https://howiezhao.github.io/2019/04/18/qemu/
 https://howiezhao.github.io/2018/09/18/zsh/
-https://howiezhao.github.io/2018/07/16/about-powershell/
 https://howiezhao.github.io/2018/09/19/htop-top/
 https://howiezhao.github.io/2021/01/21/cdn/
 https://howiezhao.github.io/2020/12/29/dns/
