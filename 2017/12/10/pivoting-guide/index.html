@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/pivoting1.png">
 <meta property="article:published_time" content="2017-12-10T14:51:35.000Z">
-<meta property="article:modified_time" content="2021-02-05T10:38:20.000Z">
+<meta property="article:modified_time" content="2022-07-30T07:17:27.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://howiezhao.github.io/images/pivoting1.png">
@@ -290,7 +290,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-02-05 18:38:20" itemprop="dateModified" datetime="2021-02-05T18:38:20+08:00">2021-02-05</time>
+      <time title="Modified: 2022-07-30 15:17:27" itemprop="dateModified" datetime="2022-07-30T15:17:27+08:00">2022-07-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -388,7 +388,7 @@
 
 <p>结果，一个 socks4 代理服务将被绑定在服务器端的 1080 端口。</p>
 <h2 id="从内部网络泄漏"><a href="#从内部网络泄漏" class="headerlink" title="从内部网络泄漏"></a>从内部网络泄漏</h2><p>这是另一种情况。比方说，你的社会工程学表演最终让你进入了内部网络。你的连接受限，并且能够在受感染的计算机上执行命令。当然，如果互联网直接路由，而不是用做防火墙，你可以凭借任何上述技术。但如果你不那么幸运，还是有办法把你的出路转出来。</p>
-<h3 id="ICMP-隧道"><a href="#ICMP-隧道" class="headerlink" title="ICMP 隧道"></a>ICMP 隧道</h3><p>如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root&#x2F;administrator 权限，因为有必要使用原始套接字。检查这个工具 - <a target="_blank" rel="noopener" href="http://code.gerade.org/hans/">http://code.gerade.org/hans/</a> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：</p>
+<h3 id="ICMP-隧道"><a href="#ICMP-隧道" class="headerlink" title="ICMP 隧道"></a>ICMP 隧道</h3><p>如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root&#x2F;administrator 权限，因为有必要使用原始套接字。检查这个工具 - <a target="_blank" rel="noopener" href="https://code.gerade.org/hans/">https://code.gerade.org/hans/</a> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./hans -v -f -s 1.1.1.1 -p P@ssw0rd</span><br></pre></td></tr></table></figure>
 
 <p><code>-v</code> 标志是详细的，<code>-f</code> 标志在前台运行，<code>-s</code> 标志的值是服务器在新创建的 tun 接口上的 ip。<br>客户端：</p>
@@ -398,7 +398,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ping 1.1.1.100</span></span><br><span class="line">PING 1.1.1.100 (1.1.1.100) 56(84) bytes of data.</span><br><span class="line">64 bytes from 1.1.1.100: icmp_seq=1 ttl=65 time=42.9 ms</span><br></pre></td></tr></table></figure>
 
 <p>现在你可以使用这台机器作为进入内部网络的大门。将本机用作默认网关或连接到管理界面（ssh&#x2F;tsh &#x2F;web shell）。</p>
-<h3 id="DNS-隧道"><a href="#DNS-隧道" class="headerlink" title="DNS 隧道"></a>DNS 隧道</h3><p>如果有任何广域网流量被阻塞，但是外部主机名被解析，那么就有可能通过DNS查询来进行隧道通信。你需要注册一个用于此技术工作的域名。<a target="_blank" rel="noopener" href="http://dev.kryo.se/iodine/wiki/HowtoSetup">这个手册</a>可能会帮助你设置你的名称服务器。</p>
+<h3 id="DNS-隧道"><a href="#DNS-隧道" class="headerlink" title="DNS 隧道"></a>DNS 隧道</h3><p>如果有任何广域网流量被阻塞，但是外部主机名被解析，那么就有可能通过DNS查询来进行隧道通信。你需要注册一个用于此技术工作的域名。<a target="_blank" rel="noopener" href="https://github.com/yarrick/iodine#readme">这个手册</a>可能会帮助你设置你的名称服务器。</p>
 <h4 id="Iodine"><a href="#Iodine" class="headerlink" title="Iodine"></a>Iodine</h4><p>如果发生这种情况，并且在服务器上获得了 root 访问权限，你可以试试 <a target="_blank" rel="noopener" href="http://code.kryo.se/iodine/">iodine</a>。它几乎像 hans icmp 隧道工具一样工作 - 它创建了一对 tun 适配器，并将它们之间的数据作为 DNS 查询进行隧道传输。服务器端：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iodined -f -c -P P@ssw0rd 1.1.1.1 tunneldomain.com</span><br></pre></td></tr></table></figure>
 

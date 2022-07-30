@@ -931,7 +931,7 @@
 <p>下面是一个用 Brainfuck 在屏幕上打印 <code>Hello World</code> 的程序例子：</p>
 <figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="literal">++++++++++</span><span class="title">[</span>&gt;<span class="literal">+++++++</span>&gt;<span class="literal">++++++++++</span>&gt;<span class="literal">+++</span>&gt;<span class="literal">+</span>&lt;&lt;&lt;&lt;<span class="literal">-</span><span class="title">]</span></span><br><span class="line">&gt;<span class="literal">++</span><span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span><span class="literal">+++++++</span><span class="string">.</span><span class="string">.</span><span class="literal">+++</span><span class="string">.</span>&gt;<span class="literal">++</span><span class="string">.</span>&lt;&lt;<span class="literal">+++++++++++++++</span><span class="string">.</span></span><br><span class="line">&gt;<span class="string">.</span><span class="literal">+++</span><span class="string">.</span><span class="literal">------</span><span class="string">.</span><span class="literal">--------</span><span class="string">.</span>&gt;<span class="literal">+</span><span class="string">.</span>&gt;<span class="string">.</span></span><br></pre></td></tr></table></figure>
 
-<p>程序的运行结果如 <a href="https://fatiherikli.github.io/brainfuck-visualizer/">Brainfuck Visualizer</a> 所示。</p>
+<p>程序的运行结果如 <a href="https://ctfever.uniiem.com/tools/brain-fuck">BrainFuck</a> 所示。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -1073,7 +1073,7 @@
     <title>CDN</title>
     <url>/2021/01/21/cdn/</url>
     <content><![CDATA[<p><strong>CDN</strong> 全称 Content Distribution Network，即<strong>内容分发网络</strong>。CDN 管理分布在多个地理位置上的服务器，在它的服务器中存储各种类型的 Web 内容（包括文档、图片、音频和视频等）的副本，并且所有试图将每个用户请求定向到一个将提供最好的用户体验的 CDN 位置。</p>
-<p>CDN 可以是<strong>专用 CDN</strong>（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 YouTube 视频和其他类型的内容。也可以是<strong>第三方 CDN</strong>（third-party CDN），它代表多个内容提供商分发内容；<a href="https://www.akamai.com/cn/zh/">Akamai</a>、<a href="https://www.limelight.com/">Limelight</a> 和 <a href="https://www.cloudflare.com/zh-cn/cdn">Cloudflare CDN</a> 都运行第三方 CDN。</p>
+<p>CDN 可以是<strong>专用 CDN</strong>（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 YouTube 视频和其他类型的内容。也可以是<strong>第三方 CDN</strong>（third-party CDN），它代表多个内容提供商分发内容；<a href="https://www.akamai.com/zh">Akamai</a>、<a href="https://www.limelight.com/">Limelight</a> 和 <a href="https://www.cloudflare.com/zh-cn/cdn">Cloudflare CDN</a> 都运行第三方 CDN。</p>
 <span id="more"></span>
 
 <p>相比于使用 CDN，建立单一的大规模数据中心存在以下三个问题：</p>
@@ -1706,7 +1706,7 @@
 <li><code>-I&lt;dir&gt;</code>：添加搜索头文件的路径</li>
 <li><code>-fno-builtin</code>：除非用 <code>__builtin_</code> 前缀，否则不进行 <code>builtin</code> 函数的优化</li>
 </ul>
-<h2 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h2><p>为了在 Windows 中使用 GCC，诞生了 <a href="http://www.mingw.org/"><strong>MinGW</strong></a> 项目，即 Minimalist GNU for Windows（适用于 Windows 的极简 GNU），它是将 GCC 编译器和 GNU Binutils 移植到 Win32 平台下的产物，又被称为 <strong>mingw32</strong>。另有可用于产生 32 位及 64 位 Windows 可执行文件的 <a href="https://mingw-w64.org/doku.php/start"><strong>MinGW-w64</strong></a> 项目，是从原 MinGW 项目产生的分支。</p>
+<h2 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h2><p>为了在 Windows 中使用 GCC，诞生了 <a href="http://www.mingw.org/"><strong>MinGW</strong></a> 项目，即 Minimalist GNU for Windows（适用于 Windows 的极简 GNU），它是将 GCC 编译器和 GNU Binutils 移植到 Win32 平台下的产物，又被称为 <strong>mingw32</strong>。另有可用于产生 32 位及 64 位 Windows 可执行文件的 <a href="https://www.mingw-w64.org/"><strong>MinGW-w64</strong></a> 项目，是从原 MinGW 项目产生的分支。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -1935,7 +1935,7 @@
 <li>将安装包放在 <code>/usr/local</code> 下</li>
 <li>可以直接在命令行里使用<span id="more"></span></li>
 </ul>
-<p>关于 npm 更多的内容请参考 <a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm 模块安装机制简介</a>。</p>
+<p>关于 npm 更多的内容请参考 <a href="https://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm 模块安装机制简介</a>。</p>
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在 <strong>博客所在目录</strong> 执行 <code>hexo version</code> 即可查看 Hexo 版本信息。</p>
 <p>要更新 Hexo 及其插件到最新 <strong>主</strong> 版本，需要在 <strong>博客所在目录</strong> 执行如下命令：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm-check-updates -u</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
@@ -2864,7 +2864,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssl on;</span><br><span class="line">ssl_certificate /etc/letsencrypt/live/howiezhao.com/fullchain.pem;</span><br><span class="line">ssl_certificate_key /etc/letsencrypt/live/howiezhao.com/privkey.pem;</span><br></pre></td></tr></table></figure>
 
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>Let&#39;s Encrypt的证书默认时间为90天，当到期后，需要使用<code>./certbot-auto renew</code>命令进行证书更新。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要查看<code>certbot-auto</code>的更多命令，可以使用<code>certbot-auto --help all</code>命令查看之。要了解SSL的详细知识，可参考我之前写的笔记<a href="http://localhost:4000/2018/05/11/https/">HTTPS运行机制</a>。要了解Nginx的相关知识，可参考我之前写的笔记<a href="todo">利用Nginx进行反向代理</a>。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>要查看<code>certbot-auto</code>的更多命令，可以使用<code>certbot-auto --help all</code>命令查看之。要了解SSL的详细知识，可参考我之前写的笔记<a href="/2018/05/11/https/" title="HTTPS 运行机制">HTTPS 运行机制</a>。要了解Nginx的相关知识，可参考我之前写的笔记<a href="todo">利用Nginx进行反向代理</a>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -3027,7 +3027,7 @@
 
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>```<br>这里是多行代码<br>```</p>
 <p>`这里是单行代码&#96;</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">表头1 | 表头2</span><br><span class="line">--- | ---</span><br><span class="line">单元格1 | 单元格2</span><br><span class="line">单元格3 | 单元格4</span><br></pre></td></tr></table></figure>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 表头1 | 表头2 |</span><br><span class="line">| --- | --- |</span><br><span class="line">| 单元格1 | 单元格2 |</span><br><span class="line">| 单元格3 | 单元格4 |</span><br></pre></td></tr></table></figure>
 
 <p>上下应该各空一行</p>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 这是引用</span></span><br></pre></td></tr></table></figure>
@@ -3049,7 +3049,7 @@
 <li>任务列表：使用 <code>- [ ]</code> 或 <code>- [x]</code> 表示未勾选或已勾选的任务列表</li>
 <li>Emoji：使用 <code>:EMOJICODE:</code> 可以显示 Emoji 表情，比如 <code>:+1:</code> 表示一个👍，要查看完整的 Emoji 编码，可参考 <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">Emoji cheat sheet</a></li>
 </ol>
-<p>要了解 GFM 的更多特性，可以参考 <a href="https://docs.github.com/cn/github/writing-on-github">GitHub 官方的文档</a>。</p>
+<p>要了解 GFM 的更多特性，可以参考 <a href="https://docs.github.com/cn/get-started/writing-on-github">GitHub 官方的文档</a>。</p>
 <h2 id="CommonMark"><a href="#CommonMark" class="headerlink" title="CommonMark"></a>CommonMark</h2><p>为了解决 Markdown 风格太多的问题，诞生了 <a href="https://commonmark.org/">CommonMark</a> 项目，其制定了一系列的语法规范，按照此语法规范书写的 Markdown 文档可以得到更好的兼容性。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://dillinger.io/">Dillinger</a> 是一个开源在线的 Markdown 编辑器。</p>
 <p>Sublime Text 拥有众多的 Markdown 插件，其中 <a href="https://packagecontrol.io/packages/MarkdownPreview">Markdown​Preview</a> 可以在浏览器中预览 Markdown 文件，而 <a href="https://packagecontrol.io/packages/MarkdownEditing">Markdown​Editing</a> 可以快速的编辑 Markdown 文件。</p>
@@ -3171,7 +3171,7 @@
 <h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
 <h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
 <h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
-<h2 id="作何选择"><a href="#作何选择" class="headerlink" title="作何选择"></a>作何选择</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
+<h2 id="作何选择"><a href="#作何选择" class="headerlink" title="作何选择"></a>作何选择</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -3343,29 +3343,29 @@
   <entry>
     <title>Proxmark 入坑指南</title>
     <url>/2019/12/01/proxmark/</url>
-    <content><![CDATA[<p>Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 <a href="http://www.proxmark.org/">proxmark.org</a>，其他的如 <a href="https://proxmark.com/">proxmark.com</a>、<a href="https://www.proxmark3.com/">proxmark3.com</a> 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。</p>
+    <content><![CDATA[<p>Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 <a href="http://www.proxmark.org/">proxmark.org</a>，其他诸如 <a href="https://proxmark.com/">proxmark.com</a> 的均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。</p>
 <span id="more"></span>
 
 <h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><ul>
 <li>Proxmark 3：这是 Proxmark 3 的原始版本，现已过时，不建议购买，产品图如下：</li>
 </ul>
-<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/05.proxmark-3/PM3-Trans.png" alt="Proxmark 3"></p>
+<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/06.proxmark-3/PM3-Trans.png" alt="Proxmark 3"></p>
 <ul>
 <li>Proxmark 3 RDV 2：这是 Proxmark 3 的一次升级，又称为 Revision Two（修订第二版），产品图如下：</li>
 </ul>
-<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/03.proxmark-3-rdv-2/PM3-RDV2-Trans.png" alt="Proxmark 3 RDV 2"></p>
+<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/04.proxmark-3-rdv-2/PM3-RDV2-Trans.png" alt="Proxmark 3 RDV 2"></p>
 <ul>
 <li>Proxmark 3 Easy：这是 Proxmark 3 RDV 2 的廉价版本，专门通过淘宝在中国销售，也是目前淘宝上主要的 Proxmark 3 版本，产品图如下：</li>
 </ul>
-<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/04.proxmark-3-easy/PM3-Easy-Trans.png" alt="Proxmark 3 Easy"></p>
+<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/05.proxmark-3-easy/PM3-Easy-Trans.png" alt="Proxmark 3 Easy"></p>
 <ul>
 <li>Proxmark 3 EVO：这是 Proxmark 3 RDV 2 的一次进化，又称为 Evolution（进化），产品图如下：</li>
 </ul>
-<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/02.proxmark-3-evo/PM3-Evo-Trans.png" alt="Proxmark 3 EVO"></p>
+<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/03.proxmark-3-evo/PM3-Evo-Trans.png" alt="Proxmark 3 EVO"></p>
 <ul>
 <li>Proxmark 3 RDV 4：这是 Proxmark 3 的最新升级版本，产品图如下：</li>
 </ul>
-<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/01.proxmark-3-rdv4/PM3-RDV4-Trans.png" alt="Proxmark 3 RDV 4"></p>
+<p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/02.proxmark-3-rdv4/PM3-RDV4-Trans.png" alt="Proxmark 3 RDV 4"></p>
 <h2 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h2><p>Proxmark 只有 2 个官方分销商：<a href="https://lab401.com/">Lab401</a> 和 <a href="https://hackerwarehouse.com/">Hacker Warehouse</a>，当然，你也可以从万能的淘宝上购买。</p>
 <p>请注意，淘宝上的版本号并不规范，据我所知，淘宝上的大部分产品都是基于 Proxmark 3 Easy 的国内再次改造版，比如，它们所谓的<strong>“一体机”</strong>实际上是 Proxmark 3 Easy 和 <a href="https://github.com/iceman1001/ChameleonMini-rebooted">ChameleonMini（变色龙）</a>的合体版。</p>
 ]]></content>
@@ -3501,7 +3501,7 @@
 <h2 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h2><p>语言只是一种标准，实现该标准就需要相应的解析器，由于 reST 是 Docutils 项目的一部分，所以 reST 最初的解析器正是由 Docutils 提供的，当你使用 <code>pip install docutils</code> 命令安装 Docutils 之后，可以运行 <code>rst2html &lt;rst file&gt; &lt;html file&gt;</code> 命令，将 reST 文件转换为 HTML 文件。</p>
 <p>要了解更多的命令可参考 <a href="http://docutils.sourceforge.net/docs/user/tools.html">Docutils 官方文档</a>。</p>
 <h2 id="与-Markdown-相比"><a href="#与-Markdown-相比" class="headerlink" title="与 Markdown 相比"></a>与 Markdown 相比</h2><p>与 Markdown 相比，reST 更具扩展性，特别是 directives 的出现，可以按照需求自定义各种各样的 directives 来扩展 reST。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="http://rst.ninjs.org/">这里</a>有一个在线的 reST 编辑器。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="https://livesphinx.herokuapp.com/">这里</a>有一个在线的 reST 编辑器。</p>
 <p>要了解更多关于 reST 的知识可参考 <a href="http://docutils.sourceforge.net/rst.html">Docutils 官方文档</a>，或者 <a href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">Sphinx 官方文档</a>。</p>
 ]]></content>
       <categories>
@@ -3612,7 +3612,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> A=hello</span><br></pre></td></tr></table></figure>
 
 <p>值得注意的是，当 <code>declare</code> 命令不带任何参数运行时，也会显示所有的 Shell 环境变量，但它比 <code>set</code> 显示的结果要更加清晰。</p>
-<p>关于 set 命令更多的参数使用说明可参考 <a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html">Bash脚本set命令教程</a></p>
+<p>关于 set 命令更多的参数使用说明可参考 <a href="https://www.ruanyifeng.com/blog/2017/11/bash-set.html">Bash脚本set命令教程</a></p>
 <h2 id="env（仅限于-Linux）"><a href="#env（仅限于-Linux）" class="headerlink" title="env（仅限于 Linux）"></a>env（仅限于 Linux）</h2><p><code>env</code> 命令用来显示或设置<strong>用户环境变量</strong>，当不带参数运行时默认显示所有已定义的用户环境变量，若要设置环境变量可采用：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -3640,8 +3640,8 @@
 <h2 id="没有标准或完美的课程"><a href="#没有标准或完美的课程" class="headerlink" title="没有标准或完美的课程"></a>没有标准或完美的课程</h2><p>安全是一个广泛的，跨学科的应用领域。有设计和构建安全系统的人，尝试破坏系统的人，尝试检测入侵的人以及介于两者之间的大量事物。如果我学到了什么，我就知道没有单一的，标准的或最好的准备路径。也许这会随着领域的成熟而改变，但我对此表示怀疑。它也不像其他需要认证的专业领域（例如医学，法律），这既可以是解放也可以是恐吓。<br>独立于你如何获得它，你将受益于对应用计算机科学或计算机和软件的工作方式的强烈理解。<strong>许多应用计算机科学都是关于解决抽象层的问题，安全性通常是在这些抽象中找到有缺陷的假设......然后找出如何最好地修复（或利用）它们。</strong><br>我是通过从公立大学获得计算机科学工程学位来做到这一点的。对我来说，一些更有用的主题是操作系统，网络，计算机体系结构和编译器。除此之外，我也参加了我感兴趣的技术课程（例如数字信号处理，生物医学工程，人工智能），并通过学生俱乐部和实习中的项目工作探索了网络，隐私增强技术和（网络，客户端）应用安全方面的安全主题。<br>你还将从了解使用技术的人（用户，客户等）的工作方式中获益。如果我能回到我的大学时代，我会参加一些心理学，社会学和人文因素课程。<br>我与具有相似传统学术背景的专家（例如计算机工程，计算机科学，数学等学位）工作过。我也认识很多不太具有典型背景的人（例如化学，电影研究，心理学，平面设计）和一些在完成学位之前辍学的人。<br>关于安全认证的话题，我没有任何一个认证，我不认为我因此而被拒之门外。有些行业或国家可能会要求他们为信息安全专业人士提供服务，他们肯定是一些合理的人所追求的 - 告诫者！<br>在文化方面，我建议阅读<a href="https://en.wikipedia.org/wiki/Hacker_Manifesto">黑客宣言</a>或<a href="https://translations.readthedocs.io/en/latest/">如何成为一名黑客</a>，这对许多安全专家来说都是灵感和道德的指南针。 即使你不把自己比作黑客，理解和你一起工作的一些人的心态也是有帮助的。<br>除此之外，我所知道的大部分知识都是随着时间的推移，从朋友和同事的轶事，安全博客，会议论文和演示文稿，邮件列表，本地安全组和其他在线资源中学到的。我今天听到或摄取的很多东西都来自<a href="https://twitter.com/laparisa/lists/security">我的Twitter安全列表</a>上的人。</p>
 <h2 id="停止阅读，开始做"><a href="#停止阅读，开始做" class="headerlink" title="停止阅读，开始做"></a>停止阅读，开始做</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*Q7FRcfOGAAIJoADz0KvTIQ.gif" alt="标题图"><br>这适用于任何职业追求，但尽可能快地获得一些真实的工作经验。这是缩小你的兴趣，优势和未来发展领域的最佳方式。你还可以更好地了解正常工作日和环境的组成，包括你喜欢和不喜欢的内容。我生命中最有价值的职业相关经历之一是做了一个我讨厌的实习，因为它，所以我强烈地转向了另一个方向:)<br>在如何开始获得经验方面，我没有一个简单的答案。查看招聘会和会议，参与俱乐部或其他组织，以大胆的热情申请实习和兼职工作。在来谷歌之前，我在一个特许摊位清理干燥的nacho奶酪，这是我作为社区游泳池救生员定期轮班的一部分。这一点工作经验帮助我获得了大学宿舍管理员的工作，这在一家大型制药公司的IT实习面试时无疑是相关的。我在大学的俱乐部获得了一些“真实”（即非课程）软件体验，并且我在学校新闻组上发现了一个网络安全实习机会，这可能给了我足够的相关工作经验，让谷歌的某个人考虑为我安排一个面试。</p>
 <h2 id="写代码"><a href="#写代码" class="headerlink" title="写代码"></a>写代码</h2><p>我认识的最好的安全工程师也在积极编写代码。这为他们提供了编写软件的第一手经验，包括无意中但不可避免地引入了安全漏洞。后者迫使所有开发者真正感同身受。毕竟，一直编写安全代码通常比指出不安全的代码更难。<br>如果你坚持从一个大型项目开始，请尝试修复开源项目中的错误。每个人都喜欢修复bug的人！该项目将感谢你，这通常是一种获得真实体验的好方法，也是你未来工作的好方法。</p>
-<h2 id="破坏代码"><a href="#破坏代码" class="headerlink" title="破坏代码"></a>破坏代码</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在 <a href="https://infosec.rocks/">https://infosec.rocks</a> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
-<h2 id="分享知识"><a href="#分享知识" class="headerlink" title="分享知识"></a>分享知识</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为<a href="https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l">SigMil</a>的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
+<h2 id="破坏代码"><a href="#破坏代码" class="headerlink" title="破坏代码"></a>破坏代码</h2><p>花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <a href="https://www.hackthissite.org/">https://www.hackthissite.org</a> ，并在 infosec.rocks 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点<a href="https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist">这里</a>。或者查找并报告你使用的实际软件中的bug。有<a href="https://www.bugcrowd.com/bug-bounty-list/">许多软件供应商为安全漏洞提供现金奖励</a>，包括<a href="https://www.google.com/about/appsecurity/chrome-rewards/">Chrome</a>和<a href="https://www.google.com/about/appsecurity/reward-program/">Google</a>，以及<a href="https://www.hackerone.com/internet-bug-bounty">Internet Bug Bounty</a>计划涵盖的一些核心开源项目。<br>除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（<a href="https://seclists.org/bugtraq/">bugtraq</a>，<a href="https://seclists.org/fulldisclosure/">fulldisclosure</a>，<a href="https://seclists.org/oss-sec/">oss-sec</a>）。</p>
+<h2 id="分享知识"><a href="#分享知识" class="headerlink" title="分享知识"></a>分享知识</h2><p>我开始了解安全是从大学中由同龄人组织的一个名为 SigMil 的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的<a href="https://www.defcon.org/">DEFCON</a>朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全<a href="https://www.defcon.org/html/links/book-list.html">书籍</a>或<a href="https://www.2600.com/">杂志</a>，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。<br>分享知识很重要，原因如下：</p>
 <ol>
 <li>分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。</li>
 <li>我几乎总是在准备演示文稿或编写文档时自己学习一些东西，因此对于我来说，发现一个主题的隐藏角落是一个很好的强制功能。</li>
@@ -3676,7 +3676,7 @@
 <h2 id="Tor-Browser"><a href="#Tor-Browser" class="headerlink" title="Tor Browser"></a><a href="https://www.torproject.org/projects/torbrowser.html">Tor Browser</a></h2><p>Tor浏览器被广泛认为是最好的匿名工具。它将使你的互联网活动难以被追踪，当第二季第8集中fsociety的成员Trenton用Tor浏览器向Vimeo上传一个泄露的关于非法群体监视的FBI电话会议时，利用到了它。</p>
 <h2 id="Raspberry-Pi"><a href="#Raspberry-Pi" class="headerlink" title="Raspberry Pi"></a><a href="https://www.raspberrypi.org/">Raspberry Pi</a></h2><p>树莓派是一个小型的，可编程的计算机板，旨在教孩子们学习计算机科学。由于它的低成本，多功能性和简单性，它也是业余爱好者和程序员的最爱。第一季第5集中Elliot将一个树莓派安装到铁山的气候控制系统中，以便fsociety后期可以远程升高存储E公司磁带备份的存储空间的温度，从而实现美国消费者债务的很大一部分记录的备份被销毁。</p>
 <h2 id="FileZilla"><a href="#FileZilla" class="headerlink" title="FileZilla"></a><a href="https://filezilla-project.org/">FileZilla</a></h2><p>FileZilla是世界上最流行的FTP客户端，并且是最强大和用户友好的客户端之一。在第一季第4集中Trenton使用FileZilla上传一个漏洞利用程序到fsociety的FTP服务器上，即Elliot将安装在铁山的气候控制系统中的树莓派，以销毁美国消费者债务中很大一部分的记录。</p>
-<h2 id="Pwnix"><a href="#Pwnix" class="headerlink" title="Pwnix"></a><a href="https://www.pwnieexpress.com/mobile-line-shift-to-aopp">Pwnix</a></h2><p>Pwnix是一个为渗透测试人员定制的用于网络黑客和安全的Android ROM。Elliot在第二季第9集中使用了一个Pwnie Express Pwn Phone（Pwnix预装），以至于他和Darlene渗透进黑暗军团的电话。</p>
+<h2 id="Pwnix"><a href="#Pwnix" class="headerlink" title="Pwnix"></a><a href="https://www.pwnieexpres.com/">Pwnix</a></h2><p>Pwnix是一个为渗透测试人员定制的用于网络黑客和安全的Android ROM。Elliot在第二季第9集中使用了一个Pwnie Express Pwn Phone（Pwnix预装），以至于他和Darlene渗透进黑暗军团的电话。</p>
 <h2 id="DeepSound"><a href="#DeepSound" class="headerlink" title="DeepSound"></a><a href="http://jpinsoft.net/deepsound">DeepSound</a></h2><p>在第一季第8集中，Elliot使用DeepSound将文件隐藏在CD的常规音乐曲目中，以便隐藏文件只能使用DeepSound软件查看。这是一种被称为隐写术的技术。</p>
 <h2 id="ProtonMail"><a href="#ProtonMail" class="headerlink" title="ProtonMail"></a><a href="https://protonmail.com/">ProtonMail</a></h2><p>ProtonMail是一个安全的端到端加密电子邮件服务，基于瑞士，Elliot在第一季第8集中使用过。《黑客军团》背后的团队研究安全电子邮件服务的程度很深，以至于他们实际上联系了ProtonMail开发者，询问用户是否有可能在ProtonMail中监控他们自己的电子邮件活动。ProtonMail开发者非常喜欢帐户访问日志的想法，他们最终在ProtonMail的v2.0版本中实现了这个功能。想要了解更多请访问：<a href="https://protonmail.com/blog/protonmail-mr-robot-secure-email/">https://protonmail.com/blog/protonmail-mr-robot-secure-email/</a></p>
 <h2 id="HDShredder"><a href="#HDShredder" class="headerlink" title="HDShredder"></a><a href="https://www.miray-software.com/products/applications/hdshredder.html#">HDShredder</a></h2><p>HDShredder 4企业版在第一季第10集中用于在E公司被黑之后安全地擦除所有fsociety的硬盘信息，然后他们在狗狗火葬场焚烧所有的硬盘。</p>
@@ -3685,14 +3685,14 @@
 <h2 id="Social-Engineer-Toolkit"><a href="#Social-Engineer-Toolkit" class="headerlink" title="Social-Engineer Toolkit"></a><a href="https://github.com/trustedsec/social-engineer-toolkit">Social-Engineer Toolkit</a></h2><p>SET是一个专注于诸如网络钓鱼等社会工程攻击的测试框架。社会工程学欺骗受害者给予攻击者敏感信息。在第一季第5集中，Mobley使用SET的伪造短信功能让主管离开铁山，以便Elliot可以渗透进去。</p>
 <h2 id="OpenWrt"><a href="#OpenWrt" class="headerlink" title="OpenWrt"></a><a href="https://openwrt.org/">OpenWrt</a></h2><p>OpenWrt是Angela在第二季第6集中黑进FBI时使用的路由器固件。</p>
 <h2 id="mimikatz"><a href="#mimikatz" class="headerlink" title="mimikatz"></a><a href="https://github.com/gentilkiwi/mimikatz">mimikatz</a></h2><p>mimikatz是一个后渗透工具，它将黑客可能需要执行的一些有用任务捆绑在一起。在第二季第6集中，它被装在USB橡皮鸭中并交给Angela，作为一个备份计划。</p>
-<h2 id="btscanner"><a href="#btscanner" class="headerlink" title="btscanner"></a><a href="https://www.pentest.co.uk/downloads.html">btscanner</a></h2><p>btscanner是一个包含在Kali Linux中的工具，它可以在无需配对的情况下提取关于蓝牙设备的尽可能多的信息。在第一季第6集中，Elliot使用btscanner与Bluesniff和Metasploit结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。</p>
+<h2 id="btscanner"><a href="#btscanner" class="headerlink" title="btscanner"></a><a href="https://www.pentest.co.uk/">btscanner</a></h2><p>btscanner是一个包含在Kali Linux中的工具，它可以在无需配对的情况下提取关于蓝牙设备的尽可能多的信息。在第一季第6集中，Elliot使用btscanner与Bluesniff和Metasploit结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。</p>
 <h2 id="Bluesniff"><a href="#Bluesniff" class="headerlink" title="Bluesniff"></a><a href="http://bluesniff.shmoo.com/">Bluesniff</a></h2><p>Bluesniff是一款蓝牙设备发现工具。在第一季第6集中，Elliot使用Bluesniff与Metasploit和btscanner结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。</p>
 <h2 id="KVM-Kernel-base-Virtual-Machine"><a href="#KVM-Kernel-base-Virtual-Machine" class="headerlink" title="KVM(Kernel-base Virtual Machine)"></a><a href="http://www.linux-kvm.org/page/Main_Page">KVM(Kernel-base Virtual Machine)</a></h2><p>KVM是一个管理程序，它是一个可以通过虚拟机运行其他操作系统的软件。Elliot使用KVM在Kali Linux内虚拟化Windows 7。在第一季第8集中，它使用KVM运行DeepSound。</p>
 <h2 id="Metasploit"><a href="#Metasploit" class="headerlink" title="Metasploit"></a><a href="https://metasploit.com/">Metasploit</a></h2><p>Metasploit框架是Kali Linux中包含的一个软件，可以使渗透测试人员更容易发现网络中的漏洞。Meterpreter是可以在Metasploit框架中运行的数百个Payload之一，并且在第一季第6集中使用到。在第一季第6集中，Elliot使用Metasploit Framwork和Metapreter与btscanner和Bluesniff结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。</p>
 <h2 id="Framaroot"><a href="#Framaroot" class="headerlink" title="Framaroot"></a><a href="https://forum.xda-developers.com/apps/framaroot/root-framaroot-one-click-apk-to-root-t2130276">Framaroot</a></h2><p>在电视中称为RooterFrame的Framaroot，在第一季第3集中被Tyrell Wellick用来Root同事的Android手机，这样他就可以隐藏在手机上安装的FlexiSPY间谍软件，以便获得关于谁将成为E公司的下一任首席技术官的秘密信息。</p>
 <h2 id="Kingo-Root"><a href="#Kingo-Root" class="headerlink" title="Kingo Root"></a><a href="https://zh.kingoapp.com/">Kingo Root</a></h2><p>Tyrell Wellick在第一季第3集中使用Kingo Root来Root同事的Android手机，这样他就可以在手机上隐蔽地安装FlexiSPY间谍软件，以便获得有关谁将成为下一任E公司首席执行官的秘密信息。</p>
 <h2 id="FlexiSPY"><a href="#FlexiSPY" class="headerlink" title="FlexiSPY"></a><a href="https://www.flexispy.com/zh/">FlexiSPY</a></h2><p>FlexiSPY是针对Android，iOS和BlackBerry的间谍软件，允许用户监控受害者手机上的所有活动。在第一季第3集中，Tyrell Wellick秘密地将其安装在同事的Android手机上，以获取有关谁将成为下一任E公司首席技术官的秘密信息。</p>
-<h2 id="SuperSU"><a href="#SuperSU" class="headerlink" title="SuperSU"></a><a href="http://www.supersu.com/">SuperSU</a></h2><p>SuperSU是一个在已Root的Android手机上管理超级用户权限的应用程序。在第一季第3集中，Tyrell Wellick在同事的Android手机上秘密安装了FlexiSPY —— 它使用SuperSU为它自己提供超级用户访问 —— 以便获得有关谁将成为下一任E公司首席技术官的秘密信息。</p>
+<h2 id="SuperSU"><a href="#SuperSU" class="headerlink" title="SuperSU"></a><a href="https://supersuroot.org/">SuperSU</a></h2><p>SuperSU是一个在已Root的Android手机上管理超级用户权限的应用程序。在第一季第3集中，Tyrell Wellick在同事的Android手机上秘密安装了FlexiSPY —— 它使用SuperSU为它自己提供超级用户访问 —— 以便获得有关谁将成为下一任E公司首席技术官的秘密信息。</p>
 <h2 id="can-utils"><a href="#can-utils" class="headerlink" title="can-utils"></a><a href="https://packages.debian.org/sid/can-utils">can-utils</a></h2><p>can-utils包含与汽车电脑有关的实用程序。其中一个工具被称为candump，它在《黑客军团》中被用于入侵汽车的电脑。</p>
 <h2 id="radare"><a href="#radare" class="headerlink" title="radare"></a><a href="https://www.radare.org/r/">radare</a></h2><p>radare2是Tyrell Wellick在第二季第12集中使用的逆向工程框架。</p>
 <h2 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a><a href="https://www.jetbrains.com/pycharm/">PyCharm</a></h2><p>PyCharm是一个Python和Django的IDE（集成开发环境），它是一种代码编辑软件。Trenton在第一季第四集中使用它。</p>
@@ -3754,7 +3754,7 @@
 </ul>
 <p>编写完文档后，使用 <code>make html</code> 命令即可将其构建为 HTML 文件，其中，<code>html</code> 被称为构建器（builder），当然，你也可以使用别的构建器，比如 <code>latex</code>、<code>epub</code> 等。</p>
 <p>输入 <code>make help</code> 可查看 make 支持的相关命令。</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster">Alabaster</a>（个人觉得挺好看的，<a href="https://cn.python-requests.org/zh_CN/latest/">Requests</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster">Alabaster</a>（个人觉得挺好看的，<a href="https://requests.readthedocs.io/projects/cn/zh_CN/latest/">Requests</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
 <p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>&#39;sphinx_rtd_theme&#39;</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
 <p>要探索更多的第三方主题，可参考 <a href="https://sphinx-themes.org/">Sphinx Themes</a> 网站上收录的。</p>
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>Sphinx 支持扩展，安装完 Sphinx 后就已经内置了一些扩展，除此之外，你也可以下载第三方扩展。</p>
@@ -4502,7 +4502,7 @@
 <li>创建蜜罐</li>
 <li>托管 Metasploit 会话</li>
 </ul>
-<p>为了做到这一点，从我们的研究来看，<a href="https://bulletshield.su/">BulletShield</a> 是迄今为止最好的白帽和渗透测试人员的 VPS 提供商，紧随其后的是 <a href="https://buyvm.net/">BuyVM</a> 和 <a href="https://www.clientvps.com/">ClientVPS</a>。亚军是 <a href="https://vpsdime.com/">VPSDime</a> 和 <a href="https://onehostcloud.hosting/">OneHost Cloud</a>。你可以在下面的图表中看到原因，但跳到下面可以深入研究每个比较点的含义。<br><img src="https://img.wonderhowto.com/img/36/31/63655508941243/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="图表"></p>
+<p>为了做到这一点，从我们的研究来看，BulletShield 是迄今为止最好的白帽和渗透测试人员的 VPS 提供商，紧随其后的是 <a href="https://buyvm.net/">BuyVM</a> 和 <a href="https://www.clientvps.com/">ClientVPS</a>。亚军是 <a href="https://vpsdime.com/">VPSDime</a> 和 <a href="https://onehostcloud.hosting/">OneHost Cloud</a>。你可以在下面的图表中看到原因，但跳到下面可以深入研究每个比较点的含义。<br><img src="https://img.wonderhowto.com/img/36/31/63655508941243/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="图表"></p>
 <h2 id="关键比较点"><a href="#关键比较点" class="headerlink" title="关键比较点"></a>关键比较点</h2><p>网上有几个 VPS 对比图表，但没有一个对我来说是与渗透测试人员和白帽子有所联系的。在大多数专业的渗透测试场景中，我们需要在几天内启动 VPS 来托管有效载荷，接收泄漏数据或执行网络钓鱼攻击。</p>
 <p>无论 VPS 提供商是否提供实时技术支持，难以理解的硬件规格或过多的操作系统选择都很重要。理想情况下，我们希望使用比特币（BTC）从位于尊重隐私的国家的 VPS 提供商处快速购买最新的 Debian 版本。</p>
 <p>在比较本文中介绍的 VPS 提供商时，我试图尽可能客观公正。本文中没有 VPS 提供商付费参与比较图表。我使用下面的标准来得出上面的图表。</p>
@@ -4529,7 +4529,7 @@
 <p>在最尊重隐私的国家选择 VPS 提供商可能不是最优先考虑的问题，但至少考虑具有<a href="https://nomadcapitalist.com/2013/12/15/top-5-best-countries-host-website-data-privacy/">良好隐私法律的国家</a>的提供商是有意义的。</p>
 <h3 id="离岸解决方案（Offshore-Solutions）"><a href="#离岸解决方案（Offshore-Solutions）" class="headerlink" title="离岸解决方案（Offshore Solutions）"></a>离岸解决方案（Offshore Solutions）</h3><p>“离岸 VPS”意味着服务器位于公司的国家边界位置之外，并且可能允许一定程度的自由裁量权。这对你作为渗透测试人员以及你受委托保护的公司非常重要，因为你可能会收到不应共享或泄露的妥协和敏感信息。我们鼓励读者独立询问 VPS 提供商，以确定他们的离岸解决方案是否适合你。</p>
 <p>提供商指出，提供离岸解决方案通常要付出一定的代价。不应该假设他们最便宜的 VPS 解决方案也是其离岸选项的价格。</p>
-<h2 id="1、BulletShield"><a href="#1、BulletShield" class="headerlink" title="1、BulletShield"></a>1、BulletShield</h2><p><a href="https://bulletshield.su/">BulletShield</a> 是我的首选，是 Null Byte 读者的最佳 VPS 提供商。BulletShield 在注册账户或准备提交比特币交易时不要求任何类型的个人信息。他们还强制要求比特币交易，并且没有明确禁止任何渗透测试活动的 ToS。<br><img src="https://img.wonderhowto.com/img/36/93/63655505111133/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="BulletShield"><br>缺点是他们不接受预付信用卡，最便宜的价格有点贵，但如果你重视隐私，价格不一定是主要考虑因素。</p>
+<h2 id="1、BulletShield"><a href="#1、BulletShield" class="headerlink" title="1、BulletShield"></a>1、BulletShield</h2><p>BulletShield 是我的首选，是 Null Byte 读者的最佳 VPS 提供商。BulletShield 在注册账户或准备提交比特币交易时不要求任何类型的个人信息。他们还强制要求比特币交易，并且没有明确禁止任何渗透测试活动的 ToS。<br><img src="https://img.wonderhowto.com/img/36/93/63655505111133/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg" alt="BulletShield"><br>缺点是他们不接受预付信用卡，最便宜的价格有点贵，但如果你重视隐私，价格不一定是主要考虑因素。</p>
 <p>在涉及公司总部时，BulletShield 不会透露这些信息。快速域名搜索显示，它是由加拿大公司 Tucows Domains Inc. 购买的，是从位于西印度群岛偏远岛屿的 Charlestown 购买的。但是，这并不意味着这就是 BulletShield 的总部所在地，这只是域名注册商 BulletShield 使用注册域名的地方。</p>
 <p>他们提供离岸解决方案和 Tor 友好型网站，使 BulletShield 整体处于领先地位。但是，一位客户服务代表向我提到“渗透测试”是“仅允许......防弹服务”，这可能是成本方面的问题。</p>
 <ul>
@@ -4565,7 +4565,7 @@
 <p>这是在没有任何理由或解释的情况下发给我的。出于这个原因，OneHost Cloud 排在最后，我建议读者在执行任何类型的渗透测试之前，独立地向 OneHost Cloud 询问他们的 ToS 策略。</p>
 <p>该提供商的其他缺点是要求提供个人信息；位于英国伦敦；没有匿名网站；并且缺乏有关离岸解决方案和预付卡的信息。</p>
 <ul>
-<li>ToS：<a href="https://onehostcloud.hosting/legal/">链接</a></li>
+<li>ToS：<a href="https://onehostcloud.hosting/terms-and-conditions/">链接</a></li>
 <li>AUP：无公开链接</li>
 <li>隐私：<a href="https://onehostcloud.hosting/privacy-policy/">链接</a></li>
 </ul>
@@ -4940,7 +4940,7 @@
 <p>相反，我们可以使用 <strong>Git</strong> 克隆 USB 橡皮鸭<a href="https://github.com/hak5darren/USB-Rubber-Ducky">存储库</a>并在本地编码有效载荷。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hak5darren/USB-Rubber-Ducky</span><br><span class="line"></span><br><span class="line">Cloning into <span class="string">&#x27;USB-Rubber-Ducky&#x27;</span>...</span><br><span class="line">remote: Counting objects: 1657, <span class="keyword">done</span>.</span><br><span class="line">remote: Total 1657 (delta 0), reused 0 (delta 0), pack-reused 1657</span><br><span class="line">Receiving objects: 100% (1657/1657), 31.88 MiB | 162.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (745/745), <span class="keyword">done</span>.</span><br><span class="line">Checking out files: 100% (1509/1509), <span class="keyword">done</span>.</span><br></pre></td></tr></table></figure>
 
-<p>然后，将当前目录更改（<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/">cd</a>）为 <code>USB-Rubber-Ducky/Encoder/</code> 目录，并使用以下 <strong>java</strong> 命令开始编码没有第三方网站的 <a href="https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload">ducky payloads</a>。</p>
+<p>然后，将当前目录更改（<a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/">cd</a>）为 <code>USB-Rubber-Ducky/Encoder/</code> 目录，并使用以下 <strong>java</strong> 命令开始编码没有第三方网站的 <a href="https://docs.hak5.org/usb-rubber-ducky-1/getting-started/writing-your-first-payload">ducky payloads</a>。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> USB-Rubber-Ducky/Encoder/</span><br><span class="line">java -jar encoder.jar -i input_payload.txt -o inject.bin</span><br></pre></td></tr></table></figure>
 
 <h2 id="10、更改-SSH-密钥和默认密码"><a href="#10、更改-SSH-密钥和默认密码" class="headerlink" title="10、更改 SSH 密钥和默认密码"></a>10、更改 SSH 密钥和默认密码</h2><p>每个 Kali Linux 安装的默认密码都是相同的（toor），这使得自动化攻击非常容易。此外，当你通过 SSH 控制树莓派之类的东西时，默认的 SSH 密钥可以允许攻击者拦截你的通信。</p>
@@ -5031,7 +5031,7 @@
 
 <p>结果，一个 socks4 代理服务将被绑定在服务器端的 1080 端口。</p>
 <h2 id="从内部网络泄漏"><a href="#从内部网络泄漏" class="headerlink" title="从内部网络泄漏"></a>从内部网络泄漏</h2><p>这是另一种情况。比方说，你的社会工程学表演最终让你进入了内部网络。你的连接受限，并且能够在受感染的计算机上执行命令。当然，如果互联网直接路由，而不是用做防火墙，你可以凭借任何上述技术。但如果你不那么幸运，还是有办法把你的出路转出来。</p>
-<h3 id="ICMP-隧道"><a href="#ICMP-隧道" class="headerlink" title="ICMP 隧道"></a>ICMP 隧道</h3><p>如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root&#x2F;administrator 权限，因为有必要使用原始套接字。检查这个工具 - <a href="http://code.gerade.org/hans/">http://code.gerade.org/hans/</a> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：</p>
+<h3 id="ICMP-隧道"><a href="#ICMP-隧道" class="headerlink" title="ICMP 隧道"></a>ICMP 隧道</h3><p>如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root&#x2F;administrator 权限，因为有必要使用原始套接字。检查这个工具 - <a href="https://code.gerade.org/hans/">https://code.gerade.org/hans/</a> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./hans -v -f -s 1.1.1.1 -p P@ssw0rd</span><br></pre></td></tr></table></figure>
 
 <p><code>-v</code> 标志是详细的，<code>-f</code> 标志在前台运行，<code>-s</code> 标志的值是服务器在新创建的 tun 接口上的 ip。<br>客户端：</p>
@@ -5041,7 +5041,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ping 1.1.1.100</span></span><br><span class="line">PING 1.1.1.100 (1.1.1.100) 56(84) bytes of data.</span><br><span class="line">64 bytes from 1.1.1.100: icmp_seq=1 ttl=65 time=42.9 ms</span><br></pre></td></tr></table></figure>
 
 <p>现在你可以使用这台机器作为进入内部网络的大门。将本机用作默认网关或连接到管理界面（ssh&#x2F;tsh &#x2F;web shell）。</p>
-<h3 id="DNS-隧道"><a href="#DNS-隧道" class="headerlink" title="DNS 隧道"></a>DNS 隧道</h3><p>如果有任何广域网流量被阻塞，但是外部主机名被解析，那么就有可能通过DNS查询来进行隧道通信。你需要注册一个用于此技术工作的域名。<a href="http://dev.kryo.se/iodine/wiki/HowtoSetup">这个手册</a>可能会帮助你设置你的名称服务器。</p>
+<h3 id="DNS-隧道"><a href="#DNS-隧道" class="headerlink" title="DNS 隧道"></a>DNS 隧道</h3><p>如果有任何广域网流量被阻塞，但是外部主机名被解析，那么就有可能通过DNS查询来进行隧道通信。你需要注册一个用于此技术工作的域名。<a href="https://github.com/yarrick/iodine#readme">这个手册</a>可能会帮助你设置你的名称服务器。</p>
 <h4 id="Iodine"><a href="#Iodine" class="headerlink" title="Iodine"></a>Iodine</h4><p>如果发生这种情况，并且在服务器上获得了 root 访问权限，你可以试试 <a href="http://code.kryo.se/iodine/">iodine</a>。它几乎像 hans icmp 隧道工具一样工作 - 它创建了一对 tun 适配器，并将它们之间的数据作为 DNS 查询进行隧道传输。服务器端：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">iodined -f -c -P P@ssw0rd 1.1.1.1 tunneldomain.com</span><br></pre></td></tr></table></figure>
 

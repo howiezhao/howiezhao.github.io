@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://img.wonderhowto.com/img/10/19/63669458451029/0/top-10-things-do-after-installing-kali-linux.w1456.jpg">
 <meta property="og:image" content="https://img.wonderhowto.com/img/original/05/68/63669459068404/0/636694590684040568.jpg">
 <meta property="article:published_time" content="2019-02-25T09:45:28.000Z">
-<meta property="article:modified_time" content="2020-11-28T05:45:25.000Z">
+<meta property="article:modified_time" content="2022-07-30T06:14:48.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="Kali">
 <meta name="twitter:card" content="summary">
@@ -292,7 +292,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2020-11-28 13:45:25" itemprop="dateModified" datetime="2020-11-28T13:45:25+08:00">2020-11-28</time>
+      <time title="Modified: 2022-07-30 14:14:48" itemprop="dateModified" datetime="2022-07-30T14:14:48+08:00">2022-07-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -403,7 +403,7 @@
 <p>相反，我们可以使用 <strong>Git</strong> 克隆 USB 橡皮鸭<a target="_blank" rel="noopener" href="https://github.com/hak5darren/USB-Rubber-Ducky">存储库</a>并在本地编码有效载荷。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hak5darren/USB-Rubber-Ducky</span><br><span class="line"></span><br><span class="line">Cloning into <span class="string">&#x27;USB-Rubber-Ducky&#x27;</span>...</span><br><span class="line">remote: Counting objects: 1657, <span class="keyword">done</span>.</span><br><span class="line">remote: Total 1657 (delta 0), reused 0 (delta 0), pack-reused 1657</span><br><span class="line">Receiving objects: 100% (1657/1657), 31.88 MiB | 162.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (745/745), <span class="keyword">done</span>.</span><br><span class="line">Checking out files: 100% (1509/1509), <span class="keyword">done</span>.</span><br></pre></td></tr></table></figure>
 
-<p>然后，将当前目录更改（<a target="_blank" rel="noopener" href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/">cd</a>）为 <code>USB-Rubber-Ducky/Encoder/</code> 目录，并使用以下 <strong>java</strong> 命令开始编码没有第三方网站的 <a target="_blank" rel="noopener" href="https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload">ducky payloads</a>。</p>
+<p>然后，将当前目录更改（<a target="_blank" rel="noopener" href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/">cd</a>）为 <code>USB-Rubber-Ducky/Encoder/</code> 目录，并使用以下 <strong>java</strong> 命令开始编码没有第三方网站的 <a target="_blank" rel="noopener" href="https://docs.hak5.org/usb-rubber-ducky-1/getting-started/writing-your-first-payload">ducky payloads</a>。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> USB-Rubber-Ducky/Encoder/</span><br><span class="line">java -jar encoder.jar -i input_payload.txt -o inject.bin</span><br></pre></td></tr></table></figure>
 
 <h2 id="10、更改-SSH-密钥和默认密码"><a href="#10、更改-SSH-密钥和默认密码" class="headerlink" title="10、更改 SSH 密钥和默认密码"></a>10、更改 SSH 密钥和默认密码</h2><p>每个 Kali Linux 安装的默认密码都是相同的（toor），这使得自动化攻击非常容易。此外，当你通过 SSH 控制树莓派之类的东西时，默认的 SSH 密钥可以允许攻击者拦截你的通信。</p>
