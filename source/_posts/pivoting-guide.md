@@ -167,7 +167,7 @@ python client.py --server-ip <ip> --server-port 9999
 
 ### ICMP 隧道
 
-如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root/administrator 权限，因为有必要使用原始套接字。检查这个工具 - <http://code.gerade.org/hans/> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：
+如果 icmp 流量被允许到外部网络，那么很可能你可以建立一个 icmp 隧道。缺点是你需要在目标系统上拥有 root/administrator 权限，因为有必要使用原始套接字。检查这个工具 - <https://code.gerade.org/hans/> 。我个人从来没有尝试过在 Windows 上运行它。它在 Linux 上非常有效。服务器端命令（攻击者的机器）：
 
 ```sh
 ./hans -v -f -s 1.1.1.1 -p P@ssw0rd

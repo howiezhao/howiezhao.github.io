@@ -25,7 +25,7 @@ npm 成功安装后，可使用 `npm install -g hexo-cli` 来快速安装 Hexo �
 - 可以直接在命令行里使用
 <!-- more -->
 
-关于 npm 更多的内容请参考 [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)。
+关于 npm 更多的内容请参考 [npm 模块安装机制简介](https://www.ruanyifeng.com/blog/2016/01/npm-install.html)。
 
 ## 更新
 

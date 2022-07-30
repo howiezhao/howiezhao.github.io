@@ -27,7 +27,7 @@ tags:
 - 创建蜜罐
 - 托管 Metasploit 会话
 
-为了做到这一点，从我们的研究来看，[BulletShield](https://bulletshield.su/) 是迄今为止最好的白帽和渗透测试人员的 VPS 提供商，紧随其后的是 [BuyVM](https://buyvm.net/) 和 [ClientVPS](https://www.clientvps.com/)。亚军是 [VPSDime](https://vpsdime.com/) 和 [OneHost Cloud](https://onehostcloud.hosting/)。你可以在下面的图表中看到原因，但跳到下面可以深入研究每个比较点的含义。
+为了做到这一点，从我们的研究来看，BulletShield 是迄今为止最好的白帽和渗透测试人员的 VPS 提供商，紧随其后的是 [BuyVM](https://buyvm.net/) 和 [ClientVPS](https://www.clientvps.com/)。亚军是 [VPSDime](https://vpsdime.com/) 和 [OneHost Cloud](https://onehostcloud.hosting/)。你可以在下面的图表中看到原因，但跳到下面可以深入研究每个比较点的含义。
 ![图表](https://img.wonderhowto.com/img/36/31/63655508941243/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg)
 
 ## 关键比较点

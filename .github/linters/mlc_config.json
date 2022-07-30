@@ -1,7 +1,31 @@
 {
-    "ignorePatterns": [
-        {
-          "pattern": "^/images"
-        }
-    ]
+  "ignorePatterns": [
+    {
+      "pattern": "^/images"
+    },
+    {
+      "pattern": "^https://www.ruanyifeng.com"
+    },
+    {
+      "pattern": "https://www.kancloud.cn/kancloud/tmux"
+    },
+    {
+      "pattern": "todo"
+    },
+    {
+      "pattern": "https://www.akamai.com/zh"
+    },
+    {
+      "pattern": "http://localhost:4000/"
+    },
+    {
+      "pattern": "https://code.gerade.org/hans/"
+    },
+    {
+      "pattern": "https://docs.github.com/cn/get-started/writing-on-github"
+    },
+    {
+      "pattern": "https://www.vultr.com/"
+    }
+  ]
 }

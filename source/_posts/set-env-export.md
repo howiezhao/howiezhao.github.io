@@ -55,7 +55,7 @@ set A=hello
 
 值得注意的是，当 `declare` 命令不带任何参数运行时，也会显示所有的 Shell 环境变量，但它比 `set` 显示的结果要更加清晰。
 
-关于 set 命令更多的参数使用说明可参考 [Bash脚本set命令教程](http://www.ruanyifeng.com/blog/2017/11/bash-set.html)
+关于 set 命令更多的参数使用说明可参考 [Bash脚本set命令教程](https://www.ruanyifeng.com/blog/2017/11/bash-set.html)
 
 ## env（仅限于 Linux）
 
