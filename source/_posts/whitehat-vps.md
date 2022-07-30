@@ -94,7 +94,7 @@ VPS 提供商要求的电子邮件地址不属于“个人信息”，因为匿�
 
 ## 1、BulletShield
 
-[BulletShield](https://bulletshield.su/) 是我的首选，是 Null Byte 读者的最佳 VPS 提供商。BulletShield 在注册账户或准备提交比特币交易时不要求任何类型的个人信息。他们还强制要求比特币交易，并且没有明确禁止任何渗透测试活动的 ToS。
+BulletShield 是我的首选，是 Null Byte 读者的最佳 VPS 提供商。BulletShield 在注册账户或准备提交比特币交易时不要求任何类型的个人信息。他们还强制要求比特币交易，并且没有明确禁止任何渗透测试活动的 ToS。
 ![BulletShield](https://img.wonderhowto.com/img/36/93/63655505111133/0/white-hats-guide-choosing-virtual-private-server.w1456.jpg)
 缺点是他们不接受预付信用卡，最便宜的价格有点贵，但如果你重视隐私，价格不一定是主要考虑因素。
 
@@ -154,7 +154,7 @@ VPS 提供商要求的电子邮件地址不属于“个人信息”，因为匿�
 
 该提供商的其他缺点是要求提供个人信息；位于英国伦敦；没有匿名网站；并且缺乏有关离岸解决方案和预付卡的信息。
 
-- ToS：[链接](https://onehostcloud.hosting/legal/)
+- ToS：[链接](https://onehostcloud.hosting/terms-and-conditions/)
 - AUP：无公开链接
 - 隐私：[链接](https://onehostcloud.hosting/privacy-policy/)
 

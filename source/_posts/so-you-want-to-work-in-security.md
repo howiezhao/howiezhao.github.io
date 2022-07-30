@@ -40,12 +40,12 @@ tags:
 
 ## 破坏代码
 
-花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <https://www.hackthissite.org> ，并在 <https://infosec.rocks> 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点[这里](https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist)。或者查找并报告你使用的实际软件中的bug。有[许多软件供应商为安全漏洞提供现金奖励](https://www.bugcrowd.com/bug-bounty-list/)，包括[Chrome](https://www.google.com/about/appsecurity/chrome-rewards/)和[Google](https://www.google.com/about/appsecurity/reward-program/)，以及[Internet Bug Bounty](https://www.hackerone.com/internet-bug-bounty)计划涵盖的一些核心开源项目。
+花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <https://www.hackthissite.org> ，并在 https://infosec.rocks 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点[这里](https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist)。或者查找并报告你使用的实际软件中的bug。有[许多软件供应商为安全漏洞提供现金奖励](https://www.bugcrowd.com/bug-bounty-list/)，包括[Chrome](https://www.google.com/about/appsecurity/chrome-rewards/)和[Google](https://www.google.com/about/appsecurity/reward-program/)，以及[Internet Bug Bounty](https://www.hackerone.com/internet-bug-bounty)计划涵盖的一些核心开源项目。
 除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（[bugtraq](https://seclists.org/bugtraq/)，[fulldisclosure](https://seclists.org/fulldisclosure/)，[oss-sec](https://seclists.org/oss-sec/)）。
 
 ## 分享知识
 
-我开始了解安全是从大学中由同龄人组织的一个名为[SigMil](https://www-s.acm.illinois.edu/mailman/listinfo/sigmil-l)的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的[DEFCON](https://www.defcon.org/)朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全[书籍](https://www.defcon.org/html/links/book-list.html)或[杂志](https://www.2600.com/)，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。
+我开始了解安全是从大学中由同龄人组织的一个名为 SigMil 的特别有趣的ACM小组中，成员们会对他们感兴趣的安全主题进行粗略的演示。我们还参加了一年一度的[DEFCON](https://www.defcon.org/)朝圣之旅，参加会谈（十年前要做的事情要容易得多），购买安全[书籍](https://www.defcon.org/html/links/book-list.html)或[杂志](https://www.2600.com/)，或者只是与来自世界其他地方的志同道合的人聊聊他们的工作。在Google，我直接从同行那里学到了很多东西，分享他们的专业知识，斗争和半生不熟的想法。
 分享知识很重要，原因如下：
 
 1. 分享知识是在大型组织或项目中扩展最佳安全实践（或避免陷阱）的必要且有效的方法。

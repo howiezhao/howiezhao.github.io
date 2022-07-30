@@ -142,6 +142,6 @@ Directive（指令）以明确的标记开始（两个句点和一个空格）�
 
 ## 更多
 
-[这里](http://rst.ninjs.org/)有一个在线的 reST 编辑器。
+[这里](https://livesphinx.herokuapp.com/)有一个在线的 reST 编辑器。
 
 要了解更多关于 reST 的知识可参考 [Docutils 官方文档](http://docutils.sourceforge.net/rst.html)，或者 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html)。

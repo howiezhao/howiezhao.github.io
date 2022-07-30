@@ -8,7 +8,7 @@ tags:
 
 **CDN** 全称 Content Distribution Network，即**内容分发网络**。CDN 管理分布在多个地理位置上的服务器，在它的服务器中存储各种类型的 Web 内容（包括文档、图片、音频和视频等）的副本，并且所有试图将每个用户请求定向到一个将提供最好的用户体验的 CDN 位置。
 
-CDN 可以是**专用 CDN**（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 YouTube 视频和其他类型的内容。也可以是**第三方 CDN**（third-party CDN），它代表多个内容提供商分发内容；[Akamai](https://www.akamai.com/cn/zh/)、[Limelight](https://www.limelight.com/) 和 [Cloudflare CDN](https://www.cloudflare.com/zh-cn/cdn) 都运行第三方 CDN。
+CDN 可以是**专用 CDN**（private CDN），即它由内容提供商自己所拥有；例如，谷歌的 CDN 分发 YouTube 视频和其他类型的内容。也可以是**第三方 CDN**（third-party CDN），它代表多个内容提供商分发内容；[Akamai](https://www.akamai.com/zh)、[Limelight](https://www.limelight.com/) 和 [Cloudflare CDN](https://www.cloudflare.com/zh-cn/cdn) 都运行第三方 CDN。
 
 <!-- more -->
 

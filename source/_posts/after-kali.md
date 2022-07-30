@@ -327,7 +327,7 @@ Resolving deltas: 100% (745/745), done.
 Checking out files: 100% (1509/1509), done.
 ```
 
-然后，将当前目录更改（[cd](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/)）为 `USB-Rubber-Ducky/Encoder/` 目录，并使用以下 **java** 命令开始编码没有第三方网站的 [ducky payloads](https://www.hak5.org/gear/duck/writing-your-first-usb-rubber-ducky-payload)。
+然后，将当前目录更改（[cd](https://null-byte.wonderhowto.com/how-to/hack-like-pro-linux-basics-for-aspiring-hacker-part-2-creating-directories-files-0147234/)）为 `USB-Rubber-Ducky/Encoder/` 目录，并使用以下 **java** 命令开始编码没有第三方网站的 [ducky payloads](https://docs.hak5.org/usb-rubber-ducky-1/getting-started/writing-your-first-payload)。
 
 ```sh
 cd USB-Rubber-Ducky/Encoder/

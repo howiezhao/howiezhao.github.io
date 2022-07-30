@@ -37,4 +37,4 @@ Linux下 `gcc` 命令常用的参数及其含义如下所示：
 
 ## 跨平台
 
-为了在 Windows 中使用 GCC，诞生了 [**MinGW**](http://www.mingw.org/) 项目，即 Minimalist GNU for Windows（适用于 Windows 的极简 GNU），它是将 GCC 编译器和 GNU Binutils 移植到 Win32 平台下的产物，又被称为 **mingw32**。另有可用于产生 32 位及 64 位 Windows 可执行文件的 [**MinGW-w64**](https://mingw-w64.org/doku.php/start) 项目，是从原 MinGW 项目产生的分支。
+为了在 Windows 中使用 GCC，诞生了 [**MinGW**](http://www.mingw.org/) 项目，即 Minimalist GNU for Windows（适用于 Windows 的极简 GNU），它是将 GCC 编译器和 GNU Binutils 移植到 Win32 平台下的产物，又被称为 **mingw32**。另有可用于产生 32 位及 64 位 Windows 可执行文件的 [**MinGW-w64**](https://www.mingw-w64.org) 项目，是从原 MinGW 项目产生的分支。

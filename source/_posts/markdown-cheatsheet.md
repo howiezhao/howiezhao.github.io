@@ -73,10 +73,10 @@ Markdown 是一种轻量**标记语言**，其文件后缀名为 `.md`，它允�
 ### 表格
 
 ```markdown
-表头1 | 表头2
---- | ---
-单元格1 | 单元格2
-单元格3 | 单元格4
+| 表头1 | 表头2 |
+| --- | --- |
+| 单元格1 | 单元格2 |
+| 单元格3 | 单元格4 |
 ```
 
 上下应该各空一行
@@ -115,7 +115,7 @@ GitHub Flavored Markdown，简记为 **GFM**，即 **GitHub 风格的 Markdown �
 4. 任务列表：使用 `- [ ]` 或 `- [x]` 表示未勾选或已勾选的任务列表
 5. Emoji：使用 `:EMOJICODE:` 可以显示 Emoji 表情，比如 `:+1:` 表示一个👍，要查看完整的 Emoji 编码，可参考 [Emoji cheat sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
 
-要了解 GFM 的更多特性，可以参考 [GitHub 官方的文档](https://docs.github.com/cn/github/writing-on-github)。
+要了解 GFM 的更多特性，可以参考 [GitHub 官方的文档](https://docs.github.com/cn/get-started/writing-on-github)。
 
 ## CommonMark
 

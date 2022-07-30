@@ -26,4 +26,4 @@ Brainfuck 中共有 8 种字符，它们及其含义如下所示：
 >.+++.------.--------.>+.>.
 ```
 
-程序的运行结果如 [Brainfuck Visualizer](https://fatiherikli.github.io/brainfuck-visualizer/) 所示。
+程序的运行结果如 [BrainFuck](https://ctfever.uniiem.com/tools/brain-fuck) 所示。

@@ -6,7 +6,7 @@ tags:
   - 硬件
 ---
 
-Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 [proxmark.org](http://www.proxmark.org/)，其他的如 [proxmark.com](https://proxmark.com/)、[proxmark3.com](https://www.proxmark3.com/) 等，均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。
+Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 [proxmark.org](http://www.proxmark.org/)，其他诸如 [proxmark.com](https://proxmark.com/) 的均为第三方商业网站，目前的最新硬件版本是 Proxmark 3。
 
 <!-- more -->
 
@@ -14,23 +14,23 @@ Proxmark 是 RFID 界的瑞士军刀，请注意，其官网为 [proxmark.org](h
 
 - Proxmark 3：这是 Proxmark 3 的原始版本，现已过时，不建议购买，产品图如下：
 
-![Proxmark 3](https://proxmark.com/user/pages/03.proxmark-3-hardware/05.proxmark-3/PM3-Trans.png)
+![Proxmark 3](https://proxmark.com/user/pages/03.proxmark-3-hardware/06.proxmark-3/PM3-Trans.png)
 
 - Proxmark 3 RDV 2：这是 Proxmark 3 的一次升级，又称为 Revision Two（修订第二版），产品图如下：
 
-![Proxmark 3 RDV 2](https://proxmark.com/user/pages/03.proxmark-3-hardware/03.proxmark-3-rdv-2/PM3-RDV2-Trans.png)
+![Proxmark 3 RDV 2](https://proxmark.com/user/pages/03.proxmark-3-hardware/04.proxmark-3-rdv-2/PM3-RDV2-Trans.png)
 
 - Proxmark 3 Easy：这是 Proxmark 3 RDV 2 的廉价版本，专门通过淘宝在中国销售，也是目前淘宝上主要的 Proxmark 3 版本，产品图如下：
 
-![Proxmark 3 Easy](https://proxmark.com/user/pages/03.proxmark-3-hardware/04.proxmark-3-easy/PM3-Easy-Trans.png)
+![Proxmark 3 Easy](https://proxmark.com/user/pages/03.proxmark-3-hardware/05.proxmark-3-easy/PM3-Easy-Trans.png)
 
 - Proxmark 3 EVO：这是 Proxmark 3 RDV 2 的一次进化，又称为 Evolution（进化），产品图如下：
 
-![Proxmark 3 EVO](https://proxmark.com/user/pages/03.proxmark-3-hardware/02.proxmark-3-evo/PM3-Evo-Trans.png)
+![Proxmark 3 EVO](https://proxmark.com/user/pages/03.proxmark-3-hardware/03.proxmark-3-evo/PM3-Evo-Trans.png)
 
 - Proxmark 3 RDV 4：这是 Proxmark 3 的最新升级版本，产品图如下：
 
-![Proxmark 3 RDV 4](https://proxmark.com/user/pages/03.proxmark-3-hardware/01.proxmark-3-rdv4/PM3-RDV4-Trans.png)
+![Proxmark 3 RDV 4](https://proxmark.com/user/pages/03.proxmark-3-hardware/02.proxmark-3-rdv4/PM3-RDV4-Trans.png)
 
 ## 购买
 

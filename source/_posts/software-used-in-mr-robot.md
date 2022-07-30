@@ -32,7 +32,7 @@ Tor浏览器被广泛认为是最好的匿名工具。它将使你的互联网�
 
 FileZilla是世界上最流行的FTP客户端，并且是最强大和用户友好的客户端之一。在第一季第4集中Trenton使用FileZilla上传一个漏洞利用程序到fsociety的FTP服务器上，即Elliot将安装在铁山的气候控制系统中的树莓派，以销毁美国消费者债务中很大一部分的记录。
 
-## [Pwnix](https://www.pwnieexpress.com/mobile-line-shift-to-aopp)
+## [Pwnix](https://www.pwnieexpres.com)
 
 Pwnix是一个为渗透测试人员定制的用于网络黑客和安全的Android ROM。Elliot在第二季第9集中使用了一个Pwnie Express Pwn Phone（Pwnix预装），以至于他和Darlene渗透进黑暗军团的电话。
 
@@ -68,7 +68,7 @@ OpenWrt是Angela在第二季第6集中黑进FBI时使用的路由器固件。
 
 mimikatz是一个后渗透工具，它将黑客可能需要执行的一些有用任务捆绑在一起。在第二季第6集中，它被装在USB橡皮鸭中并交给Angela，作为一个备份计划。
 
-## [btscanner](https://www.pentest.co.uk/downloads.html)
+## [btscanner](https://www.pentest.co.uk)
 
 btscanner是一个包含在Kali Linux中的工具，它可以在无需配对的情况下提取关于蓝牙设备的尽可能多的信息。在第一季第6集中，Elliot使用btscanner与Bluesniff和Metasploit结合，通过MultiBlue蓝牙USB加密狗连接到附近警车中的电脑，并渗透进监狱的网络，以帮助一个名叫Vera的毒贩越狱。
 
@@ -96,7 +96,7 @@ Tyrell Wellick在第一季第3集中使用Kingo Root来Root同事的Android手�
 
 FlexiSPY是针对Android，iOS和BlackBerry的间谍软件，允许用户监控受害者手机上的所有活动。在第一季第3集中，Tyrell Wellick秘密地将其安装在同事的Android手机上，以获取有关谁将成为下一任E公司首席技术官的秘密信息。
 
-## [SuperSU](http://www.supersu.com/)
+## [SuperSU](https://supersuroot.org/)
 
 SuperSU是一个在已Root的Android手机上管理超级用户权限的应用程序。在第一季第3集中，Tyrell Wellick在同事的Android手机上秘密安装了FlexiSPY —— 它使用SuperSU为它自己提供超级用户访问 —— 以便获得有关谁将成为下一任E公司首席技术官的秘密信息。
 

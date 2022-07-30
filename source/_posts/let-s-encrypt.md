@@ -38,4 +38,4 @@ Let's Encrypt的证书默认时间为90天，当到期后，需要使用`./certb
 
 ## 更多
 
-要查看`certbot-auto`的更多命令，可以使用`certbot-auto --help all`命令查看之。要了解SSL的详细知识，可参考我之前写的笔记[HTTPS运行机制](http://localhost:4000/2018/05/11/https/)。要了解Nginx的相关知识，可参考我之前写的笔记[利用Nginx进行反向代理](todo)。
+要查看`certbot-auto`的更多命令，可以使用`certbot-auto --help all`命令查看之。要了解SSL的详细知识，可参考我之前写的笔记{% post_link https HTTPS 运行机制 %}。要了解Nginx的相关知识，可参考我之前写的笔记[利用Nginx进行反向代理](todo)。
