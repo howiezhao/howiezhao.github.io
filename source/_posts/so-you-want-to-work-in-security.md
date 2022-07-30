@@ -40,7 +40,7 @@ tags:
 
 ## 破坏代码
 
-花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <https://www.hackthissite.org> ，并在 https://infosec.rocks 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点[这里](https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist)。或者查找并报告你使用的实际软件中的bug。有[许多软件供应商为安全漏洞提供现金奖励](https://www.bugcrowd.com/bug-bounty-list/)，包括[Chrome](https://www.google.com/about/appsecurity/chrome-rewards/)和[Google](https://www.google.com/about/appsecurity/reward-program/)，以及[Internet Bug Bounty](https://www.hackerone.com/internet-bug-bounty)计划涵盖的一些核心开源项目。
+花时间寻找软件bug。了解如何使用调试器，网络扫描程序，Web调试代理和软件模糊测试。花时间在黑客游乐场，可用于所有技能水平。我在大学时第一次使用 <https://www.hackthissite.org> ，并在 infosec.rocks 列出了其他一些自我指导的黑客培训网站。还有一个很好的黑客挑战、比赛列表（例如CTF），不想浪费时间的人可以点[这里](https://security.stackexchange.com/questions/3592/what-hacking-competitions-challenges-exist)。或者查找并报告你使用的实际软件中的bug。有[许多软件供应商为安全漏洞提供现金奖励](https://www.bugcrowd.com/bug-bounty-list/)，包括[Chrome](https://www.google.com/about/appsecurity/chrome-rewards/)和[Google](https://www.google.com/about/appsecurity/reward-program/)，以及[Internet Bug Bounty](https://www.hackerone.com/internet-bug-bounty)计划涵盖的一些核心开源项目。
 除了自己找到错误之外，我还建议你继续学习并了解其他人的发现（[bugtraq](https://seclists.org/bugtraq/)，[fulldisclosure](https://seclists.org/fulldisclosure/)，[oss-sec](https://seclists.org/oss-sec/)）。
 
 ## 分享知识
