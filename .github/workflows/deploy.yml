@@ -19,7 +19,7 @@ jobs:
         submodules: 'recursive'
 
     - name: Lint Code Base
-      uses: github/super-linter@v4.9.5
+      uses: github/super-linter@v4.9.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MARKDOWN_CONFIG_FILE: .markdown-lint.json
