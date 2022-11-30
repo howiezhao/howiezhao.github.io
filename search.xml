@@ -71,7 +71,7 @@
 
 <p>而要为 PowerShell 设置代理则要使用<a href="todo">这个脚本</a>。</p>
 <p>对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 <code>pip</code>、<code>npm</code> 等，另一部分则使用的是 Shell 的代理设置，比如 <code>curl</code>、<code>gem</code> 等。</p>
-<p>此外，有一些程序的代理设置相对比较复杂，比如 <a href="/2018/08/31/git/" title="git">git</a>、<a href="/2018/08/31/docker/" title="docker">docker</a> 等，详见它们各自的介绍文章。</p>
+<p>此外，有一些程序的代理设置相对比较复杂，比如 <a href="/2018/08/31/git/" title="Git小记">git</a>、<a href="/2018/08/31/docker/" title="Docker 入坑指南">docker</a> 等，详见它们各自的介绍文章。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -1619,14 +1619,14 @@
     <title>编码与加密</title>
     <url>/2018/05/08/encode-encrypt/</url>
     <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
-<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、<a href="/2018/08/10/base/" title="Base64 编码">Base64 编码</a>等。</p>
+<p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、<a href="/2018/08/10/base/" title="Base 编码家族">Base64 编码</a>等。</p>
 <h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p><strong>加密</strong>（encryption）是将<strong>明文</strong>（plaintext，cleartext）信息改变为难以读取的<strong>密文</strong>（ciphertext）内容，使之不可读。只有拥有解密方法的对象，经由<strong>解密</strong>（decryption）过程，才能将密文还原为正常可读的内容。</p>
 <p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
 <p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
 <p>非对称加密，又称<strong>公开密钥加密</strong>，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
 <p>跑题一下，实际上为了性能，数字签名并不是直接使用私钥加密明文，而是使用私钥加密明文的哈希值。</p>
 <p>常见的对称加密算法有 DES、3DES、AES、RC5 等。</p>
-<p>常见的非对称加密算法有 <a href="/2018/10/18/rsa/" title="RSA">RSA</a>、DSA、ECDSA、Elgamal 等。</p>
+<p>常见的非对称加密算法有 <a href="/2018/10/18/rsa/" title="RSA 加密算法">RSA</a>、DSA、ECDSA、Elgamal 等。</p>
 <p>非对称加密在计算上相当复杂，速度远远比不上对称加密，因此，在一般实际情况下，往往通过非对称加密来随机创建临时的对称密钥，亦即对话键，然后才通过对称加密来传输大量、主体的数据。</p>
 <p>加密算法实质上是<strong>密码算法</strong>中的一种，另一种则是<strong>哈希（hash）算法</strong>。</p>
 <span id="more"></span>
@@ -2743,7 +2743,7 @@
     <url>/2018/02/08/kali-beef-bug/</url>
     <content><![CDATA[<p>在 Kali Rolling 2017 中打开 BeEF 然后自动跳转到登录页面，会发现只有 BeEF 的图标而没有登录框，无法进行登录，经查是因为和 Metasploit 的集成有关的，解决方案如下：</p>
 <p>将 <code>/usr/share/beef-xss/extensions/admin_ui/api/handler.rb</code> 文件中第 22 行的</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">minified = Uglifier.compile(evaluated)</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">minified = <span class="title class_">Uglifier</span>.compile(evaluated)</span><br></pre></td></tr></table></figure>
 
 <p>改为</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">minified = evaluated</span><br></pre></td></tr></table></figure>
@@ -3729,7 +3729,7 @@
   <entry>
     <title>使用 Sphinx 生成项目文档</title>
     <url>/2020/01/22/sphinx-document/</url>
-    <content><![CDATA[<p><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="/2018/09/17/restructuredtext/" title="reStructuredText">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
+    <content><![CDATA[<p><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="/2018/09/17/restructuredtext/" title="reStructuredText 小记">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
 <span id="more"></span>
 
 <p>使用 <code>pip install sphinx</code> 即可安装 Sphinx。</p>
@@ -3833,7 +3833,7 @@
     <title>对称加密</title>
     <url>/2021/03/11/symmetric-encryption/</url>
     <content><![CDATA[<p>本文讨论现代密码学中的对称加密。</p>
-<p>对称加密技术有两种宽泛的类型：<strong>块密码</strong>（block cipher）和<strong>流密码</strong>（stream cipher）。块密码用在多种因特网协议的加密中，包括 PGP、<a href="/2018/05/11/https/" title="SSL">SSL</a> 和 <a href="/2018/05/11/ipsec/" title="IPsec">IPsec</a> 等；流密码用在无线 LAN 的安全性中。</p>
+<p>对称加密技术有两种宽泛的类型：<strong>块密码</strong>（block cipher）和<strong>流密码</strong>（stream cipher）。块密码用在多种因特网协议的加密中，包括 PGP、<a href="/2018/05/11/https/" title="HTTPS 运行机制">SSL</a> 和 <a href="/2018/05/11/ipsec/" title="IPSec 运行机制">IPsec</a> 等；流密码用在无线 LAN 的安全性中。</p>
 <span id="more"></span>
 
 <h2 id="块密码"><a href="#块密码" class="headerlink" title="块密码"></a>块密码</h2><p>在块密码中，要加密的报文被处理为 $k$ 比特的块。为了加密一个块，该密码采用了一对一映射，将 $k$ 比特块的明文映射为 $k$ 比特块的密文。</p>
@@ -4229,7 +4229,7 @@
 <p>UDP 无非就是对网络层协议增加了一点（多路）复用&#x2F;（多路）分解服务而已。</p>
 <p>使用 UDP 的上层协议有：</p>
 <ul>
-<li><a href="/2020/12/29/dns/" title="DNS">DNS</a></li>
+<li><a href="/2020/12/29/dns/" title="DNS 运行机制">DNS</a></li>
 <li>SNMP</li>
 </ul>
 <p>选择使用 UDP 的原因：</p>
@@ -5149,7 +5149,7 @@
     <url>/2018/05/11/tcp/</url>
     <content><![CDATA[<p>TCP 全称 Transmission Control Protocol，即<strong>传输控制协议</strong>，它为调用它的应用程序提供了一种可靠的、<strong>面向连接</strong>（connection-oriented）的服务。</p>
 <p>TCP 连接提供的是<strong>全双工服务</strong>（full-duplex service），TCP 连接也总是<strong>点对点</strong>（point-to-point）的。</p>
-<p>相比 <a href="/2021/01/12/udp/" title="UDP">UDP</a>，TCP 主要多了 2 种服务：<strong>可靠数据传输</strong>（reliable data transfer）和<strong>拥塞控制</strong>（congestion control）。</p>
+<p>相比 <a href="/2021/01/12/udp/" title="UDP 协议分析">UDP</a>，TCP 主要多了 2 种服务：<strong>可靠数据传输</strong>（reliable data transfer）和<strong>拥塞控制</strong>（congestion control）。</p>
 <span id="more"></span>
 
 <h2 id="可靠数据传输"><a href="#可靠数据传输" class="headerlink" title="可靠数据传输"></a>可靠数据传输</h2><p>TCP 提供的可靠数据传输具体包含以下 3 点：</p>
