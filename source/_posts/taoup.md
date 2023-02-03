@@ -6,11 +6,11 @@ tags:
   - Linux
 ---
 
-我没有写错，本文所记述的不是Knuth的那本举世瞩目的TAOCP(计算机程序设计艺术)，而是ESR所写的**TAOUP**，即The Art of UNIX Programming(UNIX编程艺术)。
+我没有写错，本文所记述的不是 Knuth 的那本举世瞩目的 TAOCP（计算机程序设计艺术），而是 ESR 所写的 **TAOUP**，即 The Art of UNIX Programming（[UNIX 编程艺术](https://book.douban.com/subject/1467587/)）。
 
 ## 哲学
 
-Unix的设计哲学总体上可以概括为以下几点：
+Unix 的设计哲学总体上可以概括为以下几点：
 
 1. 模块原则：使用简洁的接口拼合简单的部件
 2. 清晰原则：清晰胜于机巧
@@ -29,5 +29,7 @@ Unix的设计哲学总体上可以概括为以下几点：
 15. 优化原则：雕琢前先要有原型，跑之前先学会走
 16. 多样原则：决不相信所谓“不二法门”的断言
 17. 扩展原则：设计着眼未来，未来总比预想来得快
+
 <!--more-->
-所有的Unix哲学浓缩为一条铁律就是**KISS**原则，即Keep It Simple, Stupid！
+
+所有的 Unix 哲学浓缩为一条铁律就是 **KISS** 原则，即 Keep It Simple, Stupid！
