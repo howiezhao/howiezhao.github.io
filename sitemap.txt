@@ -1,3 +1,4 @@
+https://howiezhao.github.io/2018/08/02/taoup/
 https://howiezhao.github.io/2017/06/20/hexo-experience/
 https://howiezhao.github.io/2018/11/02/open-sourse-license/
 https://howiezhao.github.io/2018/05/09/set-env-export/
@@ -83,7 +84,6 @@ https://howiezhao.github.io/2018/11/12/regex/
 https://howiezhao.github.io/2019/08/07/scheme-commandments-and-laws/
 https://howiezhao.github.io/2019/01/08/talk-about-credit-card/
 https://howiezhao.github.io/2019/01/08/talk-about-ms-office/
-https://howiezhao.github.io/2018/08/02/taoup/
 https://howiezhao.github.io/2018/07/21/udacity-apollo/
 https://howiezhao.github.io/2018/09/21/version-number/
 https://howiezhao.github.io/2018/09/18/vim/
