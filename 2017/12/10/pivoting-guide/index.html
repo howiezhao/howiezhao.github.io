@@ -15,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文翻译自 https:&#x2F;&#x2F;artkond.com&#x2F;2017&#x2F;03&#x2F;23&#x2F;pivoting-guide&#x2F; ，正文如下：  渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是 red team&#x2F;pentest 参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻">
 <meta property="og:type" content="article">
@@ -53,6 +53,8 @@
 
 
 
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -63,8 +65,8 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
@@ -84,7 +86,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -126,15 +128,9 @@
     </div>
   </div>
 
-</div>
+</header>
         
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
@@ -150,18 +146,18 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%85%AC%E6%9C%89-IP-%E4%B8%BA%E7%9B%AE%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">以公有 IP 为目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="nav-number">1.1.</span> <span class="nav-text">SSH 端口转发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-SSH-%E7%9A%84-VPN"><span class="nav-number">1.1.1.</span> <span class="nav-text">通过 SSH 的 VPN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3proxy"><span class="nav-number">1.2.</span> <span class="nav-text">3proxy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT-%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">NAT 场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-%E5%8F%8D%E5%90%91%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91-x2F-w-3proxy"><span class="nav-number">2.1.</span> <span class="nav-text">SSH 反向端口转发&#x2F;w 3proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rpivot"><span class="nav-number">2.2.</span> <span class="nav-text">Rpivot</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%86%85%E9%83%A8%E7%BD%91%E7%BB%9C%E6%B3%84%E6%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">从内部网络泄漏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ICMP-%E9%9A%A7%E9%81%93"><span class="nav-number">3.1.</span> <span class="nav-text">ICMP 隧道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-%E9%9A%A7%E9%81%93"><span class="nav-number">3.2.</span> <span class="nav-text">DNS 隧道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iodine"><span class="nav-number">3.2.1.</span> <span class="nav-text">Iodine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dnscat2"><span class="nav-number">3.2.2.</span> <span class="nav-text">Dnscat2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%8F%B8%E7%9A%84-HTTP-%E4%BB%A3%E7%90%86%E4%BD%9C%E4%B8%BA%E4%B8%80%E7%A7%8D%E5%87%BA%E8%B7%AF"><span class="nav-number">3.3.</span> <span class="nav-text">公司的 HTTP 代理作为一种出路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Rpivot"><span class="nav-number">3.3.1.</span> <span class="nav-text">使用 Rpivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cntlm"><span class="nav-number">3.3.2.</span> <span class="nav-text">Cntlm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-HTTP-%E4%BB%A3%E7%90%86%E7%9A%84-OpenVpn"><span class="nav-number">3.3.3.</span> <span class="nav-text">通过 HTTP 代理的 OpenVpn</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E5%B8%A6%E6%9C%89-proxychains-%E7%9A%84-SOCKS"><span class="nav-number">4.</span> <span class="nav-text">利用带有 proxychains 的 SOCKS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS-%E4%B8%8E-proxychains"><span class="nav-number">5.</span> <span class="nav-text">DNS 与 proxychains</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E4%BD%A0%E7%9A%84-web-shell"><span class="nav-number">6.</span> <span class="nav-text">美化你的 web shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-PTY-shell"><span class="nav-number">6.1.</span> <span class="nav-text">Python PTY shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Socat"><span class="nav-number">6.2.</span> <span class="nav-text">Socat</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A-shell"><span class="nav-number">6.2.1.</span> <span class="nav-text">绑定 shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%90%91-shell"><span class="nav-number">6.2.2.</span> <span class="nav-text">反向 shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E5%A4%A7%E5%B0%8F"><span class="nav-number">6.2.3.</span> <span class="nav-text">终端大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tsh"><span class="nav-number">6.3.</span> <span class="nav-text">Tsh</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%85%AC%E6%9C%89-IP-%E4%B8%BA%E7%9B%AE%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">以公有 IP 为目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="nav-number">1.1.</span> <span class="nav-text">SSH 端口转发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-SSH-%E7%9A%84-VPN"><span class="nav-number">1.1.1.</span> <span class="nav-text">通过 SSH 的 VPN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3proxy"><span class="nav-number">1.2.</span> <span class="nav-text">3proxy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT-%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">NAT 场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-%E5%8F%8D%E5%90%91%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91-w-3proxy"><span class="nav-number">2.1.</span> <span class="nav-text">SSH 反向端口转发&#x2F;w 3proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rpivot"><span class="nav-number">2.2.</span> <span class="nav-text">Rpivot</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%86%85%E9%83%A8%E7%BD%91%E7%BB%9C%E6%B3%84%E6%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">从内部网络泄漏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ICMP-%E9%9A%A7%E9%81%93"><span class="nav-number">3.1.</span> <span class="nav-text">ICMP 隧道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-%E9%9A%A7%E9%81%93"><span class="nav-number">3.2.</span> <span class="nav-text">DNS 隧道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iodine"><span class="nav-number">3.2.1.</span> <span class="nav-text">Iodine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dnscat2"><span class="nav-number">3.2.2.</span> <span class="nav-text">Dnscat2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%8F%B8%E7%9A%84-HTTP-%E4%BB%A3%E7%90%86%E4%BD%9C%E4%B8%BA%E4%B8%80%E7%A7%8D%E5%87%BA%E8%B7%AF"><span class="nav-number">3.3.</span> <span class="nav-text">公司的 HTTP 代理作为一种出路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Rpivot"><span class="nav-number">3.3.1.</span> <span class="nav-text">使用 Rpivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cntlm"><span class="nav-number">3.3.2.</span> <span class="nav-text">Cntlm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-HTTP-%E4%BB%A3%E7%90%86%E7%9A%84-OpenVpn"><span class="nav-number">3.3.3.</span> <span class="nav-text">通过 HTTP 代理的 OpenVpn</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E5%B8%A6%E6%9C%89-proxychains-%E7%9A%84-SOCKS"><span class="nav-number">4.</span> <span class="nav-text">利用带有 proxychains 的 SOCKS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS-%E4%B8%8E-proxychains"><span class="nav-number">5.</span> <span class="nav-text">DNS 与 proxychains</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E4%BD%A0%E7%9A%84-web-shell"><span class="nav-number">6.</span> <span class="nav-text">美化你的 web shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-PTY-shell"><span class="nav-number">6.1.</span> <span class="nav-text">Python PTY shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Socat"><span class="nav-number">6.2.</span> <span class="nav-text">Socat</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A-shell"><span class="nav-number">6.2.1.</span> <span class="nav-text">绑定 shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%90%91-shell"><span class="nav-number">6.2.2.</span> <span class="nav-text">反向 shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E5%A4%A7%E5%B0%8F"><span class="nav-number">6.2.3.</span> <span class="nav-text">终端大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tsh"><span class="nav-number">6.3.</span> <span class="nav-text">Tsh</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Howie Zhao"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Howie Zhao</p>
   <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -181,70 +177,60 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://zh.wikipedia.org/wiki/User:Howiezhao" title="Wikipedia → https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;User:Howiezhao" rel="noopener" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wikipedia</a>
+        <a href="https://zh.wikipedia.org/wiki/User:Howiezhao" title="Wikipedia → https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;User:Howiezhao" rel="noopener me" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wikipedia</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fab fa-bilibili fa-fw"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://howiezhao.com/" title="https:&#x2F;&#x2F;howiezhao.com" rel="noopener" target="_blank">Howie's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://zeki-zl.github.io/" title="https:&#x2F;&#x2F;zeki-zl.github.io" rel="noopener" target="_blank">Zeki's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://ximouzhao.com/" title="https:&#x2F;&#x2F;ximouzhao.com&#x2F;" rel="noopener" target="_blank">Zhao Ximou's Blog</a>
-        </li>
-    </ul>
   </div>
 
         </div>
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://howiezhao.com/" title="https:&#x2F;&#x2F;howiezhao.com" rel="noopener" target="_blank">Howie's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://zeki-zl.github.io/" title="https:&#x2F;&#x2F;zeki-zl.github.io" rel="noopener" target="_blank">Zeki's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://ximouzhao.com/" title="https:&#x2F;&#x2F;ximouzhao.com&#x2F;" rel="noopener" target="_blank">Zhao Ximou's Blog</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    </div>
 
     <div class="main-inner post posts-expand">
 
@@ -321,8 +307,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>本文翻译自 <a target="_blank" rel="noopener" href="https://artkond.com/2017/03/23/pivoting-guide/">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
+    <div class="post-body" itemprop="articleBody"><p>本文翻译自 <a target="_blank" rel="noopener" href="https://artkond.com/2017/03/23/pivoting-guide/">https://artkond.com/2017/03/23/pivoting-guide/</a> ，正文如下：</p>
 <hr>
 <p>渗透测试人员经常通过逻辑网络边界来访问客户的关键基础设施。常见的情况包括在成功的外围攻破之后，将攻击发展到内部网络，或者在危及组织内的主机之后访问初始的不可路由的网段。跳板是 red team&#x2F;pentest 参与过程中使用的一系列技术，它们利用攻击者控制的主机作为逻辑网络进行跳跃，旨在扩大网络可视性。在这篇文章中，我将介绍常用的跳板技术和可用的工具。</p>
 <span id="more"></span>
@@ -367,7 +352,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcppm &lt;localport&gt; &lt;targethost&gt; &lt;targetport&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="NAT-场景"><a href="#NAT-场景" class="headerlink" title="NAT 场景"></a>NAT 场景</h2><p>这是我在交战中遇到的最常见的情况。到目标的流量正在转发到逐个端口的基础上。这意味着除了端口转发规则以外的所有端口都不能从外部访问。一种可能的解决方案是启动反向连接。下面介绍的工具将帮助你做到这一点。</p>
-<h3 id="SSH-反向端口转发-x2F-w-3proxy"><a href="#SSH-反向端口转发-x2F-w-3proxy" class="headerlink" title="SSH 反向端口转发&#x2F;w 3proxy"></a>SSH 反向端口转发&#x2F;w 3proxy</h3><p>这个跳板设置看起来像这样：<br>在目标服务器上使用以下配置运行 3proxy 服务：</p>
+<h3 id="SSH-反向端口转发-w-3proxy"><a href="#SSH-反向端口转发-w-3proxy" class="headerlink" title="SSH 反向端口转发&#x2F;w 3proxy"></a>SSH 反向端口转发&#x2F;w 3proxy</h3><p>这个跳板设置看起来像这样：<br>在目标服务器上使用以下配置运行 3proxy 服务：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socks -p31337</span><br></pre></td></tr></table></figure>
 
 <p>在接收方（攻击者的机器）上创建一个单独的用户。</p>
@@ -513,12 +498,12 @@
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2017/12/05/the-art-of-deception/" rel="prev" title="《欺骗的艺术》读书笔记">
-                  <i class="fa fa-chevron-left"></i> 《欺骗的艺术》读书笔记
+                  <i class="fa fa-angle-left"></i> 《欺骗的艺术》读书笔记
                 </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2017/12/14/cs373-1/" rel="next" title="Udacity CS373：无人驾驶汽车编程学习笔记一">
-                  Udacity CS373：无人驾驶汽车编程学习笔记一 <i class="fa fa-chevron-right"></i>
+                  Udacity CS373：无人驾驶汽车编程学习笔记一 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -538,21 +523,20 @@
   <footer class="footer">
     <div class="footer-inner">
 
-
-<div class="copyright">
-  &copy; 2017 – 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
-</div>
+  <div class="copyright">
+    &copy; 2017 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
+  </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">170k</span>
+    <span title="Word count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -580,12 +564,24 @@
   </footer>
 
   
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-  
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
+
+
 
 
 

@@ -15,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文翻译自 https:&#x2F;&#x2F;uberpython.wordpress.com&#x2F;2012&#x2F;09&#x2F;23&#x2F;why-im-not-leaving-python-for-go&#x2F; ，原文标题为 Why I’m not leaving Python for Go，译文如下：  首先，Go 似乎是一门很棒的语言。它有一个很棒的教程，我乐此不疲地去看，发现：  Go 很快。 在设计上支持并发。 类型化（对 JIT">
 <meta property="og:type" content="article">
@@ -51,6 +51,8 @@
 
 
 
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -61,8 +63,8 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
@@ -82,7 +84,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -124,15 +126,9 @@
     </div>
   </div>
 
-</div>
+</header>
         
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
@@ -148,18 +144,18 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%97%E9%95%BF%E8%80%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">冗长而重复的错误处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%82%84%E6%82%84%E5%BF%BD%E7%95%A5-%E2%80%94%E2%80%94-%E6%BB%B4%E7%AD%94%E4%BD%9C%E5%93%8D%E7%9A%84%E5%AE%9A%E6%97%B6%E7%82%B8%E5%BC%B9"><span class="nav-number">2.</span> <span class="nav-text">错误悄悄忽略 —— 滴答作响的定时炸弹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#panic-x2F-recover"><span class="nav-number">3.</span> <span class="nav-text">panic&#x2F;recover</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%96%E8%AE%B8%E4%B8%8B%E6%AC%A1%E5%90%A7"><span class="nav-number">4.</span> <span class="nav-text">或许下次吧</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%97%E9%95%BF%E8%80%8C%E9%87%8D%E5%A4%8D%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">冗长而重复的错误处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%82%84%E6%82%84%E5%BF%BD%E7%95%A5-%E2%80%94%E2%80%94-%E6%BB%B4%E7%AD%94%E4%BD%9C%E5%93%8D%E7%9A%84%E5%AE%9A%E6%97%B6%E7%82%B8%E5%BC%B9"><span class="nav-number">2.</span> <span class="nav-text">错误悄悄忽略 —— 滴答作响的定时炸弹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#panic-recover"><span class="nav-number">3.</span> <span class="nav-text">panic&#x2F;recover</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%96%E8%AE%B8%E4%B8%8B%E6%AC%A1%E5%90%A7"><span class="nav-number">4.</span> <span class="nav-text">或许下次吧</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Howie Zhao"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Howie Zhao</p>
   <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -179,70 +175,60 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://zh.wikipedia.org/wiki/User:Howiezhao" title="Wikipedia → https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;User:Howiezhao" rel="noopener" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wikipedia</a>
+        <a href="https://zh.wikipedia.org/wiki/User:Howiezhao" title="Wikipedia → https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;User:Howiezhao" rel="noopener me" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wikipedia</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fab fa-bilibili fa-fw"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://howiezhao.com/" title="https:&#x2F;&#x2F;howiezhao.com" rel="noopener" target="_blank">Howie's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://zeki-zl.github.io/" title="https:&#x2F;&#x2F;zeki-zl.github.io" rel="noopener" target="_blank">Zeki's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://ximouzhao.com/" title="https:&#x2F;&#x2F;ximouzhao.com&#x2F;" rel="noopener" target="_blank">Zhao Ximou's Blog</a>
-        </li>
-    </ul>
   </div>
 
         </div>
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://howiezhao.com/" title="https:&#x2F;&#x2F;howiezhao.com" rel="noopener" target="_blank">Howie's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://zeki-zl.github.io/" title="https:&#x2F;&#x2F;zeki-zl.github.io" rel="noopener" target="_blank">Zeki's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://ximouzhao.com/" title="https:&#x2F;&#x2F;ximouzhao.com&#x2F;" rel="noopener" target="_blank">Zhao Ximou's Blog</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    </div>
 
     <div class="main-inner post posts-expand">
 
@@ -313,8 +299,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>本文翻译自 <a target="_blank" rel="noopener" href="https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/">https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/</a> ，原文标题为 <em>Why I’m not leaving Python for Go</em>，译文如下：</p>
+    <div class="post-body" itemprop="articleBody"><p>本文翻译自 <a target="_blank" rel="noopener" href="https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/">https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/</a> ，原文标题为 <em>Why I’m not leaving Python for Go</em>，译文如下：</p>
 <hr>
 <p>首先，Go 似乎是一门很棒的语言。它有一个<a target="_blank" rel="noopener" href="https://tour.golang.org/welcome/1">很棒的教程</a>，我乐此不疲地去看，发现：</p>
 <ul>
@@ -344,7 +329,7 @@
 
 <p>多可惜。哎呀。</p>
 <p>从理论上讲，我们可以要求程序员不要忽略返回的错误。通过静态分析或约定。在实践中，仅在最关键的错误编程任务中才能忍受这一痛苦。也许这就是 Go 的目的。</p>
-<h3 id="panic-x2F-recover"><a href="#panic-x2F-recover" class="headerlink" title="panic&#x2F;recover"></a>panic&#x2F;recover</h3><p>只要标准库很少使用它们，panic 和 recover 就不够好。为什么一个数组越界比格式字符串损坏或连接中断更容易引起 panic？Go 想完全避免异常，但意识到它们不能 —— 这里和那里都加了几个异常，让我很困惑，不知道哪个错误什么时候发生。</p>
+<h3 id="panic-recover"><a href="#panic-recover" class="headerlink" title="panic&#x2F;recover"></a>panic&#x2F;recover</h3><p>只要标准库很少使用它们，panic 和 recover 就不够好。为什么一个数组越界比格式字符串损坏或连接中断更容易引起 panic？Go 想完全避免异常，但意识到它们不能 —— 这里和那里都加了几个异常，让我很困惑，不知道哪个错误什么时候发生。</p>
 <h3 id="或许下次吧"><a href="#或许下次吧" class="headerlink" title="或许下次吧"></a>或许下次吧</h3><p>所以我说这句话的时候非常遗憾，因为 Go 有很多惊人的想法和功能，但是如果没有现代的错误处理 —— 我是不会<strong>去</strong>的。</p>
 <p>我还在等待那个开源、并发、<a target="_blank" rel="noopener" href="https://web.archive.org/web/20120922025809/http://shootout.alioth.debian.org/u64q/code-used-time-used-shapes.php">左下角的语言</a>出现。有什么建议，欢迎大家多多指教。</p>
 
@@ -361,12 +346,12 @@
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2021/03/11/symmetric-encryption/" rel="prev" title="对称加密">
-                  <i class="fa fa-chevron-left"></i> 对称加密
+                  <i class="fa fa-angle-left"></i> 对称加密
                 </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2021/04/13/talk-about-concurrent-programming/" rel="next" title="聊聊并发编程">
-                  聊聊并发编程 <i class="fa fa-chevron-right"></i>
+                  聊聊并发编程 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -386,21 +371,20 @@
   <footer class="footer">
     <div class="footer-inner">
 
-
-<div class="copyright">
-  &copy; 2017 – 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
-</div>
+  <div class="copyright">
+    &copy; 2017 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
+  </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">170k</span>
+    <span title="Word count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -428,12 +412,24 @@
   </footer>
 
   
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-  
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
+
+
 
 
 

@@ -15,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文翻译自 https:&#x2F;&#x2F;null-byte.wonderhowto.com&#x2F;how-to&#x2F;white-hats-guide-choosing-virtual-private-server-0183135&#x2F; ，正文如下： 从受信任的 VPS 进行网络钓鱼活动和托管 Metasploit 会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的 VPS 非常有限，因为大多数提">
 <meta property="og:type" content="article">
@@ -58,6 +58,8 @@
 
 
 
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -68,8 +70,8 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
@@ -89,7 +91,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -131,15 +133,9 @@
     </div>
   </div>
 
-</div>
+</header>
         
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
@@ -155,18 +151,18 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%AF%94%E8%BE%83%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">关键比较点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%A5%BD%E7%9A%84%E4%BB%B7%E9%92%B1%EF%BC%88Best-Price%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">最好的价钱（Best Price）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%BA%BA%E5%91%98%E5%8F%8B%E5%A5%BD%E5%9E%8B%EF%BC%88Pentester-Friendly%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">渗透测试人员友好型（Pentester-Friendly）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%EF%BC%88Requests-Personal-Info%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">请求个人信息（Requests Personal Info）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%97%E6%AF%94%E7%89%B9%E5%B8%81%E4%BB%98%E6%AC%BE%EF%BC%88Accepts-BTC-Payments%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">接受比特币付款（Accepts BTC Payments）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%97%E9%A2%84%E4%BB%98%E4%BF%A1%E7%94%A8%E5%8D%A1%EF%BC%88Accepts-Prepaid-Credit-Cards%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">接受预付信用卡（Accepts Prepaid Credit Cards）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tor-%E5%8F%8B%E5%A5%BD%E5%9E%8B%E7%BD%91%E7%AB%99%EF%BC%88Tor-Friendly-Website%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">Tor 友好型网站（Tor-Friendly Website）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%8F%B8%E6%80%BB%E9%83%A8%E6%89%80%E5%9C%A8%E5%9B%BD%EF%BC%88Company-HQ-39-s-Country%EF%BC%89"><span class="nav-number">1.7.</span> <span class="nav-text">公司总部所在国（Company HQ&#39;s Country）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%BB%E5%B2%B8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88Offshore-Solutions%EF%BC%89"><span class="nav-number">1.8.</span> <span class="nav-text">离岸解决方案（Offshore Solutions）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81BulletShield"><span class="nav-number">2.</span> <span class="nav-text">1、BulletShield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81BuyVM"><span class="nav-number">3.</span> <span class="nav-text">2、BuyVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81ClientVPS"><span class="nav-number">4.</span> <span class="nav-text">3、ClientVPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81VPSDime"><span class="nav-number">5.</span> <span class="nav-text">4、VPSDime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81OneHost-Cloud"><span class="nav-number">6.</span> <span class="nav-text">5、OneHost Cloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%84%8F%E8%A7%81"><span class="nav-number">7.</span> <span class="nav-text">意见</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%AF%84%E8%AE%BA"><span class="nav-number">8.</span> <span class="nav-text">一些评论</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%AF%94%E8%BE%83%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">关键比较点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%A5%BD%E7%9A%84%E4%BB%B7%E9%92%B1%EF%BC%88Best-Price%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">最好的价钱（Best Price）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%BA%BA%E5%91%98%E5%8F%8B%E5%A5%BD%E5%9E%8B%EF%BC%88Pentester-Friendly%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">渗透测试人员友好型（Pentester-Friendly）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%EF%BC%88Requests-Personal-Info%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">请求个人信息（Requests Personal Info）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%97%E6%AF%94%E7%89%B9%E5%B8%81%E4%BB%98%E6%AC%BE%EF%BC%88Accepts-BTC-Payments%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">接受比特币付款（Accepts BTC Payments）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%97%E9%A2%84%E4%BB%98%E4%BF%A1%E7%94%A8%E5%8D%A1%EF%BC%88Accepts-Prepaid-Credit-Cards%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">接受预付信用卡（Accepts Prepaid Credit Cards）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tor-%E5%8F%8B%E5%A5%BD%E5%9E%8B%E7%BD%91%E7%AB%99%EF%BC%88Tor-Friendly-Website%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">Tor 友好型网站（Tor-Friendly Website）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%8F%B8%E6%80%BB%E9%83%A8%E6%89%80%E5%9C%A8%E5%9B%BD%EF%BC%88Company-HQ-s-Country%EF%BC%89"><span class="nav-number">1.7.</span> <span class="nav-text">公司总部所在国（Company HQ&#39;s Country）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%BB%E5%B2%B8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88Offshore-Solutions%EF%BC%89"><span class="nav-number">1.8.</span> <span class="nav-text">离岸解决方案（Offshore Solutions）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81BulletShield"><span class="nav-number">2.</span> <span class="nav-text">1、BulletShield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81BuyVM"><span class="nav-number">3.</span> <span class="nav-text">2、BuyVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81ClientVPS"><span class="nav-number">4.</span> <span class="nav-text">3、ClientVPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81VPSDime"><span class="nav-number">5.</span> <span class="nav-text">4、VPSDime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81OneHost-Cloud"><span class="nav-number">6.</span> <span class="nav-text">5、OneHost Cloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%84%8F%E8%A7%81"><span class="nav-number">7.</span> <span class="nav-text">意见</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%AF%84%E8%AE%BA"><span class="nav-number">8.</span> <span class="nav-text">一些评论</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Howie Zhao"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Howie Zhao</p>
   <div class="site-description" itemprop="description">Stay Hungry, Stay Foolish</div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -186,70 +182,60 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/howiezhao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;howiezhao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+        <a href="https://stackoverflow.com/users/6312748/howiezhao" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;6312748&#x2F;howiezhao" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://zh.wikipedia.org/wiki/User:Howiezhao" title="Wikipedia → https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;User:Howiezhao" rel="noopener" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wikipedia</a>
+        <a href="https://zh.wikipedia.org/wiki/User:Howiezhao" title="Wikipedia → https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;User:Howiezhao" rel="noopener me" target="_blank"><i class="fab fa-wikipedia-w fa-fw"></i>Wikipedia</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener" target="_blank"><i class="fab fa-bilibili fa-fw"></i>bilibili</a>
+        <a href="https://space.bilibili.com/23433050" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23433050" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>bilibili</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fas fa-rss fa-fw"></i>RSS</a>
       </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://howiezhao.com/" title="https:&#x2F;&#x2F;howiezhao.com" rel="noopener" target="_blank">Howie's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://zeki-zl.github.io/" title="https:&#x2F;&#x2F;zeki-zl.github.io" rel="noopener" target="_blank">Zeki's Blog</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://ximouzhao.com/" title="https:&#x2F;&#x2F;ximouzhao.com&#x2F;" rel="noopener" target="_blank">Zhao Ximou's Blog</a>
-        </li>
-    </ul>
   </div>
 
         </div>
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://howiezhao.com/" title="https:&#x2F;&#x2F;howiezhao.com" rel="noopener" target="_blank">Howie's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://tomorrowli.github.io/" title="https:&#x2F;&#x2F;tomorrowli.github.io" rel="noopener" target="_blank">TomorrowLi's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wenc1997.github.io/" title="https:&#x2F;&#x2F;wenc1997.github.io" rel="noopener" target="_blank">Wenc</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">songshaoのblog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://zeki-zl.github.io/" title="https:&#x2F;&#x2F;zeki-zl.github.io" rel="noopener" target="_blank">Zeki's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://ximouzhao.com/" title="https:&#x2F;&#x2F;ximouzhao.com&#x2F;" rel="noopener" target="_blank">Zhao Ximou's Blog</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    </div>
 
     <div class="main-inner post posts-expand">
 
@@ -326,8 +312,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>本文翻译自 <a target="_blank" rel="noopener" href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/">https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/</a> ，正文如下：</p>
+    <div class="post-body" itemprop="articleBody"><p>本文翻译自 <a target="_blank" rel="noopener" href="https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/">https://null-byte.wonderhowto.com/how-to/white-hats-guide-choosing-virtual-private-server-0183135/</a> ，正文如下：</p>
 <p>从受信任的 VPS 进行网络钓鱼活动和托管 Metasploit 会话对于任何专业安全研究人员，渗透测试人员或白帽黑客都很重要。但是，可供选择的 VPS 非常有限，因为大多数提供商对任何类型的黑客都有零容忍政策，无论好坏。在研究了数十种产品之后，我们选出了 5 个理想的产品，非常适合 Null Byte 读者。</p>
 <span id="more"></span>
 <p>首先要理解的事情是......什么是 VPS？嗯，它代表虚拟专用服务器，是许多用户认为的专用或私有服务器的虚拟化形式，即使它安装在同时运行多个操作系统的物理计算机上。VPS 最常用于在线托管网站。</p>
@@ -369,7 +354,7 @@
 <ul>
 <li>不要错过：<a target="_blank" rel="noopener" href="https://null-byte.wonderhowto.com/how-to/access-dark-web-while-staying-anonymous-with-tor-0179341/">如何使用 Tor 匿名的访问暗网？</a></li>
 </ul>
-<h3 id="公司总部所在国（Company-HQ-39-s-Country）"><a href="#公司总部所在国（Company-HQ-39-s-Country）" class="headerlink" title="公司总部所在国（Company HQ&#39;s Country）"></a>公司总部所在国（Company HQ&#39;s Country）</h3><p>认为提供安全加密交易的公司将与当局充分<a target="_blank" rel="noopener" href="https://www.theregister.co.uk/2011/09/26/hidemyass_lulzsec_controversy/">合作以捕获黑客</a>并不是不切实际的。VPS 的 IP 地址是否来自尊重隐私的国家并不总是重要的。如果向你提供 VPS 的公司位于美国或英国，他们很可能会毫不犹豫地将你的个人信息交给任何权威人士。</p>
+<h3 id="公司总部所在国（Company-HQ-s-Country）"><a href="#公司总部所在国（Company-HQ-s-Country）" class="headerlink" title="公司总部所在国（Company HQ&#39;s Country）"></a>公司总部所在国（Company HQ&#39;s Country）</h3><p>认为提供安全加密交易的公司将与当局充分<a target="_blank" rel="noopener" href="https://www.theregister.co.uk/2011/09/26/hidemyass_lulzsec_controversy/">合作以捕获黑客</a>并不是不切实际的。VPS 的 IP 地址是否来自尊重隐私的国家并不总是重要的。如果向你提供 VPS 的公司位于美国或英国，他们很可能会毫不犹豫地将你的个人信息交给任何权威人士。</p>
 <p>进一步涉及隐私问题，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%8B%B1%E7%BE%8E%E5%8D%94%E5%AE%9A">UKUSA 协议</a>是英国，美国，澳大利亚，加拿大和新西兰之间的协议，旨在合作收集，分析和共享情报。这个群体的成员被称为<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%94%E7%9C%BC%E8%81%AF%E7%9B%9F">五眼联盟</a>。这些国家因拥有侵犯隐私的法律和政策而臭名昭著。</p>
 <p>在最尊重隐私的国家选择 VPS 提供商可能不是最优先考虑的问题，但至少考虑具有<a target="_blank" rel="noopener" href="https://nomadcapitalist.com/2013/12/15/top-5-best-countries-host-website-data-privacy/">良好隐私法律的国家</a>的提供商是有意义的。</p>
 <h3 id="离岸解决方案（Offshore-Solutions）"><a href="#离岸解决方案（Offshore-Solutions）" class="headerlink" title="离岸解决方案（Offshore Solutions）"></a>离岸解决方案（Offshore Solutions）</h3><p>“离岸 VPS”意味着服务器位于公司的国家边界位置之外，并且可能允许一定程度的自由裁量权。这对你作为渗透测试人员以及你受委托保护的公司非常重要，因为你可能会收到不应共享或泄露的妥协和敏感信息。我们鼓励读者独立询问 VPS 提供商，以确定他们的离岸解决方案是否适合你。</p>
@@ -437,12 +422,12 @@
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2019/02/25/after-kali/" rel="prev" title="安装 Kali Linux 后要做的 10 件事">
-                  <i class="fa fa-chevron-left"></i> 安装 Kali Linux 后要做的 10 件事
+                  <i class="fa fa-angle-left"></i> 安装 Kali Linux 后要做的 10 件事
                 </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2019/02/25/hacker-essential-skills/" rel="next" title="成为黑客高手的必备技能">
-                  成为黑客高手的必备技能 <i class="fa fa-chevron-right"></i>
+                  成为黑客高手的必备技能 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -462,21 +447,20 @@
   <footer class="footer">
     <div class="footer-inner">
 
-
-<div class="copyright">
-  &copy; 2017 – 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
-</div>
+  <div class="copyright">
+    &copy; 2017 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Howie Zhao</span>
+  </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">170k</span>
+    <span title="Word count total">170k</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -504,12 +488,24 @@
   </footer>
 
   
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-  
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
+
+
 
 
 
