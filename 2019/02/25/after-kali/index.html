@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -15,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="本文翻译自 https:&#x2F;&#x2F;null-byte.wonderhowto.com&#x2F;how-to&#x2F;top-10-things-do-after-installing-kali-linux-0186450&#x2F; ，正文如下： 默认情况下，对于完成日常的渗透测试，Kali Linux 可能没有你所需的一切。但通过一些提示，技巧和应用程序，我们可以像专业的白帽子一样快速开始使用 Kali。 大多数 Linux">
 <meta property="og:type" content="article">
@@ -47,7 +47,7 @@
 <title>安装 Kali Linux 后要做的 10 件事 | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false,"measure_protocol_api_secret":null}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
 
@@ -368,7 +368,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;deb https://deb.torproject.org/torproject.org stretch main</span></span><br><span class="line"><span class="string">deb-src https://deb.torproject.org/torproject.org stretch main&#x27;</span> &gt; /etc/apt/sources.list.d/tor.list</span><br></pre></td></tr></table></figure>
 
 <p>然后，下载 <a target="_blank" rel="noopener" href="https://www.torproject.org/docs/debian.html.en">Tor Project 包签名密钥</a>并将其导入 APT 密钥环。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">--2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</span><br><span class="line">Resolving deb.torproject.org (deb.torproject.org)... 138.201.14.197</span><br><span class="line">Connecting to deb.torproject.org (deb.torproject.org)|138.201.14.197|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 19665 (19K) [text/plain]</span><br><span class="line">Saving to: ‘STDOUT’</span><br><span class="line"></span><br><span class="line">-                                              100%[=================================================================================================&gt;]  19.20K  47.5KB/s    <span class="keyword">in</span> 0.4s</span><br><span class="line"></span><br><span class="line">2019-02-18 19:28:25 (47.5 KB/s) - written to stdout [19665/19665]</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line"></span><br><span class="line">--2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</span><br><span class="line">Resolving deb.torproject.org (deb.torproject.org)... 138.201.14.197</span><br><span class="line">Connecting to deb.torproject.org (deb.torproject.org)|138.201.14.197|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 19665 (19K) [text/plain]</span><br><span class="line">Saving to: ‘STDOUT’</span><br><span class="line"></span><br><span class="line">-                                              100%[=================================================================================================&gt;]  19.20K  47.5KB/s    <span class="keyword">in</span> 0.4s</span><br><span class="line"></span><br><span class="line">2019-02-18 19:28:25 (47.5 KB/s) - written to stdout [19665/19665]</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
 
 <p>将签名密钥添加到密钥环后，您将看到“OK”输出。接下来，使用以下 apt-get 命令更新 APT。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease</span><br><span class="line">Get:2 https://deb.torproject.org/torproject.org stretch InRelease [4,965 B]</span><br><span class="line">Get:4 https://deb.torproject.org/torproject.org stretch/main Sources [1,169 B]</span><br><span class="line">Get:5 https://deb.torproject.org/torproject.org stretch/main amd64 Packages [2,400 B]</span><br><span class="line">Hit:3 http://archive-3.kali.org/kali kali-rolling InRelease</span><br><span class="line">Fetched 8,534 B <span class="keyword">in</span> 8s (1,091 B/s)</span><br><span class="line">Reading package lists... Done</span><br></pre></td></tr></table></figure>
@@ -446,7 +446,7 @@
 
   <div class="copyright">
     &copy; 2017 – 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
@@ -485,6 +485,12 @@
   </footer>
 
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
   <div class="back-to-top" role="button" aria-label="Back to top">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
@@ -497,7 +503,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>

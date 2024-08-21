@@ -162,7 +162,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;deb https://deb.torproject.org/torproject.org stretch main</span></span><br><span class="line"><span class="string">deb-src https://deb.torproject.org/torproject.org stretch main&#x27;</span> &gt; /etc/apt/sources.list.d/tor.list</span><br></pre></td></tr></table></figure>
 
 <p>然后，下载 <a href="https://www.torproject.org/docs/debian.html.en">Tor Project 包签名密钥</a>并将其导入 APT 密钥环。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">--2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</span><br><span class="line">Resolving deb.torproject.org (deb.torproject.org)... 138.201.14.197</span><br><span class="line">Connecting to deb.torproject.org (deb.torproject.org)|138.201.14.197|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 19665 (19K) [text/plain]</span><br><span class="line">Saving to: ‘STDOUT’</span><br><span class="line"></span><br><span class="line">-                                              100%[=================================================================================================&gt;]  19.20K  47.5KB/s    <span class="keyword">in</span> 0.4s</span><br><span class="line"></span><br><span class="line">2019-02-18 19:28:25 (47.5 KB/s) - written to stdout [19665/19665]</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line"></span><br><span class="line">--2019-02-18 19:28:23--  https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc</span><br><span class="line">Resolving deb.torproject.org (deb.torproject.org)... 138.201.14.197</span><br><span class="line">Connecting to deb.torproject.org (deb.torproject.org)|138.201.14.197|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 19665 (19K) [text/plain]</span><br><span class="line">Saving to: ‘STDOUT’</span><br><span class="line"></span><br><span class="line">-                                              100%[=================================================================================================&gt;]  19.20K  47.5KB/s    <span class="keyword">in</span> 0.4s</span><br><span class="line"></span><br><span class="line">2019-02-18 19:28:25 (47.5 KB/s) - written to stdout [19665/19665]</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
 
 <p>将签名密钥添加到密钥环后，您将看到“OK”输出。接下来，使用以下 apt-get 命令更新 APT。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">Hit:1 http://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid InRelease</span><br><span class="line">Get:2 https://deb.torproject.org/torproject.org stretch InRelease [4,965 B]</span><br><span class="line">Get:4 https://deb.torproject.org/torproject.org stretch/main Sources [1,169 B]</span><br><span class="line">Get:5 https://deb.torproject.org/torproject.org stretch/main amd64 Packages [2,400 B]</span><br><span class="line">Hit:3 http://archive-3.kali.org/kali kali-rolling InRelease</span><br><span class="line">Fetched 8,534 B <span class="keyword">in</span> 8s (1,091 B/s)</span><br><span class="line">Reading package lists... Done</span><br></pre></td></tr></table></figure>
@@ -1720,6 +1720,14 @@
       </categories>
   </entry>
   <entry>
+    <title>辗转相除法</title>
+    <url>/2018/09/12/euclidean/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>编码与加密</title>
     <url>/2018/05/08/encode-encrypt/</url>
     <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
@@ -1749,14 +1757,6 @@
       <tags>
         <tag>密码学</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>辗转相除法</title>
-    <url>/2018/09/12/euclidean/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>对比几种文件共享协议</title>
@@ -2871,7 +2871,7 @@
 <h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><p>安装好 Kali 并启动之后，会发现 Kali 的系统时间始终无法和 Windows 的系统时间保持一致，具体表现如下：</p>
 <p>开始时，Windows 系统时间准确，启动 Kali 之后，Kali 系统时间错误，将其更新正确之后，关闭 Kali，进入 Windows，发现 Windows 系统时间又错误。</p>
 <p>出现这种情况的原因是 Windows 和 Linux 的时间机制不一样，具体而言，Windows 的时间就是硬件 BIOS 的时间，而 Linux 的时间则是硬件 BIOS 加上所在时区的时间。解决方法是，在 Kali 中执行如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Bug</category>
@@ -3005,13 +3005,13 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment"># 安装a</span></span><br><span class="line">dpkg -r a       <span class="comment"># 卸载a</span></span><br></pre></td></tr></table></figure>
 
 <p><code>apt-get</code> 是 apt 中的一个子程序，apt 全称 Advanced Packaging Tool（先进的包工具），是 Debian 系中的包管理工具，apt 的程序包来源列表文件位于 <code>/etc/apt/sources.list</code>，<code>apt-get</code> 的常用命令有：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt-get update     <span class="comment"># 更新包列表</span></span><br><span class="line">sudo apt-get upgrade    <span class="comment"># 更新包</span></span><br><span class="line">sudo apt-get install a  <span class="comment"># 安装a</span></span><br><span class="line">sudo apt-get purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt-get --purge remove a</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update     <span class="comment"># 更新包列表</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get upgrade    <span class="comment"># 更新包</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install a  <span class="comment"># 安装a</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt-get --purge remove a</span></span><br></pre></td></tr></table></figure>
 
 <p>同样的，<code>apt-cache</code> 也是 apt 中的一个子程序，它的常用命令有：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt-cache depends a  <span class="comment"># 查看包a的依赖包</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-cache depends a  <span class="comment"># 查看包a的依赖包</span></span><br></pre></td></tr></table></figure>
 
 <p>值得注意的是，随着新版系统的到来，出现了更为强大的 <code>apt</code> 命令，可以简单认为 <code>apt</code> 集合了 <code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code> 中的最常用命令选项。例如，<code>apt install</code> 相比 <code>apt-get install</code> 增加了色彩显示以及进度条显示等功能。因此，更建议使用 <code>apt</code> 命令，常用命令有：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo apt update     <span class="comment"># 更新包列表</span></span><br><span class="line">sudo apt upgrade    <span class="comment"># 更新包</span></span><br><span class="line">sudo apt install a  <span class="comment"># 安装a</span></span><br><span class="line">sudo apt purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt --purge remove a</span></span><br><span class="line">sudo apt list --installed  <span class="comment"># 查看已安装的包</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update     <span class="comment"># 更新包列表</span></span><br><span class="line"><span class="built_in">sudo</span> apt upgrade    <span class="comment"># 更新包</span></span><br><span class="line"><span class="built_in">sudo</span> apt install a  <span class="comment"># 安装a</span></span><br><span class="line"><span class="built_in">sudo</span> apt purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt --purge remove a</span></span><br><span class="line"><span class="built_in">sudo</span> apt list --installed  <span class="comment"># 查看已安装的包</span></span><br></pre></td></tr></table></figure>
 
 <p>关于 Ubuntu 中程序包的搜索可以使用 <a href="https://packages.ubuntu.com/">Ubuntu Packages Search</a>。</p>
 ]]></content>
@@ -4347,6 +4347,17 @@
       </tags>
   </entry>
   <entry>
+    <title>telnet协议分析</title>
+    <url>/2018/08/24/telnet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TCP 协议分析</title>
     <url>/2018/05/11/tcp/</url>
     <content><![CDATA[<p>TCP 全称 Transmission Control Protocol，即<strong>传输控制协议</strong>，它为调用它的应用程序提供了一种可靠的、<strong>面向连接</strong>（connection-oriented）的服务。</p>
@@ -4515,17 +4526,6 @@
 <li><a href="https://book.douban.com/subject/30280001/">James F. Kurose,Keith W. Ross.计算机网络：自顶向下方法[M].北京:机械工业出版社,2018:134-185.</a></li>
 </ol>
 ]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>telnet协议分析</title>
-    <url>/2018/08/24/telnet/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>

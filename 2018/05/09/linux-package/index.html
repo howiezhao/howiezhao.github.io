@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -15,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"howiezhao.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="不同 Linux 发行版的主要区别是其包管理机制不同，Linux 发行版大致可以分为 2 个派别：一派以 Red Hat 为首，主要包括 CentOS（社区版）、Fedora（桌面版）等；另一派以 Debian 为首，主要包括 Ubuntu、Kali 等。Red Hat 系采用 rpm 为其包格式，yum 为其包管理工具；Debian 系采用 dpkg 为其包格式，apt-get 为其包管理工具。">
 <meta property="og:type" content="article">
@@ -44,7 +44,7 @@
 <title>Linux 的包管理机制 | Howie's Notes</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104250838-2"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false}</script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-104250838-2","only_pageview":false,"measure_protocol_api_secret":null}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
 
 
@@ -317,13 +317,13 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i a.dpkg  <span class="comment"># 安装a</span></span><br><span class="line">dpkg -r a       <span class="comment"># 卸载a</span></span><br></pre></td></tr></table></figure>
 
 <p><code>apt-get</code> 是 apt 中的一个子程序，apt 全称 Advanced Packaging Tool（先进的包工具），是 Debian 系中的包管理工具，apt 的程序包来源列表文件位于 <code>/etc/apt/sources.list</code>，<code>apt-get</code> 的常用命令有：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update     <span class="comment"># 更新包列表</span></span><br><span class="line">sudo apt-get upgrade    <span class="comment"># 更新包</span></span><br><span class="line">sudo apt-get install a  <span class="comment"># 安装a</span></span><br><span class="line">sudo apt-get purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt-get --purge remove a</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update     <span class="comment"># 更新包列表</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get upgrade    <span class="comment"># 更新包</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install a  <span class="comment"># 安装a</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt-get --purge remove a</span></span><br></pre></td></tr></table></figure>
 
 <p>同样的，<code>apt-cache</code> 也是 apt 中的一个子程序，它的常用命令有：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-cache depends a  <span class="comment"># 查看包a的依赖包</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-cache depends a  <span class="comment"># 查看包a的依赖包</span></span><br></pre></td></tr></table></figure>
 
 <p>值得注意的是，随着新版系统的到来，出现了更为强大的 <code>apt</code> 命令，可以简单认为 <code>apt</code> 集合了 <code>apt-get</code>、<code>apt-cache</code>、<code>apt-config</code> 中的最常用命令选项。例如，<code>apt install</code> 相比 <code>apt-get install</code> 增加了色彩显示以及进度条显示等功能。因此，更建议使用 <code>apt</code> 命令，常用命令有：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update     <span class="comment"># 更新包列表</span></span><br><span class="line">sudo apt upgrade    <span class="comment"># 更新包</span></span><br><span class="line">sudo apt install a  <span class="comment"># 安装a</span></span><br><span class="line">sudo apt purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt --purge remove a</span></span><br><span class="line">sudo apt list --installed  <span class="comment"># 查看已安装的包</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update     <span class="comment"># 更新包列表</span></span><br><span class="line"><span class="built_in">sudo</span> apt upgrade    <span class="comment"># 更新包</span></span><br><span class="line"><span class="built_in">sudo</span> apt install a  <span class="comment"># 安装a</span></span><br><span class="line"><span class="built_in">sudo</span> apt purge a    <span class="comment"># 卸载a并删除其配置文件（即彻底删除），命令作用等同于apt --purge remove a</span></span><br><span class="line"><span class="built_in">sudo</span> apt list --installed  <span class="comment"># 查看已安装的包</span></span><br></pre></td></tr></table></figure>
 
 <p>关于 Ubuntu 中程序包的搜索可以使用 <a target="_blank" rel="noopener" href="https://packages.ubuntu.com/">Ubuntu Packages Search</a>。</p>
 
@@ -370,7 +370,7 @@
 
   <div class="copyright">
     &copy; 2017 – 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
@@ -409,6 +409,12 @@
   </footer>
 
   
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
   <div class="back-to-top" role="button" aria-label="Back to top">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
@@ -421,7 +427,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
