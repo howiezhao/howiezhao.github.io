@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://howiezhao.github.io/images/ssl.jpg">
 <meta property="article:published_time" content="2018-05-11T10:45:45.000Z">
-<meta property="article:modified_time" content="2021-03-16T14:18:54.000Z">
+<meta property="article:modified_time" content="2024-08-22T14:04:45.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -280,7 +280,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2021-03-16 22:18:54" itemprop="dateModified" datetime="2021-03-16T22:18:54+08:00">2021-03-16</time>
+      <time title="Modified: 2024-08-22 22:04:45" itemprop="dateModified" datetime="2024-08-22T22:04:45+08:00">2024-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -325,8 +325,8 @@
 <li>B 接收到一个扩展报文 $(m, h)$，由于知道 $s$，计算出报文鉴别码 $H(m+s)$。若 $H(m+s)&#x3D;h$，则一切正常。</li>
 </ol>
 <p>MAC 的一个优良特点是它不要求一种加密算法，多年来已经提出了若干种对 MAC 的不同标准，目前最为流行的标准是 HMAC，它能够与 MD5 或 SHA-1 一道使用。</p>
-<p>其实使用数字签名也可以实现完整性，同时也验证了该报文的源（注意 MAC 并不能做到这一点）。具体使用 MAC 还是数字签名实现完整性，在不同的协议里有不同的选择，如 PGP 使用数字签名，而 OSPF 和 SSL 使用 MAC。</p>
-<p>在生成 MAC 过程中既不涉及公开密钥加密，也不涉及对称密钥加密。而在生成数字签名的过程中涉及到了公开密钥加密，因此，数字签名是一种“技术含量更高”的技术，因为它需要一个如后面描述的、具有认证中心支撑的公钥基础设施（PKI）。</p>
+<p>其实使用<a href="/2018/05/08/encode-encrypt/" title="编码与加密">数字签名</a>也可以实现完整性，同时也验证了该报文的源（注意 MAC 并不能做到这一点）。具体使用 MAC 还是数字签名实现完整性，在不同的协议里有不同的选择，如 PGP 使用数字签名，而 OSPF 和 SSL 使用 MAC。</p>
+<p>在生成 MAC 过程中既不涉及公开密钥加密，也不涉及对称密钥加密。而在生成数字签名的过程中涉及到了公开密钥加密，因此，数字签名是一种“技术含量更高”的技术，因为它需要一个如后面描述的、具有认证中心支撑的<strong>公钥基础设施</strong>（<strong>PKI</strong>）。</p>
 <h2 id="公钥认证"><a href="#公钥认证" class="headerlink" title="公钥认证"></a>公钥认证</h2><p><strong>公钥认证</strong>（public key certification）即证实一个公钥属于某个特定的实体。将公钥与特定实体绑定通常是由<strong>认证中心</strong>（Certification Authority，<strong>CA</strong>）完成的，CA 的职责就是使识别和发行证书合法化。CA 具有下列作用：</p>
 <ul>
 <li>CA 证实一个实体（一个人、一台路由器等）的真实身份。</li>
@@ -342,7 +342,7 @@
 </ol>
 <p>使用对称密钥确保了鉴别的双方，而使用不重数则预防了<strong>回放攻击</strong>（playback attack）。</p>
 <p>对于 HTTPS 而言，端点鉴别具体分为：<em>服务器鉴别</em> 和 <em>客户鉴别</em>。服务器鉴别是为了防止站点假冒（这可以通过 CA 证书来验证），客户鉴别是为了防御连接重放。</p>
-<h2 id="SSL-与-TLS"><a href="#SSL-与-TLS" class="headerlink" title="SSL 与 TLS"></a>SSL 与 TLS</h2><p>SSL（Secure Socket Layer，<strong>安全套接字层</strong>）最初由 Netscape 设计，其发展到现在存在一些设计上的漏洞，SSL 版本 3 的一个稍加修改的版本被称为 TLS（Transport Layer Security，<strong>传输层安全性</strong>）。</p>
+<h2 id="SSL-与-TLS"><a href="#SSL-与-TLS" class="headerlink" title="SSL 与 TLS"></a>SSL 与 TLS</h2><p><strong>SSL</strong>（Secure Socket Layer，<strong>安全套接字层</strong>）最初由 Netscape 设计，其发展到现在存在一些设计上的漏洞，SSL 版本 3 的一个稍加修改的版本被称为 <strong>TLS</strong>（Transport Layer Security，<strong>传输层安全性</strong>）。</p>
 <p>现在为了安全性基本都采用 TLS，本文以下内容采用 SSL 来指代最新的 TLS。</p>
 <p>SSL 经常用来为发生在 HTTP 之上的事务提供安全性。然而，因为 SSL 使 TCP 安全了，因此它能被应用于运行在 TCP 之上的任何应用程序。</p>
 <h2 id="SSL-工作过程"><a href="#SSL-工作过程" class="headerlink" title="SSL 工作过程"></a>SSL 工作过程</h2><p>SSL 具有三个阶段：<strong>握手</strong>、<strong>密钥导出</strong>和<strong>数据传输</strong>：</p>

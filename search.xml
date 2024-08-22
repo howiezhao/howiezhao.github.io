@@ -524,6 +524,17 @@
       </categories>
   </entry>
   <entry>
+    <title>强大的autojump</title>
+    <url>/2018/09/19/autojump/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>身份认证的几种方式</title>
     <url>/2018/11/16/authentication/</url>
     <content><![CDATA[<p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
@@ -541,17 +552,6 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
-  </entry>
-  <entry>
-    <title>强大的autojump</title>
-    <url>/2018/09/19/autojump/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
   </entry>
   <entry>
     <title>Base 编码家族</title>
@@ -1522,6 +1522,11 @@
       </categories>
   </entry>
   <entry>
+    <title>curl wget</title>
+    <url>/2018/09/19/curl-wget/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Udacity CS373：无人驾驶汽车编程学习笔记一</title>
     <url>/2017/12/14/cs373-1/</url>
     <content><![CDATA[<h2 id="一：定位"><a href="#一：定位" class="headerlink" title="一：定位"></a>一：定位</h2><p>蒙特卡罗定位是感知和运动的循环，每次感知都会获得信息，每次运动都会丢失信息，感知函数利用了贝叶斯规则，运动函数利用了全概率定理。</p>
@@ -1535,11 +1540,6 @@
         <tag>CS373</tag>
         <tag>无人驾驶</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>curl wget</title>
-    <url>/2018/09/19/curl-wget/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Windows10的传递优化</title>
@@ -1720,14 +1720,6 @@
       </categories>
   </entry>
   <entry>
-    <title>辗转相除法</title>
-    <url>/2018/09/12/euclidean/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>编码与加密</title>
     <url>/2018/05/08/encode-encrypt/</url>
     <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
@@ -1757,6 +1749,14 @@
       <tags>
         <tag>密码学</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>辗转相除法</title>
+    <url>/2018/09/12/euclidean/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>对比几种文件共享协议</title>
@@ -2461,8 +2461,8 @@
 <li>B 接收到一个扩展报文 $(m, h)$，由于知道 $s$，计算出报文鉴别码 $H(m+s)$。若 $H(m+s)&#x3D;h$，则一切正常。</li>
 </ol>
 <p>MAC 的一个优良特点是它不要求一种加密算法，多年来已经提出了若干种对 MAC 的不同标准，目前最为流行的标准是 HMAC，它能够与 MD5 或 SHA-1 一道使用。</p>
-<p>其实使用数字签名也可以实现完整性，同时也验证了该报文的源（注意 MAC 并不能做到这一点）。具体使用 MAC 还是数字签名实现完整性，在不同的协议里有不同的选择，如 PGP 使用数字签名，而 OSPF 和 SSL 使用 MAC。</p>
-<p>在生成 MAC 过程中既不涉及公开密钥加密，也不涉及对称密钥加密。而在生成数字签名的过程中涉及到了公开密钥加密，因此，数字签名是一种“技术含量更高”的技术，因为它需要一个如后面描述的、具有认证中心支撑的公钥基础设施（PKI）。</p>
+<p>其实使用<a href="/2018/05/08/encode-encrypt/" title="编码与加密">数字签名</a>也可以实现完整性，同时也验证了该报文的源（注意 MAC 并不能做到这一点）。具体使用 MAC 还是数字签名实现完整性，在不同的协议里有不同的选择，如 PGP 使用数字签名，而 OSPF 和 SSL 使用 MAC。</p>
+<p>在生成 MAC 过程中既不涉及公开密钥加密，也不涉及对称密钥加密。而在生成数字签名的过程中涉及到了公开密钥加密，因此，数字签名是一种“技术含量更高”的技术，因为它需要一个如后面描述的、具有认证中心支撑的<strong>公钥基础设施</strong>（<strong>PKI</strong>）。</p>
 <h2 id="公钥认证"><a href="#公钥认证" class="headerlink" title="公钥认证"></a>公钥认证</h2><p><strong>公钥认证</strong>（public key certification）即证实一个公钥属于某个特定的实体。将公钥与特定实体绑定通常是由<strong>认证中心</strong>（Certification Authority，<strong>CA</strong>）完成的，CA 的职责就是使识别和发行证书合法化。CA 具有下列作用：</p>
 <ul>
 <li>CA 证实一个实体（一个人、一台路由器等）的真实身份。</li>
@@ -2478,7 +2478,7 @@
 </ol>
 <p>使用对称密钥确保了鉴别的双方，而使用不重数则预防了<strong>回放攻击</strong>（playback attack）。</p>
 <p>对于 HTTPS 而言，端点鉴别具体分为：<em>服务器鉴别</em> 和 <em>客户鉴别</em>。服务器鉴别是为了防止站点假冒（这可以通过 CA 证书来验证），客户鉴别是为了防御连接重放。</p>
-<h2 id="SSL-与-TLS"><a href="#SSL-与-TLS" class="headerlink" title="SSL 与 TLS"></a>SSL 与 TLS</h2><p>SSL（Secure Socket Layer，<strong>安全套接字层</strong>）最初由 Netscape 设计，其发展到现在存在一些设计上的漏洞，SSL 版本 3 的一个稍加修改的版本被称为 TLS（Transport Layer Security，<strong>传输层安全性</strong>）。</p>
+<h2 id="SSL-与-TLS"><a href="#SSL-与-TLS" class="headerlink" title="SSL 与 TLS"></a>SSL 与 TLS</h2><p><strong>SSL</strong>（Secure Socket Layer，<strong>安全套接字层</strong>）最初由 Netscape 设计，其发展到现在存在一些设计上的漏洞，SSL 版本 3 的一个稍加修改的版本被称为 <strong>TLS</strong>（Transport Layer Security，<strong>传输层安全性</strong>）。</p>
 <p>现在为了安全性基本都采用 TLS，本文以下内容采用 SSL 来指代最新的 TLS。</p>
 <p>SSL 经常用来为发生在 HTTP 之上的事务提供安全性。然而，因为 SSL 使 TCP 安全了，因此它能被应用于运行在 TCP 之上的任何应用程序。</p>
 <h2 id="SSL-工作过程"><a href="#SSL-工作过程" class="headerlink" title="SSL 工作过程"></a>SSL 工作过程</h2><p>SSL 具有三个阶段：<strong>握手</strong>、<strong>密钥导出</strong>和<strong>数据传输</strong>：</p>
@@ -2552,6 +2552,17 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ifconfig与ip</title>
+    <url>/2018/09/12/ifconfig-ip/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2660,17 +2671,6 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ifconfig与ip</title>
-    <url>/2018/09/12/ifconfig-ip/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -4347,17 +4347,6 @@
       </tags>
   </entry>
   <entry>
-    <title>telnet协议分析</title>
-    <url>/2018/08/24/telnet/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TCP 协议分析</title>
     <url>/2018/05/11/tcp/</url>
     <content><![CDATA[<p>TCP 全称 Transmission Control Protocol，即<strong>传输控制协议</strong>，它为调用它的应用程序提供了一种可靠的、<strong>面向连接</strong>（connection-oriented）的服务。</p>
@@ -4534,6 +4523,17 @@
       </tags>
   </entry>
   <entry>
+    <title>telnet协议分析</title>
+    <url>/2018/08/24/telnet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>terminal 与 shell</title>
     <url>/2018/09/19/terminal-shell/</url>
     <content><![CDATA[<p><strong>terminal</strong>，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a href="https://conemu.github.io/">ConEmu</a>、<a href="https://cmder.net/">Cmder</a> 等。</p>
@@ -4587,7 +4587,7 @@
   <entry>
     <title>tmux 小记</title>
     <url>/2018/09/18/tmux/</url>
-    <content><![CDATA[<p><a href="https://github.com/tmux/tmux">tmux</a> 是一款优秀的<strong>终端复用</strong>工具，在 Ubuntu 下，使用 <code>sudo apt install tmux</code> 即可安装，输入 <code>tmux</code> 即可开始使用。与 tmux 相似的软件还有 <a href="https://www.gnu.org/software/screen/">Screen</a> 等。</p>
+    <content><![CDATA[<p><a href="https://github.com/tmux/tmux">tmux</a> 是一款优秀的<strong>终端复用</strong>和<strong>会话管理</strong>工具，在 Ubuntu 下，使用 <code>sudo apt install tmux</code> 即可安装，输入 <code>tmux</code> 即可开始使用。与 tmux 相似的软件还有 <a href="https://www.gnu.org/software/screen/">Screen</a> 等。</p>
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Session（会话）"><a href="#Session（会话）" class="headerlink" title="Session（会话）"></a>Session（会话）</h3><p>当输入 <code>tmux</code> 后，实际上创建了一个 Session，你可以在这个 Session 里创建多个 Window，在 Window 里创建多个 Pane。</p>
 <h3 id="Window（窗口）"><a href="#Window（窗口）" class="headerlink" title="Window（窗口）"></a>Window（窗口）</h3><p>Window 是显示给你的一整片窗口，你可以创建多个 Window，在一个 Window 里面你又可以创建多个 Pane，以此来执行多个任务。</p>
 <h3 id="Pane（窗格-面板）"><a href="#Pane（窗格-面板）" class="headerlink" title="Pane（窗格&#x2F;面板）"></a>Pane（窗格&#x2F;面板）</h3><p>Pane 是 tmux 中的最小单位，每个 Pane 相当于一个终端。</p>
@@ -4595,15 +4595,15 @@
 
 <p>一个常见的 tmux 运行效果可能如下图所示：</p>
 <p><img src="/images/tmux.jpg" alt="tmux"></p>
-<p>其中，Window 被分成了 3 个 Pane，每个 Pane 之间通过 <strong>Pane Border</strong>（面板分隔符）加以区分。Window 底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了 Session 的名称，窗口列表则显示了当前 Window 的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。</p>
+<p>其中，Window 被分成了 3 个 Pane，每个 Pane 之间通过 <strong>Pane Border</strong>（面板分隔符）加以区分。Window 底部则是<strong>Status Bar</strong>（状态栏），状态栏从左往右依次被分为<strong>左面板</strong>、<strong>窗口列表</strong>、<strong>右面板</strong>。按照上图所示，其中左面板显示了 Session 的名称（<code>[basic]</code>），窗口列表则显示了当前 Window 的索引值和名称（<code>0:~*</code>），最后右面板依次显示了计算机名称、时间、日期（<code>&quot;DESKTOP-06THPMM&quot; 16:29 30-Jul-19</code>）。</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><code>tmux</code> 命令拥有众多参数，如下所示：</p>
 <ul>
 <li><code>tmux -V</code>：显示 tmux 版本号</li>
 <li><code>tmux ls</code> 或 <code>tmux list-sessions</code>：列出所有 tmux Session</li>
 <li><code>tmux a</code> 或 <code>tmux attach</code>：连接（attach）到上一次的 Session</li>
-<li><code>tmux a -t 0</code>：连接到名为 0 的 Session</li>
-<li><code>tmux new -s basic</code> 或 <code>tmux new-session -s basic</code>：新建名为 basic 的 Session，若不指定 <code>-s</code> 参数，则默认按数字命名</li>
-<li><code>tmux kill-session -t foo</code>：删除名为 foo 的 Session</li>
+<li><code>tmux a -t 0</code>：连接到名为 <code>0</code> 的 Session</li>
+<li><code>tmux new -s basic</code> 或 <code>tmux new-session -s basic</code>：新建名为 <code>basic</code> 的 Session，若不指定 <code>-s</code> 参数，则默认按数字命名</li>
+<li><code>tmux kill-session -t foo</code>：删除名为 <code>foo</code> 的 Session</li>
 <li><code>tmux kill-server</code>：删除所有 Session</li>
 <li><code>tmux source ~/.tmux.conf</code>：重载配置文件</li>
 </ul>
@@ -4854,6 +4854,17 @@
       </tags>
   </entry>
   <entry>
+    <title>网站的WWW问题</title>
+    <url>/2018/09/12/web-www/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网站统计与分析</title>
     <url>/2018/09/22/web-analytics/</url>
     <content><![CDATA[<h2 id="几个术语"><a href="#几个术语" class="headerlink" title="几个术语"></a>几个术语</h2><ul>
@@ -4863,17 +4874,6 @@
 </ul>
 <h2 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h2><p>有许多第三方的工具可以帮助站长统计和分析网站流量，比如<a href="https://tongji.baidu.com/">百度统计</a>、<a href="http://ta.qq.com/">腾讯分析</a>、<a href="https://analytics.google.com/analytics/web">Google Analytics(GA)</a>等。个人经常使用Google Analytics。<br>这类工具的原理大致为：它们会生成一段特定的JS代码，站长需要将这段代码插入到自己网站的页面中，当访客访问网站时，这段代码会收集访客的行为信息，并上传到它们的服务器上。</p>
 ]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网站的WWW问题</title>
-    <url>/2018/09/12/web-www/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
