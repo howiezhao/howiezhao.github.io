@@ -6,7 +6,7 @@ tags:
   - Linux
 ---
 
-[tmux](https://github.com/tmux/tmux) 是一款优秀的**终端复用**工具，在 Ubuntu 下，使用 `sudo apt install tmux` 即可安装，输入 `tmux` 即可开始使用。与 tmux 相似的软件还有 [Screen](https://www.gnu.org/software/screen/) 等。
+[tmux](https://github.com/tmux/tmux) 是一款优秀的**终端复用**和**会话管理**工具，在 Ubuntu 下，使用 `sudo apt install tmux` 即可安装，输入 `tmux` 即可开始使用。与 tmux 相似的软件还有 [Screen](https://www.gnu.org/software/screen/) 等。
 
 ## 名词解释
 
@@ -28,7 +28,7 @@ Pane 是 tmux 中的最小单位，每个 Pane 相当于一个终端。
 
 ![tmux](/images/tmux.jpg)
 
-其中，Window 被分成了 3 个 Pane，每个 Pane 之间通过 **Pane Border**（面板分隔符）加以区分。Window 底部则是**Status Bar**（状态栏），状态栏从左往右依次被分为**左面板**、**窗口列表**、**右面板**。按照上图所示，其中左面板显示了 Session 的名称，窗口列表则显示了当前 Window 的索引值和名称，最后右面板依次显示了计算机名称、时间、日期。
+其中，Window 被分成了 3 个 Pane，每个 Pane 之间通过 **Pane Border**（面板分隔符）加以区分。Window 底部则是**Status Bar**（状态栏），状态栏从左往右依次被分为**左面板**、**窗口列表**、**右面板**。按照上图所示，其中左面板显示了 Session 的名称（`[basic]`），窗口列表则显示了当前 Window 的索引值和名称（`0:~*`），最后右面板依次显示了计算机名称、时间、日期（`"DESKTOP-06THPMM" 16:29 30-Jul-19`）。
 
 ## 命令
 
@@ -37,9 +37,9 @@ Pane 是 tmux 中的最小单位，每个 Pane 相当于一个终端。
 - `tmux -V`：显示 tmux 版本号
 - `tmux ls` 或 `tmux list-sessions`：列出所有 tmux Session
 - `tmux a` 或 `tmux attach`：连接（attach）到上一次的 Session
-- `tmux a -t 0`：连接到名为 0 的 Session
-- `tmux new -s basic` 或 `tmux new-session -s basic`：新建名为 basic 的 Session，若不指定 `-s` 参数，则默认按数字命名
-- `tmux kill-session -t foo`：删除名为 foo 的 Session
+- `tmux a -t 0`：连接到名为 `0` 的 Session
+- `tmux new -s basic` 或 `tmux new-session -s basic`：新建名为 `basic` 的 Session，若不指定 `-s` 参数，则默认按数字命名
+- `tmux kill-session -t foo`：删除名为 `foo` 的 Session
 - `tmux kill-server`：删除所有 Session
 - `tmux source ~/.tmux.conf`：重载配置文件
 
