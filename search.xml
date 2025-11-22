@@ -63,24 +63,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于 Windows 的代理设置</title>
-    <url>/2019/07/29/about-the-proxy-settings-for-windows/</url>
-    <content><![CDATA[<p>Windows 的<strong>系统代理</strong>使用的其实是 <strong>IE 的代理设置</strong>，此外，对于<strong>绝大多数</strong>的应用程序而言，它们默认使用的也是 IE 的代理设置，比如，Chrome、Firefox、Microsoft Store 等。因此，如果想让绝大多数的应用程序使用代理，一个简单的方法是直接设置 IE 的代理（即系统代理）。不过，对于一小部分没有使用 IE 代理设置的应用程序，比如 Android Studio 等，你可能需要单独设置它们的代理（一般在软件的设置项中）。</p>
-<p>值得注意的是，同为应用程序的 <strong>Shell</strong>（包括<strong>命令提示符</strong>和 <strong>PowerShell</strong>）就没有使用 IE 的代理设置，它们各自有自己的代理设置。具体而言，要为命令提示符设置代理，可使用如下两条命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> HTTP_PROXY=http://user:password@proxy.domain.com:port</span><br><span class="line"><span class="built_in">set</span> HTTPS_PROXY=https://user:password@proxy.domain.com:port</span><br></pre></td></tr></table></figure>
-
-<p>而要为 PowerShell 设置代理则要使用<a href="todo">这个脚本</a>。</p>
-<p>对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 <code>pip</code>、<code>npm</code> 等，另一部分则使用的是 Shell 的代理设置，比如 <code>curl</code>、<code>gem</code> 等。</p>
-<p>此外，有一些程序的代理设置相对比较复杂，比如 <a href="/2018/08/31/git/" title="Git小记">git</a>、<a href="/2018/08/31/docker/" title="Docker 入坑指南">docker</a> 等，详见它们各自的介绍文章。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ADB小记</title>
     <url>/2019/07/29/adb/</url>
     <content><![CDATA[<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><h3 id="error-device-still-connecting"><a href="#error-device-still-connecting" class="headerlink" title="error: device still connecting"></a>error: device still connecting</h3><p>输入<code>adb shell</code>时显示<code>error: device still connecting</code>，一般可通过：关闭<strong>开发者模式</strong>然后重新打开<strong>开发者模式</strong>，接着开启<strong>USB调试</strong>并重新和电脑配对，即可解决。</p>
@@ -101,6 +83,24 @@
       </categories>
   </entry>
   <entry>
+    <title>关于 Windows 的代理设置</title>
+    <url>/2019/07/29/about-the-proxy-settings-for-windows/</url>
+    <content><![CDATA[<p>Windows 的<strong>系统代理</strong>使用的其实是 <strong>IE 的代理设置</strong>，此外，对于<strong>绝大多数</strong>的应用程序而言，它们默认使用的也是 IE 的代理设置，比如，Chrome、Firefox、Microsoft Store 等。因此，如果想让绝大多数的应用程序使用代理，一个简单的方法是直接设置 IE 的代理（即系统代理）。不过，对于一小部分没有使用 IE 代理设置的应用程序，比如 Android Studio 等，你可能需要单独设置它们的代理（一般在软件的设置项中）。</p>
+<p>值得注意的是，同为应用程序的 <strong>Shell</strong>（包括<strong>命令提示符</strong>和 <strong>PowerShell</strong>）就没有使用 IE 的代理设置，它们各自有自己的代理设置。具体而言，要为命令提示符设置代理，可使用如下两条命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> HTTP_PROXY=http://user:password@proxy.domain.com:port</span><br><span class="line"><span class="built_in">set</span> HTTPS_PROXY=https://user:password@proxy.domain.com:port</span><br></pre></td></tr></table></figure>
+
+<p>而要为 PowerShell 设置代理则要使用<a href="todo">这个脚本</a>。</p>
+<p>对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 <code>pip</code>、<code>npm</code> 等，另一部分则使用的是 Shell 的代理设置，比如 <code>curl</code>、<code>gem</code> 等。</p>
+<p>此外，有一些程序的代理设置相对比较复杂，比如 <a href="/2018/08/31/git/" title="Git小记">git</a>、<a href="/2018/08/31/docker/" title="Docker 入坑指南">docker</a> 等，详见它们各自的介绍文章。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安装 Kali Linux 后要做的 10 件事</title>
     <url>/2019/02/25/after-kali/</url>
     <content><![CDATA[<p>本文翻译自 <a href="https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/">https://null-byte.wonderhowto.com/how-to/top-10-things-do-after-installing-kali-linux-0186450/</a> ，正文如下：</p>
@@ -119,8 +119,8 @@
 <p>在创建 <strong>ls</strong> 别名后再次输出的示例。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line">total 220K</span><br><span class="line">-rw-------  1 root root  15K Aug 24  2015  folder-pictures.png</span><br><span class="line">-rw-------  1 root root 8.7K Aug 24  2015  folder.png</span><br><span class="line">-rw-------  1 root root  11K Aug 24  2015  package-x-generic.png</span><br><span class="line">-rw-------  1 root root 5.5K Sep  3  2015  text-x-generic.png</span><br><span class="line">drwxr-xr-x 12 root root 4.0K May 31 00:44 <span class="string">&#x27;Windows 10 Icons&#x27;</span>/</span><br><span class="line">drwxr-xr-x 18 root root 4.0K May 31 00:44  Windows-10/</span><br><span class="line">-rwxr-x---  1 root root 103K May 31 00:49  text-x-generic.ico*</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jun 11 21:57  dumpzilla-b3075d1960874ce82ea76a5be9f58602afb61c39/</span><br><span class="line">-rw-r--r--  1 root root   52 Jul  5 18:13  bogus_gmail.creds</span><br><span class="line">-rw-r--r--  1 root root  15K Jul  5 18:28  smtp.list</span><br><span class="line">-rw-r--r--  1 root root  181 Jul  5 18:43  smtp.cracked</span><br><span class="line">-rw-r--r--  1 root root  23K Jul 23 18:18  androidbins.txt</span><br><span class="line">drwxr-xr-x  5 root root 4.0K Jul 23 19:22  ./</span><br><span class="line">drwxr-xr-x 23 root root 4.0K Aug  9 04:25  ../</span><br></pre></td></tr></table></figure>
 
-<p>我们得到了更详细的输出。<strong>ls</strong> 命令现在自动使用 <strong>-l</strong>，**-a<strong>，</strong>-t<strong>，</strong>-h** 和 <strong>-r</strong> 参数。所有这些参数都将指示 <strong>ls</strong> 使用列表（**-l<strong>）格式，列出所有（</strong>-a<strong>）文件 —— 包括隐藏文件 —— 并以人类可读（</strong>-h**）的格式打印文件大小（例如，1K，234M，5G）。</p>
-<p>我的别名还将按修改时间（**-t<strong>）对输出进行排序，并反转（</strong>-r**）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的 <strong>ls</strong> 偏好，但你的可能会有所不同。</p>
+<p>我们得到了更详细的输出。<strong>ls</strong> 命令现在自动使用 <strong>-l</strong>，<strong>-a</strong>，<strong>-t</strong>，<strong>-h</strong> 和 <strong>-r</strong> 参数。所有这些参数都将指示 <strong>ls</strong> 使用列表（<strong>-l</strong>）格式，列出所有（<strong>-a</strong>）文件 —— 包括隐藏文件 —— 并以人类可读（<strong>-h</strong>）的格式打印文件大小（例如，1K，234M，5G）。</p>
+<p>我的别名还将按修改时间（<strong>-t</strong>）对输出进行排序，并反转（<strong>-r</strong>）列表的顺序，以便最近修改的文件出现在终端的底部。这个参数集合是我个人的 <strong>ls</strong> 偏好，但你的可能会有所不同。</p>
 <p>要创建别名，请使用 <strong>nano</strong> 或你喜欢的文本编辑器打开 <code>/root/.bash_aliases</code>。添加以下行以创建别名。</p>
 <ul>
 <li>不要错过：<a href="https://null-byte.wonderhowto.com/how-to/intro-vim-unix-text-editor-every-hacker-should-be-familiar-with-0174674/">Vim 简介，每个黑客都应该知道的 Unix 文本编辑器</a></li>
@@ -130,7 +130,7 @@
 <p>我们还可以进一步向 <code>.bash_aliases</code> 文件添加更复杂的函数。下面是一个简单的函数示例，旨在使 Kali 保持最新状态。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> apt-updater &#123;</span><br><span class="line">    apt-get update &amp;&amp;</span><br><span class="line">    apt-get dist-upgrade -Vy &amp;&amp;</span><br><span class="line">    apt-get autoremove -y &amp;&amp;</span><br><span class="line">    apt-get autoclean &amp;&amp;</span><br><span class="line">    apt-get clean &amp;&amp;</span><br><span class="line">    reboot</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>保存对 <code>.bash_aliases</code> 文件所做的更改后，打开一个新终端以使更改生效。运行新创建的 <strong>apt-updater</strong> 函数将调用一系列 <strong>apt-get</strong> 命令，这些命令将自动更新和维护你的系统。如果先前的命令失败，＆ 符号（**&amp;&amp;**）确保该函数不会继续执行以下命令。</p>
+<p>保存对 <code>.bash_aliases</code> 文件所做的更改后，打开一个新终端以使更改生效。运行新创建的 <strong>apt-updater</strong> 函数将调用一系列 <strong>apt-get</strong> 命令，这些命令将自动更新和维护你的系统。如果先前的命令失败，＆ 符号（<strong>&amp;&amp;</strong>）确保该函数不会继续执行以下命令。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-updater</span><br></pre></td></tr></table></figure>
 
 <p>有关 Bash 别名的更多信息，请查看 Kody 的“<a href="https://null-byte.wonderhowto.com/how-to/mac-for-hackers-set-up-macos-system-for-wi-fi-packet-capturing-0186354/">为 Wi-Fi 数据包捕获设置 MacOS 系统</a>”一文。</p>
@@ -176,7 +176,7 @@
 <p>要安装 Atom，请访问他们的网站并下载最新的 <a href="https://atom.io/download/deb">Debian 安装程序</a>。接下来，使用下面的 apt-get 命令打开终端并安装所需的依赖项。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install gvfs gvfs-common gvfs-daemons gvfs-libs gconf-service gconf2 gconf2-common gvfs-bin psmisc</span><br><span class="line"></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">Correcting dependencies... Done</span><br><span class="line">The following NEW packages will be installed:</span><br><span class="line">   gconf-service (3.2.6-4.1)</span><br><span class="line">   gconf2 (3.2.6-4.1)</span><br><span class="line">   gconf2-common (3.2.6-4.1)</span><br><span class="line">   gvfs-bin (1.36.2-1)</span><br><span class="line">   libgconf-2-4 (3.2.6-4.1)</span><br><span class="line">   psmisc (23.1-1+b1)</span><br><span class="line">The following packages will be upgraded:</span><br><span class="line">   gvfs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-common (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-daemons (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">   gvfs-libs (1.36.1-1 =&gt; 1.36.2-1)</span><br><span class="line">4 upgraded, 6 newly installed, 0 to remove and 462 not upgraded.</span><br><span class="line">1 not fully installed or removed.</span><br><span class="line">Need to get 3,317 kB of archives.</span><br><span class="line">After this operation, 8,909 kB of additional disk space will be used.</span><br><span class="line">Do you want to <span class="built_in">continue</span>? [Y/n] y</span><br></pre></td></tr></table></figure>
 
-<p>最后，使用命令行包管理器 <strong>dpkg</strong> 和 install（**-i**）参数。</p>
+<p>最后，使用命令行包管理器 <strong>dpkg</strong> 和 install（<strong>-i</strong>）参数。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">dpkg -i ~/Downloads/atom-amd64.deb</span><br><span class="line"></span><br><span class="line">(Reading database ... 191882 files and directories currently installed.)</span><br><span class="line">Preparing to unpack atom-amd64.deb ...</span><br><span class="line">Unpacking atom (1.29.0) over (1.29.0) ...</span><br><span class="line">Setting up atom (1.29.0) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> desktop-file-utils (0.23-3) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> mime-support (3.60) ...</span><br></pre></td></tr></table></figure>
 
 <p>完成后，Atom 将显示在“应用程序”菜单中。</p>
@@ -202,37 +202,6 @@
       </categories>
       <tags>
         <tag>Kali</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android Studio模拟器相关问题解决</title>
-    <url>/2018/08/21/android-emulator-problem/</url>
-    <content><![CDATA[<h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2><span id="more"></span>
-<h2 id="命令行启动"><a href="#命令行启动" class="headerlink" title="命令行启动"></a>命令行启动</h2><p>Android SDK工具包中包含着一个模拟器的命令行程序 —— <code>emulator</code>，它可以在不启动Android Studio的情况下开启Android模拟器，在Windows系统中，<code>emulator</code>位于<code>%LOCALAPPDATA%\Android\Sdk\tools</code>文件夹下，<code>emulator -list-avds</code>命令可以列出所有已创建的AVD，<code>emulator -avd &lt;avd-name&gt;</code>命令即可启动相应的AVD，要查看<code>emulator</code>更多的参数，可以使用<code>emulator -help</code>。</p>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>建议创建的AVD为Pixel，版本为Android 7.1.1。</p>
-]]></content>
-      <categories>
-        <category>Bug</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>谈谈Android的root</title>
-    <url>/2018/09/18/android-root/</url>
-    <content><![CDATA[<p>Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。</p>
-<h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><p>在Linux中获得root权限有2个命令，<code>su</code>与<code>sudo</code>，<code>sudo</code>只是为了短暂的获得root权限以执行某些操作(superuser do)，而<code>su</code>其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用<code>sudo</code>执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用<code>su</code>切换到root用户时，需要输入root用户的密码。<br>在Linux中，文件的权限有<code>rwx</code>三种，即可读(read)、可写(write)、可执行(execute)，其中<code>r</code>又等于4，<code>w</code>等于2，<code>x</code>等于1。所以，如果一个文件同时具有<code>rwx</code>权限，那么它的权限位就等于7。</p>
-<span id="more"></span>
-<h2 id="Android相关"><a href="#Android相关" class="headerlink" title="Android相关"></a>Android相关</h2><p>Android本身是不愿意让用户获得root权限的，所以Android中没有<code>su</code>或<code>sudo</code>这些命令。所以，获得root权限的第一步就是要把<code>su</code>命令拷贝到Android的<code>/system/bin</code>或<code>/system/xbin</code>目录下。但是拷贝之后并不能直接使用<code>su</code>命令，因为Android中<code>su</code>的运行机制和Linux中不同。在Android中只有root用户才能使用<code>su</code>命令，非root用户无权使用<code>su</code>命令。这其实是一个逻辑闭环：使用<code>su</code>命令可以切换到root，但只有root用户才可以使用<code>su</code>命令。好在Linux中文件的权限除了<code>rwx</code>三种之外，还有<code>s</code>权限，<code>s</code>代表当任何一个用户执行该文件时都拥有文件所有者的权限，换句话来说，如果一个文件的所有者是root，且它的执行权限标志位是<code>s</code>，那么不管谁执行这个文件，他执行的时候都是以root身份执行的。<br>基于以上，Android获取root权限大致可以分为如下3步：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拷贝su到指定目录下</span></span><br><span class="line"><span class="built_in">cp</span> /data/tmp/su /system/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su所有者设为root</span></span><br><span class="line"><span class="built_in">chown</span> root:root su</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su标志位设为-rwsr-xr-x</span></span><br><span class="line"><span class="built_in">chmod</span> 4775 /system/bin/su</span><br></pre></td></tr></table></figure>
-
-<p>但是，除了上面第一步以外，剩下两步都需要root权限才能成功执行，这就又造成了一个逻辑闭环：即通过上面的代码可以获得root权限，但必须有root权限才能执行上面的代码。这时的解决办法就是寻找Android系统的漏洞，系统中有些进程是以root权限运行的，只有找出那些有漏洞的进程，然后利用缓冲区溢出让其执行我们上面的命令，即可完成root。<br>所以，总的来说，Android获取root权限最重要的一步，就是寻找系统的漏洞，然后利用之。</p>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>了解了Android root的基本原理后，需要理清一些常用术语：</p>
-<h3 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h3><h3 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h3><h3 id="线刷"><a href="#线刷" class="headerlink" title="线刷"></a>线刷</h3><h3 id="卡刷"><a href="#卡刷" class="headerlink" title="卡刷"></a>卡刷</h3><h2 id="Nexus的root"><a href="#Nexus的root" class="headerlink" title="Nexus的root"></a>Nexus的root</h2><p>Nexus系列作为Google的亲儿子，自然少不了root解决方案，目前root Nexus设备使用最多的软件是<a href="http://www.wugfresh.com/nrt/">Nexus Root Toolkit(NRT)</a>。请注意，此软件运行前会先进行更新，这会花费较长的时间，需要耐心等待。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -280,6 +249,37 @@
         <tag>计算机取证</tag>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>谈谈Android的root</title>
+    <url>/2018/09/18/android-root/</url>
+    <content><![CDATA[<p>Android的内核是Linux，所以Android的root和Linux的root有些许关系，不妨先回顾一下Linux中是如何获取root的。</p>
+<h2 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h2><p>在Linux中获得root权限有2个命令，<code>su</code>与<code>sudo</code>，<code>sudo</code>只是为了短暂的获得root权限以执行某些操作(superuser do)，而<code>su</code>其实是为了切换用户(switch user)，但当其不带参数直接执行时，默认为切换到root用户。使用<code>sudo</code>执行某些需要root权限的操作时，需要输入当前用户的密码；而直接使用<code>su</code>切换到root用户时，需要输入root用户的密码。<br>在Linux中，文件的权限有<code>rwx</code>三种，即可读(read)、可写(write)、可执行(execute)，其中<code>r</code>又等于4，<code>w</code>等于2，<code>x</code>等于1。所以，如果一个文件同时具有<code>rwx</code>权限，那么它的权限位就等于7。</p>
+<span id="more"></span>
+<h2 id="Android相关"><a href="#Android相关" class="headerlink" title="Android相关"></a>Android相关</h2><p>Android本身是不愿意让用户获得root权限的，所以Android中没有<code>su</code>或<code>sudo</code>这些命令。所以，获得root权限的第一步就是要把<code>su</code>命令拷贝到Android的<code>/system/bin</code>或<code>/system/xbin</code>目录下。但是拷贝之后并不能直接使用<code>su</code>命令，因为Android中<code>su</code>的运行机制和Linux中不同。在Android中只有root用户才能使用<code>su</code>命令，非root用户无权使用<code>su</code>命令。这其实是一个逻辑闭环：使用<code>su</code>命令可以切换到root，但只有root用户才可以使用<code>su</code>命令。好在Linux中文件的权限除了<code>rwx</code>三种之外，还有<code>s</code>权限，<code>s</code>代表当任何一个用户执行该文件时都拥有文件所有者的权限，换句话来说，如果一个文件的所有者是root，且它的执行权限标志位是<code>s</code>，那么不管谁执行这个文件，他执行的时候都是以root身份执行的。<br>基于以上，Android获取root权限大致可以分为如下3步：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拷贝su到指定目录下</span></span><br><span class="line"><span class="built_in">cp</span> /data/tmp/su /system/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su所有者设为root</span></span><br><span class="line"><span class="built_in">chown</span> root:root su</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将su标志位设为-rwsr-xr-x</span></span><br><span class="line"><span class="built_in">chmod</span> 4775 /system/bin/su</span><br></pre></td></tr></table></figure>
+
+<p>但是，除了上面第一步以外，剩下两步都需要root权限才能成功执行，这就又造成了一个逻辑闭环：即通过上面的代码可以获得root权限，但必须有root权限才能执行上面的代码。这时的解决办法就是寻找Android系统的漏洞，系统中有些进程是以root权限运行的，只有找出那些有漏洞的进程，然后利用缓冲区溢出让其执行我们上面的命令，即可完成root。<br>所以，总的来说，Android获取root权限最重要的一步，就是寻找系统的漏洞，然后利用之。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>了解了Android root的基本原理后，需要理清一些常用术语：</p>
+<h3 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h3><h3 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h3><h3 id="线刷"><a href="#线刷" class="headerlink" title="线刷"></a>线刷</h3><h3 id="卡刷"><a href="#卡刷" class="headerlink" title="卡刷"></a>卡刷</h3><h2 id="Nexus的root"><a href="#Nexus的root" class="headerlink" title="Nexus的root"></a>Nexus的root</h2><p>Nexus系列作为Google的亲儿子，自然少不了root解决方案，目前root Nexus设备使用最多的软件是<a href="http://www.wugfresh.com/nrt/">Nexus Root Toolkit(NRT)</a>。请注意，此软件运行前会先进行更新，这会花费较长的时间，需要耐心等待。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android Studio模拟器相关问题解决</title>
+    <url>/2018/08/21/android-emulator-problem/</url>
+    <content><![CDATA[<h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2><span id="more"></span>
+<h2 id="命令行启动"><a href="#命令行启动" class="headerlink" title="命令行启动"></a>命令行启动</h2><p>Android SDK工具包中包含着一个模拟器的命令行程序 —— <code>emulator</code>，它可以在不启动Android Studio的情况下开启Android模拟器，在Windows系统中，<code>emulator</code>位于<code>%LOCALAPPDATA%\Android\Sdk\tools</code>文件夹下，<code>emulator -list-avds</code>命令可以列出所有已创建的AVD，<code>emulator -avd &lt;avd-name&gt;</code>命令即可启动相应的AVD，要查看<code>emulator</code>更多的参数，可以使用<code>emulator -help</code>。</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>建议创建的AVD为Pixel，版本为Android 7.1.1。</p>
+]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
   </entry>
   <entry>
     <title>反取证之 Windows</title>
@@ -524,17 +524,6 @@
       </categories>
   </entry>
   <entry>
-    <title>强大的autojump</title>
-    <url>/2018/09/19/autojump/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>身份认证的几种方式</title>
     <url>/2018/11/16/authentication/</url>
     <content><![CDATA[<p>身份认证的目的是确认当前所声称为某种身份的用户，确实是所声称的用户。简单来说，就是为了确认<strong>你是你</strong>。</p>
@@ -552,6 +541,17 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
+  </entry>
+  <entry>
+    <title>强大的autojump</title>
+    <url>/2018/09/19/autojump/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Base 编码家族</title>
@@ -976,14 +976,6 @@
       </tags>
   </entry>
   <entry>
-    <title>巴科斯范式</title>
-    <url>/2018/09/12/bnf/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>使用 BOINC 来挖掘格雷德币</title>
     <url>/2018/12/16/boinc-gridcoin/</url>
     <content><![CDATA[<h2 id="BOINC"><a href="#BOINC" class="headerlink" title="BOINC"></a>BOINC</h2><p><a href="https://boinc.berkeley.edu/">BOINC</a>，全称 Berkeley Open Infrastructure for Network Computing，即伯克利开放式网络计算平台，是由加州大学伯克利分校发展出的分布式计算平台。BOINC 会利用志愿者电脑的空闲资源来对各个项目下发的任务进行运算，目前 BOINC 平台上有如下知名项目：</p>
@@ -1013,6 +1005,14 @@
 <li>在 BOINC 中进行同步：依次点击 <code>Tools</code> ——&gt; <code>Synchronize with grcpool.com</code>，并按照提示完成。</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>巴科斯范式</title>
+    <url>/2018/09/12/bnf/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -1507,7 +1507,7 @@
 <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p><strong>编译（compile）</strong>，一般而言是将源代码转换成汇编代码，用以实现这种过程的工具称为<strong>编译器（compiler）</strong>。但要注意，编译器在同一时刻只能转换一个编译单元，所谓<strong>编译单元</strong>是指单个的源文件。</p>
 <p>编译器一般由相应的编程语言提供。</p>
 <h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>程序通常由多个编译单元组成，倘若逐个的去编译，这多少显得有点琐碎，因此我们需要一个自动化工具用来从源代码生成用户可以使用的目标文件，而这个工具就是<strong>构建系统（build system）</strong>，构建系统所作的就是<strong>构建（build）</strong>，构建的过程中肯定会调用到编译。从这个意义上来说，构建的范围比编译更广。</p>
-<p>现在的很多构建系统也包含了<strong>包管理器（package manager）</strong>的功能，用以解决项目依赖的问题。</p>
+<p>现在的很多构建系统也包含了**包管理器（package manager）**的功能，用以解决项目依赖的问题。</p>
 <span id="more"></span>
 
 <h2 id="另外的"><a href="#另外的" class="headerlink" title="另外的"></a>另外的</h2><p>在 Linux 中 编译 C&#x2F;C++，使用最广的编译器是 <strong><a href="https://gcc.gnu.org/">GCC</a></strong> ，即 GNU Compiler Collection（GNU 编译器套件），GCC 的原名为 GNU C Compiler（GNU C 语言编译器），因为在后续逐渐支持了 C++、Java 等更多的语言，所以更改了其缩写的含义。有关 GCC 更详细的信息可参考 <a href="/2019/04/18/gcc/" title="GCC 小记">GCC 小记</a>。</p>
@@ -1520,11 +1520,6 @@
       <categories>
         <category>CheatSheet</category>
       </categories>
-  </entry>
-  <entry>
-    <title>curl wget</title>
-    <url>/2018/09/19/curl-wget/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Udacity CS373：无人驾驶汽车编程学习笔记一</title>
@@ -1540,6 +1535,11 @@
         <tag>CS373</tag>
         <tag>无人驾驶</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>curl wget</title>
+    <url>/2018/09/19/curl-wget/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Windows10的传递优化</title>
@@ -1725,7 +1725,7 @@
     <content><![CDATA[<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>编码（encode）是信息从一种形式或格式转换为另一种形式的过程。相应的，解码（decode）是编码的逆过程。</p>
 <p>常见的编码算法有 ASCII 编码、URL 编码、HTML 编码、<a href="/2018/08/10/base/" title="Base 编码家族">Base64 编码</a>等。</p>
 <h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p><strong>加密</strong>（encryption）是将<strong>明文</strong>（plaintext，cleartext）信息改变为难以读取的<strong>密文</strong>（ciphertext）内容，使之不可读。只有拥有解密方法的对象，经由<strong>解密</strong>（decryption）过程，才能将密文还原为正常可读的内容。</p>
-<p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）</strong>和<strong>非对称加密（Asymmetric encryption）</strong>。</p>
+<p>现代密码学中的加密算法可以分为两类：<strong>对称加密（Symmetric encryption）<strong>和</strong>非对称加密（Asymmetric encryption）</strong>。</p>
 <p>对称加密就是将信息使用一个密钥进行加密，解密时使用同样的密钥，同样的算法进行解密。</p>
 <p>非对称加密，又称<strong>公开密钥加密</strong>，是加密和解密使用不同密钥的算法，一个是公开密钥，一个是私有密钥，一个用作加密的时候，另一个则用作解密，虽然两个密钥在数学上相关，但如果知道了其中一个，并不能凭此计算出另外一个。在通信中，加密通常使用的是对方的公钥，当对方收到密文后可以使用自己的私钥解密。如果加密使用的是自己的私钥，则密文可由任何人解密，由此可验证该文件必定出自该用户，这亦称作<strong>数字签名（Digital Signature）</strong>。</p>
 <p>跑题一下，实际上为了性能，数字签名并不是直接使用私钥加密明文，而是使用私钥加密明文的哈希值。</p>
@@ -1820,6 +1820,14 @@
       </tags>
   </entry>
   <entry>
+    <title>使用GitBook编写电子书籍</title>
+    <url>/2018/12/16/gitbook/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Git小记</title>
     <url>/2018/08/31/git/</url>
     <content><![CDATA[<p><a href="https://git-scm.com/">Git</a>是目前<strong>最流行</strong>的<strong>分布式版本控制系统</strong>（Distributed Version Control System, <strong>DVCS</strong>），类似的工具还有<a href="https://www.mercurial-scm.org/">Mercurial</a>（由<code>hg</code>命令操作）等；在早期，人们常使用<strong>集中式版本控制系统</strong>（Centralized Version Control System，<strong>CVCS</strong>），其典型有<a href="https://www.nongnu.org/cvs/">CVS</a>、<a href="https://subversion.apache.org/">Subversion</a>（SVN）等；现在，越来越多的人开始使用更为优秀的分布式版本控制系统，所谓版本控制，即可以随时记录并切换文件的不同版本。</p>
@@ -1873,14 +1881,6 @@
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>应明确一点，Git是由Linux创始人Linus Torvalds开发的分布式版本控制系统，而GitHub是使用Git实现的代码托管网站，两者并非一类。</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>在命令行中直接输入<code>git</code>，可查看相关命令，要具体查看某个命令的帮助信息，可输入<code>git help &lt;command&gt;</code>，如<code>git help diff</code>，要了解更多关于Git的内容，可以参考<a href="https://git-scm.com/book/zh/v2">《Pro Git》</a>一书。</p>
 ]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>使用GitBook编写电子书籍</title>
-    <url>/2018/12/16/gitbook/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
@@ -2037,8 +2037,10 @@
 <p>全局安装：</p>
 <ul>
 <li>将安装包放在 <code>/usr/local</code> 下</li>
-<li>可以直接在命令行里使用<span id="more"></span></li>
+<li>可以直接在命令行里使用</li>
 </ul>
+<span id="more"></span>
+
 <p>关于 npm 更多的内容请参考 <a href="https://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm 模块安装机制简介</a>。</p>
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>在 <strong>博客所在目录</strong> 执行 <code>hexo version</code> 即可查看 Hexo 版本信息。</p>
 <p>要更新 Hexo 及其插件到最新 <strong>主</strong> 版本，需要在 <strong>博客所在目录</strong> 执行如下命令：</p>
@@ -2518,19 +2520,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于人的信息收集</title>
-    <url>/2018/09/09/human-based-information-gathering/</url>
-    <content><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p>
-<h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>社会工程学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hyper-V 相关问题解决</title>
     <url>/2018/08/20/hyper-v-problem/</url>
     <content><![CDATA[<h2 id="全屏问题"><a href="#全屏问题" class="headerlink" title="全屏问题"></a>全屏问题</h2><p>由于 Hyper-V 最初是为服务器设计的，所以到目前为止，Hyper-V 对于全屏的支持没有 VMware 做得好，同样，Hyper-V 也不能像 VMware 那样随意更改窗口大小，这多少显得很不方便。</p>
@@ -2555,14 +2544,16 @@
       </tags>
   </entry>
   <entry>
-    <title>ifconfig与ip</title>
-    <url>/2018/09/12/ifconfig-ip/</url>
-    <content><![CDATA[]]></content>
+    <title>基于人的信息收集</title>
+    <url>/2018/09/09/human-based-information-gathering/</url>
+    <content><![CDATA[<h2 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h2><p>根据目标朋友圈、微博等社交网络所发的照片，查看Exif信息，可得到目标当时的位置、相机规格等信息。</p>
+<h2 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h2><p>根据目标所连接的WiFi名称可大致判断目标所在的位置，多数情况下，WiFi的名称一般为所在旅馆、餐馆、机构等名称的缩写。</p>
+]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>社会工程学</tag>
       </tags>
   </entry>
   <entry>
@@ -2674,6 +2665,17 @@
       </tags>
   </entry>
   <entry>
+    <title>ifconfig与ip</title>
+    <url>/2018/09/12/ifconfig-ip/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>后渗透测试阶段的信息收集</title>
     <url>/2018/05/09/information-gathering-of-post-exploitation/</url>
     <content><![CDATA[<p>浏览器密码、历史，电脑密码，邮箱密码，QQ 聊天记录，最近打开的文件，环境变量，持久后门</p>
@@ -2722,39 +2724,6 @@
       <tags>
         <tag>计算机网络</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>使用 IPython 替代原生 Python Shell</title>
-    <url>/2018/09/16/ipython/</url>
-    <content><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
-<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.12.0。</p>
-<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
-<span id="more"></span>
-<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出 IPython 相比原生 Python Shell 的一些优势：</p>
-<ul>
-<li>Tab 自动补全</li>
-<li>自动缩进</li>
-<li>语法高亮</li>
-<li>支持命令历史记录</li>
-<li>命令前加 <code>!</code> 可调用系统命令</li>
-<li>命令后加 1 个或 2 个 <code>?</code> 可方便查看对象信息</li>
-<li>有众多的魔法函数（Magic Functions）</li>
-</ul>
-<h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出 IPython 中使用较多的魔法函数：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">%timeit  <span class="comment"># 测试代码段执行时间</span></span><br><span class="line">%hist    <span class="comment"># 查看历史记录</span></span><br><span class="line">%debug   <span class="comment"># 激活交互的调试器(ipdb)</span></span><br><span class="line">%load    <span class="comment"># 加载外部代码</span></span><br><span class="line">%edit    <span class="comment"># 使用编辑器打开</span></span><br></pre></td></tr></table></figure>
-
-<p>要查看更多的魔法函数，可以访问 <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython 的官方文档</a></p>
-<h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动 Jupyter Notebook 直接在命令行输入 <code>jupyter notebook</code> 即可，它会监听本机的 8888 端口，并自动打开浏览器访问。输入 <code>jupyter notebook --help</code> 可以查看它的更多参数。</p>
-<p>Jupyter Notebook 默认采用 <strong>Token</strong> 的方式进行登录，启动后在命令行中会显示当前的 token 值，若没有自动打开浏览器，则可以复制命令行中带 token 的链接并在浏览器中打开即可。</p>
-<p>使用命令 <code>jupyter notebook --generate-config</code> 可生成 Jupyter Notebook 配置文件，默认为 <code>$HOME/.jupyter/jupyter_notebook_config.py</code> 文件。常用的配置项如下：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
-
-<p>最后，在 Linux 下，使用 <code>nohup jupyter notebook &gt; jupyter.log &amp;</code> 可使 Jupyter Notebook 在后台运行并记录日志到当前目录下的 <code>jupyter.log</code> 文件中。</p>
-<p>要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：<a href="/2018/09/25/jupyter-notebook-extensions/" title="Jupyter Notebook 常用扩展">Jupyter Notebook 常用扩展</a>。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>盘点那些互联网公司的学生优惠</title>
@@ -2806,6 +2775,39 @@
 </ul>
 <p>学生只要验证学生身份就可以使用GitHub学生开发者包中提供的工具。</p>
 <h2 id="阿里云云翼计划"><a href="#阿里云云翼计划" class="headerlink" title="阿里云云翼计划"></a><a href="https://promotion.aliyun.com/ntms/act/campus2018.html">阿里云云翼计划</a></h2><p>学生验证学生身份后，每月仅需9.9元即可租用一台阿里云服务器。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用 IPython 替代原生 Python Shell</title>
+    <url>/2018/09/16/ipython/</url>
+    <content><![CDATA[<p>我算是个原教主义者，喜欢原生的东西，不太喜欢第三方的东西，但 IPython 相比原生 Python Shell 的众多优秀特性，让我不由得使用上它。</p>
+<h2 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h2><p><a href="https://ipython.org/"><strong>IPython</strong></a> 最初只是一种基于 Python 的交互式解释器（REPL），慢慢的，IPython 项目中集成了许多新的工具，比如 <strong>IPython Notebook</strong>，这是一种基于 Web 的强大编辑器。从 IPython 4.0 开始，IPython 项目中和语言无关的工具已独立出来形成一个新的项目 <a href="http://jupyter.org/"><strong>Jupyter</strong></a>，从此，IPython Notebook 升级为 <strong>Jupyter Notebook</strong>，开始支持更多的编程语言。而 IPython 将只专注于提供 Python 交互式解释器以及为 Jupyter 提供 Python 内核。当写这篇文章时，IPython 的最新版本为 7.12.0。</p>
+<p>如今，当你去 IPython 官网下载时，它会跳转到 Jupyter 的下载页面，因为 Jupyter 中已经包含了 IPython，同时也建议下载 Jupyter，因为其包含了强大的 Jupyter Notebook，使用 <code>pip install jupyter</code> 即可下载，安装完成后直接输入 <code>ipython</code> 即可进入 IPython 交互式环境。</p>
+<span id="more"></span>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>以下仅列出 IPython 相比原生 Python Shell 的一些优势：</p>
+<ul>
+<li>Tab 自动补全</li>
+<li>自动缩进</li>
+<li>语法高亮</li>
+<li>支持命令历史记录</li>
+<li>命令前加 <code>!</code> 可调用系统命令</li>
+<li>命令后加 1 个或 2 个 <code>?</code> 可方便查看对象信息</li>
+<li>有众多的魔法函数（Magic Functions）</li>
+</ul>
+<h2 id="魔法函数"><a href="#魔法函数" class="headerlink" title="魔法函数"></a>魔法函数</h2><p>以下仅列出 IPython 中使用较多的魔法函数：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">%timeit  <span class="comment"># 测试代码段执行时间</span></span><br><span class="line">%hist    <span class="comment"># 查看历史记录</span></span><br><span class="line">%debug   <span class="comment"># 激活交互的调试器(ipdb)</span></span><br><span class="line">%load    <span class="comment"># 加载外部代码</span></span><br><span class="line">%edit    <span class="comment"># 使用编辑器打开</span></span><br></pre></td></tr></table></figure>
+
+<p>要查看更多的魔法函数，可以访问 <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython 的官方文档</a></p>
+<h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><p>要启动 Jupyter Notebook 直接在命令行输入 <code>jupyter notebook</code> 即可，它会监听本机的 8888 端口，并自动打开浏览器访问。输入 <code>jupyter notebook --help</code> 可以查看它的更多参数。</p>
+<p>Jupyter Notebook 默认采用 <strong>Token</strong> 的方式进行登录，启动后在命令行中会显示当前的 token 值，若没有自动打开浏览器，则可以复制命令行中带 token 的链接并在浏览器中打开即可。</p>
+<p>使用命令 <code>jupyter notebook --generate-config</code> 可生成 Jupyter Notebook 配置文件，默认为 <code>$HOME/.jupyter/jupyter_notebook_config.py</code> 文件。常用的配置项如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 配置是否允许root用户运行，改为`True`则允许</span></span><br><span class="line">c.NotebookApp.allow_root = False</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听地址，改为`*`可监听所有IP</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动后显示的目录，默认为启动时输入命令的目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置启动时是否自动打开浏览器，若在远程服务器上启动Jupyter Notebook，</span></span><br><span class="line"><span class="comment"># 则没必要打开浏览器，改为`False`即可</span></span><br><span class="line">c.NotebookApp.open_browser = True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置登录密码，需要存储密文形式，使用`jupyter notebook password`命令</span></span><br><span class="line"><span class="comment"># 可生成加密后的密码</span></span><br><span class="line">c.NotebookApp.password = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置监听端口</span></span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
+
+<p>最后，在 Linux 下，使用 <code>nohup jupyter notebook &gt; jupyter.log &amp;</code> 可使 Jupyter Notebook 在后台运行并记录日志到当前目录下的 <code>jupyter.log</code> 文件中。</p>
+<p>要了解 Jupyter Notebook 的更多信息，可参考另一篇博文：<a href="/2018/09/25/jupyter-notebook-extensions/" title="Jupyter Notebook 常用扩展">Jupyter Notebook 常用扩展</a>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
@@ -2881,26 +2883,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Kali Rolling 2017 更新后无法启动解决方案</title>
-    <url>/2017/11/25/kali-update-bug/</url>
-    <content><![CDATA[<h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新 Kali 后重新启动会出现如下显示，并无法进入系统界面</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter &#x27;help&#x27; for a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
-
-<p><strong>解决方法：</strong></p>
-<ol>
-<li>在此界面输入 <code>blkid</code> 命令，查看自己的分区号</li>
-<li>依据自己的分区号输入 <code>fsck -y /dev/sda1</code>，我的分区号是 <code>sda1</code>。</li>
-<li>输入 <code>exit</code> 命令退出重启电脑</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Bug</category>
-      </categories>
-      <tags>
-        <tag>Kali</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Kali Rolling 2017 下安装 w3af 出错解决方案</title>
     <url>/2017/11/08/kali-w3af-bug/</url>
     <content><![CDATA[<h2 id="Run-error-module-object-has-no-attribute-SSL-ST-INIT"><a href="#Run-error-module-object-has-no-attribute-SSL-ST-INIT" class="headerlink" title="Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;"></a>Run error: &quot;&#39;module&#39; object has no attribute &#39;SSL_ST_INIT&#39;&quot;.&quot;</h2><p><strong>解决方法 1：</strong></p>
@@ -2939,6 +2921,26 @@
 <p><strong>解决方法：</strong></p>
 <p>执行如下命令</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">apt-get install python-gtksourceview2</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>Kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Kali Rolling 2017 更新后无法启动解决方案</title>
+    <url>/2017/11/25/kali-update-bug/</url>
+    <content><![CDATA[<h2 id="BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash"><a href="#BusyBox-v1-27-2-Debian-1-1-27-2-1-built-in-shell-ash" class="headerlink" title="BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)"></a>BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</h2><p>有时更新 Kali 后重新启动会出现如下显示，并无法进入系统界面</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">BusyBox v1.27.2 (Debian 1:1.27.2-1) built-in shell (ash)</span><br><span class="line">Enter &#x27;help&#x27; for a list of built-in commands.</span><br><span class="line"></span><br><span class="line">(initramfs)</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方法：</strong></p>
+<ol>
+<li>在此界面输入 <code>blkid</code> 命令，查看自己的分区号</li>
+<li>依据自己的分区号输入 <code>fsck -y /dev/sda1</code>，我的分区号是 <code>sda1</code>。</li>
+<li>输入 <code>exit</code> 命令退出重启电脑</li>
+</ol>
 ]]></content>
       <categories>
         <category>Bug</category>
@@ -3046,69 +3048,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Makefile 小记</title>
-    <url>/2019/04/18/makefile/</url>
-    <content><![CDATA[<p>Linux 中使用最广的构建工具是 <strong>make</strong>，而 make 会读取 <strong>Makefile</strong> 文件中的配置信息来完成构建，一个简单的 Makefile 文件如下所示：</p>
-<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/local</span><br></pre></td></tr></table></figure>
-
-<p>具体而言，冒号前面为 <strong>target</strong>，即要生成的文件；冒号后面为 <strong>dependencies</strong>，即被依赖的文件；每一个 <strong>target:dependencies 对</strong>的下一行为要执行的<strong>命令</strong>（注意要以 Tab 键起首）。当 make 不带参数时，默认执行第一个 target。target 也可以是要求 make 要完成的动作，执行这种 target 后并不能得到和 target 同名的文件，因此，也称做 <strong>phony target</strong>（即伪 target），如第 7 行所示。dependencies 也可以为空，如常用的 target 为 <code>clean</code> 时，就没有依赖，只有命令，一般用于清理工作。</p>
-<p>当输入 <code>make</code> 或 <code>make editor</code>，即可开始构建。若 <code>editor</code> 这个 target 文件不存在，或者 <code>main.o</code>、<code>text.o</code> 这两个依赖文件被修改，都会导致 make 调用其下的命令 <code>gcc -o editor main.o text.o</code>；接下来，由于引用到 <code>main.o</code> 和 <code>text.o</code>，make 会检查 <code>main.o</code> 的依赖 <code>main.c</code>、<code>def.h</code> 有无更新，如果有，则执行其下的命令 <code>gcc -c main.c</code>；同理，也适用于 <code>text.o</code>。当输入 <code>make install</code>，make 会检查 <code>install</code> 的依赖 <code>editor</code> 是否是最新，如果是，则执行其下的命令 <code>mv editor /usr/local</code>。</p>
-<span id="more"></span>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Makefile 中以 <code>#</code> 开头的均为注释。</p>
-<h2 id="回声"><a href="#回声" class="headerlink" title="回声"></a>回声</h2><p>正常情况下，make 会打印每条命令，然后再执行，这就叫做<strong>回声</strong>。在命令的前面加上 <code>@</code>，就可以关闭回声。由于在构建过程中，需要了解当前在执行哪条命令，所以通常只在注释和纯显示的 <code>echo</code> 命令前面加上 <code>@</code>。</p>
-<h2 id="内置目标名"><a href="#内置目标名" class="headerlink" title="内置目标名"></a>内置目标名</h2><p><strong>内置目标名</strong>指示了如果某些名称作为 target（目标名）出现，则具有特殊含义，常用的如下所示：</p>
-<ul>
-<li><code>.PHONY</code>：明确声明伪目标</li>
-<li><code>.SUFFIXES</code>：消除默认后缀规则</li>
-<li><code>.DELETE_ON_ERROR</code>：如果遇到错误（或 make 中断）则删除目标文件</li>
-</ul>
-<p>更多的内置目标名可以参考 <a href="https://www.gnu.org/software/make/manual/html_node/Special-Targets.html#Special-Targets">make 官方手册</a>。</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Makefile 中也可以使用变量，如下所示：</p>
-<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">TXT = Hello World</span><br><span class="line"><span class="section">test:</span></span><br><span class="line">    echo <span class="variable">$(TXT)</span></span><br></pre></td></tr></table></figure>
-
-<p>这类似于 C 语言中的宏，按照传统，变量名一般大写，使用变量时要放在 <code>$()</code> 之中。</p>
-<p>有时，变量的值可能指向另一个变量，比如：<code>V1 = $(V2)</code>，这时会出现一个问题，<code>V1</code> 的值到底在定义时扩展（静态扩展），还是在运行时扩展（动态扩展）？如果 <code>V2</code> 的值是动态变化的，这两种扩展方式的结果可能会差异很大。为了解决类似问题，Makefile 一共提供了四个赋值运算符，如下所示：</p>
-<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在运行时扩展，允许递归扩展。</span></span><br><span class="line">VARIABLE = value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在定义时扩展。</span></span><br><span class="line">VARIABLE := value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只有在该变量为空时才设置值。</span></span><br><span class="line">VARIABLE ?= value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将值追加到变量的尾端。</span></span><br><span class="line">VARIABLE += value</span><br></pre></td></tr></table></figure>
-
-<h2 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h2><p>Makefile 提供了一系列的内置变量，常见的如下所示：</p>
-<ul>
-<li><code>$(CC)</code>：指向当前使用的编译器</li>
-</ul>
-<p>更多的内置变量可以参考 <a href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html">make 官方手册</a>。</p>
-<h2 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h2><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><p>使用条件判断，可以让 make 根据运行时的不同情况选择不同的执行分支。如下所示：</p>
-<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ifeq</span> (<span class="variable">$(CC)</span>,gcc)</span><br><span class="line">  libs=<span class="variable">$(libs_for_gcc)</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  libs=<span class="variable">$(normal_libs)</span></span><br><span class="line"><span class="keyword">endif</span></span><br></pre></td></tr></table></figure>
-
-<p>上面代码判断当前编译器是否为 gcc，然后指定不同的库文件。其中 <code>ifeq</code> 比较参数 <code>arg1</code> 和 <code>arg2</code> 是否相同，类似的，<code>ifneq</code> 比较参数 <code>arg1</code> 和 <code>arg2</code> 是否不相同。</p>
-<p>除此之外，还有 <code>ifdef</code> 判断变量是否被定义，<code>ifndef</code> 判断变量是否没有被定义。</p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Makefile 中还内置了许多函数，可供调用，格式如下：</p>
-<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="variable">$(function arguments)</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$&#123;function arguments&#125;</span><br></pre></td></tr></table></figure>
-
-<p>常用的函数有：</p>
-<ul>
-<li><code>$(shell)</code>：用来执行 shell 命令</li>
-<li><code>$(wildcard)</code>：用来在 Makefile 中，替换 Bash 的通配符。</li>
-<li><code>$(patsubst)</code>：用于模式匹配的替换，语法为 <code>$(patsubst &lt;pattern&gt;,&lt;replacement&gt;,&lt;text&gt;)</code></li>
-<li><code>$(filter)</code>：</li>
-<li><code>$(addsuffix)</code>：</li>
-<li><code>$(addprefix)</code>：</li>
-<li><code>$(if)</code>：</li>
-<li><code>$(foreach)</code>：</li>
-<li><code>$(call)</code>：唯一一个可以用来创建新的参数化的函数，语法为 <code>$(call &lt;expression&gt;,&lt;parm1&gt;,&lt;parm2&gt;,...,&lt;parmn&gt;)</code>，值得注意的是，call 函数在处理参数时，第 2 个及其之后的参数中的空格会被保留，因而在向 call 函数提供参数时，最安全的做法是去除所有多余的空格，避免造成一些奇怪的效果。</li>
-</ul>
-<p>相关示例如下：</p>
-<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># shell函数用法</span></span><br><span class="line">contents := <span class="variable">$(<span class="built_in">shell</span> cat foo)</span> <span class="comment"># 将foo文件中的内容赋值给contents</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># call函数用法</span></span><br><span class="line">reverse =  $(2) $(1)</span><br><span class="line">foo = <span class="variable">$(<span class="built_in">call</span> reverse,a,b)</span> <span class="comment"># 最终foo的值为b a</span></span><br></pre></td></tr></table></figure>
-
-<p>更多的内置函数可以参考 <a href="https://www.gnu.org/software/make/manual/html_node/Functions.html">make 官方手册</a></p>
-<h2 id="引用其它的-Makefile"><a href="#引用其它的-Makefile" class="headerlink" title="引用其它的 Makefile"></a>引用其它的 Makefile</h2><p>在 Makefile 中可以使用 <code>include</code> 关键字把别的 Makefile 包含进来，这很像 C 语言的 <code>#include</code>，被包含的文件会原模原样的放在当前文件的包含位置。<code>include</code> 的语法是：<code>include &lt;filename&gt;</code>，其中被包含的 Makefile 文件通常以 <code>.mk</code> 结尾。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Markdown 小记</title>
     <url>/2018/07/21/markdown-cheatsheet/</url>
     <content><![CDATA[<p>Markdown 是一种轻量<strong>标记语言</strong>，其文件后缀名为 <code>.md</code>，它允许人们采用其规定的语法编写文档，而后 Markdown 解析器会将其转化为有效的 HTML 文档，以便在网页中显示，时至今日，有许多 Markdown 解析器增强了 Markdown 的基本语法，这就造成了 Markdown 有多种<strong>风格</strong>（flavor）。</p>
@@ -3196,6 +3135,69 @@
       </tags>
   </entry>
   <entry>
+    <title>Makefile 小记</title>
+    <url>/2019/04/18/makefile/</url>
+    <content><![CDATA[<p>Linux 中使用最广的构建工具是 <strong>make</strong>，而 make 会读取 <strong>Makefile</strong> 文件中的配置信息来完成构建，一个简单的 Makefile 文件如下所示：</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">editor : main.o text.o</span><br><span class="line">    gcc -o editor main.o text.o</span><br><span class="line">main.o : main.c def.h</span><br><span class="line">    gcc -c main.c  <span class="comment">#-c参数指定生成.o文件</span></span><br><span class="line">text.o : text.c com.h</span><br><span class="line">    gcc -c text.c</span><br><span class="line">install : editor</span><br><span class="line">    mv editor /usr/local</span><br></pre></td></tr></table></figure>
+
+<p>具体而言，冒号前面为 <strong>target</strong>，即要生成的文件；冒号后面为 <strong>dependencies</strong>，即被依赖的文件；每一个 <strong>target:dependencies 对</strong>的下一行为要执行的<strong>命令</strong>（注意要以 Tab 键起首）。当 make 不带参数时，默认执行第一个 target。target 也可以是要求 make 要完成的动作，执行这种 target 后并不能得到和 target 同名的文件，因此，也称做 <strong>phony target</strong>（即伪 target），如第 7 行所示。dependencies 也可以为空，如常用的 target 为 <code>clean</code> 时，就没有依赖，只有命令，一般用于清理工作。</p>
+<p>当输入 <code>make</code> 或 <code>make editor</code>，即可开始构建。若 <code>editor</code> 这个 target 文件不存在，或者 <code>main.o</code>、<code>text.o</code> 这两个依赖文件被修改，都会导致 make 调用其下的命令 <code>gcc -o editor main.o text.o</code>；接下来，由于引用到 <code>main.o</code> 和 <code>text.o</code>，make 会检查 <code>main.o</code> 的依赖 <code>main.c</code>、<code>def.h</code> 有无更新，如果有，则执行其下的命令 <code>gcc -c main.c</code>；同理，也适用于 <code>text.o</code>。当输入 <code>make install</code>，make 会检查 <code>install</code> 的依赖 <code>editor</code> 是否是最新，如果是，则执行其下的命令 <code>mv editor /usr/local</code>。</p>
+<span id="more"></span>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>Makefile 中以 <code>#</code> 开头的均为注释。</p>
+<h2 id="回声"><a href="#回声" class="headerlink" title="回声"></a>回声</h2><p>正常情况下，make 会打印每条命令，然后再执行，这就叫做<strong>回声</strong>。在命令的前面加上 <code>@</code>，就可以关闭回声。由于在构建过程中，需要了解当前在执行哪条命令，所以通常只在注释和纯显示的 <code>echo</code> 命令前面加上 <code>@</code>。</p>
+<h2 id="内置目标名"><a href="#内置目标名" class="headerlink" title="内置目标名"></a>内置目标名</h2><p><strong>内置目标名</strong>指示了如果某些名称作为 target（目标名）出现，则具有特殊含义，常用的如下所示：</p>
+<ul>
+<li><code>.PHONY</code>：明确声明伪目标</li>
+<li><code>.SUFFIXES</code>：消除默认后缀规则</li>
+<li><code>.DELETE_ON_ERROR</code>：如果遇到错误（或 make 中断）则删除目标文件</li>
+</ul>
+<p>更多的内置目标名可以参考 <a href="https://www.gnu.org/software/make/manual/html_node/Special-Targets.html#Special-Targets">make 官方手册</a>。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Makefile 中也可以使用变量，如下所示：</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">TXT = Hello World</span><br><span class="line"><span class="section">test:</span></span><br><span class="line">    echo <span class="variable">$(TXT)</span></span><br></pre></td></tr></table></figure>
+
+<p>这类似于 C 语言中的宏，按照传统，变量名一般大写，使用变量时要放在 <code>$()</code> 之中。</p>
+<p>有时，变量的值可能指向另一个变量，比如：<code>V1 = $(V2)</code>，这时会出现一个问题，<code>V1</code> 的值到底在定义时扩展（静态扩展），还是在运行时扩展（动态扩展）？如果 <code>V2</code> 的值是动态变化的，这两种扩展方式的结果可能会差异很大。为了解决类似问题，Makefile 一共提供了四个赋值运算符，如下所示：</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在运行时扩展，允许递归扩展。</span></span><br><span class="line">VARIABLE = value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在定义时扩展。</span></span><br><span class="line">VARIABLE := value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只有在该变量为空时才设置值。</span></span><br><span class="line">VARIABLE ?= value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将值追加到变量的尾端。</span></span><br><span class="line">VARIABLE += value</span><br></pre></td></tr></table></figure>
+
+<h2 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h2><p>Makefile 提供了一系列的内置变量，常见的如下所示：</p>
+<ul>
+<li><code>$(CC)</code>：指向当前使用的编译器</li>
+</ul>
+<p>更多的内置变量可以参考 <a href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html">make 官方手册</a>。</p>
+<h2 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h2><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><p>使用条件判断，可以让 make 根据运行时的不同情况选择不同的执行分支。如下所示：</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ifeq</span> (<span class="variable">$(CC)</span>,gcc)</span><br><span class="line">  libs=<span class="variable">$(libs_for_gcc)</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  libs=<span class="variable">$(normal_libs)</span></span><br><span class="line"><span class="keyword">endif</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码判断当前编译器是否为 gcc，然后指定不同的库文件。其中 <code>ifeq</code> 比较参数 <code>arg1</code> 和 <code>arg2</code> 是否相同，类似的，<code>ifneq</code> 比较参数 <code>arg1</code> 和 <code>arg2</code> 是否不相同。</p>
+<p>除此之外，还有 <code>ifdef</code> 判断变量是否被定义，<code>ifndef</code> 判断变量是否没有被定义。</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Makefile 中还内置了许多函数，可供调用，格式如下：</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="variable">$(function arguments)</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$&#123;function arguments&#125;</span><br></pre></td></tr></table></figure>
+
+<p>常用的函数有：</p>
+<ul>
+<li><code>$(shell)</code>：用来执行 shell 命令</li>
+<li><code>$(wildcard)</code>：用来在 Makefile 中，替换 Bash 的通配符。</li>
+<li><code>$(patsubst)</code>：用于模式匹配的替换，语法为 <code>$(patsubst &lt;pattern&gt;,&lt;replacement&gt;,&lt;text&gt;)</code></li>
+<li><code>$(filter)</code>：</li>
+<li><code>$(addsuffix)</code>：</li>
+<li><code>$(addprefix)</code>：</li>
+<li><code>$(if)</code>：</li>
+<li><code>$(foreach)</code>：</li>
+<li><code>$(call)</code>：唯一一个可以用来创建新的参数化的函数，语法为 <code>$(call &lt;expression&gt;,&lt;parm1&gt;,&lt;parm2&gt;,...,&lt;parmn&gt;)</code>，值得注意的是，call 函数在处理参数时，第 2 个及其之后的参数中的空格会被保留，因而在向 call 函数提供参数时，最安全的做法是去除所有多余的空格，避免造成一些奇怪的效果。</li>
+</ul>
+<p>相关示例如下：</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># shell函数用法</span></span><br><span class="line">contents := <span class="variable">$(<span class="built_in">shell</span> cat foo)</span> <span class="comment"># 将foo文件中的内容赋值给contents</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># call函数用法</span></span><br><span class="line">reverse =  $(2) $(1)</span><br><span class="line">foo = <span class="variable">$(<span class="built_in">call</span> reverse,a,b)</span> <span class="comment"># 最终foo的值为b a</span></span><br></pre></td></tr></table></figure>
+
+<p>更多的内置函数可以参考 <a href="https://www.gnu.org/software/make/manual/html_node/Functions.html">make 官方手册</a></p>
+<h2 id="引用其它的-Makefile"><a href="#引用其它的-Makefile" class="headerlink" title="引用其它的 Makefile"></a>引用其它的 Makefile</h2><p>在 Makefile 中可以使用 <code>include</code> 关键字把别的 Makefile 包含进来，这很像 C 语言的 <code>#include</code>，被包含的文件会原模原样的放在当前文件的包含位置。<code>include</code> 的语法是：<code>include &lt;filename&gt;</code>，其中被包含的 Makefile 文件通常以 <code>.mk</code> 结尾。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微软平台技术简介</title>
     <url>/2018/09/22/microsoft-technology/</url>
     <content><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>微软最初的操作系统的DOS，DOS只是一个命令行形式，后来</p>
@@ -3264,24 +3266,6 @@
       </tags>
   </entry>
   <entry>
-    <title>开源协议漫谈</title>
-    <url>/2018/11/02/open-sourse-license/</url>
-    <content><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p>
-<span id="more"></span>
-<h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p>
-<h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p>
-<h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p>
-<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p>
-<h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
-<h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
-<h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
-<h2 id="作何选择"><a href="#作何选择" class="headerlink" title="作何选择"></a>作何选择</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>P2P 与 BitTorrent</title>
     <url>/2020/12/15/p2p-bittorrent/</url>
     <content><![CDATA[<p>P2P 是一种<strong>体系结构</strong>，就好像 C&#x2F;S 体系结构一样，但不同的是，P2P 对总是打开的基础设施服务器有最小的（或者没有）依赖，成对间歇连接的主机（称为<strong>对等方</strong>）彼此直接通信。</p>
@@ -3322,6 +3306,24 @@
       <tags>
         <tag>计算机网络</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>开源协议漫谈</title>
+    <url>/2018/11/02/open-sourse-license/</url>
+    <content><![CDATA[<p><strong>开源协议</strong>（Open Source License）往往又被称为<strong>开源许可证</strong>，世界上的开源协议大约有上百种，但最常见的也无非6种而已，即GPL、LGPL、Mozilla、Apache、BSD和MIT，下文将逐个介绍，此外，本文还介绍了CC BY-NC-SA协议。</p>
+<span id="more"></span>
+<h2 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h2><p><a href="https://www.gnu.org/licenses/gpl.html">GPL</a>全称GNU General Public License，即<strong>GNU通用公共许可协议</strong>，这是由GNU开源组织发起的，目前最新版是3.0。</p>
+<h2 id="LGPL"><a href="#LGPL" class="headerlink" title="LGPL"></a>LGPL</h2><p><a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">LGPL</a>全称GNU Lesser General Public License，即<strong>GNU宽通用公共许可证</strong>，这也是由GNU开源组织发起的，目前最新版是3.0。</p>
+<h2 id="Mozilla"><a href="#Mozilla" class="headerlink" title="Mozilla"></a>Mozilla</h2><p><a href="https://www.mozilla.org/en-US/MPL/">Mozilla Public License</a>简称MPL，这是由Mozilla开源组织发起的，目前最新版是2.0。</p>
+<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><a href="https://www.apache.org/licenses/">Apache License</a>是由Apache开源组织发起的，目前最新版是2.0。</p>
+<h2 id="BSD"><a href="#BSD" class="headerlink" title="BSD"></a>BSD</h2><p>BSD License是由加州大学伯克利分校发起的，</p>
+<h2 id="MIT"><a href="#MIT" class="headerlink" title="MIT"></a>MIT</h2><p>MIT License是由麻省理工学院发起的</p>
+<h2 id="CC-BY-NC-SA"><a href="#CC-BY-NC-SA" class="headerlink" title="CC BY-NC-SA"></a>CC BY-NC-SA</h2><p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>全称Creative Commons-Attribution-Noncommercial-ShareAlike，即<strong>创作共享-署名-非商业性-相同方式共享</strong>，这是由<strong>创作共享</strong>组织发起的，目前最新版是4.0。</p>
+<h2 id="作何选择"><a href="#作何选择" class="headerlink" title="作何选择"></a>作何选择</h2><p>如何简单快速的选择自己所需的开源协议呢？乌克兰程序员Paul Bagwell制作了一张分析图，国内程序员阮一峰根据此图制作出了中文版，图片如下（摘选自阮一峰博客<a href="https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">如何选择开源许可证？</a>）：<img src="/images/license.png" alt="license">此外，<a href="https://choosealicense.com/">https://choosealicense.com/</a> 是一个不错的网站，它使你通过回答一些问题来选择合适的开源协议。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>Linux 中 /etc/passwd 与 /etc/shadow 的区别</title>
@@ -3377,6 +3379,90 @@
       </categories>
       <tags>
         <tag>社会工程学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>POP3、IMAP 和 SMTP</title>
+    <url>/2020/12/29/pop3-imap-smtp/</url>
+    <content><![CDATA[<p>因特网电子邮件系统由 3 个主要部分组成：</p>
+<ul>
+<li><strong>用户代理</strong>（user agent）：允许用户阅读、回复、转发、保存和撰写报文，如微软的 Outlook 和 Apple Mail 等</li>
+<li><strong>邮件服务器</strong>（mail server）：每个接收方在其中的某个邮件服务器上有一个邮箱（mailbox）</li>
+<li><strong>SMTP</strong></li>
+</ul>
+<p>一个典型的邮件发送过程是：从发送方的用户代理开始，传输到发送方的邮件服务器（通过 SMTP 或 HTTP），再传输到接收方的邮件服务器（通过 SMTP），然后在这里被分发到接收方的邮箱中。如果发送方的邮件服务器不能将邮件交付给接收方的邮件服务器，发送方的邮件服务器在一个<strong>报文队列</strong>（message queue）中保持该报文并在以后尝试再次发送。</p>
+<span id="more"></span>
+
+<h2 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h2><p><strong>SMTP</strong>（Simple Mail Transfer Protocol，<strong>简单邮件传输协议</strong>）是因特网电子邮件中主要的应用层协议。它使用 TCP 可靠数据传输服务，从发送方的邮件服务器向接收方的邮件服务器发送邮件。每台邮件服务器既运行 SMTP 的客户端也运行 SMTP 的服务器端。</p>
+<p>SMTP 一般不使用中间邮件服务器发送邮件。</p>
+<p>SMTP 是如何将一个报文从发送邮件服务器传送到接收邮件服务器的呢？首先，客户 SMTP（运行在发送邮件服务器主机上）在 <strong>25</strong> 号端口建立一个到服务器 SMTP（运行在接收邮件服务器主机上）的 TCP 连接。如果服务器没有开机，客户会在稍后继续尝试连接。一旦连接建立，服务器和客户执行某些应用层的握手。在 SMTP 握手的阶段，SMTP 客户指示发送方的邮件地址（产生报文的那个人）和接收方的邮件地址。一旦握手完成，客户发送该报文。该客户如果有另外的报文要发送到该服务器，就在该相同的 TCP 连接上重复这种处理；否则，它指示 TCP 关闭连接。以下是一个例子（S 代表 SMTP 服务器，C 代表 SMTP 客户）：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">S: 220 hamburger.edu</span><br><span class="line">C: HELO crepes.fr</span><br><span class="line">S: 250 Hello crepes.fr, pleased to meet you</span><br><span class="line">C: MAIL FROM: &lt;alice@crepes.fr&gt;</span><br><span class="line">S: 250 alice@crepes.fr ... Sender ok</span><br><span class="line">C: RCPT TO: &lt;bob@hamburger.edu&gt;</span><br><span class="line">S: 250 bob@hamburger.edu ... Recipient ok</span><br><span class="line">C: DATA</span><br><span class="line">S: 354 Enter mail, end with &quot;.&quot; on a line by itself</span><br><span class="line">C: Do you like ketchup?</span><br><span class="line">C: How about pickles?</span><br><span class="line">C: .</span><br><span class="line">S: 250 Message accepted for delivery</span><br><span class="line">C: QUIT</span><br><span class="line">S: 221 hamburger.edu closing connection</span><br></pre></td></tr></table></figure>
+
+<p>在上例中，该客户发送了 5 条命令：<code>HELO</code>（是 HELLO 的缩写）、<code>MAIL FROM</code>、<code>RCPT TO</code>、<code>DATA</code> 以及 <code>QUIT</code>。</p>
+<p>当然，你也可以使用 Telnet 直接与一个 SMTP 服务器对话，如下：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">telnet smtp.office365.com 25</span><br></pre></td></tr></table></figure>
+
+<h3 id="与-HTTP-的对比"><a href="#与-HTTP-的对比" class="headerlink" title="与 HTTP 的对比"></a>与 HTTP 的对比</h3><p>SMTP 与 HTTP 有一些共同的特征：</p>
+<ul>
+<li>这两个协议都用于从一台主机向另一台主机传送文件</li>
+<li>当进行文件传送时，持续的 HTTP 和 SMTP 都使用持续连接</li>
+</ul>
+<p>然而，两者之间也有一些重要的区别：</p>
+<p>首先，HTTP 主要是一个<strong>拉协议</strong>（pull protocol），即在方便的时候，某些人在 Web 服务器上装载信息，用户使用 HTTP 从该服务器拉取这些信息。特别是 TCP 连接是由想接收文件的机器发起的。另一方面，SMTP 基本上是一个<strong>推协议</strong>（push protocol），即发送邮件服务器把文件推向接收邮件服务器。特别是，这个 TCP 连接是由发送该文件的机器发起的。</p>
+<p>第二个区别是由于问世较早， SMTP 要求每个报文（包括它们的体）采用 7 比特 ASCII 码格式。如果某报文包含了非 7 比特 ASCII 字符（如具有重音的法文字符）或二进制数据（如图形文件），则该报文必须按照 7 比特 ASCII 码进行编码。HTTP 数据则不受这种限制。</p>
+<p>第三个重要区别是如何处理一个既包含文本又包含图形（也可能是其他媒体类型）的文档。HTTP 把每个对象封装到它自己的 HTTP 响应报文中，而 SMTP 则把所有报文对象放在一个报文之中。</p>
+<h3 id="邮件报文格式"><a href="#邮件报文格式" class="headerlink" title="邮件报文格式"></a>邮件报文格式</h3><p>如同 HTTP 协议，邮件报文也有相应的邮件首部行，每个首部行包含了可读的文本，是由关键词后跟冒号及其值组成的。某些关键词是必须的，另一些则是可选的。每个首部 <em>必须</em> 含有一个 <code>From:</code> 首部行和一个 <code>To:</code> 首部行；一个首部 <em>也许</em> 包含一个 <code>Subject:</code> 首部行以及其他可选的首部行。</p>
+<p>一个典型的报文首部看看起来如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">From: alice@crepes.fr</span><br><span class="line">To: bob@hamburger.edu</span><br><span class="line">Subject: Searching for the meaning of life.</span><br></pre></td></tr></table></figure>
+
+<h2 id="POP3"><a href="#POP3" class="headerlink" title="POP3"></a>POP3</h2><p><strong>POP3</strong>（Post Office Protocol——Version 3，<strong>第三版的邮局协议</strong>）是一个极为简单的邮件访问协议。</p>
+<p>当用户代理（客户）打开了一个到邮件服务器（服务器）端口 <strong>110</strong> 上的 TCP 连接后，POP3 就开始工作了。随着建立 TCP 连接，POP3 按照 3 个阶段进行工作：</p>
+<ol>
+<li><strong>特许</strong>（authorization）：用户代理发送（以明文形式）用户名和口令以鉴别用户</li>
+<li><strong>事务处理</strong>：用户代理取回报文；同时在这个阶段用户代理还能进行如下操作，对报文做删除标记，取消报文删除标记，以及获取邮件的统计信息</li>
+<li><strong>更新</strong>：它出现在客户发出了 quit 命令之后，目的是结束该 POP3 会话；这时，该邮件服务器删除那些被标记为删除的报文</li>
+</ol>
+<p>在 POP3 的事务处理过程中，用户代理发出一些命令，服务器对每个命令做出回答。回答可能有两种：</p>
+<ul>
+<li><code>+OK</code>：（有时后面还跟有服务器到客户的数据），被服务器用来指示前面的命令是正常的</li>
+<li><code>-ERR</code>：被服务器用来指示前面的命令出现了某些差错</li>
+</ul>
+<p>特许阶段有两个主要的命令：<code>user &lt;user name&gt;</code> 和 <code>pass &lt;password&gt;</code>。你可以使用 Telnet 进行测试，如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">telnet outlook.office365.com 110</span><br><span class="line">+OK The Microsoft Exchange POP3 service is ready.</span><br><span class="line">user bob</span><br><span class="line">+OK</span><br><span class="line">pass hungry</span><br><span class="line">+OK user successfully logged on</span><br></pre></td></tr></table></figure>
+
+<p>在特许阶段以后，用户代理仅使用 4 个命令 <code>list</code>、<code>retr</code>、<code>dele</code> 和 <code>quit</code>。</p>
+<p>使用 POP3 的用户代理通常被用户配置为“<strong>下载并删除</strong>”或者“<strong>下载并保留</strong>”方式。POP3 用户代理发出的命令序列取决于用户代理程序被配置为这两种工作方式的哪一种。使用下载并删除方式，用户代理发出 <code>list</code> —— <code>retr</code> —— <code>dele</code> 命令，如下（C 代表客户，S 代表服务器）：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">C: list</span><br><span class="line">S: 1 498</span><br><span class="line">S: 2 912</span><br><span class="line">S: .</span><br><span class="line">C: retr 1</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 1</span><br><span class="line">C: retr 2</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 2</span><br><span class="line">C: quit</span><br><span class="line">S: +OK POP3 server signing off</span><br></pre></td></tr></table></figure>
+
+<p>使用下载并保留方式，用户代理下载某邮件后，该邮件仍保留在邮件服务器上。</p>
+<h2 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h2><p><strong>IMAP</strong>（Internet Mail Access Protocol，<strong>因特网邮件访问协议</strong>）是一个相比 POP3 更强大的邮件访问协议。</p>
+<p>相比 POP3，IMAP 协议为用户提供了创建文件夹以及将邮件从一个文件夹移动到另一个文件夹的命令；还为用户提供了在远程文件夹中查询邮件的命令，按指定条件去查询匹配的邮件；它还提供了允许用户代理获取报文某些部分的命令。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>相比于 SMTP，POP3 和 IMAP 等邮件访问协议本质上属于拉协议，在基于 Web 的电子邮件中，则可以通过 HTTP 进行邮件的收发，此时，用户代理就是普通的浏览器。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代理链工具：proxychains</title>
+    <url>/2018/10/18/proxychains/</url>
+    <content><![CDATA[<p><a href="https://github.com/haad/proxychains">proxychains</a> ，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。</p>
+<span id="more"></span>
+<h2 id="安装及使用"><a href="#安装及使用" class="headerlink" title="安装及使用"></a>安装及使用</h2><p>在 Ubuntu 下可以使用 <code>sudo apt install proxychains</code> 直接安装，安装完成后会在 <code>/etc</code> 文件夹下生成 <code>proxychains.conf</code> 配置文件，在这个配置文件中可以配置代理链的工作模式和代理地址等。</p>
+<p>proxychains 提供了 3 种代理模式，分别是<strong>动态链</strong>（dynamic_chain）、<strong>严格链</strong>（strict_chain）、<strong>随机链</strong>（random_chain），建议选择动态链。此外，proxychains 默认设置的代理地址为 Tor 的地址，但其实最新版的 Tor 已经更改端口为 9150，用户可以根据自己的需求按照示例格式配置地址。</p>
+<p>配置完成后，要使用 proxychains，只需在相应命令前加上 <code>proxychains</code> 即可，例如 <code>proxychains nmap -sS 192.168.1.1</code>，即可强制 nmap 使用 proxychains 中设置的代理进行扫描。</p>
+<h2 id="与-proxychains-ng"><a href="#与-proxychains-ng" class="headerlink" title="与 proxychains-ng"></a>与 proxychains-ng</h2><p><a href="https://github.com/rofl0r/proxychains-ng">proxychains-ng</a> 是 proxychains 的升级版，其中 ng 寓意为 new generation（新一代），目前并不知晓 proxychains-ng 与 proxychains 是否为同一组织开发，但二者的配置与使用极为相似。</p>
+<p>在 Ubuntu 下可以使用 <code>sudo apt install proxychains-ng</code> 直接安装，要使用 proxychains-ng，只需在相应命令前加上 <code>proxychains4</code> 即可。</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>由于 Windows 与 Linux 的设计哲学不同，Linux 偏向使用命令行，Windows 偏向使用图形界面，所以 proxychains 并未提供 Windows 版。在 Windows 下可以使用另一款代理工具 <a href="https://www.proxifier.com/">Proxifier</a> ，它可以看作是 proxychains 的图形界面版，值得注意的是，Proxifier 是收费的，但你可以免费体验 31 天。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3565,68 +3651,34 @@
       </categories>
   </entry>
   <entry>
-    <title>POP3、IMAP 和 SMTP</title>
-    <url>/2020/12/29/pop3-imap-smtp/</url>
-    <content><![CDATA[<p>因特网电子邮件系统由 3 个主要部分组成：</p>
+    <title>QEMU 小记</title>
+    <url>/2019/04/18/qemu/</url>
+    <content><![CDATA[<p><a href="https://www.qemu.org/">QEMU</a> 是 Linux 中使用最广的模拟器，可以模拟出各种硬件环境，其便于调试的特性也适合于系统开发者。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用 <code>sudo apt install qemu</code> 即可在 Ubuntu 中安装 QEMU，安装完成后会有很多以 <code>qemu-</code> 开头的命令，如：</p>
 <ul>
-<li><strong>用户代理</strong>（user agent）：允许用户阅读、回复、转发、保存和撰写报文，如微软的 Outlook 和 Apple Mail 等</li>
-<li><strong>邮件服务器</strong>（mail server）：每个接收方在其中的某个邮件服务器上有一个邮箱（mailbox）</li>
-<li><strong>SMTP</strong></li>
+<li><code>qemu-system-i386</code>：用于模拟 32 位的 80386 硬件环境</li>
+<li><code>qemu-system-x86_64</code>：用于模拟 64 位的 x86 硬件环境</li>
+<li><code>qemu-system-arm</code>：用于模拟 ARM 硬件环境</li>
 </ul>
-<p>一个典型的邮件发送过程是：从发送方的用户代理开始，传输到发送方的邮件服务器（通过 SMTP 或 HTTP），再传输到接收方的邮件服务器（通过 SMTP），然后在这里被分发到接收方的邮箱中。如果发送方的邮件服务器不能将邮件交付给接收方的邮件服务器，发送方的邮件服务器在一个<strong>报文队列</strong>（message queue）中保持该报文并在以后尝试再次发送。</p>
+<p>再进一步，这些命令又可以分为以 <code>qemu-system-</code> 开头和以 <code>qemu-</code> 开头，以 <code>qemu-system-</code> 开头的用于在模拟的硬件环境上运行整个系统，以 <code>qemu-</code> 开头的用于在模拟的硬件环境上运行某个程序，而非整个系统。</p>
 <span id="more"></span>
 
-<h2 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h2><p><strong>SMTP</strong>（Simple Mail Transfer Protocol，<strong>简单邮件传输协议</strong>）是因特网电子邮件中主要的应用层协议。它使用 TCP 可靠数据传输服务，从发送方的邮件服务器向接收方的邮件服务器发送邮件。每台邮件服务器既运行 SMTP 的客户端也运行 SMTP 的服务器端。</p>
-<p>SMTP 一般不使用中间邮件服务器发送邮件。</p>
-<p>SMTP 是如何将一个报文从发送邮件服务器传送到接收邮件服务器的呢？首先，客户 SMTP（运行在发送邮件服务器主机上）在 <strong>25</strong> 号端口建立一个到服务器 SMTP（运行在接收邮件服务器主机上）的 TCP 连接。如果服务器没有开机，客户会在稍后继续尝试连接。一旦连接建立，服务器和客户执行某些应用层的握手。在 SMTP 握手的阶段，SMTP 客户指示发送方的邮件地址（产生报文的那个人）和接收方的邮件地址。一旦握手完成，客户发送该报文。该客户如果有另外的报文要发送到该服务器，就在该相同的 TCP 连接上重复这种处理；否则，它指示 TCP 关闭连接。以下是一个例子（S 代表 SMTP 服务器，C 代表 SMTP 客户）：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">S: 220 hamburger.edu</span><br><span class="line">C: HELO crepes.fr</span><br><span class="line">S: 250 Hello crepes.fr, pleased to meet you</span><br><span class="line">C: MAIL FROM: &lt;alice@crepes.fr&gt;</span><br><span class="line">S: 250 alice@crepes.fr ... Sender ok</span><br><span class="line">C: RCPT TO: &lt;bob@hamburger.edu&gt;</span><br><span class="line">S: 250 bob@hamburger.edu ... Recipient ok</span><br><span class="line">C: DATA</span><br><span class="line">S: 354 Enter mail, end with &quot;.&quot; on a line by itself</span><br><span class="line">C: Do you like ketchup?</span><br><span class="line">C: How about pickles?</span><br><span class="line">C: .</span><br><span class="line">S: 250 Message accepted for delivery</span><br><span class="line">C: QUIT</span><br><span class="line">S: 221 hamburger.edu closing connection</span><br></pre></td></tr></table></figure>
-
-<p>在上例中，该客户发送了 5 条命令：<code>HELO</code>（是 HELLO 的缩写）、<code>MAIL FROM</code>、<code>RCPT TO</code>、<code>DATA</code> 以及 <code>QUIT</code>。</p>
-<p>当然，你也可以使用 Telnet 直接与一个 SMTP 服务器对话，如下：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">telnet smtp.office365.com 25</span><br></pre></td></tr></table></figure>
-
-<h3 id="与-HTTP-的对比"><a href="#与-HTTP-的对比" class="headerlink" title="与 HTTP 的对比"></a>与 HTTP 的对比</h3><p>SMTP 与 HTTP 有一些共同的特征：</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>使用 QEMU 模拟一个硬件环境并运行整个系统的命令格式为 <code>qemu [options] [disk_image]</code>，其中 disk_image 即硬盘镜像文件。其常用的参数如下：</p>
 <ul>
-<li>这两个协议都用于从一台主机向另一台主机传送文件</li>
-<li>当进行文件传送时，持续的 HTTP 和 SMTP 都使用持续连接</li>
+<li><code>-hda file</code>：使用 file 作为硬盘 0 的镜像文件。</li>
+<li><code>-m megs</code>：设定虚拟内存为 megs M 字节，默认为 128 M 字节。</li>
+<li><code>-smp n</code>：设置为有 n 个 CPU 的 SMP 系统。</li>
 </ul>
-<p>然而，两者之间也有一些重要的区别：</p>
-<p>首先，HTTP 主要是一个<strong>拉协议</strong>（pull protocol），即在方便的时候，某些人在 Web 服务器上装载信息，用户使用 HTTP 从该服务器拉取这些信息。特别是 TCP 连接是由想接收文件的机器发起的。另一方面，SMTP 基本上是一个<strong>推协议</strong>（push protocol），即发送邮件服务器把文件推向接收邮件服务器。特别是，这个 TCP 连接是由发送该文件的机器发起的。</p>
-<p>第二个区别是由于问世较早， SMTP 要求每个报文（包括它们的体）采用 7 比特 ASCII 码格式。如果某报文包含了非 7 比特 ASCII 字符（如具有重音的法文字符）或二进制数据（如图形文件），则该报文必须按照 7 比特 ASCII 码进行编码。HTTP 数据则不受这种限制。</p>
-<p>第三个重要区别是如何处理一个既包含文本又包含图形（也可能是其他媒体类型）的文档。HTTP 把每个对象封装到它自己的 HTTP 响应报文中，而 SMTP 则把所有报文对象放在一个报文之中。</p>
-<h3 id="邮件报文格式"><a href="#邮件报文格式" class="headerlink" title="邮件报文格式"></a>邮件报文格式</h3><p>如同 HTTP 协议，邮件报文也有相应的邮件首部行，每个首部行包含了可读的文本，是由关键词后跟冒号及其值组成的。某些关键词是必须的，另一些则是可选的。每个首部 <em>必须</em> 含有一个 <code>From:</code> 首部行和一个 <code>To:</code> 首部行；一个首部 <em>也许</em> 包含一个 <code>Subject:</code> 首部行以及其他可选的首部行。</p>
-<p>一个典型的报文首部看看起来如下：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">From: alice@crepes.fr</span><br><span class="line">To: bob@hamburger.edu</span><br><span class="line">Subject: Searching for the meaning of life.</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，QEMU 的启动需要有图形界面，若未安装图形界面，则会报错：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not initialize SDL(No available video device) - exiting</span><br></pre></td></tr></table></figure>
 
-<h2 id="POP3"><a href="#POP3" class="headerlink" title="POP3"></a>POP3</h2><p><strong>POP3</strong>（Post Office Protocol——Version 3，<strong>第三版的邮局协议</strong>）是一个极为简单的邮件访问协议。</p>
-<p>当用户代理（客户）打开了一个到邮件服务器（服务器）端口 <strong>110</strong> 上的 TCP 连接后，POP3 就开始工作了。随着建立 TCP 连接，POP3 按照 3 个阶段进行工作：</p>
-<ol>
-<li><strong>特许</strong>（authorization）：用户代理发送（以明文形式）用户名和口令以鉴别用户</li>
-<li><strong>事务处理</strong>：用户代理取回报文；同时在这个阶段用户代理还能进行如下操作，对报文做删除标记，取消报文删除标记，以及获取邮件的统计信息</li>
-<li><strong>更新</strong>：它出现在客户发出了 quit 命令之后，目的是结束该 POP3 会话；这时，该邮件服务器删除那些被标记为删除的报文</li>
-</ol>
-<p>在 POP3 的事务处理过程中，用户代理发出一些命令，服务器对每个命令做出回答。回答可能有两种：</p>
-<ul>
-<li><code>+OK</code>：（有时后面还跟有服务器到客户的数据），被服务器用来指示前面的命令是正常的</li>
-<li><code>-ERR</code>：被服务器用来指示前面的命令出现了某些差错</li>
-</ul>
-<p>特许阶段有两个主要的命令：<code>user &lt;user name&gt;</code> 和 <code>pass &lt;password&gt;</code>。你可以使用 Telnet 进行测试，如下：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">telnet outlook.office365.com 110</span><br><span class="line">+OK The Microsoft Exchange POP3 service is ready.</span><br><span class="line">user bob</span><br><span class="line">+OK</span><br><span class="line">pass hungry</span><br><span class="line">+OK user successfully logged on</span><br></pre></td></tr></table></figure>
-
-<p>在特许阶段以后，用户代理仅使用 4 个命令 <code>list</code>、<code>retr</code>、<code>dele</code> 和 <code>quit</code>。</p>
-<p>使用 POP3 的用户代理通常被用户配置为“<strong>下载并删除</strong>”或者“<strong>下载并保留</strong>”方式。POP3 用户代理发出的命令序列取决于用户代理程序被配置为这两种工作方式的哪一种。使用下载并删除方式，用户代理发出 <code>list</code> —— <code>retr</code> —— <code>dele</code> 命令，如下（C 代表客户，S 代表服务器）：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">C: list</span><br><span class="line">S: 1 498</span><br><span class="line">S: 2 912</span><br><span class="line">S: .</span><br><span class="line">C: retr 1</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 1</span><br><span class="line">C: retr 2</span><br><span class="line">S: (blah blah ...</span><br><span class="line">S: .................</span><br><span class="line">S: ..........blah)</span><br><span class="line">S: .</span><br><span class="line">C: dele 2</span><br><span class="line">C: quit</span><br><span class="line">S: +OK POP3 server signing off</span><br></pre></td></tr></table></figure>
-
-<p>使用下载并保留方式，用户代理下载某邮件后，该邮件仍保留在邮件服务器上。</p>
-<h2 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h2><p><strong>IMAP</strong>（Internet Mail Access Protocol，<strong>因特网邮件访问协议</strong>）是一个相比 POP3 更强大的邮件访问协议。</p>
-<p>相比 POP3，IMAP 协议为用户提供了创建文件夹以及将邮件从一个文件夹移动到另一个文件夹的命令；还为用户提供了在远程文件夹中查询邮件的命令，按指定条件去查询匹配的邮件；它还提供了允许用户代理获取报文某些部分的命令。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>相比于 SMTP，POP3 和 IMAP 等邮件访问协议本质上属于拉协议，在基于 Web 的电子邮件中，则可以通过 HTTP 进行邮件的收发，此时，用户代理就是普通的浏览器。</p>
+<p>若要无图形界面启动需要加参数 <code>-nographic</code>。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3656,63 +3708,13 @@
 </ul>
 <p><img src="https://proxmark.com/user/pages/03.proxmark-3-hardware/02.proxmark-3-rdv4/PM3-RDV4-Trans.png" alt="Proxmark 3 RDV 4"></p>
 <h2 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h2><p>Proxmark 只有 2 个官方分销商：<a href="https://lab401.com/">Lab401</a> 和 <a href="https://hackerwarehouse.com/">Hacker Warehouse</a>，当然，你也可以从万能的淘宝上购买。</p>
-<p>请注意，淘宝上的版本号并不规范，据我所知，淘宝上的大部分产品都是基于 Proxmark 3 Easy 的国内再次改造版，比如，它们所谓的<strong>“一体机”</strong>实际上是 Proxmark 3 Easy 和 <a href="https://github.com/iceman1001/ChameleonMini-rebooted">ChameleonMini（变色龙）</a>的合体版。</p>
+<p>请注意，淘宝上的版本号并不规范，据我所知，淘宝上的大部分产品都是基于 Proxmark 3 Easy 的国内再次改造版，比如，它们所谓的**“一体机”**实际上是 Proxmark 3 Easy 和 <a href="https://github.com/iceman1001/ChameleonMini-rebooted">ChameleonMini（变色龙）</a>的合体版。</p>
 ]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
       <tags>
         <tag>硬件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>代理链工具：proxychains</title>
-    <url>/2018/10/18/proxychains/</url>
-    <content><![CDATA[<p><a href="https://github.com/haad/proxychains">proxychains</a> ，顾名思义，是一种代理链工具，它可以强制任何 Linux 下的命令行应用使用其提供的代理连接到网络。Linux 中有的应用本身并不支持代理，这时便可以使用 proxychains 强制其使用代理。</p>
-<span id="more"></span>
-<h2 id="安装及使用"><a href="#安装及使用" class="headerlink" title="安装及使用"></a>安装及使用</h2><p>在 Ubuntu 下可以使用 <code>sudo apt install proxychains</code> 直接安装，安装完成后会在 <code>/etc</code> 文件夹下生成 <code>proxychains.conf</code> 配置文件，在这个配置文件中可以配置代理链的工作模式和代理地址等。</p>
-<p>proxychains 提供了 3 种代理模式，分别是<strong>动态链</strong>（dynamic_chain）、<strong>严格链</strong>（strict_chain）、<strong>随机链</strong>（random_chain），建议选择动态链。此外，proxychains 默认设置的代理地址为 Tor 的地址，但其实最新版的 Tor 已经更改端口为 9150，用户可以根据自己的需求按照示例格式配置地址。</p>
-<p>配置完成后，要使用 proxychains，只需在相应命令前加上 <code>proxychains</code> 即可，例如 <code>proxychains nmap -sS 192.168.1.1</code>，即可强制 nmap 使用 proxychains 中设置的代理进行扫描。</p>
-<h2 id="与-proxychains-ng"><a href="#与-proxychains-ng" class="headerlink" title="与 proxychains-ng"></a>与 proxychains-ng</h2><p><a href="https://github.com/rofl0r/proxychains-ng">proxychains-ng</a> 是 proxychains 的升级版，其中 ng 寓意为 new generation（新一代），目前并不知晓 proxychains-ng 与 proxychains 是否为同一组织开发，但二者的配置与使用极为相似。</p>
-<p>在 Ubuntu 下可以使用 <code>sudo apt install proxychains-ng</code> 直接安装，要使用 proxychains-ng，只需在相应命令前加上 <code>proxychains4</code> 即可。</p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>由于 Windows 与 Linux 的设计哲学不同，Linux 偏向使用命令行，Windows 偏向使用图形界面，所以 proxychains 并未提供 Windows 版。在 Windows 下可以使用另一款代理工具 <a href="https://www.proxifier.com/">Proxifier</a> ，它可以看作是 proxychains 的图形界面版，值得注意的是，Proxifier 是收费的，但你可以免费体验 31 天。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QEMU 小记</title>
-    <url>/2019/04/18/qemu/</url>
-    <content><![CDATA[<p><a href="https://www.qemu.org/">QEMU</a> 是 Linux 中使用最广的模拟器，可以模拟出各种硬件环境，其便于调试的特性也适合于系统开发者。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用 <code>sudo apt install qemu</code> 即可在 Ubuntu 中安装 QEMU，安装完成后会有很多以 <code>qemu-</code> 开头的命令，如：</p>
-<ul>
-<li><code>qemu-system-i386</code>：用于模拟 32 位的 80386 硬件环境</li>
-<li><code>qemu-system-x86_64</code>：用于模拟 64 位的 x86 硬件环境</li>
-<li><code>qemu-system-arm</code>：用于模拟 ARM 硬件环境</li>
-</ul>
-<p>再进一步，这些命令又可以分为以 <code>qemu-system-</code> 开头和以 <code>qemu-</code> 开头，以 <code>qemu-system-</code> 开头的用于在模拟的硬件环境上运行整个系统，以 <code>qemu-</code> 开头的用于在模拟的硬件环境上运行某个程序，而非整个系统。</p>
-<span id="more"></span>
-
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>使用 QEMU 模拟一个硬件环境并运行整个系统的命令格式为 <code>qemu [options] [disk_image]</code>，其中 disk_image 即硬盘镜像文件。其常用的参数如下：</p>
-<ul>
-<li><code>-hda file</code>：使用 file 作为硬盘 0 的镜像文件。</li>
-<li><code>-m megs</code>：设定虚拟内存为 megs M 字节，默认为 128 M 字节。</li>
-<li><code>-smp n</code>：设置为有 n 个 CPU 的 SMP 系统。</li>
-</ul>
-<p>值得注意的是，QEMU 的启动需要有图形界面，若未安装图形界面，则会报错：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Could not initialize SDL(No available video device) - exiting</span><br></pre></td></tr></table></figure>
-
-<p>若要无图形界面启动需要加参数 <code>-nographic</code>。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3765,7 +3767,7 @@
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>注释以两个点和一个空格开始。如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">..  这是一行注释</span><br></pre></td></tr></table></figure>
 
-<h2 id="Interpreted-Text-Roles"><a href="#Interpreted-Text-Roles" class="headerlink" title="Interpreted Text Roles"></a>Interpreted Text Roles</h2><p><strong>Interpreted Text Roles</strong>（直译为“<strong>解释文本角色</strong>”）是 reST 中非常重要的一个概念，<strong>Interpreted Text</strong>（解释文本）是指以一对 <code>`</code> 包裹起来的文本，**Role**（角色）是指 interpreted text（解释文本）的显示规则。Interpreted Text（解释文本）的语法为 <code>:role:`text`</code> 或 <code>`text`:role:</code>，功能是根据 <code>role</code>（角色）规则对 <code>text</code>（文本）进行 interprete（解释）。</p>
+<h2 id="Interpreted-Text-Roles"><a href="#Interpreted-Text-Roles" class="headerlink" title="Interpreted Text Roles"></a>Interpreted Text Roles</h2><p><strong>Interpreted Text Roles</strong>（直译为“<strong>解释文本角色</strong>”）是 reST 中非常重要的一个概念，<strong>Interpreted Text</strong>（解释文本）是指以一对 <code>`</code> 包裹起来的文本，<strong>Role</strong>（角色）是指 interpreted text（解释文本）的显示规则。Interpreted Text（解释文本）的语法为 <code>:role:`text`</code> 或 <code>`text`:role:</code>，功能是根据 <code>role</code>（角色）规则对 <code>text</code>（文本）进行 interprete（解释）。</p>
 <h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>和 Markdown 一样：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*斜体*，等价于 :emphasis:`斜体`</span><br><span class="line">**粗体**，等价于 :strong:`粗体`</span><br></pre></td></tr></table></figure>
 
@@ -3828,12 +3830,12 @@
 <h3 id="Scheme-五法之第四法-——-Null-之法则"><a href="#Scheme-五法之第四法-——-Null-之法则" class="headerlink" title="Scheme 五法之第四法 —— Null? 之法则"></a>Scheme 五法之第四法 —— Null? 之法则</h3><p>基本元件 <em>null?</em> 仅定义为针对列表。</p>
 <h3 id="Scheme-五法之第五法-——-eq-之法则"><a href="#Scheme-五法之第五法-——-eq-之法则" class="headerlink" title="Scheme 五法之第五法 —— eq? 之法则"></a>Scheme 五法之第五法 —— eq? 之法则</h3><p>基本元件 <em>eq?</em> 需要两个参数。每个参数都必须是一个非数字的原子。</p>
 <span id="more"></span>
-<h2 id="Scheme十诫"><a href="#Scheme十诫" class="headerlink" title="Scheme十诫"></a>Scheme十诫</h2><h3 id="第一诫"><a href="#第一诫" class="headerlink" title="第一诫"></a>第一诫</h3><p>当对一个原子列表 <em>lat</em> 进行递归调用时，询问两个有关 <em>lat</em> 的问题：*(null? lat)* 和 <strong>else</strong>。</p>
-<p>当对一个数字 <em>n</em> 进行递归调用时，询问两个有关 <em>n</em> 的问题：*(zero? n)* 和 <strong>else</strong>。</p>
-<p>当对一个S-表达式列表 <em>l</em> 进行递归调用时，询问三个有关 <em>l</em> 的问题：*(null? lat)<em>、</em>(atom? (car l))* 和 <strong>else</strong>。</p>
+<h2 id="Scheme十诫"><a href="#Scheme十诫" class="headerlink" title="Scheme十诫"></a>Scheme十诫</h2><h3 id="第一诫"><a href="#第一诫" class="headerlink" title="第一诫"></a>第一诫</h3><p>当对一个原子列表 <em>lat</em> 进行递归调用时，询问两个有关 <em>lat</em> 的问题：<em>(null? lat)</em> 和 <strong>else</strong>。</p>
+<p>当对一个数字 <em>n</em> 进行递归调用时，询问两个有关 <em>n</em> 的问题：<em>(zero? n)</em> 和 <strong>else</strong>。</p>
+<p>当对一个S-表达式列表 <em>l</em> 进行递归调用时，询问三个有关 <em>l</em> 的问题：<em>(null? lat)</em>、<em>(atom? (car l))</em> 和 <strong>else</strong>。</p>
 <h3 id="第二诫"><a href="#第二诫" class="headerlink" title="第二诫"></a>第二诫</h3><p>使用 <em>cons</em> 来构建列表。</p>
 <h3 id="第三诫"><a href="#第三诫" class="headerlink" title="第三诫"></a>第三诫</h3><p>构建一个列表的时候，描述第一个典型元素，之后 <em>cons</em> 该元素到一般性递归（natural recursion）上。</p>
-<h3 id="第四诫"><a href="#第四诫" class="headerlink" title="第四诫"></a>第四诫</h3><p>在递归时总是改变至少一个参数。当对一个原子列表 <em>lat</em> 进行递归调用时，使用 *(cdr lat)*。当对数字 <em>n</em> 进行递归调用时，使用 *(sub1 n)*。当对一个S-表达式 <em>l</em> 进行递归调用时，只要是 <em>(null? l)</em> 和 <em>(atom? (car l))</em> 都不为 true，那么就同时使用 <em>(car l)</em> 和 *(cdr l)*。</p>
+<h3 id="第四诫"><a href="#第四诫" class="headerlink" title="第四诫"></a>第四诫</h3><p>在递归时总是改变至少一个参数。当对一个原子列表 <em>lat</em> 进行递归调用时，使用 <em>(cdr lat)</em>。当对数字 <em>n</em> 进行递归调用时，使用 <em>(sub1 n)</em>。当对一个S-表达式 <em>l</em> 进行递归调用时，只要是 <em>(null? l)</em> 和 <em>(atom? (car l))</em> 都不为 true，那么就同时使用 <em>(car l)</em> 和 <em>(cdr l)</em>。</p>
 <p>在递归时改变的参数，必须向着不断接近结束条件而改变。改变的参数必须在结束条件中得以测试：<br>    当使用 <em>cdr</em> 时，用 <em>null?</em> 测试是否结束；<br>    当使用 <em>sub1</em> 时,用 <em>zero?</em> 测试是否结束。</p>
 <h3 id="第五诫"><a href="#第五诫" class="headerlink" title="第五诫"></a>第五诫</h3><p>当用 ➕ 构建一个值时，总是使用 0 作为结束代码行的值，因为加上 0 不会改变加法的值。</p>
 <p>当用 ✖ 构建一个值时，总是使用 1 作为结柬代码行的值，因为乘以 1 不会改变乘法的值。</p>
@@ -3854,21 +3856,6 @@
       <tags>
         <tag>函数式编程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Session、Cookie 和 Token</title>
-    <url>/2021/02/25/session-cookie-token/</url>
-    <content><![CDATA[<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>Session 是一种抽象的概念，它不止存在于 HTTP 中，在计算机的众多领域都有它的身影，比如在 SSH、tmux 中都有 Session 的出现。</p>
-<p>Session 被直译为<strong>会话</strong>，顾名思义，它指客户端和服务器之间的连接会话。</p>
-<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 是一种具体的技术，它常被用在 HTTP 中，在其他领域很少见到 Cookie 的身影。</p>
-<p>Cookie 可以理解为是 Session 这种概念的一种实现，通过 Cookie 可以确定客户端和服务器之间的连接会话，从而使无状态的 HTTP 协议有状态。</p>
-<p>除 Cookie 之外，还可以使用带参数的 URL 来实现 Session 这种概念。</p>
-<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>Token 直译为<strong>令牌</strong>，顾名思义，它常被用以客户端和服务器之间的身份认证。</p>
-<p>Cookie 不仅可以用来实现上述的这种身份认证，也可以用来实现类似购物车这种场景。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>set、env 与 export</title>
@@ -3940,7 +3927,7 @@
 <h2 id="练习你的沟通"><a href="#练习你的沟通" class="headerlink" title="练习你的沟通"></a>练习你的沟通</h2><p>在安全方面工作意味着你需要定期向不同的受众解释复杂的技术问题，每个受众都有不同的词汇，专业知识和激励措施。在描述漏洞的严重性时，你很少会依赖通用指标，在推广最佳安全实践时也不会有任何闪亮的东西。面对<a href="https://zh.wikipedia.org/zh-cn/FUD">FUD(即恐惧、不确定、怀疑)</a>，你必须让人们不受欢迎，然后专注于危机之外的行动。<br>所有这些都需要沟通艺术方面的技能，特别是解释和谈判。你不可能从纯粹的技术资源中掌握这门艺术，所以练习，发表，并永远致力于改进。</p>
 <h2 id="期望努力工作，有时会失败"><a href="#期望努力工作，有时会失败" class="headerlink" title="期望努力工作，有时会失败"></a>期望努力工作，有时会失败</h2><p><img src="https://cdn-images-1.medium.com/max/1000/1*0iQlhQQUroM4_A1zAW6n3w.gif" alt="标题图"><br>也许这很明显，但值得明确表示。<br>安全是挑战性工作。你需要不断学习新事物，因为你需要保护的技术环境正在快速发展，这比我们弃用旧的，尚未完全安全的内容的能力要快得多。经常有时间和资源的威胁行动者也能很快适应现有的防御。<br>安全可能会有压力。你正在处理模棱两可的问题，不完善的解决方案，有限的数据以及对人类安全的真正威胁。<br>很难用安全性衡量成功，根据我的经验，人们更有可能注意到失败。 在确保现实世界技术的同时，我们最终还是在减轻风险的过程中，无论RSA供应商的某个人告诉你什么，都没有银弹。</p>
 <h2 id="（尝试）保持乐观"><a href="#（尝试）保持乐观" class="headerlink" title="（尝试）保持乐观"></a>（尝试）保持乐观</h2><p>由于我刚才概述的一些原因，这个领域可能令人沮丧。跟上技术和开发的创新速度似乎是不可能的。 我的意思是，缓冲区溢出漏洞已存在数十年，但我们今天（2016）仍然经常看到利用它们的高影响漏洞。你会经常听到人们尖叫安全是不可能的，而且情况正在恶化，或者<a href="https://lcamtuf.blogspot.com/2010/05/security-engineering-broken-promises.html">说出我们为什么都失败的完全雄辩点</a>。<br>现实可能是苛刻的，但如果我们专注于积极思考并考虑技术所提供的所有东西，那真是令人印象深刻！这不完美。它永远不会是完美的。但我认为当今安全的最前沿比10年前要好得多，我们可以通过一定程度的合理保证做一些相当令人印象深刻的事情，这让我感到乐观。</p>
-<h2 id="请求帮忙"><a href="#请求帮忙" class="headerlink" title="请求帮忙"></a>请求帮忙</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。<strong>只要确保你做尽职调查，尽可能让人们帮助你。</strong>大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
+<h2 id="请求帮忙"><a href="#请求帮忙" class="headerlink" title="请求帮忙"></a>请求帮忙</h2><p>如果你遇到混蛋，不要气馁。多年来，我在信息安全行业看到了大量的沙文主义和自我主义者。通过对话（在线，会议等等）快速变成谁是最精英的人并不罕见。<br>也许这不是每个人的经历，但我在很大程度上取得了成功，这得益于我现在认为是朋友的许多优秀安全人员的支持，建议，指导和帮助。仅仅因为你必须寻求帮助并不意味着你不会因为这项工作而被裁掉。<br>如果您需要帮助，请尽管问。**只要确保你做尽职调查，尽可能让人们帮助你。**大多数专家都非常忙碌，所以如果你问一个有足够背景和没有拼写错误的好问题，你就更有可能获得有用的回应。</p>
 <h2 id="祝你好运并且快乐Hacking"><a href="#祝你好运并且快乐Hacking" class="headerlink" title="祝你好运并且快乐Hacking"></a>祝你好运并且快乐Hacking</h2><p>我偶然发现了一些其他安全职业建议的想法：</p>
 <ul>
 <li>Thomas Ptacek，Charlie Miller，Jeremiah Grossman，Richard Bejtlich和Bruce Schneier分享了他们的想法 <a href="http://krebsonsecurity.com/tag/security-career-advice/">http://krebsonsecurity.com/tag/security-career-advice/</a></li>
@@ -3951,6 +3938,21 @@
 ]]></content>
       <categories>
         <category>Translation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Session、Cookie 和 Token</title>
+    <url>/2021/02/25/session-cookie-token/</url>
+    <content><![CDATA[<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>Session 是一种抽象的概念，它不止存在于 HTTP 中，在计算机的众多领域都有它的身影，比如在 SSH、tmux 中都有 Session 的出现。</p>
+<p>Session 被直译为<strong>会话</strong>，顾名思义，它指客户端和服务器之间的连接会话。</p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 是一种具体的技术，它常被用在 HTTP 中，在其他领域很少见到 Cookie 的身影。</p>
+<p>Cookie 可以理解为是 Session 这种概念的一种实现，通过 Cookie 可以确定客户端和服务器之间的连接会话，从而使无状态的 HTTP 协议有状态。</p>
+<p>除 Cookie 之外，还可以使用带参数的 URL 来实现 Session 这种概念。</p>
+<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>Token 直译为<strong>令牌</strong>，顾名思义，它常被用以客户端和服务器之间的身份认证。</p>
+<p>Cookie 不仅可以用来实现上述的这种身份认证，也可以用来实现类似购物车这种场景。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
       </categories>
   </entry>
   <entry>
@@ -4016,41 +4018,28 @@
       </tags>
   </entry>
   <entry>
-    <title>使用 Sphinx 生成项目文档</title>
-    <url>/2020/01/22/sphinx-document/</url>
-    <content><![CDATA[<p><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="/2018/09/17/restructuredtext/" title="reStructuredText 小记">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
+    <title>隐写术</title>
+    <url>/2018/09/22/steganography/</url>
+    <content><![CDATA[<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code> 即可检查 a 文件的类型。</p>
+<p>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 <code>CTF</code> 或 <code>FLAG</code> 等关键字，发现是否存在隐藏信息。Windows 下可以使用 Sublime Text 3 的插件 <a href="http://facelessuser.github.io/HexViewer/">HexViewer</a> 查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
+<h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp">谷歌搜图</a>，或许可以发现更多信息。</p>
+<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式（Exchangeable image file format），可以记录 JPEG 格式图片的属性信息和拍摄数据。有的 JPEG 格式图片会具有 Exif 信息，在 Windows 中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备 Exif 信息。如下图片：</p>
+<p><img src="/images/meinv.jpg" alt="exif"></p>
 <span id="more"></span>
 
-<p>使用 <code>pip install sphinx</code> 即可安装 Sphinx。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>按照最佳实践，项目文档一般是在项目的 <code>docs</code> 目录中，所以不妨先创建一个 <code>docs</code> 目录并进入，之后的一切有关 sphinx 的命令都在此目录中运行。</p>
-<p>安装完 Sphinx 并进入 <code>docs</code> 目录后，输入 <code>sphinx-quickstart</code> 即可创建一个文档项目。该引导程序会询问你一些问题，并根据你给出的回答对生成的文档项目进行相关配置，当然，这些配置都可以在生成后的 <code>conf.py</code> 文件中进行重新设置。以下是它可能会问到的一些问题：</p>
-<ul>
-<li>分隔“source”和“build”目录（y&#x2F;n）[n]：默认不分隔即可</li>
-<li>项目名称：项目名称将显示在左侧导航栏顶部</li>
-<li>作者姓名：作者姓名将显示在页面底部</li>
-<li>项目版本：可不填</li>
-<li>项目语言[en]：默认为英文，要切换为中文请输入 <code>zh_CN</code></li>
-</ul>
-<p>执行完成后，会在当前目录下生成如下文件&#x2F;文件夹：</p>
-<ul>
-<li><code>_duild/</code>：存放构建之后的文件</li>
-<li><code>_static/</code>：存放静态文件</li>
-<li><code>_templates/</code>：存放模板文件</li>
-<li><code>conf.py</code>：sphinx 的配置文件</li>
-<li><code>index.rst</code>：文档主页</li>
-<li><code>Makefile</code>：Linux 下 <code>make</code> 构建工具的配置文件</li>
-<li><code>make.bat</code>：Windows 下的构建命令脚本</li>
-</ul>
-<p>编写完文档后，使用 <code>make html</code> 命令即可将其构建为 HTML 文件，其中，<code>html</code> 被称为构建器（builder），当然，你也可以使用别的构建器，比如 <code>latex</code>、<code>epub</code> 等。</p>
-<p>输入 <code>make help</code> 可查看 make 支持的相关命令。</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster">Alabaster</a>（个人觉得挺好看的，<a href="https://requests.readthedocs.io/projects/cn/zh_CN/latest/">Requests</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
-<p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>&#39;sphinx_rtd_theme&#39;</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
-<p>要探索更多的第三方主题，可参考 <a href="https://sphinx-themes.org/">Sphinx Themes</a> 网站上收录的。</p>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>Sphinx 支持扩展，安装完 Sphinx 后就已经内置了一些扩展，除此之外，你也可以下载第三方扩展。</p>
-<h3 id="内置扩展"><a href="#内置扩展" class="headerlink" title="内置扩展"></a>内置扩展</h3><h4 id="sphinx-ext-autodoc"><a href="#sphinx-ext-autodoc" class="headerlink" title="sphinx.ext.autodoc"></a>sphinx.ext.autodoc</h4><h4 id="sphinx-ext-coverage"><a href="#sphinx-ext-coverage" class="headerlink" title="sphinx.ext.coverage"></a>sphinx.ext.coverage</h4><h4 id="sphinx-ext-viewcode"><a href="#sphinx-ext-viewcode" class="headerlink" title="sphinx.ext.viewcode"></a>sphinx.ext.viewcode</h4><h4 id="sphinx-ext-napoleon"><a href="#sphinx-ext-napoleon" class="headerlink" title="sphinx.ext.napoleon"></a>sphinx.ext.napoleon</h4><h4 id="sphinx-ext-graphviz"><a href="#sphinx-ext-graphviz" class="headerlink" title="sphinx.ext.graphviz"></a>sphinx.ext.graphviz</h4><h4 id="sphinx-ext-todo"><a href="#sphinx-ext-todo" class="headerlink" title="sphinx.ext.todo"></a>sphinx.ext.todo</h4><h3 id="第三方扩展"><a href="#第三方扩展" class="headerlink" title="第三方扩展"></a>第三方扩展</h3><h4 id="recommonmark"><a href="#recommonmark" class="headerlink" title="recommonmark"></a>recommonmark</h4><h4 id="nbsphinx"><a href="#nbsphinx" class="headerlink" title="nbsphinx"></a>nbsphinx</h4><h4 id="sphinx-autodoc-typehints"><a href="#sphinx-autodoc-typehints" class="headerlink" title="sphinx-autodoc-typehints"></a>sphinx-autodoc-typehints</h4><h4 id="sphinx-gallery"><a href="#sphinx-gallery" class="headerlink" title="sphinx-gallery"></a>sphinx-gallery</h4><h2 id="Read-the-Docs"><a href="#Read-the-Docs" class="headerlink" title="Read the Docs"></a>Read the Docs</h2>]]></content>
+<h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到 <a href="http://www.petitcolas.net/steganography/mp3stego/">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。</p>
+<p>下载该软件后在其 <code>MP3Stego</code> 文件夹下会有 2 个命令：<code>Encode</code> 和 <code>Decode</code>，<code>Encode</code> 命令用于隐写信息，<code>Decode</code> 命令用于解密被隐写的信息，使用 <code>decode -X -P pass svega_stego.mp3</code> 即可从 <code>svega_stego.mp3</code> 文件中解码所需信息，<code>-P</code> 指定解密密码。</p>
+<h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：</p>
+<p><img src="/images/word.PNG" alt="word"></p>
+<p>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。</p>
+<p>类似的题可以参考 <a href="http://www.shiyanbar.com/ctf/1927">Fonts</a>，<a href="http://www.shiyanbar.com/ctf/1849">认真你就输了</a>等等。</p>
+]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
   </entry>
   <entry>
     <title>SSH 协议分析</title>
@@ -4092,30 +4081,6 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>隐写术</title>
-    <url>/2018/09/22/steganography/</url>
-    <content><![CDATA[<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>拿到一个被隐写的文件，第一步当然是判断该文件是哪种类型的文件，一般可以通过文件后缀名判断之，若不能通过文件后缀名判断，则可以使用 Linux 中的 <code>file</code> 命令，直接输入 <code>file a</code> 即可检查 a 文件的类型。</p>
-<p>知道文件类型后，就可以对症下药，依据相应的类型使用相应的办法，此时，不妨再查看一下文件对应的二进制数据，所有电子信息的本质无非是二进制，可以在二进制数据中搜索 <code>CTF</code> 或 <code>FLAG</code> 等关键字，发现是否存在隐藏信息。Windows 下可以使用 Sublime Text 3 的插件 <a href="http://facelessuser.github.io/HexViewer/">HexViewer</a> 查看二进制信息。Linux 下可以使用 <code>xxd</code> 命令查看文件二进制数据。</p>
-<h2 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h2><h3 id="图片内容"><a href="#图片内容" class="headerlink" title="图片内容"></a>图片内容</h3><p>首先应该检查图片内容本身是否存在某些隐藏信息，遇到不熟悉的图片可以尝试<a href="https://www.google.com/imghp">谷歌搜图</a>，或许可以发现更多信息。</p>
-<h3 id="Exif"><a href="#Exif" class="headerlink" title="Exif"></a>Exif</h3><p>Exif，即可交换图像文件格式（Exchangeable image file format），可以记录 JPEG 格式图片的属性信息和拍摄数据。有的 JPEG 格式图片会具有 Exif 信息，在 Windows 中查看属性选项卡中的详细信息项即可查看。别的格式的图片不具备 Exif 信息。如下图片：</p>
-<p><img src="/images/meinv.jpg" alt="exif"></p>
-<span id="more"></span>
-
-<h3 id="JPEG"><a href="#JPEG" class="headerlink" title="JPEG"></a>JPEG</h3><h3 id="PNG"><a href="#PNG" class="headerlink" title="PNG"></a>PNG</h3><h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><h2 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h2><p>音频隐写一般会用到 <a href="http://www.petitcolas.net/steganography/mp3stego/">MP3stego</a>，该软件会将信息编码到 MP3 文件中，同时也可以从被隐写的 MP3 文件中解码所需信息。</p>
-<p>下载该软件后在其 <code>MP3Stego</code> 文件夹下会有 2 个命令：<code>Encode</code> 和 <code>Decode</code>，<code>Encode</code> 命令用于隐写信息，<code>Decode</code> 命令用于解密被隐写的信息，使用 <code>decode -X -P pass svega_stego.mp3</code> 即可从 <code>svega_stego.mp3</code> 文件中解码所需信息，<code>-P</code> 指定解密密码。</p>
-<h2 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h2><h2 id="其他隐写"><a href="#其他隐写" class="headerlink" title="其他隐写"></a>其他隐写</h2><h3 id="Word-文档"><a href="#Word-文档" class="headerlink" title="Word 文档"></a>Word 文档</h3><p>Word 文档可能会隐藏某些信息，遇到 <code>doc</code> 文档可以尝试在 <code>Word 选项</code>中选择<code>显示</code>并打开<code>隐藏文字</code>选项。如下所示：</p>
-<p><img src="/images/word.PNG" alt="word"></p>
-<p>像 Word 文档或 Excel 表格这样的富文本文件，可以直接解压之，查看其中是否包含某些特殊文件。</p>
-<p>类似的题可以参考 <a href="http://www.shiyanbar.com/ctf/1927">Fonts</a>，<a href="http://www.shiyanbar.com/ctf/1849">认真你就输了</a>等等。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>CTF</tag>
       </tags>
   </entry>
   <entry>
@@ -4247,7 +4212,7 @@
 </ul>
 <p>以Office 2016为例，其中自带的OneNote全称为<strong>OneNote 2016</strong>（桌面版）；除此之外，还有Microsoft Store中<strong>UWP版</strong>的OneNote，即<strong>OneNote for Windows 10</strong>，简称为OneNote，此版本的OneNote是功能最全的OneNote，也是微软的主要开发版，并内置于所有的Windows 10电脑中，另外，Office 2019套件中也已替换成了此版本的OneNote。关于OneNote（OneNote for Windows 10）与OneNote 2016的详细区别请参考微软Office官方帮助信息：<a href="https://support.office.com/zh-cn/article/onenote-%E4%B8%8E-onenote-2016-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F-a624e692-b78b-4c09-b07f-46181958118f">OneNote与OneNote 2016有什么区别？</a></p>
 <h2 id="Office-365"><a href="#Office-365" class="headerlink" title="Office 365"></a>Office 365</h2><p>不同于Office 2016或Office 2019的一次性购买模式，<strong>Office 365</strong>采用订阅模式，即每月支付一定费用。它可以享受到更多的优惠，比如1TB的OneDrive空间和持续的软件更新等。具体可参考微软Office官方帮助信息：<a href="https://support.office.com/zh-cn/article/office-365-%E5%92%8C-office-2019-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-ed447ebf-6060-46f9-9e90-a239bd27eb96">Office 365和Office 2019之间的区别是什么？</a></p>
-<h2 id="G-Suite"><a href="#G-Suite" class="headerlink" title="G Suite"></a>G Suite</h2><p><strong>G Suite</strong>是由Google公司推出的办公套件，其中主要包括<strong>Google Docs（文档）</strong>、<strong>Google Sheets（表格）</strong>、<strong>Google Slides（幻灯片）</strong>等，适用于Android、iOS、Web平台。这些软件兼容Office的文件格式。</p>
+<h2 id="G-Suite"><a href="#G-Suite" class="headerlink" title="G Suite"></a>G Suite</h2><p><strong>G Suite</strong>是由Google公司推出的办公套件，其中主要包括<strong>Google Docs（文档）</strong>、<strong>Google Sheets（表格）</strong>、**Google Slides（幻灯片）**等，适用于Android、iOS、Web平台。这些软件兼容Office的文件格式。</p>
 <h2 id="iWork"><a href="#iWork" class="headerlink" title="iWork"></a>iWork</h2><p><strong>iWork</strong>是由苹果公司推出的办公套件，其中主要包括<strong>Pages文稿</strong>、<strong>Numbers表格</strong>、<strong>Keynote讲演</strong>，适用于macOS、iOS平台。这些软件生成的文件格式与Office中的Word、Excel、PowerPoint互不兼容。</p>
 ]]></content>
       <categories>
@@ -4312,6 +4277,43 @@
       </categories>
   </entry>
   <entry>
+    <title>使用 Sphinx 生成项目文档</title>
+    <url>/2020/01/22/sphinx-document/</url>
+    <content><![CDATA[<p><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> 是一个用 Python 编写的文档生成工具，其使用 <a href="/2018/09/17/restructuredtext/" title="reStructuredText 小记">reStructuredText</a> 作为标记语言，目前广泛应用于 Python 相关项目的文档生成。比如 <a href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>就是基于 Sphinx 生成的，此外 <a href="https://www.kernel.org/doc/html/latest/index.html">Linux 内核文档</a>的生成也于 2016 年从 <a href="http://www.doxygen.nl/">Doxygen</a> 转向 Sphinx，要了解更多使用 Sphinx 的项目可参考其<a href="https://www.sphinx-doc.org/en/master/examples.html">官方列表</a>。</p>
+<span id="more"></span>
+
+<p>使用 <code>pip install sphinx</code> 即可安装 Sphinx。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>按照最佳实践，项目文档一般是在项目的 <code>docs</code> 目录中，所以不妨先创建一个 <code>docs</code> 目录并进入，之后的一切有关 sphinx 的命令都在此目录中运行。</p>
+<p>安装完 Sphinx 并进入 <code>docs</code> 目录后，输入 <code>sphinx-quickstart</code> 即可创建一个文档项目。该引导程序会询问你一些问题，并根据你给出的回答对生成的文档项目进行相关配置，当然，这些配置都可以在生成后的 <code>conf.py</code> 文件中进行重新设置。以下是它可能会问到的一些问题：</p>
+<ul>
+<li>分隔“source”和“build”目录（y&#x2F;n）[n]：默认不分隔即可</li>
+<li>项目名称：项目名称将显示在左侧导航栏顶部</li>
+<li>作者姓名：作者姓名将显示在页面底部</li>
+<li>项目版本：可不填</li>
+<li>项目语言[en]：默认为英文，要切换为中文请输入 <code>zh_CN</code></li>
+</ul>
+<p>执行完成后，会在当前目录下生成如下文件&#x2F;文件夹：</p>
+<ul>
+<li><code>_duild/</code>：存放构建之后的文件</li>
+<li><code>_static/</code>：存放静态文件</li>
+<li><code>_templates/</code>：存放模板文件</li>
+<li><code>conf.py</code>：sphinx 的配置文件</li>
+<li><code>index.rst</code>：文档主页</li>
+<li><code>Makefile</code>：Linux 下 <code>make</code> 构建工具的配置文件</li>
+<li><code>make.bat</code>：Windows 下的构建命令脚本</li>
+</ul>
+<p>编写完文档后，使用 <code>make html</code> 命令即可将其构建为 HTML 文件，其中，<code>html</code> 被称为构建器（builder），当然，你也可以使用别的构建器，比如 <code>latex</code>、<code>epub</code> 等。</p>
+<p>输入 <code>make help</code> 可查看 make 支持的相关命令。</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>Sphinx 生成的 HTML 文件默认使用的主题为 <a href="https://github.com/bitprophet/alabaster">Alabaster</a>（个人觉得挺好看的，<a href="https://requests.readthedocs.io/projects/cn/zh_CN/latest/">Requests</a> 和 <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> 项目文档的主题都是基于此主题修改的），除此之外，Sphinx 还内置了一些别的主题，具体可见其<a href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes">官方文档中列出的</a>（个人觉得其余的主题不如 Alabaster 好看），当然，你也可以使用第三方主题。</p>
+<p>第三方主题中最常见的非 <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme</a> 莫属，<a href="https://docs.scrapy.org/en/latest/">Scrapy</a> 项目的文档就使用的它，要使用 sphinx_rtd_theme，需要先执行 <code>pip install sphinx_rtd_theme</code> 命令下载它，然后修改 <code>conf.py</code> 配置文件中的 <code>html_theme</code> 变量为 <code>&#39;sphinx_rtd_theme&#39;</code> 并在 <code>extensions</code> 列表中添加 <code>&#39;sphinx_rtd_theme&#39;</code>。</p>
+<p>要探索更多的第三方主题，可参考 <a href="https://sphinx-themes.org/">Sphinx Themes</a> 网站上收录的。</p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>Sphinx 支持扩展，安装完 Sphinx 后就已经内置了一些扩展，除此之外，你也可以下载第三方扩展。</p>
+<h3 id="内置扩展"><a href="#内置扩展" class="headerlink" title="内置扩展"></a>内置扩展</h3><h4 id="sphinx-ext-autodoc"><a href="#sphinx-ext-autodoc" class="headerlink" title="sphinx.ext.autodoc"></a>sphinx.ext.autodoc</h4><h4 id="sphinx-ext-coverage"><a href="#sphinx-ext-coverage" class="headerlink" title="sphinx.ext.coverage"></a>sphinx.ext.coverage</h4><h4 id="sphinx-ext-viewcode"><a href="#sphinx-ext-viewcode" class="headerlink" title="sphinx.ext.viewcode"></a>sphinx.ext.viewcode</h4><h4 id="sphinx-ext-napoleon"><a href="#sphinx-ext-napoleon" class="headerlink" title="sphinx.ext.napoleon"></a>sphinx.ext.napoleon</h4><h4 id="sphinx-ext-graphviz"><a href="#sphinx-ext-graphviz" class="headerlink" title="sphinx.ext.graphviz"></a>sphinx.ext.graphviz</h4><h4 id="sphinx-ext-todo"><a href="#sphinx-ext-todo" class="headerlink" title="sphinx.ext.todo"></a>sphinx.ext.todo</h4><h3 id="第三方扩展"><a href="#第三方扩展" class="headerlink" title="第三方扩展"></a>第三方扩展</h3><h4 id="recommonmark"><a href="#recommonmark" class="headerlink" title="recommonmark"></a>recommonmark</h4><h4 id="nbsphinx"><a href="#nbsphinx" class="headerlink" title="nbsphinx"></a>nbsphinx</h4><h4 id="sphinx-autodoc-typehints"><a href="#sphinx-autodoc-typehints" class="headerlink" title="sphinx-autodoc-typehints"></a>sphinx-autodoc-typehints</h4><h4 id="sphinx-gallery"><a href="#sphinx-gallery" class="headerlink" title="sphinx-gallery"></a>sphinx-gallery</h4><h2 id="Read-the-Docs"><a href="#Read-the-Docs" class="headerlink" title="Read the Docs"></a>Read the Docs</h2>]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《TAOUP》读书笔记</title>
     <url>/2018/08/02/taoup/</url>
     <content><![CDATA[<p>我没有写错，本文所记述的不是 Knuth 的那本举世瞩目的 TAOCP（计算机程序设计艺术），而是 ESR 所写的 <strong>TAOUP</strong>，即 The Art of UNIX Programming（<a href="https://book.douban.com/subject/1467587/">UNIX 编程艺术</a>）。</p>
@@ -4344,6 +4346,17 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>telnet协议分析</title>
+    <url>/2018/08/24/telnet/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -4387,7 +4400,7 @@
 <li>选择重传（Selective Repeat，SR）</li>
 </ul>
 <h4 id="回退-N-步"><a href="#回退-N-步" class="headerlink" title="回退 N 步"></a>回退 N 步</h4><p>在<strong>回退 N 步（GBN）协议</strong>中，允许发送方发送多个分组（当有多个分组可用时）而不需等待确认，但它也受限于在流水线中未确认的分组数不能超过某个最大允许数 N。</p>
-<p>下图显示了发送方看到的 GBN 协议的序号范围。如果我们将<strong>基序号（base）</strong>定义为最早未确认分组的序号，将<strong>下一个序号（nextseqnum）</strong>定义为最小的未使用序号（即下一个待发的序号），则可将序号范围分割成 4 段：</p>
+<p>下图显示了发送方看到的 GBN 协议的序号范围。如果我们将**基序号（base）<strong>定义为最早未确认分组的序号，将</strong>下一个序号（nextseqnum）**定义为最小的未使用序号（即下一个待发的序号），则可将序号范围分割成 4 段：</p>
 <ul>
 <li><code>[0, base-1]</code> 段内的序号对应于已经发送并被确认的分组；</li>
 <li><code>[base, nextseqnum-1]</code> 段内对应已经发送但未被确认的分组；</li>
@@ -4417,8 +4430,8 @@
 </ol>
 <p>对 SR 接收方而言：</p>
 <ol>
-<li><em>序号在 <code>[rcv_base, rcv_base+N-1]</code> 内的分组被正确接收。</em>在此情况下，收到的分组落在接收方的窗口内，一个选择 ACK 被回送给发送方。如果该分组以前没收到过，则缓存该分组。如果该分组的序号等于接收窗口的基序号（<code>rcv_base</code>），则该分组以及以前缓存的序号连续的（起始于 <code>rcv_base</code> 的）分组交付给上层。然后，接收窗口按向前移动分组的编号向上交付这些分组。</li>
-<li><em>序号在 <code>[rcv_base-N, rcv_base-1]</code> 内的分组被正确收到。</em>在此情况下，必须产生一个 ACK，即使该分组是接收方以前已确认过的分组。</li>
+<li>*序号在 <code>[rcv_base, rcv_base+N-1]</code> 内的分组被正确接收。*在此情况下，收到的分组落在接收方的窗口内，一个选择 ACK 被回送给发送方。如果该分组以前没收到过，则缓存该分组。如果该分组的序号等于接收窗口的基序号（<code>rcv_base</code>），则该分组以及以前缓存的序号连续的（起始于 <code>rcv_base</code> 的）分组交付给上层。然后，接收窗口按向前移动分组的编号向上交付这些分组。</li>
+<li>*序号在 <code>[rcv_base-N, rcv_base-1]</code> 内的分组被正确收到。*在此情况下，必须产生一个 ACK，即使该分组是接收方以前已确认过的分组。</li>
 <li><em>其他情况。</em> 忽略该分组。</li>
 </ol>
 <p><strong>注意</strong>：当窗口长度比序号空间小 1 时协议无法工作。对于 SR 协议而言，窗口长度必须小于或等于序号空间大小的一半。</p>
@@ -4523,17 +4536,6 @@
       </tags>
   </entry>
   <entry>
-    <title>telnet协议分析</title>
-    <url>/2018/08/24/telnet/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>terminal 与 shell</title>
     <url>/2018/09/19/terminal-shell/</url>
     <content><![CDATA[<p><strong>terminal</strong>，常被翻译为<strong>终端</strong>，一般指黑色的窗口，终端可以设置字体、大小、布局和颜色等。Windows 中常见的第三方终端有 <a href="https://conemu.github.io/">ConEmu</a>、<a href="https://cmder.net/">Cmder</a> 等。</p>
@@ -4546,7 +4548,7 @@
 <p><img src="/images/cmd.jpg" alt="cmd"></p>
 <p>首先，命令提示符的本意指的是命令行前面的提示符，在 Linux 中常被称为 <strong>prompt</strong>，如下所示：</p>
 <p><img src="/images/prompt.jpg" alt="prompt"></p>
-<p>显然，在 Windows 中，命令提示符指的是一种解释执行命令的 shell，此外，控制台窗口应该指的是终端。因此，<strong>在 Windows 中有两种 shell，即命令提示符和 PowerShell，它们都共用了同一终端，即控制台窗口。</strong>这么理解的原因可参考微软的<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">官方文档</a>，摘录如下：</p>
+<p>显然，在 Windows 中，命令提示符指的是一种解释执行命令的 shell，此外，控制台窗口应该指的是终端。因此，**在 Windows 中有两种 shell，即命令提示符和 PowerShell，它们都共用了同一终端，即控制台窗口。**这么理解的原因可参考微软的<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">官方文档</a>，摘录如下：</p>
 <blockquote>
 <p>Windows has two command shells: The Command shell and PowerShell.</p>
 </blockquote>
@@ -4690,6 +4692,37 @@
       </tags>
   </entry>
   <entry>
+    <title>URI 与 URL 的区别</title>
+    <url>/2018/04/29/url-uri/</url>
+    <content><![CDATA[<p>URI，全称&quot;Uniform Resource Identifier&quot;，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI 的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。</p>
+<p>URL，全称&quot;Uniform Resource Locator&quot;，中文“统一资源定位符”，URL 是 URI 的子集。例如 <code>https://howiezhao.github.io/2018/04/29/url-uri/</code><br>这个 URL 唯一标识了互联网中一台服务器上的一篇文章（即本篇文章）。URL 的格式一般为 <code>scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]</code></p>
+<p>URN，全称&quot;Uniform Resource Name&quot;，中文“统一资源名称”，是另一种形式的 URI，它通过特定命名空间中的唯一名称来标识资源。例如 <code>urn:isbn:9780141036144</code> 这个 URN 唯一标识了乔治·奥威尔所著的《1984》。</p>
+<p>简单说，URL 代表一个人的位置，URN 代表一个人的身份证号，通过 URL 和 URN 都可以唯一的找到这个人，所以它们都属于 URI。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>useradd 与 adduser</title>
+    <url>/2018/07/16/useradd-adduser/</url>
+    <content><![CDATA[<p>在 Linux 中创建用户可以用 <code>useradd</code> 或者 <code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录 Shell 等相关配置，而这两个命令之间的差异就在于此。</p>
+<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用 <code>adduser howie</code> 命令时，系统除了创建 howie 用户，还会自动创建用户主目录、同名用户组、登录 Shell 等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
+<p>在某些新版本的 RedHat 系 Linux 中，<code>adduser</code> 是 <code>useradd</code> 的一个软链接，即别名。</p>
+<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用 <code>useradd howie</code> 命令时，系统只会创建 howie 用户，而不会创建用户密码、用户主目录、同名用户组、登录 Shell 等，若要指定密码，可以接着采用 <code>passwd howie</code> 命令。其次，<code>useradd</code> 有众多参数，我们可以通过使用这些参数来达到和 <code>adduser</code> 一样的效果，如 <code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用 <code>passwd</code> 命令创建密码，当然也可以使用 <code>-p</code> 参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
+<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用 <code>userdel howie</code> 命令时，系统只会删除 howie 用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用 <code>-r</code> 参数。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>UDP 协议分析</title>
     <url>/2021/01/12/udp/</url>
     <content><![CDATA[<p>UDP 全称 User Datagram Protocol，即<strong>用户数据报协议</strong>，它为调用它的应用程序提供了一种不可靠、无连接的服务。</p>
@@ -4725,6 +4758,29 @@
       </tags>
   </entry>
   <entry>
+    <title>版本号的意义</title>
+    <url>/2018/09/21/version-number/</url>
+    <content><![CDATA[<p>软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即<code>X.Y.Z</code>格式，其中：</p>
+<ul>
+<li>X代表<strong>主版本号</strong>，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段；</li>
+<li>Y代表<strong>次版本号</strong>，增删功能时增加Y，同时重置Z为0；</li>
+<li>Z代表<strong>修订号</strong>，修复Bug时增加Z。</li>
+</ul>
+<p>除此之外，还会有一些修饰词，比如：</p>
+<ul>
+<li><code>alpha</code>表示内部测试版；</li>
+<li><code>beta</code>表示公开测试版；</li>
+<li><code>rc</code>即Release Candidate，表示候选版本，即将作为正式版发布；</li>
+<li><code>release</code>表示正式发行版；</li>
+<li><code>lts</code>即Long Term Support，表示长期支持版。</li>
+</ul>
+<p>有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。<br>随着版本号定义的越来越混乱，GitHub起草了一个<a href="https://semver.org/lang/zh-CN/">语义化版本(Semantic Versioning)</a>规范，为开源项目做出了一定指导意义。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
+  </entry>
+  <entry>
     <title>升级到 WSL 2</title>
     <url>/2021/05/02/update-to-wsl-2/</url>
     <content><![CDATA[<p>从 2020 年末开始，微软逐步向 Windows 10 用户推送了 WSL 2 更新，WSL 2 相比 WSL 1 是一个巨大的变化，最显著的改变在于 WSL 2 开始采用 Hyper-V 虚拟机来运行 Linux，这会解决之前 WSL 的很多问题，但也可以看作是 WSL 项目的失败，本文所描述的主体为 WSL 2，有关 WSL 1 的相关内容请参考 <a href="/2018/08/21/wsl-problem/" title="WSL 相关问题解决">WSL 相关问题解决</a>。</p>
@@ -4751,60 +4807,6 @@
         <tag>Linux</tag>
         <tag>WSL</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>URI 与 URL 的区别</title>
-    <url>/2018/04/29/url-uri/</url>
-    <content><![CDATA[<p>URI，全称&quot;Uniform Resource Identifier&quot;，中文“统一资源标志符”，是一个用于标识某一互联网资源名称的字符串。URI 的最常见的形式是统一资源定位符（URL），经常指定为非正式的网址。更罕见的用法是统一资源名称（URN），其目的是通过提供一种途径，用于在特定的名字空间资源的标识，以补充网址。</p>
-<p>URL，全称&quot;Uniform Resource Locator&quot;，中文“统一资源定位符”，URL 是 URI 的子集。例如 <code>https://howiezhao.github.io/2018/04/29/url-uri/</code><br>这个 URL 唯一标识了互联网中一台服务器上的一篇文章（即本篇文章）。URL 的格式一般为 <code>scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]</code></p>
-<p>URN，全称&quot;Uniform Resource Name&quot;，中文“统一资源名称”，是另一种形式的 URI，它通过特定命名空间中的唯一名称来标识资源。例如 <code>urn:isbn:9780141036144</code> 这个 URN 唯一标识了乔治·奥威尔所著的《1984》。</p>
-<p>简单说，URL 代表一个人的位置，URN 代表一个人的身份证号，通过 URL 和 URN 都可以唯一的找到这个人，所以它们都属于 URI。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>useradd 与 adduser</title>
-    <url>/2018/07/16/useradd-adduser/</url>
-    <content><![CDATA[<p>在 Linux 中创建用户可以用 <code>useradd</code> 或者 <code>adduser</code>，值得注意的是创建的用户并不一定可以登录，登录的用户肯定要有它的用户主目录、登录 Shell 等相关配置，而这两个命令之间的差异就在于此。</p>
-<h2 id="adduser"><a href="#adduser" class="headerlink" title="adduser"></a>adduser</h2><p>当使用 <code>adduser howie</code> 命令时，系统除了创建 howie 用户，还会自动创建用户主目录、同名用户组、登录 Shell 等，并提示输入用户密码，这一切操作都将以一个对话的形式完成。</p>
-<p>在某些新版本的 RedHat 系 Linux 中，<code>adduser</code> 是 <code>useradd</code> 的一个软链接，即别名。</p>
-<h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p>当使用 <code>useradd howie</code> 命令时，系统只会创建 howie 用户，而不会创建用户密码、用户主目录、同名用户组、登录 Shell 等，若要指定密码，可以接着采用 <code>passwd howie</code> 命令。其次，<code>useradd</code> 有众多参数，我们可以通过使用这些参数来达到和 <code>adduser</code> 一样的效果，如 <code>useradd -d /home/howie -m -s /bin/bash howie</code>，不过注意之后还得使用 <code>passwd</code> 命令创建密码，当然也可以使用 <code>-p</code> 参数直接设置密码，但这样会将密码直接显示在终端屏幕上，不安全。</p>
-<h2 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h2><p>当使用 <code>userdel howie</code> 命令时，系统只会删除 howie 用户，并不会删除用户主目录以及用户邮箱目录，因此可以使用 <code>-r</code> 参数。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>版本号的意义</title>
-    <url>/2018/09/21/version-number/</url>
-    <content><![CDATA[<p>软件版本号的确定没有一个统一的规范，但大都遵循一个固定的格式，即<code>X.Y.Z</code>格式，其中：</p>
-<ul>
-<li>X代表<strong>主版本号</strong>，一般当软件整体重写，或出现不向后兼容的改变等重大更新时，增加X，同时重置Y、Z为0，X为0时表示软件还在开发阶段；</li>
-<li>Y代表<strong>次版本号</strong>，增删功能时增加Y，同时重置Z为0；</li>
-<li>Z代表<strong>修订号</strong>，修复Bug时增加Z。</li>
-</ul>
-<p>除此之外，还会有一些修饰词，比如：</p>
-<ul>
-<li><code>alpha</code>表示内部测试版；</li>
-<li><code>beta</code>表示公开测试版；</li>
-<li><code>rc</code>即Release Candidate，表示候选版本，即将作为正式版发布；</li>
-<li><code>release</code>表示正式发行版；</li>
-<li><code>lts</code>即Long Term Support，表示长期支持版。</li>
-</ul>
-<p>有的项目有自己的一套规则，比如Ubuntu、Visual Studio等，它们采用发布年份作为版本号；Node.js规定X为偶数的是稳定版，X为奇数的是开发版；TeX的版本号不断趋近于π。<br>随着版本号定义的越来越混乱，GitHub起草了一个<a href="https://semver.org/lang/zh-CN/">语义化版本(Semantic Versioning)</a>规范，为开源项目做出了一定指导意义。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
   </entry>
   <entry>
     <title>Vim小记</title>
@@ -4854,17 +4856,6 @@
       </tags>
   </entry>
   <entry>
-    <title>网站的WWW问题</title>
-    <url>/2018/09/12/web-www/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网站统计与分析</title>
     <url>/2018/09/22/web-analytics/</url>
     <content><![CDATA[<h2 id="几个术语"><a href="#几个术语" class="headerlink" title="几个术语"></a>几个术语</h2><ul>
@@ -4882,15 +4873,15 @@
       </tags>
   </entry>
   <entry>
-    <title>开发环境代表什么</title>
-    <url>/2018/09/23/what-is-development-environment/</url>
-    <content><![CDATA[<p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。</p>
-<p>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。</p>
-<p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器&#x2F;解释器、基本类库等于一体。</p>
-]]></content>
+    <title>网站的WWW问题</title>
+    <url>/2018/09/12/web-www/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>CheatSheet</category>
       </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
   </entry>
   <entry>
     <title>editorconfig 是什么</title>
@@ -4931,6 +4922,17 @@
       <tags>
         <tag>计算机网络</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>开发环境代表什么</title>
+    <url>/2018/09/23/what-is-development-environment/</url>
+    <content><![CDATA[<p>按照编程语言的执行原理，一般将其分为<strong>编译型语言</strong>（如 C）和<strong>解释型语言</strong>（如 Python），对于编译型语言来说，它的开发环境就代表该语言的<strong>编译器</strong>和其<strong>基本类库</strong>，对于解释型语言来说，它的开发环境就代表该语言的<strong>解释器</strong>和其<strong>基本类库</strong>。请注意，这里我并没有提到<strong>编辑器</strong>，因为编辑器并不属于每种语言所特有的范畴。</p>
+<p>对于解释型语言来说，它的开发环境就等于运行环境，而对于编译型语言，可以说它不需要运行环境。请注意，Java 可以理解为是一种<strong>先编译后解释</strong>的语言，所以运行 Java 程序之前需要安装 JRE（Java 运行环境）。</p>
+<p>如今许多语言的 IDE（集成开发环境），已经集编辑器、该语言的编译器&#x2F;解释器、基本类库等于一体。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
   <entry>
     <title>vCard 是什么</title>
@@ -5092,14 +5094,6 @@
       </categories>
   </entry>
   <entry>
-    <title>编写Wikipedia的几点注意</title>
-    <url>/2018/12/16/wikipedia/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Windows 10 中莫名其妙的“端口被占用”问题解决</title>
     <url>/2021/06/01/win10-port-is-already-in-use-problem/</url>
     <content><![CDATA[<p>大约是自 Windows 10 1709 更新之后（或许是 1809？2004？），莫名其妙的存在类似“端口被占用”这样的问题，比如像下面这样的报错信息：</p>
@@ -5136,6 +5130,14 @@
 ]]></content>
       <categories>
         <category>Bug</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>编写Wikipedia的几点注意</title>
+    <url>/2018/12/16/wikipedia/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>CheatSheet</category>
       </categories>
   </entry>
   <entry>
@@ -5264,25 +5266,6 @@
       </categories>
   </entry>
   <entry>
-    <title>XML、JSON 与 YAML</title>
-    <url>/2018/07/21/xml-json-yaml/</url>
-    <content><![CDATA[<p>XML、JSON 与 YAML 是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
-<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language（可扩展标记语言），倘若我要表示某个人的简要信息，用 XML 可写为：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">firstName</span>&gt;</span>Tian<span class="tag">&lt;/<span class="name">firstName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">lastName</span>&gt;</span>Song<span class="tag">&lt;/<span class="name">lastName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">streetAddr</span>&gt;</span>中关村南大街5号<span class="tag">&lt;/<span class="name">streetAddr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">city</span>&gt;</span>北京市<span class="tag">&lt;/<span class="name">city</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipcode</span>&gt;</span>100081<span class="tag">&lt;/<span class="name">zipcode</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">prof</span>&gt;</span>Computer System<span class="tag">&lt;/<span class="name">prof</span>&gt;</span><span class="tag">&lt;<span class="name">prof</span>&gt;</span>Security<span class="tag">&lt;/<span class="name">prof</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation（JavaScript 对象表示法），倘若我要表示某个人的简要信息，用 JSON 可写为：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;firstName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Tian&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lastName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Song&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;address&quot;</span> <span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;streetAddr&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;中关村南大街5号&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;city&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;北京市&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;zipcode&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;100081&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prof&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;Computer System&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Security&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为 Yet Another Markup Language（仍是一种标记语言），之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为 YAML Ain&#39;t a Markup Language（YAML 不是一种标记语言），倘若我要表示某个人的简要信息，用 YAML 可写为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">firstName :</span> <span class="string">Tian</span></span><br><span class="line"><span class="attr">lastName :</span> <span class="string">Song</span></span><br><span class="line"><span class="attr">address :</span></span><br><span class="line">    <span class="attr">streetAddr :</span> <span class="string">中关村南大街5号</span></span><br><span class="line">    <span class="attr">city :</span> <span class="string">北京市</span></span><br><span class="line">    <span class="attr">zipcode :</span> <span class="number">100081</span></span><br><span class="line"><span class="attr">prof :</span></span><br><span class="line"><span class="string">-Computer</span> <span class="string">System</span></span><br><span class="line"><span class="string">-Security</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML 是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于 Internet 上的信息交互与传递，以及用户界面的编写，比如 Android；JSON 中的信息有类型，适合程序处理（js），较 XML 简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML 信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>
-]]></content>
-      <categories>
-        <category>CheatSheet</category>
-      </categories>
-  </entry>
-  <entry>
     <title>使用 Zsh 替代 Bash</title>
     <url>/2018/09/18/zsh/</url>
     <content><![CDATA[<p>众所周知，Bash 几乎是所有 Linux 发行版预装的 Shell，但 Zsh 却能带给你更强大的功能。</p>
@@ -5321,5 +5304,24 @@
       <tags>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>XML、JSON 与 YAML</title>
+    <url>/2018/07/21/xml-json-yaml/</url>
+    <content><![CDATA[<p>XML、JSON 与 YAML 是三种常见的信息标记形式，这三者由于其特有的属性而在不同的领域广为使用。</p>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p><strong>XML</strong>，Extensible Markup Language（可扩展标记语言），倘若我要表示某个人的简要信息，用 XML 可写为：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">firstName</span>&gt;</span>Tian<span class="tag">&lt;/<span class="name">firstName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">lastName</span>&gt;</span>Song<span class="tag">&lt;/<span class="name">lastName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">streetAddr</span>&gt;</span>中关村南大街5号<span class="tag">&lt;/<span class="name">streetAddr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">city</span>&gt;</span>北京市<span class="tag">&lt;/<span class="name">city</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipcode</span>&gt;</span>100081<span class="tag">&lt;/<span class="name">zipcode</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">address</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">prof</span>&gt;</span>Computer System<span class="tag">&lt;/<span class="name">prof</span>&gt;</span><span class="tag">&lt;<span class="name">prof</span>&gt;</span>Security<span class="tag">&lt;/<span class="name">prof</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><strong>JSON</strong>，JavaScript Object Notation（JavaScript 对象表示法），倘若我要表示某个人的简要信息，用 JSON 可写为：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;firstName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Tian&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lastName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Song&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;address&quot;</span> <span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;streetAddr&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;中关村南大街5号&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;city&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;北京市&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;zipcode&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;100081&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prof&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;Computer System&quot;</span><span class="punctuation">,</span> <span class="string">&quot;Security&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><p><strong>YAML</strong>，在开发这种语言之初，其意为 Yet Another Markup Language（仍是一种标记语言），之后为了强调这种语言以数据作为中心，而不是以标记语言为重点，故解释为 YAML Ain&#39;t a Markup Language（YAML 不是一种标记语言），倘若我要表示某个人的简要信息，用 YAML 可写为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">firstName :</span> <span class="string">Tian</span></span><br><span class="line"><span class="attr">lastName :</span> <span class="string">Song</span></span><br><span class="line"><span class="attr">address :</span></span><br><span class="line">    <span class="attr">streetAddr :</span> <span class="string">中关村南大街5号</span></span><br><span class="line">    <span class="attr">city :</span> <span class="string">北京市</span></span><br><span class="line">    <span class="attr">zipcode :</span> <span class="number">100081</span></span><br><span class="line"><span class="attr">prof :</span></span><br><span class="line"><span class="string">-Computer</span> <span class="string">System</span></span><br><span class="line"><span class="string">-Security</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>XML 是最早的通用信息标记语言，可扩展性好，但繁琐，主要用于 Internet 上的信息交互与传递，以及用户界面的编写，比如 Android；JSON 中的信息有类型，适合程序处理（js），较 XML 简洁，主要用于移动应用云端和节点的信息通信，无注释；YAML 信息无类型，文本信息比例最高，可读性好，主要用于各类系统的配置文件，有注释易读。</p>
+]]></content>
+      <categories>
+        <category>CheatSheet</category>
+      </categories>
   </entry>
 </search>
