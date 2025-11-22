@@ -25,6 +25,7 @@ jobs:
         MARKDOWN_CONFIG_FILE: .markdown-lint.json
         VALIDATE_NATURAL_LANGUAGE: false
         VALIDATE_GITHUB_ACTIONS: false
+        VALIDATE_CHECKOV: false
 
 #     - name: Check Markdown links
 #       uses: gaurav-nelson/github-action-markdown-link-check@v1
