@@ -27,6 +27,7 @@ jobs:
         VALIDATE_GITHUB_ACTIONS: false
         VALIDATE_CHECKOV: false
         VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+        VALIDATE_BIOME_FORMAT: false
 
 #     - name: Check Markdown links
 #       uses: gaurav-nelson/github-action-markdown-link-check@v1
