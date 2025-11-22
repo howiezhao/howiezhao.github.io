@@ -19,15 +19,12 @@ jobs:
         submodules: 'recursive'
 
     - name: Lint Code Base
-      uses: super-linter/super-linter@v8.2.1
+      uses: github/super-linter@v4.9.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MARKDOWN_CONFIG_FILE: .markdown-lint.json
         VALIDATE_NATURAL_LANGUAGE: false
         VALIDATE_GITHUB_ACTIONS: false
-        VALIDATE_CHECKOV: false
-        VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
-        VALIDATE_BIOME_FORMAT: false
 
 #     - name: Check Markdown links
 #       uses: gaurav-nelson/github-action-markdown-link-check@v1
