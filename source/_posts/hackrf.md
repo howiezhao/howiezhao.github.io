@@ -5,13 +5,21 @@ date: 2020-01-22 20:25:55
 tags:
 ---
 
-[HackRF](https://greatscottgadgets.com/hackrf/) 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其[官网上列出的购买网址](https://greatscottgadgets.com/wheretobuy/)购买它，也可以在万能的淘宝上购买。![HackRF One](https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg)
+[HackRF](https://greatscottgadgets.com/hackrf/) 是由 Great Scott Gadgets 设计和制造的[开源](https://github.com/greatscottgadgets/hackrf) SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。
+目前 HackRF 的具体版本为 HackRF One。你可以通过其[官网上列出的购买网址](https://greatscottgadgets.com/wheretobuy/)购买它，也可以在万能的淘宝上购买。![HackRF One](https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg)
 
 <!-- more -->
 
+## 硬件
+
+HackRF One 硬件设备的两侧有一堆接口和指示灯，其中一侧有两个 SMA 接口，分别是 **CLKIN**（Clock In）和 **CLKOUT**（Clock Out）接口，和一个 **USB** 接口（用于连接电脑）；
+另一侧有一个 SMA 接口，为 **ANT**（Antenna）天线接口，和两个按键，分别为 **RESET** 和 **ISP**，此外，还有一系列指示灯，**3V3**、**1V8**、**RF**、**USB**、**RX**（Receive）和 **TX**（Transmit）。
+
+通过 USB 将 HackRF One 连接到电脑时，3V3、1V8、RF 和 USB 四个指示灯应该亮起，当进行接收或发射操作时，相应的 RX 和 TX 指示灯会亮起。
+
 ## 软件
 
-你需要安装如下软件以使用 HackRF One：
+在 Ubuntu 上，你需要安装如下软件以使用 HackRF One：
 
 ```shell
 sudo add-apt-repository -y ppa:bladerf/bladerf
@@ -49,5 +57,10 @@ hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]
 ```
 
 一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。
-Tx Mode：发射模式
-Rx Mode：接收模式
+
+## 更多
+
+以下列举了一些 HackRF 的相关资料：
+
+- HackRF 的官方文档：https://hackrf.readthedocs.io/en/latest/
+- HackRF 的官方视频教程：https://greatscottgadgets.com/sdr/
