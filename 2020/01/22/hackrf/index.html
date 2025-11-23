@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg">
 <meta property="article:published_time" content="2020-01-22T12:25:55.000Z">
-<meta property="article:modified_time" content="2020-02-05T12:51:43.000Z">
+<meta property="article:modified_time" content="2025-11-23T08:19:36.000Z">
 <meta property="article:author" content="Howie Zhao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg">
@@ -171,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A"><span class="nav-number">4.</span> <span class="nav-text">更多</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -304,7 +304,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2020-02-05 20:51:43" itemprop="dateModified" datetime="2020-02-05T20:51:43+08:00">2020-02-05</time>
+      <time title="Modified: 2025-11-23 16:19:36" itemprop="dateModified" datetime="2025-11-23T16:19:36+08:00">2025-11-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -332,15 +332,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://greatscottgadgets.com/hackrf/">HackRF</a> 是由 Great Scott Gadgets 设计和制造的开源 SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。目前 HackRF 的具体版本为 HackRF One。你可以通过其<a target="_blank" rel="noopener" href="https://greatscottgadgets.com/wheretobuy/">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
+    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://greatscottgadgets.com/hackrf/">HackRF</a> 是由 Great Scott Gadgets 设计和制造的<a target="_blank" rel="noopener" href="https://github.com/greatscottgadgets/hackrf">开源</a> SDR 硬件，其可以发送或接收 1 MHz 到 6 GHz 的无线电信号。<br>目前 HackRF 的具体版本为 HackRF One。你可以通过其<a target="_blank" rel="noopener" href="https://greatscottgadgets.com/wheretobuy/">官网上列出的购买网址</a>购买它，也可以在万能的淘宝上购买。<img src="https://greatscottgadgets.com/images/h1-preliminary1-445.jpeg" alt="HackRF One"></p>
 <span id="more"></span>
 
-<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>你需要安装如下软件以使用 HackRF One：</p>
+<h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><p>HackRF One 硬件设备的两侧有一堆接口和指示灯，其中一侧有两个 SMA 接口，分别是 <strong>CLKIN</strong>（Clock In）和 <strong>CLKOUT</strong>（Clock Out）接口，和一个 <strong>USB</strong> 接口（用于连接电脑）；<br>另一侧有一个 SMA 接口，为 <strong>ANT</strong>（Antenna）天线接口，和两个按键，分别为 <strong>RESET</strong> 和 <strong>ISP</strong>，此外，还有一系列指示灯，<strong>3V3</strong>、<strong>1V8</strong>、<strong>RF</strong>、<strong>USB</strong>、<strong>RX</strong>（Receive）和 <strong>TX</strong>（Transmit）。</p>
+<p>通过 USB 将 HackRF One 连接到电脑时，3V3、1V8、RF 和 USB 四个指示灯应该亮起，当进行接收或发射操作时，相应的 RX 和 TX 指示灯会亮起。</p>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>在 Ubuntu 上，你需要安装如下软件以使用 HackRF One：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:bladerf/bladerf</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/drivers</span><br><span class="line">sudo add-apt-repository -y ppa:myriadrf/gnuradio</span><br><span class="line">sudo add-apt-repository -y ppa:gqrx/gqrx-sdr</span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt install gqrx-sdr hackrf</span><br></pre></td></tr></table></figure>
 
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">hackrf_info    # 查看 Hack RF 连接信息</span><br><span class="line"></span><br><span class="line">hackrf_transfer    # 基于文件进行发送和接收 SDR</span><br><span class="line">hackrf_transfer -h    # 查看 hackrf_transfer 帮助信息</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">录制信号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-r：将数据存储到文件中</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-f：中心频率，单位 Hz</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-s：采样率，单位 Hz（4/8/10/12.5/16/20 MHz，默认 10 MHz）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-n：采样数量（默认值是无限的）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-a：设置功放（1 表示开启，0 表示关闭）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-g：设置 Rx VGA 增益（0 到 62 dB 之间，每次增加 2 dB）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-l：设置 Rx LNA 增益（0 到 40 dB 之间，每次增加 8 dB）</span></span><br><span class="line">hackrf_transfer -r capture.raw -f 315000000 -l 8/16/24 -g 20/40 [-s 2000000 -n 10000000 -a 1]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重放信号</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-t：从文件中读取数据</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-x：设置 Tx VGA 增益（0 到 47 dB 之间，每次增加 1 dB）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">-R：重复发送模式（默认为关闭）</span></span><br><span class="line">hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]</span><br></pre></td></tr></table></figure>
 
-<p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。<br>Tx Mode：发射模式<br>Rx Mode：接收模式</p>
+<p>一般无线钥匙工作频段都在 315 Mhz、433.92 Mhz。</p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>以下列举了一些 HackRF 的相关资料：</p>
+<ul>
+<li>HackRF 的官方文档：<a target="_blank" rel="noopener" href="https://hackrf.readthedocs.io/en/latest/">https://hackrf.readthedocs.io/en/latest/</a></li>
+<li>HackRF 的官方视频教程：<a target="_blank" rel="noopener" href="https://greatscottgadgets.com/sdr/">https://greatscottgadgets.com/sdr/</a></li>
+</ul>
 
     </div>
 
@@ -393,7 +400,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">170k</span>
+    <span title="Word count total">171k</span>
   </span>
 </div>
 <div class="busuanzi-count">
