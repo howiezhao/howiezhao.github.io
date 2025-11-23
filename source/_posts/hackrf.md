@@ -62,5 +62,5 @@ hackrf_transfer -t capture.raw -f 315000000 -x 40 [-s 2000000 -a 1]
 
 以下列举了一些 HackRF 的相关资料：
 
-- HackRF 的官方文档：https://hackrf.readthedocs.io/en/latest/
-- HackRF 的官方视频教程：https://greatscottgadgets.com/sdr/
+- HackRF 的官方文档：<https://hackrf.readthedocs.io/en/latest/>
+- HackRF 的官方视频教程：<https://greatscottgadgets.com/sdr/>
