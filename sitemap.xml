@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://howiezhao.github.io/2026/10/03/what-is-icalendar/</loc>
+    
+    <lastmod>2026-10-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://howiezhao.github.io/2020/01/22/hackrf/</loc>
     
     <lastmod>2025-11-23</lastmod>
@@ -173,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/09/18/software-used-in-mr-robot/</loc>
+    <loc>https://howiezhao.github.io/2020/01/22/sphinx-document/</loc>
     
     <lastmod>2022-07-30</lastmod>
     
@@ -182,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2020/01/22/sphinx-document/</loc>
+    <loc>https://howiezhao.github.io/2018/09/18/software-used-in-mr-robot/</loc>
     
     <lastmod>2022-07-30</lastmod>
     
@@ -488,15 +497,6 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/05/11/ip/</loc>
-    
-    <lastmod>2021-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://howiezhao.github.io/2018/05/11/ipsec/</loc>
     
     <lastmod>2021-02-06</lastmod>
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2017/11/25/kali-update-bug/</loc>
+    <loc>https://howiezhao.github.io/2018/05/11/ip/</loc>
     
     <lastmod>2021-02-06</lastmod>
     
@@ -516,6 +516,15 @@
   
   <url>
     <loc>https://howiezhao.github.io/2017/12/04/kali-live-usb-bug/</loc>
+    
+    <lastmod>2021-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://howiezhao.github.io/2017/11/25/kali-update-bug/</loc>
     
     <lastmod>2021-02-06</lastmod>
     
@@ -560,7 +569,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/05/09/phone-number-and-id-card/</loc>
+    <loc>https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/</loc>
     
     <lastmod>2021-02-06</lastmod>
     
@@ -569,7 +578,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/</loc>
+    <loc>https://howiezhao.github.io/2018/05/09/phone-number-and-id-card/</loc>
     
     <lastmod>2021-02-06</lastmod>
     
@@ -650,15 +659,6 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/12/16/digital-currency/</loc>
-    
-    <lastmod>2021-02-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://howiezhao.github.io/2018/10/19/diff/</loc>
     
     <lastmod>2021-02-05</lastmod>
@@ -668,7 +668,16 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2019/04/17/file-sharing-protocol/</loc>
+    <loc>https://howiezhao.github.io/2018/12/16/digital-currency/</loc>
+    
+    <lastmod>2021-02-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://howiezhao.github.io/2018/08/31/git/</loc>
     
     <lastmod>2021-02-05</lastmod>
     
@@ -686,7 +695,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/08/31/git/</loc>
+    <loc>https://howiezhao.github.io/2019/04/17/file-sharing-protocol/</loc>
     
     <lastmod>2021-02-05</lastmod>
     
@@ -713,7 +722,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/08/10/jsfuck/</loc>
+    <loc>https://howiezhao.github.io/2018/02/08/kali-beef-bug/</loc>
     
     <lastmod>2021-02-05</lastmod>
     
@@ -722,7 +731,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/02/08/kali-beef-bug/</loc>
+    <loc>https://howiezhao.github.io/2018/08/10/jsfuck/</loc>
     
     <lastmod>2021-02-05</lastmod>
     
@@ -803,6 +812,15 @@
   </url>
   
   <url>
+    <loc>https://howiezhao.github.io/2018/09/21/version-number/</loc>
+    
+    <lastmod>2021-02-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://howiezhao.github.io/2018/09/18/vim/</loc>
     
     <lastmod>2021-02-05</lastmod>
@@ -813,15 +831,6 @@
   
   <url>
     <loc>https://howiezhao.github.io/2018/09/22/web-analytics/</loc>
-    
-    <lastmod>2021-02-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://howiezhao.github.io/2018/09/21/version-number/</loc>
     
     <lastmod>2021-02-05</lastmod>
     
@@ -1118,7 +1127,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/09/12/bnf/</loc>
+    <loc>https://howiezhao.github.io/2018/09/19/autojump/</loc>
     
     <lastmod>2020-01-18</lastmod>
     
@@ -1127,7 +1136,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/2018/09/19/autojump/</loc>
+    <loc>https://howiezhao.github.io/2018/09/12/bnf/</loc>
     
     <lastmod>2020-01-18</lastmod>
     
@@ -1217,7 +1226,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/tags/index.html</loc>
+    <loc>https://howiezhao.github.io/categories/index.html</loc>
     
     <lastmod>2020-01-18</lastmod>
     
@@ -1226,7 +1235,7 @@
   </url>
   
   <url>
-    <loc>https://howiezhao.github.io/categories/index.html</loc>
+    <loc>https://howiezhao.github.io/tags/index.html</loc>
     
     <lastmod>2020-01-18</lastmod>
     

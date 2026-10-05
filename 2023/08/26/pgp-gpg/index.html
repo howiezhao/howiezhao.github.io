@@ -28,8 +28,9 @@
 <meta property="og:description" content="1991 年 Phil Zimmermann 开发了商业加密软件 PGP（Pretty Good Privacy），随着 PGP 的流行，OpenPGP 标准被制定，后来，GNU 开发了遵循 OpenPGP 标准的开源版本的 PGP，即 GPG（GNU Privacy Guard）。现在 GPG 被人们所广泛使用。 GPG 本质上是一个命令行工具，为了和别的操作系统更深入的融合，衍生出了不同的基于">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-26T08:00:20.000Z">
-<meta property="article:modified_time" content="2026-10-05T04:24:38.000Z">
+<meta property="article:modified_time" content="2026-10-05T06:07:36.000Z">
 <meta property="article:author" content="Howie Zhao">
+<meta property="article:tag" content="密码学">
 <meta name="twitter:card" content="summary">
 
 
@@ -183,7 +184,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">134</span>
+          <span class="site-state-item-count">135</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -301,7 +302,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-10-05 12:24:38" itemprop="dateModified" datetime="2026-10-05T12:24:38+08:00">2026-10-05</time>
+      <time title="Modified: 2026-10-05 14:07:36" itemprop="dateModified" datetime="2026-10-05T14:07:36+08:00">2026-10-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -329,12 +330,29 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>1991 年 Phil Zimmermann 开发了商业加密软件 PGP（Pretty Good Privacy），随着 PGP 的流行，<br><a target="_blank" rel="noopener" href="https://www.openpgp.org/">OpenPGP</a> 标准被制定，后来，GNU 开发了遵循 OpenPGP 标准的开源版本的 PGP，即 <a target="_blank" rel="noopener" href="https://www.gnupg.org/">GPG</a>（GNU Privacy Guard）。<br>现在 GPG 被人们所广泛使用。</p>
-<p>GPG 本质上是一个命令行工具，为了和别的操作系统更深入的融合，衍生出了不同的基于 GPG 开发的软件。<br>Windows 下推荐使用 <a target="_blank" rel="noopener" href="https://www.gpg4win.org/">Gpg4win</a>，macOS 下推荐使用 <a target="_blank" rel="noopener" href="https://gpgtools.org/">GPGTools</a>。</p>
+    <div class="post-body" itemprop="articleBody"><p>1991 年 Phil Zimmermann 开发了商业加密软件 PGP（Pretty Good Privacy），随着 PGP 的流行，<a target="_blank" rel="noopener" href="https://www.openpgp.org/">OpenPGP</a> 标准被制定，后来，GNU 开发了遵循 OpenPGP 标准的开源版本的 PGP，即 <a target="_blank" rel="noopener" href="https://www.gnupg.org/">GPG</a>（GNU Privacy Guard）。现在 GPG 被人们所广泛使用。</p>
+<p>GPG 本质上是一个命令行工具，为了和别的操作系统更深入的融合，衍生出了不同的基于 GPG 开发的软件。Windows 下推荐使用 <a target="_blank" rel="noopener" href="https://www.gpg4win.org/">Gpg4win</a>，macOS 下推荐使用 <a target="_blank" rel="noopener" href="https://gpgtools.org/">GPGTools</a>。</p>
 <span id="more"></span>
-<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><h2 id="gpg-常用命令"><a href="#gpg-常用命令" class="headerlink" title="gpg 常用命令"></a>gpg 常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机中的所有密钥</span></span><br><span class="line">gpg --list-keys</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h2><p>使用 <code>gpg --gen-key</code> 命令即可生成自己的密钥，在生成过程中你需要完成以下步骤：</p>
+<ol>
+<li>选择加密算法</li>
+<li>选择密钥长度</li>
+<li>设定密钥有效期</li>
+<li>输入个人信息，包括姓名和邮箱，以生成用户ID</li>
+<li>设定私钥的保护密码</li>
+</ol>
+<h2 id="gpg-常用命令"><a href="#gpg-常用命令" class="headerlink" title="gpg 常用命令"></a>gpg 常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机中的所有密钥</span></span><br><span class="line">gpg --list-keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从密钥列表中删除某个密钥</span></span><br><span class="line">gpg --delete-key [用户ID]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成公钥指纹</span></span><br><span class="line">gpg --fingerprint [用户ID]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入某个密钥</span></span><br><span class="line">gpg --import [密钥文件]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导出指定用户ID的公钥</span></span><br><span class="line">gpg --armor --output public-key.txt --<span class="built_in">export</span> [用户ID]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导出指定用户ID的私钥</span></span><br><span class="line">gpg --armor --output private-key.txt --export-secret-keys [用户ID]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用接收者的公钥加密文件</span></span><br><span class="line">gpg --recipient [用户ID] --output demo.en.txt --encrypt demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用自己的私钥解密文件</span></span><br><span class="line">gpg --decrypt demo.en.txt --output demo.de.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用自己的私钥对文件签名，这会生成二进制的签名文件demo.txt.gpg</span></span><br><span class="line">gpg --sign demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用自己的私钥对文件签名，这会生成ASCII码的签名文件demo.txt.asc</span></span><br><span class="line">gpg --clearsign demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用自己的私钥对文件签名，这会生成单独的二进制的签名文件demo.txt.sig，与文件内容分开存放</span></span><br><span class="line">gpg --detach-sign demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用自己的私钥对文件签名，这会生成单独的ASCII码的签名文件，与文件内容分开存放</span></span><br><span class="line">gpg --armor --detach-sign demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用对方的公钥验证签名是否为真</span></span><br><span class="line">gpg --verify demo.txt.asc demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用接收者的公钥加密文件，同时使用发信者（自己）的私钥对文件签名</span></span><br><span class="line">gpg --local-user [发信者ID] --recipient [接收者ID] --armor --sign --encrypt demo.txt</span><br></pre></td></tr></table></figure>
 
-<h2 id="公钥服务器"><a href="#公钥服务器" class="headerlink" title="公钥服务器"></a>公钥服务器</h2><h2 id="使用-gpg-对-commit-签名"><a href="#使用-gpg-对-commit-签名" class="headerlink" title="使用 gpg 对 commit 签名"></a>使用 gpg 对 commit 签名</h2>
+<h2 id="公钥服务器"><a href="#公钥服务器" class="headerlink" title="公钥服务器"></a>公钥服务器</h2><p>公钥服务器是网络上专门储存用户公钥的服务器，目前主流的公钥服务器为 keys.openpgp.org。我们可以使用以下命令与公钥服务器交互：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将公钥上传到服务器</span></span><br><span class="line">gpg --keyserver hkps://keys.openpgp.org --send-keys [用户公钥指纹]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找某个用户的公钥</span></span><br><span class="line">gpg --keyserver hkps://keys.openpgp.org --search-keys [用户公钥指纹]</span><br></pre></td></tr></table></figure>
+
+<p>公钥服务器就像一个目录，解决了公钥在哪里的问题，但它无法保证服务器上的公钥的可靠性，换句话说，任何人都可以用你的名义上传公钥。<a target="_blank" rel="noopener" href="https://keybase.io/">Keybase</a> 是一个有趣的服务，它试图解决这个公钥到底属于谁。</p>
+<h2 id="使用-gpg-对-commit-签名"><a href="#使用-gpg-对-commit-签名" class="headerlink" title="使用 gpg 对 commit 签名"></a>使用 gpg 对 commit 签名</h2><p>让我们以 GitHub 为例，首先，你需要将自己的公钥添加到 GitHub 上。具体流程，可以参考<a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/managing-commit-signature-verification/about-commit-signature-verification">官方文档</a>。</p>
+<p>其次，你需要在 Git 中配置要使用的密钥，使用命令 <code>git config --global user.signingkey [用户ID]</code> 即可。随后，每次 commit 时加上 <code>-S</code> 参数，即 <code>git commit -S -m &quot;YOUR_COMMIT_MESSAGE&quot;</code> 即可对提交进行签名。</p>
+<p>如果不想每次都输入 <code>-S</code>，可以设置为默认对所有提交进行签名，即 <code>git config --global commit.gpgsign true</code>。</p>
+<p>请注意，生成密钥时输入的邮箱应与 git config 配置中的邮箱一致。</p>
+<p>此外，如果是在 Windows 上，为了避免使用 Git 内部自带的 gpg 命令，你可能还需要配置：<code>git config --global gpg.program (Get-Item (Get-Command gpg).Source).FullName</code>。</p>
+
     </div>
 
     
@@ -342,6 +360,9 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag"># 密码学</a>
+          </div>
 
         
 
@@ -352,6 +373,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2026/10/03/what-is-icalendar/" rel="next" title="iCalendar 是什么">
+                  iCalendar 是什么 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -383,7 +407,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">171k</span>
+    <span title="Word count total">174k</span>
   </span>
 </div>
 <div class="busuanzi-count">
