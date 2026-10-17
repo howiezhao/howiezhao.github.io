@@ -11,11 +11,16 @@ Windows 的**系统代理**使用的其实是 **IE 的代理设置**，此外，
 
 ```sh
 set HTTP_PROXY=http://user:password@proxy.domain.com:port
-set HTTPS_PROXY=https://user:password@proxy.domain.com:port
+set HTTPS_PROXY=http://user:password@proxy.domain.com:port
 ```
 
-而要为 PowerShell 设置代理则要使用[这个脚本](todo)。
+而要为 PowerShell 设置代理则要使用如下命令：
 
-对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 `pip`、`npm` 等，另一部分则使用的是 Shell 的代理设置，比如 `curl`、`gem` 等。
+```sh
+$env:HTTP_PROXY="http://user:password@proxy.domain.com:port"
+$env:HTTPS_PROXY="http://user:password@proxy.domain.com:port"
+```
+
+对于 Shell 中运行的程序，有一部分使用的是 IE 的代理设置，比如 `winget`、`pip`、`npm` 等，另一部分则使用的是 Shell 的代理设置，比如 `curl`、`go`、`gem` 等。
 
 此外，有一些程序的代理设置相对比较复杂，比如 {% post_link git git %}、{% post_link docker docker %} 等，详见它们各自的介绍文章。
